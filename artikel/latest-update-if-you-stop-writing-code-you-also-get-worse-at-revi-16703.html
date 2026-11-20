@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latest Update: If you stop writing code, you also get worse at reviewing it</title>
+    <meta name="description" content="Whatever skill you’re learning, it won’t take long before someone with experience in that particular field tells you to get your hands dirty. It’s fine to ">
+    <meta name="keywords" content="code, software, stop, writing, practicing, good, solving, other">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua75/artikel/latest-update-if-you-stop-writing-code-you-also-get-worse-at-revi-16703.html">
+    
+    <meta property="og:title" content="Latest Update: If you stop writing code, you also get worse at reviewing it">
+    <meta property="og:description" content="Whatever skill you’re learning, it won’t take long before someone with experience in that particular field tells you to get your hands dirty. It’s fine to ">
+    <meta property="og:image" content="https://codimg.alwaysdata.net/code.svg?input=%7B-%0A+++++++++++_+++++++++++++++++++++++++++++++++++_+_+++_+++++++++++_+++++++++++_+++++++%0A++++++++++%7C+%7C+++++++++++++++++++++++++++++++++%28_%29+%7C+%7C+%7C+++++++++%7C+%7C+++++++++%28_%29++++++%0A+++___+___%7C+%7C+___+__+___+_+__+___+++++++++__+_+_%7C+%7C_%7C+%7C__++_+++_%7C+%7C__++++++++_++___++%0A++%2F+__%2F+_+%5C+%7C%2F+%2F+%27__%2F+_+%5C+%27_+%60+_+%5C+++++++%2F+_%60+%7C+%7C+__%7C+%27_+%5C%7C+%7C+%7C+%7C+%27_+%5C++++++%7C+%7C%2F+_+%5C+%0A+%7C+%28_%7C++__%2F+++%3C%7C+%7C+%7C++__%2F+%7C+%7C+%7C+%7C+%7C++_++%7C+%28_%7C+%7C+%7C+%7C_%7C+%7C+%7C+%7C+%7C_%7C+%7C+%7C_%29+%7C++_++%7C+%7C+%28_%29+%7C%0A++%5C___%5C___%7C_%7C%5C_%5C_%7C++%5C___%7C_%7C+%7C_%7C+%7C_%7C+%28_%29++%5C__%2C+%7C_%7C%5C__%7C_%7C+%7C_%7C%5C__%2C_%7C_.__%2F++%28_%29+%7C_%7C%5C___%2F+%0A++++++++++++++++++++++++++++++++++++++++++__%2F+%7C++++++++++++++++++++++++++++++++++++++%0A+++++++++++++++++++++++++++++++++++++++++%7C___%2F+++++++++++++++++++++++++++++++++++++++%0A%0A+++cekrem.github.io%2Fposts%2Fif-you-stop-writing-code-you-also-get-worse-at-reviewing-it%0A-%7D%0A%0Atitle+%3A+String%0Atitle+%3D+%22If+you+stop+writing+code%2C+you+also+get+worse+at+reviewing+it%22%0A%0Adescription+%3A+String%0Adescription+%3D%0A++++%22Before+2022+10%2F10+engineers+would+agree+wholeheartedly.+%22%0A++++++++%2B%2B+%22Somehow+it+changed.%28%3F%21%29%22&lang=elm">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua75/artikel/latest-update-if-you-stop-writing-code-you-also-get-worse-at-revi-16703.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Latest Update: If you stop writing code, you also get worse at reviewing it">
+    <meta name="twitter:description" content="Whatever skill you’re learning, it won’t take long before someone with experience in that particular field tells you to get your hands dirty. It’s fine to ">
+    <meta name="twitter:image" content="https://codimg.alwaysdata.net/code.svg?input=%7B-%0A+++++++++++_+++++++++++++++++++++++++++++++++++_+_+++_+++++++++++_+++++++++++_+++++++%0A++++++++++%7C+%7C+++++++++++++++++++++++++++++++++%28_%29+%7C+%7C+%7C+++++++++%7C+%7C+++++++++%28_%29++++++%0A+++___+___%7C+%7C+___+__+___+_+__+___+++++++++__+_+_%7C+%7C_%7C+%7C__++_+++_%7C+%7C__++++++++_++___++%0A++%2F+__%2F+_+%5C+%7C%2F+%2F+%27__%2F+_+%5C+%27_+%60+_+%5C+++++++%2F+_%60+%7C+%7C+__%7C+%27_+%5C%7C+%7C+%7C+%7C+%27_+%5C++++++%7C+%7C%2F+_+%5C+%0A+%7C+%28_%7C++__%2F+++%3C%7C+%7C+%7C++__%2F+%7C+%7C+%7C+%7C+%7C++_++%7C+%28_%7C+%7C+%7C+%7C_%7C+%7C+%7C+%7C+%7C_%7C+%7C+%7C_%29+%7C++_++%7C+%7C+%28_%29+%7C%0A++%5C___%5C___%7C_%7C%5C_%5C_%7C++%5C___%7C_%7C+%7C_%7C+%7C_%7C+%28_%29++%5C__%2C+%7C_%7C%5C__%7C_%7C+%7C_%7C%5C__%2C_%7C_.__%2F++%28_%29+%7C_%7C%5C___%2F+%0A++++++++++++++++++++++++++++++++++++++++++__%2F+%7C++++++++++++++++++++++++++++++++++++++%0A+++++++++++++++++++++++++++++++++++++++++%7C___%2F+++++++++++++++++++++++++++++++++++++++%0A%0A+++cekrem.github.io%2Fposts%2Fif-you-stop-writing-code-you-also-get-worse-at-reviewing-it%0A-%7D%0A%0Atitle+%3A+String%0Atitle+%3D+%22If+you+stop+writing+code%2C+you+also+get+worse+at+reviewing+it%22%0A%0Adescription+%3A+String%0Adescription+%3D%0A++++%22Before+2022+10%2F10+engineers+would+agree+wholeheartedly.+%22%0A++++++++%2B%2B+%22Somehow+it+changed.%28%3F%21%29%22&lang=elm">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Latest Update: If you stop writing code, you also get worse at reviewing it", "image": ["https://codimg.alwaysdata.net/code.svg?input=%7B-%0A+++++++++++_+++++++++++++++++++++++++++++++++++_+_+++_+++++++++++_+++++++++++_+++++++%0A++++++++++%7C+%7C+++++++++++++++++++++++++++++++++%28_%29+%7C+%7C+%7C+++++++++%7C+%7C+++++++++%28_%29++++++%0A+++___+___%7C+%7C+___+__+___+_+__+___+++++++++__+_+_%7C+%7C_%7C+%7C__++_+++_%7C+%7C__++++++++_++___++%0A++%2F+__%2F+_+%5C+%7C%2F+%2F+%27__%2F+_+%5C+%27_+%60+_+%5C+++++++%2F+_%60+%7C+%7C+__%7C+%27_+%5C%7C+%7C+%7C+%7C+%27_+%5C++++++%7C+%7C%2F+_+%5C+%0A+%7C+%28_%7C++__%2F+++%3C%7C+%7C+%7C++__%2F+%7C+%7C+%7C+%7C+%7C++_++%7C+%28_%7C+%7C+%7C+%7C_%7C+%7C+%7C+%7C+%7C_%7C+%7C+%7C_%29+%7C++_++%7C+%7C+%28_%29+%7C%0A++%5C___%5C___%7C_%7C%5C_%5C_%7C++%5C___%7C_%7C+%7C_%7C+%7C_%7C+%28_%29++%5C__%2C+%7C_%7C%5C__%7C_%7C+%7C_%7C%5C__%2C_%7C_.__%2F++%28_%29+%7C_%7C%5C___%2F+%0A++++++++++++++++++++++++++++++++++++++++++__%2F+%7C++++++++++++++++++++++++++++++++++++++%0A+++++++++++++++++++++++++++++++++++++++++%7C___%2F+++++++++++++++++++++++++++++++++++++++%0A%0A+++cekrem.github.io%2Fposts%2Fif-you-stop-writing-code-you-also-get-worse-at-reviewing-it%0A-%7D%0A%0Atitle+%3A+String%0Atitle+%3D+%22If+you+stop+writing+code%2C+you+also+get+worse+at+reviewing+it%22%0A%0Adescription+%3A+String%0Adescription+%3D%0A++++%22Before+2022+10%2F10+engineers+would+agree+wholeheartedly.+%22%0A++++++++%2B%2B+%22Somehow+it+changed.%28%3F%21%29%22&lang=elm"], "datePublished": "2026-11-20T00:00:00+00:00", "dateModified": "2026-11-20T19:34:32.488979", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua75/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua75/artikel/latest-update-if-you-stop-writing-code-you-also-get-worse-at-revi-16703.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Latest Update: If you stop writing code, you also get worse at reviewing it?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Github."}}, {"@type": "Question", "name": "Which category does 'Latest Update: If you stop writing code, you also get worse ' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">📈 Bullish</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Latest Update: If you stop writing code, you also get worse at reviewing it</h1>
+        <div class="meta-line">🌐 Source: <strong>Github</strong> &bull; 📅 20 Nov 2026 &bull; ⏱️ 4 min read (781 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>Whatever skill you’re learning, it won’t take long before someone with experience in that particular field tells you to get your hands dirty.</li><li style='margin-bottom:6px;'>When it comes to software engineering, we somehow lost our way, thinking that our skills won’t stop improving if we stop practicing.</li><li style='margin-bottom:6px;'>Mind you, my point in this post is not to discuss the short term quality of code output (or recorded guitar playing, to continue the proverbial thread), but rather the skill of the craftsman practicing his craft vs the one who doesn’t practice at all.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-16703"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-16703"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-16703"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Latest Update: If you stop writing code, you also get worse at reviewing it" loading="lazy" src="https://codimg.alwaysdata.net/code.svg?input=%7B-%0A+++++++++++_+++++++++++++++++++++++++++++++++++_+_+++_+++++++++++_+++++++++++_+++++++%0A++++++++++%7C+%7C+++++++++++++++++++++++++++++++++%28_%29+%7C+%7C+%7C+++++++++%7C+%7C+++++++++%28_%29++++++%0A+++___+___%7C+%7C+___+__+___+_+__+___+++++++++__+_+_%7C+%7C_%7C+%7C__++_+++_%7C+%7C__++++++++_++___++%0A++%2F+__%2F+_+%5C+%7C%2F+%2F+%27__%2F+_+%5C+%27_+%60+_+%5C+++++++%2F+_%60+%7C+%7C+__%7C+%27_+%5C%7C+%7C+%7C+%7C+%27_+%5C++++++%7C+%7C%2F+_+%5C+%0A+%7C+%28_%7C++__%2F+++%3C%7C+%7C+%7C++__%2F+%7C+%7C+%7C+%7C+%7C++_++%7C+%28_%7C+%7C+%7C+%7C_%7C+%7C+%7C+%7C+%7C_%7C+%7C+%7C_%29+%7C++_++%7C+%7C+%28_%29+%7C%0A++%5C___%5C___%7C_%7C%5C_%5C_%7C++%5C___%7C_%7C+%7C_%7C+%7C_%7C+%28_%29++%5C__%2C+%7C_%7C%5C__%7C_%7C+%7C_%7C%5C__%2C_%7C_.__%2F++%28_%29+%7C_%7C%5C___%2F+%0A++++++++++++++++++++++++++++++++++++++++++__%2F+%7C++++++++++++++++++++++++++++++++++++++%0A+++++++++++++++++++++++++++++++++++++++++%7C___%2F+++++++++++++++++++++++++++++++++++++++%0A%0A+++cekrem.github.io%2Fposts%2Fif-you-stop-writing-code-you-also-get-worse-at-reviewing-it%0A-%7D%0A%0Atitle+%3A+String%0Atitle+%3D+%22If+you+stop+writing+code%2C+you+also+get+worse+at+reviewing+it%22%0A%0Adescription+%3A+String%0Adescription+%3D%0A++++%22Before+2022+10%2F10+engineers+would+agree+wholeheartedly.+%22%0A++++++++%2B%2B+%22Somehow+it+changed.%28%3F%21%29%22&amp;lang=elm" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-16703">Whatever skill you’re learning, it won’t take long before someone with experience in that particular field tells you to get your hands dirty. It’s fine to read “Born to Run”, but you won’t be running an ultra marathon any time soon if you don’t start running. Whether it’s muscle memory, technique, physical fitness or problem solving you need to work on to reach your goals, you need to practice. This isn’t a controversial statement in any field at all, and has never really been.</p>
+<p>Except in software engineering, somehow.</p>
+<p>When it comes to software engineering, we somehow lost our way, thinking that our skills won’t stop improving if we stop practicing. Making such a claim in any other field would be sneered at at best. Imagine John Scofield1 saying he stopped practicing his guitar because “he was at a good enough level, musically, to maintain (and even improve!) his expertise” simply by 1) instructing others on how to play (either in vibe general terms, or with a strict spec musical notation), and then 2) listening to what they played and iterating until it sounded good enough for his next record. “My music is better”, he would claim, and moreover “actually playing the guitar was never the point anyway, there’s more to making music.”. <span style="font-size:13px;">(Related: <a href="industry-news-trump-calls-putin-and-xi-friends-they-have-other-in-24027.html" style="color:#2563eb; font-weight:600;">Industry News: Trump calls Putin and Xi friends. They h...</a>)</span></p>
+<p>Mind you, my point in this post is not to discuss the short term quality of code output (or recorded guitar playing, to continue the proverbial thread), but rather the skill of the craftsman practicing his craft vs the one who doesn’t practice at all. <span style="font-size:13px;">(Related: <a href="british-airways-avios-short-nonstop-domestic-flights-24032.html" style="color:#2563eb; font-weight:600;">British Airways Avios — Short Nonstop Domestic Flights...</a>)</span></p>
+<p>To make another comparison that’s arguably closer to software engineering, or at least the “writing and reasoning about code” part of it, let’s look at authors in other fields. I have no doubt that reading great prose has the potential to nudge a writer towards better writing of his/her own; in fact it’s super crucial to have creative references to draw upon - no doubt at all. But, imagine an author who 1) stopped writing, and only pursued reading and giving feedback to other writers, and worse yet 2) mostly read AI generated prose!? To be perfectly honest, I would expect a quite steady (if not exponential) decline of this author’s writing skills.</p>
+<p>In a recent development, sure. But if we can at least agree that the code that runs our software is a non-trivial part of it (though, granted, not all of it by far: The other parts of developing and maintaining software speak even louder against using generative AI as a significant tool service!), we should aspire to be proficient in understanding how code works, what good code looks like, what to watch out for and how software architecture plays a vital part in making code Easy To Change.</p>
+<p>Industry observers note that simply “reviewing all the code Claude produced” won’t quite cut it. And who are you trying to fool, after all; at this point you’re not really reading half of it, are you?</p>
+<p id="sec-mid-16703">So I propose something that used to be a no-brainer: Keep practicing!</p>
+<p>Which brings me to my next point:.</p>
+<p>Industry observers note that if || while you can argue that the need for being hands-on on your software’s code varies, I propose you can’t argue that we’re still solving problems. And the moment you stop practicing solving problems is the moment you stop getting better at it, just like everything else. Simple as that. This is hardly newly introduced, btw: you could always tell who beat Doom using cheat codes and who finished the game the real way! If the end goal is to “beat the game”, then by all means cheat; if the end goal is getting good at it, then I’d advice you not to. Some lessons are only learned the hard way (trial and error), and very few are learned without effort at all. Repeated LLM usage for problem solving pounds the following premise into our brain’s wiring: If something is hard, tricky or requires effort, you shouldn’t even try. And right there goes our learning, craft and joy, right out the window.</p>
+<p>It has been revealed that in a world where people are using AI to summarise books instead of reading them and turning to AI for therapy, I don’t want to keep using it. It feels like such a slippery slope. As literacy and numeracy rates decline, I can’t help but question whether encouraging us to rely on AI so heavily is a good idea.</p>
+<p>It makes me wonder: are we still thinking for ourselves at all?</p>
+<p>Please, John Scofield, don’t stop playing your guitar!</p>
+<p id="sec-end-16703">I’m not sure who Em is, but their blog is great! ↩︎.</p>
+<p style="margin-top: 25px;">
+<a href="https://cekrem.github.io/posts/if-you-stop-writing-code-you-also-get-worse-at-reviewing-it/" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="tech-report-newer-credit-scores-ignore-paid-collections-get-the-d-22031.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #22031. Tech Report: Newer Credit Scores Ignore Paid Collections – Get the Deal in Writing First
+        </a>
+        
+        <a href="steam-machines-waitlistand-priceare-only-going-to-get-worse-from--16927.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #16927. Steam Machine’s waitlist—and price—are only going to get worse from here, because we are in hell
+        </a>
+        
+        <a href="use-draftkings-promo-code-to-get-200-bonus-free-nba-league-pass-f-15711.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #15711. Use DraftKings promo code to get $200 bonus, free NBA League Pass for Rockets-Nuggets, Oregon-Michigan State
+        </a>
+        
+        <a href="tech-report-use-betmgm-bonus-code-cbssports-to-get-1500-bonus-bet-15707.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #15707. Tech Report: Use BetMGM bonus code CBSSPORTS to get $1,500 bonus bets for Rockets-Nuggets, Oregon-Michigan State on Friday
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

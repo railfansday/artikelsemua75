@@ -153,8 +153,8 @@
 <p>Weekly. Free. One click to leave.</p>
 <p>Sources indicate that 7 Day Free Trial. Cancel Anytime.</p>
 <p>Sending a document for signature is the easy part of an e-signature integration. One POST request and the signer gets an email. The work that actually breaks in production happens afterwards: knowing when the document was signed, trusting the notification that told you so, handling the same notification twice, and getting the final PDF into storage before the download link expires.</p>
-<p>This tutorial builds that whole loop in Node.js with Express. An event in your app (a deal is approved, a client is onboarded, a task moves to "ready to sign") sends a contract from a template. When the signer finishes, a webhook arrives, your server verifies it, and the signed PDF plus its audit trail get saved without anyone touching them. <span style="font-size:13px;">(Related: <a href="course-launch-community-event-12422.html" style="color:#2563eb; font-weight:600;">Course Launch Community Event...</a>)</span></p>
-<p>The code uses Firma.dev, the e-signature API I work on, because I needed a real API to make the examples runnable. The patterns are not specific to it, though. Signature verification, idempotent handlers, short-lived download URLs, and reconciliation jobs show up in almost every webhook-driven integration, and the same structure applies whether you're receiving events from a payment processor, a CI system, or another signing provider. <span style="font-size:13px;">(Related: <a href="porting-fairseq-wmt19-translation-system-to-transformers-12453.html" style="color:#2563eb; font-weight:600;">Porting fairseq wmt19 translation system to transformer...</a>)</span></p>
+<p>This tutorial builds that whole loop in Node.js with Express. An event in your app (a deal is approved, a client is onboarded, a task moves to "ready to sign") sends a contract from a template. When the signer finishes, a webhook arrives, your server verifies it, and the signed PDF plus its audit trail get saved without anyone touching them. <span style="font-size:13px;">(Related: <a href="how-to-budget-for-a-wedding-without-going-broke-24051.html" style="color:#2563eb; font-weight:600;">How to Budget for a Wedding Without Going Broke...</a>)</span></p>
+<p>The code uses Firma.dev, the e-signature API I work on, because I needed a real API to make the examples runnable. The patterns are not specific to it, though. Signature verification, idempotent handlers, short-lived download URLs, and reconciliation jobs show up in almost every webhook-driven integration, and the same structure applies whether you're receiving events from a payment processor, a CI system, or another signing provider. <span style="font-size:13px;">(Related: <a href="what-i-do-every-time-i-get-an-irs-notice-24044.html" style="color:#2563eb; font-weight:600;">What I do every time I get an IRS notice...</a>)</span></p>
 <p>Industry observers note that there's a fifth part that tutorials usually skip: a reconciliation job that catches anything the webhooks missed. We'll build that too, because webhooks are a notification mechanism, not a delivery guarantee.</p>
 <p>Set three environment variables:.</p>
 <p>Recent findings suggest that before sending anything, wrap the HTTP calls in one place. This is where authentication lives, and it's also where you handle 429 Too Many Requests once instead of in every caller. Most APIs, this one included, return a Retry-After header on a 429, so the client should honour it rather than guessing a backoff.</p>
@@ -212,20 +212,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="arda-gler-extends-real-madrid-contract-30m-signing-to-100m-valuat-3009.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #3009. Arda Güler extends Real Madrid contract: €30m signing to €100m valuation
+        <a href="arda-gler-extends-real-madrid-contract-30m-signing-to-100m-valuat-15600.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #15600. Arda Güler extends Real Madrid contract: €30m signing to €100m valuation
         </a>
         
-        <a href="tech-report-aston-villa-transfer-news-unai-emery-favourite-follow-2734.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #2734. Tech Report: Aston Villa transfer news: Unai Emery favourite follows Ian Maatsen in signing long-term contract extension
+        <a href="building-email-integrations-apis-webhooks-automation-and-delivera-23869.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #23869. Building Email Integrations: APIs, Webhooks, Automation, and Deliverability
         </a>
         
-        <a href="how-to-add-ai-content-detection-to-your-nodejs-app-12011.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #12011. How to Add AI Content Detection to Your Node.js App
+        <a href="cftc-and-justice-department-sue-arkansas-and-louisiana-over-event-23833.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #23833. CFTC and Justice Department sue Arkansas and Louisiana over event-contract crackdowns
         </a>
         
-        <a href="7-best-accounts-receivable-ar-software-platforms-for-automating-i-11558.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #11558. 7 Best Accounts Receivable (AR) Software Platforms for Automating Invoice-to-Cash
+        <a href="what-to-get-right-before-you-ship-webhooks-23789.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #23789. What to get right before you ship webhooks
         </a>
         
     </div>

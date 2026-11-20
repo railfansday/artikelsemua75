@@ -152,12 +152,12 @@
 <p id="sec-start-11664">Stay up to date with AI tools, model releases, and developer workflows that matter.</p>
 <p>It has been revealed that weekly. Free. One click to leave.</p>
 <p>In a recent development, 7 Day Free Trial. Cancel Anytime.</p>
-<p>According to recent reports, we sent 1,000 streaming calls at the same moment through three self-hosted LLM gateways: the Langfuse AI Gateway, the LiteLLM proxy and AcruxCore. Each gateway was limited to 2 CPUs. As shipped, Langfuse finished 261 of the 1,000 streams and LiteLLM finished 403. Neither failure came from the gateway's own code.</p>
+<p>According to recent reports, we sent 1,000 streaming calls at the same moment through three self-hosted LLM gateways: the Langfuse AI Gateway, the LiteLLM proxy and AcruxCore. Each gateway was limited to 2 CPUs. As shipped, Langfuse finished 261 of the 1,000 streams and LiteLLM finished 403. Neither failure came from the gateway's own code. <span style="font-size:13px;">(Related: <a href="latest-update-two-weeks-later-senate-vote-count-is-complete-the-h-24057.html" style="color:#2563eb; font-weight:600;">Latest Update: Two weeks later, Senate vote count is co...</a>)</span></p>
 <p>Langfuse's failures came from Linux's open-file limit, which Docker sets to 1,024 by default. LiteLLM had that problem too, plus a second one: an empty key cache sent hundreds of database lookups at once, and the ones that waited longer than 10 seconds were rejected. This article reveals how each failure looked, how we traced it to its cause, and the settings that fixed it.</p>
-<p>This benchmark measured the resource consumption of three LLM gateways under scaling concurrent streaming loads. <span style="font-size:13px;">(Related: <a href="scaling-up-bert-inference-on-cpu-part-1-12438.html" style="color:#2563eb; font-weight:600;">Scaling-up BERT Inference on CPU (Part 1)...</a>)</span></p>
+<p>This benchmark measured the resource consumption of three LLM gateways under scaling concurrent streaming loads.</p>
 <p>Full latency, memory, and feature results are available in the Langfuse vs LiteLLM vs AcruxCore benchmark.</p>
-<p>In a recent development, first-token times are medians of the streams that succeeded. Up to 250 streams, every gateway succeeded. Then the errors started, and they did not look alike:.</p>
-<p>It has been revealed that A 502 and a 503 point at different layers, so we expected two different causes. Two of the three turned out to share one cause. <span style="font-size:13px;">(Related: <a href="breaking-how-to-generate-text-using-different-decoding-methods-fo-12458.html" style="color:#2563eb; font-weight:600;">Breaking: How to generate text: using different decodin...</a>)</span></p>
+<p>In a recent development, first-token times are medians of the streams that succeeded. Up to 250 streams, every gateway succeeded. Then the errors started, and they did not look alike:. <span style="font-size:13px;">(Related: <a href="leading-house-democrat-targets-trumps-inner-circle-for-first-inve-24060.html" style="color:#2563eb; font-weight:600;">Leading House Democrat targets Trump’s inner circle for...</a>)</span></p>
+<p>It has been revealed that A 502 and a 503 point at different layers, so we expected two different causes. Two of the three turned out to share one cause.</p>
 <p>According to recent reports, linux counts every network connection as an open file, and it caps how many open files one process may hold. The cap has two values. The soft limit is the cap that is in force now. The hard limit is the ceiling: a process may raise its own soft limit up to that value, and no further.</p>
 <p>A streaming gateway holds two connections for each stream: one from the client, and one to the model provider. That makes about 1,000 open files at 500 streams, and about 2,000 at 1,000 streams. A gateway also needs a few more files for its database, its logs and its own libraries.</p>
 <p>Docker on our machine gave every container a soft limit of 1,024 and a hard limit of 524,288. All three gateways received the same two numbers. What differed was how each program treats them when it starts:.</p>
@@ -204,20 +204,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="industry-news-how-much-latency-does-a-self-hosted-llm-gateway-add-11455.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #11455. Industry News: How Much Latency Does a Self-Hosted LLM Gateway Add? Langfuse vs LiteLLM vs AcruxCore
+        <a href="tech-report-how-much-latency-does-a-self-hosted-llm-gateway-add-l-23964.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #23964. Tech Report: How Much Latency Does a Self-Hosted LLM Gateway Add? Langfuse vs LiteLLM vs AcruxCore
+        </a>
+        
+        <a href="industry-news-qwen-incidents-show-self-hosted-ai-models-need-stro-23329.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #23329. Industry News: Qwen Incidents Show Self-Hosted AI Models Need Stronger Steering
+        </a>
+        
+        <a href="bitcoin-breaks-below-60k-as-crypto-fear-index-hits-worst-level-si-18160.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #18160. Bitcoin Breaks Below $60K as Crypto Fear Index Hits Worst Level Since February
         </a>
         
         <a href="prefill-and-decode-for-concurrent-requests-optimizing-llm-perform-11840.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #11840. Prefill and Decode for Concurrent Requests - Optimizing LLM Performance
-        </a>
-        
-        <a href="self-hosted-langsmith-alternatives-4-tools-tested-on-one-typescri-11818.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #11818. Self-Hosted LangSmith Alternatives: 4 Tools Tested on One TypeScript Agent
-        </a>
-        
-        <a href="industry-news-qwen-incidents-show-self-hosted-ai-models-need-stro-10839.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #10839. Industry News: Qwen Incidents Show Self-Hosted AI Models Need Stronger Steering
         </a>
         
     </div>

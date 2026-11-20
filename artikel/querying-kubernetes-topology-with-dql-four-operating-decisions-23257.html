@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Querying Kubernetes topology with DQL: four operating decisions</title>
+    <meta name="description" content="Recent findings suggest that tonight the platform team drains node-07 for a kernel enhancement. One question decides the go-ahead: which services lose repl">
+    <meta name="keywords" content="pods, them, dynatrace, kubernetes, node, query, article, services">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua75/artikel/querying-kubernetes-topology-with-dql-four-operating-decisions-23257.html">
+    
+    <meta property="og:title" content="Querying Kubernetes topology with DQL: four operating decisions">
+    <meta property="og:description" content="Recent findings suggest that tonight the platform team drains node-07 for a kernel enhancement. One question decides the go-ahead: which services lose repl">
+    <meta property="og:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto/https%3A%2F%2Fspan.observer%2Fwp-content%2Fuploads%2F2026%2F11%2Ftopologie-kubernetes-dql-photo.webp">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua75/artikel/querying-kubernetes-topology-with-dql-four-operating-decisions-23257.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Querying Kubernetes topology with DQL: four operating decisions">
+    <meta name="twitter:description" content="Recent findings suggest that tonight the platform team drains node-07 for a kernel enhancement. One question decides the go-ahead: which services lose repl">
+    <meta name="twitter:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto/https%3A%2F%2Fspan.observer%2Fwp-content%2Fuploads%2F2026%2F11%2Ftopologie-kubernetes-dql-photo.webp">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Querying Kubernetes topology with DQL: four operating decisions", "image": ["https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto/https%3A%2F%2Fspan.observer%2Fwp-content%2Fuploads%2F2026%2F11%2Ftopologie-kubernetes-dql-photo.webp"], "datePublished": "2026-11-20T19:30:14", "dateModified": "2026-11-20T19:40:06.520441", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua75/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua75/artikel/querying-kubernetes-topology-with-dql-four-operating-decisions-23257.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Querying Kubernetes topology with DQL: four operating decisions?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Dev."}}, {"@type": "Question", "name": "Which category does 'Querying Kubernetes topology with DQL: four operating decisi' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Querying Kubernetes topology with DQL: four operating decisions</h1>
+        <div class="meta-line">🌐 Source: <strong>Dev</strong> &bull; 📅 20 Nov 2026 &bull; ⏱️ 4 min read (777 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>Recent findings suggest that tonight the platform team drains node-07 for a kernel enhancement.</li><li style='margin-bottom:6px;'>The syntax facts come from the Dynatrace documentation.</li><li style='margin-bottom:6px;'>It has been revealed that the general syntax of smartscapeNodes and traverse is covered in the article on DQL and Smartscape.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-23257"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-23257"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-23257"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Querying Kubernetes topology with DQL: four operating decisions" loading="lazy" src="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto/https%3A%2F%2Fspan.observer%2Fwp-content%2Fuploads%2F2026%2F11%2Ftopologie-kubernetes-dql-photo.webp" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-23257">Recent findings suggest that tonight the platform team drains node-07 for a kernel enhancement. One question decides the go-ahead: which services lose replicas, and who needs a heads-up? The Kubernetes topology graph in Dynatrace SaaS can answer in a single DQL query, if you know how to walk it. This article starts from four operating decisions and derives the queries from them.</p>
+<p>The syntax facts come from the Dynatrace documentation. The use cases were sparked by the vendor’s blog post on the subject. The queries below are rewritten and were not run on a tenant for this article, so test them on a small scope before relying on them. Everything here applies to Dynatrace SaaS only. <span style="font-size:13px;">(Related: <a href="how-many-millionaires-are-in-the-us-stats-and-facts-24048.html" style="color:#2563eb; font-weight:600;">How Many Millionaires Are in the US? Stats and Facts...</a>)</span></p>
+<p>It has been revealed that the general syntax of smartscapeNodes and traverse is covered in the article on DQL and Smartscape. Here we do not tour the commands again: we put them to work.</p>
+<p>It has been revealed that with kubectl, every answer is a snapshot of one cluster. To find which services depend on a node, you chain three commands and cross-check by hand. With ten clusters, that becomes a chore. <span style="font-size:13px;">(Related: <a href="what-i-do-every-time-i-get-an-irs-notice-24044.html" style="color:#2563eb; font-weight:600;">What I do every time I get an IRS notice...</a>)</span></p>
+<p>Industry observers note that the graph stores objects as nodes (K8S_NODE, K8S_POD, K8S_SERVICE, K8S_NAMESPACE, K8S_DEPLOYMENT, K8S_SECRET) and their links as edges: runs_on ties a pod to its node, routes_to a service to its pods, belongs_to an object to its namespace, is_part_of a pod to its controller, and uses a pod to a Secret. One query therefore spans every cluster connected to the environment.</p>
+<p>Sources indicate that before a drain you want the list of affected services, ranked by pods lost. Start from the node, go down to its pods, then to the services that route to them.</p>
+<p>It has been revealed that read the result with care. A service losing one pod out of twelve is no cause for worry. A service losing two pods out of two is a reason to postpone the drain. An empty result may also mean the node name is wrong: check it first with smartscapeNodes "*" | filter type == "K8S_NODE".</p>
+<p>According to recent reports, the topology cannot guess who owns what. It rereads the labels your teams put on namespaces. If a namespace carries an owner label, the query returns it next to the cluster:.</p>
+<p>Recent findings suggest that every row without an owner is a governance gap, not a query bug. Fix it at the source, for example with the enrichment described in the article on Kubernetes metadata enrichment. Then join this list with the result of decision 1 to know whom to call.</p>
+<p>Industry observers note that changing a Secret often means restarting the pods that mount it. So the question is how many pods and services depend on it. Start from the Secrets and walk the uses relationship backwards.</p>
+<p id="sec-mid-23257">Sources indicate that A Secret mounted by forty pods is rotated in several waves. A Secret mounted by two pods fits the usual maintenance window. The number is a basis for discussion with the teams involved, not a replacement for their judgement.</p>
+<p>Two weekly queries are worth a ritual. The first lists deployments with a single pod, so with no safety net during a drain:.</p>
+<p>Sources indicate that one limit to know: a deployment with zero pods does not appear, since it has no pod to count. The second query looks for pods that disappeared during the last day, using the lifetime field:.</p>
+<p>The five-minute and one-day thresholds are choices: adjust them to your deployment rhythm. A pod that vanishes outside a deployment window deserves a question. To turn these lists into alerts rather than manual reading, see Kubernetes alerts on nodes, pods and quotas.</p>
+<p>Kubernetes monitoring must feed your SaaS environment, and your role must grant access to the smartscape Grail table, which requires the storage:smartscape:read permission according to the documentation. I did not verify the full enablement procedure here.</p>
+<p>smartscapeNodes returns objects, smartscapeEdges returns links. Use edges to list the relationship types available, and traverse to follow them from one object to the next.</p>
+<p>This article covers Dynatrace SaaS only. I did not verify the availability of these commands on Managed: do not carry them over without testing.</p>
+<p>A graph is only useful if it answers a decision. Draining a node, rotating a Secret, finding a single point of failure: each query above replaces a manual cross-check. To add trends and numbers, reread the DQL filter, summarize and timeseries commands. The official syntax reference is the Smartscape commands page.</p>
+<p>Independent blog, not affiliated with Dynatrace LLC. Dynatrace is a trademark of Dynatrace LLC.</p>
+<p id="sec-end-23257">According to recent reports, originally published on span.observer. French version: https://span.observer/fr/topologie-kubernetes-dql/.</p>
+<p style="margin-top: 25px;">
+<a href="https://dev.to/spanobserver/querying-kubernetes-topology-with-dql-four-operating-decisions-1h4h" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="akashs-solana-migration-clears-november-2-vote-at-97-with-four-mo-18695.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #18695. Akash’s Solana Migration Clears November 2 Vote at 97%, With Four More On-Chain Decisions Ahead
+        </a>
+        
+        <a href="four-players-set-to-leave-tottenham-at-end-of-season-as-major-dec-14788.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #14788. Four players set to leave Tottenham at end of season as major decisions near
+        </a>
+        
+        <a href="developer-vibe-codes-windows-11-alternative-operating-system-for--23994.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #23994. Developer vibe codes Windows 11 alternative operating system for amd64, arm64, and riscv64 hardware
+        </a>
+        
+        <a href="utah-sues-stake-four-days-after-the-site-added-the-state-to-its-b-23792.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #23792. Utah sues Stake four days after the site added the state to its blocked list
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

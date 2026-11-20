@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Report: Floppy3.5: A portable 3.5-inch floppy WiFi NAS</title>
+    <meta name="description" content="Industry observers note that floppy3.5 is a 3.5&quot; floppy disk portable WiFi NAS. It reads photos from the floppy disks of old digital cameras like the Sony ">
+    <meta name="keywords" content="firmware, disk, page, controller, greaseweazle, through, copy, card">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua75/artikel/tech-report-floppy35-a-portable-35-inch-floppy-wifi-nas-16605.html">
+    
+    <meta property="og:title" content="Tech Report: Floppy3.5: A portable 3.5-inch floppy WiFi NAS">
+    <meta property="og:description" content="Industry observers note that floppy3.5 is a 3.5&quot; floppy disk portable WiFi NAS. It reads photos from the floppy disks of old digital cameras like the Sony ">
+    <meta property="og:image" content="https://opengraph.githubassets.com/ec35c943d7387180120f1f8a663c9737926922388b898d194275fd0b15329304/bigcrimping/floppy3.5">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua75/artikel/tech-report-floppy35-a-portable-35-inch-floppy-wifi-nas-16605.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Tech Report: Floppy3.5: A portable 3.5-inch floppy WiFi NAS">
+    <meta name="twitter:description" content="Industry observers note that floppy3.5 is a 3.5&quot; floppy disk portable WiFi NAS. It reads photos from the floppy disks of old digital cameras like the Sony ">
+    <meta name="twitter:image" content="https://opengraph.githubassets.com/ec35c943d7387180120f1f8a663c9737926922388b898d194275fd0b15329304/bigcrimping/floppy3.5">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Tech Report: Floppy3.5: A portable 3.5-inch floppy WiFi NAS", "image": ["https://opengraph.githubassets.com/ec35c943d7387180120f1f8a663c9737926922388b898d194275fd0b15329304/bigcrimping/floppy3.5"], "datePublished": "2026-11-19T14:29:49", "dateModified": "2026-11-20T19:34:26.897575", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua75/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua75/artikel/tech-report-floppy35-a-portable-35-inch-floppy-wifi-nas-16605.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Tech Report: Floppy3.5: A portable 3.5-inch floppy WiFi NAS?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Github."}}, {"@type": "Question", "name": "Which category does 'Tech Report: Floppy3.5: A portable 3.5-inch floppy WiFi NAS' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Tech Report: Floppy3.5: A portable 3.5-inch floppy WiFi NAS</h1>
+        <div class="meta-line">🌐 Source: <strong>Github</strong> &bull; 📅 19 Nov 2026 &bull; ⏱️ 4 min read (808 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>Industry observers note that floppy3.5 is a 3.5" floppy disk portable WiFi NAS.</li><li style='margin-bottom:6px;'>It can read any FAT12 1.44 MB HD disk.</li><li style='margin-bottom:6px;'>In a recent development, the two processors are on one custom PCB.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-16605"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-16605"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-16605"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Tech Report: Floppy3.5: A portable 3.5-inch floppy WiFi NAS" loading="lazy" src="https://opengraph.githubassets.com/ec35c943d7387180120f1f8a663c9737926922388b898d194275fd0b15329304/bigcrimping/floppy3.5" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-16605">Industry observers note that floppy3.5 is a 3.5" floppy disk portable WiFi NAS. It reads photos from
+the floppy disks of old digital cameras like the Sony Mavica. It
+reveals the photos on a web page through WiFi. It can also copy the photos to a
+microSD card expanding the amount of photos you can take on the move.</p>
+<p>It can read any FAT12 1.44 MB HD disk. It highlights the files in the root folder
+of the disk on the web page and can copy them to the SD card.</p>
+<p>In a recent development, the two processors are on one custom PCB. The RP2354A controller uses the
+Greaseweazle host protocol. You
+can also use the gw tool with the controller through the secondary USB. The ESP32-S3
+bridge controls the controller through a custom SPI link. The bridge decodes
+the disk and demonstrates the photos on a web page. Both are OTA updatable.</p>
+<p>▶ Click the picture to see floppy3.5 in action on YouTube.</p>
+<p>The first prototype used an ESP32 development kit, a Greaseweazle-type
+adapter board with the Greaseweazle firmware, and a desktop floppy drive:. <span style="font-size:13px;">(Related: <a href="leading-house-democrat-targets-trumps-inner-circle-for-first-inve-24060.html" style="color:#2563eb; font-weight:600;">Leading House Democrat targets Trump’s inner circle for...</a>)</span></p>
+<p>The current design has the two processors, the charger and the power supplies
+on one PCB and targeting a slimline drive:.</p>
+<p>Firmware files that are ready to install are on the
+GitHub Releases page.</p>
+<p>Parts on the PCB: Refer to the schematic (hardware/schematic.pdf). The
+main parts are:.</p>
+<p>According to recent reports, WARNING: Make sure that the polarity of the battery connector is
+correct before you connect the battery. Incorrect polarity can cause damage
+to the LiPo battery. A damaged LiPo battery can cause a fire.</p>
+<p>The PCB was kindly subsidised by PCBWay, I would have used them anyway so was very happy for their support.</p>
+<p>The 3MF files have a paint line. Use the paint tool of your slicer on this
+line to apply a different color to the front band.</p>
+<p>Get the firmware files from the Releases page.</p>
+<p>When the bridge operates, you can also enhancement the controller through WiFi
+from the web page.</p>
+<p>Bridge (ESP32-S3): You must install the firmware through USB the first
+time:. <span style="font-size:13px;">(Related: <a href="breaking-democrat-hakeem-jeffries-nominated-to-be-first-black-spe-24059.html" style="color:#2563eb; font-weight:600;">Breaking: Democrat Hakeem Jeffries nominated to be firs...</a>)</span></p>
+<p>It has been revealed that after this, you can revision the firmware through WiFi. On the web page, go to
+Rear panel ▸ SHOW ▸ FIRMWARE UPDATE.</p>
+<p id="sec-mid-16605">Controller: You must have pico-sdk 2.x (for the RP2350),
+arm-none-eabi-gcc, CMake and Ninja.</p>
+<p>In a recent development, bridge: You must have ESP-IDF v5.2 or later. The first build
+downloads the managed components (mdns, qrcode and led_strip).</p>
+<p>Use the same procedure for firmware/esp32-bringup/.</p>
+<p>Industry observers note that host tests: These tests do not need a board or a target toolchain. Run
+test/host/build.ps1 in firmware/esp32 or in firmware/rp2354. You can use
+TinyCC, gcc or clang.</p>
+<p>If the password is incorrect the device tries 5 times after it goes
+back to the setup mode.</p>
+<p>Industry observers note that each disk gets a different folder. This is necessary because a camera starts
+the file numbers again at MVC-00001 after you erase the disk. The device
+compares the contents of the files (SHA-256). It does not copy a photo that
+is already on the card. If the card already has a copy of the full disk, the
+device does not copy the disk. To copy the disk again, do a long push on
+SAVE.</p>
+<p>The LCD looks like a segment display. Unused segments and icons show as
+light "ghosts" and come on in dark ink when they are active.</p>
+<p>Status bar (all screens): The icons at the top are, from left to right:.</p>
+<p>The battery level is at the right. Below the icons, the free space on the SD
+card reveals, or NO SD CARD.</p>
+<p>Industry observers note that track map: The 80 cylinders show as 4 rows of 20 columns. Each column
+has two blocks, head 0 on top and head 1 below. Each block is one track:.</p>
+<p>The controller is a USB CDC device with the VID:PID 2E8A:000A. The gw
+tool does not find the device automatically. Thus, you must give the port:.</p>
+<p>Sources indicate that the controller speaks the Greaseweazle protocol by Keir Fraser
+(keirf/greaseweazle), and its firmware
+is a port of the Greaseweazle firmware to the RP2354. The command handling
+follows his firmware closely. The flux engine, the part that reads and writes
+the disk signal, was reworked to use the RP2354's own hardware: PIO programs
+and DMA take the place of the STM32 timers that Greaseweazle uses.</p>
+<p>All the contents of this repository (firmware, PCB files and housing) have
+the Unlicense (public domain).</p>
+<p>Recent findings suggest that the firmware uses these third-party libraries. The libraries are not in this
+repository and they keep their own licenses:.</p>
+<p>Sources indicate that the firmware binaries contain these libraries. Thus, the license notices of
+these libraries apply to the binaries.</p>
+<p id="sec-end-16605">Thanks to PCBWay for subsidising the PCB, most appreciated.</p>
+<p style="margin-top: 25px;">
+<a href="https://github.com/bigcrimping/floppy3.5" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="tech-report-school-teachers-first-deer-with-a-bow-is-this-226-inc-21732.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #21732. Tech Report: School Teacher’s First Deer with a Bow Is This 226-Inch Illinois Giant
+        </a>
+        
+        <a href="tech-report-the-bluetti-apex-200-expandable-portable-power-statio-19084.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #19084. Tech Report: The BLUETTI Apex 200 Expandable Portable Power Station — CleanTechnica Tested
+        </a>
+        
+        <a href="tech-report-the-82-best-walmart-early-black-friday-deals-include--18029.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #18029. Tech Report: The 82 best Walmart early Black Friday deals include $89 AirPods 4 and a $328 75-inch TV
+        </a>
+        
+        <a href="tech-report-this-magnetic-exercise-bike-with-a-15-inch-screen-is--16279.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #16279. Tech Report: This magnetic exercise bike with a 15-inch screen is 19% off on Amazon
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>
