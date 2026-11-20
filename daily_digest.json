@@ -1,0 +1,86 @@
+{
+  "generatedAt": "2026-11-20T10:10:18.421798",
+  "totalArticles": 12459,
+  "categoryBreakdown": {
+    "General": 10101,
+    "AI & Tech": 1048,
+    "Hardware & Chips": 159,
+    "Business & Policy": 596,
+    "Gadgets": 336,
+    "EV & Auto": 219
+  },
+  "topSources": {
+    "Hugging Face": 897,
+    "Co": 856,
+    "Sciencedaily": 210,
+    "Eschoolnews": 200,
+    "Cbssports": 173,
+    "Electrek": 149,
+    "Yahoo": 148,
+    "Dailymail": 138,
+    "Dw": 134,
+    "Realworkfromanywhere": 131
+  },
+  "latestHeadlines": [
+    {
+      "id": 12459,
+      "title": "How to train a latest language model from scratch using Transformers and Tokenizers",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/how-to-train-a-latest-language-model-from-scratch-using-transform-12459.html",
+      "category": "General"
+    },
+    {
+      "id": 12458,
+      "title": "Breaking: How to generate text: using different decoding methods for language generation with Transformers",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/breaking-how-to-generate-text-using-different-decoding-methods-fo-12458.html",
+      "category": "General"
+    },
+    {
+      "id": 12457,
+      "title": "The Reformer - Pushing the limits of language modeling",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/the-reformer-pushing-the-limits-of-language-modeling-12457.html",
+      "category": "General"
+    },
+    {
+      "id": 12456,
+      "title": "Industry News: Block Sparse Matrices for Smaller and Faster Language Models",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/industry-news-block-sparse-matrices-for-smaller-and-faster-langua-12456.html",
+      "category": "General"
+    },
+    {
+      "id": 12455,
+      "title": "Transformer-based Encoder-Decoder Models",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/transformer-based-encoder-decoder-models-12455.html",
+      "category": "General"
+    },
+    {
+      "id": 12454,
+      "title": "Hyperparameter Search with Transformers and Ray Tune",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/hyperparameter-search-with-transformers-and-ray-tune-12454.html",
+      "category": "General"
+    },
+    {
+      "id": 12453,
+      "title": "Porting fairseq wmt19 translation system to transformers",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/porting-fairseq-wmt19-translation-system-to-transformers-12453.html",
+      "category": "General"
+    },
+    {
+      "id": 12452,
+      "title": "Leveraging Pre-trained Language Model Checkpoints for Encoder-Decoder Models",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/leveraging-pre-trained-language-model-checkpoints-for-encoder-dec-12452.html",
+      "category": "General"
+    },
+    {
+      "id": 12451,
+      "title": "How we sped up transformer inference 100x for 🤗 API customers",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/how-we-sped-up-transformer-inference-100x-for-api-customers-12451.html",
+      "category": "General"
+    },
+    {
+      "id": 12450,
+      "title": "Fit More and Train Faster With ZeRO via DeepSpeed and FairScale",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/fit-more-and-train-faster-with-zero-via-deepspeed-and-fairscale-12450.html",
+      "category": "General"
+    }
+  ]
+}
