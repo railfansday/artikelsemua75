@@ -150,8 +150,8 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-58293">Industry observers note that retrieval-augmented generation (RAG) enhances text generation with a large language model by incorporating fresh domain knowledge stored in an external datastore. Separating your tech giant data from the knowledge learned by language models during training is essential to balance performance, accuracy, and security privacy goals.</p>
-<p>In this blog, you will learn how Intel can help you develop and deploy RAG applications as part of OPEA, the Open Platform for Enterprise AI. You will also discover how Intel Gaudi 2 AI accelerators and Xeon CPUs can significantly enhance enterprise performance through a real-world RAG use case. <span style="font-size:13px;">(Related: <a href="deploy-hugging-face-models-easily-with-amazon-sagemaker-58651.html" style="color:#2563eb; font-weight:600;">Deploy Hugging Face models easily with Amazon SageMaker...</a>)</span></p>
-<p>Sources indicate that on the software side, we will build our application with LangChain, an open-source framework designed to simplify the creation of AI applications with LLMs. It provides template-based solutions, allowing developers to build RAG applications with custom embeddings, vector databases, and LLMs. The LangChain documentation provides more information. Intel has been actively contributing multiple optimizations to LangChain, enabling developers to deploy GenAI applications efficiently on Intel platforms. <span style="font-size:13px;">(Related: <a href="transformer-based-encoder-decoder-models-58672.html" style="color:#2563eb; font-weight:600;">Transformer-based Encoder-Decoder Models...</a>)</span></p>
+<p>In this blog, you will learn how Intel can help you develop and deploy RAG applications as part of OPEA, the Open Platform for Enterprise AI. You will also discover how Intel Gaudi 2 AI accelerators and Xeon CPUs can significantly enhance enterprise performance through a real-world RAG use case. <span style="font-size:13px;">(Related: <a href="intel-diamond-rapids-shows-signs-of-life-in-sc26-demo-running-liv-70083.html" style="color:#2563eb; font-weight:600;">Intel Diamond Rapids shows signs of life in SC26 demo r...</a>)</span></p>
+<p>Sources indicate that on the software side, we will build our application with LangChain, an open-source framework designed to simplify the creation of AI applications with LLMs. It provides template-based solutions, allowing developers to build RAG applications with custom embeddings, vector databases, and LLMs. The LangChain documentation provides more information. Intel has been actively contributing multiple optimizations to LangChain, enabling developers to deploy GenAI applications efficiently on Intel platforms. <span style="font-size:13px;">(Related: <a href="breaking-taco-bell-adds-make-it-flamin-hot-option-for-scorching-c-70100.html" style="color:#2563eb; font-weight:600;">Breaking: Taco Bell adds ‘Make It Flamin’ Hot’ option f...</a>)</span></p>
 <p>In a recent development, in LangChain, we will use the rag-redis template to create our RAG application, with the BAAI/bge-base-en-v1.5 embedding model and Redis as the default vector database. The diagram below highlights the high-level architecture.</p>
 <p>The embedding model will run on an Intel Granite Rapids CPU. The Intel Granite Rapids architecture is optimized to deliver the lowest total cost of ownership (TCO) for high-core performance-sensitive workloads and general-purpose compute workloads. GNR also supports the AMX-FP16 instruction set, resulting in a 2-3x performance increase for mixed AI workloads.</p>
 <p>The LLM will run on an Intel Gaudi 2 accelerator. Regarding Hugging Face models, the Optimum Habana library is the interface between the Hugging Face Transformers and Diffusers libraries and Gaudi. It offers tools for easy model loading, training, and inference on single- and multi-card settings for various downstream tasks.</p>
@@ -214,20 +214,20 @@ We want to thank Chaitanya Khened, Suyue Chen, Mikolaj Zyczynski, Wenjiao Yue, W
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
+        <a href="how-specializing-the-vocabulary-of-slms-can-cut-inference-cost-by-69529.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #69529. How Specializing the Vocabulary of SLMs Can Cut Inference Cost by 77% in Real Applications
+        </a>
+        
+        <a href="breaking-building-apps-with-ai-is-easy-deploying-securing-and-own-69357.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #69357. Breaking: Building apps with AI is easy. Deploying, securing, and owning them is the real challenge. 🚀 A great guide to bridging the gap between AI-generated prototypes and production-ready, self-hosted applications. #AI #DevOps #SelfHosting
+        </a>
+        
         <a href="latest-update-smaller-is-better-q8-chat-an-efficient-generative-a-58461.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #58461. Latest Update: Smaller is better: Q8-Chat, an efficient generative AI experience on Xeon
         </a>
         
         <a href="accelerate-starcoder-with-optimum-intel-on-xeon-q8q4-and-speculat-58349.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #58349. Accelerate StarCoder with 🤗 Optimum Intel on Xeon: Q8/Q4 and Speculative Decoding
-        </a>
-        
-        <a href="text-generation-pipeline-on-intel-gaudi-2-ai-accelerator-58331.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #58331. Text-Generation Pipeline on Intel® Gaudi® 2 AI Accelerator
-        </a>
-        
-        <a href="industry-news-blazing-fast-setfit-inference-with-optimum-intel-on-58315.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #58315. Industry News: Blazing Fast SetFit Inference with 🤗 Optimum Intel on Xeon
         </a>
         
     </div>

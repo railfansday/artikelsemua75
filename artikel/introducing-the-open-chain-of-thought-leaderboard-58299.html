@@ -150,10 +150,10 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-58299">It has been revealed that chain-of-thought prompting is emerging as a powerful and effective design pattern for LLM-based apps and agents. The basic idea of chain-of-thought prompting is to let a model generate a step-by-step solution (“reasoning trace”) before answering a question or taking a decision. With the Open CoT Leaderboard we’re tracking LLMs’ ability to generate effective chain-of-thought traces for challenging reasoning tasks.</p>
-<p>Unlike most performance based leaderboards, we’re not scoring the absolute accuracy a model achieves on a given task, but the difference between the accuracy with and without chain-of-thought prompting:. <span style="font-size:13px;">(Related: <a href="how-to-train-a-new-language-model-from-scratch-using-transformers-58676.html" style="color:#2563eb; font-weight:600;">How to train a new language model from scratch using Tr...</a>)</span></p>
-<p>This allows us to truly inspect the impact that chain-of-thought has on model accuracy. <span style="font-size:13px;">(Related: <a href="leveraging-pre-trained-language-model-checkpoints-for-encoder-dec-58669.html" style="color:#2563eb; font-weight:600;">Leveraging Pre-trained Language Model Checkpoints for E...</a>)</span></p>
+<p>Unlike most performance based leaderboards, we’re not scoring the absolute accuracy a model achieves on a given task, but the difference between the accuracy with and without chain-of-thought prompting:. <span style="font-size:13px;">(Related: <a href="tech-report-ishowspeed-breaks-down-in-tears-after-finishing-gta-6-70077.html" style="color:#2563eb; font-weight:600;">Tech Report: IShowSpeed breaks down in tears after fini...</a>)</span></p>
+<p>This allows us to truly inspect the impact that chain-of-thought has on model accuracy.</p>
 <p>Note: without CoT prompting, we use the loglikelihood accuracy to score the model on multiple choice evaluation.</p>
-<p>It has been revealed that chain-of-thought prompting is a universally applicable prompting strategy that may improve explainability and accuracy of LLM-based apps and agents (see, e.g., this collection for recent research and implementations)). With frameworks like Langchain or LMQL, it’s straightforward to insert sophisticated reasoning chains in your apps. But even if you’ve never heard about chain-of-thought before, you may have noticed, while using a ChatBot, that it tends to proceed step by step before answering your query. So, a systematic, up-to-date comparison of LLMs’ ability to generate effective chain-of-thought traces may inform the decisions of builders and consumers when choosing a model.</p>
+<p>It has been revealed that chain-of-thought prompting is a universally applicable prompting strategy that may improve explainability and accuracy of LLM-based apps and agents (see, e.g., this collection for recent research and implementations)). With frameworks like Langchain or LMQL, it’s straightforward to insert sophisticated reasoning chains in your apps. But even if you’ve never heard about chain-of-thought before, you may have noticed, while using a ChatBot, that it tends to proceed step by step before answering your query. So, a systematic, up-to-date comparison of LLMs’ ability to generate effective chain-of-thought traces may inform the decisions of builders and consumers when choosing a model. <span style="font-size:13px;">(Related: <a href="tech-report-determined-woman-completes-7-marathons-in-a-year-whil-70111.html" style="color:#2563eb; font-weight:600;">Tech Report: “Determined” woman completes 7 marathons i...</a>)</span></p>
 <p>Over time, static "accuracy-based" benchmarks risk becoming less informative: does a model score well because of its superior skill, because it has seen the correct answers during training, or because it has been developed in a competitive context that is governed by this very benchmark? These widely acknowledged problems are addressed by recent eval approaches such as ChatBot arenas, the use of LLMs as judges, or dynamic benchmarks with programmatically generated tasks. We hope the Open CoT Leaderboard contributes to these efforts, notably by being more robust to training data contamination: knowing the answer to a question doesn’t ensure that one can reason effectively about it.</p>
 <p>The Open CoT Leaderboard evaluates LLMs’ ability to generate effective chain-of-thought reasoning traces for the following tasks:.</p>
 <p>Except for the original version of LogiQA, all these tasks are part of the AGIEval benchmark, and have been re-published as logikon-bench.</p>
@@ -204,6 +204,10 @@ D) A school calendar made up of periods of study without long breaks would serve
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
+        <a href="introducing-the-open-arabic-llm-leaderboard-69997.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #69997. Introducing the Open Arabic LLM Leaderboard
+        </a>
+        
         <a href="introducing-the-open-ko-llm-leaderboard-leading-the-korean-llm-ev-58338.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #58338. Introducing the Open Ko-LLM Leaderboard: Leading the Korean LLM Evaluation Ecosystem
         </a>
@@ -214,10 +218,6 @@ D) A school calendar made up of periods of study without long breaks would serve
         
         <a href="introducing-the-open-finllm-leaderboard-58198.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #58198. Introducing the Open FinLLM Leaderboard
-        </a>
-        
-        <a href="tech-report-introducing-the-open-leaderboard-for-japanese-llms-58169.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #58169. Tech Report: Introducing the Open Leaderboard for Japanese LLMs!
         </a>
         
     </div>

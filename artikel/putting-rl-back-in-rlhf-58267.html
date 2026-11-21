@@ -150,10 +150,10 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-58267">We are excited to introduce the RLOO (REINFORCE Leave One-Out) Trainer in TRL. As an alternative to PPO, RLOO is a latest online RLHF training algorithm designed to be more accessible and easier to implement. In particular, RLOO requires less GPU memory and takes less wall time to converge. As shown in the figures below:.</p>
-<p>Recent findings suggest that with RLOO, we bring Reinforcement Learning back into RLHF, enabling the community to explore online RL methods more easily. This is exciting because more and more studies have shown that online RL is more effective than offline methods such as DPO (https://arxiv.org/abs/2402.04792, https://arxiv.org/abs/2405.08448). <span style="font-size:13px;">(Related: <a href="how-to-generate-text-using-different-decoding-methods-for-languag-58675.html" style="color:#2563eb; font-weight:600;">How to generate text: using different decoding methods ...</a>)</span></p>
+<p>Recent findings suggest that with RLOO, we bring Reinforcement Learning back into RLHF, enabling the community to explore online RL methods more easily. This is exciting because more and more studies have shown that online RL is more effective than offline methods such as DPO (https://arxiv.org/abs/2402.04792, https://arxiv.org/abs/2405.08448).</p>
 <p>This blog post will explain the motivation behind the RLOO Trainer, how it works, and how to use it in TRL.</p>
-<p>PPO is an effective online RLHF training algorithm that is used to train state-of-the-art models such as GPT-4. However, PPO can be quite challenging to use in practice due to its high GPU memory requirements. In particular, PPO needs to load 4 copies of the models into the memory: 1) the policy model, 2) the reference policy model, 3) the reward model, and 4) the value model, as shown in the following figure. PPO also has many subtle implementation details that can be difficult to get right (Engstrom et al; 2020, Huang et al 2022). <span style="font-size:13px;">(Related: <a href="how-to-train-a-new-language-model-from-scratch-using-transformers-58676.html" style="color:#2563eb; font-weight:600;">How to train a new language model from scratch using Tr...</a>)</span></p>
-<p>In a new paper from Cohere, Ahmadian et al. (2024) revisited the basics of RLHF training and proposed a more elegant method called RLOO, a new online training algorithm. RLOO only needs to load 3 copies of the models into the memory: 1) the policy model, 2) the reference policy model, and 3) the reward model, as shown in the figure above.</p>
+<p>PPO is an effective online RLHF training algorithm that is used to train state-of-the-art models such as GPT-4. However, PPO can be quite challenging to use in practice due to its high GPU memory requirements. In particular, PPO needs to load 4 copies of the models into the memory: 1) the policy model, 2) the reference policy model, 3) the reward model, and 4) the value model, as shown in the following figure. PPO also has many subtle implementation details that can be difficult to get right (Engstrom et al; 2020, Huang et al 2022). <span style="font-size:13px;">(Related: <a href="breaking-la-noire-2-leak-resurfaces-after-source-gets-gta-6-endin-70081.html" style="color:#2563eb; font-weight:600;">Breaking: LA Noire 2 leak resurfaces after source gets ...</a>)</span></p>
+<p>In a new paper from Cohere, Ahmadian et al. (2024) revisited the basics of RLHF training and proposed a more elegant method called RLOO, a new online training algorithm. RLOO only needs to load 3 copies of the models into the memory: 1) the policy model, 2) the reference policy model, and 3) the reward model, as shown in the figure above. <span style="font-size:13px;">(Related: <a href="animal-control-called-to-rescue-alligator-that-turned-out-to-be-a-70105.html" style="color:#2563eb; font-weight:600;">Animal control called to rescue alligator that turned o...</a>)</span></p>
 <p>Importantly, RLOO requires less memory, meaning it’s easier to.</p>
 <p>Recent findings suggest that furthermore, RLOO models the entire completion tokens as a single action, as illustrated in the figure below. In the next section, we will dive into further detail with code snippets.</p>
 <p>Both RLOO and PPO have several shared steps:.</p>
@@ -202,20 +202,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="putting-ethical-principles-at-the-core-of-the-research-lifecycle-58596.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #58596. Putting ethical principles at the core of the research lifecycle
+        <a href="the-sideload-052-pebbles-back-now-what-70097.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #70097. The Sideload 052: Pebble’s back. Now what?
         </a>
         
-        <a href="illustrating-reinforcement-learning-from-human-feedback-rlhf-58522.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #58522. Illustrating Reinforcement Learning from Human Feedback (RLHF)
+        <a href="taco-bell-is-bringing-back-the-steakhouse-boss-burrito-after-fans-70088.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #70088. Taco Bell is bringing back the Steakhouse Boss Burrito after fans win its return
         </a>
         
-        <a href="fine-tuning-20b-llms-with-rlhf-on-a-24gb-consumer-gpu-58488.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #58488. Fine-tuning 20B LLMs with RLHF on a 24GB consumer GPU
+        <a href="breaking-rapidus-reportedly-struggles-to-produce-working-sram-on--69913.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #69913. Breaking: Rapidus reportedly struggles to produce working SRAM on its 2nm node, putting 2027 mass production at risk
         </a>
         
-        <a href="stackllama-a-hands-on-guide-to-train-llama-with-rlhf-58480.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #58480. StackLLaMA: A hands-on guide to train LLaMA with RLHF
+        <a href="hands-on-sonys-walkman-revival-usb-c-headphones-are-back-in-stock-69906.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #69906. Hands-on: Sony’s Walkman-revival USB-C headphones are back in stock and worth a look
         </a>
         
     </div>

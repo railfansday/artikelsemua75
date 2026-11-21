@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NonoDB in practice #2: background jobs with leases and retries, no Redis</title>
+    <meta name="description" content="he second-most-common reason I reach for Redis is a job queue. Not a high-throughput event bus — just &quot;send this email&quot;, &quot;sync this customer&quot;, &quot;generate th">
+    <meta name="keywords" content="worker, same, lease, jobs, queue, claim, running, nonodb">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua75/artikel/nonodb-in-practice-2-background-jobs-with-leases-and-retries-no-r-69381.html">
+    
+    <meta property="og:title" content="NonoDB in practice #2: background jobs with leases and retries, no Redis">
+    <meta property="og:description" content="he second-most-common reason I reach for Redis is a job queue. Not a high-throughput event bus — just &quot;send this email&quot;, &quot;sync this customer&quot;, &quot;generate th">
+    <meta property="og:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F3mefrglhnvsu44159fft.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua75/artikel/nonodb-in-practice-2-background-jobs-with-leases-and-retries-no-r-69381.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="NonoDB in practice #2: background jobs with leases and retries, no Redis">
+    <meta name="twitter:description" content="he second-most-common reason I reach for Redis is a job queue. Not a high-throughput event bus — just &quot;send this email&quot;, &quot;sync this customer&quot;, &quot;generate th">
+    <meta name="twitter:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F3mefrglhnvsu44159fft.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "NonoDB in practice #2: background jobs with leases and retries, no Redis", "image": ["https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F3mefrglhnvsu44159fft.png"], "datePublished": "2026-11-21T21:40:27", "dateModified": "2026-11-21T21:53:36.337500", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua75/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua75/artikel/nonodb-in-practice-2-background-jobs-with-leases-and-retries-no-r-69381.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding NonoDB in practice #2: background jobs with leases and retries, no Redis?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Dev."}}, {"@type": "Question", "name": "Which category does 'NonoDB in practice #2: background jobs with leases and retri' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>NonoDB in practice #2: background jobs with leases and retries, no Redis</h1>
+        <div class="meta-line">🌐 Source: <strong>Dev</strong> &bull; 📅 21 Nov 2026 &bull; ⏱️ 4 min read (878 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>he second-most-common reason I reach for Redis is a job queue.</li><li style='margin-bottom:6px;'>Not a high-throughput event bus — just "send this email", "sync this customer",
+"generate this PDF".</li><li style='margin-bottom:6px;'>There is a middle path that fits the same small deployment as the app: keep the
+jobs in the same database as the data, and make the queue semantics explicit
+with a single atomic operation.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-69381"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-69381"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-69381"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="NonoDB in practice #2: background jobs with leases and retries, no Redis" loading="lazy" src="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F3mefrglhnvsu44159fft.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-69381">he second-most-common reason I reach for Redis is a job queue.</p>
+<p>Not a high-throughput event bus — just "send this email", "sync this customer",
+"generate this PDF". A few hundred jobs a day on a single VM. And yet the
+default advice is to add BullMQ or Sidekiq, which means adding Redis, which
+means another process to monitor, another persistence model to reason about,
+and another backup job nobody wrote.</p>
+<p>There is a middle path that fits the same small deployment as the app: keep the
+jobs in the same database as the data, and make the queue semantics explicit
+with a single atomic operation.</p>
+<p>In this post we build a durable job queue with:. <span style="font-size:13px;">(Related: <a href="build-a-racetrack-codes-november-2026-70084.html" style="color:#2563eb; font-weight:600;">Build A Racetrack codes (November 2026)...</a>)</span></p>
+<p>According to recent reports, the database is NonoDB, a single Rust daemon over LMDB. The same pattern works
+against any document store with an atomic find-and-upgrade, but NonoDB's
+find_and_modify makes the claim a one-liner. <span style="font-size:13px;">(Related: <a href="google-home-speakers-get-a-major-gemini-upgrade-soon-but-only-for-70089.html" style="color:#2563eb; font-weight:600;">Google Home speakers get a major Gemini upgrade ‘soon,’...</a>)</span></p>
+<p>Everything is a document in the _jobs collection. There is no hidden queue
+state.</p>
+<p>It has been revealed that status is one of pending, running, done, failed. due_at is a Unix
+timestamp in milliseconds; a job is claimable when status == "pending" and
+due_at &lt;= now. A claim adds lease_id, lease_until, worker_id, and
+started_at.</p>
+<p>The two operations that matter are:.</p>
+<p>In NonoDB, find_and_modify selects one document, applies the update, and
+returns the image in the same writer transaction. There is no read-modify-write
+gap between "is it pending?" and "mark it running".</p>
+<p>It has been revealed that sort=[("due_at", 1), ("_id", 1)] gives FIFO-ish behavior and a deterministic
+tie-break. With the compound index below, the claim is an index range scan, not
+a collection scan:.</p>
+<p>Industry observers note that if claim_job returns None, there is nothing due. Sleep, then poll again. That is the whole scheduler.</p>
+<p>Industry observers note that the important detail is that this remains correct with N workers. The writer is
+serialized; the first transaction flips the job to running, and the next
+worker's filter no longer matches it. No SELECT ... FOR REVISION SKIP LOCKED, no
+Lua script, no distributed lock service.</p>
+<p>According to recent reports, A lease without fencing is a bug waiting for a slow handler. Suppose worker A
+claims a job with a 60-second lease, then pauses for 90 seconds — GC, a slow
+HTTP call, a container freeze. Worker B recovers the expired lease and starts
+the same job. Now A wakes up and writes "done".</p>
+<p>The job runs twice and the bookkeeping lies about who finished it. That is why
+every claim writes a fresh lease_id and every completion filters on it:.</p>
+<p>If worker B recovered the lease, it overwrote lease_id. Worker A's update
+matches zero documents and returns False. A can log "lost lease, discard
+result" and move on. The unique fence per claim is what makes the lease safe,
+not the timestamp.</p>
+<p id="sec-mid-69381">Use find_and_modify with remove=True instead of an patch when the job
+document should disappear on success.</p>
+<p>A failed handler should not spin. Return the job to pending with a growing
+due_at, up to max_attempts:.</p>
+<p>Again, the filter includes lease_id. A worker that lost its lease cannot mark
+someone else's job as failed.</p>
+<p>It has been revealed that crashed workers leave jobs stuck in running. A periodic sweep moves them back
+to pending:.</p>
+<p>update(multi=True) is one transaction, so the sweep cannot interleave with a
+claim that is already in flight. Run it at worker startup and every 30 seconds
+while running.</p>
+<p>Sources indicate that does the recovered job double-run? It may, if the original worker is still
+alive. That is exactly why handlers must be idempotent. The fence protects the
+queue state; it cannot un-send an email. At-least-once is the honest contract.</p>
+<p>The producer side is a plain insert, but production code usually needs one of
+two guarantees.</p>
+<p>Industry observers note that deduplicate by business key. Use a deterministic _id and treat a duplicate
+as success:.</p>
+<p>It has been revealed that A better job_id than a random UUID is f"{job_type}:{entity_id}:{version}". Then "enqueue twice because the request retried" becomes a no-op.</p>
+<p>Write the job with the business change. If an order insert must always
+produce a sync job, a crash between the two writes would silently lose work. NonoDB's write_batch commits both operations or neither:.</p>
+<p>That is a transactional outbox without a separate outbox table and without a
+CDC pipeline.</p>
+<p>The repository ships a small Python helper that implements exactly this
+contract. A handler module is just functions registered by name:.</p>
+<p>It has been revealed that --once claims and runs at most one job, which is handy for a systemd timer if
+the jobs are infrequent. A long-running worker with a one-second poll is the
+low-latency option. The queue semantics are the same either way.</p>
+<p>If you already run Redis for caching, adding BullMQ is cheap. If you need
+hundreds of thousands of jobs per second, per-job priorities with fair
+scheduling, or cross-region workers, use a system built for that.</p>
+<p id="sec-end-69381">But if the real requirement is "a few durable background tasks on the same box
+as the app", a collection with two indexes and one atomic operation is a lot
+less infrastructure than a message broker. The next article takes the same
+daemon and adds an audit trail and one-click undo, again without a second
+database.</p>
+<p style="margin-top: 25px;">
+<a href="https://dev.to/greee/nonodb-in-practice-2-background-jobs-with-leases-and-retries-no-redis-5b7f" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="openenv-in-practice-evaluating-tool-using-agents-in-real-world-en-69909.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #69909. OpenEnv in Practice: Evaluating Tool-Using Agents in Real-World Environments
+        </a>
+        
+        <a href="latest-update-train-ai-models-with-unsloth-and-hugging-face-jobs--69894.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #69894. Latest Update: Train AI models with Unsloth and Hugging Face Jobs for FREE
+        </a>
+        
+        <a href="securing-fastapi-applications-jwt-authentication-and-rate-limitin-69885.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #69885. Securing FastAPI Applications: JWT Authentication and Rate Limiting with Redis
+        </a>
+        
+        <a href="migrating-your-github-ci-to-hugging-face-jobs-69794.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #69794. Migrating Your GitHub CI to Hugging Face Jobs
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

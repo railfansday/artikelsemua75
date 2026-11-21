@@ -1,85 +1,85 @@
 {
-  "generatedAt": "2026-11-21T08:33:59.930436",
-  "totalArticles": 12525,
+  "generatedAt": "2026-11-21T22:21:32.553262",
+  "totalArticles": 12439,
   "categoryBreakdown": {
-    "General": 10148,
-    "AI & Tech": 1038,
-    "Hardware & Chips": 170,
-    "Business & Policy": 618,
-    "Gadgets": 326,
+    "Business & Policy": 606,
+    "General": 10099,
+    "Gadgets": 336,
+    "AI & Tech": 1002,
+    "Hardware & Chips": 171,
     "EV & Auto": 225
   },
   "topSources": {
-    "Hugging Face": 914,
-    "Co": 914,
-    "Sciencedaily": 211,
+    "Hugging Face": 912,
+    "Co": 846,
+    "Sciencedaily": 212,
     "Eschoolnews": 200,
-    "Cbssports": 173,
+    "Cbssports": 172,
     "Electrek": 149,
-    "Yahoo": 146,
-    "Dailymail": 136,
-    "Dw": 136,
-    "Realworkfromanywhere": 128
+    "Yahoo": 145,
+    "Dw": 139,
+    "Dailymail": 137,
+    "Realworkfromanywhere": 127
   },
   "latestHeadlines": [
     {
-      "id": 58676,
-      "title": "How to train a new language model from scratch using Transformers and Tokenizers",
-      "url": "https://railfansday.github.io/artikelsemua75/artikel/how-to-train-a-new-language-model-from-scratch-using-transformers-58676.html",
+      "id": 70115,
+      "title": "The one thing Putin, Trump and Xi agreed on — fewer limits on major powers",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/the-one-thing-putin-trump-and-xi-agreed-on-fewer-limits-on-major--70115.html",
+      "category": "Business & Policy"
+    },
+    {
+      "id": 70114,
+      "title": "President Trump pardons disgraced MLB star Pete Rose, who died in 2024",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/president-trump-pardons-disgraced-mlb-star-pete-rose-who-died-in--70114.html",
+      "category": "Business & Policy"
+    },
+    {
+      "id": 70113,
+      "title": "Breaking: A child support fight exposed a Trump adviser’s $15 million income",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/breaking-a-child-support-fight-exposed-a-trump-advisers-15-millio-70113.html",
+      "category": "Business & Policy"
+    },
+    {
+      "id": 70112,
+      "title": "Umamusume horse girls are taking over a Denver Broncos NFL game",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/umamusume-horse-girls-are-taking-over-a-denver-broncos-nfl-game-70112.html",
       "category": "General"
     },
     {
-      "id": 58675,
-      "title": "How to generate text: using different decoding methods for language generation with Transformers",
-      "url": "https://railfansday.github.io/artikelsemua75/artikel/how-to-generate-text-using-different-decoding-methods-for-languag-58675.html",
+      "id": 70111,
+      "title": "Tech Report: “Determined” woman completes 7 marathons in a year while pregnant",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/tech-report-determined-woman-completes-7-marathons-in-a-year-whil-70111.html",
       "category": "General"
     },
     {
-      "id": 58674,
-      "title": "Industry News: The Reformer - Pushing the limits of language modeling",
-      "url": "https://railfansday.github.io/artikelsemua75/artikel/industry-news-the-reformer-pushing-the-limits-of-language-modelin-58674.html",
+      "id": 70110,
+      "title": "Breaking: University rolls out $5m smart system that checks who is actually listening in class",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/breaking-university-rolls-out-5m-smart-system-that-checks-who-is--70110.html",
       "category": "General"
     },
     {
-      "id": 58673,
-      "title": "Block Sparse Matrices for Smaller and Faster Language Models",
-      "url": "https://railfansday.github.io/artikelsemua75/artikel/block-sparse-matrices-for-smaller-and-faster-language-models-58673.html",
+      "id": 70109,
+      "title": "Tech Report: School sends out minibus to catch absent pupils playing GTA 6",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/tech-report-school-sends-out-minibus-to-catch-absent-pupils-playi-70109.html",
       "category": "General"
     },
     {
-      "id": 58672,
-      "title": "Transformer-based Encoder-Decoder Models",
-      "url": "https://railfansday.github.io/artikelsemua75/artikel/transformer-based-encoder-decoder-models-58672.html",
+      "id": 70108,
+      "title": "Take-Two CEO is shutting down questions about GTA 7 just days after GTA 6’s launch",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/take-two-ceo-is-shutting-down-questions-about-gta-7-just-days-aft-70108.html",
+      "category": "Business & Policy"
+    },
+    {
+      "id": 70107,
+      "title": "Breaking: Japan launches a ‘dumbphone’ that doesn’t connect to internet and looks like a Nokia brick",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/breaking-japan-launches-a-dumbphone-that-doesnt-connect-to-intern-70107.html",
       "category": "General"
     },
     {
-      "id": 58671,
-      "title": "Hyperparameter Search with Transformers and Ray Tune",
-      "url": "https://railfansday.github.io/artikelsemua75/artikel/hyperparameter-search-with-transformers-and-ray-tune-58671.html",
-      "category": "General"
-    },
-    {
-      "id": 58670,
-      "title": "Porting fairseq wmt19 translation system to transformers",
-      "url": "https://railfansday.github.io/artikelsemua75/artikel/porting-fairseq-wmt19-translation-system-to-transformers-58670.html",
-      "category": "General"
-    },
-    {
-      "id": 58669,
-      "title": "Leveraging Pre-trained Language Model Checkpoints for Encoder-Decoder Models",
-      "url": "https://railfansday.github.io/artikelsemua75/artikel/leveraging-pre-trained-language-model-checkpoints-for-encoder-dec-58669.html",
-      "category": "General"
-    },
-    {
-      "id": 58668,
-      "title": "Breaking: How we sped up transformer inference 100x for 🤗 API customers",
-      "url": "https://railfansday.github.io/artikelsemua75/artikel/breaking-how-we-sped-up-transformer-inference-100x-for-api-custom-58668.html",
-      "category": "General"
-    },
-    {
-      "id": 58667,
-      "title": "Fit More and Train Faster With ZeRO via DeepSpeed and FairScale",
-      "url": "https://railfansday.github.io/artikelsemua75/artikel/fit-more-and-train-faster-with-zero-via-deepspeed-and-fairscale-58667.html",
+      "id": 70106,
+      "title": "Tech Report: GTA 6 players report game-breaking crashes on PS5 and Xbox",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/tech-report-gta-6-players-report-game-breaking-crashes-on-ps5-and-70106.html",
       "category": "General"
     }
   ]

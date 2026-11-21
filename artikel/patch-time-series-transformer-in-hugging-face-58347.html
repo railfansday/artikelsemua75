@@ -154,11 +154,11 @@
  training on the target domain. Subsequently, we will do linear probing and (then) finetuning of
  the pretrained model on the train part of the target data, and will validate the forecasting
  performance on the test part of the target data.</p>
-<p>The PatchTST model was proposed in A Time Series is Worth 64 Words: Long-term Forecasting with Transformers by Yuqi Nie, Nam H. Nguyen, Phanwadee Sinthong, Jayant Kalagnanam and presented at ICLR 2023. <span style="font-size:13px;">(Related: <a href="how-to-train-a-new-language-model-from-scratch-using-transformers-58676.html" style="color:#2563eb; font-weight:600;">How to train a new language model from scratch using Tr...</a>)</span></p>
-<p>At a high level, the model vectorizes individual time series in a batch into patches of a given size and encodes the resulting sequence of vectors via a Transformer that then outputs the prediction length forecast via an appropriate head. <span style="font-size:13px;">(Related: <a href="transformer-based-encoder-decoder-models-58672.html" style="color:#2563eb; font-weight:600;">Transformer-based Encoder-Decoder Models...</a>)</span></p>
+<p>The PatchTST model was proposed in A Time Series is Worth 64 Words: Long-term Forecasting with Transformers by Yuqi Nie, Nam H. Nguyen, Phanwadee Sinthong, Jayant Kalagnanam and presented at ICLR 2023.</p>
+<p>At a high level, the model vectorizes individual time series in a batch into patches of a given size and encodes the resulting sequence of vectors via a Transformer that then outputs the prediction length forecast via an appropriate head.</p>
 <p>The model is based on two key components:.</p>
-<p>The patching design naturally has three-fold benefit:.</p>
-<p>In addition, PatchTST has a modular design to seamlessly support masked time series pre-training as well as direct time series forecasting.</p>
+<p>The patching design naturally has three-fold benefit:. <span style="font-size:13px;">(Related: <a href="three-e-waste-nvidia-v100s-hit-100-tokens-per-second-on-qwen-36-3-70090.html" style="color:#2563eb; font-weight:600;">Three 'e-waste' Nvidia V100s hit 100 tokens per second ...</a>)</span></p>
+<p>In addition, PatchTST has a modular design to seamlessly support masked time series pre-training as well as direct time series forecasting. <span style="font-size:13px;">(Related: <a href="breaking-a-child-support-fight-exposed-a-trump-advisers-15-millio-70113.html" style="color:#2563eb; font-weight:600;">Breaking: A child support fight exposed a Trump adviser...</a>)</span></p>
 <p>This demo requires Hugging Face Transformers for the model, and the IBM tsfm package for auxiliary data pre-processing. We can install both by cloning the tsfm repository and following the below steps.</p>
 <p>Here we train a PatchTST model directly on the Electricity dataset (available from https://github.com/zhouhaoyi/Informer2020), and evaluate its performance.</p>
 <p>In the next cell, please adjust the following parameters to suit your application:.</p>
@@ -207,6 +207,10 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
+        <a href="hugging-face-and-cerebras-bring-gemma-4-to-real-time-voice-ai-69755.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #69755. Hugging Face and Cerebras bring Gemma 4 to real-time voice AI
+        </a>
+        
         <a href="habana-labs-and-hugging-face-partner-to-accelerate-transformer-mo-58612.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #58612. Habana Labs and Hugging Face Partner to Accelerate Transformer Model Training
         </a>
@@ -217,10 +221,6 @@
         
         <a href="hugging-face-and-cloudflare-partner-to-make-real-time-speech-and--58065.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #58065. Hugging Face and Cloudflare Partner to Make Real-Time Speech and Video Seamless with FastRTC
-        </a>
-        
-        <a href="hugging-face-and-cerebras-bring-gemma-4-to-real-time-voice-ai-46883.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #46883. Hugging Face and Cerebras bring Gemma 4 to real-time voice AI
         </a>
         
     </div>

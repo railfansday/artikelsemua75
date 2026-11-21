@@ -150,8 +150,8 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-57765">Intel and Hugging Face collaborated to demonstrate the real-world value of upgrading to Google’s latest C4 Virtual Machine (VM) running on Intel® Xeon® 6 processors (codenamed Granite Rapids (GNR)). We specifically wanted to benchmark improvements in the text generation performance of OpenAI GPT OSS Large Language Model(LLM).</p>
-<p>The results are in, and they are impressive, demonstrating a 1.7x improvement in Total Cost of Ownership(TCO) over the previous-generation Google C3 VM instances. The Google Cloud C4 VM instance further resulted in:. <span style="font-size:13px;">(Related: <a href="how-to-generate-text-using-different-decoding-methods-for-languag-58675.html" style="color:#2563eb; font-weight:600;">How to generate text: using different decoding methods ...</a>)</span></p>
-<p>Industry observers note that GPT OSS is a common name for an open-source Mixture of Experts (MoE) model released by OpenAI. An MoE model is a deep neural network architecture that uses specialized “expert” sub-networks and a “gating network” to decide which experts to use for a given input. MoE models allow you to scale your model capacity efficiently without linearly scaling compute costs. They also allow for specialization, where different “experts” learn different skills, allowing them to adapt to diverse data distributions. <span style="font-size:13px;">(Related: <a href="how-to-train-a-new-language-model-from-scratch-using-transformers-58676.html" style="color:#2563eb; font-weight:600;">How to train a new language model from scratch using Tr...</a>)</span></p>
+<p>The results are in, and they are impressive, demonstrating a 1.7x improvement in Total Cost of Ownership(TCO) over the previous-generation Google C3 VM instances. The Google Cloud C4 VM instance further resulted in:. <span style="font-size:13px;">(Related: <a href="google-home-speakers-get-a-major-gemini-upgrade-soon-but-only-for-70089.html" style="color:#2563eb; font-weight:600;">Google Home speakers get a major Gemini upgrade ‘soon,’...</a>)</span></p>
+<p>Industry observers note that GPT OSS is a common name for an open-source Mixture of Experts (MoE) model released by OpenAI. An MoE model is a deep neural network architecture that uses specialized “expert” sub-networks and a “gating network” to decide which experts to use for a given input. MoE models allow you to scale your model capacity efficiently without linearly scaling compute costs. They also allow for specialization, where different “experts” learn different skills, allowing them to adapt to diverse data distributions. <span style="font-size:13px;">(Related: <a href="breaking-la-noire-2-leak-resurfaces-after-source-gets-gta-6-endin-70081.html" style="color:#2563eb; font-weight:600;">Breaking: LA Noire 2 leak resurfaces after source gets ...</a>)</span></p>
 <p>Even with very large parameters, only a small subset of experts is activated per token, making CPU inference viable.</p>
 <p>Intel and Hugging Face collaborated to merge an expert execution optimization (PR #40304) to eliminate redundant computation where every expert processed all tokens to transformers. This optimization directed each expert to run only on the tokens it is routed to, removing FLOPs waste and improving utilization.</p>
 <p>We benchmarked GPT OSS under a controlled, repeatable generation workload to isolate architectural differences (GCP C4 VMs on Intel Xeon 6 processors (GNR) vs GCP C3 VMs on 4th Gen Intel Xeon Processors (SPR)) and MoE execution efficiency. The focus is steady‑state decoding (per‑token latency) and end‑to‑end normalized throughput with increasing batch size while keeping sequence lengths fixed. All runs use static KV cache and SDPA attention for determinism.</p>
@@ -200,20 +200,20 @@ throughput_C3/vCPUs_C3throughput_C4/vCPUs_C4​=1.7⇒TCO_C4TCO_C3​≈1.7.</p>
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
+        <a href="breaking-pay-for-hugging-face-hub-with-your-google-cloud-account-69438.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #69438. Breaking: Pay for Hugging Face Hub with your Google Cloud Account
+        </a>
+        
         <a href="google-cloud-tpus-made-available-to-hugging-face-users-58248.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #58248. Google Cloud TPUs made available to Hugging Face users
         </a>
         
-        <a href="pay-for-hugging-face-hub-with-your-google-cloud-account-46480.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #46480. Pay for Hugging Face Hub with your Google Cloud Account
+        <a href="run-ai-workloads-on-any-cloud-store-on-hugging-face-zero-egress-s-69747.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #69747. Run AI workloads on any cloud, store on Hugging Face: zero-egress storage with SkyPilot
         </a>
         
         <a href="deploy-gpt-j-6b-for-inference-using-hugging-face-transformers-and-58629.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #58629. Deploy GPT-J 6B for inference using  Hugging Face Transformers and Amazon SageMaker
-        </a>
-        
-        <a href="intel-and-hugging-face-partner-to-democratize-machine-learning-ha-58587.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #58587. Intel and Hugging Face Partner to Democratize Machine Learning Hardware Acceleration
         </a>
         
     </div>

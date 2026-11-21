@@ -150,9 +150,9 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-58302">Meta’s Llama 3, the next iteration of the open-access Llama family, is now released and available at Hugging Face. It's great to see Meta continuing its commitment to open AI, and we’re excited to fully support the launch with comprehensive integration in the Hugging Face ecosystem.</p>
-<p>Llama 3 comes in two sizes: 8B for efficient deployment and development on consumer-size GPU, and 70B for large-scale AI native applications. Both come in base and instruction-tuned variants. In addition to the 4 models, a newly introduced version of Llama Guard was fine-tuned on Llama 3 8B and is released as Llama Guard 2 (safety fine-tune). <span style="font-size:13px;">(Related: <a href="block-sparse-matrices-for-smaller-and-faster-language-models-58673.html" style="color:#2563eb; font-weight:600;">Block Sparse Matrices for Smaller and Faster Language M...</a>)</span></p>
-<p>According to recent reports, we’ve collaborated with Meta to ensure the best integration into the Hugging Face ecosystem. You can find all 5 open-access models (2 base models, 2 fine-tuned &amp; Llama Guard) on the Hub. Among the features and integrations being released, we have:. <span style="font-size:13px;">(Related: <a href="transformer-based-encoder-decoder-models-58672.html" style="color:#2563eb; font-weight:600;">Transformer-based Encoder-Decoder Models...</a>)</span></p>
-<p>According to recent reports, the Llama 3 release introduces 4 new open LLM models by Meta based on the Llama 2 architecture. They come in two sizes: 8B and 70B parameters, each with base (pre-trained) and instruct-tuned versions. All the variants can be run on various types of consumer hardware and have a context length of 8K tokens.</p>
+<p>Llama 3 comes in two sizes: 8B for efficient deployment and development on consumer-size GPU, and 70B for large-scale AI native applications. Both come in base and instruction-tuned variants. In addition to the 4 models, a newly introduced version of Llama Guard was fine-tuned on Llama 3 8B and is released as Llama Guard 2 (safety fine-tune). <span style="font-size:13px;">(Related: <a href="aawireless-releases-newly-introduced-smaller-nexus-and-nano-wirel-70085.html" style="color:#2563eb; font-weight:600;">AAWireless releases newly introduced, smaller Nexus and...</a>)</span></p>
+<p>According to recent reports, we’ve collaborated with Meta to ensure the best integration into the Hugging Face ecosystem. You can find all 5 open-access models (2 base models, 2 fine-tuned &amp; Llama Guard) on the Hub. Among the features and integrations being released, we have:.</p>
+<p>According to recent reports, the Llama 3 release introduces 4 new open LLM models by Meta based on the Llama 2 architecture. They come in two sizes: 8B and 70B parameters, each with base (pre-trained) and instruct-tuned versions. All the variants can be run on various types of consumer hardware and have a context length of 8K tokens. <span style="font-size:13px;">(Related: <a href="three-e-waste-nvidia-v100s-hit-100-tokens-per-second-on-qwen-36-3-70090.html" style="color:#2563eb; font-weight:600;">Three 'e-waste' Nvidia V100s hit 100 tokens per second ...</a>)</span></p>
 <p>In addition to these 4 base models, Llama Guard 2 was also released. Fine-tuned on Llama 3 8B, it’s the latest iteration in the Llama Guard family. Llama Guard 2, built for production use cases, is designed to classify LLM inputs (prompts) as well as LLM responses in order to detect content that would be considered unsafe in a risk taxonomy.</p>
 <p>According to recent reports, A substantial change in Llama 3 compared to Llama 2 is the use of a new tokenizer that expands the vocabulary size to 128,256 (from 32K tokens in the previous version). This larger vocabulary can encode text more efficiently (both for input and output) and potentially yield stronger multilingualism. This comes at a cost, though: the embedding input and output matrices are larger, which accounts for a good portion of the parameter count increase of the small model: it goes from 7B in Llama 2 to 8B in Llama 3. In addition, the 8B version of the model now uses Grouped-Query Attention (GQA), which is an efficient representation that should help with longer contexts.</p>
 <p>It has been revealed that the Llama 3 models were trained ~8x more data on over 15 trillion tokens on a latest mix of publicly available online data on two clusters with 24,000 GPUs. We don’t know the exact details of the training mix, and we can only guess that bigger and more careful data curation was a significant factor in the improved performance. Llama 3 Instruct has been optimized for dialogue applications and was trained on over 10 Million human-annotated data samples with combination of supervised fine-tuning (SFT), rejection sampling, proximal policy optimization (PPO), and direct policy optimization (DPO).</p>
@@ -206,20 +206,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
+        <a href="industry-news-welcome-gemma-googles-new-open-llm-70004.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #70004. Industry News: Welcome Gemma - Google’s new open LLM
+        </a>
+        
+        <a href="tech-report-welcome-muse-spark-open-open-weight-frontier-multimod-69557.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #69557. Tech Report: Welcome Muse Spark Open: open-weight frontier multimodal mixture-of-experts model from Meta
+        </a>
+        
         <a href="welcome-gemma-2-googles-fresh-open-llm-58255.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #58255. Welcome Gemma 2 - Google’s fresh open LLM
         </a>
         
         <a href="welcome-gemma-3-googles-all-latest-multimodal-multilingual-long-c-58089.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #58089. Welcome Gemma 3: Google's all latest multimodal, multilingual, long context open LLM
-        </a>
-        
-        <a href="latest-update-welcome-gemma-googles-new-open-llm-47139.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #47139. Latest Update: Welcome Gemma - Google’s new open LLM
-        </a>
-        
-        <a href="welcome-muse-spark-open-open-weight-frontier-multimodal-mixture-o-46631.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #46631. Welcome Muse Spark Open: open-weight frontier multimodal mixture-of-experts model from Meta
         </a>
         
     </div>

@@ -150,8 +150,8 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-57706">AWS introduced Amazon SageMaker HyperPod Global Inference Gateway on November 20, 2026, giving customers one managed endpoint for inference requests across registered HyperPod clusters in a single AWS Region or multiple Regions. The service selects a cluster using capacity, queue, proximity and error signals, with automatic failover when a cluster becomes unavailable.</p>
-<p>Recent findings suggest that the launch adds a second routing tier above the existing SageMaker HyperPod Inference Gateway. That cluster-level gateway continues to select individual model pods using signals including key-value (KV) cache utilization and queue depth; the new global tier selects the cluster first, while leaving pod selection unchanged. <span style="font-size:13px;">(Related: <a href="how-to-train-a-new-language-model-from-scratch-using-transformers-58676.html" style="color:#2563eb; font-weight:600;">How to train a new language model from scratch using Tr...</a>)</span></p>
-<p>AWS is addressing a capacity-utilization problem: requests can queue on a saturated cluster while already-provisioned GPUs sit idle elsewhere. In its example of four models served across five clusters in two Regions, per-model serving requires clients to track 20 endpoints. Cluster-level gateways cut that to five, while the global gateway provides one. The managed tier removes the need to build and maintain load balancers, DNS and cross-Region networking for this routing, and lets peak traffic overflow to clusters with available capacity. <span style="font-size:13px;">(Related: <a href="block-sparse-matrices-for-smaller-and-faster-language-models-58673.html" style="color:#2563eb; font-weight:600;">Block Sparse Matrices for Smaller and Faster Language M...</a>)</span></p>
+<p>Recent findings suggest that the launch adds a second routing tier above the existing SageMaker HyperPod Inference Gateway. That cluster-level gateway continues to select individual model pods using signals including key-value (KV) cache utilization and queue depth; the new global tier selects the cluster first, while leaving pod selection unchanged. <span style="font-size:13px;">(Related: <a href="tech-report-determined-woman-completes-7-marathons-in-a-year-whil-70111.html" style="color:#2563eb; font-weight:600;">Tech Report: “Determined” woman completes 7 marathons i...</a>)</span></p>
+<p>AWS is addressing a capacity-utilization problem: requests can queue on a saturated cluster while already-provisioned GPUs sit idle elsewhere. In its example of four models served across five clusters in two Regions, per-model serving requires clients to track 20 endpoints. Cluster-level gateways cut that to five, while the global gateway provides one. The managed tier removes the need to build and maintain load balancers, DNS and cross-Region networking for this routing, and lets peak traffic overflow to clusters with available capacity. <span style="font-size:13px;">(Related: <a href="build-a-racetrack-codes-november-2026-70084.html" style="color:#2563eb; font-weight:600;">Build A Racetrack codes (November 2026)...</a>)</span></p>
 <p>Industry observers note that an operator publishes each participating cluster by enabling spec.globalRouting in its existing InferenceGatewayConfig, then calls CreateGlobalInferenceGateway with the clusters to group. Publishing creates a Network Load Balancer, a virtual private cloud (VPC) endpoint service and certificate resources in the customer’s account. An unpublished cluster cannot be added successfully.</p>
 <p>In a recent development, clients send OpenAI-compatible requests signed with AWS Signature Version 4 (SigV4) to the regional endpoint. The gateway authenticates the caller and selects a healthy cluster, AWS PrivateLink carries the request within or across Regions, and the cluster’s Inference Gateway chooses the model pod. SageMaker operates the routing fleet, private endpoints, certificate validation, health checks, authentication and rate limiting; a service-managed publisher on each cluster supplies load metrics.</p>
 <p>For each request, the gateway scores healthy clusters using four configurable signals:.</p>
@@ -194,20 +194,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
+        <a href="building-blocks-for-foundation-model-training-and-inference-on-aw-69824.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #69824. Building Blocks for Foundation Model Training and Inference on AWS
+        </a>
+        
+        <a href="discoformer-one-transformer-for-density-and-score-across-distribu-69763.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #69763. DiScoFormer: One transformer for density and score, across distributions
+        </a>
+        
         <a href="accelerate-bert-inference-with-hugging-face-transformers-and-aws--58618.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #58618. Accelerate BERT inference with Hugging Face Transformers and AWS Inferentia
         </a>
         
         <a href="latest-update-hugging-face-text-generation-inference-available-fo-58346.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #58346. Latest Update: Hugging Face Text Generation Inference available for AWS Inferentia2
-        </a>
-        
-        <a href="aws-adds-managed-cluster-extensions-to-sagemaker-hyperpod-slurm-57704.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #57704. AWS Adds Managed Cluster Extensions to SageMaker HyperPod Slurm
-        </a>
-        
-        <a href="latest-update-building-blocks-for-foundation-model-training-and-i-47010.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #47010. Latest Update: Building Blocks for Foundation Model Training and Inference on AWS
         </a>
         
     </div>

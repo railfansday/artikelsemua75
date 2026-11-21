@@ -150,9 +150,9 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-58253">After some experiments, we were impressed by the performance of Transformers Agents to build agentic systems, so we wanted to see how good it was! We tested using a Code Agent built with the library on the GAIA benchmark, arguably the most difficult and comprehensive agent benchmark… and ended up on top!</p>
-<p>The framework transformers.agents used in this blog post has now been upgraded to the stand-alone library smolagents! The two libraries have very similar APIs, so switching is easy. Go checkout the smolagents introduction blog here. <span style="font-size:13px;">(Related: <a href="how-to-train-a-new-language-model-from-scratch-using-transformers-58676.html" style="color:#2563eb; font-weight:600;">How to train a new language model from scratch using Tr...</a>)</span></p>
-<p>In one sentence: an agent is any system based on an LLM that can call external tools or not, depending on the need for the current use case and iterate on further steps based on the LLM output. Tools can include anything from a Web search API to a Python interpreter. <span style="font-size:13px;">(Related: <a href="transformer-based-encoder-decoder-models-58672.html" style="color:#2563eb; font-weight:600;">Transformer-based Encoder-Decoder Models...</a>)</span></p>
-<p>It has been revealed that for a visual analogy: all programs could be described as graphs. Do A, then do B. If/else switches are forks in the graph, but they do not change its structure. We define agents as the systems where the LLM outputs will change the structure of the graph. An agent decides to call tool A or tool B or nothing, it decides to run one more step or not: these change the structure of the graph. You could integrate an LLM in a fixed workflow, as in LLM judge, without it being an agent system, because the LLM output will not change the structure of the graph.</p>
+<p>The framework transformers.agents used in this blog post has now been upgraded to the stand-alone library smolagents! The two libraries have very similar APIs, so switching is easy. Go checkout the smolagents introduction blog here.</p>
+<p>In one sentence: an agent is any system based on an LLM that can call external tools or not, depending on the need for the current use case and iterate on further steps based on the LLM output. Tools can include anything from a Web search API to a Python interpreter. <span style="font-size:13px;">(Related: <a href="breaking-university-rolls-out-5m-smart-system-that-checks-who-is--70110.html" style="color:#2563eb; font-weight:600;">Breaking: University rolls out $5m smart system that ch...</a>)</span></p>
+<p>It has been revealed that for a visual analogy: all programs could be described as graphs. Do A, then do B. If/else switches are forks in the graph, but they do not change its structure. We define agents as the systems where the LLM outputs will change the structure of the graph. An agent decides to call tool A or tool B or nothing, it decides to run one more step or not: these change the structure of the graph. You could integrate an LLM in a fixed workflow, as in LLM judge, without it being an agent system, because the LLM output will not change the structure of the graph. <span style="font-size:13px;">(Related: <a href="could-meta-fix-its-glasses-privacy-concerns-with-an-led-redesign-70080.html" style="color:#2563eb; font-weight:600;">Could Meta fix its glasses privacy concerns with an LED...</a>)</span></p>
 <p>Here is an illustration for two different system that perform Retrieval Augmented Generation: one is the classical, its graph is fixed. But the other is agentic, one loop in the graph can be repeated as needed.</p>
 <p>In a recent development, agent systems give LLMs superpowers. For more detail, read our earlier blog post on the release of Transformers Agents 2.0.</p>
 <p>GAIA is the most comprehensive benchmark for agents. The questions in GAIA are very difficult and highlight certain difficulties of LLM-based systems.</p>
@@ -217,20 +217,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
+        <a href="tiny-agents-an-mcp-powered-agent-in-50-lines-of-code-69989.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #69989. Tiny Agents: an MCP-powered agent in 50 lines of code
+        </a>
+        
+        <a href="saatvas-luxury-mattresses-are-20-percent-off-for-black-fridayonly-66535.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #66535. Saatva’s Luxury Mattresses Are 20 Percent Off for Black Friday—Only With Our Exclusive Code
+        </a>
+        
         <a href="industry-news-dabstep-data-agent-benchmark-for-multi-step-reasoni-58116.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #58116. Industry News: DABStep: Data Agent Benchmark for Multi-step Reasoning
         </a>
         
         <a href="tiny-agents-in-python-a-mcp-powered-agent-in-70-lines-of-code-58001.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #58001. Tiny Agents in Python: a MCP-powered agent in ~70 lines of code
-        </a>
-        
-        <a href="3lm-a-benchmark-for-arabic-llms-in-stem-and-code-57881.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #57881. 📚 3LM: A Benchmark for Arabic LLMs in STEM and Code
-        </a>
-        
-        <a href="breaking-saatvas-luxury-mattresses-are-20-percent-off-for-black-f-55059.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #55059. Breaking: Saatva’s Luxury Mattresses Are 20 Percent Off for Black Friday—Only With Our Exclusive Code
         </a>
         
     </div>

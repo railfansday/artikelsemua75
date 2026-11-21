@@ -150,8 +150,8 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-57921">In a recent development, TL;DR: The Hugging Face Official MCP Server offers unique customization options for AI Assistants accessing the Hub, along with access to thousands of AI applications through one simple URL. We used MCPs "Streamable HTTP" transport for deployment, and examine in detail the trade-offs that Server Developers have.</p>
-<p>We've learned many things about building a useful MCP server in the last month - we'll describe our journey here. <span style="font-size:13px;">(Related: <a href="latest-update-simple-considerations-for-simple-people-building-fa-58663.html" style="color:#2563eb; font-weight:600;">Latest Update: Simple considerations for simple people ...</a>)</span></p>
-<p>The Model Context Protocol (MCP) is fulfilling its promise of being the standard to connect AI Assistants to the outside world. <span style="font-size:13px;">(Related: <a href="how-to-train-a-new-language-model-from-scratch-using-transformers-58676.html" style="color:#2563eb; font-weight:600;">How to train a new language model from scratch using Tr...</a>)</span></p>
+<p>We've learned many things about building a useful MCP server in the last month - we'll describe our journey here. <span style="font-size:13px;">(Related: <a href="intel-diamond-rapids-shows-signs-of-life-in-sc26-demo-running-liv-70083.html" style="color:#2563eb; font-weight:600;">Intel Diamond Rapids shows signs of life in SC26 demo r...</a>)</span></p>
+<p>The Model Context Protocol (MCP) is fulfilling its promise of being the standard to connect AI Assistants to the outside world. <span style="font-size:13px;">(Related: <a href="breaking-japan-launches-a-dumbphone-that-doesnt-connect-to-intern-70107.html" style="color:#2563eb; font-weight:600;">Breaking: Japan launches a ‘dumbphone’ that doesn’t con...</a>)</span></p>
 <p>At Hugging Face, providing access to the Hub via MCP is an obvious choice, and this article shares our experience developing the hf.co/mcp MCP Server.</p>
 <p>According to recent reports, the community uses the Hub for research, development, content creation and more. We wanted to let people customize the server for their own needs, as well as easily access thousands of AI applications available on Spaces. This meant making the MCP Server dynamic by adjusting users' tools on the fly.</p>
 <p>We also wanted to make access simple by avoiding complicated downloads and configuration, so making it remotely accessible via a simple URL was a must.</p>
@@ -215,20 +215,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="faster-tensorflow-models-in-hugging-face-transformers-58666.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #58666. Faster TensorFlow models in Hugging Face Transformers
+        <a href="latest-update-train-ai-models-with-unsloth-and-hugging-face-jobs--69894.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #69894. Latest Update: Train AI models with Unsloth and Hugging Face Jobs for FREE
         </a>
         
-        <a href="hugging-face-on-pytorch-xla-tpus-58665.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #58665. Hugging Face on PyTorch / XLA TPUs
+        <a href="introducing-storage-buckets-on-the-hugging-face-hub-69874.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #69874. Introducing Storage Buckets on the Hugging Face Hub
         </a>
         
-        <a href="hugging-face-reads-feb-2021-long-range-transformers-58662.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #58662. Hugging Face Reads, Feb. 2021 - Long-range Transformers
+        <a href="industry-news-state-of-open-source-on-hugging-face-spring-2026-69871.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #69871. Industry News: State of Open Source on Hugging Face: Spring 2026
         </a>
         
-        <a href="fine-tune-wav2vec2-for-english-asr-in-hugging-face-with-transform-58661.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #58661. Fine-Tune Wav2Vec2 for English ASR in Hugging Face with 🤗 Transformers
+        <a href="latest-update-deepinfra-on-hugging-face-inference-providers-69829.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #69829. Latest Update: DeepInfra on Hugging Face Inference Providers 🔥
         </a>
         
     </div>
