@@ -150,8 +150,8 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-34664">It has been revealed that research agents are rapidly becoming one of the most key applications of AI. Research is a foundational knowledge-work task: collecting, reading, and synthesizing information underpins everything from writing and decision-making to coding itself. Yet human-driven research is constrained by memory, reading speed, and time. AI research agents, by contrast, can process vast amounts of information, synthesize insights instantly, and scale effortlessly. Because of this, research agents are emerging as a top use case for AI today and will soon become a core subcomponent of broader agentic workflows across content generation, coding, sales, and more. In this post, we share the technical and philosophical lessons we’ve learned building a state-of-the-art research agent, and where we believe the field is headed.</p>
-<p>The task of building an agent harness is to create a software layer that enhances a model’s runtime execution through context management, tool invocations, loop control, orchestration, and error handling. Building applications on top of rapidly improving models is, however, a modern engineering challenge. How can we design software today that absorbs the performance gains from future model releases? <span style="font-size:13px;">(Related: <a href="how-to-train-a-latest-language-model-from-scratch-using-transform-35597.html" style="color:#2563eb; font-weight:600;">How to train a latest language model from scratch using...</a>)</span></p>
-<p>This requires forecasting how models will evolve, staying optimistic about their progress, limiting assumptions, and avoiding hand-crafted optimizations. <span style="font-size:13px;">(Related: <a href="why-some-parents-struggle-to-let-their-children-grow-up-m-35607.html" style="color:#2563eb; font-weight:600;">Why Some Parents Struggle To Let Their Children Grow Up...</a>)</span></p>
+<p>The task of building an agent harness is to create a software layer that enhances a model’s runtime execution through context management, tool invocations, loop control, orchestration, and error handling. Building applications on top of rapidly improving models is, however, a modern engineering challenge. How can we design software today that absorbs the performance gains from future model releases? <span style="font-size:13px;">(Related: <a href="tiny-agents-an-mcp-powered-agent-in-50-lines-of-code-47136.html" style="color:#2563eb; font-weight:600;">Tiny Agents: an MCP-powered agent in 50 lines of code...</a>)</span></p>
+<p>This requires forecasting how models will evolve, staying optimistic about their progress, limiting assumptions, and avoiding hand-crafted optimizations. <span style="font-size:13px;">(Related: <a href="tech-report-we-got-claude-to-build-cuda-kernels-and-teach-open-mo-47120.html" style="color:#2563eb; font-weight:600;">Tech Report: We Got Claude to Build CUDA Kernels and te...</a>)</span></p>
 <p>We learned this the hard way seven months ago, when we had to abandon our first attempt at deep research and rebuild the entire system from scratch. The first architecture was complicated and sophisticated (we thought this was a good thing), but its assumptions became bottlenecks when the next generation of models arrived.</p>
 <p>According to recent reports, over the last seven months, model capabilities have quietly but meaningfully evolved (especially in their tool-calling abilities). This single optimization focus has pushed us from workflows to agents. We believe future models will be trained to solve the current pain points of agent developers. Every model is ultimately consumed by a harness, so models should evolve in service of that harness. We hope to see models improve in high-recall summarization (for context compression), tool-calling reliability, and concision in writing.</p>
 <p>Similarly, tools should evolve to support LLMs and widely adopted agent harnesses. The best tools should perform some context engineering on the tool side, abstracted away from the agent. They should return only the most relevant data instead of dumping large volumes of tokens into the context window. As a tool provider, we’ve invested heavily in our advanced search feature, which has context engineering baked in. This in turn lowers hallucinations and latency for the downstream agent processes.</p>
@@ -201,20 +201,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
+        <a href="does-international-art-sell-in-india-dealers-at-art-mumbai-encoun-45887.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #45887. Does international art sell in India? Dealers at Art Mumbai encounter deep pockets but local tastes
+        </a>
+        
+        <a href="industry-news-empire-state-building-glows-gold-for-nasas-voyager--36211.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #36211. Industry News: Empire State Building glows gold for NASA's Voyager spacecraft | Space photo of the day for Nov. 19, 2026
+        </a>
+        
         <a href="tech-report-bert-101-state-of-the-art-nlp-model-explained-35542.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #35542. Tech Report: BERT 101 - State Of The Art NLP Model Explained
         </a>
         
         <a href="starcoder-a-state-of-the-art-llm-for-code-35389.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #35389. StarCoder: A State-of-the-Art LLM for Code
-        </a>
-        
-        <a href="hugging-face-and-amd-partner-on-accelerating-state-of-the-art-mod-35364.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #35364. Hugging Face and AMD partner on accelerating state-of-the-art models for CPU and GPU platforms
-        </a>
-        
-        <a href="industry-news-introducing-idefics-an-open-reproduction-of-state-o-35330.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #35330. Industry News: Introducing IDEFICS: An Open Reproduction of State-of-the-art Visual Langage Model
         </a>
         
     </div>

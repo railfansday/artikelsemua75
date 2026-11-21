@@ -150,9 +150,9 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-34863">Large diffusion models like Flux (a flow-based text-to-image generation model) can create stunning images, but their size can be a hurdle, demanding significant memory and compute resources. Quantization offers a powerful solution, shrinking these models to make them more accessible without drastically compromising performance. But the big question always is: can you actually tell the difference in the final image?</p>
-<p>Before we dive into the technical details of how various quantization backends in Hugging Face Diffusers work, why not test your own perception?</p>
-<p>Industry observers note that we created a setup where you can provide a prompt, and we generate results using both the original, high-precision model (e.g., Flux-dev in BF16) and several quantized versions (BnB 4-bit, BnB 8-bit). The generated images are then presented to you and your challenge is to identify which ones came from the quantized models. <span style="font-size:13px;">(Related: <a href="industry-news-politics-takes-a-toll-on-your-health-what-do-less-s-35633.html" style="color:#2563eb; font-weight:600;">Industry News: Politics Takes A Toll On Your Health — W...</a>)</span></p>
-<p>Often, especially with 8-bit quantization, the differences are subtle and may not be noticeable without close inspection. More aggressive quantization like 4-bit or lower might be more noticeable, but the results can still be good, especially considering the massive memory savings. NF4 often gives the best trade-off though. <span style="font-size:13px;">(Related: <a href="breaking-one-ingredient-in-our-earliest-diets-linked-to-33-lower--35636.html" style="color:#2563eb; font-weight:600;">Breaking: One Ingredient In Our Earliest Diets Linked T...</a>)</span></p>
+<p>Before we dive into the technical details of how various quantization backends in Hugging Face Diffusers work, why not test your own perception? <span style="font-size:13px;">(Related: <a href="diffusers-welcomes-stable-diffusion-3-47137.html" style="color:#2563eb; font-weight:600;">Diffusers welcomes Stable Diffusion 3...</a>)</span></p>
+<p>Industry observers note that we created a setup where you can provide a prompt, and we generate results using both the original, high-precision model (e.g., Flux-dev in BF16) and several quantized versions (BnB 4-bit, BnB 8-bit). The generated images are then presented to you and your challenge is to identify which ones came from the quantized models. <span style="font-size:13px;">(Related: <a href="industry-news-director-of-machine-learning-insights-47146.html" style="color:#2563eb; font-weight:600;">Industry News: Director of Machine Learning Insights...</a>)</span></p>
+<p>Often, especially with 8-bit quantization, the differences are subtle and may not be noticeable without close inspection. More aggressive quantization like 4-bit or lower might be more noticeable, but the results can still be good, especially considering the massive memory savings. NF4 often gives the best trade-off though.</p>
 <p>According to recent reports, building on our previous post, "Memory-efficient Diffusion Transformers with Quanto and Diffusers", this post explores the diverse quantization backends integrated directly into Hugging Face Diffusers. We'll examine how bitsandbytes, GGUF, torchao, Quanto and native FP8 support make large and powerful models more accessible, demonstrating their use with Flux.</p>
 <p>Before diving into the quantization backends, let's introduce the FluxPipeline (using the black-forest-labs/FLUX.1-dev checkpoint) and its components, which we'll be quantizing. Loading the full FLUX.1-dev model in BF16 precision requires approximately 31.447 GB of memory. The main components are:.</p>
 <p>bitsandbytes is a popular and user-friendly library for 8-bit and 4-bit quantization, widely used for LLMs and QLoRA fine-tuning. We can use it for transformer-based diffusion and flow models, too.</p>
@@ -204,20 +204,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="stable-diffusion-with-diffusers-35479.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #35479. Stable Diffusion with 🧨 Diffusers
+        <a href="diffusers-welcomes-stable-diffusion-3-47137.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #47137. Diffusers welcomes Stable Diffusion 3
         </a>
         
-        <a href="industry-news-whats-new-in-diffusers-35474.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #35474. Industry News: What's new in Diffusers? 🎨
+        <a href="introducing-modular-diffusers-composable-building-blocks-for-diff-47096.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #47096. Introducing Modular Diffusers - Composable Building Blocks for Diffusion Pipelines
         </a>
         
-        <a href="training-stable-diffusion-with-dreambooth-using-diffusers-35457.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #35457. Training Stable Diffusion with Dreambooth using Diffusers
+        <a href="bringing-nunchaku-4-bit-diffusion-inference-to-diffusers-46830.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #46830. Bringing Nunchaku 4-bit Diffusion Inference to Diffusers
         </a>
         
-        <a href="breaking-swift-diffusers-fast-stable-diffusion-for-mac-35415.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #35415. Breaking: Swift 🧨Diffusers - Fast Stable Diffusion for Mac
+        <a href="quantization-aware-healing-a-compressed-4-bit-model-that-outperfo-46757.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #46757. Quantization-Aware Healing: a compressed, 4-bit model that outperforms its full-precision original
         </a>
         
     </div>

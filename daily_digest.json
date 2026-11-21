@@ -1,86 +1,86 @@
 {
-  "generatedAt": "2026-11-21T02:02:20.652861",
-  "totalArticles": 12576,
+  "generatedAt": "2026-11-21T05:53:37.436700",
+  "totalArticles": 12515,
   "categoryBreakdown": {
-    "General": 10184,
-    "AI & Tech": 1064,
-    "Hardware & Chips": 165,
-    "Business & Policy": 618,
-    "Gadgets": 321,
-    "EV & Auto": 224
+    "General": 10158,
+    "Business & Policy": 614,
+    "AI & Tech": 1032,
+    "Hardware & Chips": 167,
+    "Gadgets": 318,
+    "EV & Auto": 226
   },
   "topSources": {
-    "Co": 924,
-    "Hugging Face": 914,
-    "Sciencedaily": 209,
+    "Co": 914,
+    "Hugging Face": 912,
+    "Sciencedaily": 211,
     "Eschoolnews": 200,
-    "Cbssports": 171,
+    "Cbssports": 173,
     "Electrek": 149,
     "Yahoo": 147,
+    "Dw": 136,
     "Dailymail": 135,
-    "Dw": 135,
-    "Realworkfromanywhere": 126
+    "Realworkfromanywhere": 128
   },
   "latestHeadlines": [
     {
-      "id": 35636,
-      "title": "Breaking: One Ingredient In Our Earliest Diets Linked To 33% Lower Anxiety Risk Later In Life (M)",
-      "url": "https://railfansday.github.io/artikelsemua75/artikel/breaking-one-ingredient-in-our-earliest-diets-linked-to-33-lower--35636.html",
+      "id": 47151,
+      "title": "Hakeem Jeffries and his team will seek to deliver a new era for House Democrats",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/hakeem-jeffries-and-his-team-will-seek-to-deliver-a-new-era-for-h-47151.html",
       "category": "General"
     },
     {
-      "id": 35635,
-      "title": "The Pedalling Prescription: 12 Ways Cycling Can Change Your Mind (P)",
-      "url": "https://railfansday.github.io/artikelsemua75/artikel/the-pedalling-prescription-12-ways-cycling-can-change-your-mind-p-35635.html",
+      "id": 47150,
+      "title": "Hobbled at home, Trump turns abroad",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/hobbled-at-home-trump-turns-abroad-47150.html",
+      "category": "Business & Policy"
+    },
+    {
+      "id": 47149,
+      "title": "Trump calls Putin and Xi friends. They have other intends.",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/trump-calls-putin-and-xi-friends-they-have-other-intends-47149.html",
+      "category": "Business & Policy"
+    },
+    {
+      "id": 47148,
+      "title": "Anthropic gave $40M to an AI safety group. Most of the candidates it backed won.",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/anthropic-gave-40m-to-an-ai-safety-group-most-of-the-candidates-i-47148.html",
+      "category": "AI & Tech"
+    },
+    {
+      "id": 47147,
+      "title": "Fine-Tune XLSR-Wav2Vec2 for low-resource ASR with 🤗 Transformers",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/fine-tune-xlsr-wav2vec2-for-low-resource-asr-with-transformers-47147.html",
       "category": "General"
     },
     {
-      "id": 35634,
-      "title": "Latest Update: Does Fluoride In Drinking Water Affect Intelligence? What The Evidence Reveals",
-      "url": "https://railfansday.github.io/artikelsemua75/artikel/latest-update-does-fluoride-in-drinking-water-affect-intelligence-35634.html",
+      "id": 47146,
+      "title": "Industry News: Director of Machine Learning Insights",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/industry-news-director-of-machine-learning-insights-47146.html",
       "category": "General"
     },
     {
-      "id": 35633,
-      "title": "Industry News: Politics Takes A Toll On Your Health — What Do Less-Stressed People Do Differently? (M)",
-      "url": "https://railfansday.github.io/artikelsemua75/artikel/industry-news-politics-takes-a-toll-on-your-health-what-do-less-s-35633.html",
+      "id": 47145,
+      "title": "Latest Update: Director of Machine Learning Insights [Part 2: SaaS Edition]",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/latest-update-director-of-machine-learning-insights-part-2-saas-e-47145.html",
       "category": "General"
     },
     {
-      "id": 35632,
-      "title": "3 Dark Personality Traits Linked To Infidelity",
-      "url": "https://railfansday.github.io/artikelsemua75/artikel/3-dark-personality-traits-linked-to-infidelity-35632.html",
+      "id": 47144,
+      "title": "An Introduction to Q-Learning Part 1",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/an-introduction-to-q-learning-part-1-47144.html",
       "category": "General"
     },
     {
-      "id": 35631,
-      "title": "Tech Report: The ADHD Trait That Can Fuel Creativity — If You Know How To Channel It (M)",
-      "url": "https://railfansday.github.io/artikelsemua75/artikel/tech-report-the-adhd-trait-that-can-fuel-creativity-if-you-know-h-35631.html",
-      "category": "General"
+      "id": 47143,
+      "title": "Accelerating PyTorch Transformers with Intel Sapphire Rapids - part 1",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/accelerating-pytorch-transformers-with-intel-sapphire-rapids-part-47143.html",
+      "category": "Hardware & Chips"
     },
     {
-      "id": 35630,
-      "title": "3 Ways To Make Music More Powerful Against Pain (M)",
-      "url": "https://railfansday.github.io/artikelsemua75/artikel/3-ways-to-make-music-more-powerful-against-pain-m-35630.html",
-      "category": "General"
-    },
-    {
-      "id": 35629,
-      "title": "Breaking: The Vitamin Deficiency Linked To Chronic Headaches",
-      "url": "https://railfansday.github.io/artikelsemua75/artikel/breaking-the-vitamin-deficiency-linked-to-chronic-headaches-35629.html",
-      "category": "General"
-    },
-    {
-      "id": 35628,
-      "title": "This 5-Minute Habit Can Calm Your Mind, Spark Curiosity And Connect You With Nature (M)",
-      "url": "https://railfansday.github.io/artikelsemua75/artikel/this-5-minute-habit-can-calm-your-mind-spark-curiosity-and-connec-35628.html",
-      "category": "General"
-    },
-    {
-      "id": 35627,
-      "title": "The Simple Drink Swap Linked To 41% More Weight Loss",
-      "url": "https://railfansday.github.io/artikelsemua75/artikel/the-simple-drink-swap-linked-to-41-more-weight-loss-35627.html",
-      "category": "General"
+      "id": 47142,
+      "title": "At historic summit, Xi and Putin share global stage with weakened Trump",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/at-historic-summit-xi-and-putin-share-global-stage-with-weakened--47142.html",
+      "category": "Business & Policy"
     }
   ]
 }

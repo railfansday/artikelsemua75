@@ -150,10 +150,10 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-34751">Industry observers note that zeroGPU lets anyone spin up powerful Nvidia H200 hardware in Hugging Face Spaces without keeping a GPU locked for idle traffic. It’s efficient, flexible, and ideal for demos but it doesn’t always make full use of everything the GPU and CUDA stack can offer. Generating images or videos can take a significant amount of time. Being able to squeeze out more performance, taking advantage of the H200 hardware, does matter in this case.</p>
-<p>Recent findings suggest that this is where PyTorch ahead-of-time (AoT) compilation comes in. Instead of compiling models on the fly (which doesn’t play nicely with ZeroGPU’s short-lived processes), AoT lets you optimize once and reload instantly. <span style="font-size:13px;">(Related: <a href="one-familiar-item-of-clothing-scored-lowest-for-intelligence-can--35623.html" style="color:#2563eb; font-weight:600;">One Familiar Item Of Clothing Scored Lowest for Intelli...</a>)</span></p>
-<p>The result: snappier demos and a smoother experience, with speedups ranging from 1.3×–1.8× on models like Flux, Wan, and LTX 🔥.</p>
+<p>Recent findings suggest that this is where PyTorch ahead-of-time (AoT) compilation comes in. Instead of compiling models on the fly (which doesn’t play nicely with ZeroGPU’s short-lived processes), AoT lets you optimize once and reload instantly. <span style="font-size:13px;">(Related: <a href="accelerating-pytorch-transformers-with-intel-sapphire-rapids-part-47143.html" style="color:#2563eb; font-weight:600;">Accelerating PyTorch Transformers with Intel Sapphire R...</a>)</span></p>
+<p>The result: snappier demos and a smoother experience, with speedups ranging from 1.3×–1.8× on models like Flux, Wan, and LTX 🔥. <span style="font-size:13px;">(Related: <a href="tech-report-we-got-claude-to-build-cuda-kernels-and-teach-open-mo-47120.html" style="color:#2563eb; font-weight:600;">Tech Report: We Got Claude to Build CUDA Kernels and te...</a>)</span></p>
 <p>According to recent reports, in this post, we’ll show how to wire up Ahead-of-Time (AoT) compilation in ZeroGPU Spaces. We'll explore advanced tricks like FP8 quantization and dynamic shapes, and share working demos you can try right away. If you cannot wait, we invite you to check out some ZeroGPU-powered demos on the zerogpu-aoti organization.</p>
-<p>Pro people and Team / Enterprise org members can create ZeroGPU Spaces, while anyone can freely use them (Pro, Team and Enterprise users get 8x more ZeroGPU quota). <span style="font-size:13px;">(Related: <a href="industry-news-politics-takes-a-toll-on-your-health-what-do-less-s-35633.html" style="color:#2563eb; font-weight:600;">Industry News: Politics Takes A Toll On Your Health — W...</a>)</span></p>
+<p>Pro people and Team / Enterprise org members can create ZeroGPU Spaces, while anyone can freely use them (Pro, Team and Enterprise users get 8x more ZeroGPU quota).</p>
 <p>Spaces is a platform powered by Hugging Face that allows ML practitioners to easily publish demo apps.</p>
 <p>Typical demo apps on Spaces look like:.</p>
 <p>This works great, but ends up reserving a GPU for the Space during its entire lifetime – even when it has no user activity.</p>
@@ -254,20 +254,20 @@ to the Hub, and then using it to build a demo.</p>
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="tech-report-hosting-your-models-and-datasets-on-hugging-face-spac-35565.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #35565. Tech Report: Hosting your Models and Datasets on Hugging Face Spaces using Streamlit
+        <a href="tech-report-30-make-ahead-thanksgiving-breakfast-ideas-46210.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #46210. Tech Report: 30+ Make-Ahead Thanksgiving Breakfast Ideas
         </a>
         
-        <a href="tech-report-visualize-proteins-on-hugging-face-spaces-35478.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #35478. Tech Report: Visualize proteins on Hugging Face Spaces
+        <a href="tech-report-the-zelda-ocarina-of-time-easter-eggs-that-did-and-di-40702.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #40702. Tech Report: The Zelda: Ocarina Of Time Easter Eggs That Did And Did Not Make It Into The 2026 Remake
         </a>
         
-        <a href="tech-report-multivariate-probabilistic-time-series-forecasting-wi-35407.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #35407. Tech Report: Multivariate Probabilistic Time Series Forecasting with Informer
+        <a href="tech-report-slopstrap-make-your-site-look-hastily-vibecoded-46663.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #46663. Tech Report: Slopstrap: Make your site look hastily vibecoded
         </a>
         
-        <a href="industry-news-make-your-llama-generation-time-fly-with-aws-infere-35291.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #35291. Industry News: Make your llama generation time fly with AWS Inferentia2
+        <a href="the-secret-to-make-ahead-pie-crust-pie-crumbs-get-ahead-on-your-p-46332.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #46332. The secret to make-ahead pie crust? Pie crumbs.: Get ahead on your pie baking right now.
         </a>
         
     </div>

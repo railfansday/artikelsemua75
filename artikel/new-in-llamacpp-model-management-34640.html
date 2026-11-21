@@ -151,12 +151,12 @@
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-34640">llama.cpp server now ships with router mode, which lets you dynamically load, unload, and switch between multiple models without restarting.</p>
 <p>Reminder: llama.cpp server is a lightweight, OpenAI-compatible HTTP server for running LLMs locally.</p>
-<p>It has been revealed that this feature was a popular request to bring Ollama-style model management to llama.cpp. It uses a multi-process architecture where each model runs in its own process, so if one model crashes, others remain unaffected. <span style="font-size:13px;">(Related: <a href="how-to-train-a-latest-language-model-from-scratch-using-transform-35597.html" style="color:#2563eb; font-weight:600;">How to train a latest language model from scratch using...</a>)</span></p>
-<p>Start the server in router mode by not specifying a model:.</p>
+<p>It has been revealed that this feature was a popular request to bring Ollama-style model management to llama.cpp. It uses a multi-process architecture where each model runs in its own process, so if one model crashes, others remain unaffected. <span style="font-size:13px;">(Related: <a href="latest-update-introducing-falcon-h1-arabic-pushing-the-boundaries-47130.html" style="color:#2563eb; font-weight:600;">Latest Update: Introducing Falcon-H1-Arabic: Pushing th...</a>)</span></p>
+<p>Start the server in router mode by not specifying a model:. <span style="font-size:13px;">(Related: <a href="h-companys-new-holo2-model-takes-the-lead-in-ui-localization-47116.html" style="color:#2563eb; font-weight:600;">H Company's new Holo2 model takes the lead in UI Locali...</a>)</span></p>
 <p>Sources indicate that this auto-discovers models from your llama.cpp cache (LLAMA_CACHE or ~/.cache/llama.cpp). If you've previously downloaded models via llama-server -hf user/model, they'll be available automatically.</p>
 <p>You can also point to a local directory of GGUF files:.</p>
 <p>On the first request, the server automatically loads the model into memory (loading time depends on model size). Subsequent requests to the same model are instant since it's already loaded.</p>
-<p>Returns all discovered models with their status (loaded, loading, or unloaded). <span style="font-size:13px;">(Related: <a href="why-some-parents-struggle-to-let-their-children-grow-up-m-35607.html" style="color:#2563eb; font-weight:600;">Why Some Parents Struggle To Let Their Children Grow Up...</a>)</span></p>
+<p>Returns all discovered models with their status (loaded, loading, or unloaded).</p>
 <p>All model instances inherit settings from the router:.</p>
 <p>Sources indicate that all loaded models will use 8192 context and full GPU offload. You can also define per-model settings using presets:.</p>
 <p>According to recent reports, the built-in web UI also supports model switching. Just select a model from the dropdown and it loads automatically.</p>
@@ -200,20 +200,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="ggml-and-llamacpp-join-hf-to-ensure-the-long-term-progress-of-loc-23737.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #23737. GGML and llama.cpp join HF to ensure the long-term progress of Local AI
+        <a href="ggml-and-llamacpp-join-hf-to-ensure-the-long-term-progress-of-loc-47101.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #47101. GGML and llama.cpp join HF to ensure the long-term progress of Local AI
         </a>
         
-        <a href="transformers-now-runs-llamacpp-quants-23442.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #23442. Transformers now runs llama.cpp quants
+        <a href="transformers-now-runs-llamacpp-quants-46686.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #46686. Transformers now runs llama.cpp quants
         </a>
         
-        <a href="llamacpp-v100-a-stronger-foundation-for-the-local-ai-ecosystem-23290.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #23290. llama.cpp v1.0.0 : A stronger foundation for the local AI ecosystem
+        <a href="llamacpp-v100-a-stronger-foundation-for-the-local-ai-ecosystem-46451.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #46451. llama.cpp v1.0.0 : A stronger foundation for the local AI ecosystem
         </a>
         
-        <a href="how-to-train-a-latest-language-model-from-scratch-using-transform-35597.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #35597. How to train a latest language model from scratch using Transformers and Tokenizers
+        <a href="h-companys-new-holo2-model-takes-the-lead-in-ui-localization-47116.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #47116. H Company's new Holo2 model takes the lead in UI Localization
         </a>
         
     </div>

@@ -150,10 +150,10 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-34810">Recent findings suggest that TL;DR: The Hugging Face Official MCP Server offers unique customization options for AI Assistants accessing the Hub, along with access to thousands of AI applications through one simple URL. We used MCPs "Streamable HTTP" transport for deployment, and examine in detail the trade-offs that Server Developers have.</p>
-<p>We've learned many things about building a useful MCP server in the last month - we'll describe our journey here.</p>
-<p>The Model Context Protocol (MCP) is fulfilling its promise of being the standard to connect AI Assistants to the outside world. <span style="font-size:13px;">(Related: <a href="this-5-minute-habit-can-calm-your-mind-spark-curiosity-and-connec-35628.html" style="color:#2563eb; font-weight:600;">This 5-Minute Habit Can Calm Your Mind, Spark Curiosity...</a>)</span></p>
+<p>We've learned many things about building a useful MCP server in the last month - we'll describe our journey here. <span style="font-size:13px;">(Related: <a href="architectural-choices-in-chinas-open-source-ai-ecosystem-building-47121.html" style="color:#2563eb; font-weight:600;">Architectural Choices in China's Open-Source AI Ecosyst...</a>)</span></p>
+<p>The Model Context Protocol (MCP) is fulfilling its promise of being the standard to connect AI Assistants to the outside world. <span style="font-size:13px;">(Related: <a href="the-open-evaluation-standard-benchmarking-nvidia-nemotron-3-nano--47134.html" style="color:#2563eb; font-weight:600;">The Open Evaluation Standard: Benchmarking NVIDIA Nemot...</a>)</span></p>
 <p>At Hugging Face, providing access to the Hub via MCP is an obvious choice, and this article shares our experience developing the hf.co/mcp MCP Server.</p>
-<p>In a recent development, the community uses the Hub for research, development, content creation and more. We wanted to let people customize the server for their own needs, as well as easily access thousands of AI applications available on Spaces. This meant making the MCP Server dynamic by adjusting consumers' tools on the fly. <span style="font-size:13px;">(Related: <a href="industry-news-politics-takes-a-toll-on-your-health-what-do-less-s-35633.html" style="color:#2563eb; font-weight:600;">Industry News: Politics Takes A Toll On Your Health — W...</a>)</span></p>
+<p>In a recent development, the community uses the Hub for research, development, content creation and more. We wanted to let people customize the server for their own needs, as well as easily access thousands of AI applications available on Spaces. This meant making the MCP Server dynamic by adjusting consumers' tools on the fly.</p>
 <p>We also wanted to make access simple by avoiding complicated downloads and configuration, so making it remotely accessible via a simple URL was a must.</p>
 <p>Recent findings suggest that when building a remote MCP Server, the first decision is deciding how clients will connect to it. MCP offers several transport options, with different trade-offs. TL;DR: our open source code supports all variants, but for production we chose to go with the most modern one. This section goes through the different options in detail.</p>
 <p>According to recent reports, since its launch in November 2024, MCP has undergone rapid evolution with 3 protocol revisions in 9 months. This has seen the replacement of the SSE Transport with Streamable HTTP, as well as the introduction and rework of authorization.</p>
@@ -215,6 +215,10 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
+        <a href="industry-news-record-train-and-deploy-from-one-place-with-strands-46792.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #46792. Industry News: Record, train, and deploy from one place with Strands Agents, LeRobot, and Hugging Face Storage Buckets
+        </a>
+        
         <a href="industry-news-habana-labs-and-hugging-face-partner-to-accelerate--35533.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #35533. Industry News: Habana Labs and Hugging Face Partner to Accelerate Transformer Model Training
         </a>
@@ -225,10 +229,6 @@
         
         <a href="industry-news-jupyter-x-hugging-face-35406.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #35406. Industry News: Jupyter X Hugging Face
-        </a>
-        
-        <a href="industry-news-how-to-install-and-use-the-hugging-face-unity-api-35390.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #35390. Industry News: How to Install and Use the Hugging Face Unity API
         </a>
         
     </div>

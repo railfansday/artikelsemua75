@@ -150,16 +150,16 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-34788">We are glad to announce a long-awaited quality-of-life improvement: the Hugging Face CLI has been officially renamed from huggingface-cli to hf!</p>
-<p>Recent findings suggest that typing huggingface-cli constantly gets old fast. More importantly, the CLI’s command structure became messy as newly introduced features were added over time (upload, download, cache management, repo management, etc.). Renaming the CLI is a chance to reorganize commands into a clearer, more consistent format.</p>
-<p>Recent findings suggest that we decided not to reinvent the wheel and instead follow a well-known CLI pattern: hf  . This predictable grammar makes the Hugging Face CLI more ergonomic and discoverable, while also setting the stage for upcoming features.</p>
+<p>Recent findings suggest that typing huggingface-cli constantly gets old fast. More importantly, the CLI’s command structure became messy as newly introduced features were added over time (upload, download, cache management, repo management, etc.). Renaming the CLI is a chance to reorganize commands into a clearer, more consistent format. <span style="font-size:13px;">(Related: <a href="tokenization-in-transformers-v5-simpler-clearer-and-more-modular-47133.html" style="color:#2563eb; font-weight:600;">Tokenization in Transformers v5: Simpler, Clearer, and ...</a>)</span></p>
+<p>Recent findings suggest that we decided not to reinvent the wheel and instead follow a well-known CLI pattern: hf  . This predictable grammar makes the Hugging Face CLI more ergonomic and discoverable, while also setting the stage for upcoming features. <span style="font-size:13px;">(Related: <a href="at-historic-summit-xi-and-putin-share-global-stage-with-weakened--47142.html" style="color:#2563eb; font-weight:600;">At historic summit, Xi and Putin share global stage wit...</a>)</span></p>
 <p>To start playing with the fresh CLI, you’ll need to install the latest huggingface_hub version:.</p>
 <p>and reload your terminal session. To test the install completed successfully, run hf version:.</p>
 <p>Next, let’s explore the upcoming syntax with hf --help:.</p>
 <p>In a recent development, as we can see, commands are grouped by "resource" (hf auth, hf cache, hf repo, etc.). We also surface hf upload and hf downloadat the root level since they’re expected to be the most-used commands.</p>
 <p>To dive deeper into any command group, simply append --help:.</p>
-<p id="sec-mid-34788">If you are used to huggingface-cli, most commands will look familiar. The biggest change affects authentication:. <span style="font-size:13px;">(Related: <a href="the-pedalling-prescription-12-ways-cycling-can-change-your-mind-p-35635.html" style="color:#2563eb; font-weight:600;">The Pedalling Prescription: 12 Ways Cycling Can Change ...</a>)</span></p>
+<p id="sec-mid-34788">If you are used to huggingface-cli, most commands will look familiar. The biggest change affects authentication:.</p>
 <p>All auth commands have been grouped together with the existing hf auth switch (to switch between different local profiles) and hf auth list (to list local profiles).</p>
-<p>Industry observers note that the legacy huggingface-cli remains active and fully-functional. We’re keeping it around to ease the transition. If you use any command from the legacy CLI, you’ll see a warning that points you to the new CLI equivalent:. <span style="font-size:13px;">(Related: <a href="industry-news-politics-takes-a-toll-on-your-health-what-do-less-s-35633.html" style="color:#2563eb; font-weight:600;">Industry News: Politics Takes A Toll On Your Health — W...</a>)</span></p>
+<p>Industry observers note that the legacy huggingface-cli remains active and fully-functional. We’re keeping it around to ease the transition. If you use any command from the legacy CLI, you’ll see a warning that points you to the new CLI equivalent:.</p>
 <p>We couldn’t resist shipping our first dedicated command: hf jobs.</p>
 <p>It has been revealed that hugging Face Jobs is a fresh service that lets you run any script or Docker image on Hugging Face Infrastructure using the hardware flavor of your choice. Billing is "pay-as-you-go", meaning you pay only for the seconds you use. Here’s how to launch your first command:.</p>
 <p>The CLI is heavily inspired by Docker’s familiar commands:.</p>
@@ -189,6 +189,10 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
+        <a href="tech-report-welcome-le-chonk-mistral-large-4-on-hugging-face-46546.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #46546. Tech Report: Welcome Le Chonk: Mistral Large 4 on Hugging Face
+        </a>
+        
         <a href="faster-tensorflow-models-in-hugging-face-transformers-35587.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #35587. Faster TensorFlow models in Hugging Face Transformers
         </a>
@@ -199,10 +203,6 @@
         
         <a href="tech-report-visualize-proteins-on-hugging-face-spaces-35478.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #35478. Tech Report: Visualize proteins on Hugging Face Spaces
-        </a>
-        
-        <a href="optimumonnx-runtime-easier-faster-training-for-your-hugging-face--35430.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #35430. Optimum+ONNX Runtime - Easier, Faster training for your Hugging Face models
         </a>
         
     </div>

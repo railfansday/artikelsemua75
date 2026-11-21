@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breaking: Show HN: LZ0 -An asymmetric LZ compressor with ultra minimal, 0-alloc decoder</title>
+    <meta name="description" content="A lightweight, asymmetric LZ compressor designed around an extremely simple, memory-free decoder. LZ0 is an experimental lossless compression format and C ">
+    <meta name="keywords" content="decoder, offset, compression, text, byte, minimal, memory, recent">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua75/artikel/breaking-show-hn-lz0-an-asymmetric-lz-compressor-with-ultra-minim-39749.html">
+    
+    <meta property="og:title" content="Breaking: Show HN: LZ0 -An asymmetric LZ compressor with ultra minimal, 0-alloc decoder">
+    <meta property="og:description" content="A lightweight, asymmetric LZ compressor designed around an extremely simple, memory-free decoder. LZ0 is an experimental lossless compression format and C ">
+    <meta property="og:image" content="https://opengraph.githubassets.com/09cdfa881c4f37fa64d3a7a7986243971435a206b0c5ee1f8a7c359b1a6d9dd3/seb3773/lz0">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua75/artikel/breaking-show-hn-lz0-an-asymmetric-lz-compressor-with-ultra-minim-39749.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Breaking: Show HN: LZ0 -An asymmetric LZ compressor with ultra minimal, 0-alloc decoder">
+    <meta name="twitter:description" content="A lightweight, asymmetric LZ compressor designed around an extremely simple, memory-free decoder. LZ0 is an experimental lossless compression format and C ">
+    <meta name="twitter:image" content="https://opengraph.githubassets.com/09cdfa881c4f37fa64d3a7a7986243971435a206b0c5ee1f8a7c359b1a6d9dd3/seb3773/lz0">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Breaking: Show HN: LZ0 -An asymmetric LZ compressor with ultra minimal, 0-alloc decoder", "image": ["https://opengraph.githubassets.com/09cdfa881c4f37fa64d3a7a7986243971435a206b0c5ee1f8a7c359b1a6d9dd3/seb3773/lz0"], "datePublished": "2026-11-19T19:07:04", "dateModified": "2026-11-21T05:12:31.168804", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua75/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua75/artikel/breaking-show-hn-lz0-an-asymmetric-lz-compressor-with-ultra-minim-39749.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Breaking: Show HN: LZ0 -An asymmetric LZ compressor with ultra minimal, 0-alloc ?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Github."}}, {"@type": "Question", "name": "Which category does 'Breaking: Show HN: LZ0 -An asymmetric LZ compressor with ult' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Breaking: Show HN: LZ0 -An asymmetric LZ compressor with ultra minimal, 0-alloc decoder</h1>
+        <div class="meta-line">🌐 Source: <strong>Github</strong> &bull; 📅 19 Nov 2026 &bull; ⏱️ 4 min read (889 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>A lightweight, asymmetric LZ compressor designed around an extremely simple, memory-free decoder.</li><li style='margin-bottom:6px;'>LZ0 is an experimental lossless compression format and C implementation designed around a single guiding principle:.</li><li style='margin-bottom:6px;'>In a recent development, instead of balancing computational cost equally between compression and decompression, LZ0 deliberately spends more effort during encoding to generate a compact, structured stream that can be decompressed by an ultra-minimal routine.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-39749"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-39749"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-39749"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Breaking: Show HN: LZ0 -An asymmetric LZ compressor with ultra minimal, 0-alloc decoder" loading="lazy" src="https://opengraph.githubassets.com/09cdfa881c4f37fa64d3a7a7986243971435a206b0c5ee1f8a7c359b1a6d9dd3/seb3773/lz0" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-39749">A lightweight, asymmetric LZ compressor designed around an extremely simple, memory-free decoder.</p>
+<p>LZ0 is an experimental lossless compression format and C implementation designed around a single guiding principle:.</p>
+<p>Move complexity from the decoder to the encoder.</p>
+<p>In a recent development, instead of balancing computational cost equally between compression and decompression, LZ0 deliberately spends more effort during encoding to generate a compact, structured stream that can be decompressed by an ultra-minimal routine. The decoder requires no dynamic memory allocation (malloc), maintains minimal state, and processes explicit LZ tokens at hundreds of megabytes per second. <span style="font-size:13px;">(Related: <a href="ai-for-game-development-creating-a-farming-game-in-5-days-part-1-47141.html" style="color:#2563eb; font-weight:600;">AI for Game Development: Creating a Farming Game in 5 D...</a>)</span></p>
+<p>LZ0 is primarily targeted at small-to-medium binary blobs and structured datasets, typically ranging from a few hundred kilobytes to several megabytes.</p>
+<p>Compression algorithms face an inherent multi-dimensional trade-off between compression ratio, encoding speed, decoding speed, and implementation complexity. <span style="font-size:13px;">(Related: <a href="assetopsbench-bridging-the-gap-between-ai-agent-benchmarks-and-in-47124.html" style="color:#2563eb; font-weight:600;">AssetOpsBench: Bridging the Gap Between AI Agent Benchm...</a>)</span></p>
+<p>LZ0 resolves this trade-off strictly from the decoder's perspective:.</p>
+<p>LZ0 occupies a distinct design niche between simple retro LZ formats (like ZX0) and modern adaptive entropy-coded LZ compressors (like UPKR).</p>
+<p>ZX0 established the gold standard for minimal-decoder LZ compression, pairing a byte-by-byte overlapping copy decoder with an optimal-rate dynamic programming parser. However, ZX0's exhaustive search can take several minutes on inputs larger than 1 MiB.</p>
+<p>LZ0 shares ZX0's philosophy of decoder simplicity and Elias-based variable integer coding, but adopts a fundamentally faster encoder architecture (combining a hash chain with an $O(N)$ SA-IS suffix array and a sparse dynamic programming parser) and its own bitstream grammar. This produces comparable ratios in seconds instead of minutes.</p>
+<p>UPKR achieves high compression ratios by coupling LZ matching with adaptive entropy coding (rANS / rABS). This requires the decoder to maintain probability distributions and perform entropy-state updates on every token.</p>
+<p>Industry observers note that LZ0 deliberately eschews adaptive entropy coding. Its decoder processes raw bits and Elias gamma integers, trading a fraction of compression ratio for dramatic simplicity and higher decoding throughput.</p>
+<p>The LZ0 decoder interprets a sequence of four semantic operations:.</p>
+<p>The decoder maintains minimal state:.</p>
+<p>In a recent development, matches are copied byte-by-byte (out[out_pos + i] = out[src + i]). Because src = out_pos - offset, when length &gt; offset the copy automatically repeats earlier bytes. For example, an offset of 1 with a length of 8 expands a single byte into an 8-byte run. Standard non-overlapping memcpy must not be used.</p>
+<p>LZ0 differentiates between the raw compressed bitstream and the on-disk container format.</p>
+<p>Files stored on disk or handled by the lz0 CLI wrap the raw payload in a minimal 8-byte header:.</p>
+<p>Sources indicate that the raw bitstream has no magic bytes, header, or length metadata. It is normative according to docs/LZ0_FORMAT.md.</p>
+<p>Used for variable-length integers ($v \ge 1$):.</p>
+<p>Recent findings suggest that valid offsets satisfy $1 \le \text{offset} \le \text{out_pos}$. Offsets are split into an MSB and an 8-bit remainder:
+$$\text{msb} = \lfloor (\text{offset} - 1) / 256 \rfloor + 1 = ((\text{offset} - 1) \gg 8) + 1$$
+$$\text{rem} = (\text{offset} - 1) \ &amp; \ 255$$.</p>
+<p>Matches with a new offset require $L \ge 2$. Let $v = L - 1$:.</p>
+<p id="sec-mid-39749">Sources indicate that the production encoder configuration is H2C8 (Hash 3 + Chain 8 + SA-IS + Sparse DP $K=2$). It processes data through three distinct stages:.</p>
+<p>Instead of a greedy heuristic or a memory-intensive full DP lattice, LZ0 maintains Pareto-optimal live states per input position ($K=2$ in default -6, and adaptive $K=32/16/8$ in Ultra -9 according to file size).</p>
+<p>The repository provides independent, interoperable decoders tailored for different footprint and throughput requirements:.</p>
+<p>Les décodeurs assembleur introduisent plusieurs innovations micro-architecturales avancées :.</p>
+<p>Architecture à deux moteurs (FAST vs SAFE) :.</p>
+<p>La "Fenêtre de Segment" et Décodage In-Window Étendu ($n \le 15$) :.</p>
+<p>Décodage Elias Gamma sans branchement (Branch-Free) :.</p>
+<p>Lecteur de bits à sentinelle (Décodeurs Compacts) :.</p>
+<p>All decoders adhere to strict safety guarantees:.</p>
+<p>Industry observers note that measured on x86_64 Linux (GCC -O3). Reproducible via make bench_all and make bench_dec. All LZ0 decompressions verified 100% bit-exact against uncompressed originals.</p>
+<p>Comparison on real-world representative files (Canterbury, Silesia, Windows PE, ELF, pre-compressed images/audio, and raw media textures) between LZ0 (default -6 and ultra -9), UPKR, LZ4, and ZX0:.</p>
+<p>In a recent development, key takeaway: LZ0 delivers dense ratios competitive with UPKR on text and binaries while systematically outperforming both UPKR and LZ4 on pre-compressed and high-entropy media (avatar.jpg and break.mp3 with zero inflation). Against LZ4, LZ0 cuts compressed size by 15% to 48%, while providing decompressor throughputs of 400 to 1,355 Mo/s (up to 10,000+ Mo/s on images).</p>
+<p>In embedded scenarios (firmware, game resource packages, packers), multiple disparate files are concatenated into a single continuous binary blob. Under Approach A, the compressed data remains one single continuous LZ0 stream decompressed by freestanding routines (&lt;300 bytes) without container metadata:.</p>
+<p>Measured with make bench_dec (x86-64 native) and make bench_dec_arm64 (AArch64 under QEMU):.</p>
+<p>Key Architectural Takeaways on Decompression Speedup:.</p>
+<p>Measured on in-memory PRNG-generated datasets (docs/BENCHMARKS.md):.</p>
+<p>A standard C11 compiler (gcc or clang) and make are required:.</p>
+<p>The lz0 executable operates on disk files using the LZ01 container:.</p>
+<p>In a recent development, the decompression API does not allocate memory. The caller supplies the destination buffer:.</p>
+<p>This project is licensed under the same terms as the repository root (LICENSE).</p>
+<p id="sec-end-39749">LZ0 builds upon concepts from the LZ77/LZSS compression lineage and takes major inspiration from ZX0 by Einar Saukas, particularly in its commitment to decoder simplicity and Elias-coded offset hierarchies.</p>
+<p style="margin-top: 25px;">
+<a href="https://github.com/seb3773/lz0" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="google-ai-ultra-upgrade-adds-youtube-premium-family-46943.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #46943. Google AI Ultra upgrade adds YouTube Premium Family
+        </a>
+        
+        <a href="samsung-fans-continue-to-hate-on-galaxy-s27-ultra-redesign-46866.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #46866. Samsung fans continue to hate on Galaxy S27 Ultra redesign
+        </a>
+        
+        <a href="is-the-galaxy-s26-ultra-still-a-good-buy-at-the-end-of-2026-46842.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #46842. Is the Galaxy S26 Ultra still a good buy at the end of 2026?
+        </a>
+        
+        <a href="qwen-incidents-show-self-hosted-ai-models-need-stronger-steering-46491.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #46491. Qwen Incidents Show Self-Hosted AI Models Need Stronger Steering
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

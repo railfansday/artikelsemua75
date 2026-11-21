@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breaking: Stop Partitioning Disks by Hand: Practical systemd-repart on Linux</title>
+    <meta name="description" content="Every hand-built Linux image eventually grows the same wart: a shell script that pipes commands into sfdisk, calls partprobe, runs resize2fs, and hopes the">
+    <meta name="keywords" content="partition, root, disk, image, device, filesystem, systemd, which">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua75/artikel/breaking-stop-partitioning-disks-by-hand-practical-systemd-repart-46425.html">
+    
+    <meta property="og:title" content="Breaking: Stop Partitioning Disks by Hand: Practical systemd-repart on Linux">
+    <meta property="og:description" content="Every hand-built Linux image eventually grows the same wart: a shell script that pipes commands into sfdisk, calls partprobe, runs resize2fs, and hopes the">
+    <meta property="og:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fimages.unsplash.com%2Fphoto-1558494949-ef010cbdcc31%3Fw%3D1200%26q%3D80%26auto%3Dformat%26fit%3Dcrop">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua75/artikel/breaking-stop-partitioning-disks-by-hand-practical-systemd-repart-46425.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Breaking: Stop Partitioning Disks by Hand: Practical systemd-repart on Linux">
+    <meta name="twitter:description" content="Every hand-built Linux image eventually grows the same wart: a shell script that pipes commands into sfdisk, calls partprobe, runs resize2fs, and hopes the">
+    <meta name="twitter:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fimages.unsplash.com%2Fphoto-1558494949-ef010cbdcc31%3Fw%3D1200%26q%3D80%26auto%3Dformat%26fit%3Dcrop">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Breaking: Stop Partitioning Disks by Hand: Practical systemd-repart on Linux", "image": ["https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fimages.unsplash.com%2Fphoto-1558494949-ef010cbdcc31%3Fw%3D1200%26q%3D80%26auto%3Dformat%26fit%3Dcrop"], "datePublished": "2026-11-21T05:04:34", "dateModified": "2026-11-21T05:18:28.752300", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua75/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua75/artikel/breaking-stop-partitioning-disks-by-hand-practical-systemd-repart-46425.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Breaking: Stop Partitioning Disks by Hand: Practical systemd-repart on Linux?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Dev."}}, {"@type": "Question", "name": "Which category does 'Breaking: Stop Partitioning Disks by Hand: Practical systemd' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Breaking: Stop Partitioning Disks by Hand: Practical systemd-repart on Linux</h1>
+        <div class="meta-line">🌐 Source: <strong>Dev</strong> &bull; 📅 21 Nov 2026 &bull; ⏱️ 6 min read (1299 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>Every hand-built Linux image eventually grows the same wart: a shell script that pipes commands into sfdisk, calls partprobe, runs resize2fs, and hopes the device really was /dev/sda.</li><li style='margin-bottom:6px;'>Change the disk, add a partition, or boot the same image on a board that enumerates storage differently, and the script either fails halfway or, worse, succeeds against the wrong device.</li><li style='margin-bottom:6px;'>Sources indicate that systemd-repart is the declarative version of that idea.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-46425"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-46425"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-46425"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Breaking: Stop Partitioning Disks by Hand: Practical systemd-repart on Linux" loading="lazy" src="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fimages.unsplash.com%2Fphoto-1558494949-ef010cbdcc31%3Fw%3D1200%26q%3D80%26auto%3Dformat%26fit%3Dcrop" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-46425">Every hand-built Linux image eventually grows the same wart: a shell script that pipes commands into sfdisk, calls partprobe, runs resize2fs, and hopes the device really was /dev/sda.</p>
+<p>It works exactly once. Change the disk, add a partition, or boot the same image on a board that enumerates storage differently, and the script either fails halfway or, worse, succeeds against the wrong device. The deeper problem is that the script encodes positions. What you actually mean is "this disk should have a swap partition and a root partition that fills the rest.". <span style="font-size:13px;">(Related: <a href="training-design-for-text-to-image-models-lessons-from-ablations-47118.html" style="color:#2563eb; font-weight:600;">Training Design for Text-to-Image Models: Lessons from ...</a>)</span></p>
+<p>Sources indicate that systemd-repart is the declarative version of that idea. You write small .conf files describing the partitions that should exist, and the tool makes the partition table match. It is incremental by design: existing partitions are matched by type, missing ones are appended, and when the table already matches the configuration it does nothing at all. It is used to build OS images, and it can run from the initrd to adapt a minimal image to whatever disk it landed on. <span style="font-size:13px;">(Related: <a href="how-to-build-a-healthcare-robot-from-simulation-to-deployment-wit-47135.html" style="color:#2563eb; font-weight:600;">How to Build a Healthcare Robot from Simulation to Depl...</a>)</span></p>
+<p>This is the practical guide: the mental model, three working configurations, and the failure modes that cost people data.</p>
+<p>Start with the boundaries, because they explain most of the confusing behaviour:.</p>
+<p>Recent findings suggest that if you need to shrink a partition, this is the wrong tool. For creating and growing partitions on an image or a fresh disk, it is the right one.</p>
+<p>Definitions live in *.conf files read from:.</p>
+<p>Industry observers note that files are sorted by filename, ignoring the directory prefix. That sort order is the whole configuration language for "which partition is which", so the numeric prefixes (10-, 20-, 50-) are not cosmetic.</p>
+<p>That has a concrete consequence for A/B root setups: two files with Type=root, named 10-root-a.conf and 20-root-b.conf, will bind to the first and second root partitions respectively. Rename 20-root-b.conf to 05-root-b.conf and you have silently swapped which physical partition each definition controls.</p>
+<p>Industry observers note that newly introduced partitions are not necessarily written in table order on disk. The allocator places each one in the smallest free area large enough to satisfy its constraints, so a late-numbered partition can end up physically before an earlier one. Partition numbers stay stable; offsets do not have to be monotonic.</p>
+<p>Sources indicate that this is where most surprises come from. The allocator takes the free space and distributes it according to three settings:.</p>
+<p>The default is a minimum of 10M and no maximum. That single default explains the most common question: "why did my root partition take the entire disk?" Because you said it could.</p>
+<p>Sources indicate that there is also an automatic floor: with Format= set, the minimum is raised to the minimum size of that filesystem. ESP and XBOOTLDR partitions get bumped to 100M on 512-byte-sector images and 260M on 4K-sector images, even if you asked for less.</p>
+<p>systemd-repart defaults to --dry-run=yes. Running it bare does not write anything; it prints what it would do. That is a good default and a terrible surprise when you think you just resized a disk.</p>
+<p>With no positional argument, the tool operates on the block device backing the root filesystem. Inside the initrd it operates on the device backing /sysroot/ instead. --list-devices shows candidate devices, and passing - as the device makes it print the minimum image size for the configuration without touching anything.</p>
+<p>Recent findings suggest that --pretty=yes gives you a human-readable table plus a graphic of the proposed layout. --json=short or --json=pretty gives machine-readable output, including the verity root hash when relevant.</p>
+<p>The classic first-boot adaptation. On a system where the root partition is the last one and there is unused space after it:.</p>
+<p>Preview against the running disk:.</p>
+<p>Then apply and grow the filesystem:.</p>
+<p>It has been revealed that growFileSystem=yes sets bit 59 of the GPT partition entry flags (the Discoverable Partitions Specification "grow file system" flag). systemd-growfs@.service and the x-systemd.growfs fstab option honour that flag, and systemd-growfs grows a mounted filesystem to the full size of its block device. On partition types that support the flag it defaults to on, so the line is documentation as much as configuration.</p>
+<p id="sec-mid-46425">In a recent development, two caveats. First, a partition can only grow into free space immediately after it; if another partition sits behind it, the allocator cannot move things to help. Second, if your root filesystem lives on LVM, md RAID, or another stacked device, there is no GPT "root" partition to match. The packaged unit lists exit code 76 ("can't find the root block device") as a success for exactly this reason.</p>
+<p>Same mechanism, different type. Fixed 4 GiB swap, formatted as swap:.</p>
+<p>Industry observers note that format=swap writes a swap signature; the label is derived from the partition label, which in turn is derived from the partition type when unset. Confirm what you got before wiring it up:.</p>
+<p>Then reference it by label in /etc/fstab:.</p>
+<p>Note that Format= only applies when the partition is newly created. It has no effect on an existing partition, which is why re-running the tool is safe but also why it will never reformat something you already have.</p>
+<p>This is the workflow that replaces image-building shell scripts. Two definitions:.</p>
+<p>Build a minimal image file, populating the root filesystem from a staging directory:.</p>
+<p>According to recent reports, copyFiles= takes source[:target[:options]] and implies Format= if you did not set one (vfat for ESP/XBOOTLDR, ext4 otherwise). Copying stops at filesystem limitations: symlinks, FIFOs, sockets, and device nodes are skipped on vfat with a log message, and UIDs/GIDs are preserved as-is.</p>
+<p>Verify the result without mounting it:.</p>
+<p>Then write it to the target medium with dd or your usual flasher, boot it, and let the on-disk configuration take over.</p>
+<p>Partition UUIDs and the disk UUID are derived by hashing a seed, which by default is the machine ID read from --root=. Images built from the same tree therefore get the same UUIDs. Pass --seed=random when you want them randomized, or an explicit UUID when you need byte-identical rebuilds. This matters for dm-verity and for anything that pins a root hash.</p>
+<p>Encrypt= wraps the partition in LUKS2 before Format= or CopyBlocks= runs, so the filesystem is created inside the encrypted mapping:.</p>
+<p>It has been revealed that encrypt= accepts off, key-file, tpm2, and key-file+tpm2. The LUKS2 UUID is derived from the partition UUID, and the LUKS label defaults to the partition label prefixed with luks- (override with VolumeLabel=, systemd 259+).</p>
+<p>One trap: with Encrypt=key-file and no --key-file=, the empty key is used. That is intentional for provisioning flows where a real passphrase is enrolled later, but it is not what you want on a finished image.</p>
+<p>A partition marked FactoryReset=yes is deleted and recreated empty when the tool runs in factory-reset mode. That mode is triggered by --factory-reset=yes, by systemd.factory_reset=yes on the kernel command line, or by the FactoryResetRequest EFI variable. --can-factory-reset checks whether any partition is marked, exiting zero if so and non-zero otherwise, which is convenient for installer UIs.</p>
+<p>Because it deletes data, treat this as a deliberate feature with a test proposal, not something to enable because it sounds tidy.</p>
+<p>Run these in order the first time you use the tool on real hardware:.</p>
+<p>Recent findings suggest that to restore the table: sudo sfdisk /dev/nvme0n1 &lt; /root/parttable-backup.txt. This restores the partition entries, not filesystem contents, so it is a safety net for table mistakes, not a backup strategy.</p>
+<p>In a recent development, never point --empty=force at a disk you like. It creates a fresh table unconditionally, which in practice means erasing everything.</p>
+<p id="sec-end-46425">For everything else, the payoff is real: the same configuration builds your image, adapts it on first boot, and can be re-run at any time without changing anything. That idempotence is the part shell scripts never quite deliver.</p>
+<p style="margin-top: 25px;">
+<a href="https://dev.to/lyraalishaikh/stop-partitioning-disks-by-hand-practical-systemd-repart-on-linux-1j0i" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="breaking-unlocking-agentic-rl-training-for-gpt-oss-a-practical-re-47123.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #47123. Breaking: Unlocking Agentic RL Training for GPT-OSS: A Practical Retrospective
+        </a>
+        
+        <a href="5-ai-tools-for-creating-audio-led-music-videos-a-practical-workfl-46838.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #46838. 5 AI Tools for Creating Audio-Led Music Videos: A Practical Workflow
+        </a>
+        
+        <a href="xxri-os-explores-the-lowest-end-of-the-linux-desktop-46713.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #46713. XXRI-OS explores the lowest end of the Linux desktop
+        </a>
+        
+        <a href="build-once-run-on-any-agent-a-practical-guide-to-agent-skills-46684.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #46684. Build once, run on any agent: A practical guide to agent skills
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

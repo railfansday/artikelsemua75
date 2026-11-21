@@ -150,8 +150,8 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-34854">In a recent development, TRL supports training LLMs using GRPO, an online learning algorithm recently introduced in the DeepSeekMath paper. In GRPO, the model learns from its own outputs: it generates responses during training, receives feedback, and uses that feedback to improve itself over time.</p>
-<p>This makes generation a critical step in the training loop — and also a major bottleneck. To speed up generation, TRL integrates with vLLM. This combination lets you train powerful models more efficiently in GRPO setup. However, there’s a catch. <span style="font-size:13px;">(Related: <a href="3-ways-to-make-music-more-powerful-against-pain-m-35630.html" style="color:#2563eb; font-weight:600;">3 Ways To Make Music More Powerful Against Pain (M)...</a>)</span></p>
-<p>According to recent reports, before TRL v0.18.0, vLLM was only supported in server mode, running as a separate process on different GPUs from the training job. It communicated with the training script over HTTP, which made the setup modular and easy to use — but also introduced GPU inefficiencies. <span style="font-size:13px;">(Related: <a href="one-familiar-item-of-clothing-scored-lowest-for-intelligence-can--35623.html" style="color:#2563eb; font-weight:600;">One Familiar Item Of Clothing Scored Lowest for Intelli...</a>)</span></p>
+<p>This makes generation a critical step in the training loop — and also a major bottleneck. To speed up generation, TRL integrates with vLLM. This combination lets you train powerful models more efficiently in GRPO setup. However, there’s a catch. <span style="font-size:13px;">(Related: <a href="tech-report-3d-asset-generation-ai-for-game-development-3-47140.html" style="color:#2563eb; font-weight:600;">Tech Report: 3D Asset Generation: AI for Game Developme...</a>)</span></p>
+<p>According to recent reports, before TRL v0.18.0, vLLM was only supported in server mode, running as a separate process on different GPUs from the training job. It communicated with the training script over HTTP, which made the setup modular and easy to use — but also introduced GPU inefficiencies. <span style="font-size:13px;">(Related: <a href="tokenization-in-transformers-v5-simpler-clearer-and-more-modular-47133.html" style="color:#2563eb; font-weight:600;">Tokenization in Transformers v5: Simpler, Clearer, and ...</a>)</span></p>
 <p>This “ping-pong” between training and generation causes:.</p>
 <p>In online learning methods like GRPO — where generation happens constantly — this inefficiency becomes even more painful. You spend more on hardware, but don't get the performance you'd expect.</p>
 <p>So, the key question becomes: Can we share the same GPUs for both training and generation, instead of separating them?</p>
@@ -271,20 +271,20 @@ Allocates gradients in a single memory block, improving memory access and reduci
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="certik-and-columbia-university-bring-math-proofs-to-the-gpu-code--23246.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #23246. CertiK and Columbia University Bring Math Proofs to the GPU Code Behind Every Large AI Model
+        <a href="certik-and-columbia-university-bring-math-proofs-to-the-gpu-code--46446.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #46446. CertiK and Columbia University Bring Math Proofs to the GPU Code Behind Every Large AI Model
         </a>
         
-        <a href="the-technology-behind-bloom-training-35497.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #35497. The Technology Behind BLOOM Training
+        <a href="breaking-unlocking-agentic-rl-training-for-gpt-oss-a-practical-re-47123.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #47123. Breaking: Unlocking Agentic RL Training for GPT-OSS: A Practical Retrospective
         </a>
         
-        <a href="fine-tuning-20b-llms-with-rlhf-on-a-24gb-consumer-gpu-35408.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #35408. Fine-tuning 20B LLMs with RLHF on a 24GB consumer GPU
+        <a href="trl-v10-post-training-library-built-to-move-with-the-field-47077.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #47077. TRL v1.0: Post-Training Library Built to Move with the Field
         </a>
         
-        <a href="industry-news-run-a-chatgpt-like-chatbot-on-a-single-gpu-with-roc-35384.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #35384. Industry News: Run a Chatgpt-like Chatbot on a Single GPU with ROCm
+        <a href="latest-update-running-an-ai-agent-on-a-local-llm-what-i-measured--47043.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #47043. Latest Update: Running an AI Agent on a Local LLM: What I Measured on One GPU
         </a>
         
     </div>

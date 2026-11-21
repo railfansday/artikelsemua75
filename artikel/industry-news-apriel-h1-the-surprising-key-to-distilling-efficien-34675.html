@@ -150,10 +150,10 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-34675">Recent findings suggest that we converted our 15B reasoning model to a Mamba hybrid achieving 2.1x throughput with minimal quality loss. The key? A non-obvious insight about what data to distill on, and why intuition fails here.</p>
-<p>When MiniMax published their M2 post-mortem in October explaining why they abandoned efficient attention at 230B scale, the narrative briefly became "efficient attention is dead." Within days, Kimi Linear proved otherwise. The real lesson: it depends on your constraints. <span style="font-size:13px;">(Related: <a href="latest-update-does-screen-time-harm-teen-mental-health-a-twin-stu-35626.html" style="color:#2563eb; font-weight:600;">Latest Update: Does Screen Time Harm Teen Mental Health...</a>)</span></p>
-<p>Sources indicate that our constraint was simple: we had a strong 15B reasoning model and needed to make it efficient without starting over. No infinite compute for 20T-token pretraining. No luxury of architectural co-design from day one. Just a practical question: can you retrofit efficiency into an existing model through distillation? <span style="font-size:13px;">(Related: <a href="the-simple-drink-swap-linked-to-41-more-weight-loss-35627.html" style="color:#2563eb; font-weight:600;">The Simple Drink Swap Linked To 41% More Weight Loss...</a>)</span></p>
+<p>When MiniMax published their M2 post-mortem in October explaining why they abandoned efficient attention at 230B scale, the narrative briefly became "efficient attention is dead." Within days, Kimi Linear proved otherwise. The real lesson: it depends on your constraints.</p>
+<p>Sources indicate that our constraint was simple: we had a strong 15B reasoning model and needed to make it efficient without starting over. No infinite compute for 20T-token pretraining. No luxury of architectural co-design from day one. Just a practical question: can you retrofit efficiency into an existing model through distillation? <span style="font-size:13px;">(Related: <a href="nvidia-cosmos-reason-2-brings-advanced-reasoning-to-physical-ai-47129.html" style="color:#2563eb; font-weight:600;">NVIDIA Cosmos Reason 2 Brings Advanced Reasoning To Phy...</a>)</span></p>
 <p>Spoilers: yes, but only if you ignore your intuition about what data to use.</p>
-<p>According to recent reports, the Apriel-H1 family: seven checkpoints spanning 25-40 Mamba layers (out of 50 total), showing the complete efficiency-quality frontier. Our flagship Apriel-H1-15b-Thinker-SFT achieves 2.1x throughput with minimal quality loss: MATH500 and MTBench improve a few points (0.90 → 0.92 and 8.30 → 8.58, respectively), while GSM8k (0.97 → 0.95), GPQA (0.59 → 0.55), and AIME24 (0.70 → 0.65) regress slightly. Total training: 76.8B tokens.</p>
+<p>According to recent reports, the Apriel-H1 family: seven checkpoints spanning 25-40 Mamba layers (out of 50 total), showing the complete efficiency-quality frontier. Our flagship Apriel-H1-15b-Thinker-SFT achieves 2.1x throughput with minimal quality loss: MATH500 and MTBench improve a few points (0.90 → 0.92 and 8.30 → 8.58, respectively), while GSM8k (0.97 → 0.95), GPQA (0.59 → 0.55), and AIME24 (0.70 → 0.65) regress slightly. Total training: 76.8B tokens. <span style="font-size:13px;">(Related: <a href="breaking-unlocking-agentic-rl-training-for-gpt-oss-a-practical-re-47123.html" style="color:#2563eb; font-weight:600;">Breaking: Unlocking Agentic RL Training for GPT-OSS: A ...</a>)</span></p>
 <p>Recent findings suggest that apriel-H1-15b-Thinker-SFT (green) vs full-attention teacher (blue). Reasoning quality stays nearly flat across benchmarks while throughput increases 1.89-2.09x depending on context length.</p>
 <p>The full details are in our Apriel-H1 paper. Here, we focus on the key insight that made it work.</p>
 <p>Here's what we initially thought would work: just distill on pretraining data and round it out with some SFT.</p>
@@ -215,20 +215,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="breaking-nphardeval-leaderboard-unveiling-the-reasoning-abilities-35244.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #35244. Breaking: NPHardEval Leaderboard: Unveiling the Reasoning Abilities of Large Language Models through Complexity Classes and Dynamic Updates
+        <a href="olmoearth-v11-a-more-efficient-family-of-earth-observation-models-46997.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #46997. OlmoEarth v1.1: A more efficient family of Earth observation models
         </a>
         
-        <a href="industry-news-unlocking-longer-generation-with-key-value-cache-qu-35159.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #35159. Industry News: Unlocking Longer Generation with Key-Value Cache Quantization
+        <a href="industry-news-time-series-models-in-the-streamhouse-a-latest-fron-46428.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #46428. Industry News: Time-Series Models in the Streamhouse: A Latest Frontier and Use Cases
         </a>
         
-        <a href="industry-news-transformersjs-v3-webgpu-support-fresh-models-tasks-35055.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #35055. Industry News: Transformers.js v3: WebGPU Support, Fresh Models & Tasks, and More…
+        <a href="industry-news-petco-on-hold-ahead-of-upcoming-earnings-results-as-45333.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #45333. Industry News: Petco On Hold Ahead Of Upcoming Earnings Results, As Key Risks Remain
         </a>
         
-        <a href="industry-news-training-and-finetuning-reranker-models-with-senten-34924.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #34924. Industry News: Training and Finetuning Reranker Models with Sentence Transformers
+        <a href="industry-news-what-it-really-means-when-your-mayor-awards-someone-44400.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #44400. Industry News: What It Really Means When Your Mayor Awards Someone the “Key to the City”
         </a>
         
     </div>

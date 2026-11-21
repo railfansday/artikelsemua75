@@ -150,8 +150,8 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-34833">In our previous post, Exploring Quantization Backends in Diffusers, we dived into how various quantization techniques can shrink diffusion models like FLUX.1-dev, making them significantly more accessible for inference without drastically compromising performance. We saw how bitsandbytes, torchao, and others reduce memory footprints for generating images.</p>
-<p>Performing inference is cool, but to make these models truly our own, we also need to be able to fine-tune them. Therefore, in this post, we tackle efficient fine-tuning of these models with peak memory use under ~10 GB of VRAM on a single GPU. This post will guide you through fine-tuning FLUX.1-dev using QLoRA with the diffusers library. We'll showcase results from an NVIDIA RTX 4090. We'll also highlight how FP8 training with torchao can further optimize speed on compatible hardware. <span style="font-size:13px;">(Related: <a href="smart-people-can-still-be-bad-at-maths-these-3-skills-may-explain-35614.html" style="color:#2563eb; font-weight:600;">Smart People Can Still Be Bad At Maths — These 3 Skills...</a>)</span></p>
-<p>We aim to fine-tune black-forest-labs/FLUX.1-dev to adopt the artistic style of Alphonse Mucha, using a small dataset. <span style="font-size:13px;">(Related: <a href="how-to-train-a-latest-language-model-from-scratch-using-transform-35597.html" style="color:#2563eb; font-weight:600;">How to train a latest language model from scratch using...</a>)</span></p>
+<p>Performing inference is cool, but to make these models truly our own, we also need to be able to fine-tune them. Therefore, in this post, we tackle efficient fine-tuning of these models with peak memory use under ~10 GB of VRAM on a single GPU. This post will guide you through fine-tuning FLUX.1-dev using QLoRA with the diffusers library. We'll showcase results from an NVIDIA RTX 4090. We'll also highlight how FP8 training with torchao can further optimize speed on compatible hardware. <span style="font-size:13px;">(Related: <a href="diffusers-welcomes-stable-diffusion-3-47137.html" style="color:#2563eb; font-weight:600;">Diffusers welcomes Stable Diffusion 3...</a>)</span></p>
+<p>We aim to fine-tune black-forest-labs/FLUX.1-dev to adopt the artistic style of Alphonse Mucha, using a small dataset. <span style="font-size:13px;">(Related: <a href="industry-news-community-evals-because-were-done-trusting-black-bo-47115.html" style="color:#2563eb; font-weight:600;">Industry News: Community Evals: Because we're done trus...</a>)</span></p>
 <p>The model consists of three main components:.</p>
 <p>In our QLoRA approach, we focus exclusively on fine-tuning the transformer component. The text encoders and VAE remain frozen throughout training.</p>
 <p>Industry observers note that we used a diffusers training script (slightly modified from here designed for DreamBooth-style LoRA fine-tuning of FLUX models. Also, a shortened version to reproduce the results in this blogpost (and used in the Google Colab) is available here. Let's examine the crucial parts for QLoRA and memory efficiency:.</p>
@@ -239,6 +239,10 @@ The ultimate measure is the generated art. Here are samples from our QLoRA fine-
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
+        <a href="beyond-lora-can-you-beat-the-most-popular-fine-tuning-technique-46923.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #46923. Beyond LoRA: Can you beat the most popular fine-tuning technique?
+        </a>
+        
         <a href="using-lora-for-efficient-stable-diffusion-fine-tuning-35428.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #35428. Using LoRA for Efficient Stable Diffusion Fine-Tuning
         </a>
@@ -247,12 +251,8 @@ The ultimate measure is the generated art. Here are samples from our QLoRA fine-
             📰 #35408. Fine-tuning 20B LLMs with RLHF on a 24GB consumer GPU
         </a>
         
-        <a href="beyond-lora-can-you-beat-the-most-popular-fine-tuning-technique-23612.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #23612. Beyond LoRA: Can you beat the most popular fine-tuning technique?
-        </a>
-        
-        <a href="fine-tuning-clip-with-remote-sensing-satellite-images-and-caption-35564.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #35564. Fine tuning CLIP with Remote Sensing (Satellite) images and captions
+        <a href="bringing-robotics-ai-to-embedded-platforms-dataset-recording-vla--47094.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #47094. Bringing Robotics AI to Embedded Platforms: Dataset Recording, VLA Fine‑Tuning, and On‑Device Optimizations
         </a>
         
     </div>
