@@ -151,8 +151,8 @@
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-24008">In a recent development, A homelab builder benchmarked three used Nvidia V100s on Qwen 3.6 35B, achieving about 100 tokens per second in a custom setup costing $1,042 with just “e-waste” GPUs. The smaller, dense Qwen 3.6 27B manages about 24 tokens per second on the same platform, and the V100s use about half the energy of the same number of P100s for a given job.</p>
 <p>The blog post, “Scaling ‘E-Waste’: LLMs on Multiple Decommissioned GPUs,” compares nine different builds — one to three K80s, P100s, or V100-16GB cards — on a single Supermicro dual-Xeon board. The test uses llama.cpp and covers more than 130 LLM tests, including Qwen 2.5, Gemma 4, and, of course, Qwen 3.6, at Q4/Q8/F16 precisions and from 4K to 128K context sizes. GPU energy per run is also recorded. The builder is “daily driving Qwen 3.6 35B” on the V100s and notes that scaling decommissioned GPUs will only get you so far.</p>
-<p>“E-waste,” in this case, refers to decommissioned enterprise GPUs, which are a popular but somewhat underpowered option when compared to very expensive modern alternatives. The Nvidia Tesla V100s in question are tested as a follow-up to a July round which tested 15 “e-waste” GPUs, and this time the board and CPUs stay the same for every build — the Supermicro X10DRG-Q with two Intel Xeon E5-2687W 12-core CPUs, powered by the Corsair HX1500i PSU. <span style="font-size:13px;">(Related: <a href="what-i-do-every-time-i-get-an-irs-notice-24044.html" style="color:#2563eb; font-weight:600;">What I do every time I get an IRS notice...</a>)</span></p>
-<p>It has been revealed that performance is judged based on what is considered “realtime interaction” which, here, is 70 tokens per second. As to why the number of GPUs is three: Qwen 3.6 35B, the primary tested model, fails on just one or two at Q8, or 8-bit quantization. <span style="font-size:13px;">(Related: <a href="primary-vs-contingent-beneficiary-what039s-the-difference-24043.html" style="color:#2563eb; font-weight:600;">Primary vs Contingent Beneficiary: What's the Diff...</a>)</span></p>
+<p>“E-waste,” in this case, refers to decommissioned enterprise GPUs, which are a popular but somewhat underpowered option when compared to very expensive modern alternatives. The Nvidia Tesla V100s in question are tested as a follow-up to a July round which tested 15 “e-waste” GPUs, and this time the board and CPUs stay the same for every build — the Supermicro X10DRG-Q with two Intel Xeon E5-2687W 12-core CPUs, powered by the Corsair HX1500i PSU. <span style="font-size:13px;">(Related: <a href="one-familiar-item-of-clothing-scored-lowest-for-intelligence-can--35623.html" style="color:#2563eb; font-weight:600;">One Familiar Item Of Clothing Scored Lowest for Intelli...</a>)</span></p>
+<p>It has been revealed that performance is judged based on what is considered “realtime interaction” which, here, is 70 tokens per second. As to why the number of GPUs is three: Qwen 3.6 35B, the primary tested model, fails on just one or two at Q8, or 8-bit quantization. <span style="font-size:13px;">(Related: <a href="how-to-train-a-latest-language-model-from-scratch-using-transform-35597.html" style="color:#2563eb; font-weight:600;">How to train a latest language model from scratch using...</a>)</span></p>
 <p>Here are the given prices, with the note that they aren’t “100% reflective of what you could find on eBay today,” although the totals count only one of the two CPUs and omit RAM, storage, the case, and any cooling.</p>
 <p>The older cards are relatively inexpensive because they “run hot and ship without cooling,” which required the builder to 3D print one blower duct per card and has led to the development of a standalone cooler.</p>
 <p>Industry observers note that the bench itself involves 10 runs of 512 generated tokens per test with context pre-filled to 4K, 32K, 64K, or 128K. Qwen 3.6 35B is a mixture-of-experts (MoE) model, which only activates about 3 billion out of its 35 billion total parameters per token. The numbers that immediately follow are at Q8.</p>
@@ -190,20 +190,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
+        <a href="nvidia-board-reportedly-prepare-to-give-ceo-jensen-huang-the-boot-28969.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #28969. Nvidia board reportedly prepare to give CEO Jensen Huang the boot, as second alleged affair thrusts him closer to seriously lusty Crusader Kings playthrough territory
+        </a>
+        
+        <a href="tech-report-nvidia-board-considering-ousting-ceo-jensen-huang-rep-28925.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #28925. Tech Report: Nvidia board considering ousting CEO Jensen Huang, report claims, as news of a second affair comes to light
+        </a>
+        
+        <a href="latest-update-white-sox-add-dustin-may-on-three-year-525-million--27402.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #27402. Latest Update: White Sox add Dustin May on three-year, $52.5 million contract after Cinderella 2026 season, per report
+        </a>
+        
         <a href="latest-update-nvidia-geforce-driver-bug-reportedly-hammers-ssds-w-24016.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #24016. Latest Update: Nvidia GeForce driver bug reportedly hammers SSDs with up to 30GB of writes per hour
-        </a>
-        
-        <a href="latest-update-nvidia-board-reportedly-prepare-to-give-ceo-jensen--17290.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #17290. Latest Update: Nvidia board reportedly prepare to give CEO Jensen Huang the boot, as second alleged affair thrusts him closer to seriously lusty Crusader Kings playthrough territory
-        </a>
-        
-        <a href="nvidia-board-considering-ousting-ceo-jensen-huang-report-claims-a-17195.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #17195. Nvidia board considering ousting CEO Jensen Huang, report claims, as news of a second affair comes to light
-        </a>
-        
-        <a href="breaking-white-sox-add-dustin-may-on-three-year-525-million-contr-15796.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #15796. Breaking: White Sox add Dustin May on three-year, $52.5 million contract after Cinderella 2026 season, per report
         </a>
         
     </div>

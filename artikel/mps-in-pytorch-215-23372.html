@@ -150,9 +150,9 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-23372">If you run models on your Mac or use MPS as your primary acceleration tool for computing, there's plenty to look forward to in PyTorch 2.15! FP8 arrives on MPS, language-model decoding gets faster paths through linear layers and softmax and newly introduced Metal kernels tackle some surprisingly expensive parts of audio, video and training workloads.</p>
-<p>Recent findings suggest that A quick word about who we are: we're the PyTorch team at Hugging Face. We contribute across PyTorch, and one of our focus areas is the MPS backend, where the goal is to make your Mac a first-class place to run and train PyTorch models. At the start of 2026, running even small models on MPS often meant working around unsupported operations, performance cliffs and unexpected memory growth. So we run real models from the Hugging Face Hub across language, image and video, find where MPS falls short and fix it upstream in PyTorch, more and more often by replacing MPSGraph with dedicated Metal kernels. Much of this post is the result of that work, done together with the PyTorch maintainers and community contributors. <span style="font-size:13px;">(Related: <a href="leading-house-democrat-targets-trumps-inner-circle-for-first-inve-24060.html" style="color:#2563eb; font-weight:600;">Leading House Democrat targets Trump’s inner circle for...</a>)</span></p>
-<p>If you run models on a Mac with transformers, diffusers or tools like ComfyUI, here's what 2.15 changes in practice:.</p>
-<p>You'll need an Apple silicon Mac with macOS 15 or later and Python 3.11 or later (see the 2.15 compatibility matrix). If your OS is too old or no Metal GPU is available, the MPS availability check now tells you why. <span style="font-size:13px;">(Related: <a href="latest-update-two-weeks-later-senate-vote-count-is-complete-the-h-24057.html" style="color:#2563eb; font-weight:600;">Latest Update: Two weeks later, Senate vote count is co...</a>)</span></p>
+<p>Recent findings suggest that A quick word about who we are: we're the PyTorch team at Hugging Face. We contribute across PyTorch, and one of our focus areas is the MPS backend, where the goal is to make your Mac a first-class place to run and train PyTorch models. At the start of 2026, running even small models on MPS often meant working around unsupported operations, performance cliffs and unexpected memory growth. So we run real models from the Hugging Face Hub across language, image and video, find where MPS falls short and fix it upstream in PyTorch, more and more often by replacing MPSGraph with dedicated Metal kernels. Much of this post is the result of that work, done together with the PyTorch maintainers and community contributors. <span style="font-size:13px;">(Related: <a href="how-to-train-a-latest-language-model-from-scratch-using-transform-35597.html" style="color:#2563eb; font-weight:600;">How to train a latest language model from scratch using...</a>)</span></p>
+<p>If you run models on a Mac with transformers, diffusers or tools like ComfyUI, here's what 2.15 changes in practice:. <span style="font-size:13px;">(Related: <a href="reading-10-ways-it-changes-your-brain-and-mental-health-m-35609.html" style="color:#2563eb; font-weight:600;">Reading: 10+ Ways It Changes Your Brain And Mental Heal...</a>)</span></p>
+<p>You'll need an Apple silicon Mac with macOS 15 or later and Python 3.11 or later (see the 2.15 compatibility matrix). If your OS is too old or no Metal GPU is available, the MPS availability check now tells you why.</p>
 <p>To try the release candidate in a separate environment:.</p>
 <p>It has been revealed that FP8 gives you another way to save memory on your Mac. PyTorch 2.15 adds torch.float8_e4m3fn tensors on MPS: one byte per value, half the storage of FP16 or BF16.</p>
 <p>According to recent reports, you can multiply these tensors with F.scaled_mm, which supports both tensorwise and rowwise scaling. Here's a small example with one scale per tensor:.</p>
@@ -203,20 +203,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="accelerating-pytorch-transformers-with-intel-sapphire-rapids-part-23781.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #23781. Accelerating PyTorch Transformers with Intel Sapphire Rapids - part 1
+        <a href="hugging-face-on-pytorch-xla-tpus-35586.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35586. Hugging Face on PyTorch / XLA TPUs
         </a>
         
-        <a href="safetensors-is-joining-the-pytorch-foundation-23698.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #23698. Safetensors is Joining the PyTorch Foundation
+        <a href="accelerating-pytorch-distributed-fine-tuning-with-intel-technolog-35558.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35558. Accelerating PyTorch distributed fine-tuning with Intel technologies
         </a>
         
-        <a href="tech-report-profiling-in-pytorch-part-1-a-beginners-guide-to-torc-23648.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #23648. Tech Report: Profiling in PyTorch (Part 1): A Beginner's Guide to torch.profiler
+        <a href="breaking-accelerate-large-model-training-using-pytorch-fully-shar-35526.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35526. Breaking: Accelerate Large Model Training using PyTorch Fully Sharded Data Parallel
         </a>
         
-        <a href="profiling-in-pytorch-part-2-from-nnlinear-to-a-fused-mlp-23625.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #23625. Profiling in PyTorch (Part 2): From nn.Linear to a Fused MLP
+        <a href="policy-gradient-with-pytorch-35501.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35501. Policy Gradient with PyTorch
         </a>
         
     </div>

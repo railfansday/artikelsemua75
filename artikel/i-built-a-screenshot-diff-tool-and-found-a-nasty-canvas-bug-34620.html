@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I built a screenshot diff tool and found a nasty Canvas bug</title>
+    <meta name="description" content="I built a small open-source tool called Visual Diff Studio for comparing screenshots. The idea is simple: drop in two screenshots, see what changed, and ex">
+    <meta name="keywords" content="diff, github, built, visual, studio, screenshots, pixel, screenshot">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua75/artikel/i-built-a-screenshot-diff-tool-and-found-a-nasty-canvas-bug-34620.html">
+    
+    <meta property="og:title" content="I built a screenshot diff tool and found a nasty Canvas bug">
+    <meta property="og:description" content="I built a small open-source tool called Visual Diff Studio for comparing screenshots. The idea is simple: drop in two screenshots, see what changed, and ex">
+    <meta property="og:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Ffsu6t0nhbylovk3z6jt9.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua75/artikel/i-built-a-screenshot-diff-tool-and-found-a-nasty-canvas-bug-34620.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="I built a screenshot diff tool and found a nasty Canvas bug">
+    <meta name="twitter:description" content="I built a small open-source tool called Visual Diff Studio for comparing screenshots. The idea is simple: drop in two screenshots, see what changed, and ex">
+    <meta name="twitter:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Ffsu6t0nhbylovk3z6jt9.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "I built a screenshot diff tool and found a nasty Canvas bug", "image": ["https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Ffsu6t0nhbylovk3z6jt9.png"], "datePublished": "2026-11-21T01:14:41", "dateModified": "2026-11-21T01:25:37.388612", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua75/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua75/artikel/i-built-a-screenshot-diff-tool-and-found-a-nasty-canvas-bug-34620.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding I built a screenshot diff tool and found a nasty Canvas bug?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Dev."}}, {"@type": "Question", "name": "Which category does 'I built a screenshot diff tool and found a nasty Canvas bug' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>I built a screenshot diff tool and found a nasty Canvas bug</h1>
+        <div class="meta-line">🌐 Source: <strong>Dev</strong> &bull; 📅 21 Nov 2026 &bull; ⏱️ 1 min read (204 words, 📖 Standard)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>I built a small open-source tool called Visual Diff Studio for comparing screenshots.</li><li style='margin-bottom:6px;'>The idea is simple: drop in two screenshots, see what changed, and export the result for a GitHub pull request.</li><li style='margin-bottom:6px;'>Sources indicate that it has three comparison modes: a before/after slider, side-by-side view, and pixel diff.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-34620"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-34620"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-34620"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="I built a screenshot diff tool and found a nasty Canvas bug" loading="lazy" src="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Ffsu6t0nhbylovk3z6jt9.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-34620">I built a small open-source tool called Visual Diff Studio for comparing screenshots.</p>
+<p>The idea is simple: drop in two screenshots, see what changed, and export the result for a GitHub pull request. <span style="font-size:13px;">(Related: <a href="the-simple-drink-swap-linked-to-41-more-weight-loss-35627.html" style="color:#2563eb; font-weight:600;">The Simple Drink Swap Linked To 41% More Weight Loss...</a>)</span></p>
+<p>Sources indicate that it has three comparison modes: a before/after slider, side-by-side view, and pixel diff. You can also compare batches of screenshots and export an offline HTML report.</p>
+<p>Everything runs in your browser. No accounts, no server uploads.</p>
+<p>During testing, we found something pretty nasty.</p>
+<p>Two completely different PNGs: one black, one white, both 1x70,000 pixels - were reported as 0% different.</p>
+<p id="sec-mid-34620">In a recent development, the original implementation limited images by total pixel count, but that wasn't enough. Chrome's Canvas returned empty pixel data for those dimensions.</p>
+<p>It has been revealed that we fixed it by adding limits for each image dimension, not just the total area. Unsupported images now produce an error instead of a misleading comparison.</p>
+<p>That was a good reminder that passing tests doesn't always mean your results are correct.</p>
+<p>Live demo: https://ruslanty.github.io/visual-diff-studio/.</p>
+<p>GitHub: https://github.com/ruslanty/visual-diff-studio.</p>
+<p>It's free, MIT-licensed, and there's a built-in example if you just want to play with it. <span style="font-size:13px;">(Related: <a href="split-the-brain-is-built-from-two-ancient-systems-m-35601.html" style="color:#2563eb; font-weight:600;">Split: The Brain Is Built From Two Ancient Systems (M)...</a>)</span></p>
+<p id="sec-end-34620">I'm curious how other developers handle screenshot comparisons during code reviews.</p>
+<p style="margin-top: 25px;">
+<a href="https://dev.to/ruslanty/i-built-a-screenshot-diff-tool-and-found-a-nasty-canvas-bug-123j" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="split-the-brain-is-built-from-two-ancient-systems-m-35601.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35601. Split: The Brain Is Built From Two Ancient Systems (M)
+        </a>
+        
+        <a href="introducing-the-data-measurements-tool-an-interactive-tool-for-lo-35557.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35557. Introducing the Data Measurements Tool: an Interactive Tool for Looking at Datasets
+        </a>
+        
+        <a href="gta-6-screenshot-hidden-in-san-andreas-back-in-2021-was-real-and--35246.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35246. GTA 6 screenshot hidden in San Andreas back in 2021 was real and the house has a dark secret
+        </a>
+        
+        <a href="industry-news-gta-6-players-think-theyve-found-the-real-furry-beh-35184.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35184. Industry News: GTA 6 players think they’ve found the real furry behind its viral Operation Furball side quest
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

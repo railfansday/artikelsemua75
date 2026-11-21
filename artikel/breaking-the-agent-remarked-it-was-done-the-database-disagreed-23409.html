@@ -150,11 +150,11 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-23409">Microsoft ThinkingBox grades AI agents on the records they leave behind, not the sentences they generate, and then asks whether they can do it twenty times in a row. It is now available through Hugging Face.</p>
-<p>Figure 1: ThinkingBox runs an agent against isolated MCP tool sessions, then grades the terminal backend state and side effects it leaves behind. From our ThinkingBox paper.</p>
+<p>Figure 1: ThinkingBox runs an agent against isolated MCP tool sessions, then grades the terminal backend state and side effects it leaves behind. From our ThinkingBox paper. <span style="font-size:13px;">(Related: <a href="3-ways-to-make-music-more-powerful-against-pain-m-35630.html" style="color:#2563eb; font-weight:600;">3 Ways To Make Music More Powerful Against Pain (M)...</a>)</span></p>
 <p>A customer writes in. Her $745 kitchen appliance has been stuck in a courier "exception" at a Nashville distribution center, fifteen days past its estimated delivery date.</p>
-<p>Sources indicate that the AI agent does careful work. Nine tool calls: it pulls the order, checks tracking, looks up her customer profile, searches the refund policy twice, confirms no ticket exists, opens one, documents the timeline, and reads the policy correctly; her account segment genuinely does not qualify for late-delivery compensation. <span style="font-size:13px;">(Related: <a href="industry-news-trump-calls-putin-and-xi-friends-they-have-other-in-24027.html" style="color:#2563eb; font-weight:600;">Industry News: Trump calls Putin and Xi friends. They h...</a>)</span></p>
+<p>Sources indicate that the AI agent does careful work. Nine tool calls: it pulls the order, checks tracking, looks up her customer profile, searches the refund policy twice, confirms no ticket exists, opens one, documents the timeline, and reads the policy correctly; her account segment genuinely does not qualify for late-delivery compensation.</p>
 <p>Sources indicate that then it closes the ticket as resolved and replies “ Since your query is resolved, is there anything I may assist you with? ”.</p>
-<p>Two things are wrong. The carrier exception is still open, so the required end state was on hold, pending resolution. And the customer never got a real answer to what she actually asked. <span style="font-size:13px;">(Related: <a href="i-asked-about-dirty-dishes-you-delivered-24038.html" style="color:#2563eb; font-weight:600;">I Asked About Dirty Dishes. You Delivered....</a>)</span></p>
+<p>Two things are wrong. The carrier exception is still open, so the required end state was on hold, pending resolution. And the customer never got a real answer to what she actually asked. <span style="font-size:13px;">(Related: <a href="smart-people-can-still-be-bad-at-maths-these-3-skills-may-explain-35614.html" style="color:#2563eb; font-weight:600;">Smart People Can Still Be Bad At Maths — These 3 Skills...</a>)</span></p>
 <p>An AI grader checking tool calls would see nine well-formed ones. The grader checking whether the agent wrote to the database would see that too. The database is what disagrees.</p>
 <p>It has been revealed that that gap is what ThinkingBox measures. Across 507 stateful business workflows, each run 20 times against various LLM models, it grades agents on terminal backend state and side effects. This post covers what we found, what consistency costs, and how to run the benchmark yourself through OpenEnv.</p>
 <p>You can run this one yourself: the example above is adapted from a benchmark task sandbox_external_retail_group1.py:test_case_ST003_006, and the executable check that fails is a single field: the ticket's status is solved where the required end state is hold. The full trace is in  Appendix D.4, Case 3 of our paper.</p>
@@ -251,20 +251,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="running-an-ai-agent-on-a-local-llm-what-i-measured-on-one-gpu-23939.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #23939. Running an AI Agent on a Local LLM: What I Measured on One GPU
+        <a href="what-makes-a-dialog-agent-useful-35429.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35429. What Makes a Dialog Agent Useful?
         </a>
         
-        <a href="agent-distraction-23894.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #23894. Agent Distraction
+        <a href="introducing-the-latest-microsoft-iq-putting-your-organizations-in-35216.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35216. Introducing the latest Microsoft IQ: Putting your organization’s intelligence to work in every agent
         </a>
         
-        <a href="breaking-how-agent-anomaly-detection-scores-on-benchmarks-we-didn-23813.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #23813. Breaking: How Agent Anomaly Detection scores on benchmarks we didn't write
+        <a href="jack-of-all-trades-master-of-some-a-multi-purpose-transformer-age-35179.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35179. Jack of All Trades, Master of Some, a Multi-Purpose Transformer Agent
         </a>
         
-        <a href="tiny-agents-an-mcp-powered-agent-in-50-lines-of-code-23772.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #23772. Tiny Agents: an MCP-powered agent in 50 lines of code
+        <a href="our-transformers-code-agent-beats-the-gaia-benchmark-35128.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35128. Our Transformers Code Agent beats the GAIA benchmark 🏅
         </a>
         
     </div>

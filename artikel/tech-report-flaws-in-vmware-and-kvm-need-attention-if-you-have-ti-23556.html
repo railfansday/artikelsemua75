@@ -150,15 +150,15 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-23556">Critical Virtzilla bugs allow authentication bypass, as a nested virtualization issue got Digital Ocean ducking.</p>
-<p>If you’ve got a moment to spare in between sorting out emergency patches for PHP, Java, and PostgreSQL, VMware has just bid for any remaining space on your schedule by publishing two critical-rated security advisories. <span style="font-size:13px;">(Related: <a href="is-social-security-taxable-how-to-calculate-what-you-owe-24040.html" style="color:#2563eb; font-weight:600;">Is Social Security Taxable? How to Calculate What You O...</a>)</span></p>
+<p>If you’ve got a moment to spare in between sorting out emergency patches for PHP, Java, and PostgreSQL, VMware has just bid for any remaining space on your schedule by publishing two critical-rated security advisories. <span style="font-size:13px;">(Related: <a href="predicting-and-detecting-failures-how-azure-strengthens-reliabili-35600.html" style="color:#2563eb; font-weight:600;">Predicting and detecting failures: How Azure strengthen...</a>)</span></p>
 <p>VMSA-2026-0009 addresses CVE-2026-123890, a 9.8-rated flaw that VMware notes means a malicious actor with network access to vCenter may exploit this problem to bypass authentication and gain unauthorized access to the system. vCenter is the tool admins use to manage fleets of virtual machines. The flaw is present in VMware’s flagship Cloud Foundation suite.</p>
-<p>It has been revealed that VMware also wants its users to address CVE-2026-123891, which allows attackers to read and write the database used by SDDC Manager, the tool for managing entire software-defined datacenters. Attackers can execute arbitrary commands and elevate privileges to root.</p>
+<p>It has been revealed that VMware also wants its users to address CVE-2026-123891, which allows attackers to read and write the database used by SDDC Manager, the tool for managing entire software-defined datacenters. Attackers can execute arbitrary commands and elevate privileges to root. <span style="font-size:13px;">(Related: <a href="one-familiar-item-of-clothing-scored-lowest-for-intelligence-can--35623.html" style="color:#2563eb; font-weight:600;">One Familiar Item Of Clothing Scored Lowest for Intelli...</a>)</span></p>
 <p>Recent findings suggest that the prospect of an unknown party getting access to vCenter or SDDC manager is not pleasant. At least VMware has fixed its software.</p>
 <p>The virty giant hasn't done the same to address a second advisory, VMSA-2026-0010, which warns that Cloud Foundation, Aria Operations, and VCF Operations HCX products all use Apache – which has a 9.8-rated remote code execution vulnerability (CVE-2026-119618).</p>
 <p>VMware looks to ship latest versions of its products with a patched version of Apache, but for now only has workarounds that disable the http2 protocol.</p>
 <p>Admins who oversee virtual infrastructure also need to pay attention to Linux KVM, the subject of a curious incident over the last 24 hours.</p>
 <p id="sec-mid-23556">This mess started with the November 18 disclosure of CVE-2026-99312, a bug which allows an attacker to use a guest virtual machine to inflict Denial of Service (DoS) or memory corruption attacks on the host.</p>
-<p>It’s bad news whenever someone with access to a guest VM can attack the host, because it means gaining access to a single tenant can potentially harm all the other guest VMs or peer into the memory a guest uses. <span style="font-size:13px;">(Related: <a href="industry-news-trump-calls-putin-and-xi-friends-they-have-other-in-24027.html" style="color:#2563eb; font-weight:600;">Industry News: Trump calls Putin and Xi friends. They h...</a>)</span></p>
+<p>It’s bad news whenever someone with access to a guest VM can attack the host, because it means gaining access to a single tenant can potentially harm all the other guest VMs or peer into the memory a guest uses.</p>
 <p>This flaw, however, isn’t a worst-case scenario guest-host escape, because it only impacts users of AMD processors who employ nested virtualization – the practice of running a hypervisor inside a virtual machine. Nested virtualization isn’t commonly used in the enterprise, but clouds employ it to do things like powering OS emulators. The bug’s CVSSv3 score is therefore a modest 5.5.</p>
 <p>Security researcher Oren Tomtov of Accomplish.ai indicates the flaw meant he could access 127 GB of host RAM on a Digital Ocean “Droplet” – the junior cloud’s name for its cloudy VMs.</p>
 <p>Yomtov says he told Digital Ocean and the Linux kernel security team about the flaw in October. Maintainers got busy and delivered a fix to the mainline kernel on November 2, full fixes landed on the 17th. The CVE then appeared on November 18.</p>
@@ -193,16 +193,16 @@
             📰 #23130. Tech Report: The unexpected pan you need this holiday season : The case to make everything mini.
         </a>
         
-        <a href="how-to-start-a-side-business-while-working-full-time-24046.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #24046. How to Start a Side Business While Working Full-Time
+        <a href="nystrmformer-approximating-self-attention-in-linear-time-and-memo-35490.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35490. Nyströmformer: Approximating self-attention in linear time and memory via the Nyström method
         </a>
         
-        <a href="tech-report-critical-java-vulnerability-puts-millions-of-sites-se-24012.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #24012. Tech Report: Critical Java vulnerability puts millions of sites, services, and devices at risk of remote code execution
+        <a href="tech-report-multivariate-probabilistic-time-series-forecasting-wi-35407.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35407. Tech Report: Multivariate Probabilistic Time Series Forecasting with Informer
         </a>
         
-        <a href="tech-report-another-critical-php-security-release-has-dropped-23652.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #23652. Tech Report: Another critical PHP security release has dropped
+        <a href="tech-report-how-good-are-llms-at-fixing-their-mistakes-a-chatbot--35022.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35022. Tech Report: How good are LLMs at fixing their mistakes? A chatbot arena experiment with Keras and TPUs
         </a>
         
     </div>

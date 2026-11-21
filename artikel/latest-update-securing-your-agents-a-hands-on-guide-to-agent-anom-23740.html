@@ -150,9 +150,9 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-23740">As highlighted in our announcement post, we remarked that each latest model generation lets agents do more on their own. However, the more an agent can reach, the more one bad decision can cost. You've probably seen a few of these in the news lately:.</p>
-<p>Because these events produced no system crashes or logging errors, the teams behind these agents had no way to know until the damage occurred.</p>
-<p>Agent Anomaly Detection on the Gemini Platform watches for exactly these problems. It reads the traces and logs your agents already produce and flags sessions where an agent goes outside the job it was built for. <span style="font-size:13px;">(Related: <a href="see-where-votes-are-being-counted-in-senate-and-house-midterm-rac-24058.html" style="color:#2563eb; font-weight:600;">See where votes are being counted in Senate and House m...</a>)</span></p>
-<p>Before you point it at your production agents, you'll probably want to see it work in a test environment. In this hands-on guide, we’ll walk you step-by-step through setting up Agent Anomaly Detection and using it to capture your very first agent behavior anomaly. By the end of this post, you'll have:. <span style="font-size:13px;">(Related: <a href="leading-house-democrat-targets-trumps-inner-circle-for-first-inve-24060.html" style="color:#2563eb; font-weight:600;">Leading House Democrat targets Trump’s inner circle for...</a>)</span></p>
+<p>Because these events produced no system crashes or logging errors, the teams behind these agents had no way to know until the damage occurred. <span style="font-size:13px;">(Related: <a href="smart-people-can-still-be-bad-at-maths-these-3-skills-may-explain-35614.html" style="color:#2563eb; font-weight:600;">Smart People Can Still Be Bad At Maths — These 3 Skills...</a>)</span></p>
+<p>Agent Anomaly Detection on the Gemini Platform watches for exactly these problems. It reads the traces and logs your agents already produce and flags sessions where an agent goes outside the job it was built for. <span style="font-size:13px;">(Related: <a href="the-positive-personality-trait-linked-to-having-a-crush-outside-y-35610.html" style="color:#2563eb; font-weight:600;">The Positive Personality Trait Linked To Having A Crush...</a>)</span></p>
+<p>Before you point it at your production agents, you'll probably want to see it work in a test environment. In this hands-on guide, we’ll walk you step-by-step through setting up Agent Anomaly Detection and using it to capture your very first agent behavior anomaly. By the end of this post, you'll have:.</p>
 <p>According to recent reports, to get started, open the companion notebook Detect anomalous agent behavior with Agent Anomaly Detection in a separate tab (available on Google Colab or GitHub). As you read through this guide, it will prompt you when to execute notebook cells or interact directly with the Google Cloud console.</p>
 <p>If a step can be done in the UI console, this post highlights that path, with screenshots. The notebook does the same thing through the Agent Anomaly Detection API, so by the end you'll also have the code to automate enablement and pull findings into your own tooling.</p>
 <p id="sec-mid-23740">2. A place to run the notebook: Google Colab, Colab Enterprise, or a local Jupyter environment. The notebook installs the latest ADK for Python itself. Agent Anomaly Detection is compatible with agents running ADK 1.2+, though ADK 2.0+ is preferred for best results.</p>
@@ -184,20 +184,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
+        <a href="agent-anomaly-detection-safeguarding-agents-across-other-clouds-34683.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #34683. Agent Anomaly Detection: Safeguarding agents across other clouds
+        </a>
+        
         <a href="breaking-how-agent-anomaly-detection-scores-on-benchmarks-we-didn-23813.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #23813. Breaking: How Agent Anomaly Detection scores on benchmarks we didn't write
         </a>
         
-        <a href="tiny-agents-an-mcp-powered-agent-in-50-lines-of-code-23772.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #23772. Tiny Agents: an MCP-powered agent in 50 lines of code
+        <a href="industry-news-stackllama-a-hands-on-guide-to-train-llama-with-rlh-35400.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35400. Industry News: StackLLaMA: A hands-on guide to train LLaMA with RLHF
         </a>
         
-        <a href="agents-are-sessions-not-requests-size-gke-node-pools-for-ai-agent-23758.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #23758. Agents are sessions, not requests: size GKE node pools for AI agent sessions
-        </a>
-        
-        <a href="build-once-run-on-any-agent-a-practical-guide-to-agent-skills-23615.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #23615. Build once, run on any agent: A practical guide to agent skills
+        <a href="tiny-agents-in-python-a-mcp-powered-agent-in-70-lines-of-code-34859.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #34859. Tiny Agents in Python: a MCP-powered agent in ~70 lines of code
         </a>
         
     </div>

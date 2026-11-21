@@ -151,8 +151,8 @@
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-23575">I wrote an article a couple of months ago describing how I rebuilt my old voice assistant pipeline in Platypush.</p>
 <p>And I wrote earlier articles describing my journey through self-hosted voice assistants - in 2024 (with Picovoice), in 2020 (diving into the legacy assistant.google integration, the now defunct assistant.alexa integration, the now defunct Snowboy integration, the now defunct DeepSpeech integration and Picovoice) and the original article in 2019 describing the Google Assistant integration.</p>
-<p>For a couple of months I used the voice pipeline described in my latest article as my main driver, but after getting used to the robustness of commercial voice assistants I was unhappy with the high rates of false positives/negatives of my self-hosted pipeline, as well as its lack of robustness in detecting start/end of speech, especially in noisy environments and using cheap microphones. <span style="font-size:13px;">(Related: <a href="how-to-start-a-side-business-while-working-full-time-24046.html" style="color:#2563eb; font-weight:600;">How to Start a Side Business While Working Full-Time...</a>)</span></p>
-<p>After a bit of experimentation, I decided to swap and fine tune a few parts, and after a couple of days of trying the results are satisfying enough for me to write a short article about it. <span style="font-size:13px;">(Related: <a href="british-airways-avios-short-nonstop-domestic-flights-24032.html" style="color:#2563eb; font-weight:600;">British Airways Avios — Short Nonstop Domestic Flights...</a>)</span></p>
+<p>For a couple of months I used the voice pipeline described in my latest article as my main driver, but after getting used to the robustness of commercial voice assistants I was unhappy with the high rates of false positives/negatives of my self-hosted pipeline, as well as its lack of robustness in detecting start/end of speech, especially in noisy environments and using cheap microphones. <span style="font-size:13px;">(Related: <a href="predicting-and-detecting-failures-how-azure-strengthens-reliabili-35600.html" style="color:#2563eb; font-weight:600;">Predicting and detecting failures: How Azure strengthen...</a>)</span></p>
+<p>After a bit of experimentation, I decided to swap and fine tune a few parts, and after a couple of days of trying the results are satisfying enough for me to write a short article about it.</p>
 <p>Hotword detection- assistant.microwakeword (local).</p>
 <p>Speech-to-text- assistant.openai (cloud)- assistant.vosk (local).</p>
 <p>Generate response- openai (cloud or local).</p>
@@ -161,7 +161,7 @@
 <p>Speech-to-text- assistant.openai (cloud)- assistant.vosk (local).</p>
 <p>Generate response- openai (cloud or local).</p>
 <p>Text-to-speech- tts.openai (cloud)- tts.piper (local).</p>
-<p>Until recently I used assistant.openwakeword, which wraps openWakeWord.</p>
+<p>Until recently I used assistant.openwakeword, which wraps openWakeWord. <span style="font-size:13px;">(Related: <a href="one-familiar-item-of-clothing-scored-lowest-for-intelligence-can--35623.html" style="color:#2563eb; font-weight:600;">One Familiar Item Of Clothing Scored Lowest for Intelli...</a>)</span></p>
 <p>It works, but the project has been quiet for a while and all of its pre-trained models are v0.1 files from 2023, mostly trained on synthetic speech.</p>
 <p>In practice I was getting both false positives (the hotword triggering on background noise) and false negatives (the hotword not detected unless I was close to the microphone).</p>
 <p>I added a new plugin, assistant.microwakeword, on top of microWakeWord through the pymicro-wakeword Python bindings.</p>
@@ -215,20 +215,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="running-an-ai-agent-on-a-local-llm-what-i-measured-on-one-gpu-23939.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #23939. Running an AI Agent on a Local LLM: What I Measured on One GPU
+        <a href="breaking-my-journey-to-a-serverless-transformers-pipeline-on-goog-35581.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35581. Breaking: My Journey to a serverless transformers pipeline on Google Cloud
         </a>
         
-        <a href="how-to-build-a-unified-lead-tracking-pipeline-for-web-forms-and-p-23913.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #23913. How to Build a Unified Lead Tracking Pipeline for Web Forms and Phone Calls
+        <a href="how-hugging-face-accelerated-development-of-witty-works-writing-a-35413.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35413. How Hugging Face Accelerated Development of Witty Works Writing Assistant
         </a>
         
-        <a href="industry-news-how-consumer-ai-companions-handle-context-windows-p-23838.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #23838. Industry News: How Consumer AI Companions Handle Context Windows, Persistent Memory, and Voice Latency
+        <a href="creating-a-coding-assistant-with-starcoder-35387.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35387. Creating a Coding Assistant with StarCoder
         </a>
         
-        <a href="google-retiring-nest-app-and-google-assistant-on-speakers-display-23821.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #23821. Google retiring Nest app and Google Assistant on speakers, displays in 2027
+        <a href="tech-report-pokemon-gen-10-leaker-admits-faking-rumors-reviving-h-35301.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35301. Tech Report: Pokemon Gen 10 leaker admits faking rumors, reviving hopes for a fresh Eeveelution and voice acting
         </a>
         
     </div>

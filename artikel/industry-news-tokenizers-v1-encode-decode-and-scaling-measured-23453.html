@@ -150,10 +150,10 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-23453">The tokenizer has not historically been the bottleneck within ML workflows. Compute-wise, tokenization is light compared to the heavy modeling happening in the rest of the pipeline. Yet, in some cases, it has rapidly become key to accelerating (or slowing down) your machine learning work.</p>
-<p>As models become faster and workloads scale, that balance begins to shift. Training on massive datasets, serving many concurrent requests, or repeatedly processing long inputs can put enough pressure on the tokenizer that it starves the model of data.</p>
-<p>This is why we have chosen to heavily focus on performance for the upcoming version 1 of tokenizers. Tokenization should be light and should scale with your workflow. Your GPUs should never sit idle waiting for the CPU to complete its tokenization. <span style="font-size:13px;">(Related: <a href="latest-update-two-weeks-later-senate-vote-count-is-complete-the-h-24057.html" style="color:#2563eb; font-weight:600;">Latest Update: Two weeks later, Senate vote count is co...</a>)</span></p>
+<p>As models become faster and workloads scale, that balance begins to shift. Training on massive datasets, serving many concurrent requests, or repeatedly processing long inputs can put enough pressure on the tokenizer that it starves the model of data. <span style="font-size:13px;">(Related: <a href="predicting-and-detecting-failures-how-azure-strengthens-reliabili-35600.html" style="color:#2563eb; font-weight:600;">Predicting and detecting failures: How Azure strengthen...</a>)</span></p>
+<p>This is why we have chosen to heavily focus on performance for the upcoming version 1 of tokenizers. Tokenization should be light and should scale with your workflow. Your GPUs should never sit idle waiting for the CPU to complete its tokenization. <span style="font-size:13px;">(Related: <a href="how-to-train-a-latest-language-model-from-scratch-using-transform-35597.html" style="color:#2563eb; font-weight:600;">How to train a latest language model from scratch using...</a>)</span></p>
 <p>In this article, we look at what makes v1 faster than v0.23, often by tens of times.</p>
-<p>According to recent reports, this work was entirely possible thanks to the rest of the ecosystem. Tokenization is a very active area of open source work, and libraries such as gigatoken, tiktoken, kitoken, tokie, fastokens, wordchipper and ai-tokenizer, as well as many others, have each pushed on what a fast tokenizer can be. We read that work, and several of the ideas below reached us because another project highlighted they were worth trying. <span style="font-size:13px;">(Related: <a href="industry-news-what-is-considered-upper-middle-class-income-and-ne-24042.html" style="color:#2563eb; font-weight:600;">Industry News: What Is Considered Upper Middle Class? I...</a>)</span></p>
+<p>According to recent reports, this work was entirely possible thanks to the rest of the ecosystem. Tokenization is a very active area of open source work, and libraries such as gigatoken, tiktoken, kitoken, tokie, fastokens, wordchipper and ai-tokenizer, as well as many others, have each pushed on what a fast tokenizer can be. We read that work, and several of the ideas below reached us because another project highlighted they were worth trying.</p>
 <p>Before this refactor, tokenizers was nowhere near the performance it could have had, so contributing to it may not have seemed worth it. With this refactor, we hope to make clear that we intend tokenizers to be a library worth contributing to.</p>
 <p>We also thank IBM, NVIDIA, and the ExecuTorch team for contributing patches and helping us test across a wide range of hardware to broaden platform support.</p>
 <p>We showcase results for the release candidate of tokenizers v1 against other widely used alternatives. We go over single-threaded, multi-threaded, scaling across threads, per-model comparison, per-language comparison, latency, decoding throughput, memory heap, as well as crate size.</p>
@@ -211,20 +211,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="industry-news-from-zero-to-gpu-a-guide-to-building-and-scaling-pr-11679.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #11679. Industry News: From Zero to GPU: A Guide to Building and Scaling Production-Ready CUDA Kernels
+        <a href="industry-news-politics-takes-a-toll-on-your-health-what-do-less-s-35633.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35633. Industry News: Politics Takes A Toll On Your Health — What Do Less-Stressed People Do Differently? (M)
         </a>
         
-        <a href="industry-news-judge-blocks-construction-of-trumps-arch-for-two-mo-24056.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #24056. Industry News: Judge blocks construction of Trump’s arch for two more weeks
+        <a href="industry-news-this-plant-extract-helps-people-cut-back-on-binge-d-35613.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35613. Industry News: This Plant Extract Helps People Cut Back On Binge Drinking (M)
         </a>
         
-        <a href="industry-news-average-retirement-savings-by-age-are-you-on-track-24050.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #24050. Industry News: Average Retirement Savings by Age: Are You on Track?
+        <a href="industry-news-this-vitamin-deficiency-linked-to-frequent-headache-35606.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35606. Industry News: This Vitamin Deficiency Linked To Frequent Headaches
         </a>
         
-        <a href="industry-news-what-is-considered-upper-middle-class-income-and-ne-24042.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #24042. Industry News: What Is Considered Upper Middle Class? Income and Net Worth
+        <a href="how-to-train-a-latest-language-model-from-scratch-using-transform-35597.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35597. How to train a latest language model from scratch using Transformers and Tokenizers
         </a>
         
     </div>

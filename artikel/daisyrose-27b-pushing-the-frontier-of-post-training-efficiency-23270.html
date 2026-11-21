@@ -151,12 +151,12 @@
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-23270">It has been revealed that today we are releasing DaisyRose-27B, RadixArk’s first model, built on Qwen3.8-27B and trained with reinforcement learning using Miles. We trained it on long-horizon agent tasks with sessions up to 1M tokens, with just 1,200 curated tasks in 18 days on 144 H200 GPUs. DaisyRose-27B improves Terminal-Bench 4.1 pass@1 from 5.6% to 12.0%. Beyond Terminal-Bench 4.1, it also delivers gains on a variety of other reasoning, instruction following, and coding benchmarks.</p>
 <p>The checkpoints are available under Apache 2.0:.</p>
-<p>It has been revealed that the model retains Qwen3.8-27B’s architecture, tokenizer, chat template, image understanding, and 256K-token context window. The longer training sessions use harness summarization to span multiple trajectories. See the model card for model properties and inference settings.</p>
+<p>It has been revealed that the model retains Qwen3.8-27B’s architecture, tokenizer, chat template, image understanding, and 256K-token context window. The longer training sessions use harness summarization to span multiple trajectories. See the model card for model properties and inference settings. <span style="font-size:13px;">(Related: <a href="how-to-train-a-latest-language-model-from-scratch-using-transform-35597.html" style="color:#2563eb; font-weight:600;">How to train a latest language model from scratch using...</a>)</span></p>
 <p>Sources indicate that we recommend serving DaisyRose-27B with SGLang and DSpark speculative decoding. The SGLang cookbook provides launch configurations for different GPUs and checkpoint formats.</p>
 <p>After starting the server with the served model name DaisyRose-27B on port 30000, you can send a request using the OpenAI Python client:.</p>
-<p>Recent findings suggest that the model thinks before answering by default. Its reasoning is returned in reasoning_content, and its final answer in content. These settings follow the model card’s quickstart.</p>
-<p>DaisyRose-27B scores higher than the original Qwen3.8-27B model on every benchmark above. The largest gain is on Terminal Bench 4.1, where pass@1 rises from 5.6% to 12.0%. <span style="font-size:13px;">(Related: <a href="see-where-votes-are-being-counted-in-senate-and-house-midterm-rac-24058.html" style="color:#2563eb; font-weight:600;">See where votes are being counted in Senate and House m...</a>)</span></p>
-<p>Industry observers note that scores use the higher of the BF16 and FP8 runs for each benchmark; the two differ by less than one point wherever both were evaluated. The model card includes comparison sources and evaluation settings. <span style="font-size:13px;">(Related: <a href="industry-news-judge-blocks-construction-of-trumps-arch-for-two-mo-24056.html" style="color:#2563eb; font-weight:600;">Industry News: Judge blocks construction of Trump’s arc...</a>)</span></p>
+<p>Recent findings suggest that the model thinks before answering by default. Its reasoning is returned in reasoning_content, and its final answer in content. These settings follow the model card’s quickstart. <span style="font-size:13px;">(Related: <a href="smart-people-can-still-be-bad-at-maths-these-3-skills-may-explain-35614.html" style="color:#2563eb; font-weight:600;">Smart People Can Still Be Bad At Maths — These 3 Skills...</a>)</span></p>
+<p>DaisyRose-27B scores higher than the original Qwen3.8-27B model on every benchmark above. The largest gain is on Terminal Bench 4.1, where pass@1 rises from 5.6% to 12.0%.</p>
+<p>Industry observers note that scores use the higher of the BF16 and FP8 runs for each benchmark; the two differ by less than one point wherever both were evaluated. The model card includes comparison sources and evaluation settings.</p>
 <p>Three parts of the training setup made this release possible: carefully designed tasks, an efficient training backend, and reliable sandboxes.</p>
 <p>We built the tasks in partnership with Eigent AI, starting from its large pool of tasks in machine learning, software engineering, science, and other fields. Together we built thousands of candidates. About 1,200 made it into the final training set.</p>
 <p>We selected tasks using three criteria:.</p>
@@ -196,20 +196,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
+        <a href="improving-hugging-face-training-efficiency-through-packing-with-f-35093.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35093. Improving Hugging Face Training Efficiency Through Packing with Flash Attention 2
+        </a>
+        
+        <a href="post-training-isaac-gr00t-n15-for-lerobot-so-101-arm-34843.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #34843. Post-Training Isaac GR00T N1.5 for LeRobot SO-101 Arm
+        </a>
+        
+        <a href="smol2operator-post-training-gui-agents-for-computer-use-34714.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #34714. Smol2Operator: Post-Training GUI Agents for Computer Use
+        </a>
+        
         <a href="trl-v10-post-training-library-built-to-move-with-the-field-23714.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #23714. TRL v1.0: Post-Training Library Built to Move with the Field
-        </a>
-        
-        <a href="turning-database-grading-into-rl-rewards-post-training-agents-wit-23354.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #23354. Turning Database Grading into RL Rewards: Post-Training Agents with ThinkingBox
-        </a>
-        
-        <a href="improving-hugging-face-training-efficiency-through-packing-with-f-12005.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #12005. Improving Hugging Face Training Efficiency Through Packing with Flash Attention 2
-        </a>
-        
-        <a href="post-training-isaac-gr00t-n15-for-lerobot-so-101-arm-11788.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #11788. Post-Training Isaac GR00T N1.5 for LeRobot SO-101 Arm
         </a>
         
     </div>

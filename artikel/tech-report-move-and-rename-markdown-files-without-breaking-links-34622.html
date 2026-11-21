@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Report: Move and rename Markdown files without breaking links or pictures</title>
+    <meta name="description" content="You decide your Pics folder should be called Images. You rename it in the Finder, open a note, and every picture is a broken icon. Nothing is lost: the pic">
+    <meta name="keywords" content="note, folder, rename, links, move, notes, pics, images">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua75/artikel/tech-report-move-and-rename-markdown-files-without-breaking-links-34622.html">
+    
+    <meta property="og:title" content="Tech Report: Move and rename Markdown files without breaking links or pictures">
+    <meta property="og:description" content="You decide your Pics folder should be called Images. You rename it in the Finder, open a note, and every picture is a broken icon. Nothing is lost: the pic">
+    <meta property="og:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fazkusfg0jgkag17opadr.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua75/artikel/tech-report-move-and-rename-markdown-files-without-breaking-links-34622.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Tech Report: Move and rename Markdown files without breaking links or pictures">
+    <meta name="twitter:description" content="You decide your Pics folder should be called Images. You rename it in the Finder, open a note, and every picture is a broken icon. Nothing is lost: the pic">
+    <meta name="twitter:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fazkusfg0jgkag17opadr.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Tech Report: Move and rename Markdown files without breaking links or pictures", "image": ["https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fazkusfg0jgkag17opadr.png"], "datePublished": "2026-11-21T01:14:35", "dateModified": "2026-11-21T01:25:37.491370", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua75/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua75/artikel/tech-report-move-and-rename-markdown-files-without-breaking-links-34622.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Tech Report: Move and rename Markdown files without breaking links or pictures?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Dev."}}, {"@type": "Question", "name": "Which category does 'Tech Report: Move and rename Markdown files without breaking' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Tech Report: Move and rename Markdown files without breaking links or pictures</h1>
+        <div class="meta-line">🌐 Source: <strong>Dev</strong> &bull; 📅 21 Nov 2026 &bull; ⏱️ 3 min read (580 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>You decide your Pics folder should be called Images.</li><li style='margin-bottom:6px;'>A Markdown note doesn't hold its pictures.</li><li style='margin-bottom:6px;'>When the folder becomes Images, the file moves, and the text stays the same.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-34622"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-34622"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-34622"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Tech Report: Move and rename Markdown files without breaking links or pictures" loading="lazy" src="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fazkusfg0jgkag17opadr.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-34622">You decide your Pics folder should be called Images. You rename it in the Finder, open a note, and every picture is a broken icon. Nothing is lost: the pictures are all still there. But the notes still point at the old name.</p>
+<p>A Markdown note doesn't hold its pictures. It holds a line that says where each one is:.</p>
+<p>That path is plain text. When the folder becomes Images, the file moves, and the text stays the same. Links to other notes work the same way, whether they're written [Day one](Trips/Day%20one.md) or [[Day one]].</p>
+<p>Sources indicate that the same happens when you move a note into a subfolder, if its links are relative to where it was. A link from Trips/Day one.md to ../Pics/map.png points somewhere else once the note is in Trips/Lisbon/.</p>
+<p>If the damage is done, a find and replace across your notes puts it right. Replace ](Pics/ with ](Images/, and [[Pics/ with [[Images/. Check the result before you save, because the same text might appear somewhere it shouldn't, such as in a code example. There's a guide to find and replace across Markdown files.</p>
+<p>Recent findings suggest that some editors change the links for you when you rename or move a file inside the app. Fewer notice a change made in the Finder, and that's where most folders get renamed. <span style="font-size:13px;">(Related: <a href="the-pedalling-prescription-12-ways-cycling-can-change-your-mind-p-35635.html" style="color:#2563eb; font-weight:600;">The Pedalling Prescription: 12 Ways Cycling Can Change ...</a>)</span></p>
+<p>Sources indicate that coffee follows both. When you rename or move a note in Coffee, rename a note or a picture in the Finder, or rename or move a folder in either, it changes the links to it in your other notes. After the folder becomes Images, the note says:. <span style="font-size:13px;">(Related: <a href="reading-10-ways-it-changes-your-brain-and-mental-health-m-35609.html" style="color:#2563eb; font-weight:600;">Reading: 10+ Ways It Changes Your Brain And Mental Heal...</a>)</span></p>
+<p>A line then says how many notes it updated, with Undo beside it.</p>
+<p id="sec-mid-34622">It has been revealed that it keeps the way each link was written, such as a size in ![[Pics/harbour.png|300]]. It never changes code or code blocks, so a path written as an example stays as you wrote it. Undo leaves alone any note you've changed since.</p>
+<p>Industry observers note that you don't need the Finder to reorganise. Drag a note or a folder onto another folder in the sidebar, or onto All notes for the top of your library. Hold Option as you drop a note to copy it instead. Right-click a folder for Latest Folder and Rename…, or a note for Move to….</p>
+<p>A moved note keeps its links, pictures, version history and comments. If a note of the same name is already there, the one you moved gets a name of its own, so nothing is replaced.</p>
+<p>Industry observers note that the note stores the picture's path as text, and renaming the folder doesn't change that text. Either enhancement the paths, or use an editor that updates them for you.</p>
+<p>In a recent development, A link by name, like [[Day one]], keeps working when the note moves to another folder. It breaks when the note is renamed, unless your editor changes the links too.</p>
+<p>In Coffee, yes: the notice after a change has Undo, and it puts the links back as they were in the notes you haven't touched since.</p>
+<p>No. Coffee changes the links inside your notes when you rename or move something. It doesn't move or rename your files unless you ask it to.</p>
+<p id="sec-end-34622">It has been revealed that I make Coffee, the Mac app mentioned above, so take that part with that in mind. The rest works with any editor. First published on coffeetext.app.</p>
+<p style="margin-top: 25px;">
+<a href="https://dev.to/pedro_ptthomaz_7ba07ec/move-and-rename-markdown-files-without-breaking-links-or-pictures-1gnp" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="tech-report-how-to-use-fitness-trackers-to-enhance-performance-an-33991.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #33991. Tech Report: How to use fitness trackers to enhance performance and wellbeing—without losing touch with yourself
+        </a>
+        
+        <a href="tech-report-save-big-without-sacrificing-comfort-with-these-edito-33836.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #33836. Tech Report: Save Big Without Sacrificing Comfort With These Editor-Tested Running Shoes Under $130
+        </a>
+        
+        <a href="tech-report-start-a-business-without-quitting-your-job-and-limit--33640.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #33640. Tech Report: Start a Business Without Quitting Your Job – and Limit What You Can Lose
+        </a>
+        
+        <a href="tech-report-boost-the-performance-of-your-canister-stove-without--33302.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #33302. Tech Report: Boost the Performance of Your Canister Stove Without Blowing it Up
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

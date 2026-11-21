@@ -150,10 +150,10 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-23257">Recent findings suggest that tonight the platform team drains node-07 for a kernel enhancement. One question decides the go-ahead: which services lose replicas, and who needs a heads-up? The Kubernetes topology graph in Dynatrace SaaS can answer in a single DQL query, if you know how to walk it. This article starts from four operating decisions and derives the queries from them.</p>
-<p>The syntax facts come from the Dynatrace documentation. The use cases were sparked by the vendor’s blog post on the subject. The queries below are rewritten and were not run on a tenant for this article, so test them on a small scope before relying on them. Everything here applies to Dynatrace SaaS only. <span style="font-size:13px;">(Related: <a href="how-many-millionaires-are-in-the-us-stats-and-facts-24048.html" style="color:#2563eb; font-weight:600;">How Many Millionaires Are in the US? Stats and Facts...</a>)</span></p>
+<p>The syntax facts come from the Dynatrace documentation. The use cases were sparked by the vendor’s blog post on the subject. The queries below are rewritten and were not run on a tenant for this article, so test them on a small scope before relying on them. Everything here applies to Dynatrace SaaS only.</p>
 <p>It has been revealed that the general syntax of smartscapeNodes and traverse is covered in the article on DQL and Smartscape. Here we do not tour the commands again: we put them to work.</p>
-<p>It has been revealed that with kubectl, every answer is a snapshot of one cluster. To find which services depend on a node, you chain three commands and cross-check by hand. With ten clusters, that becomes a chore. <span style="font-size:13px;">(Related: <a href="what-i-do-every-time-i-get-an-irs-notice-24044.html" style="color:#2563eb; font-weight:600;">What I do every time I get an IRS notice...</a>)</span></p>
-<p>Industry observers note that the graph stores objects as nodes (K8S_NODE, K8S_POD, K8S_SERVICE, K8S_NAMESPACE, K8S_DEPLOYMENT, K8S_SECRET) and their links as edges: runs_on ties a pod to its node, routes_to a service to its pods, belongs_to an object to its namespace, is_part_of a pod to its controller, and uses a pod to a Secret. One query therefore spans every cluster connected to the environment.</p>
+<p>It has been revealed that with kubectl, every answer is a snapshot of one cluster. To find which services depend on a node, you chain three commands and cross-check by hand. With ten clusters, that becomes a chore. <span style="font-size:13px;">(Related: <a href="one-familiar-item-of-clothing-scored-lowest-for-intelligence-can--35623.html" style="color:#2563eb; font-weight:600;">One Familiar Item Of Clothing Scored Lowest for Intelli...</a>)</span></p>
+<p>Industry observers note that the graph stores objects as nodes (K8S_NODE, K8S_POD, K8S_SERVICE, K8S_NAMESPACE, K8S_DEPLOYMENT, K8S_SECRET) and their links as edges: runs_on ties a pod to its node, routes_to a service to its pods, belongs_to an object to its namespace, is_part_of a pod to its controller, and uses a pod to a Secret. One query therefore spans every cluster connected to the environment. <span style="font-size:13px;">(Related: <a href="industry-news-politics-takes-a-toll-on-your-health-what-do-less-s-35633.html" style="color:#2563eb; font-weight:600;">Industry News: Politics Takes A Toll On Your Health — W...</a>)</span></p>
 <p>Sources indicate that before a drain you want the list of affected services, ranked by pods lost. Start from the node, go down to its pods, then to the services that route to them.</p>
 <p>It has been revealed that read the result with care. A service losing one pod out of twelve is no cause for worry. A service losing two pods out of two is a reason to postpone the drain. An empty result may also mean the node name is wrong: check it first with smartscapeNodes "*" | filter type == "K8S_NODE".</p>
 <p>According to recent reports, the topology cannot guess who owns what. It rereads the labels your teams put on namespaces. If a namespace carries an owner label, the query returns it next to the cluster:.</p>
@@ -192,20 +192,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="akashs-solana-migration-clears-november-2-vote-at-97-with-four-mo-18695.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #18695. Akash’s Solana Migration Clears November 2 Vote at 97%, With Four More On-Chain Decisions Ahead
+        <a href="akashs-solana-migration-clears-november-2-vote-at-97-with-four-mo-30196.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #30196. Akash’s Solana Migration Clears November 2 Vote at 97%, With Four More On-Chain Decisions Ahead
         </a>
         
-        <a href="four-players-set-to-leave-tottenham-at-end-of-season-as-major-dec-14788.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #14788. Four players set to leave Tottenham at end of season as major decisions near
+        <a href="four-players-set-to-leave-tottenham-at-end-of-season-as-major-dec-26327.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #26327. Four players set to leave Tottenham at end of season as major decisions near
         </a>
         
-        <a href="developer-vibe-codes-windows-11-alternative-operating-system-for--23994.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #23994. Developer vibe codes Windows 11 alternative operating system for amd64, arm64, and riscv64 hardware
+        <a href="industry-news-deploying-vit-on-kubernetes-with-tf-serving-35486.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35486. Industry News: Deploying 🤗 ViT on Kubernetes with TF Serving
         </a>
         
-        <a href="utah-sues-stake-four-days-after-the-site-added-the-state-to-its-b-23792.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #23792. Utah sues Stake four days after the site added the state to its blocked list
+        <a href="kfc-just-released-fried-cheese-with-four-different-colors-inside-35206.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35206. KFC just released fried cheese with four different colors inside
         </a>
         
     </div>

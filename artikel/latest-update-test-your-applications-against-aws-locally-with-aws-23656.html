@@ -152,15 +152,15 @@
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-23656">Today we’re announcing AWS Emulator, a local emulator for Amazon Web Services (AWS) that you run on your machine. The AWS Command Line Interface (AWS CLI), the AWS SDKs, and your coding agents speak to it over a local HTTPS endpoint using the same AWS APIs they would use in the cloud, from your laptop. AWS Emulator has no additional service fee. You pay only for AWS resources when you deploy on AWS. Its source is on GitHub. You install it from an RPM or Debian package on Linux, and on macOS and Windows you run it in Docker.</p>
 <p>According to recent reports, how it works
-         You install the emulator, start it, and point your tools at the local endpoint. When AWS Emulator starts, it generates its own credentials, a config file, and a certificate, and writes them to ~/.aws/emulator/9297/. You set environment variables so the AWS SDK talks to your laptop instead of AWS, and your application code stays unchanged. <span style="font-size:13px;">(Related: <a href="how-to-start-a-side-business-while-working-full-time-24046.html" style="color:#2563eb; font-weight:600;">How to Start a Side Business While Working Full-Time...</a>)</span></p>
-<p>In a recent development, from there, your existing tests, CLI scripts, and coding agents keep working the way they already do. A unit test that creates an Amazon DynamoDB table, writes an item, and reads it back is the same test, and it runs on your machine without a deployment. A coding agent can create resources, check the result, and iterate again without waiting on a deployment in a Region. <span style="font-size:13px;">(Related: <a href="how-to-budget-for-a-wedding-without-going-broke-24051.html" style="color:#2563eb; font-weight:600;">How to Budget for a Wedding Without Going Broke...</a>)</span></p>
-<p>The emulator is implemented in Rust so that it stays light on CPU and memory on a laptop. It supports the APIs of AWS services that have an API model in the AWS API models repository on GitHub, and because it’s built from those models, the same ones the AWS SDKs use, your requests and the errors you get back have the same shape as on AWS.</p>
+         You install the emulator, start it, and point your tools at the local endpoint. When AWS Emulator starts, it generates its own credentials, a config file, and a certificate, and writes them to ~/.aws/emulator/9297/. You set environment variables so the AWS SDK talks to your laptop instead of AWS, and your application code stays unchanged.</p>
+<p>In a recent development, from there, your existing tests, CLI scripts, and coding agents keep working the way they already do. A unit test that creates an Amazon DynamoDB table, writes an item, and reads it back is the same test, and it runs on your machine without a deployment. A coding agent can create resources, check the result, and iterate again without waiting on a deployment in a Region.</p>
+<p>The emulator is implemented in Rust so that it stays light on CPU and memory on a laptop. It supports the APIs of AWS services that have an API model in the AWS API models repository on GitHub, and because it’s built from those models, the same ones the AWS SDKs use, your requests and the errors you get back have the same shape as on AWS. <span style="font-size:13px;">(Related: <a href="split-the-brain-is-built-from-two-ancient-systems-m-35601.html" style="color:#2563eb; font-weight:600;">Split: The Brain Is Built From Two Ancient Systems (M)...</a>)</span></p>
 <p>If you are a developer, especially one working with coding agents such as Kiro or Claude Code, you can use that loop to test AWS interactions of real complexity locally.</p>
 <p>Recent findings suggest that let’s try it out
          To get started, I installed the package on Amazon Linux 2023. The package adds the aws-emulator command to /usr/bin/, so it’s on the path.</p>
 <p>It has been revealed that on macOS and Windows, you build a Docker image from the short Dockerfile in the documentation and run the emulator in a container. We don’t publish a ready-made image.</p>
 <p>It has been revealed that I started the emulator with aws-emulator. It serves HTTPS on 127.0.0.1:9297, so only my own computer can reach it, and it writes its log as JSON lines that show the address, the config file, and the certificate file.</p>
-<p>In another terminal, I set the environment variables that point the AWS CLI at the emulator, and unset any variables that could supply real AWS credentials.</p>
+<p>In another terminal, I set the environment variables that point the AWS CLI at the emulator, and unset any variables that could supply real AWS credentials. <span style="font-size:13px;">(Related: <a href="the-one-question-about-suicide-that-could-improve-treatment-m-35605.html" style="color:#2563eb; font-weight:600;">The One Question About Suicide That Could Improve Treat...</a>)</span></p>
 <p>The emulator generates new keys each time it starts. Its access key IDs start with EMULATOR, so you can’t mistake them for real AWS keys, and it rejects requests signed with any other keys. To confirm that my shell was talking to the emulator, I checked the health endpoint and the caller identity. The emulator uses a single account, 000000000000.</p>
 <p>Then I created a bucket, copied in a small object, and listed it.</p>
 <p>With the AWS CLI pointed at my laptop, I had the same commands I already use and a local endpoint that answered them.</p>
@@ -207,6 +207,10 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
+        <a href="sv-elversberg-vs-sc-freiburg-preview-high-flying-breisgauer-face--27070.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #27070. SV Elversberg vs. SC Freiburg preview: High-flying Breisgauer face stern test against impressive newcomers
+        </a>
+        
         <a href="aws-weekly-roundup-aws-nitro-sandboxes-aws-emulator-and-more-nove-23651.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #23651. AWS Weekly Roundup: AWS Nitro Sandboxes, AWS Emulator, and more (November 16, 2026)
         </a>
@@ -215,12 +219,8 @@
             📰 #23463. AWS Releases a Free Local Emulator of AWS Built Entirely by Agents
         </a>
         
-        <a href="sv-elversberg-vs-sc-freiburg-preview-high-flying-breisgauer-face--15431.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #15431. SV Elversberg vs. SC Freiburg preview: High-flying Breisgauer face stern test against impressive newcomers
-        </a>
-        
-        <a href="second-circuit-denies-kalshi-and-coinbase-interim-relief-against--23972.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #23972. Second Circuit denies Kalshi and Coinbase interim relief against New York and Connecticut
+        <a href="3-ways-to-make-music-more-powerful-against-pain-m-35630.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35630. 3 Ways To Make Music More Powerful Against Pain (M)
         </a>
         
     </div>

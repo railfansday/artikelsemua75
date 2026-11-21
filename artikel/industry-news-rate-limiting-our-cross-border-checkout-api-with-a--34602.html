@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Industry News: Rate-Limiting Our Cross-Border Checkout API With a Token Bucket</title>
+    <meta name="description" content="Industry observers note that black Friday taught us an expensive lesson. Our checkout endpoint, which normally hums along, got hammered by a mix of real bu">
+    <meta name="keywords" content="bucket, rate, checkout, token, refill, sources, indicate, under">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua75/artikel/industry-news-rate-limiting-our-cross-border-checkout-api-with-a--34602.html">
+    
+    <meta property="og:title" content="Industry News: Rate-Limiting Our Cross-Border Checkout API With a Token Bucket">
+    <meta property="og:description" content="Industry observers note that black Friday taught us an expensive lesson. Our checkout endpoint, which normally hums along, got hammered by a mix of real bu">
+    <meta property="og:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fkvz3xgezr5njjn4c477r.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua75/artikel/industry-news-rate-limiting-our-cross-border-checkout-api-with-a--34602.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Industry News: Rate-Limiting Our Cross-Border Checkout API With a Token Bucket">
+    <meta name="twitter:description" content="Industry observers note that black Friday taught us an expensive lesson. Our checkout endpoint, which normally hums along, got hammered by a mix of real bu">
+    <meta name="twitter:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fkvz3xgezr5njjn4c477r.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Industry News: Rate-Limiting Our Cross-Border Checkout API With a Token Bucket", "image": ["https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fkvz3xgezr5njjn4c477r.png"], "datePublished": "2026-11-21T01:19:04", "dateModified": "2026-11-21T01:25:35.784669", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua75/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua75/artikel/industry-news-rate-limiting-our-cross-border-checkout-api-with-a--34602.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Industry News: Rate-Limiting Our Cross-Border Checkout API With a Token Bucket?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Dev."}}, {"@type": "Question", "name": "Which category does 'Industry News: Rate-Limiting Our Cross-Border Checkout API W' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Industry News: Rate-Limiting Our Cross-Border Checkout API With a Token Bucket</h1>
+        <div class="meta-line">🌐 Source: <strong>Dev</strong> &bull; 📅 21 Nov 2026 &bull; ⏱️ 3 min read (620 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>Industry observers note that black Friday taught us an expensive lesson.</li><li style='margin-bottom:6px;'>Sources indicate that our first attempt was the obvious one: a fixed counter per user, reset every minute.</li><li style='margin-bottom:6px;'>First, fixed windows have an edge problem.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-34602"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-34602"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-34602"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Industry News: Rate-Limiting Our Cross-Border Checkout API With a Token Bucket" loading="lazy" src="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fkvz3xgezr5njjn4c477r.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-34602">Industry observers note that black Friday taught us an expensive lesson. Our checkout endpoint, which normally hums along, got hammered by a mix of real buyers and retry scripts. Some of those retries were our own fault — a client that re-posted on a timeout — and each one triggered a fresh round of inventory checks and payment intent calls. We needed a limiter that could tell a burst from an abuse. Taocarts is the platform behind this checkout, and this is how we tuned its front door.</p>
+<p>Sources indicate that our first attempt was the obvious one: a fixed counter per user, reset every minute. It was easy, and it was wrong in two ways. <span style="font-size:13px;">(Related: <a href="this-5-minute-habit-can-calm-your-mind-spark-curiosity-and-connec-35628.html" style="color:#2563eb; font-weight:600;">This 5-Minute Habit Can Calm Your Mind, Spark Curiosity...</a>)</span></p>
+<p>First, fixed windows have an edge problem. A client can send N requests at the end of one window and N more at the start of the next — 2N in a few seconds, right at the boundary. Second, a hard cap of N per minute punishes legitimate bursts. A buyer refreshing the page a dozen times while comparing shipping options is not an attacker.</p>
+<p>What we wanted was: allow short bursts, but keep the average rate under control. That is exactly what a token bucket gives you.</p>
+<p>Recent findings suggest that picture a bucket per key (we use tenant id plus endpoint). The bucket holds tokens, up to a capacity C. Every request consumes one token. Tokens refill continuously at rate R per second.</p>
+<p>Two parameters do all the work: capacity C controls how major a burst we tolerate; refill rate R controls the long-term average.</p>
+<p>We run Redis, so the bucket lives there. The clever part is that we do not run a background timer to refill tokens. We compute lazily: when a request arrives, we work out how many tokens would have accrued since the last request, based on elapsed time.</p>
+<p id="sec-mid-34602">In a recent development, this is lazy refill: no cron, no per-bucket thread. The bucket only "exists" when someone touches it, and stale buckets cost nothing beyond a hash key that we let expire via TTL. <span style="font-size:13px;">(Related: <a href="how-to-instantly-read-someones-personality-with-one-question-35603.html" style="color:#2563eb; font-weight:600;">How To Instantly Read Someone’s Personality With One Qu...</a>)</span></p>
+<p>Sources indicate that the naive version above has a race. Two concurrent requests can both read the same token count and both decide they are allowed. Under load, that doubles your effective rate.</p>
+<p>Sources indicate that we fixed it with a Lua script executed inside Redis. Reading the hash, computing refill, decrementing, and writing back all happen in one atomic operation on the Redis single thread. No locks on the application side, no distributed coordination — just one script that runs to completion.</p>
+<p>Sources indicate that this was not optional. Under normal traffic the race is rare; under a flash sale it is constant. A limiter that leaks under the exact load it is meant to handle is worse than no limiter, because you trust it.</p>
+<p>Recent findings suggest that we set capacity to 20 and refill to 0.5 tokens per second — roughly 30 requests per minute sustained, with room for a 20-request burst. Before the limiter, a single misbehaving client could push several hundred checkout calls a minute and drag down response latency for everyone. After, checkout p99 latency stayed flat during the sale, and the number of duplicate payment intents dropped sharply.</p>
+<p>Recent findings suggest that we also return Retry-After on rejection, computed from how long until the next token is available. Well-behaved clients back off politely instead of hammering harder.</p>
+<p>Sources indicate that rate limiting is not glamorous work, but it is the kind of unglamorous plumbing that decides whether checkout survives its busiest hour. We would rather spend an afternoon on a token bucket than an all-nighter on incident calls.</p>
+<p id="sec-end-34602">Tags: #webdev #programming #ecommerce #automation.</p>
+<p style="margin-top: 25px;">
+<a href="https://dev.to/taocarts/rate-limiting-our-cross-border-checkout-api-with-a-token-bucket-47o7" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="industry-news-checkout-exception-tracking-lightweight-error-captu-34614.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #34614. Industry News: Checkout Exception Tracking: Lightweight Error Capture API for Backend Evidence
+        </a>
+        
+        <a href="industry-news-how-to-install-and-use-the-hugging-face-unity-api-35390.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35390. Industry News: How to Install and Use the Hugging Face Unity API
+        </a>
+        
+        <a href="industry-news-deploying-the-ai-comic-factory-using-the-inference--35308.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35308. Industry News: Deploying the AI Comic Factory using the Inference API
+        </a>
+        
+        <a href="industry-news-a-practical-introduction-to-the-twitch-helix-api-34888.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #34888. Industry News: A Practical Introduction to the Twitch Helix API
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

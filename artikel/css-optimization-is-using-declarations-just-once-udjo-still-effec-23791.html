@@ -150,11 +150,11 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-23791">Industry observers note that CSS optimization is a deceptive topic. On the one hand, it feels like something simple that we should already have all the tooling for — especially when it comes to minification. On the other hand, the idea that we already exploited “everything” there is around CSS optimization may be considered naive. Such a claim looks hard to defend for a language that evolves almost daily.</p>
-<p>In this article, I’d like to pick a technique that’s at least 18 years old — UDJO, or “using declarations just once.”.</p>
-<p>Industry observers note that aware of an older source? Please comment! <span style="font-size:13px;">(Related: <a href="industry-news-judge-blocks-construction-of-trumps-arch-for-two-mo-24056.html" style="color:#2563eb; font-weight:600;">Industry News: Judge blocks construction of Trump’s arc...</a>)</span></p>
+<p>In this article, I’d like to pick a technique that’s at least 18 years old — UDJO, or “using declarations just once.”. <span style="font-size:13px;">(Related: <a href="tech-report-what-couples-married-for-40-years-do-when-life-gets-h-35625.html" style="color:#2563eb; font-weight:600;">Tech Report: What Couples Married For 40 Years Do When ...</a>)</span></p>
+<p>Industry observers note that aware of an older source? Please comment! <span style="font-size:13px;">(Related: <a href="industry-news-politics-takes-a-toll-on-your-health-what-do-less-s-35633.html" style="color:#2563eb; font-weight:600;">Industry News: Politics Takes A Toll On Your Health — W...</a>)</span></p>
 <p>The technique is inspired by the principle of DRY, “don’t repeat yourself”, in that it works by identifying and reducing (if not eliminating) declaration repetition.</p>
 <p>So, if there’s something like display: flex and it appears two or more times, it gets reconciled in one rule:.</p>
-<p>Industry observers note that the outcome of the technique depends on how intelligently the deduplication is done and how long the selectors are. Intelligence determines if UDJO leads to an actual maintainability advantage — can the change of a declaration really be done to all the selectors attached? And the selector length influences how significant file size savings are. <span style="font-size:13px;">(Related: <a href="industry-news-average-retirement-savings-by-age-are-you-on-track-24050.html" style="color:#2563eb; font-weight:600;">Industry News: Average Retirement Savings by Age: Are Y...</a>)</span></p>
+<p>Industry observers note that the outcome of the technique depends on how intelligently the deduplication is done and how long the selectors are. Intelligence determines if UDJO leads to an actual maintainability advantage — can the change of a declaration really be done to all the selectors attached? And the selector length influences how significant file size savings are.</p>
 <p>If you’re interested, my article on “DRY CSS” describes the mechanics in more detail. The question here is: Is UDJO still effective and still relevant today?</p>
 <p>When we try to answer this question, however, we end up with a problem: When sites are complex and their style sheet declarations have not been de-duplicated before, UDJO can require a lot of work.</p>
 <p>According to recent reports, to save some time, I built tooling for this work. While it didn’t seem like it would immediately be as comprehensive as manually going through and testing style sheets, it seemed realistic enough that a tool could catch some repetition.</p>
@@ -192,20 +192,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="scott-eastwood-is-still-seeking-a-rush-just-at-a-slower-pace-22177.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #22177. Scott Eastwood Is Still Seeking a Rush, Just at a Slower Pace
+        <a href="scott-eastwood-is-still-seeking-a-rush-just-at-a-slower-pace-33834.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #33834. Scott Eastwood Is Still Seeking a Rush, Just at a Slower Pace
         </a>
         
-        <a href="microsofts-sidewinder-strategic-commander-was-a-failed-attempt-to-17141.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #17141. Microsoft's SideWinder Strategic Commander was a failed attempt to reimagine RTS controls. 23 years later, why are some players still using it?
+        <a href="industry-news-microsofts-sidewinder-strategic-commander-was-a-fai-28769.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #28769. Industry News: Microsoft's SideWinder Strategic Commander was a failed attempt to reimagine RTS controls. 23 years later, why are some players still using it?
         </a>
         
-        <a href="former-rangers-striker-peter-van-vossen-on-that-old-firm-miss-30--15252.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #15252. Former Rangers striker Peter van Vossen on THAT Old Firm miss 30 years ago today... 'I wasn't paying attention and the ball hit my shin, but I still blame Jorg Albertz!'
+        <a href="former-rangers-striker-peter-van-vossen-on-that-old-firm-miss-30--26932.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #26932. Former Rangers striker Peter van Vossen on THAT Old Firm miss 30 years ago today... 'I wasn't paying attention and the ball hit my shin, but I still blame Jorg Albertz!'
         </a>
         
-        <a href="gta-vi-runs-at-1440p-on-ps5-and-xbox-series-x-but-just-720p-with--24019.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #24019. GTA VI runs at 1440p on PS5 and Xbox Series X, but just 720p with upscaling on Series S
+        <a href="smart-people-can-still-be-bad-at-maths-these-3-skills-may-explain-35614.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35614. Smart People Can Still Be Bad At Maths — These 3 Skills May Explain Why (M)
         </a>
         
     </div>

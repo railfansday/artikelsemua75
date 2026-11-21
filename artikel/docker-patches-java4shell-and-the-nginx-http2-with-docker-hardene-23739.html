@@ -150,16 +150,16 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-23739">Sources indicate that openJDK and Oracle disclosed Java4Shell (CVE-2026-114938) on November 17, and NGINX released fixes for two HTTP/2 flaws the next day. Docker began publishing fixed images for both in the Docker Hardened Images (DHI) catalog starting that same day.</p>
-<p>Sources indicate that what we know about Java4Shell is that it’s a memory-corruption bug in the Java runtime that can let an attacker with no credentials run code inside a Java application. Many container images contain a Java runtime, including application images that bundle their own, so it affects teams well beyond the ones that write Java.</p>
-<p>Sources indicate that docker Hardened Images are the trusted foundation your applications should run on, because a flaw in the runtime inside an image is fixed only when that image is rebuilt, and Docker rebuilds its hardened images as soon as upstream fixes become available. Fixed images for the Amazon Corretto, SapMachine and Azul Zulu runtimes and for NGINX are in the catalog today, with Eclipse Temurin following as soon as Adoptium completes its fixed builds. <span style="font-size:13px;">(Related: <a href="latest-update-should-i-quit-my-job-a-decision-framework-24039.html" style="color:#2563eb; font-weight:600;">Latest Update: Should I Quit My Job? A Decision Framewo...</a>)</span></p>
-<p>To decode Base64 swiftly, the HotSpot JVM uses a hand-written routine built on AVX-512 instructions. That routine miscalculates a length when the input ends in unexpected padding and writes up to 62 bytes past the end of a buffer on the Java heap. Calif, the researchers who found it, turned that into heap disclosure and remote code execution.</p>
+<p>Sources indicate that what we know about Java4Shell is that it’s a memory-corruption bug in the Java runtime that can let an attacker with no credentials run code inside a Java application. Many container images contain a Java runtime, including application images that bundle their own, so it affects teams well beyond the ones that write Java. <span style="font-size:13px;">(Related: <a href="why-some-parents-struggle-to-let-their-children-grow-up-m-35607.html" style="color:#2563eb; font-weight:600;">Why Some Parents Struggle To Let Their Children Grow Up...</a>)</span></p>
+<p>Sources indicate that docker Hardened Images are the trusted foundation your applications should run on, because a flaw in the runtime inside an image is fixed only when that image is rebuilt, and Docker rebuilds its hardened images as soon as upstream fixes become available. Fixed images for the Amazon Corretto, SapMachine and Azul Zulu runtimes and for NGINX are in the catalog today, with Eclipse Temurin following as soon as Adoptium completes its fixed builds.</p>
+<p>To decode Base64 swiftly, the HotSpot JVM uses a hand-written routine built on AVX-512 instructions. That routine miscalculates a length when the input ends in unexpected padding and writes up to 62 bytes past the end of a buffer on the Java heap. Calif, the researchers who found it, turned that into heap disclosure and remote code execution. <span style="font-size:13px;">(Related: <a href="split-the-brain-is-built-from-two-ancient-systems-m-35601.html" style="color:#2563eb; font-weight:600;">Split: The Brain Is Built From Two Ancient Systems (M)...</a>)</span></p>
 <p>They demonstrated code execution before authentication against default installations of Keycloak, Jira, Confluence, Artifactory, Jenkins and PingFederate, and after authentication against Kafka, Solr, Elasticsearch, Gerrit and Spinnaker. They note there is no universal exploit: each application needs its own, and they have not published those. As of November 18 there are no public reports of exploitation in the wild.</p>
 <p>Recent findings suggest that oracle rates the issue 8.1 (High) under CVSS 3.1. The researchers rate it 9.2 (Critical) under CVSS 4.0. CISA has issued an alert urging immediate patching.</p>
 <p>All three of these must be true.</p>
 <p>To check a host’s CPU, run this on the host or Kubernetes node. Hardened runtime images have no shell, so it will not run inside the container.</p>
 <p>grep -m1 ‘^flags’ /proc/cpuinfo | tr ‘ ‘ ‘\n’ | grep -E ‘^(avx512f|avx512bw|avx512vbmi|bmi2)$’.</p>
 <p>The host is affected if all four flags are printed.</p>
-<p>Two other ways to check, for when a shell on the node is hard to get. <span style="font-size:13px;">(Related: <a href="industry-news-trump-calls-putin-and-xi-friends-they-have-other-in-24027.html" style="color:#2563eb; font-weight:600;">Industry News: Trump calls Putin and Xi friends. They h...</a>)</span></p>
+<p>Two other ways to check, for when a shell on the node is hard to get.</p>
 <p>Ask the JVM. This works in hardened images:.</p>
 <p>docker run –rm –entrypoint java  -XX:+PrintFlagsFinal -version | grep -w UseAVX.</p>
 <p>UseAVX = 3 means the JVM is using AVX-512 on that host. Treat the host as affected until the full check says otherwise. A value of 0 to 2 means AVX-512 is not in use. On ARM64 nothing is printed. The answer applies only to the host the command ran on.</p>
@@ -251,20 +251,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="motorolas-iphone-duo-competitor-razr-flex-leaks-in-detailed-image-23864.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #23864. Motorola’s iPhone Duo competitor, Razr Flex, leaks in detailed images [Gallery]
+        <a href="fine-tuning-clip-with-remote-sensing-satellite-images-and-caption-35564.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35564. Fine tuning CLIP with Remote Sensing (Satellite) images and captions
         </a>
         
-        <a href="breaking-5-things-most-developers-get-wrong-when-turning-images-i-23828.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #23828. Breaking: 5 Things Most Developers Get Wrong When Turning Images into HTML
+        <a href="tech-report-how-to-optimize-ai-generated-images-for-faster-websit-35160.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35160. Tech Report: How to Optimize AI-Generated Images for Faster Websites
         </a>
         
-        <a href="where-should-your-code-live-in-a-docker-sandbox-23762.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #23762. Where should your code live in a Docker Sandbox?
+        <a href="introducing-textimage-augmentation-for-document-images-35104.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35104. Introducing TextImage Augmentation for Document Images
         </a>
         
-        <a href="industry-news-the-ecosystem-is-the-answer-docker-the-blueprint-al-23760.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #23760. Industry News: The Ecosystem is the Answer: Docker, the Blueprint Alliance, and the Importance of Collaboration in the Agentic Era
+        <a href="industry-news-generate-images-with-claude-and-hugging-face-34759.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #34759. Industry News: Generate Images with Claude and Hugging Face
         </a>
         
     </div>

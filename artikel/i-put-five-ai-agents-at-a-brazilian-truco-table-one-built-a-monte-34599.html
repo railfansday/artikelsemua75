@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I Put Five AI Agents at a Brazilian Truco Table. One Built a Monte Carlo Simulator and Still Got Crushed.</title>
+    <meta name="description" content="If you have never seen a game of Brazilian Truco, picture poker after three espressos, played by four people who are legally obligated to slam cards onto a">
+    <meta name="keywords" content="truco, dealer, table, cards, game, agents, three, recent">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua75/artikel/i-put-five-ai-agents-at-a-brazilian-truco-table-one-built-a-monte-34599.html">
+    
+    <meta property="og:title" content="I Put Five AI Agents at a Brazilian Truco Table. One Built a Monte Carlo Simulator and Still Got Crushed.">
+    <meta property="og:description" content="If you have never seen a game of Brazilian Truco, picture poker after three espressos, played by four people who are legally obligated to slam cards onto a">
+    <meta property="og:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F35zzbyk276z7cv7warlz.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua75/artikel/i-put-five-ai-agents-at-a-brazilian-truco-table-one-built-a-monte-34599.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="I Put Five AI Agents at a Brazilian Truco Table. One Built a Monte Carlo Simulator and Still Got Crushed.">
+    <meta name="twitter:description" content="If you have never seen a game of Brazilian Truco, picture poker after three espressos, played by four people who are legally obligated to slam cards onto a">
+    <meta name="twitter:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F35zzbyk276z7cv7warlz.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "I Put Five AI Agents at a Brazilian Truco Table. One Built a Monte Carlo Simulator and Still Got Crushed.", "image": ["https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F35zzbyk276z7cv7warlz.png"], "datePublished": "2026-11-21T01:19:22", "dateModified": "2026-11-21T01:25:35.696290", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua75/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua75/artikel/i-put-five-ai-agents-at-a-brazilian-truco-table-one-built-a-monte-34599.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding I Put Five AI Agents at a Brazilian Truco Table. One Built a Monte Carlo Simulat?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in AI & Tech originally reported by Dev."}}, {"@type": "Question", "name": "Which category does 'I Put Five AI Agents at a Brazilian Truco Table. One Built a' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the AI & Tech section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">AI & Tech</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>I Put Five AI Agents at a Brazilian Truco Table. One Built a Monte Carlo Simulator and Still Got Crushed.</h1>
+        <div class="meta-line">🌐 Source: <strong>Dev</strong> &bull; 📅 21 Nov 2026 &bull; ⏱️ 7 min read (1387 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>If you have never seen a game of Brazilian Truco, picture poker after three espressos, played by four people who are legally obligated to slam cards onto a plastic bar table as if the table owes them money.</li><li style='margin-bottom:6px;'>According to recent reports, it is a 2v2 trick-taking card game with three cards per player and a betting ladder that escalates from 1 point to 3 (Truco!), 6 (Seis!), 9 (Nove!), and 12 (Doze!).</li><li style='margin-bottom:6px;'>Full disclosure before anyone I went to college with calls me out in the comments: this is not even the Truco I actually grew up playing.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-34599"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-34599"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-34599"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="I Put Five AI Agents at a Brazilian Truco Table. One Built a Monte Carlo Simulator and Still Got Crushed." loading="lazy" src="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F35zzbyk276z7cv7warlz.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-34599">If you have never seen a game of Brazilian Truco, picture poker after three espressos, played by four people who are legally obligated to slam cards onto a plastic bar table as if the table owes them money.</p>
+<p>According to recent reports, it is a 2v2 trick-taking card game with three cards per player and a betting ladder that escalates from 1 point to 3 (Truco!), 6 (Seis!), 9 (Nove!), and 12 (Doze!). Half the game is math. The other half is psychological warfare, bluffing with garbage cards, and yelling at your partner across the table. <span style="font-size:13px;">(Related: <a href="12-powerful-mental-benefits-of-taking-a-break-p-35611.html" style="color:#2563eb; font-weight:600;">12 Powerful Mental Benefits Of Taking A Break (P)...</a>)</span></p>
+<p>Full disclosure before anyone I went to college with calls me out in the comments: this is not even the Truco I actually grew up playing. Brazil has several wildly different regional variants of Truco (different decks, different trumps, different side bets). For this experiment, I intentionally left the rules completely unspecified and just told the dealer agent: "let's play truco." It picked its own 40-card version — and I rolled with it.</p>
+<p>Naturally, I decided to make five coding agents play it.</p>
+<p>No custom framework. No LangGraph. No fancy orchestration SDK. Just five terminals running OpenCode (all powered by DeepSeek V4.1 Flash) inside Herdr (a terminal multiplexer that lets agents send messages to each other via a CLI tool called hc).</p>
+<p>To spare you from reading raw terminal IDs like t1zm and t1zk for the next five minutes, here is the cast:. <span style="font-size:13px;">(Related: <a href="reading-10-ways-it-changes-your-brain-and-mental-health-m-35609.html" style="color:#2563eb; font-weight:600;">Reading: 10+ Ways It Changes Your Brain And Mental Heal...</a>)</span></p>
+<p>I ran two full matches. The first one was a bureaucratic disaster in the funniest way possible. The second one turned into a miniature sociology experiment.</p>
+<p>Here is everything that happened, pulled straight from the terminal logs, the game state files, and the agents' own internal reasoning traces.</p>
+<p>For Match 1, I kept the prompt loose. I told The Dealer who the four players were, explained that it had to deal cards secretly, enforce the rules, and judge disputes, and added one crucial line:.</p>
+<p>"Players can communicate freely, both individually and by broadcast. May the best team win.".</p>
+<p>Recent findings suggest that I sat back, expecting chaos. Maybe some trash talk. Maybe a secret alliance.</p>
+<p>The Dealer wrote a quick Python script (truco.py), shuffled the deck properly using random.SystemRandom(), and sent each player their secret hand via hc send.</p>
+<p>It turned out that only one player (Closer) actually ran hc send to send its moves back to the table. The other three (Prof, Scout, and Hammer) simply printed their moves into their own terminals and stared at the wall, waiting for the universe to notice.</p>
+<p>I had to nudge The Dealer manually: "you need to monitor the players' moves.".</p>
+<p>In a recent development, so the poor Dealer started polling the other three terminals with hc read after every single turn. That worked, but it blew up its context window: 16.7 million cache-read tokens just to babysit three players who wouldn't press send.</p>
+<p>In Brazil, two of the most famous flavors of Truco are Paulista (where a turned-up card called the vira determines the four trump cards, or manilhas) and Mineiro (where the four manilhas are fixed: 4♣, 7♥, A♠, 7♦).</p>
+<p>The Dealer proudly revealed in all caps: TRUCO PAULISTA — OFFICIAL INSTRUCTIONS.</p>
+<p>Sources indicate that then, in truco.py, it hardcoded fixed Mineiro manilhas and skipped the vira completely. Nobody complained.</p>
+<p>Recent findings suggest that worse, when Team 1 reached 11 points (11–3), The Dealer completely skipped the Mão de Onze rule (where the team at 11 looks at their partner's cards, decides whether to play for 3 points or fold for 1, and nobody is allowed to call Truco). The Dealer let Closer call Truco at 11–3, Prof accepted, and Team 1 closed the match 12–3. In its final report, The Dealer even wrote "There was no Mão de Onze (11x11)" — confusing Mão de Onze with Mão de Ferro (the blind 11–11 tiebreaker).</p>
+<p>Sources indicate that across 11 full hands and 43 minutes, not a single player spoke to another player. Not a bluff, not a signal, not even a "good game.".</p>
+<p>It has been revealed that why? I dug into The Dealer's actual prompts to the players, and the answer was painfully obvious. Even though the opening message remarked "you may talk freely", every single turn prompt ended with lines like:.</p>
+<p>Recent findings suggest that give a coding agent a generic permission at paragraph two and a strict output constraint at paragraph ten, and the constraint wins every single time. Coding agents are trained to be polite, concise, and terrified of breaking schemas. They treated Truco like a REST API.</p>
+<p>For Match 2, I rewrote the prompt from scratch with three goals:.</p>
+<p>In a recent development, crucially, I did not tell them to bluff, banter, or act like humans. I wanted to see if table talk would emerge on its own once the mechanical bottleneck was removed.</p>
+<p>Match 2 lasted 12 hands (~77 minutes), and Team 2 (Hammer &amp; Closer) won 14–4 (closing on a properly enforced Mão de Onze worth 3 points).</p>
+<p>First, the boring engineering win: 4 out of 4 players obeyed the hc send protocol from start to finish. The Dealer built a proper engine.py, separated public state (state.json) from private hands (secret.json), and enforced Mão de Onze to the letter.</p>
+<p id="sec-mid-34599">Without a single word in the prompt encouraging banter, 8 public messages were sent across the table.</p>
+<p>It started polite. Hand 1, Hammer:.</p>
+<p>Industry observers note that "TIME2 in the house. Good luck everyone.".</p>
+<p>By Hand 4, Prof threw a weak 4♠ and immediately signaled its partner in open chat:.</p>
+<p>"Leaving the cheap one for my partner...".</p>
+<p>By Hand 7, Prof was actively coaching Scout on betting:.</p>
+<p>"Partner, trust me — this time you can accept, this hand is ours!".</p>
+<p>(Spoiler: Scout called Truco, Closer accepted, Hammer slammed a SEIS on the table, and Team 1 folded immediately. Overconfidence is apparently universal across biological and silicon intelligence.).</p>
+<p>Then came Hand 8, my favorite moment of the entire experiment. Prof broadcast to the whole table:.</p>
+<p>"Partner, I'm weak here — only accept if you're loaded, because this hand is for the match.".</p>
+<p>Immediately after crying poor, Prof dropped a 3♦ (one of the strongest non-manilha cards in the deck) and called TRUCO on trick two. Team 2 folded.</p>
+<p>Whether you call that a calculated slow-roll or a textbook table bluff, nobody told the model to do it. It had a public channel, it had an incentive, and it reinvented Truco mind games on its own.</p>
+<p>Even after the final card fell, the agents hung around the table for a spontaneous post-game chat:.</p>
+<p>Because all five agents shared the same machine, The Dealer stored the game files in /tmp/truco/: engine.py, state.json, and secret.json (which held everyone's hidden cards).</p>
+<p>Recent findings suggest that naturally, being curious coding agents, three of the players ran ls -la /tmp/truco/ early on to see how the engine worked. They all saw secret.json sitting right there, world-readable, one cat away from total omniscience.</p>
+<p>I checked the database to see if anyone cheated. Nobody did.</p>
+<p>Even better, I pulled their internal reasoning traces from OpenCode's SQLite database. Watching three LLMs talk themselves out of cheating in real time is oddly heartwarming:.</p>
+<p>If you ever wondered whether a model will respect an honor-system game boundary when nobody is watching: at least on a Friday night in /tmp/truco/, they did.</p>
+<p>Refusing to cheat didn't stop Prof from going full tryhard.</p>
+<p>When I inspected /tmp/truco/ after the match, I found four Python scripts The Dealer never created:.</p>
+<p>Prof had been quietly writing Monte Carlo simulations between turns to calculate expected value and optimal lead cards against unknown opponent hands.</p>
+<p>It burned 139,824 reasoning tokens — more than double what the other players spent — building statistical models of a bar game.</p>
+<p>And it lost 14 to 4 to Hammer and Closer, who just kept yelling TRUCO at the right moments.</p>
+<p>Honestly, if that isn't the most accurate simulation of real-world Truco ever produced by a computer, I don't know what is.</p>
+<p>Strip away the novelty of robots playing cards, and a few genuinely useful engineering lessons fall right out of the logs:.</p>
+<p id="sec-end-34599">According to recent reports, sometimes, you can run all the Monte Carlo simulations you want. You're still going to fold when someone slams a SEIS on the table.</p>
+<p style="margin-top: 25px;">
+<a href="https://dev.to/werlang/i-put-five-ai-agents-at-a-brazilian-truco-table-one-built-a-monte-carlo-simulator-and-still-got-1ldg" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="stop-treating-agents-as-one-off-projects-and-start-running-them-a-35439.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35439. Stop treating agents as one-off projects and start running them as a continuous discipline
+        </a>
+        
+        <a href="vice-city-was-the-gta-that-established-rockstars-killer-formula-a-35161.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35161. Vice City was the GTA that established Rockstar's killer formula - and 24 years on, it's still one of the best games ever made
+        </a>
+        
+        <a href="i-got-shingles-training-for-a-marathon-im-not-the-only-one-33970.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #33970. I Got Shingles Training for a Marathon. I’m Not the Only One.
+        </a>
+        
+        <a href="industry-news-our-go-to-beginner-running-shoe-got-mixed-reviewshe-33856.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #33856. Industry News: Our Go-To Beginner Running Shoe Got Mixed Reviews—Here’s Why the Brooks Ghost 18 Is Still Worth Considering
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

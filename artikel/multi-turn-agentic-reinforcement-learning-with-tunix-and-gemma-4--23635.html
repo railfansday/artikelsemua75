@@ -141,7 +141,7 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p>In our previous posts - Easy FunctionGemma finetuning with Tunix on Google TPUs and Autonomous LLM post-training with Tunix on TPUs - we showed how Google Tunix streamlines Supervised Fine-Tuning (SFT) and single-turn Group Relative Policy Optimization (GRPO) on Cloud TPUs. Real-world AI agents, however, rarely finish their job in a single turn. They have to reason over partial observations, invoke tools, observe environment feedback, and adapt their strategy across multiple steps. So in this post, we will walk through how to train a multi-turn, tool-using LLM agent using Tunix's agentic reinforcement learning pipeline on Cloud TPU v6e-8. You can find the complete code in this GitHub repository.</p>
-<p>Industry observers note that we will revisit the Plane Strike board game from an earlier TensorFlow/JAX reinforcement learning blog, replacing the custom MLP policy with Gemma 4 E2B in thinking mode on a single Cloud TPU v6e-8 host. Plane Strike is played on a 6x6 grid (A1 to F6) where one 8-cell plane is hidden in one of 4 orientations. Each turn, the agent sees the result of its previous strike and the raw visible board (. untried, X hit, O miss), thinks through candidate placements, and calls the strike(cell="...") tool to strike one cell. The game ends when all 8 plane cells are hit, or after 23 strikes. <span style="font-size:13px;">(Related: <a href="see-where-votes-are-being-counted-in-senate-and-house-midterm-rac-24058.html" style="color:#2563eb; font-weight:600;">See where votes are being counted in Senate and House m...</a>)</span></p>
+<p>Industry observers note that we will revisit the Plane Strike board game from an earlier TensorFlow/JAX reinforcement learning blog, replacing the custom MLP policy with Gemma 4 E2B in thinking mode on a single Cloud TPU v6e-8 host. Plane Strike is played on a 6x6 grid (A1 to F6) where one 8-cell plane is hidden in one of 4 orientations. Each turn, the agent sees the result of its previous strike and the raw visible board (. untried, X hit, O miss), thinks through candidate placements, and calls the strike(cell="...") tool to strike one cell. The game ends when all 8 plane cells are hit, or after 23 strikes. <span style="font-size:13px;">(Related: <a href="industry-news-politics-takes-a-toll-on-your-health-what-do-less-s-35633.html" style="color:#2563eb; font-weight:600;">Industry News: Politics Takes A Toll On Your Health — W...</a>)</span></p>
 <p style="margin-top: 25px;">
 <a href="https://developers.googleblog.com/multi-turn-agentic-reinforcement-learning-with-tunix-and-gemma-4-on-google-tpus/" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
                         → Read original article
@@ -165,20 +165,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="introducing-ai-vs-ai-a-deep-reinforcement-learning-multi-agents-c-12285.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #12285. Introducing ⚔️ AI vs. AI ⚔️ a deep reinforcement learning multi-agents competition system
+        <a href="breaking-introducing-ai-vs-ai-a-deep-reinforcement-learning-multi-35423.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35423. Breaking: Introducing ⚔️ AI vs. AI ⚔️ a deep reinforcement learning multi-agents competition system
         </a>
         
-        <a href="welcome-gemma-googles-new-open-llm-23776.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #23776. Welcome Gemma - Google’s new open LLM
+        <a href="an-introduction-to-deep-reinforcement-learning-35525.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35525. An Introduction to Deep Reinforcement Learning
         </a>
         
-        <a href="vivacity-launches-fresh-learning-hub-for-all-your-districts-googl-20461.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #20461. Vivacity Launches Fresh Learning Hub for All Your District’s Google Training.
+        <a href="illustrating-reinforcement-learning-from-human-feedback-rlhf-35442.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35442. Illustrating Reinforcement Learning from Human Feedback (RLHF)
         </a>
         
-        <a href="an-introduction-to-deep-reinforcement-learning-12387.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #12387. An Introduction to Deep Reinforcement Learning
+        <a href="latest-update-welcome-gemma-2-googles-newly-introduced-open-llm-35129.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35129. Latest Update: Welcome Gemma 2 - Google’s newly introduced open LLM
         </a>
         
     </div>

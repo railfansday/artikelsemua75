@@ -150,10 +150,10 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-23383">Beam by Reflection is out on Hugging Face! It is the first model from the latest US lab, Reflection, and it’s open! It's a mixture-of-experts (MoEs) model with 501B parameters (23B active per token), supports text as input, has a context window of 1M tokens, and is released under the Apache 2.0 license.</p>
-<p>Recent findings suggest that beam is focused on coding and agentic use cases. It is for teams that want a frontier-scale model on their own hardware, infrastructure, or cloud, and want to customize it to their own use cases. Beam ships with its own dedicated open source Rust based harness that delivers the best performance from the model.</p>
-<p>According to recent reports, beam has a native transformers implementation, as well as downstream libraries like vLLM and SGLang. We’ve worked with the Reflection team to bring you inference, SFT (supervised fine tuning), and RL (reinforcement learning) recipes for you to build with this model for your needs. On top of day-0 support in transformers, SGLang and vLLM, this post highlights you how to run it, how to post-train it, and what we built with it.</p>
-<p>According to recent reports, reflection is going to give out $10,000 Hub credits to the best projects that use Beam. All you have to do is make a thing, and share it on the Hub:. <span style="font-size:13px;">(Related: <a href="how-to-budget-for-a-wedding-without-going-broke-24051.html" style="color:#2563eb; font-weight:600;">How to Budget for a Wedding Without Going Broke...</a>)</span></p>
-<p>Industry observers note that if you build something with Beam, then share it on the Hub for a chance to win $10,000. All you have to do is build the space, model, or dataset repo and share it on the model’s repo page. We’ll collect all the links, select the best, and send out the credits to your Hub accounts. <span style="font-size:13px;">(Related: <a href="industry-news-judge-blocks-construction-of-trumps-arch-for-two-mo-24056.html" style="color:#2563eb; font-weight:600;">Industry News: Judge blocks construction of Trump’s arc...</a>)</span></p>
+<p>Recent findings suggest that beam is focused on coding and agentic use cases. It is for teams that want a frontier-scale model on their own hardware, infrastructure, or cloud, and want to customize it to their own use cases. Beam ships with its own dedicated open source Rust based harness that delivers the best performance from the model. <span style="font-size:13px;">(Related: <a href="breaking-the-japanese-habit-that-helps-you-stay-calm-and-focused--35616.html" style="color:#2563eb; font-weight:600;">Breaking: The Japanese Habit That Helps You Stay Calm A...</a>)</span></p>
+<p>According to recent reports, beam has a native transformers implementation, as well as downstream libraries like vLLM and SGLang. We’ve worked with the Reflection team to bring you inference, SFT (supervised fine tuning), and RL (reinforcement learning) recipes for you to build with this model for your needs. On top of day-0 support in transformers, SGLang and vLLM, this post highlights you how to run it, how to post-train it, and what we built with it. <span style="font-size:13px;">(Related: <a href="split-the-brain-is-built-from-two-ancient-systems-m-35601.html" style="color:#2563eb; font-weight:600;">Split: The Brain Is Built From Two Ancient Systems (M)...</a>)</span></p>
+<p>According to recent reports, reflection is going to give out $10,000 Hub credits to the best projects that use Beam. All you have to do is make a thing, and share it on the Hub:.</p>
+<p>Industry observers note that if you build something with Beam, then share it on the Hub for a chance to win $10,000. All you have to do is build the space, model, or dataset repo and share it on the model’s repo page. We’ll collect all the links, select the best, and send out the credits to your Hub accounts.</p>
 <p>Beam is a text-only model built for long-context (1M context length) reasoning and agentic work. It is a sparse MoE model, where each token is computed by a small fraction of the network, so it runs at the speed of a much smaller model while keeping the capacity of a large one.</p>
 <p>The decoder has 52 layers with a hidden size of 5,120. Most layers use sliding-window attention over the previous 512 tokens; every sixth layer, and the last one, attend to the full context. That gives 43 sliding-window layers and 9 global ones.</p>
 <p>Inside the attention block (both layer types).</p>
@@ -251,20 +251,20 @@ We used TRL’s SFTTrainer to adapt Beam to a simple goal: keep its reasoning in
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
+        <a href="welcome-gpt-oss-the-new-open-source-model-family-from-openai-34780.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #34780. Welcome GPT OSS, the new open-source model family from OpenAI!
+        </a>
+        
         <a href="latest-update-welcome-muse-spark-open-open-weight-frontier-multim-23392.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #23392. Latest Update: Welcome Muse Spark Open: open-weight frontier multimodal mixture-of-experts model from Meta
         </a>
         
-        <a href="welcome-gpt-oss-the-latest-open-source-model-family-from-openai-11717.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #11717. Welcome GPT OSS, the latest open-source model family from OpenAI!
+        <a href="latest-update-introducing-the-worlds-largest-open-multilingual-la-35499.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35499. Latest Update: Introducing The World's Largest Open Multilingual Language Model: BLOOM
         </a>
         
-        <a href="welcome-gemma-googles-new-open-llm-23776.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #23776. Welcome Gemma - Google’s new open LLM
-        </a>
-        
-        <a href="is-it-agentic-enough-benchmarking-open-models-on-your-own-tooling-23616.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #23616. Is it agentic enough? Benchmarking open models on your own tooling
+        <a href="industry-news-introducing-idefics-an-open-reproduction-of-state-o-35330.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #35330. Industry News: Introducing IDEFICS: An Open Reproduction of State-of-the-art Visual Langage Model
         </a>
         
     </div>
