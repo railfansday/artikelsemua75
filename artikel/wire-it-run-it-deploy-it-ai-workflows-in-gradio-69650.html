@@ -150,11 +150,11 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-69650">In a recent development, most interesting AI apps are pipelines. You generate an image, then cut out its background if you want to, or edit it into something upcoming. You write a script, then generate a voice for it, or swap the voice while keeping the script the same. We usually wire these steps together in Python, and the moment something looks off we go back to print-debugging to find which step produced the odd value.</p>
-<p>Sources indicate that gr.Workflow, built right into Gradio, makes the pipeline the interface. You describe your steps as a graph of typed nodes, and Gradio serves a drag-and-drop canvas where every node is runnable and every intermediate result is visible. The same graph is also a REST API and a one-command deploy to Hugging Face Spaces. <span style="font-size:13px;">(Related: <a href="breaking-la-noire-2-leak-resurfaces-after-source-gets-gta-6-endin-70081.html" style="color:#2563eb; font-weight:600;">Breaking: LA Noire 2 leak resurfaces after source gets ...</a>)</span></p>
-<p>In a recent development, the best way to get the idea is to see a few workflows in action. Every app below is a live Huggingface Space you can open, run, and duplicate.</p>
+<p>Sources indicate that gr.Workflow, built right into Gradio, makes the pipeline the interface. You describe your steps as a graph of typed nodes, and Gradio serves a drag-and-drop canvas where every node is runnable and every intermediate result is visible. The same graph is also a REST API and a one-command deploy to Hugging Face Spaces. <span style="font-size:13px;">(Related: <a href="faster-tensorflow-models-in-hugging-face-transformers-81553.html" style="color:#2563eb; font-weight:600;">Faster TensorFlow models in Hugging Face Transformers...</a>)</span></p>
+<p>In a recent development, the best way to get the idea is to see a few workflows in action. Every app below is a live Huggingface Space you can open, run, and duplicate. <span style="font-size:13px;">(Related: <a href="retrieval-augmented-generation-with-huggingface-transformers-and--81551.html" style="color:#2563eb; font-weight:600;">Retrieval Augmented Generation with Huggingface Transfo...</a>)</span></p>
 <p>Upload an image, type an edit ("turn it into a snowy winter scene", "add sunglasses", "make the car red"), and get the edited photo back. The whole app is a single node calling Qwen-Image-Edit on Hugging Face Inference Providers.</p>
 <p>👉 Try the Image Editor Pipeline.</p>
-<p>One graph, three pipelines. Start with a prompt and generate an image with FLUX, then pass it to a background-removal Gradio Space to turn it into a sticker. A topic becomes a voiceover through a text-to-speech Gradio Space, while the same topic becomes a catchy episode title through an LLM call. <span style="font-size:13px;">(Related: <a href="tech-report-determined-woman-completes-7-marathons-in-a-year-whil-70111.html" style="color:#2563eb; font-weight:600;">Tech Report: “Determined” woman completes 7 marathons i...</a>)</span></p>
+<p>One graph, three pipelines. Start with a prompt and generate an image with FLUX, then pass it to a background-removal Gradio Space to turn it into a sticker. A topic becomes a voiceover through a text-to-speech Gradio Space, while the same topic becomes a catchy episode title through an LLM call.</p>
 <p>That’s one canvas, two model calls through Hugging Face Inference Providers, and two calls to Gradio Spaces.</p>
 <p>Sources indicate that since this is a workflow, each of the three outputs also gets its own REST endpoint: /sticker, /voiceover, and /episode_title. You can call any of them directly from code without opening the UI. See Call it from code below for a runnable example.</p>
 <p>Type in one idea, and it turns into a set of generated artwork all at once: a base image from FLUX, two AI re-imaginings of that image (a soft watercolor version and a neon cyberpunk take), and a gallery title written by an LLM.</p>
@@ -195,20 +195,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="run-comfyui-workflows-for-free-with-gradio-on-hugging-face-spaces-58358.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #58358. Run ComfyUI workflows for free with Gradio on Hugging Face Spaces
+        <a href="breaking-run-comfyui-workflows-for-free-with-gradio-on-hugging-fa-81233.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #81233. Breaking: Run ComfyUI workflows for free with Gradio on Hugging Face Spaces
         </a>
         
-        <a href="homelabbers-second-gen-optane-build-uses-two-rtx-3090s-to-run-28--69942.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #69942. Homelabber’s second-gen Optane build uses two RTX 3090s to run 2.8-trillion-parameter Kimi AI model at 3.11 tokens per second
+        <a href="industry-news-using-mixing-hugging-face-models-with-gradio-20-81541.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #81541. Industry News: Using & Mixing Hugging Face Models with Gradio 2.0
         </a>
         
-        <a href="breaking-one-shot-any-web-app-with-gradios-grhtml-69902.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #69902. Breaking: One-Shot Any Web App with Gradio's gr.HTML
+        <a href="deploy-hugging-face-models-easily-with-amazon-sagemaker-81538.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #81538. Deploy Hugging Face models easily with Amazon SageMaker
         </a>
         
-        <a href="industry-news-any-custom-frontend-with-gradios-backend-69858.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #69858. Industry News: Any Custom Frontend with Gradio's Backend
+        <a href="showcase-your-projects-in-spaces-using-gradio-81532.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #81532. Showcase Your Projects in Spaces using Gradio
         </a>
         
     </div>

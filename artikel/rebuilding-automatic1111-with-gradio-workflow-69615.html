@@ -150,8 +150,8 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-69615">Recent findings suggest that in our last post, we built five small gr.Workflow graphs and hinted at what it would take to build something as complex as AUTOMATIC1111's stable-diffusion-webui. In this post we walk you through Workflow1111, where we have rebuilt most of AUTOMATIC1111's feature set as a single workflow canvas.</p>
-<p>Industry observers note that workflow1111 is a graph of eleven media pipelines built using seventy-three nodes. It brings together SOTA models for text-to-image, hi-resolution fix, image-to-image, prompt-matrix grids, VLM interrogate, detection-to-inpaint masks, ControlNet-style annotators, background removal, PNG Info storing, and image-to-video. <span style="font-size:13px;">(Related: <a href="three-e-waste-nvidia-v100s-hit-100-tokens-per-second-on-qwen-36-3-70090.html" style="color:#2563eb; font-weight:600;">Three 'e-waste' Nvidia V100s hit 100 tokens per second ...</a>)</span></p>
-<p>Recent findings suggest that you can run any of these pipelines by signing in with your Hugging Face account or providing an access token. Once you sign in, the model calls use your own quota. <span style="font-size:13px;">(Related: <a href="one-ui-95-beta-is-out-now-for-these-galaxy-devices-how-to-install-70076.html" style="color:#2563eb; font-weight:600;">One UI 9.5 Beta is out now for these Galaxy devices – h...</a>)</span></p>
+<p>Industry observers note that workflow1111 is a graph of eleven media pipelines built using seventy-three nodes. It brings together SOTA models for text-to-image, hi-resolution fix, image-to-image, prompt-matrix grids, VLM interrogate, detection-to-inpaint masks, ControlNet-style annotators, background removal, PNG Info storing, and image-to-video. <span style="font-size:13px;">(Related: <a href="tech-report-how-to-train-a-fresh-language-model-from-scratch-usin-81563.html" style="color:#2563eb; font-weight:600;">Tech Report: How to train a fresh language model from s...</a>)</span></p>
+<p>Recent findings suggest that you can run any of these pipelines by signing in with your Hugging Face account or providing an access token. Once you sign in, the model calls use your own quota. <span style="font-size:13px;">(Related: <a href="latest-update-leveraging-pre-trained-language-model-checkpoints-f-81556.html" style="color:#2563eb; font-weight:600;">Latest Update: Leveraging Pre-trained Language Model Ch...</a>)</span></p>
 <p>👉 Try Workflow1111, or duplicate the Space and start rewiring it for your own use case.</p>
 <p>All the media pipelines are built from the same four operator kinds covered in our last post and the official guide. Each node on the canvas wraps one operator, and the operator's inputs and outputs become the ports you connect edges to. As a quick reference on our four operator kinds: fn is a Python function, model is a model called through InferenceClient, space is another Gradio Space, and dataset is a row from a Hub dataset.</p>
 <p>Let's go through the pipelines one by one.</p>
@@ -211,20 +211,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="breaking-one-shot-any-web-app-with-gradios-grhtml-69902.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #69902. Breaking: One-Shot Any Web App with Gradio's gr.HTML
+        <a href="industry-news-using-mixing-hugging-face-models-with-gradio-20-81541.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #81541. Industry News: Using & Mixing Hugging Face Models with Gradio 2.0
         </a>
         
-        <a href="how-ai-image-to-image-and-image-to-video-tools-work-and-how-to-bu-69877.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #69877. How AI Image-to-Image and Image-to-Video Tools Work, and How to Build a Reliable Workflow
+        <a href="showcase-your-projects-in-spaces-using-gradio-81532.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #81532. Showcase Your Projects in Spaces using Gradio
         </a>
         
-        <a href="industry-news-any-custom-frontend-with-gradios-backend-69858.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #69858. Industry News: Any Custom Frontend with Gradio's Backend
+        <a href="gradio-is-joining-hugging-face-81518.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #81518. Gradio is joining Hugging Face!
         </a>
         
-        <a href="5-ai-tools-for-creating-audio-led-music-videos-a-practical-workfl-69793.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #69793. 5 AI Tools for Creating Audio-Led Music Videos: A Practical Workflow
+        <a href="gradio-30-is-out-81486.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #81486. Gradio 3.0 is Out!
         </a>
         
     </div>

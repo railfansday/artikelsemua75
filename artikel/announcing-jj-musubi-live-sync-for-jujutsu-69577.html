@@ -155,13 +155,13 @@ model (or rather, that is the extent of its security model).</li></ul>
 live-syncs copies of a Jujutsu (jj) repository across multiple machines. Every time jj
 snapshots my work, jj-musubi syncs it to every machine in moments, and also commits, rebases,
 fetches, and so on.</p>
-<p>This simple capability is surprisingly powerful.</p>
+<p>This simple capability is surprisingly powerful. <span style="font-size:13px;">(Related: <a href="simple-considerations-for-simple-people-building-fancy-neural-net-81550.html" style="color:#2563eb; font-weight:600;">Simple considerations for simple people building fancy ...</a>)</span></p>
 <p>jj-musubi makes repos on multiple machines feel like jj workspaces (worktrees if you speak git).</p>
 <p>It’s intended for use by one person who works across several machines, so it has no security
-model (or rather, that is the extent of its security model). <span style="font-size:13px;">(Related: <a href="google-wallet-may-soon-be-able-to-store-your-social-security-card-70078.html" style="color:#2563eb; font-weight:600;">Google Wallet may soon be able to store your Social Sec...</a>)</span></p>
+model (or rather, that is the extent of its security model). <span style="font-size:13px;">(Related: <a href="tech-report-how-to-train-a-fresh-language-model-from-scratch-usin-81563.html" style="color:#2563eb; font-weight:600;">Tech Report: How to train a fresh language model from s...</a>)</span></p>
 <p>Industry observers note that jujutsu already treats the working copy as a commit. Running jj status records a snapshot of
 my edits in that commit, which jj-musubi then syncs to my other machines. I like to have my
-shell prompt run jj status, so in practice I rarely have to think about snapshots. <span style="font-size:13px;">(Related: <a href="intel-diamond-rapids-shows-signs-of-life-in-sc26-demo-running-liv-70083.html" style="color:#2563eb; font-weight:600;">Intel Diamond Rapids shows signs of life in SC26 demo r...</a>)</span></p>
+shell prompt run jj status, so in practice I rarely have to think about snapshots.</p>
 <p>Recent findings suggest that jj-musubi does not write to the working copy. Each machine has its own working copy and
 workspaces as usual, so syncs of commits, snapshots, and rewrites can bring in fresh history while
 a build is running, without changing the files under it. On a laptop, I can work offline, and my
@@ -234,20 +234,20 @@ hear about it.</p>
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="intel-diamond-rapids-shows-signs-of-life-in-sc26-demo-running-liv-70083.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #70083. Intel Diamond Rapids shows signs of life in SC26 demo running live server
+        <a href="announcing-the-ai-research-residency-program-81503.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #81503. Announcing the 🤗 AI Research Residency Program
         </a>
         
-        <a href="jujutsu-kaisens-gojo-voice-actor-had-no-idea-he-was-recording-for-70067.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #70067. Jujutsu Kaisen’s Gojo voice actor had no idea he was recording for GTA 6: “Sit on my lap daddy”
+        <a href="announcing-the-hugging-face-fellowship-program-81485.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #81485. Announcing the Hugging Face Fellowship Program
         </a>
         
-        <a href="best-black-friday-deals-now-live-google-pixel-samsung-amazon-echo-70038.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #70038. Best Black Friday deals now live: Google Pixel, Samsung, Amazon Echo, TVs, Anker, much more
+        <a href="tech-report-announcing-evaluation-on-the-hub-81471.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #81471. Tech Report: Announcing Evaluation on the Hub
         </a>
         
-        <a href="black-friday-streaming-deals-start-going-live-paramount-for-299-a-70017.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #70017. Black Friday streaming deals start going live: Paramount+ for $2.99, Apple TV+ for $6.99, more
+        <a href="diffusion-models-live-event-81416.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #81416. Diffusion Models Live Event
         </a>
         
     </div>

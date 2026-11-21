@@ -167,7 +167,7 @@ used on Android devices. Carlos Llamas revealed that he had deleted the C
 code to general applause, and then shared some insights about what went into
 replacing the C implementation. Alice Ryhl, who has worked on the Rust
 implementation for some years, added her own thoughts about what the most
-difficult and interesting parts of the transition were. <span style="font-size:13px;">(Related: <a href="breaking-man-charged-after-allegedly-posing-as-walmart-delivery-d-70102.html" style="color:#2563eb; font-weight:600;">Breaking: Man charged after allegedly posing as Walmart...</a>)</span></p>
+difficult and interesting parts of the transition were.</p>
 <p>Binder was added to the kernel in 2008, Llamas remarked, as an interprocess
 communication mechanism for Android devices. Its design originated in
 
@@ -178,7 +178,7 @@ therefore, presents a large attack surface for Android. Many complicated chained
 attacks against Android have involved Binder at one step or another, Llamas
 explained. Google's internal "red team" (the team dedicated to proactive
 security research) deemed Binder to be the most vulnerability-dense component in
-the entire operating system, with more CVEs per line than anywhere else. <span style="font-size:13px;">(Related: <a href="breaking-university-rolls-out-5m-smart-system-that-checks-who-is--70110.html" style="color:#2563eb; font-weight:600;">Breaking: University rolls out $5m smart system that ch...</a>)</span></p>
+the entire operating system, with more CVEs per line than anywhere else. <span style="font-size:13px;">(Related: <a href="porting-fairseq-wmt19-translation-system-to-transformers-81557.html" style="color:#2563eb; font-weight:600;">Porting fairseq wmt19 translation system to transformer...</a>)</span></p>
 <p>According to recent reports, that made it an obvious candidate for porting to Rust, Llamas stated. Binder was the first user
 of Rust in the kernel, he added, although Ryhl did not
 
@@ -190,7 +190,7 @@ and cross-application message on Android, which runs on more than three billion
 devices. In total, it works out to hundreds of billions of Binder transactions
 per second, globally, he added. That scale meant that even the smallest discrepancy between the
 interface provided by the C version and the one provided by the Rust version
-would cause problems and regressions for some use case.</p>
+would cause problems and regressions for some use case. <span style="font-size:13px;">(Related: <a href="industry-news-introducing-optimum-the-optimization-toolkit-for-tr-81535.html" style="color:#2563eb; font-weight:600;">Industry News: Introducing Optimum: The Optimization To...</a>)</span></p>
 <p>It has been revealed that one particularly tricky aspect has been performance, Ryhl remarked. Throughput
 doesn't matter that much; what matters is the tail latencies. Most
 screen frames on Android have a Binder transaction in the critical path of the
@@ -309,20 +309,20 @@ to Kangrejos. ].</p>
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
+        <a href="latest-update-apples-support-community-shuts-down-on-friday-remov-73956.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #73956. Latest Update: Apple’s Support Community Shuts Down on Friday, Removing User Discussions
+        </a>
+        
+        <a href="golloria-responds-to-huda-beautys-apology-for-removing-darkest-po-70773.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #70773. Golloria Responds to Huda Beauty’s Apology for Removing Darkest Powder
+        </a>
+        
         <a href="youtube-music-removing-samples-tab-on-android-ios-70099.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #70099. YouTube Music removing Samples tab on Android & iOS
         </a>
         
-        <a href="apples-support-community-shuts-down-on-friday-removing-user-discu-62474.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #62474. Apple’s Support Community Shuts Down on Friday, Removing User Discussions
-        </a>
-        
-        <a href="breaking-golloria-responds-to-huda-beautys-apology-for-removing-d-59441.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #59441. Breaking: Golloria Responds to Huda Beauty’s Apology for Removing Darkest Powder
-        </a>
-        
-        <a href="the-one-thing-putin-trump-and-xi-agreed-on-fewer-limits-on-major--70115.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #70115. The one thing Putin, Trump and Xi agreed on — fewer limits on major powers
+        <a href="tech-report-predicting-and-detecting-failures-how-azure-strengthe-81566.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #81566. Tech Report: Predicting and detecting failures: How Azure strengthens reliability for mission-critical workloads
         </a>
         
     </div>

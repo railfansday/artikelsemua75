@@ -150,12 +150,12 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-69529">Models specialized for a domain or a task by fine-tuning general open-source models, such as Qwen and Gemma, inherit a vocabulary built for many domains and general applications.</p>
-<p>In an essay grader we run in production, that vocabulary split the text the model writes most into many tokens. This article previews some results from the VocabX paper, which we will publish soon: how we specialized the vocabulary around the cost of each token rather than its frequency, and cut measured inference cost by 77% without changing the base model. <span style="font-size:13px;">(Related: <a href="three-e-waste-nvidia-v100s-hit-100-tokens-per-second-on-qwen-36-3-70090.html" style="color:#2563eb; font-weight:600;">Three 'e-waste' Nvidia V100s hit 100 tokens per second ...</a>)</span></p>
-<p>Recent findings suggest that the tokenizer is usually treated as a fixed property of the base model, inherited and left alone. For a model specialized in a single domain, it can be one of the largest cost levers, and it is set before any training step.</p>
+<p>In an essay grader we run in production, that vocabulary split the text the model writes most into many tokens. This article previews some results from the VocabX paper, which we will publish soon: how we specialized the vocabulary around the cost of each token rather than its frequency, and cut measured inference cost by 77% without changing the base model. <span style="font-size:13px;">(Related: <a href="tech-report-how-to-train-a-fresh-language-model-from-scratch-usin-81563.html" style="color:#2563eb; font-weight:600;">Tech Report: How to train a fresh language model from s...</a>)</span></p>
+<p>Recent findings suggest that the tokenizer is usually treated as a fixed property of the base model, inherited and left alone. For a model specialized in a single domain, it can be one of the largest cost levers, and it is set before any training step. <span style="font-size:13px;">(Related: <a href="latest-update-leveraging-pre-trained-language-model-checkpoints-f-81556.html" style="color:#2563eb; font-weight:600;">Latest Update: Leveraging Pre-trained Language Model Ch...</a>)</span></p>
 <p>Sources indicate that one of the systems we run in production is an automated grader for Portuguese essays, built on Qwen3-4B. It receives the essay, the prompt and the supporting texts, and returns a JSON assessment with a grade and a comment for each competency.</p>
 <p>The model was already small, at 4 billion parameters, and had already been trained for the task. Its tokenizer, however, was still the original Qwen3-4B one, built for many languages and many kinds of text. In the grader, it was used for a single language, Portuguese, and a single response format. That had two costs: the text the grader writes on every request took more tokens than it needed, and at every generated token the model scored a vocabulary of 151,669 entries, including many this task almost never uses.</p>
 <p>We rebuilt that vocabulary with a method we call VocabX, keeping the same base model, the same data and the same training recipe. The numbers in this article come from the current version of the paper, still under review, and may change before publication.</p>
-<p>In a recent development, the leading language models read and write in tokens, and the tokenizer decides how text becomes tokens. The tokenizers of the leading general-purpose models are trained on large collections of text from many domains and languages, from source code to contracts to Chinese. For a general-purpose model, that choice makes sense. <span style="font-size:13px;">(Related: <a href="breaking-la-noire-2-leak-resurfaces-after-source-gets-gta-6-endin-70081.html" style="color:#2563eb; font-weight:600;">Breaking: LA Noire 2 leak resurfaces after source gets ...</a>)</span></p>
+<p>In a recent development, the leading language models read and write in tokens, and the tokenizer decides how text becomes tokens. The tokenizers of the leading general-purpose models are trained on large collections of text from many domains and languages, from source code to contracts to Chinese. For a general-purpose model, that choice makes sense.</p>
 <p>For a model used in a single domain, it creates two kinds of waste at once.</p>
 <p>Sources indicate that the first is fragmentation. The tokenizer splits into many pieces exactly what the domain repeats most. In the grader, every response starts with the same JSON envelope, the same competency names, the same evaluation phrases. In contracts, it is the boilerplate clauses. In code, the identifiers. Each of these sequences costs several tokens where one would do, and the model pays for every one of them on every request.</p>
 <p>It has been revealed that the second is excess. The vocabulary carries tens of thousands of entries the domain never uses, and the model computes a score for all of them at every token it generates. A model tuned to grade American school biology exams will almost never write in Chinese, yet it computes the probability of every Chinese-language token at every step. The vocabulary splits into many pieces what the domain repeats most, and carries entries the domain never uses.</p>
@@ -209,20 +209,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
+        <a href="building-cost-efficient-enterprise-rag-applications-with-intel-ga-81163.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #81163. Building Cost-Efficient Enterprise RAG applications with Intel Gaudi 2 and Intel Xeon
+        </a>
+        
+        <a href="want-real-estate-without-tenants-own-reits-through-a-low-cost-ind-79654.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #79654. Want Real Estate Without Tenants? Own REITs Through a Low-Cost Index Fund
+        </a>
+        
+        <a href="inside-jj-gabriels-man-united-exit-cost-to-real-madrid-revealed-w-72440.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #72440. Inside JJ Gabriel’s Man United exit: Cost to Real Madrid revealed with Jose Mourinho unhappy
+        </a>
+        
         <a href="breaking-building-apps-with-ai-is-easy-deploying-securing-and-own-69357.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #69357. Breaking: Building apps with AI is easy. Deploying, securing, and owning them is the real challenge. 🚀 A great guide to bridging the gap between AI-generated prototypes and production-ready, self-hosted applications. #AI #DevOps #SelfHosting
-        </a>
-        
-        <a href="want-real-estate-without-tenants-own-reits-through-a-low-cost-ind-68168.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #68168. Want Real Estate Without Tenants? Own REITs Through a Low-Cost Index Fund
-        </a>
-        
-        <a href="inside-jj-gabriels-man-united-exit-cost-to-real-madrid-revealed-w-60908.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #60908. Inside JJ Gabriel’s Man United exit: Cost to Real Madrid revealed with Jose Mourinho unhappy
-        </a>
-        
-        <a href="breaking-building-cost-efficient-enterprise-rag-applications-with-58293.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #58293. Breaking: Building Cost-Efficient Enterprise RAG applications with Intel Gaudi 2 and Intel Xeon
         </a>
         
     </div>

@@ -150,8 +150,8 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-69642">In a recent development, sentence Transformers is a Python library for using and training embedding and reranker models for a wide range of applications, such as retrieval augmented generation, semantic search, semantic textual similarity, and more. Its v6.0 patch introduces a fourth model type: MultiVectorEncoder, for ColBERT-style late interaction retrieval, alongside a complete training approach for it. In this blogpost, I'll show you how to use it to finetune a multi-vector model that outperforms general-purpose retrievers on your data. This method can also train strong new multi-vector models from scratch. Everything below runs on pip install -U "sentence-transformers[train]".</p>
-<p>According to recent reports, finetuning multi-vector models involves several components: the model itself, datasets, loss functions, training arguments, evaluators, and the trainer class. I'll have a look at each of these components, accompanied by practical examples of how they can be used for finetuning strong multi-vector models. <span style="font-size:13px;">(Related: <a href="breaking-university-rolls-out-5m-smart-system-that-checks-who-is--70110.html" style="color:#2563eb; font-weight:600;">Breaking: University rolls out $5m smart system that ch...</a>)</span></p>
-<p>Lastly, in the Evaluation section, I'll show you that my finetuned multi-vector-encoder/mLateOn-medical model, trained in 14.5 hours on a single RTX 3090 alongside this blogpost, easily outperforms every general-purpose retrieval model I could find on my medical retrieval evaluation: dense, sparse, lexical, and multi-vector alike. <span style="font-size:13px;">(Related: <a href="could-meta-fix-its-glasses-privacy-concerns-with-an-led-redesign-70080.html" style="color:#2563eb; font-weight:600;">Could Meta fix its glasses privacy concerns with an LED...</a>)</span></p>
+<p>According to recent reports, finetuning multi-vector models involves several components: the model itself, datasets, loss functions, training arguments, evaluators, and the trainer class. I'll have a look at each of these components, accompanied by practical examples of how they can be used for finetuning strong multi-vector models. <span style="font-size:13px;">(Related: <a href="tech-report-how-to-train-a-fresh-language-model-from-scratch-usin-81563.html" style="color:#2563eb; font-weight:600;">Tech Report: How to train a fresh language model from s...</a>)</span></p>
+<p>Lastly, in the Evaluation section, I'll show you that my finetuned multi-vector-encoder/mLateOn-medical model, trained in 14.5 hours on a single RTX 3090 alongside this blogpost, easily outperforms every general-purpose retrieval model I could find on my medical retrieval evaluation: dense, sparse, lexical, and multi-vector alike. <span style="font-size:13px;">(Related: <a href="block-sparse-matrices-for-smaller-and-faster-language-models-81560.html" style="color:#2563eb; font-weight:600;">Block Sparse Matrices for Smaller and Faster Language M...</a>)</span></p>
 <p>If you're interested in finetuning dense embedding models, sparse embedding models, or rerankers instead, then consider reading through my prior Training and Finetuning Embedding Models, Training and Finetuning Sparse Embedding Models, and Training and Finetuning Reranker Models blogposts.</p>
 <p>Industry observers note that this blogpost is about training multi-vector models. If you want to learn how to use them, from loading and encoding to indexing in vector databases, see the companion Multi-Vector (Late Interaction) Embedding Models with Sentence Transformers blogpost.</p>
 <p>Recent findings suggest that A dense embedding model compresses a whole text into a single vector, and similarity is one dot product between two such summaries. A multi-vector model (also called a late-interaction or ColBERT-style model) skips that compression. It keeps one small vector per token and scores a query against a document with the MaxSim operator, where every query token finds its best-matching document token and the scores are summed. Token-level matching preserves exactly the fine-grained signals that a single vector has to average away, which usually means stronger retrieval, at the cost of a bigger index.</p>
@@ -249,6 +249,10 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
+        <a href="training-and-finetuning-sparse-embedding-models-with-sentence-tra-80898.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #80898. Training and Finetuning Sparse Embedding Models with Sentence Transformers
+        </a>
+        
         <a href="training-and-finetuning-multimodal-embedding-reranker-models-with-69846.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #69846. Training and Finetuning Multimodal Embedding & Reranker Models with Sentence Transformers
         </a>
@@ -257,12 +261,8 @@
             📰 #69669. Multi-Vector (Late Interaction) Embedding Models with Sentence Transformers
         </a>
         
-        <a href="breaking-training-and-finetuning-sparse-embedding-models-with-sen-57950.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #57950. Breaking: Training and Finetuning Sparse Embedding Models with Sentence Transformers
-        </a>
-        
-        <a href="token-pooling-aware-training-for-multi-vector-embedding-models-69431.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #69431. Token Pooling-Aware Training for Multi-Vector Embedding Models
+        <a href="industry-news-training-and-finetuning-reranker-models-with-senten-80976.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #80976. Industry News: Training and Finetuning Reranker Models with Sentence Transformers
         </a>
         
     </div>

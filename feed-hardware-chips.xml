@@ -4,97 +4,97 @@
     <title>Portal Berita - Hardware & Chips</title>
     <link>https://railfansday.github.io/artikelsemua75/</link>
     <description>Curated news feed for Hardware & Chips.</description>
-    <lastBuildDate>Sat, 21 Nov 2026 22:21:22 -0000</lastBuildDate>
+    <lastBuildDate>Sat, 21 Nov 2026 23:54:33 -0000</lastBuildDate>
     
             <item>
-                <title>‘Minecraft Mommy’ goes viral on TikTok for giving good boys gaming tips</title>
-                <link>https://railfansday.github.io/artikelsemua75/artikel/minecraft-mommy-goes-viral-on-tiktok-for-giving-good-boys-gaming--70093.html</link>
-                <guid>https://railfansday.github.io/artikelsemua75/artikel/minecraft-mommy-goes-viral-on-tiktok-for-giving-good-boys-gaming--70093.html</guid>
-                <description>A TikTok creator dubbed “Minecraft Mommy” is going viral for teaching her “good boys” how to find diamonds and kill zombies in one hit. The diamond-hunting clip appeared on footyfanatics5 under the title “Minecraft Diamond Hunting: Find Diamonds Like a Good Boy”, a TikTok with 1....</description>
-            </item>
-            <item>
-                <title>Three 'e-waste' Nvidia V100s hit 100 tokens per second on Qwen 3.6 35B in a $1,042 homelab rig</title>
-                <link>https://railfansday.github.io/artikelsemua75/artikel/three-e-waste-nvidia-v100s-hit-100-tokens-per-second-on-qwen-36-3-70090.html</link>
-                <guid>https://railfansday.github.io/artikelsemua75/artikel/three-e-waste-nvidia-v100s-hit-100-tokens-per-second-on-qwen-36-3-70090.html</guid>
-                <description>A homelab builder benchmarked three used Nvidia V100s on Qwen 3.6 35B, achieving about 100 tokens per second in a custom setup costing $1,042 with just “e-waste” GPUs. The smaller, dense Qwen 3.6 27B manages about 24 tokens per second on the same platform, and the V100s use about...</description>
-            </item>
-            <item>
-                <title>Intel Diamond Rapids shows signs of life in SC26 demo running live server</title>
-                <link>https://railfansday.github.io/artikelsemua75/artikel/intel-diamond-rapids-shows-signs-of-life-in-sc26-demo-running-liv-70083.html</link>
-                <guid>https://railfansday.github.io/artikelsemua75/artikel/intel-diamond-rapids-shows-signs-of-life-in-sc26-demo-running-liv-70083.html</guid>
-                <description>Sources indicate that intel’s next-gen Xeon Diamond Rapids CPUs appeared at Supercomputing 2026 (SC26) in two separate booths, but neither was from Intel directly. Most interesting was a running server at the CXL booth, showcasing a demo with a Diamond Rapids CPU. The server ran ...</description>
-            </item>
-            <item>
-                <title>Supermicro sued by shareholders over claims Nvidia executive’s wife knew about illicit China sales</title>
-                <link>https://railfansday.github.io/artikelsemua75/artikel/supermicro-sued-by-shareholders-over-claims-nvidia-executives-wif-70065.html</link>
-                <guid>https://railfansday.github.io/artikelsemua75/artikel/supermicro-sued-by-shareholders-over-claims-nvidia-executives-wif-70065.html</guid>
-                <description>More information about the alleged knowledge of chip diversion by a Supermicro executive is being revealed as shareholders’ civil lawsuit against the organization progresses. According to The Telegraph, the investors alleged that there was “no way Cenly Chen lacked knowledge abou...</description>
-            </item>
-            <item>
-                <title>Latest Update: Intel continues layoffs with cuts to its IT department, hundreds of employees reportedly affected</title>
-                <link>https://railfansday.github.io/artikelsemua75/artikel/latest-update-intel-continues-layoffs-with-cuts-to-its-it-departm-70061.html</link>
-                <guid>https://railfansday.github.io/artikelsemua75/artikel/latest-update-intel-continues-layoffs-with-cuts-to-its-it-departm-70061.html</guid>
-                <description>According to recent reports, intel has reduced its workforce by approximately 27,800 employees under Lip-Bu Tan, based on the tech giant's reported headcount figures, but this does not seem to be enough. The company has reportedly initiated another round of layoffs, this time acr...</description>
-            </item>
-            <item>
-                <title>Latest Update: Get an RTX 5070 for just $839.99, a rare savings in the GPU wasteland</title>
-                <link>https://railfansday.github.io/artikelsemua75/artikel/latest-update-get-an-rtx-5070-for-just-83999-a-rare-savings-in-th-70046.html</link>
-                <guid>https://railfansday.github.io/artikelsemua75/artikel/latest-update-get-an-rtx-5070-for-just-83999-a-rare-savings-in-th-70046.html</guid>
-                <description>Buying a nice graphics card... in this economy? After Nvidia shipped all the GPUs to AI data centers? Yes, it's actually possible, if you act fast. Newegg is currently running a deal on a GeForce RTX 5070 12 GB, in this case the MSI Ventus 2X OC variant, and you can get a hold of...</description>
-            </item>
-            <item>
-                <title>Breaking: Redditor forced to bring desktop PC in checked luggage on US-to-UK flight with GPU still installed</title>
-                <link>https://railfansday.github.io/artikelsemua75/artikel/breaking-redditor-forced-to-bring-desktop-pc-in-checked-luggage-o-70032.html</link>
-                <guid>https://railfansday.github.io/artikelsemua75/artikel/breaking-redditor-forced-to-bring-desktop-pc-in-checked-luggage-o-70032.html</guid>
-                <description>A Redditor from the UK was flying from the United States with their desktop PC in a carry-on but was forced to check it. According to u/FattyLeopold, they’ve carried their PC as a carry-on on different flights, and they brought it with them in the cabin all the way across the Atl...</description>
-            </item>
-            <item>
-                <title>Accelerating PyTorch Transformers with Intel Sapphire Rapids - part 1</title>
-                <link>https://railfansday.github.io/artikelsemua75/artikel/accelerating-pytorch-transformers-with-intel-sapphire-rapids-part-70014.html</link>
-                <guid>https://railfansday.github.io/artikelsemua75/artikel/accelerating-pytorch-transformers-with-intel-sapphire-rapids-part-70014.html</guid>
+                <title>Industry News: Scaling-up BERT Inference on CPU (Part 1)</title>
+                <link>https://railfansday.github.io/artikelsemua75/artikel/industry-news-scaling-up-bert-inference-on-cpu-part-1-81542.html</link>
+                <guid>https://railfansday.github.io/artikelsemua75/artikel/industry-news-scaling-up-bert-inference-on-cpu-part-1-81542.html</guid>
                 <description>Content not available. → Read original article...</description>
             </item>
             <item>
-                <title>Latest Update: Get 32GB of DDR5 RAM for $111 in this premium AM5 gaming bundle from Newegg</title>
-                <link>https://railfansday.github.io/artikelsemua75/artikel/latest-update-get-32gb-of-ddr5-ram-for-111-in-this-premium-am5-ga-69992.html</link>
-                <guid>https://railfansday.github.io/artikelsemua75/artikel/latest-update-get-32gb-of-ddr5-ram-for-111-in-this-premium-am5-ga-69992.html</guid>
-                <description>Newegg is back at it again with a fresh set of combo deals just in time for Black Friday. This 4-item combo offers a massive $369 discount; if you apply it to the RAM, it comes down to $111 and brings back memories of days past. For only $1,549, you get an awesome gaming (and pro...</description>
-            </item>
-            <item>
-                <title>The Open Evaluation Standard: Benchmarking NVIDIA Nemotron 3 Nano with NeMo Evaluator</title>
-                <link>https://railfansday.github.io/artikelsemua75/artikel/the-open-evaluation-standard-benchmarking-nvidia-nemotron-3-nano--69983.html</link>
-                <guid>https://railfansday.github.io/artikelsemua75/artikel/the-open-evaluation-standard-benchmarking-nvidia-nemotron-3-nano--69983.html</guid>
+                <title>Scaling up BERT-like model Inference on modern CPU  - Part 2</title>
+                <link>https://railfansday.github.io/artikelsemua75/artikel/scaling-up-bert-like-model-inference-on-modern-cpu-part-2-81525.html</link>
+                <guid>https://railfansday.github.io/artikelsemua75/artikel/scaling-up-bert-like-model-inference-on-modern-cpu-part-2-81525.html</guid>
                 <description>Content not available. → Read original article...</description>
             </item>
             <item>
-                <title>Tech Report: Samsung’s gorgeous 49-inch Odyssey OLED G9 hits a upcoming all-time low price of $854 — Amazon Black Friday deal slashes 33% off gaming monitor upgrade</title>
-                <link>https://railfansday.github.io/artikelsemua75/artikel/tech-report-samsungs-gorgeous-49-inch-odyssey-oled-g9-hits-a-upco-69979.html</link>
-                <guid>https://railfansday.github.io/artikelsemua75/artikel/tech-report-samsungs-gorgeous-49-inch-odyssey-oled-g9-hits-a-upco-69979.html</guid>
-                <description>Recent findings suggest that it's here, Black Friday has already started to bombard us with some fantastic deals on our most-wanted tech. Now is the best time of the year to find a great deal on a big purchase. Hitting an all-time low price on Amazon, we have the gorgeous 49-inch...</description>
-            </item>
-            <item>
-                <title>Industry News: Razer's MMO mouse hits all-time low price at under $60 at Amazon in Black Friday deal — Naga V2 Hyperspeed price craters by 42% in stellar gaming mouse offer</title>
-                <link>https://railfansday.github.io/artikelsemua75/artikel/industry-news-razers-mmo-mouse-hits-all-time-low-price-at-under-6-69975.html</link>
-                <guid>https://railfansday.github.io/artikelsemua75/artikel/industry-news-razers-mmo-mouse-hits-all-time-low-price-at-under-6-69975.html</guid>
-                <description>Black Friday is upon us, and Amazon has graced us with this fantastic gaming mouse deal, where you can pick up a Razer Naga V2 Hyperspeed gaming mouse for 42% off its original list price. Sporting 19 programmable buttons, this capable wireless mouse is an all-time low. The Naga V...</description>
-            </item>
-            <item>
-                <title>NVIDIA brings agents to life with DGX Spark and Reachy Mini</title>
-                <link>https://railfansday.github.io/artikelsemua75/artikel/nvidia-brings-agents-to-life-with-dgx-spark-and-reachy-mini-69974.html</link>
-                <guid>https://railfansday.github.io/artikelsemua75/artikel/nvidia-brings-agents-to-life-with-dgx-spark-and-reachy-mini-69974.html</guid>
+                <title>Accelerating PyTorch distributed fine-tuning with Intel technologies</title>
+                <link>https://railfansday.github.io/artikelsemua75/artikel/accelerating-pytorch-distributed-fine-tuning-with-intel-technolog-81524.html</link>
+                <guid>https://railfansday.github.io/artikelsemua75/artikel/accelerating-pytorch-distributed-fine-tuning-with-intel-technolog-81524.html</guid>
                 <description>Content not available. → Read original article...</description>
             </item>
             <item>
-                <title>Asus ROG Strix Scope II 96 gaming keyboard crashes to all-time low in early Black Friday offer — grab 39% off a premium board packed full of features</title>
-                <link>https://railfansday.github.io/artikelsemua75/artikel/asus-rog-strix-scope-ii-96-gaming-keyboard-crashes-to-all-time-lo-69972.html</link>
-                <guid>https://railfansday.github.io/artikelsemua75/artikel/asus-rog-strix-scope-ii-96-gaming-keyboard-crashes-to-all-time-lo-69972.html</guid>
-                <description>If you're looking for a new mechanical keyboard on this side of Black Friday, look no further than the Asus ROG Strix Scope II 96 Wireless. The capable gaming keyboard has hit an all-time low price, reducing the board from its original price of $179.99 to just $109.99 at Amazon. ...</description>
+                <title>Intel and Hugging Face Partner to Democratize Machine Learning Hardware Acceleration</title>
+                <link>https://railfansday.github.io/artikelsemua75/artikel/intel-and-hugging-face-partner-to-democratize-machine-learning-ha-81474.html</link>
+                <guid>https://railfansday.github.io/artikelsemua75/artikel/intel-and-hugging-face-partner-to-democratize-machine-learning-ha-81474.html</guid>
+                <description>Content not available. → Read original article...</description>
             </item>
             <item>
-                <title>Latest Update: Our favorite accessories to level up your gaming setup ahead of GTA VI</title>
-                <link>https://railfansday.github.io/artikelsemua75/artikel/latest-update-our-favorite-accessories-to-level-up-your-gaming-se-69956.html</link>
-                <guid>https://railfansday.github.io/artikelsemua75/artikel/latest-update-our-favorite-accessories-to-level-up-your-gaming-se-69956.html</guid>
-                <description>It has been revealed that looking for a headset or a pro-grade controller for your return to Vice City? We have some recs. Looking for a headset or a pro-grade controller for your return to Vice City? We have some recs. If you buy something from a link, The Verge may earn a commi...</description>
+                <title>Accelerate your models with 🤗 Optimum Intel and OpenVINO</title>
+                <link>https://railfansday.github.io/artikelsemua75/artikel/accelerate-your-models-with-optimum-intel-and-openvino-81426.html</link>
+                <guid>https://railfansday.github.io/artikelsemua75/artikel/accelerate-your-models-with-optimum-intel-and-openvino-81426.html</guid>
+                <description>Content not available. → Read original article...</description>
+            </item>
+            <item>
+                <title>Faster Training and Inference: Habana Gaudi®2 vs Nvidia A100 80GB</title>
+                <link>https://railfansday.github.io/artikelsemua75/artikel/faster-training-and-inference-habana-gaudi2-vs-nvidia-a100-80gb-81407.html</link>
+                <guid>https://railfansday.github.io/artikelsemua75/artikel/faster-training-and-inference-habana-gaudi2-vs-nvidia-a100-80gb-81407.html</guid>
+                <description>Content not available. → Read original article...</description>
+            </item>
+            <item>
+                <title>Industry News: Accelerating PyTorch Transformers with Intel Sapphire Rapids - part 2</title>
+                <link>https://railfansday.github.io/artikelsemua75/artikel/industry-news-accelerating-pytorch-transformers-with-intel-sapphi-81391.html</link>
+                <guid>https://railfansday.github.io/artikelsemua75/artikel/industry-news-accelerating-pytorch-transformers-with-intel-sapphi-81391.html</guid>
+                <description>Content not available. → Read original article...</description>
+            </item>
+            <item>
+                <title>Fine-tuning 20B LLMs with RLHF on a 24GB consumer GPU</title>
+                <link>https://railfansday.github.io/artikelsemua75/artikel/fine-tuning-20b-llms-with-rlhf-on-a-24gb-consumer-gpu-81374.html</link>
+                <guid>https://railfansday.github.io/artikelsemua75/artikel/fine-tuning-20b-llms-with-rlhf-on-a-24gb-consumer-gpu-81374.html</guid>
+                <description>Content not available. → Read original article...</description>
+            </item>
+            <item>
+                <title>Accelerating Stable Diffusion Inference on Intel CPUs</title>
+                <link>https://railfansday.github.io/artikelsemua75/artikel/accelerating-stable-diffusion-inference-on-intel-cpus-81369.html</link>
+                <guid>https://railfansday.github.io/artikelsemua75/artikel/accelerating-stable-diffusion-inference-on-intel-cpus-81369.html</guid>
+                <description>Content not available. → Read original article...</description>
+            </item>
+            <item>
+                <title>Optimizing Stable Diffusion for Intel CPUs with NNCF and 🤗 Optimum</title>
+                <link>https://railfansday.github.io/artikelsemua75/artikel/optimizing-stable-diffusion-for-intel-cpus-with-nncf-and-optimum-81337.html</link>
+                <guid>https://railfansday.github.io/artikelsemua75/artikel/optimizing-stable-diffusion-for-intel-cpus-with-nncf-and-optimum-81337.html</guid>
+                <description>Content not available. → Read original article...</description>
+            </item>
+            <item>
+                <title>Hugging Face and AMD partner on accelerating state-of-the-art models for CPU and GPU platforms</title>
+                <link>https://railfansday.github.io/artikelsemua75/artikel/hugging-face-and-amd-partner-on-accelerating-state-of-the-art-mod-81326.html</link>
+                <guid>https://railfansday.github.io/artikelsemua75/artikel/hugging-face-and-amd-partner-on-accelerating-state-of-the-art-mod-81326.html</guid>
+                <description>Content not available. → Read original article...</description>
+            </item>
+            <item>
+                <title>Fine-tuning Stable Diffusion models on Intel CPUs</title>
+                <link>https://railfansday.github.io/artikelsemua75/artikel/fine-tuning-stable-diffusion-models-on-intel-cpus-81309.html</link>
+                <guid>https://railfansday.github.io/artikelsemua75/artikel/fine-tuning-stable-diffusion-models-on-intel-cpus-81309.html</guid>
+                <description>Content not available. → Read original article...</description>
+            </item>
+            <item>
+                <title>AMD + 🤗: Large Language Models Out-of-the-Box Acceleration with AMD GPU</title>
+                <link>https://railfansday.github.io/artikelsemua75/artikel/amd-large-language-models-out-of-the-box-acceleration-with-amd-gp-81244.html</link>
+                <guid>https://railfansday.github.io/artikelsemua75/artikel/amd-large-language-models-out-of-the-box-acceleration-with-amd-gp-81244.html</guid>
+                <description>Content not available. → Read original article...</description>
+            </item>
+            <item>
+                <title>Accelerate StarCoder with 🤗 Optimum Intel on Xeon: Q8/Q4 and Speculative Decoding</title>
+                <link>https://railfansday.github.io/artikelsemua75/artikel/accelerate-starcoder-with-optimum-intel-on-xeon-q8q4-and-speculat-81223.html</link>
+                <guid>https://railfansday.github.io/artikelsemua75/artikel/accelerate-starcoder-with-optimum-intel-on-xeon-q8q4-and-speculat-81223.html</guid>
+                <description>Content not available. → Read original article...</description>
+            </item>
+            <item>
+                <title>CPU Optimized Embeddings with 🤗 Optimum Intel and fastRAG</title>
+                <link>https://railfansday.github.io/artikelsemua75/artikel/cpu-optimized-embeddings-with-optimum-intel-and-fastrag-81198.html</link>
+                <guid>https://railfansday.github.io/artikelsemua75/artikel/cpu-optimized-embeddings-with-optimum-intel-and-fastrag-81198.html</guid>
+                <description>Content not available. → Read original article...</description>
             </item>
 </channel>
 </rss>

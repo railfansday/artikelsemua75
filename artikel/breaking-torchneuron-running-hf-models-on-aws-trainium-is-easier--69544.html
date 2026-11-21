@@ -150,8 +150,8 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-69544">It has been revealed that torchNeuron provides a new native backend for PyTorch on AWS Trainium. Transformers, Diffusers and Kernels natively support it, making it easier than ever to run models on Trainium and to share them on the HF hub.</p>
-<p>Industry observers note that torchNeuron is a PyTorch plugin that brings a new backend for Trainium enabling support for eager mode, torch.compile and native distributed APIs like FSDP and TP. Read the Pytorch blog to learn more about TorchNeuron. <span style="font-size:13px;">(Related: <a href="breaking-a-child-support-fight-exposed-a-trump-advisers-15-millio-70113.html" style="color:#2563eb; font-weight:600;">Breaking: A child support fight exposed a Trump adviser...</a>)</span></p>
-<p>Industry observers note that starting Oct. 20, 2026, TorchNeuron will be available as a public beta. Researchers and developers will be able to install it with pip install torch-neuronx. <span style="font-size:13px;">(Related: <a href="one-ui-95-beta-is-out-now-for-these-galaxy-devices-how-to-install-70076.html" style="color:#2563eb; font-weight:600;">One UI 9.5 Beta is out now for these Galaxy devices – h...</a>)</span></p>
+<p>Industry observers note that torchNeuron is a PyTorch plugin that brings a new backend for Trainium enabling support for eager mode, torch.compile and native distributed APIs like FSDP and TP. Read the Pytorch blog to learn more about TorchNeuron. <span style="font-size:13px;">(Related: <a href="hugging-face-on-pytorch-xla-tpus-81552.html" style="color:#2563eb; font-weight:600;">Hugging Face on PyTorch / XLA TPUs...</a>)</span></p>
+<p>Industry observers note that starting Oct. 20, 2026, TorchNeuron will be available as a public beta. Researchers and developers will be able to install it with pip install torch-neuronx. <span style="font-size:13px;">(Related: <a href="industry-news-distributed-training-train-bartt5-for-summarization-81544.html" style="color:#2563eb; font-weight:600;">Industry News: Distributed Training: Train BART/T5 for ...</a>)</span></p>
 <p>To date, the Hugging Face experience on AWS Trainium and Inferentia — AI chips designed respectively for cost-effective training and inference at scale — has been delivered through optimum-neuron. This library relies on the torch-neuronx package, which is based on PyTorch XLA. It was the natural choice at the time, but it meant thinking like a compiler: lazy tensors instead of eager execution, static shapes only, a recompilation for every graph break. Optimum Neuron existed to hide that complexity, and maintained custom code (modeling classes, trainers, etc) to do so.</p>
 <p>It has been revealed that torchNeuron changes this. It integrates directly into PyTorch and exposes neuron as a native device, with eager execution, PyTorch's own distributed primitives (DTensor, FSDP2) and torch.compile.</p>
 <p>For the Hugging Face libraries, Trainium becomes a device like any other: Transformers, Diffusers, Accelerate, PEFT and TRL run on it directly, with the same classes and scripts you would use on any other accelerator. From now on, we recommend that Neuron consumers use these libraries directly instead of going through Optimum Neuron.</p>
@@ -203,12 +203,12 @@
             📰 #69532. Profiling TorchNeuron (Part 1): System-level profiling on AWS Trainium.
         </a>
         
-        <a href="does-your-model-run-on-aws-trainium-look-it-up-69524.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #69524. Does Your Model Run on AWS Trainium? Look It Up
+        <a href="latest-update-optimumonnx-runtime-easier-faster-training-for-your-81397.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #81397. Latest Update: Optimum+ONNX Runtime - Easier, Faster training for your Hugging Face models
         </a>
         
-        <a href="industry-news-deer-hunting-has-never-been-easier-than-right-now-67951.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #67951. Industry News: Deer Hunting Has Never Been Easier Than Right Now
+        <a href="deploy-models-on-aws-inferentia2-from-hugging-face-81151.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #81151. Deploy models on AWS Inferentia2 from Hugging Face
         </a>
         
     </div>

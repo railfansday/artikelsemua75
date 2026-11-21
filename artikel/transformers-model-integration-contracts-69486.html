@@ -157,12 +157,12 @@ model types, and its test suite is major: 88,000+ CPU tests on main, plus
 (SDPA) for T5. As a side effect, UMT5's decoder could attend to future tokens. During training, it could peek at the answer it was supposed to predict. Nothing crashed, and the bug stayed in main for almost two months.</p>
 <p>When we later replayed those commits, a small UMT5 model running on CPU flagged
 it on every one of them. This post is about that model and the tests built
-around it. <span style="font-size:13px;">(Related: <a href="intel-diamond-rapids-shows-signs-of-life-in-sc26-demo-running-liv-70083.html" style="color:#2563eb; font-weight:600;">Intel Diamond Rapids shows signs of life in SC26 demo r...</a>)</span></p>
+around it. <span style="font-size:13px;">(Related: <a href="latest-update-stop-treating-agents-as-one-off-projects-and-start--81564.html" style="color:#2563eb; font-weight:600;">Latest Update: Stop treating agents as one-off projects...</a>)</span></p>
 <p>Transformers supports over 750
 model types, and its test suite is major: 88,000+ CPU tests on main, plus
 200,000+ GPU tests in a daily run. Model tests are only part of it: we also
 test pipelines, training, distributed execution, quantization and attention
-kernels. <span style="font-size:13px;">(Related: <a href="the-one-thing-putin-trump-and-xi-agreed-on-fewer-limits-on-major--70115.html" style="color:#2563eb; font-weight:600;">The one thing Putin, Trump and Xi agreed on — fewer lim...</a>)</span></p>
+kernels. <span style="font-size:13px;">(Related: <a href="tech-report-how-to-train-a-fresh-language-model-from-scratch-usin-81563.html" style="color:#2563eb; font-weight:600;">Tech Report: How to train a fresh language model from s...</a>)</span></p>
 <p>The integration tests load real checkpoints and exercise the model's API on
 real hardware. Running all of that on every PR would mean keeping a lot of GPUs
 busy all day long, which isn't practical. By the time a scheduled run finds a
@@ -292,20 +292,20 @@ and contribute a usage path or review a generated contract.</p>
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="how-to-train-a-new-language-model-from-scratch-using-transformers-58676.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #58676. How to train a new language model from scratch using Transformers and Tokenizers
+        <a href="tech-report-how-to-train-a-fresh-language-model-from-scratch-usin-81563.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #81563. Tech Report: How to train a fresh language model from scratch using Transformers and Tokenizers
         </a>
         
-        <a href="training-a-language-model-with-transformers-using-tensorflow-and--58470.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #58470. Training a language model with 🤗 Transformers using TensorFlow and TPUs
+        <a href="latest-update-training-a-language-model-with-transformers-using-t-81356.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #81356. Latest Update: Training a language model with 🤗 Transformers using TensorFlow and TPUs
         </a>
         
-        <a href="breaking-timm-transformers-use-any-timm-model-with-transformers-58133.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #58133. Breaking: Timm ❤️ Transformers: Use any timm model with transformers
+        <a href="tech-report-timm-transformers-use-any-timm-model-with-transformer-81023.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #81023. Tech Report: Timm ❤️ Transformers: Use any timm model with transformers
         </a>
         
-        <a href="the-transformers-library-standardizing-model-definitions-58018.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #58018. The Transformers Library: standardizing model definitions
+        <a href="the-transformers-library-standardizing-model-definitions-80937.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #80937. The Transformers Library: standardizing model definitions
         </a>
         
     </div>

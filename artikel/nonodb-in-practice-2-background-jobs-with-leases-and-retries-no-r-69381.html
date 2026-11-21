@@ -157,20 +157,20 @@ with a single atomic operation.</li></ul>
 "generate this PDF". A few hundred jobs a day on a single VM. And yet the
 default advice is to add BullMQ or Sidekiq, which means adding Redis, which
 means another process to monitor, another persistence model to reason about,
-and another backup job nobody wrote.</p>
+and another backup job nobody wrote. <span style="font-size:13px;">(Related: <a href="tech-report-how-to-train-a-fresh-language-model-from-scratch-usin-81563.html" style="color:#2563eb; font-weight:600;">Tech Report: How to train a fresh language model from s...</a>)</span></p>
 <p>There is a middle path that fits the same small deployment as the app: keep the
 jobs in the same database as the data, and make the queue semantics explicit
 with a single atomic operation.</p>
-<p>In this post we build a durable job queue with:. <span style="font-size:13px;">(Related: <a href="build-a-racetrack-codes-november-2026-70084.html" style="color:#2563eb; font-weight:600;">Build A Racetrack codes (November 2026)...</a>)</span></p>
+<p>In this post we build a durable job queue with:.</p>
 <p>According to recent reports, the database is NonoDB, a single Rust daemon over LMDB. The same pattern works
 against any document store with an atomic find-and-upgrade, but NonoDB's
-find_and_modify makes the claim a one-liner. <span style="font-size:13px;">(Related: <a href="google-home-speakers-get-a-major-gemini-upgrade-soon-but-only-for-70089.html" style="color:#2563eb; font-weight:600;">Google Home speakers get a major Gemini upgrade ‘soon,’...</a>)</span></p>
+find_and_modify makes the claim a one-liner.</p>
 <p>Everything is a document in the _jobs collection. There is no hidden queue
 state.</p>
 <p>It has been revealed that status is one of pending, running, done, failed. due_at is a Unix
 timestamp in milliseconds; a job is claimable when status == "pending" and
 due_at &lt;= now. A claim adds lease_id, lease_until, worker_id, and
-started_at.</p>
+started_at. <span style="font-size:13px;">(Related: <a href="latest-update-stop-treating-agents-as-one-off-projects-and-start--81564.html" style="color:#2563eb; font-weight:600;">Latest Update: Stop treating agents as one-off projects...</a>)</span></p>
 <p>The two operations that matter are:.</p>
 <p>In NonoDB, find_and_modify selects one document, applies the update, and
 returns the image in the same writer transaction. There is no read-modify-write
@@ -252,20 +252,20 @@ database.</p>
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="openenv-in-practice-evaluating-tool-using-agents-in-real-world-en-69909.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #69909. OpenEnv in Practice: Evaluating Tool-Using Agents in Real-World Environments
+        <a href="few-shot-learning-in-practice-gpt-neo-and-the-accelerated-inferen-81540.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #81540. Few-shot learning in practice: GPT-Neo and the 🤗 Accelerated Inference API
         </a>
         
-        <a href="latest-update-train-ai-models-with-unsloth-and-hugging-face-jobs--69894.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #69894. Latest Update: Train AI models with Unsloth and Hugging Face Jobs for FREE
+        <a href="scientists-create-a-needle-thin-brain-implant-that-can-do-three-j-80562.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #80562. Scientists create a needle-thin brain implant that can do three jobs at once
         </a>
         
-        <a href="securing-fastapi-applications-jwt-authentication-and-rate-limitin-69885.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #69885. Securing FastAPI Applications: JWT Authentication and Rate Limiting with Redis
+        <a href="a-rosefulness-warmth-practice-for-honest-gratitude-80434.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #80434. A ‘Rosefulness’ WARMTH Practice for Honest Gratitude
         </a>
         
-        <a href="migrating-your-github-ci-to-hugging-face-jobs-69794.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #69794. Migrating Your GitHub CI to Hugging Face Jobs
+        <a href="the-associated-press-is-moving-eight-us-photo-editor-jobs-to-indi-80281.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #80281. The Associated Press is Moving Eight US Photo Editor Jobs to India
         </a>
         
     </div>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>spov: OpenCode in disposable Modal sandboxes</title>
+    <meta name="description" content="I wanted to run OpenCode in Modal sandboxes. Then I wanted better support for larger one-shot jobs. And then I wanted a web UI. It resulted in spov: at its">
+    <meta name="keywords" content="opencode, spov, modal, sandbox, open, agent, there, github">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua75/artikel/spov-opencode-in-disposable-modal-sandboxes-80614.html">
+    
+    <meta property="og:title" content="spov: OpenCode in disposable Modal sandboxes">
+    <meta property="og:description" content="I wanted to run OpenCode in Modal sandboxes. Then I wanted better support for larger one-shot jobs. And then I wanted a web UI. It resulted in spov: at its">
+    <meta property="og:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F63gezukyfd3dnbge2fpp.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua75/artikel/spov-opencode-in-disposable-modal-sandboxes-80614.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="spov: OpenCode in disposable Modal sandboxes">
+    <meta name="twitter:description" content="I wanted to run OpenCode in Modal sandboxes. Then I wanted better support for larger one-shot jobs. And then I wanted a web UI. It resulted in spov: at its">
+    <meta name="twitter:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F63gezukyfd3dnbge2fpp.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "spov: OpenCode in disposable Modal sandboxes", "image": ["https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F63gezukyfd3dnbge2fpp.png"], "datePublished": "2026-11-21T22:46:51", "dateModified": "2026-11-21T22:51:18.585131", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua75/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua75/artikel/spov-opencode-in-disposable-modal-sandboxes-80614.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding spov: OpenCode in disposable Modal sandboxes?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Dev."}}, {"@type": "Question", "name": "Which category does 'spov: OpenCode in disposable Modal sandboxes' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>spov: OpenCode in disposable Modal sandboxes</h1>
+        <div class="meta-line">🌐 Source: <strong>Dev</strong> &bull; 📅 21 Nov 2026 &bull; ⏱️ 4 min read (727 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>I wanted to run OpenCode in Modal sandboxes.</li><li style='margin-bottom:6px;'>It has been revealed that I'm betting on open source to keep winning in the longer run when it comes to developer tooling, even in the agentic era.</li><li style='margin-bottom:6px;'>Anyway, what I also developed was a wish for an easy way to kick off agent sessions in sandboxed environments.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-80614"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-80614"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-80614"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="spov: OpenCode in disposable Modal sandboxes" loading="lazy" src="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F63gezukyfd3dnbge2fpp.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-80614">I wanted to run OpenCode in Modal sandboxes. Then I wanted better support for larger one-shot jobs. And then I wanted a web UI. It resulted in spov: at its core, a simple Modal sandbox for headless OpenCode sessions, with an optional job runner and web control pane.</p>
+<p>It has been revealed that I'm betting on open source to keep winning in the longer run when it comes to developer tooling, even in the agentic era. I love open and customizable OSS harnesses like Pi and OpenCode; the transparency and extensibility they bring is very much something I want from my local development tooling.</p>
+<p>Anyway, what I also developed was a wish for an easy way to kick off agent sessions in sandboxed environments. And I've been using Modal's services for some side project experimentation and model training in the past, which made me aware both of their free tier with $30 of credits a month and of their pretty convenient APIs. All in all, it's an easy platform to integrate with. It's focused and opinionated, and seemingly pretty robust too. <span style="font-size:13px;">(Related: <a href="tech-report-how-to-train-a-fresh-language-model-from-scratch-usin-81563.html" style="color:#2563eb; font-weight:600;">Tech Report: How to train a fresh language model from s...</a>)</span></p>
+<p>Recent findings suggest that so the choice landed on OpenCode + Modal. In its simplest form, you cd into a repo and run spov fly. You get the standard OpenCode TUI in your terminal, but the OpenCode server runs in a fresh Modal sandbox with only the repositories you chose. When you quit, the agent's commits and changes are synced back to your local checkout.</p>
+<p>There are other projects operating in this area, with slightly different ambitions and scopes. Some examples:. <span style="font-size:13px;">(Related: <a href="latest-update-stop-treating-agents-as-one-off-projects-and-start--81564.html" style="color:#2563eb; font-weight:600;">Latest Update: Stop treating agents as one-off projects...</a>)</span></p>
+<p>What I was looking for is a bit different: Something I can start from my terminal in the normal OpenCode TUI, when I prefer to, and get the work back on my branch. But I also need it to be capable of working in a more remote-first mode, pulling remotes and pushing back work as PRs to the remote. Another piece on the wish list was: No real token or key inside the sandbox at all. They stay in a proxy beside it, and the agent only sees placeholders (in all three above, the agent's environment holds real credentials).</p>
+<p id="sec-mid-80614">I wouldn't say it's impossible that I will open up for more plug-and-play sandbox providers in spov, even if I don't have any intentions of supporting anything other than Modal at the moment. But when it comes to agent harness support, it's very unlikely that spov will ever try to become a multi-harness environment. It started out as a very thin launcher and wrapper around OpenCode, and there's a strength in leaning into some of OpenCode's mechanisms rather than going fully generic.</p>
+<p>Industry observers note that A lot of tooling in this space assumes your code lives on GitHub. Mine mostly does too, but I didn't want spov to lock in too hard to GitHub. So spov supports GitHub, Forgejo and Gitea (Codeberg, Codefloe or your own instance), and GitLab works as well. A sandbox can clone from and push to any of them, and a job can end in a pull request on whichever forge the repo lives on. Inside the sandbox, the agent gets the forge's own CLI (gh, tea or glab), but never the real token: that stays in the credential proxy, same as the model keys.</p>
+<p>In a recent development, gitHub, Codefloe (Forgejo) and gitlab.com are tested end to end against real sandboxes, and Forgejo and Gitea also run in CI. If you're on a self-hosted forge and something doesn't work, do reach out!</p>
+<p>Sources indicate that spov is a personal side project, free and open source under the MIT license, and there's no commercial angle to it. That also means there's no fully managed or hosted version at the moment. Local mode needs no setup at all though: the CLI starts its own small server. For jobs and the dashboard, you run spov serve with Postgres on your own infrastructure (there's a Compose file in the repo), and the dashboard signs in with GitHub.</p>
+<p>If a hosted version is something you'd want, please reach out or open a feature request on GitHub. Knowing that there's interest is what would make me consider it.</p>
+<p id="sec-end-80614">I'm using it for some personal projects, but I'm open-sourcing it in case someone happens to have the exact same preferences and needs ;-).</p>
+<p style="margin-top: 25px;">
+<a href="https://dev.to/jimutt/spov-opencode-in-disposable-modal-sandboxes-40ib" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="docker-sandboxes-vs-containers-choosing-the-right-isolation-for-a-69731.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #69731. Docker Sandboxes vs. Containers: Choosing the Right Isolation for AI Agents
+        </a>
+        
+        <a href="give-sandboxed-agents-live-web-access-with-the-firecrawl-kit-for--69730.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #69730. Give sandboxed agents live web access with the Firecrawl kit for Docker Sandboxes
+        </a>
+        
+        <a href="aws-weekly-roundup-aws-nitro-sandboxes-aws-emulator-and-more-nove-69667.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #69667. AWS Weekly Roundup: AWS Nitro Sandboxes, AWS Emulator, and more (November 16, 2026)
+        </a>
+        
+        <a href="tech-report-predicting-and-detecting-failures-how-azure-strengthe-81566.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #81566. Tech Report: Predicting and detecting failures: How Azure strengthens reliability for mission-critical workloads
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

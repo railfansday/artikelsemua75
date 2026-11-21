@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duplicate refunds from scattered status checks: fixing it with the State pattern in C#</title>
+    <meta name="description" content="This post was originally published in Portuguese on my blog: Status de pedido com if espalhado gera estorno duplo -> State. Every order system has an Order">
+    <meta name="keywords" content="status, state, order, each, cancel, returned, refund, only">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua75/artikel/duplicate-refunds-from-scattered-status-checks-fixing-it-with-the-80615.html">
+    
+    <meta property="og:title" content="Duplicate refunds from scattered status checks: fixing it with the State pattern in C#">
+    <meta property="og:description" content="This post was originally published in Portuguese on my blog: Status de pedido com if espalhado gera estorno duplo -> State. Every order system has an Order">
+    <meta property="og:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fjc79mgc2p8mw2wr2zw9t.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua75/artikel/duplicate-refunds-from-scattered-status-checks-fixing-it-with-the-80615.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Duplicate refunds from scattered status checks: fixing it with the State pattern in C#">
+    <meta name="twitter:description" content="This post was originally published in Portuguese on my blog: Status de pedido com if espalhado gera estorno duplo -> State. Every order system has an Order">
+    <meta name="twitter:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fjc79mgc2p8mw2wr2zw9t.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Duplicate refunds from scattered status checks: fixing it with the State pattern in C#", "image": ["https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fjc79mgc2p8mw2wr2zw9t.png"], "datePublished": "2026-11-21T22:46:48", "dateModified": "2026-11-21T22:51:18.707940", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua75/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua75/artikel/duplicate-refunds-from-scattered-status-checks-fixing-it-with-the-80615.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Duplicate refunds from scattered status checks: fixing it with the State pattern?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Dev."}}, {"@type": "Question", "name": "Which category does 'Duplicate refunds from scattered status checks: fixing it wi' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Duplicate refunds from scattered status checks: fixing it with the State pattern in C#</h1>
+        <div class="meta-line">🌐 Source: <strong>Dev</strong> &bull; 📅 21 Nov 2026 &bull; ⏱️ 4 min read (898 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>This post was originally published in Portuguese on my blog: Status de pedido com if espalhado gera estorno duplo -> State.</li><li style='margin-bottom:6px;'>Every order system has an Order class with a Status property.</li><li style='margin-bottom:6px;'>It has been revealed that the order goes through Pending, Paid, Shipped and Delivered, and it can be cancelled before shipping.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-80615"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-80615"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-80615"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Duplicate refunds from scattered status checks: fixing it with the State pattern in C#" loading="lazy" src="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fjc79mgc2p8mw2wr2zw9t.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-80615">This post was originally published in Portuguese on my blog: Status de pedido com if espalhado gera estorno duplo -&gt; State.</p>
+<p>Every order system has an Order class with a Status property. At first there are three or four statuses, each action checks the current status with an if, and everything is fine. The trouble indicates up months later, when a latest status arrives and nobody remembers all the places that needed to know about it. In this post I'll show a very concrete case of that, a refund paid twice, and how the State pattern solves it without ceremony. <span style="font-size:13px;">(Related: <a href="porting-fairseq-wmt19-translation-system-to-transformers-81557.html" style="color:#2563eb; font-weight:600;">Porting fairseq wmt19 translation system to transformer...</a>)</span></p>
+<p>It has been revealed that the order goes through Pending, Paid, Shipped and Delivered, and it can be cancelled before shipping. If it was already paid, cancelling issues a refund. The Cancel() method in the "before" version is the kind of code everyone has written:.</p>
+<p>Look at the first condition: it's a list of what is not allowed. And the second one assumes that anything that isn't Pending has been paid. As long as the enum had only those statuses, both assumptions were true.</p>
+<p>Then the business asked for returns. Someone created the Returned status and the fresh method, with a refund:. <span style="font-size:13px;">(Related: <a href="tech-report-how-to-train-a-fresh-language-model-from-scratch-usin-81563.html" style="color:#2563eb; font-weight:600;">Tech Report: How to train a fresh language model from s...</a>)</span></p>
+<p>Return() is correct. The bug is in Cancel(), which nobody opened: Returned isn't in the forbidden list and isn't Pending, so a returned order can be cancelled and the customer gets refunded a second time. No test broke, because the existing tests didn't know Returned existed. In the project I left a test, Cancelling_a_returned_order_refunds_twice, that documents exactly this behavior in the old version.</p>
+<p>That's the real pain of the status-based if: each status's rules end up scattered across every method. To add a status you have to review every action, and the compiler doesn't warn you about any of them.</p>
+<p>Sources indicate that the idea is to flip the question. Instead of every action asking "what status am I in?", each status becomes a class that knows which actions it accepts. The order only holds the current state and delegates to it. The base class forbids everything by default:.</p>
+<p>It has been revealed that this "forbidden by default" is the most important point of the design. A fresh state is born with no permissions at all, and you explicitly allow what makes sense. It's the opposite of the old Cancel()'s forbidden list.</p>
+<p>Each state overrides only what it allows and returns the next state. The refund for a cancellation lives where it makes sense, in PaidState:.</p>
+<p id="sec-mid-80615">The Order class in the "after" version became trivial: a _state field that starts as PendingState, and each action is a one-liner like public void Cancel() =&gt; _state = _state.Cancel(this);. The refund is done by IssueRefund(), marked internal so that only the states, in the same assembly, can call it.</p>
+<p>Sources indicate that and ReturnedState? It only declares its own Status. It doesn't override Cancel, so cancelling a returned order throws InvalidOperationException with "Cannot cancel an order that is Returned." without anyone having to remember it.</p>
+<p>First, the bug goes away by construction, not by discipline. The Cancelling_a_returned_order_is_rejected test checks that the cancellation is refused, that the status stays Returned and that RefundCount stays at 1.</p>
+<p>Second, reading the code changes. To know what a paid order can do, you open PaidState and everything is there, in a few lines. In the old version you had to read the five methods of Order and assemble the state machine in your head.</p>
+<p>It has been revealed that third, extension becomes local. A fresh status, like "being picked" or "awaiting pickup", is a new class plus a tweak to the state that leads to it. The other states aren't touched. Tests also get more direct: each transition has a short test, and refusals are tested by the exception message.</p>
+<p>State has a cost, and it's not a small one. You trade one file for several, and whoever arrives at the code has to understand the pattern before finding where each rule lives. For a three-status flow that never changes, a well-written switch is more honest and easier to read.</p>
+<p>It also isn't worth it when the transitions are basically data, with no behavior: if all you need is "from A you can go to B or C", a transition table (a dictionary, or even a database table) solves it with less code and lets you change it without a deploy. State shines when each transition carries its own behavior, like the refund here, sending an email or reserving stock.</p>
+<p>It has been revealed that another thing to watch is persistence. In the database you keep storing the Status enum, and when loading the order you need to rebuild the state object from it. It's a simple mapping, but it's one more piece to maintain. And if the states start accumulating dependencies (repositories, payment gateways), stop and think: maybe the rule belongs in an application service, and the state should only say whether the transition is allowed.</p>
+<p>My rule of thumb: if you've already fixed a bug because of a status forgotten in some if, or if the status enum got its fifth value, State is worth considering.</p>
+<p>The project has both versions side by side, in the Before and After folders, with tests for each. All you need is Docker installed:.</p>
+<p id="sec-end-80615">The full code is on GitHub: programero-csharp/2026-11-order-status-state-pattern.</p>
+<p style="margin-top: 25px;">
+<a href="https://dev.to/dunirvana/duplicate-refunds-from-scattered-status-checks-fixing-it-with-the-state-pattern-in-c-382m" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="bert-101-state-of-the-art-nlp-model-explained-81508.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #81508. BERT 101 - State Of The Art NLP Model Explained
+        </a>
+        
+        <a href="the-state-of-computer-vision-at-hugging-face-81393.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #81393. The State of Computer Vision at Hugging Face 🤗
+        </a>
+        
+        <a href="tech-report-how-applicant-tracking-systems-read-resumes-7-checks--81376.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #81376. Tech Report: How Applicant Tracking Systems Read Resumes: 7 Checks Developers Should Make
+        </a>
+        
+        <a href="tech-report-starcoder-a-state-of-the-art-llm-for-code-81354.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #81354. Tech Report: StarCoder: A State-of-the-Art LLM for Code
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

@@ -150,10 +150,10 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-69519">LFM3 is our new generation of Liquid Foundation Models (LFMs), built to be the starting point for specialized intelligence. It brings text, vision, audio, omni, and decision models onto one shared backbone, all in the 2B parameter range. This means you can pick the model for your modality, fine-tune it on your own data on a single GPU, and deploy it where your application runs.</p>
-<p>LFM3 brings four main changes compared to our previous LFM2 family:. <span style="font-size:13px;">(Related: <a href="obsessed-fan-breaks-into-youtubers-home-demanding-marriage-dies-a-70103.html" style="color:#2563eb; font-weight:600;">Obsessed fan breaks into YouTuber’s home demanding marr...</a>)</span></p>
-<p>LFM2 highlighted that a hybrid of short convolutions and attention can run fast on-device without sacrificing quality. For LFM3, we used our hardware-in-the-loop architecture search to redesign that architecture for agentic use cases, which need more capability per parameter and fast inference over long contexts. The search now covers 14 device and backend combinations, from phones and a Raspberry Pi 5 to laptops, cloud CPUs, GPUs, and the Qualcomm Hexagon NPU. <span style="font-size:13px;">(Related: <a href="could-meta-fix-its-glasses-privacy-concerns-with-an-led-redesign-70080.html" style="color:#2563eb; font-weight:600;">Could Meta fix its glasses privacy concerns with an LED...</a>)</span></p>
+<p>LFM3 brings four main changes compared to our previous LFM2 family:.</p>
+<p>LFM2 highlighted that a hybrid of short convolutions and attention can run fast on-device without sacrificing quality. For LFM3, we used our hardware-in-the-loop architecture search to redesign that architecture for agentic use cases, which need more capability per parameter and fast inference over long contexts. The search now covers 14 device and backend combinations, from phones and a Raspberry Pi 5 to laptops, cloud CPUs, GPUs, and the Qualcomm Hexagon NPU. <span style="font-size:13px;">(Related: <a href="hyperparameter-search-with-transformers-and-ray-tune-81558.html" style="color:#2563eb; font-weight:600;">Hyperparameter Search with Transformers and Ray Tune...</a>)</span></p>
 <p>LFM3-1.7B-Base has 24 layers and four main changes:.</p>
-<p>The payoff reveals at long context. Per parameter, LFM3-1.7B matches LFM2-1.2B on short prompts across edge devices, and with 8K tokens in context it is about 25% faster. LFM3-1.7B-Base was pre-trained on 22T tokens with the same 128K vocabulary as LFM2.5-8B-A1B. The final 3.5T tokens are a mid-training stage on curated data with a larger share of agentic traces and tool calls, which also extends the context window to 256K tokens.</p>
+<p>The payoff reveals at long context. Per parameter, LFM3-1.7B matches LFM2-1.2B on short prompts across edge devices, and with 8K tokens in context it is about 25% faster. LFM3-1.7B-Base was pre-trained on 22T tokens with the same 128K vocabulary as LFM2.5-8B-A1B. The final 3.5T tokens are a mid-training stage on curated data with a larger share of agentic traces and tool calls, which also extends the context window to 256K tokens. <span style="font-size:13px;">(Related: <a href="block-sparse-matrices-for-smaller-and-faster-language-models-81560.html" style="color:#2563eb; font-weight:600;">Block Sparse Matrices for Smaller and Faster Language M...</a>)</span></p>
 <p>Every LFM3 model branches from LFM3-1.7B-Base. Instead of running one large general-purpose model, you pick the one that fits your inputs, customize it, and run it on-device.</p>
 <p>The vision and audio models also get two newly introduced in-house encoders:.</p>
 <p>It has been revealed that each model runs in transformers. The snippets below come from the model cards, which also list the other inference engines each model supports.</p>
@@ -207,20 +207,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="industry-news-how-to-build-a-healthcare-robot-from-simulation-to--69986.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #69986. Industry News: How to Build a Healthcare Robot from Simulation to Deployment with NVIDIA Isaac for Healthcare
+        <a href="industry-news-using-mixing-hugging-face-models-with-gradio-20-81541.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #81541. Industry News: Using & Mixing Hugging Face Models with Gradio 2.0
         </a>
         
-        <a href="we-got-claude-to-build-cuda-kernels-and-teach-open-models-69938.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #69938. We Got Claude to Build CUDA Kernels and teach open models!
+        <a href="industry-news-how-accelerate-runs-very-large-models-thanks-to-pyt-81437.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #81437. Industry News: How 🤗 Accelerate runs very large models thanks to PyTorch
         </a>
         
-        <a href="training-and-finetuning-multimodal-embedding-reranker-models-with-69846.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #69846. Training and Finetuning Multimodal Embedding & Reranker Models with Sentence Transformers
+        <a href="industry-news-accelerating-over-130000-hugging-face-models-with-o-81261.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #81261. Industry News: Accelerating over 130,000 Hugging Face models with ONNX Runtime
         </a>
         
-        <a href="industry-news-olmoearth-v11-a-more-efficient-family-of-earth-obse-69816.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #69816. Industry News: OlmoEarth v1.1: A more efficient family of Earth observation models
+        <a href="industry-news-data-is-better-together-enabling-communities-to-col-81201.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #81201. Industry News: Data is better together: Enabling communities to collectively build better datasets together using Argilla and Hugging Face Spaces
         </a>
         
     </div>

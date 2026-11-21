@@ -167,8 +167,8 @@ How Google Traced GKE API Timeouts to a Linux Kernel TCP Bug.</p>
 									
 									3
 									min read.</p>
-<p>Google recently detailed how three interacting bugs across Google Kubernetes Engine (GKE), Private Service Connect, and the Linux kernel caused intermittent Kubernetes API connectivity failures, blocking around 800 developers from deploying to production. <span style="font-size:13px;">(Related: <a href="breaking-japan-launches-a-dumbphone-that-doesnt-connect-to-intern-70107.html" style="color:#2563eb; font-weight:600;">Breaking: Japan launches a ‘dumbphone’ that doesn’t con...</a>)</span></p>
-<p>In January, a customer running multiple GKE clusters with Private Service Connect (PSC) for private control-plane access experienced intermittent timeouts when pods attempted to reach the Kubernetes API server. <span style="font-size:13px;">(Related: <a href="animal-control-called-to-rescue-alligator-that-turned-out-to-be-a-70105.html" style="color:#2563eb; font-weight:600;">Animal control called to rescue alligator that turned o...</a>)</span></p>
+<p>Google recently detailed how three interacting bugs across Google Kubernetes Engine (GKE), Private Service Connect, and the Linux kernel caused intermittent Kubernetes API connectivity failures, blocking around 800 developers from deploying to production. <span style="font-size:13px;">(Related: <a href="tech-report-predicting-and-detecting-failures-how-azure-strengthe-81566.html" style="color:#2563eb; font-weight:600;">Tech Report: Predicting and detecting failures: How Azu...</a>)</span></p>
+<p>In January, a customer running multiple GKE clusters with Private Service Connect (PSC) for private control-plane access experienced intermittent timeouts when pods attempted to reach the Kubernetes API server. <span style="font-size:13px;">(Related: <a href="latest-update-stop-treating-agents-as-one-off-projects-and-start--81564.html" style="color:#2563eb; font-weight:600;">Latest Update: Stop treating agents as one-off projects...</a>)</span></p>
 <p>Industry observers note that packet captures revealed that the control plane was responding to fresh TCP connection requests with stale ACK packets belonging to previously closed connections. The root cause involved three separate bugs across different networking layers. Akash Thakur, senior technical solutions engineer at Google Cloud, describes how engineers across multiple Google teams identified three root causes and ultimately addressed them:.</p>
 <p>It has been revealed that in a race to fix the problem, we involved engineers across Google Kubernetes Engine (GKE), Private Service Connect, networking, hostnet, kernel, and the Linux upstream community, who together tracked down not one but three distinct root causes. And the final fix landed not as a config change or a feature flag, but as a patch to the Linux kernel itself.</p>
 <p>The investigation identified three interacting causes: packet reordering in PSC, Envoy's half-close behavior preventing TCP connections from being properly closed, and a Linux kernel bug that discarded certain reordered FIN packets.</p>
@@ -210,16 +210,16 @@ How Google Traced GKE API Timeouts to a Linux Kernel TCP Bug.</p>
             📰 #69437. Google Project Zero Slashes Bug Disclosure Deadlines, Splitting Experts
         </a>
         
-        <a href="google-home-speakers-get-a-major-gemini-upgrade-soon-but-only-for-70089.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #70089. Google Home speakers get a major Gemini upgrade ‘soon,’ but only for paid subscribers
+        <a href="how-we-sped-up-transformer-inference-100x-for-api-customers-81555.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #81555. How we sped up transformer inference 100x for 🤗 API customers
         </a>
         
-        <a href="google-wallet-may-soon-be-able-to-store-your-social-security-card-70078.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #70078. Google Wallet may soon be able to store your Social Security card
+        <a href="breaking-my-journey-to-a-serverless-transformers-pipeline-on-goog-81547.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #81547. Breaking: My Journey to a serverless transformers pipeline on Google Cloud
         </a>
         
-        <a href="google-play-wants-android-apps-to-nail-foldable-basics-by-april-2-70064.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #70064. Google Play wants Android apps to nail foldable basics by April 2027
+        <a href="few-shot-learning-in-practice-gpt-neo-and-the-accelerated-inferen-81540.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #81540. Few-shot learning in practice: GPT-Neo and the 🤗 Accelerated Inference API
         </a>
         
     </div>

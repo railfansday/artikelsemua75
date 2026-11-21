@@ -141,7 +141,7 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p>Industry observers note that in our previous posts - Easy FunctionGemma finetuning with Tunix on Google TPUs and Autonomous LLM post-training with Tunix on TPUs - we showed how Google Tunix streamlines Supervised Fine-Tuning (SFT) and single-turn Group Relative Policy Optimization (GRPO) on Cloud TPUs. Real-world AI agents, however, rarely finish their job in a single turn. They have to reason over partial observations, invoke tools, observe environment feedback, and adapt their strategy across multiple steps. So in this post, we will walk through how to train a multi-turn, tool-using LLM agent using Tunix's agentic reinforcement learning pipeline on Cloud TPU v6e-8. You can find the complete code in this GitHub repository.</p>
-<p>Sources indicate that we will revisit the Plane Strike board game from an earlier TensorFlow/JAX reinforcement learning blog, replacing the custom MLP policy with Gemma 4 E2B in thinking mode on a single Cloud TPU v6e-8 host. Plane Strike is played on a 6x6 grid (A1 to F6) where one 8-cell plane is hidden in one of 4 orientations. Each turn, the agent sees the result of its previous strike and the raw visible board (. untried, X hit, O miss), thinks through candidate placements, and calls the strike(cell="...") tool to strike one cell. The game ends when all 8 plane cells are hit, or after 23 strikes. <span style="font-size:13px;">(Related: <a href="breaking-taco-bell-adds-make-it-flamin-hot-option-for-scorching-c-70100.html" style="color:#2563eb; font-weight:600;">Breaking: Taco Bell adds ‘Make It Flamin’ Hot’ option f...</a>)</span></p>
+<p>Sources indicate that we will revisit the Plane Strike board game from an earlier TensorFlow/JAX reinforcement learning blog, replacing the custom MLP policy with Gemma 4 E2B in thinking mode on a single Cloud TPU v6e-8 host. Plane Strike is played on a 6x6 grid (A1 to F6) where one 8-cell plane is hidden in one of 4 orientations. Each turn, the agent sees the result of its previous strike and the raw visible board (. untried, X hit, O miss), thinks through candidate placements, and calls the strike(cell="...") tool to strike one cell. The game ends when all 8 plane cells are hit, or after 23 strikes. <span style="font-size:13px;">(Related: <a href="faster-tensorflow-models-in-hugging-face-transformers-81553.html" style="color:#2563eb; font-weight:600;">Faster TensorFlow models in Hugging Face Transformers...</a>)</span></p>
 <p style="margin-top: 25px;">
 <a href="https://developers.googleblog.com/multi-turn-agentic-reinforcement-learning-with-tunix-and-gemma-4-on-google-tpus/" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
                         → Read original article
@@ -165,20 +165,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="tech-report-introducing-ai-vs-ai-a-deep-reinforcement-learning-mu-58504.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #58504. Tech Report: Introducing ⚔️ AI vs. AI ⚔️ a deep reinforcement learning multi-agents competition system
+        <a href="introducing-ai-vs-ai-a-deep-reinforcement-learning-multi-agents-c-81390.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #81390. Introducing ⚔️ AI vs. AI ⚔️ a deep reinforcement learning multi-agents competition system
         </a>
         
-        <a href="tech-report-review-amazons-alexa-tablet-8-is-a-fire-tablet-with-g-70059.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #70059. Tech Report: Review: Amazon’s Alexa Tablet 8 is a Fire Tablet with Google Play for $150 – what’s not to love?
+        <a href="tech-report-google-cloud-tpus-made-available-to-hugging-face-user-81125.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #81125. Tech Report: Google Cloud TPUs made available to Hugging Face users
         </a>
         
-        <a href="tech-report-google-pixel-officially-re-releases-app-lock-in-beta--70056.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #70056. Tech Report: Google Pixel officially re-releases App Lock in beta, Samsung Galaxy gets it too
+        <a href="an-introduction-to-deep-reinforcement-learning-81491.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #81491. An Introduction to Deep Reinforcement Learning
         </a>
         
-        <a href="tech-report-google-fi-app-redesign-brings-floating-toolbar-ask-fi-70016.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #70016. Tech Report: Google Fi app redesign brings floating toolbar & Ask Fi
+        <a href="illustrating-reinforcement-learning-from-human-feedback-rlhf-81408.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #81408. Illustrating Reinforcement Learning from Human Feedback (RLHF)
         </a>
         
     </div>
