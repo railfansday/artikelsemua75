@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🪆 Introduction to Matryoshka Embedding Models</title>
+    <meta name="description" content="Sources indicate that in this blogpost, we will introduce you to the concept of Matryoshka Embeddings and explain why they are useful. We will discuss how ">
+    <meta name="keywords" content="embedding, model, matryoshka, embeddings, models, using, training, performance">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua75/artikel/introduction-to-matryoshka-embedding-models-58337.html">
+    
+    <meta property="og:title" content="🪆 Introduction to Matryoshka Embedding Models">
+    <meta property="og:description" content="Sources indicate that in this blogpost, we will introduce you to the concept of Matryoshka Embeddings and explain why they are useful. We will discuss how ">
+    <meta property="og:image" content="https://huggingface.co/blog/assets/matryoshka/thumbnail.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua75/artikel/introduction-to-matryoshka-embedding-models-58337.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="🪆 Introduction to Matryoshka Embedding Models">
+    <meta name="twitter:description" content="Sources indicate that in this blogpost, we will introduce you to the concept of Matryoshka Embeddings and explain why they are useful. We will discuss how ">
+    <meta name="twitter:image" content="https://huggingface.co/blog/assets/matryoshka/thumbnail.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "🪆 Introduction to Matryoshka Embedding Models", "image": ["https://huggingface.co/blog/assets/matryoshka/thumbnail.png"], "datePublished": "2024-02-23T00:00:00", "dateModified": "2026-11-21T07:51:44.334000", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua75/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua75/artikel/introduction-to-matryoshka-embedding-models-58337.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding 🪆 Introduction to Matryoshka Embedding Models?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Hugging Face."}}, {"@type": "Question", "name": "Which category does '🪆 Introduction to Matryoshka Embedding Models' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>🪆 Introduction to Matryoshka Embedding Models</h1>
+        <div class="meta-line">🌐 Source: <strong>Hugging Face</strong> &bull; 📅 23 Feb 2024 &bull; ⏱️ 7 min read (1415 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>Sources indicate that in this blogpost, we will introduce you to the concept of Matryoshka Embeddings and explain why they are useful.</li><li style='margin-bottom:6px;'>Recent findings suggest that additionally, we will provide practical guidance on how to use Matryoshka Embedding models and share a comparison between a Matryoshka embedding model and a regular embedding model.</li><li style='margin-bottom:6px;'>In a recent development, embeddings are one of the most versatile tools in natural language processing, enabling practitioners to solve a large variety of tasks.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-58337"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-58337"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-58337"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="🪆 Introduction to Matryoshka Embedding Models" loading="lazy" src="https://huggingface.co/blog/assets/matryoshka/thumbnail.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-58337">Sources indicate that in this blogpost, we will introduce you to the concept of Matryoshka Embeddings and explain why they are useful. We will discuss how these models are theoretically trained and how you can train them using Sentence Transformers.</p>
+<p>Recent findings suggest that additionally, we will provide practical guidance on how to use Matryoshka Embedding models and share a comparison between a Matryoshka embedding model and a regular embedding model. Finally, we invite you to check out our interactive demo that showcases the power of these models. <span style="font-size:13px;">(Related: <a href="how-to-train-a-new-language-model-from-scratch-using-transformers-58676.html" style="color:#2563eb; font-weight:600;">How to train a new language model from scratch using Tr...</a>)</span></p>
+<p>In a recent development, embeddings are one of the most versatile tools in natural language processing, enabling practitioners to solve a large variety of tasks. In essence, an embedding is a numerical representation of a more complex object, like text, images, audio, etc. <span style="font-size:13px;">(Related: <a href="how-to-generate-text-using-different-decoding-methods-for-languag-58675.html" style="color:#2563eb; font-weight:600;">How to generate text: using different decoding methods ...</a>)</span></p>
+<p>Sources indicate that the embedding model will always produce embeddings of the same fixed size. You can then compute the similarity of complex objects by computing the similarity of the respective embeddings!</p>
+<p>This has an enormous amount of use cases, and serves as the backbone for recommendation systems, retrieval, one-shot or few-shot learning, outlier detection, similarity search, paraphrase detection, clustering, classification, and much more!</p>
+<p>As research progressed, upcoming state-of-the-art (text) embedding models started producing embeddings with increasingly higher output dimensions, i.e., every input text is represented using more values. Although this improves performance, it comes at the cost of efficiency of downstream tasks such as search or classification.</p>
+<p>Consequently, Kusupati et al. (2022) were inspired to create embedding models whose embeddings could reasonably be shrunk without suffering too much on performance.</p>
+<p>These Matryoshka embedding models are trained such that these small truncated embeddings would still be useful. In short, Matryoshka embedding models can produce useful embeddings of various dimensions.</p>
+<p>Recent findings suggest that for those unfamiliar, "Matryoshka dolls", also known as "Russian nesting dolls", are a set of wooden dolls of decreasing size that are placed inside one another. In a similar way, Matryoshka embedding models aim to store more crucial information in earlier dimensions, and less important information in later dimensions. This characteristic of Matryoshka embedding models allows us to truncate the original (large) embedding produced by the model, while still retaining enough of the information to perform well on downstream tasks.</p>
+<p>Such variable-size embedding models can be quite valuable to practitioners, for example:.</p>
+<p>The Matryoshka Representation Learning (MRL) approach can be adopted for almost all embedding model training frameworks. Normally, a training step for an embedding model involves producing embeddings for your training batch (of texts, for example) and then using some loss function to create a loss value that represents the quality of the produced embeddings. The optimizer will adjust the model weights throughout training to reduce the loss value.</p>
+<p>In a recent development, for Matryoshka Embedding models, a training step also involves producing embeddings for your training batch, but then you use some loss function to determine not just the quality of your full-size embeddings, but also the quality of your embeddings at various different dimensionalities. For example, output dimensionalities are 768, 512, 256, 128, and 64. The loss values for each dimensionality are added together, resulting in a final loss value. The optimizer will then try and adjust the model weights to lower this loss value.</p>
+<p>In practice, this incentivizes the model to frontload the most notable information at the start of an embedding, such that it will be retained if the embedding is truncated.</p>
+<p>Sentence Transformers is a commonly used framework to train embedding models, and it recently implemented support for Matryoshka models. Training a Matryoshka embedding model using Sentence Transformers is quite elementary: rather than applying some loss function on only the full-size embeddings, we also apply that same loss function on truncated portions of the embeddings.</p>
+<p>For example, if a model has an original embedding dimension of 768, it can now be trained on 768, 512, 256, 128 and 64. Each of these losses will be added together, optionally with some weight:.</p>
+<p>Training with MatryoshkaLoss does not incur a notable overhead in training time.</p>
+<p>See the following complete scripts as examples of how to apply the MatryoshkaLoss in practice:.</p>
+<p>According to recent reports, in practice, getting embeddings from a Matryoshka embedding model works the same way as with a normal embedding model. The only difference is that, after receiving the embeddings, we can optionally truncate them to a smaller dimensionality. Do note that if the embeddings were normalized, then after truncating they will no longer be, so you may want to re-normalize.</p>
+<p id="sec-mid-58337">Sources indicate that after truncating, you can either directly apply them for your use cases, or store them such that they can be used later. After all, smaller embeddings in your vector database should result in considerable speedups!</p>
+<p>Keep in mind that although processing smaller embeddings for downstream tasks (retrieval, clustering, etc.) will be faster, getting the smaller embeddings from the model is just as fast as getting the larger ones.</p>
+<p>Sources indicate that in Sentence Transformers, you can load a Matryoshka Embedding model just like any other model, but you can specify the desired embedding size using the truncate_dim argument. After that, you can perform inference using the SentenceTransformers.encode function, and the embeddings will be automatically truncated to the specified size.</p>
+<p>Let's try to use a model that I trained using matryoshka_nli.py with microsoft/mpnet-base:.</p>
+<p>Feel free to experiment with using different values for matryoshka_dim and observe how that affects the similarities. You can do so either by running this code locally, on the cloud such as with Google Colab, or by checking out the demo.</p>
+<p>Note: Nomic specifically requires an F.layer_norm before the embedding truncation. As a result, the following snippet uses manual truncation to the desired dimension. For all other models, you can use the truncate_dim option in the constructor, as shown in the previous example.</p>
+<p>It has been revealed that now that Matryoshka models have been introduced, let's look at the actual performance that we may be able to expect from a Matryoshka embedding model versus a regular embedding model. For this experiment, I have trained two models:.</p>
+<p>Both of these models were trained on the AllNLI dataset, which is a concatenation of the SNLI and MultiNLI datasets. I have evaluated these models on the STSBenchmark test set using multiple different embedding dimensions. The results are plotted in the following figure:.</p>
+<p>In the top figure, you can see that the Matryoshka model reaches a higher Spearman similarity than the standard model at all dimensionalities, indicative that the Matryoshka model is superior in this task.</p>
+<p>Sources indicate that furthermore, the performance of the Matryoshka model falls off much less promptly than the standard model. This is shown clearly in the second figure, which highlights the performance at the embedding dimension relative to the maximum performance. Even at 8.3% of the embedding size, the Matryoshka model preserves 98.37% of the performance, much higher than the 96.46% by the standard model.</p>
+<p>These findings are indicative that truncating embeddings by a Matryoshka model could: 1) significantly speed up downstream tasks such as retrieval and 2) significantly save on storage space, all without a notable hit in performance.</p>
+<p>Industry observers note that in this demo, you can dynamically shrink the output dimensions of the nomic-ai/nomic-embed-text-v1.5 Matryoshka embedding model and observe how it affects the retrieval performance. All of the embeddings are computed in the browser using 🤗 Transformers.js.</p>
+<p>For training embedding models with Matryoshka Representation Learning, or combining it with other Sentence Transformers techniques:.</p>
+<p>Great article! Regarding normalizing: should it happen before or after truncation?</p>
+<p>Good question! Embeddings should be (re-)normalized after the Matryoshka truncation. If you only normalize before truncating, the truncated section won't exactly have the expected mean and standard error, but one that's very slightly off.</p>
+<p>Thanks for sharing (super late comment, haha), am I misunderstanding something by being quite surprised by how robust the non-Matryoshka embeddings are?</p>
+<p>It is also surprising to me, quite a cool side effect. You'll find similar supporting results on pp 5 of 'Matryoshka Representation Learning'. In fact, the graphs on that page suggest that MRL-E/tied MRL underperforms vanilla their FF model on low dimensions, not to mention, the differences between their baseline and MRL aren't that significant (in those specific graphs). Funnily enough, Sentence Transformers implements MRL-E/tied MRL, not untied MRL.</p>
+<p>@tomaarsen 's results seem to be quite different in that MRL-E is winning against no MRL.</p>
+<p id="sec-end-58337">do you guys think it would make sense to introduce MRL to a model like BAAI/bge-m3?</p>
+<p style="margin-top: 25px;">
+<a href="https://huggingface.co/blog/matryoshka" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="latest-update-deploy-embedding-models-with-hugging-face-inference-58379.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #58379. Latest Update: Deploy Embedding Models with Hugging Face Inference Endpoints
+        </a>
+        
+        <a href="train-400x-faster-static-embedding-models-with-sentence-transform-58135.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #58135. Train 400x faster Static Embedding Models with Sentence Transformers
+        </a>
+        
+        <a href="breaking-training-and-finetuning-sparse-embedding-models-with-sen-57950.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #57950. Breaking: Training and Finetuning Sparse Embedding Models with Sentence Transformers
+        </a>
+        
+        <a href="multimodal-embedding-reranker-models-with-sentence-transformers-57675.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #57675. Multimodal Embedding & Reranker Models with Sentence Transformers
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

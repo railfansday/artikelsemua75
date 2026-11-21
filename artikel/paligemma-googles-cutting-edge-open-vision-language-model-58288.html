@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PaliGemma – Google's Cutting-Edge Open Vision Language Model</title>
+    <meta name="description" content="Updated on 23-05-2024: We have introduced a few changes to the transformers PaliGemma implementation around fine-tuning, which you can find in this noteboo">
+    <meta name="keywords" content="model, models, image, paligemma, fine, text, transformers, input">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua75/artikel/paligemma-googles-cutting-edge-open-vision-language-model-58288.html">
+    
+    <meta property="og:title" content="PaliGemma – Google's Cutting-Edge Open Vision Language Model">
+    <meta property="og:description" content="Updated on 23-05-2024: We have introduced a few changes to the transformers PaliGemma implementation around fine-tuning, which you can find in this noteboo">
+    <meta property="og:image" content="https://huggingface.co/blog/assets/paligemma/Paligemma.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua75/artikel/paligemma-googles-cutting-edge-open-vision-language-model-58288.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="PaliGemma – Google's Cutting-Edge Open Vision Language Model">
+    <meta name="twitter:description" content="Updated on 23-05-2024: We have introduced a few changes to the transformers PaliGemma implementation around fine-tuning, which you can find in this noteboo">
+    <meta name="twitter:image" content="https://huggingface.co/blog/assets/paligemma/Paligemma.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "PaliGemma – Google's Cutting-Edge Open Vision Language Model", "image": ["https://huggingface.co/blog/assets/paligemma/Paligemma.png"], "datePublished": "2024-05-14T00:00:00", "dateModified": "2026-11-21T07:51:36.124426", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua75/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua75/artikel/paligemma-googles-cutting-edge-open-vision-language-model-58288.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding PaliGemma – Google's Cutting-Edge Open Vision Language Model?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in AI & Tech originally reported by Hugging Face."}}, {"@type": "Question", "name": "Which category does 'PaliGemma – Google's Cutting-Edge Open Vision Language Model' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the AI & Tech section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">AI & Tech</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>PaliGemma – Google's Cutting-Edge Open Vision Language Model</h1>
+        <div class="meta-line">🌐 Source: <strong>Hugging Face</strong> &bull; 📅 14 May 2024 &bull; ⏱️ 10 min read (1913 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>Updated on 23-05-2024: We have introduced a few changes to the transformers PaliGemma implementation around fine-tuning, which you can find in this notebook.</li><li style='margin-bottom:6px;'>In a recent development, paliGemma is a fresh family of vision language models from Google.</li><li style='margin-bottom:6px;'>The team at Google has released three types of models: the pretrained (pt) models, the mix models, and the fine-tuned (ft) models, each with different resolutions and available in multiple precisions for convenience.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-58288"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-58288"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-58288"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="PaliGemma – Google's Cutting-Edge Open Vision Language Model" loading="lazy" src="https://huggingface.co/blog/assets/paligemma/Paligemma.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-58288">Updated on 23-05-2024: We have introduced a few changes to the transformers PaliGemma implementation around fine-tuning, which you can find in this notebook.</p>
+<p>In a recent development, paliGemma is a fresh family of vision language models from Google. PaliGemma can take in an image and a text and output text. <span style="font-size:13px;">(Related: <a href="how-to-train-a-new-language-model-from-scratch-using-transformers-58676.html" style="color:#2563eb; font-weight:600;">How to train a new language model from scratch using Tr...</a>)</span></p>
+<p>The team at Google has released three types of models: the pretrained (pt) models, the mix models, and the fine-tuned (ft) models, each with different resolutions and available in multiple precisions for convenience. <span style="font-size:13px;">(Related: <a href="how-to-generate-text-using-different-decoding-methods-for-languag-58675.html" style="color:#2563eb; font-weight:600;">How to generate text: using different decoding methods ...</a>)</span></p>
+<p>All models are released in the Hugging Face Hub model repositories with their model cards and licenses and have transformers integration.</p>
+<p>Recent findings suggest that paliGemma (Github) is a family of vision-language models with an architecture consisting of SigLIP-So400m as the image encoder and Gemma-2B as text decoder. SigLIP is a state-of-the-art model that can understand both images and text. Like CLIP, it consists of an image and text encoder trained jointly. Similar to PaLI-3, the combined PaliGemma model is pre-trained on image-text data and can then easily be fine-tuned on downstream tasks, such as captioning, or referring segmentation. Gemma is a decoder-only model for text generation. Combining the image encoder of SigLIP with Gemma using a linear adapter makes PaliGemma a powerful vision language model.</p>
+<p>The PaliGemma release comes with three types of models:.</p>
+<p>According to recent reports, the models come in three different resolutions (224x224, 448x448, 896x896) and three different precisions (bfloat16, float16, and float32). Each repository contains the checkpoints for a given resolution and task, with three revisions for each of the available precisions. The main branch of each repository contains float32 checkpoints, whereas the bfloat16 and float16 revisions contain the corresponding precisions. There are separate repositories for models compatible with 🤗 transformers, and with the original JAX implementation.</p>
+<p>It has been revealed that as explained in detail further down, the high-resolution models require a lot more memory to run, because the input sequences are much longer. They may help with fine-grained tasks such as OCR, but the quality increase is small for most tasks. The 224 versions are perfectly fine for most purposes.</p>
+<p>You can find all the models and Spaces in this collection.</p>
+<p>PaliGemma is a single-turn vision language model not meant for conversational use, and it works best when fine-tuning to a specific use case.</p>
+<p>Industry observers note that you can configure which task the model will solve by conditioning it with task prefixes, such as “detect” or “segment”. The pretrained models were trained in this fashion to imbue them with a rich set of capabilities (question answering, captioning, segmentation, etc.). However, they are not designed to be used directly, but to be transferred (by fine-tuning) to specific tasks using a similar prompt structure. For interactive testing, you can use the "mix" family of models, which have been fine-tuned on a mixture of tasks.</p>
+<p>The examples below use the mix checkpoints to demonstrate some of the capabilities.</p>
+<p>Recent findings suggest that paliGemma can caption images when prompted to. You can try various captioning prompts with the mix checkpoints to see how they respond.</p>
+<p>PaliGemma can answer questions about an image, simply pass your question along with the image to do so.</p>
+<p>According to recent reports, paliGemma can detect entities in an image using the detect [entity] prompt. It will output the location for the bounding box coordinates in the form of special  tokens, where value is a number that represents a normalized coordinate. Each detection is represented by four location coordinates in the order y_min, x_min, y_max, x_max, followed by the label that was detected in that box. To convert values to coordinates, you first need to divide the numbers by 1024, then multiply y by the image height and x by its width. This will give you  the coordinates of the bounding boxes, relative to the original image size.</p>
+<p>Industry observers note that paliGemma mix checkpoints can also segment entities in an image when given the segment [entity] prompt. This is called referring expression segmentation, because we refer to the entities of interest using natural language descriptions. The output is a sequence of location and segmentation tokens. The location tokens represent a bounding box as described above. The segmentation tokens can be further processed to generate segmentation masks.</p>
+<p>PaliGemma mix checkpoints have great document understanding and reasoning capabilities.</p>
+<p>Below you can find the scores for mix checkpoints.</p>
+<p>In addition to the pretrained and mix models, Google has released models already transferred to various tasks. They correspond to academic benchmarks that can be used by the research community to compare how they perform. Below, you can find a selected few. These models also come in different resolutions. You can check out the model card of any model for all metrics.</p>
+<p>As part of this release we have a demo that wraps the reference implementation in the big_vision repository and provides an easy way to play around with the mix models.</p>
+<p>We also have a version of the demo compatible with Transformers, to show how to use the PaliGemma transformers API.</p>
+<p>Industry observers note that to obtain access to the PaliGemma models, you need to accept the Gemma license terms and conditions. If you already have access to other Gemma models in Hugging Face, you’re good to go. Otherwise, please visit any of the PaliGemma models, and accept the license if you agree with it. Once you have access, you need to authenticate either through notebook_login or huggingface-cli login. After logging in, you’ll be good to go!</p>
+<p>You can also try inference in this notebook right away.</p>
+<p id="sec-mid-58288">Industry observers note that you can use the PaliGemmaForConditionalGeneration class to infer with any of the released models. Simply preprocess the prompt and the image with the built-in processor, and then pass the preprocessed inputs for generation.</p>
+<p>You can also load the model in 4-bit as follows.</p>
+<p>In addition to 4-bit (or 8-bit) loading, the transformers integration allows you to leverage other tools in the Hugging Face ecosystem, such as:.</p>
+<p>If you want to write your own pre-processing or training code or would like to understand in more detail how PaliGemma works, these are the steps that the input image and text go through.</p>
+<p>The input text is tokenized normally. A  token is added at the beginning, and an additional newline token (\n) is appended. This newline token is an essential part of the input prompt the model was trained with, so adding it explicitly ensures it's always there. The tokenized text is also prefixed with a fixed number of  tokens. How many? It depends on the input image resolution and the patch size used by the SigLIP model. PaliGemma models are pre-trained on one of three square sizes (224x224, 448x448, or 896x896), and always use a patch size of 14. Therefore, the number of  tokens to prepend is 256 for the 224 models (224/14 * 224/14), 1024 for the 448 models, and 4096 for the 896 models.</p>
+<p>Note that larger images result in much longer input sequences, and therefore require a lot more memory to go through the language portion of the model. Keep this in mind when considering what model to use. For finer-grained tasks, such as OCR, larger images may help achieve better results, but the incremental quality is small for the vast majority of tasks. Do test on your tasks before deciding to move to a larger resolution!</p>
+<p>This complete "prompt" goes through the text embeddings layer of the language model and generates token embeddings with 2048 dimensions per token.</p>
+<p>According to recent reports, in parallel with this, the input image is resized, using bicubic resampling, to the required input size (224x224 for the smallest-resolution models). Then it goes through the SigLIP Image Encoder to generate image embeddings with 1152 dimensions per patch. This is where the linear projector comes into play: the image embeddings are projected to obtain representations with 2048 dimensions per patch, same as the ones obtained from the text tokens. The final image embeddings are then merged with the  text embeddings, and this is the final input that is used for autoregressive text generation. Generation works normally in autoregressive mode. It uses full block attention for the complete input (image + bos + prompt + \n), and a causal attention mask for the generated text.</p>
+<p>All of these details are taken care of automatically in the processor and model classes, so inference can be performed using the familiar high-level transformers API shown in the previous examples.</p>
+<p>PaliGemma was trained in the big_vision codebase. The same codebase was already used to develop models like BiT, the original ViT, LiT, CapPa, SigLIP, and many more.</p>
+<p>Industry observers note that the project config folder configs/proj/paligemma/ contains a README.md. The pretrained model can be transferred by running config files in the transfers/ subfolder, and all our transfer results were obtained by running the configs provided therein. If you want to transfer your own model, fork the example config transfers/forkme.py and follow the instructions in the comments to adapt it to your usecase.</p>
+<p>There is also a Colab finetune_paligemma.ipynb that runs a simplified fine-tuning that works on a free T4 GPU runtime. To fit on the limited host and GPU memory, the code in the Colab only updates the weights in the attention layers (170M params) and uses SGD (instead of Adam).</p>
+<p>Fine-tuning PaliGemma is very easy, thanks to transformers. One can also do QLoRA or LoRA fine-tuning. In this example, we will briefly fine-tune the decoder, and then show how to switch to QLoRA fine-tuning. We will install the latest version of the transformers library.</p>
+<p>Just like on the inference section, we will authenticate to access the model using notebook_login().</p>
+<p>For this example, we will use the VQAv2 dataset, and fine-tune the model to answer questions about images. Let’s load the dataset. We will only use the columns question, multiple_choice_answer and image, so let’s remove the rest of the columns as well. We will also split the dataset.</p>
+<p>We will now load the processor, which contains the image processing and tokenization part, and preprocess our dataset.</p>
+<p>In a recent development, we will create a prompt template to condition PaliGemma to answer visual questions. Since the tokenizer pads the inputs, we need to set the pads in our labels to something other than the pad token in the tokenizer, as well as the image token.</p>
+<p>You can either load the model directly or load the model in 4-bit for QLoRA. Below you can see how to load the model directly. We will load the model, and freeze the image encoder and the projector, and only fine-tune the decoder. If your images are within a particular domain, which might not be in the dataset the model was pre-trained with, you might want to skip freezing the image encoder.</p>
+<p>If you want to load model in 4-bit for QLoRA, you can add the following changes below.</p>
+<p>Recent findings suggest that we will now initialize the Trainer and TrainingArguments. If you will do QLoRA fine-tuning, set the optimizer to paged_adamw_8bit instead.</p>
+<p>Initialize Trainer, pass in the datasets, data collating function and training arguments, and call train() to start training.</p>
+<p>Recent findings suggest that we would like to thank Omar Sanseviero, Lucas Beyer, Xiaohua Zhai and Matthias Minderer for their thorough reviews on this blog post. We would like to thank Peter Robicheaux for their help with fine-tuning changes in transformers.</p>
+<p id="sec-end-58288">Thanks! I am ready to use the model for benchmark in master thesis 😀.</p>
+<p style="margin-top: 25px;">
+<a href="https://huggingface.co/blog/paligemma" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="fine-tuning-florence-2-microsofts-cutting-edge-vision-language-mo-58258.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #58258. Fine-tuning Florence-2 - Microsoft's Cutting-edge Vision Language Models
+        </a>
+        
+        <a href="welcome-paligemma-2-new-vision-language-models-by-google-58155.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #58155. Welcome PaliGemma 2 – New vision language models by Google
+        </a>
+        
+        <a href="paligemma-2-mix-new-instruction-vision-language-models-by-google-58104.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #58104. PaliGemma 2 Mix - New Instruction Vision Language Models by Google
+        </a>
+        
+        <a href="introducing-the-worlds-largest-open-multilingual-language-model-b-58579.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #58579. Introducing The World's Largest Open Multilingual Language Model: BLOOM
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

@@ -150,8 +150,8 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-46707">I wrote an article a couple of months ago describing how I rebuilt my old voice assistant pipeline in Platypush.</p>
-<p>And I wrote earlier articles describing my journey through self-hosted voice assistants - in 2024 (with Picovoice), in 2020 (diving into the legacy assistant.google integration, the now defunct assistant.alexa integration, the now defunct Snowboy integration, the now defunct DeepSpeech integration and Picovoice) and the original article in 2019 describing the Google Assistant integration. <span style="font-size:13px;">(Related: <a href="latest-update-welcome-gemma-googles-new-open-llm-47139.html" style="color:#2563eb; font-weight:600;">Latest Update: Welcome Gemma - Google’s new open LLM...</a>)</span></p>
-<p>For a couple of months I used the voice pipeline described in my latest article as my main driver, but after getting used to the robustness of commercial voice assistants I was unhappy with the high rates of false positives/negatives of my self-hosted pipeline, as well as its lack of robustness in detecting start/end of speech, especially in noisy environments and using cheap microphones. <span style="font-size:13px;">(Related: <a href="latest-update-aprielguard-a-guardrail-for-safety-and-adversarial--47132.html" style="color:#2563eb; font-weight:600;">Latest Update: AprielGuard: A Guardrail for Safety and ...</a>)</span></p>
+<p>And I wrote earlier articles describing my journey through self-hosted voice assistants - in 2024 (with Picovoice), in 2020 (diving into the legacy assistant.google integration, the now defunct assistant.alexa integration, the now defunct Snowboy integration, the now defunct DeepSpeech integration and Picovoice) and the original article in 2019 describing the Google Assistant integration. <span style="font-size:13px;">(Related: <a href="industry-news-my-journey-to-a-serverless-transformers-pipeline-on-58660.html" style="color:#2563eb; font-weight:600;">Industry News: My Journey to a serverless transformers ...</a>)</span></p>
+<p>For a couple of months I used the voice pipeline described in my latest article as my main driver, but after getting used to the robustness of commercial voice assistants I was unhappy with the high rates of false positives/negatives of my self-hosted pipeline, as well as its lack of robustness in detecting start/end of speech, especially in noisy environments and using cheap microphones. <span style="font-size:13px;">(Related: <a href="how-to-train-a-new-language-model-from-scratch-using-transformers-58676.html" style="color:#2563eb; font-weight:600;">How to train a new language model from scratch using Tr...</a>)</span></p>
 <p>After a bit of experimentation, I decided to swap and fine tune a few parts, and after a couple of days of trying the results are satisfying enough for me to write a short article about it.</p>
 <p>Hotword detection- assistant.microwakeword (local).</p>
 <p>Speech-to-text- assistant.openai (cloud)- assistant.vosk (local).</p>
@@ -215,20 +215,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="ggml-and-llamacpp-join-hf-to-ensure-the-long-term-progress-of-loc-47101.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #47101. GGML and llama.cpp join HF to ensure the long-term progress of Local AI
+        <a href="industry-news-my-journey-to-a-serverless-transformers-pipeline-on-58660.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #58660. Industry News: My Journey to a serverless transformers pipeline on Google Cloud
         </a>
         
-        <a href="a-new-framework-for-evaluating-voice-agents-eva-47081.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #47081. A New Framework for Evaluating Voice Agents (EVA)
+        <a href="how-hugging-face-accelerated-development-of-witty-works-writing-a-58493.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #58493. How Hugging Face Accelerated Development of Witty Works Writing Assistant
         </a>
         
-        <a href="latest-update-running-an-ai-agent-on-a-local-llm-what-i-measured--47043.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #47043. Latest Update: Running an AI Agent on a Local LLM: What I Measured on One GPU
+        <a href="latest-update-creating-a-coding-assistant-with-starcoder-58466.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #58466. Latest Update: Creating a Coding Assistant with StarCoder
         </a>
         
-        <a href="breaking-how-to-build-a-unified-lead-tracking-pipeline-for-web-fo-46995.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #46995. Breaking: How to Build a Unified Lead Tracking Pipeline for Web Forms and Phone Calls
+        <a href="personal-copilot-train-your-own-coding-assistant-58377.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #58377. Personal Copilot: Train Your Own Coding Assistant
         </a>
         
     </div>

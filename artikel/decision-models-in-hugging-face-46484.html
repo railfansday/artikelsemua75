@@ -150,12 +150,12 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-46484">It has been revealed that large Language Models (LLMs) are exceptionally good at generating text. We use them to answer questions, write code, reason about problems, and so much more. But not every problem requires generating text.</p>
-<p>Consider a customer support system receiving the following message:.</p>
+<p>Consider a customer support system receiving the following message:. <span style="font-size:13px;">(Related: <a href="porting-fairseq-wmt19-translation-system-to-transformers-58670.html" style="color:#2563eb; font-weight:600;">Porting fairseq wmt19 translation system to transformer...</a>)</span></p>
 <p>Sources indicate that "I was charged twice for my subscription. I need a refund today.".</p>
 <p>The system needs to determine which team should handle the request, how urgent it is, and whether the customer is requesting a refund.</p>
 <p>We could ask an LLM to return a JSON object containing these answers.</p>
-<p>But what if the model could directly evaluate the available options and return a probability distribution over them, without generating any text? <span style="font-size:13px;">(Related: <a href="h-companys-new-holo2-model-takes-the-lead-in-ui-localization-47116.html" style="color:#2563eb; font-weight:600;">H Company's new Holo2 model takes the lead in UI Locali...</a>)</span></p>
-<p>This is the key idea behind decision models. <span style="font-size:13px;">(Related: <a href="tech-report-we-got-claude-to-build-cuda-kernels-and-teach-open-mo-47120.html" style="color:#2563eb; font-weight:600;">Tech Report: We Got Claude to Build CUDA Kernels and te...</a>)</span></p>
+<p>But what if the model could directly evaluate the available options and return a probability distribution over them, without generating any text? <span style="font-size:13px;">(Related: <a href="how-to-train-a-new-language-model-from-scratch-using-transformers-58676.html" style="color:#2563eb; font-weight:600;">How to train a new language model from scratch using Tr...</a>)</span></p>
+<p>This is the key idea behind decision models.</p>
 <p>Industry observers note that A decision model takes some input context (state), evaluates a question with a set of predefined possible answers (primitives), and returns a structured decision along with probabilities. Instead of asking a model to generate an answer token by token, we ask it to assign probabilities to the answers that our application already understands.</p>
 <p>Industry observers note that typeSafe AI introduced Jev, describing it as a System One model. The name draws inspiration from the distinction between fast, intuitive thinking (System 1) and slower, deliberative thinking (System 2).</p>
 <p>The community has converged to the term decision model, because it describes the model's computational role rather than invoking a particular theory of cognition. In the rest of the post we will refer to the models as "decision models" instead of "system one models". (A poll on twitter deciding what we should be calling such models).</p>
@@ -285,20 +285,20 @@ C=23(0.998)−1​=0.997.</p>
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="train-ai-models-with-unsloth-and-hugging-face-jobs-for-free-47103.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #47103. Train AI models with Unsloth and Hugging Face Jobs for FREE
+        <a href="faster-tensorflow-models-in-hugging-face-transformers-58666.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #58666. Faster TensorFlow models in Hugging Face Transformers
         </a>
         
-        <a href="hugging-face-models-on-foundry-managed-compute-46864.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #46864. Hugging Face Models on Foundry Managed Compute
+        <a href="using-mixing-hugging-face-models-with-gradio-20-58654.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #58654. Using & Mixing Hugging Face Models with Gradio 2.0
         </a>
         
-        <a href="hugging-face-and-openrouter-join-forces-to-make-open-weight-model-46439.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #46439. Hugging Face and OpenRouter join forces to make open-weight models easy to run
+        <a href="deploy-hugging-face-models-easily-with-amazon-sagemaker-58651.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #58651. Deploy Hugging Face models easily with Amazon SageMaker
         </a>
         
-        <a href="faster-tensorflow-models-in-hugging-face-transformers-35587.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #35587. Faster TensorFlow models in Hugging Face Transformers
+        <a href="industry-news-hosting-your-models-and-datasets-on-hugging-face-sp-58644.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #58644. Industry News: Hosting your Models and Datasets on Hugging Face Spaces using Streamlit
         </a>
         
     </div>

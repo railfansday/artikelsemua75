@@ -1,86 +1,86 @@
 {
-  "generatedAt": "2026-11-21T05:53:37.436700",
-  "totalArticles": 12515,
+  "generatedAt": "2026-11-21T08:33:59.930436",
+  "totalArticles": 12525,
   "categoryBreakdown": {
-    "General": 10158,
-    "Business & Policy": 614,
-    "AI & Tech": 1032,
-    "Hardware & Chips": 167,
-    "Gadgets": 318,
-    "EV & Auto": 226
+    "General": 10148,
+    "AI & Tech": 1038,
+    "Hardware & Chips": 170,
+    "Business & Policy": 618,
+    "Gadgets": 326,
+    "EV & Auto": 225
   },
   "topSources": {
+    "Hugging Face": 914,
     "Co": 914,
-    "Hugging Face": 912,
     "Sciencedaily": 211,
     "Eschoolnews": 200,
     "Cbssports": 173,
     "Electrek": 149,
-    "Yahoo": 147,
+    "Yahoo": 146,
+    "Dailymail": 136,
     "Dw": 136,
-    "Dailymail": 135,
     "Realworkfromanywhere": 128
   },
   "latestHeadlines": [
     {
-      "id": 47151,
-      "title": "Hakeem Jeffries and his team will seek to deliver a new era for House Democrats",
-      "url": "https://railfansday.github.io/artikelsemua75/artikel/hakeem-jeffries-and-his-team-will-seek-to-deliver-a-new-era-for-h-47151.html",
+      "id": 58676,
+      "title": "How to train a new language model from scratch using Transformers and Tokenizers",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/how-to-train-a-new-language-model-from-scratch-using-transformers-58676.html",
       "category": "General"
     },
     {
-      "id": 47150,
-      "title": "Hobbled at home, Trump turns abroad",
-      "url": "https://railfansday.github.io/artikelsemua75/artikel/hobbled-at-home-trump-turns-abroad-47150.html",
-      "category": "Business & Policy"
-    },
-    {
-      "id": 47149,
-      "title": "Trump calls Putin and Xi friends. They have other intends.",
-      "url": "https://railfansday.github.io/artikelsemua75/artikel/trump-calls-putin-and-xi-friends-they-have-other-intends-47149.html",
-      "category": "Business & Policy"
-    },
-    {
-      "id": 47148,
-      "title": "Anthropic gave $40M to an AI safety group. Most of the candidates it backed won.",
-      "url": "https://railfansday.github.io/artikelsemua75/artikel/anthropic-gave-40m-to-an-ai-safety-group-most-of-the-candidates-i-47148.html",
-      "category": "AI & Tech"
-    },
-    {
-      "id": 47147,
-      "title": "Fine-Tune XLSR-Wav2Vec2 for low-resource ASR with 🤗 Transformers",
-      "url": "https://railfansday.github.io/artikelsemua75/artikel/fine-tune-xlsr-wav2vec2-for-low-resource-asr-with-transformers-47147.html",
+      "id": 58675,
+      "title": "How to generate text: using different decoding methods for language generation with Transformers",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/how-to-generate-text-using-different-decoding-methods-for-languag-58675.html",
       "category": "General"
     },
     {
-      "id": 47146,
-      "title": "Industry News: Director of Machine Learning Insights",
-      "url": "https://railfansday.github.io/artikelsemua75/artikel/industry-news-director-of-machine-learning-insights-47146.html",
+      "id": 58674,
+      "title": "Industry News: The Reformer - Pushing the limits of language modeling",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/industry-news-the-reformer-pushing-the-limits-of-language-modelin-58674.html",
       "category": "General"
     },
     {
-      "id": 47145,
-      "title": "Latest Update: Director of Machine Learning Insights [Part 2: SaaS Edition]",
-      "url": "https://railfansday.github.io/artikelsemua75/artikel/latest-update-director-of-machine-learning-insights-part-2-saas-e-47145.html",
+      "id": 58673,
+      "title": "Block Sparse Matrices for Smaller and Faster Language Models",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/block-sparse-matrices-for-smaller-and-faster-language-models-58673.html",
       "category": "General"
     },
     {
-      "id": 47144,
-      "title": "An Introduction to Q-Learning Part 1",
-      "url": "https://railfansday.github.io/artikelsemua75/artikel/an-introduction-to-q-learning-part-1-47144.html",
+      "id": 58672,
+      "title": "Transformer-based Encoder-Decoder Models",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/transformer-based-encoder-decoder-models-58672.html",
       "category": "General"
     },
     {
-      "id": 47143,
-      "title": "Accelerating PyTorch Transformers with Intel Sapphire Rapids - part 1",
-      "url": "https://railfansday.github.io/artikelsemua75/artikel/accelerating-pytorch-transformers-with-intel-sapphire-rapids-part-47143.html",
-      "category": "Hardware & Chips"
+      "id": 58671,
+      "title": "Hyperparameter Search with Transformers and Ray Tune",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/hyperparameter-search-with-transformers-and-ray-tune-58671.html",
+      "category": "General"
     },
     {
-      "id": 47142,
-      "title": "At historic summit, Xi and Putin share global stage with weakened Trump",
-      "url": "https://railfansday.github.io/artikelsemua75/artikel/at-historic-summit-xi-and-putin-share-global-stage-with-weakened--47142.html",
-      "category": "Business & Policy"
+      "id": 58670,
+      "title": "Porting fairseq wmt19 translation system to transformers",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/porting-fairseq-wmt19-translation-system-to-transformers-58670.html",
+      "category": "General"
+    },
+    {
+      "id": 58669,
+      "title": "Leveraging Pre-trained Language Model Checkpoints for Encoder-Decoder Models",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/leveraging-pre-trained-language-model-checkpoints-for-encoder-dec-58669.html",
+      "category": "General"
+    },
+    {
+      "id": 58668,
+      "title": "Breaking: How we sped up transformer inference 100x for 🤗 API customers",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/breaking-how-we-sped-up-transformer-inference-100x-for-api-custom-58668.html",
+      "category": "General"
+    },
+    {
+      "id": 58667,
+      "title": "Fit More and Train Faster With ZeRO via DeepSpeed and FairScale",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/fit-more-and-train-faster-with-zero-via-deepspeed-and-fairscale-58667.html",
+      "category": "General"
     }
   ]
 }

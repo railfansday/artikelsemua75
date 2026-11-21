@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breaking: Building Cost-Efficient Enterprise RAG applications with Intel Gaudi 2 and Intel Xeon</title>
+    <meta name="description" content="Industry observers note that retrieval-augmented generation (RAG) enhances text generation with a large language model by incorporating fresh domain knowle">
+    <meta name="keywords" content="intel, gaudi, model, performance, langchain, applications, vector, recent">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua75/artikel/breaking-building-cost-efficient-enterprise-rag-applications-with-58293.html">
+    
+    <meta property="og:title" content="Breaking: Building Cost-Efficient Enterprise RAG applications with Intel Gaudi 2 and Intel Xeon">
+    <meta property="og:description" content="Industry observers note that retrieval-augmented generation (RAG) enhances text generation with a large language model by incorporating fresh domain knowle">
+    <meta property="og:image" content="https://huggingface.co/blog/assets/cost_efficient_rag_applications_with_intel/main.jpg">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua75/artikel/breaking-building-cost-efficient-enterprise-rag-applications-with-58293.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Breaking: Building Cost-Efficient Enterprise RAG applications with Intel Gaudi 2 and Intel Xeon">
+    <meta name="twitter:description" content="Industry observers note that retrieval-augmented generation (RAG) enhances text generation with a large language model by incorporating fresh domain knowle">
+    <meta name="twitter:image" content="https://huggingface.co/blog/assets/cost_efficient_rag_applications_with_intel/main.jpg">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Breaking: Building Cost-Efficient Enterprise RAG applications with Intel Gaudi 2 and Intel Xeon", "image": ["https://huggingface.co/blog/assets/cost_efficient_rag_applications_with_intel/main.jpg"], "datePublished": "2024-05-09T00:00:00", "dateModified": "2026-11-21T07:51:36.809630", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua75/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua75/artikel/breaking-building-cost-efficient-enterprise-rag-applications-with-58293.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Breaking: Building Cost-Efficient Enterprise RAG applications with Intel Gaudi 2?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in Hardware & Chips originally reported by Hugging Face."}}, {"@type": "Question", "name": "Which category does 'Breaking: Building Cost-Efficient Enterprise RAG application' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the Hardware & Chips section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">Hardware & Chips</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">📈 Bullish</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Breaking: Building Cost-Efficient Enterprise RAG applications with Intel Gaudi 2 and Intel Xeon</h1>
+        <div class="meta-line">🌐 Source: <strong>Hugging Face</strong> &bull; 📅 09 May 2024 &bull; ⏱️ 6 min read (1249 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>Industry observers note that retrieval-augmented generation (RAG) enhances text generation with a large language model by incorporating fresh domain knowledge stored in an external datastore.</li><li style='margin-bottom:6px;'>In this blog, you will learn how Intel can help you develop and deploy RAG applications as part of OPEA, the Open Platform for Enterprise AI.</li><li style='margin-bottom:6px;'>Sources indicate that on the software side, we will build our application with LangChain, an open-source framework designed to simplify the creation of AI applications with LLMs.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-58293"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-58293"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-58293"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Breaking: Building Cost-Efficient Enterprise RAG applications with Intel Gaudi 2 and Intel Xeon" loading="lazy" src="https://huggingface.co/blog/assets/cost_efficient_rag_applications_with_intel/main.jpg" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-58293">Industry observers note that retrieval-augmented generation (RAG) enhances text generation with a large language model by incorporating fresh domain knowledge stored in an external datastore. Separating your tech giant data from the knowledge learned by language models during training is essential to balance performance, accuracy, and security privacy goals.</p>
+<p>In this blog, you will learn how Intel can help you develop and deploy RAG applications as part of OPEA, the Open Platform for Enterprise AI. You will also discover how Intel Gaudi 2 AI accelerators and Xeon CPUs can significantly enhance enterprise performance through a real-world RAG use case. <span style="font-size:13px;">(Related: <a href="deploy-hugging-face-models-easily-with-amazon-sagemaker-58651.html" style="color:#2563eb; font-weight:600;">Deploy Hugging Face models easily with Amazon SageMaker...</a>)</span></p>
+<p>Sources indicate that on the software side, we will build our application with LangChain, an open-source framework designed to simplify the creation of AI applications with LLMs. It provides template-based solutions, allowing developers to build RAG applications with custom embeddings, vector databases, and LLMs. The LangChain documentation provides more information. Intel has been actively contributing multiple optimizations to LangChain, enabling developers to deploy GenAI applications efficiently on Intel platforms. <span style="font-size:13px;">(Related: <a href="transformer-based-encoder-decoder-models-58672.html" style="color:#2563eb; font-weight:600;">Transformer-based Encoder-Decoder Models...</a>)</span></p>
+<p>In a recent development, in LangChain, we will use the rag-redis template to create our RAG application, with the BAAI/bge-base-en-v1.5 embedding model and Redis as the default vector database. The diagram below highlights the high-level architecture.</p>
+<p>The embedding model will run on an Intel Granite Rapids CPU. The Intel Granite Rapids architecture is optimized to deliver the lowest total cost of ownership (TCO) for high-core performance-sensitive workloads and general-purpose compute workloads. GNR also supports the AMX-FP16 instruction set, resulting in a 2-3x performance increase for mixed AI workloads.</p>
+<p>The LLM will run on an Intel Gaudi 2 accelerator. Regarding Hugging Face models, the Optimum Habana library is the interface between the Hugging Face Transformers and Diffusers libraries and Gaudi. It offers tools for easy model loading, training, and inference on single- and multi-card settings for various downstream tasks.</p>
+<p>It has been revealed that we provide a Dockerfile to streamline the setup of the LangChain development environment. Once you have released the Docker container, you can start building the vector database, the RAG pipeline, and the LangChain application within the Docker environment. For a detailed step-by-step, follow the ChatQnA example.</p>
+<p>To populate the vector database, we use public financial documents from Nike. Here is the sample code.</p>
+<p>In LangChain, we use the Chain API to connect the prompt, the vector database, and the embedding model.</p>
+<p>The complete code is available in the repository.</p>
+<p>In a recent development, we will run our chat model on Gaudi2 with the Hugging Face Text Generation Inference (TGI) server. This combination enables high-performance text generation for popular open-source LLMs on Gaudi2 hardware, such as MPT, Llama, and Mistral.</p>
+<p>No setup is required. We can use a pre-built Docker image and pass the model name (e.g., Intel NeuralChat).</p>
+<p>According to recent reports, the service uses a single Gaudi accelerator by default. Multiple accelerators may be required to run a larger model (e.g., 70B). In that case, please add the appropriate parameters, e.g. --sharded true and --num_shard 8. For gated models such as Llama or StarCoder, you will also need to specify -e HUGGING_FACE_HUB_TOKEN= using your Hugging Face token.</p>
+<p>Once the container runs, we check that the service works by sending a request to the TGI endpoint.</p>
+<p>If you see a generated response, the LLM is running correctly and you can now enjoy high-performance inference on Gaudi 2!</p>
+<p>The TGI Gaudi container utilizes the bfloat16 data type by default. For higher throughput, you may want to enable FP8 quantization. According to our test results, FP8 quantization should yield a 1.8x throughput increase gain compared to BF16. FP8 instructions are available in the README file.</p>
+<p>Industry observers note that lastly, you can enable content moderation with the Meta Llama Guard model. The README file provides instructions for deploying Llama Guard on TGI Gaudi.</p>
+<p>Industry observers note that we use the following instructions to launch the RAG application backend service. The server.py script defines the service endpoints using fastAPI.</p>
+<p>According to recent reports, by default, the TGI Gaudi endpoint is expected to run on localhost at port 8080 (i.e. http://127.0.0.1:8080). If it is running at a different address or port, please set the TGI_ENDPOINT  environment variable accordingly.</p>
+<p>We use the instructions below to install the frontend GUI components.</p>
+<p id="sec-mid-58293">Then, we enhancement the DOC_BASE_URL environment variable in the .env file by replacing the localhost IP address (127.0.0.1) with the actual IP address of the server where the GUI runs.</p>
+<p>We run the following command to install the required dependencies:.</p>
+<p>Finally, we start the GUI server with the following command:.</p>
+<p>This will run the frontend service and launch the application.</p>
+<p>We did intensive experiments with different models and configurations. The two figures below show the relative end-to-end throughput and performance per dollar comparison for the Llama2-70B model with 16 concurrent users on four Intel Gaudi 2 and four Nvidia H100 platforms.</p>
+<p>In both cases, the same Intel Granite Rapids CPU platform is used for vector databases and embedding models. For performance per dollar comparison, we use publicly available pricing to compute an average training performance per dollar, the same as the one reported by the MosaicML team in January 2024.</p>
+<p>It has been revealed that as you can see, the H100-based system has 1.13x more throughput but can only deliver 0.44x performance per dollar compared to Gaudi 2. These comparisons may vary based on customer-specific discounts on different cloud providers. Detailed benchmark configurations are listed at the end of the post.</p>
+<p>The example above deployment successfully demonstrates a RAG-based chatbot on Intel platforms. Furthermore, as Intel keeps releasing ready-to-go GenAI examples, developers benefit from validated tools that simplify the creation and deployment process. These examples offer versatility and ease of customization, making them ideal for a wide range of applications on Intel platforms.</p>
+<p>When running enterprise AI applications, the total cost of ownership is more favorable with systems based on Intel Granite Rapids CPUs and Gaudi 2 accelerators. Further improvements can be achieved with FP8 optimization.</p>
+<p>The following developer resources should help you kickstart your GenAI projects confidently.</p>
+<p>If you have questions or feedback, we'd love to answer them on the Hugging Face forum. Thanks for reading!</p>
+<p>Acknowledgements:
+We want to thank Chaitanya Khened, Suyue Chen, Mikolaj Zyczynski, Wenjiao Yue, Wenxin Zhang, Letong Han, Sihan Chen, Hanwen Cheng, Yuan Wu, and Yi Wang for their outstanding contributions to building enterprise-grade RAG systems on Intel Gaudi 2.</p>
+<p>Gaudi2 configurations: HLS-Gaudi2 with eight Habana Gaudi2 HL-225H Mezzanine cards and two Intel® Xeon® Platinum 8380 CPU @ 2.30GHz, and 1TB of System Memory; OS: Ubuntu 22.04.03, 5.15.0 kernel.</p>
+<p>H100 SXM Configurations: Lambda labs instance gpu_8x_h100_sxm5; 8xH100 SXM and Two Intel Xeon® Platinum 8480 CPU@2 GHz and 1.8TB of system memory; OS ubuntu 20.04.6 LTS, 5.15.0 kernel.</p>
+<p>In a recent development, intel Xeon: Pre-production Granite Rapids platform with 2Sx120C @ 1.9GHz and 8800 MCR DIMMs with 1.5TB system memory. OS: Cent OS 9, 6.2.0 kernel.</p>
+<p>Llama2 70B is deployed to 4 cards (queries normalized to 8 cards). BF16 for Gaudi2 and FP16 for H100.</p>
+<p>Sources indicate that embedding model is BAAI/bge-base v1.5. Tested with: TGI-gaudi 1.2.1, TGI-GPU 1.4.5 Python 3.11.7, Langchain 0.1.11, sentence-transformers 2.5.1, langchain benchmarks 0.0.10, redis 5.0.2, cuda 12.2.r12.2/compiler.32965470 0, TEI 1.2.0,.</p>
+<p>In a recent development, RAG queries max input length 1024, max output length 128. Test dataset: langsmith Q&amp;A. Number of concurrent clients 16.</p>
+<p>TGI parameters for Gaudi2 (70B): batch_bucket_size=22, prefill_batch_bucket_size=4, max_batch_prefill_tokens=5102, max_batch_total_tokens=32256, max_waiting_tokens=5, streaming=false.</p>
+<p>TGI parameters for H100 (70B): batch_bucket_size=8, prefill_batch_bucket_size=4, max_batch_prefill_tokens=4096, max_batch_total_tokens=131072, max_waiting_tokens=20, max_batch_size=128, streaming=false.</p>
+<p id="sec-end-58293">TCO Reference: https://www.databricks.com/blog/llm-training-and-inference-intel-gaudi2-ai-accelerators.</p>
+<p style="margin-top: 25px;">
+<a href="https://huggingface.co/blog/cost-efficient-rag-applications-with-intel" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="latest-update-smaller-is-better-q8-chat-an-efficient-generative-a-58461.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #58461. Latest Update: Smaller is better: Q8-Chat, an efficient generative AI experience on Xeon
+        </a>
+        
+        <a href="accelerate-starcoder-with-optimum-intel-on-xeon-q8q4-and-speculat-58349.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #58349. Accelerate StarCoder with 🤗 Optimum Intel on Xeon: Q8/Q4 and Speculative Decoding
+        </a>
+        
+        <a href="text-generation-pipeline-on-intel-gaudi-2-ai-accelerator-58331.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #58331. Text-Generation Pipeline on Intel® Gaudi® 2 AI Accelerator
+        </a>
+        
+        <a href="industry-news-blazing-fast-setfit-inference-with-optimum-intel-on-58315.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #58315. Industry News: Blazing Fast SetFit Inference with 🤗 Optimum Intel on Xeon
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text-Generation Pipeline on Intel® Gaudi® 2 AI Accelerator</title>
+    <meta name="description" content="With the Generative AI (GenAI) revolution in full swing, text-generation with open-source transformer models like Llama 2 has become the talk of the town. ">
+    <meta name="keywords" content="pipeline, text, generation, models, llama, class, habana, langchain">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua75/artikel/text-generation-pipeline-on-intel-gaudi-2-ai-accelerator-58331.html">
+    
+    <meta property="og:title" content="Text-Generation Pipeline on Intel® Gaudi® 2 AI Accelerator">
+    <meta property="og:description" content="With the Generative AI (GenAI) revolution in full swing, text-generation with open-source transformer models like Llama 2 has become the talk of the town. ">
+    <meta property="og:image" content="https://huggingface.co/blog/assets/textgen-pipe-gaudi/thumbnail.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua75/artikel/text-generation-pipeline-on-intel-gaudi-2-ai-accelerator-58331.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Text-Generation Pipeline on Intel® Gaudi® 2 AI Accelerator">
+    <meta name="twitter:description" content="With the Generative AI (GenAI) revolution in full swing, text-generation with open-source transformer models like Llama 2 has become the talk of the town. ">
+    <meta name="twitter:image" content="https://huggingface.co/blog/assets/textgen-pipe-gaudi/thumbnail.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Text-Generation Pipeline on Intel® Gaudi® 2 AI Accelerator", "image": ["https://huggingface.co/blog/assets/textgen-pipe-gaudi/thumbnail.png"], "datePublished": "2024-02-29T00:00:00", "dateModified": "2026-11-21T07:51:43.147041", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua75/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua75/artikel/text-generation-pipeline-on-intel-gaudi-2-ai-accelerator-58331.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Text-Generation Pipeline on Intel® Gaudi® 2 AI Accelerator?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in AI & Tech originally reported by Hugging Face."}}, {"@type": "Question", "name": "Which category does 'Text-Generation Pipeline on Intel® Gaudi® 2 AI Accelerator' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the AI & Tech section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">AI & Tech</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Text-Generation Pipeline on Intel® Gaudi® 2 AI Accelerator</h1>
+        <div class="meta-line">🌐 Source: <strong>Hugging Face</strong> &bull; 📅 29 Feb 2024 &bull; ⏱️ 4 min read (734 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>With the Generative AI (GenAI) revolution in full swing, text-generation with open-source transformer models like Llama 2 has become the talk of the town.</li><li style='margin-bottom:6px;'>In a recent development, this custom pipeline class has been designed to offer great flexibility and ease of use.</li><li style='margin-bottom:6px;'>Since the Llama 2 models are part of a gated repo, you need to request access if you haven't done it already.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-58331"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-58331"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-58331"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Text-Generation Pipeline on Intel® Gaudi® 2 AI Accelerator" loading="lazy" src="https://huggingface.co/blog/assets/textgen-pipe-gaudi/thumbnail.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-58331">With the Generative AI (GenAI) revolution in full swing, text-generation with open-source transformer models like Llama 2 has become the talk of the town. AI enthusiasts as well as developers are looking to leverage the generative abilities of such models for their own use cases and applications. This article shows how easy it is to generate text with the Llama 2 family of models (7b, 13b and 70b) using Optimum Habana and a custom pipeline class – you'll be able to run the models with just a few lines of code!</p>
+<p>In a recent development, this custom pipeline class has been designed to offer great flexibility and ease of use. Moreover, it provides a high level of abstraction and performs end-to-end text-generation which involves pre-processing and post-processing. There are multiple ways to use the pipeline - you can run the run_pipeline.py script from the Optimum Habana repository, add the pipeline class to your own python scripts, or initialize LangChain classes with it. <span style="font-size:13px;">(Related: <a href="how-to-generate-text-using-different-decoding-methods-for-languag-58675.html" style="color:#2563eb; font-weight:600;">How to generate text: using different decoding methods ...</a>)</span></p>
+<p>Since the Llama 2 models are part of a gated repo, you need to request access if you haven't done it already. First, you have to visit the Meta website and accept the terms and conditions. After you are granted access by Meta (it can take a day or two), you have to request access in Hugging Face, using the same email address you provided in the Meta form. <span style="font-size:13px;">(Related: <a href="how-to-train-a-new-language-model-from-scratch-using-transformers-58676.html" style="color:#2563eb; font-weight:600;">How to train a new language model from scratch using Tr...</a>)</span></p>
+<p>After you are granted access, please login to your Hugging Face account by running the following command (you will need an access token, which you can get from your user profile page):.</p>
+<p>Sources indicate that you also need to install the latest version of Optimum Habana and clone the repo to access the pipeline script. Here are the commands to do so:.</p>
+<p>It has been revealed that in case you are planning to run distributed inference, install DeepSpeed depending on your SynapseAI version. In this case, I am using SynapseAI 1.14.0.</p>
+<p>Now you are all set to perform text-generation with the pipeline!</p>
+<p>First, go to the following directory in your optimum-habana checkout where the pipeline scripts are located, and follow the instructions in the README to update your PYTHONPATH.</p>
+<p>If you wish to generate a sequence of text from a prompt of your choice, here is a sample command.</p>
+<p id="sec-mid-58331">You can also pass multiple prompts as input and change the temperature and top_p values for generation as follows.</p>
+<p>For generating text with large models such as Llama-2-70b, here is a sample command to launch the pipeline with DeepSpeed.</p>
+<p>You can use the pipeline class in your own scripts as shown in the example below. Run the following sample script from optimum-habana/examples/text-generation/text-generation-pipeline.</p>
+<p>Recent findings suggest that you will have to run the above script with python .py --model_name_or_path a_model_name as --model_name_or_path is a required argument. However, the model name can be programmatically changed as shown in the python snippet.</p>
+<p>This shows us that the pipeline class operates on a string input and performs data pre-processing as well as post-processing for us.</p>
+<p>In a recent development, the text-generation pipeline can be fed as input to LangChain classes via the use_with_langchain constructor argument. You can install LangChain as follows.</p>
+<p>Here is a sample script that indicates how the pipeline class can be used with LangChain.</p>
+<p>The pipeline class has been validated for LangChain version 0.0.191 and may not work with other versions of the package.</p>
+<p>We presented a custom text-generation pipeline on Intel® Gaudi® 2 AI accelerator that accepts single or multiple prompts as input. This pipeline offers great flexibility in terms of model size as well as parameters affecting text-generation quality. Furthermore, it is also very easy to use and to plug into your scripts, and is compatible with LangChain.</p>
+<p id="sec-end-58331">It has been revealed that use of the pretrained model is subject to compliance with third party licenses, including the “Llama 2 Community License Agreement” (LLAMAV2). For guidance on the intended use of the LLAMA2 model, what will be considered misuse and out-of-scope uses, who are the intended users and additional terms please review and read the instructions in this link https://ai.meta.com/llama/license/. Users bear sole liability and responsibility to follow and comply with any third party licenses, and Habana Labs disclaims and will bear no liability with respect to users’ use or compliance with third party licenses. To be able to run gated models like this Llama-2-70b-hf, you need the following:.</p>
+<p style="margin-top: 25px;">
+<a href="https://huggingface.co/blog/textgen-pipe-gaudi" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="faster-assisted-generation-support-for-intel-gaudi-58273.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #58273. Faster assisted generation support for Intel Gaudi
+        </a>
+        
+        <a href="how-to-generate-text-using-different-decoding-methods-for-languag-58675.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #58675. How to generate text: using different decoding methods for language generation with Transformers
+        </a>
+        
+        <a href="guiding-text-generation-with-constrained-beam-search-in-transform-58620.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #58620. Guiding Text Generation with Constrained Beam Search in 🤗 Transformers
+        </a>
+        
+        <a href="faster-text-generation-with-tensorflow-and-xla-58573.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #58573. Faster Text Generation with TensorFlow and XLA
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Report: From cloud to developers: Hugging Face and Microsoft Deepen Collaboration</title>
+    <meta name="description" content="It has been revealed that today at Microsoft Build we are happy to announce a broad set of upcoming features and collaborations as Microsoft and Hugging Fa">
+    <meta name="keywords" content="hugging, face, models, open, microsoft, azure, source, collaboration">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua75/artikel/tech-report-from-cloud-to-developers-hugging-face-and-microsoft-d-58285.html">
+    
+    <meta property="og:title" content="Tech Report: From cloud to developers: Hugging Face and Microsoft Deepen Collaboration">
+    <meta property="og:description" content="It has been revealed that today at Microsoft Build we are happy to announce a broad set of upcoming features and collaborations as Microsoft and Hugging Fa">
+    <meta property="og:image" content="https://huggingface.co/blog/assets/microsoft-collaboration/thumbnail.jpg">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua75/artikel/tech-report-from-cloud-to-developers-hugging-face-and-microsoft-d-58285.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Tech Report: From cloud to developers: Hugging Face and Microsoft Deepen Collaboration">
+    <meta name="twitter:description" content="It has been revealed that today at Microsoft Build we are happy to announce a broad set of upcoming features and collaborations as Microsoft and Hugging Fa">
+    <meta name="twitter:image" content="https://huggingface.co/blog/assets/microsoft-collaboration/thumbnail.jpg">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Tech Report: From cloud to developers: Hugging Face and Microsoft Deepen Collaboration", "image": ["https://huggingface.co/blog/assets/microsoft-collaboration/thumbnail.jpg"], "datePublished": "2024-05-21T00:00:00", "dateModified": "2026-11-21T07:51:35.665516", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua75/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua75/artikel/tech-report-from-cloud-to-developers-hugging-face-and-microsoft-d-58285.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Tech Report: From cloud to developers: Hugging Face and Microsoft Deepen Collabo?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in AI & Tech originally reported by Hugging Face."}}, {"@type": "Question", "name": "Which category does 'Tech Report: From cloud to developers: Hugging Face and Micr' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the AI & Tech section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">AI & Tech</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Tech Report: From cloud to developers: Hugging Face and Microsoft Deepen Collaboration</h1>
+        <div class="meta-line">🌐 Source: <strong>Hugging Face</strong> &bull; 📅 21 May 2024 &bull; ⏱️ 3 min read (650 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>It has been revealed that today at Microsoft Build we are happy to announce a broad set of upcoming features and collaborations as Microsoft and Hugging Face deepen their strategic collaboration to make open models and open source AI easier to use everywhere.</li><li style='margin-bottom:6px;'>we are excited to announce two major latest experiences to build AI with open models on Microsoft Azure.</li><li style='margin-bottom:6px;'>A year ago, Hugging Face and Microsoft unveiled the Hugging Face Collection in the Azure Model Catalog.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-58285"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-58285"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-58285"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Tech Report: From cloud to developers: Hugging Face and Microsoft Deepen Collaboration" loading="lazy" src="https://huggingface.co/blog/assets/microsoft-collaboration/thumbnail.jpg" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-58285">It has been revealed that today at Microsoft Build we are happy to announce a broad set of upcoming features and collaborations as Microsoft and Hugging Face deepen their strategic collaboration to make open models and open source AI easier to use everywhere. Together, we will work to enable AI builders across open science, open source, cloud, hardware and developer experiences - read on for announcements today on all fronts!</p>
+<p>we are excited to announce two major latest experiences to build AI with open models on Microsoft Azure. <span style="font-size:13px;">(Related: <a href="block-sparse-matrices-for-smaller-and-faster-language-models-58673.html" style="color:#2563eb; font-weight:600;">Block Sparse Matrices for Smaller and Faster Language M...</a>)</span></p>
+<p>A year ago, Hugging Face and Microsoft unveiled the Hugging Face Collection in the Azure Model Catalog. The Hugging Face Collection has been used by hundreds of Azure AI customers, with over a thousand open models available since its introduction. Today, we are adding some of the most popular open Large Language Models to the Hugging Face Collection to enable direct, 1-click deployment from Azure AI Studio. <span style="font-size:13px;">(Related: <a href="how-to-train-a-new-language-model-from-scratch-using-transformers-58676.html" style="color:#2563eb; font-weight:600;">How to train a new language model from scratch using Tr...</a>)</span></p>
+<p>The upcoming models include Llama 3 from Meta, Mistral 7B from Mistral AI, Command R Plus from Cohere for AI, Qwen 1.5 110B from Qwen, and some of the highest performing fine-tuned models on the Open LLM Leaderboard from the Hugging Face community.</p>
+<p>To deploy the models in your own Azure account, you can start from the model card on the Hugging Face Hub, selecting the “Deploy on Azure” option:.</p>
+<p>Or you can find model directly in Azure AI Studio within the Hugging Face Collection, and click “Deploy”.</p>
+<p>Industry observers note that today, Microsoft made newly introduced Azure ND MI300X virtual machines (VMs) generally available on Azure, based on the latest AMD Instinct MI300 GPUs. Hugging Face collaborated with AMD and Microsoft to achieve amazing performance and cost/performance for Hugging Face models on the new virtual machines.</p>
+<p>This work leverages our deep collaboration with AMD and our open source library Optimum-AMD, with optimization, ROCm integrations and continuous testing of Hugging Face open source libraries and models on AMD Instinct GPUs.</p>
+<p id="sec-mid-58285">Microsoft has been releasing some of the most popular open models on Hugging Face, with close to 300 models right now available in the Microsoft organization on the Hugging Face Hub.</p>
+<p>This includes the recent Phi-3 family of models, which are permissibly licensed under MIT, and offer performance way above their weight class. For instance, with only 3.8 billion parameters, Phi-3 mini outperforms many of the larger 7 to 10 billion parameter large language models, which makes the models excellent candidates for on-device applications.</p>
+<p>To demonstrate the capabilities of Phi-3, Hugging Face deployed Phi-3 mini in Hugging Chat, its free consumer application to chat with the greatest open models and create assistants.</p>
+<p>Hugging Face and Microsoft have been collaborating for 3 years to make it easy to export and use Hugging Face models with ONNX Runtime, through the optimum open source library.</p>
+<p>Recently, Hugging Face and Microsoft have been focusing on enabling local inference through WebGPU, leveraging Transformers.js and ONNX Runtime Web. Read more about the collaboration in this community article by the ONNX Runtime team.</p>
+<p>To see the power of WebGPU in action, consider this demo of Phi-3 generating over 70 tokens per second locally in the browser!</p>
+<p>Last but not least, today we are unveiling a new integration that makes it easier than ever for developers to build AI applications with Hugging Face Spaces and VS Code!</p>
+<p>The Hugging Face community has created over 500,000 AI demo applications on the Hub with Hugging Face Spaces. With the upcoming Spaces Dev Mode, Hugging Face consumers can easily connect their Space to their local VS Code, or spin up a web hosted VS Code environment.</p>
+<p id="sec-end-58285">Industry observers note that we are excited to deepen our strategic collaboration with Microsoft, to make open-source AI more accessible everywhere. Stay tuned as we enable more models in the Azure AI Studio model catalog and introduce latest features and experiences in the months to come.</p>
+<p style="margin-top: 25px;">
+<a href="https://huggingface.co/blog/microsoft-collaboration" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="microsoft-and-hugging-face-expand-collaboration-58013.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #58013. Microsoft and Hugging Face expand collaboration
+        </a>
+        
+        <a href="tech-report-from-gpt2-to-stable-diffusion-hugging-face-arrives-to-58523.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #58523. Tech Report: From GPT2 to Stable Diffusion: Hugging Face arrives to the Elixir community
+        </a>
+        
+        <a href="tech-report-ethics-and-society-newsletter-3-ethical-openness-at-h-58481.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #58481. Tech Report: Ethics and Society Newsletter #3: Ethical Openness at Hugging Face
+        </a>
+        
+        <a href="tech-report-hugging-face-and-ibm-partner-on-watsonxai-the-next-ge-58457.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #58457. Tech Report: Hugging Face and IBM partner on watsonx.ai, the next-generation enterprise studio for AI builders
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

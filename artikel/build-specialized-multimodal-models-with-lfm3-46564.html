@@ -150,10 +150,10 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-46564">It has been revealed that LFM3 is our new generation of Liquid Foundation Models (LFMs), built to be the starting point for specialized intelligence. It brings text, vision, audio, omni, and decision models onto one shared backbone, all in the 2B parameter range. This means you can pick the model for your modality, fine-tune it on your own data on a single GPU, and deploy it where your application runs.</p>
-<p>LFM3 brings four main changes compared to our previous LFM2 family:. <span style="font-size:13px;">(Related: <a href="nvidia-brings-agents-to-life-with-dgx-spark-and-reachy-mini-47131.html" style="color:#2563eb; font-weight:600;">NVIDIA brings agents to life with DGX Spark and Reachy ...</a>)</span></p>
-<p>According to recent reports, LFM2 indicated that a hybrid of short convolutions and attention can run fast on-device without sacrificing quality. For LFM3, we used our hardware-in-the-loop architecture search to redesign that architecture for agentic use cases, which need more capability per parameter and fast inference over long contexts. The search now covers 14 device and backend combinations, from phones and a Raspberry Pi 5 to laptops, cloud CPUs, GPUs, and the Qualcomm Hexagon NPU. <span style="font-size:13px;">(Related: <a href="latest-update-introducing-falcon-h1-arabic-pushing-the-boundaries-47130.html" style="color:#2563eb; font-weight:600;">Latest Update: Introducing Falcon-H1-Arabic: Pushing th...</a>)</span></p>
+<p>LFM3 brings four main changes compared to our previous LFM2 family:.</p>
+<p>According to recent reports, LFM2 indicated that a hybrid of short convolutions and attention can run fast on-device without sacrificing quality. For LFM3, we used our hardware-in-the-loop architecture search to redesign that architecture for agentic use cases, which need more capability per parameter and fast inference over long contexts. The search now covers 14 device and backend combinations, from phones and a Raspberry Pi 5 to laptops, cloud CPUs, GPUs, and the Qualcomm Hexagon NPU. <span style="font-size:13px;">(Related: <a href="hyperparameter-search-with-transformers-and-ray-tune-58671.html" style="color:#2563eb; font-weight:600;">Hyperparameter Search with Transformers and Ray Tune...</a>)</span></p>
 <p>LFM3-1.7B-Base has 24 layers and four main changes:.</p>
-<p>Sources indicate that the payoff shows at long context. Per parameter, LFM3-1.7B matches LFM2-1.2B on short prompts across edge devices, and with 8K tokens in context it is about 25% faster. LFM3-1.7B-Base was pre-trained on 22T tokens with the same 128K vocabulary as LFM2.5-8B-A1B. The final 3.5T tokens are a mid-training stage on curated data with a larger share of agentic traces and tool calls, which also extends the context window to 256K tokens.</p>
+<p>Sources indicate that the payoff shows at long context. Per parameter, LFM3-1.7B matches LFM2-1.2B on short prompts across edge devices, and with 8K tokens in context it is about 25% faster. LFM3-1.7B-Base was pre-trained on 22T tokens with the same 128K vocabulary as LFM2.5-8B-A1B. The final 3.5T tokens are a mid-training stage on curated data with a larger share of agentic traces and tool calls, which also extends the context window to 256K tokens. <span style="font-size:13px;">(Related: <a href="block-sparse-matrices-for-smaller-and-faster-language-models-58673.html" style="color:#2563eb; font-weight:600;">Block Sparse Matrices for Smaller and Faster Language M...</a>)</span></p>
 <p>In a recent development, every LFM3 model branches from LFM3-1.7B-Base. Instead of running one large general-purpose model, you pick the one that fits your inputs, customize it, and run it on-device.</p>
 <p>The vision and audio models also get two new in-house encoders:.</p>
 <p>Sources indicate that each model runs in transformers. The snippets below come from the model cards, which also list the other inference engines each model supports.</p>
@@ -207,6 +207,10 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
+        <a href="multimodal-embedding-reranker-models-with-sentence-transformers-57675.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #57675. Multimodal Embedding & Reranker Models with Sentence Transformers
+        </a>
+        
         <a href="tech-report-we-got-claude-to-build-cuda-kernels-and-teach-open-mo-47120.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #47120. Tech Report: We Got Claude to Build CUDA Kernels and teach open models!
         </a>
@@ -215,12 +219,8 @@
             📰 #47047. Training and Finetuning Multimodal Embedding & Reranker Models with Sentence Transformers
         </a>
         
-        <a href="how-to-build-a-healthcare-robot-from-simulation-to-deployment-wit-47135.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #47135. How to Build a Healthcare Robot from Simulation to Deployment with NVIDIA Isaac for Healthcare
-        </a>
-        
-        <a href="training-design-for-text-to-image-models-lessons-from-ablations-47118.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #47118. Training Design for Text-to-Image Models: Lessons from Ablations
+        <a href="block-sparse-matrices-for-smaller-and-faster-language-models-58673.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #58673. Block Sparse Matrices for Smaller and Faster Language Models
         </a>
         
     </div>

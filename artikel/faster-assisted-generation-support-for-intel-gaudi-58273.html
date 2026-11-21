@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faster assisted generation support for Intel Gaudi</title>
+    <meta name="description" content="Recent findings suggest that as model sizes grow, Generative AI implementations require significant inference resources. This not only increases the cost p">
+    <meta name="keywords" content="model, generation, draft, sampling, used, text, target, speculative">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua75/artikel/faster-assisted-generation-support-for-intel-gaudi-58273.html">
+    
+    <meta property="og:title" content="Faster assisted generation support for Intel Gaudi">
+    <meta property="og:description" content="Recent findings suggest that as model sizes grow, Generative AI implementations require significant inference resources. This not only increases the cost p">
+    <meta property="og:image" content="https://huggingface.co/blog/assets/assisted-generation-support-gaudi/thumbnail.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua75/artikel/faster-assisted-generation-support-for-intel-gaudi-58273.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Faster assisted generation support for Intel Gaudi">
+    <meta name="twitter:description" content="Recent findings suggest that as model sizes grow, Generative AI implementations require significant inference resources. This not only increases the cost p">
+    <meta name="twitter:image" content="https://huggingface.co/blog/assets/assisted-generation-support-gaudi/thumbnail.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Faster assisted generation support for Intel Gaudi", "image": ["https://huggingface.co/blog/assets/assisted-generation-support-gaudi/thumbnail.png"], "datePublished": "2024-06-04T00:00:00", "dateModified": "2026-11-21T07:51:34.113244", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua75/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua75/artikel/faster-assisted-generation-support-for-intel-gaudi-58273.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Faster assisted generation support for Intel Gaudi?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in Hardware & Chips originally reported by Hugging Face."}}, {"@type": "Question", "name": "Which category does 'Faster assisted generation support for Intel Gaudi' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the Hardware & Chips section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">Hardware & Chips</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Faster assisted generation support for Intel Gaudi</h1>
+        <div class="meta-line">🌐 Source: <strong>Hugging Face</strong> &bull; 📅 04 Jun 2024 &bull; ⏱️ 4 min read (710 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>Recent findings suggest that as model sizes grow, Generative AI implementations require significant inference resources.</li><li style='margin-bottom:6px;'>Inference optimizations for text generation are essential for reducing latency, infrastructure costs, and power consumption.</li><li style='margin-bottom:6px;'>In a recent development, assisted decoding is a popular method for speeding up text generation.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-58273"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-58273"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-58273"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Faster assisted generation support for Intel Gaudi" loading="lazy" src="https://huggingface.co/blog/assets/assisted-generation-support-gaudi/thumbnail.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-58273">Recent findings suggest that as model sizes grow, Generative AI implementations require significant inference resources. This not only increases the cost per generation, but also increases the power consumption used to serve such requests.</p>
+<p>Inference optimizations for text generation are essential for reducing latency, infrastructure costs, and power consumption. This can lead to an improved user experience and increased efficiency in text generation tasks. <span style="font-size:13px;">(Related: <a href="how-to-generate-text-using-different-decoding-methods-for-languag-58675.html" style="color:#2563eb; font-weight:600;">How to generate text: using different decoding methods ...</a>)</span></p>
+<p>In a recent development, assisted decoding is a popular method for speeding up text generation. We adapted and optimized it for Intel Gaudi, which delivers similar performance as Nvidia H100 GPUs as shown in a previous post, while its price is in the same ballpark as Nvidia A100 80GB GPUs. This work is now part of Optimum Habana, which extends various Hugging Face libraries like Transformers and Diffusers so that your AI workflows are fully optimized for Intel Gaudi processors. <span style="font-size:13px;">(Related: <a href="how-to-train-a-new-language-model-from-scratch-using-transformers-58676.html" style="color:#2563eb; font-weight:600;">How to train a new language model from scratch using Tr...</a>)</span></p>
+<p>According to recent reports, speculative sampling is a technique used to speed up text generation. It works by generating a draft model that generates K tokens, which are then evaluated in the target model. If the draft model is rejected, the target model is used to generate the next token. This process repeats. By using speculative sampling, we can improve the speed of text generation and achieve similar sampling quality as autoregressive sampling. The technique allows us to specify a draft model when generating text. This method has been shown to provide speedups of about 2x for large transformer-based models. Overall, these techniques can accelerate text generation and improve performance on Intel Gaudi processors.</p>
+<p>However, the draft model and target model have different sizes that would be represented in a KV cache, so the challenge is to take advantage of separate optimization strategies simultaneously. For this article, we assume a quantized model and leverage KV caching together with Speculative Sampling. Note that each model has its own KV cache, and the draft model is used to generate K tokens, which are then evaluated in the target model. The target model is used to generate the next token when the draft model is rejected. The draft model is used to generate the next K tokens, and the process repeats.</p>
+<p>Industry observers note that note that the authors [2] prove that the target distribution is recovered when performing speculative sampling - this guarantees the same sampling quality as autoregressive sampling on the target itself. Therefore, the situations where not leveraging speculative sampling is not worthwhile have to do with the case where there are not enough savings in the relative size of the draft model or the acceptance rate of the draft model is not high enough to benefit from the smaller size of the draft model.</p>
+<p id="sec-mid-58273">Recent findings suggest that there is a technique similar to Speculative Sampling, known as Assisted Generation. This was developed independently around the same time [3]. The author integrated this method into Hugging Face Transformers, and the .generate() call now has an optional assistant_model parameter to enable this method.</p>
+<p>The usage of Assisted Generation is straightforward. An example is provided here. As would be expected, the parameter --assistant_model is used to specify the draft model. The draft model is used to generate K tokens, which are then evaluated in the target model. The target model is used to generate the next token when the draft model is rejected. The draft model is used to generate the next K tokens, and the process repeats. The acceptance rate of the draft model is partly dependent on the input text. Typically, we have seen speed-ups of about 2x for large transformer-based models.</p>
+<p>Sources indicate that accelerating text generation with Gaudi with assisted generation is now supported and easy to use. This can be used to improve performance on Intel Gaudi processors. The method is based on Speculative Sampling, which has been shown to be effective in improving performance on large transformer-based models.</p>
+<p>In a recent development, [1] N. Shazeer, “Fast Transformer Decoding: One Write-Head is All You Need,” Nov. 2019. arXiv:1911.02150.</p>
+<p>[2] C. Chen, S. Borgeaud, G. Irving, J.B. Lespiau, L. Sifre, and J. Jumper, “Accelerating Large Language Model Decoding with Speculative Sampling,” Feb. 2023. arXiv:2302.01318.</p>
+<p id="sec-end-58273">[3] J. Gante, “Assisted Generation: a new direction toward low-latency text generation,” May 2023, https://huggingface.co/blog/assisted-generation.</p>
+<p style="margin-top: 25px;">
+<a href="https://huggingface.co/blog/assisted-generation-support-gaudi" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="text-generation-pipeline-on-intel-gaudi-2-ai-accelerator-58331.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #58331. Text-Generation Pipeline on Intel® Gaudi® 2 AI Accelerator
+        </a>
+        
+        <a href="faster-assisted-generation-with-dynamic-speculation-58195.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #58195. Faster Assisted Generation with Dynamic Speculation
+        </a>
+        
+        <a href="universal-assisted-generation-faster-decoding-with-any-assistant--58175.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #58175. Universal Assisted Generation: Faster Decoding with Any Assistant Model
+        </a>
+        
+        <a href="faster-text-generation-with-tensorflow-and-xla-58573.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #58573. Faster Text Generation with TensorFlow and XLA
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bringing the Artificial Analysis LLM Performance Leaderboard to Hugging Face</title>
+    <meta name="description" content="Building applications with LLMs requires considering more than just quality: for many use-cases, speed and price are equally or more notable. It has been r">
+    <meta name="keywords" content="quality, leaderboard, performance, speed, model, applications, cost, results">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua75/artikel/bringing-the-artificial-analysis-llm-performance-leaderboard-to-h-58295.html">
+    
+    <meta property="og:title" content="Bringing the Artificial Analysis LLM Performance Leaderboard to Hugging Face">
+    <meta property="og:description" content="Building applications with LLMs requires considering more than just quality: for many use-cases, speed and price are equally or more notable. It has been r">
+    <meta property="og:image" content="https://huggingface.co/blog/assets/leaderboards-on-the-hub/thumbnail_artificialanalysis.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua75/artikel/bringing-the-artificial-analysis-llm-performance-leaderboard-to-h-58295.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Bringing the Artificial Analysis LLM Performance Leaderboard to Hugging Face">
+    <meta name="twitter:description" content="Building applications with LLMs requires considering more than just quality: for many use-cases, speed and price are equally or more notable. It has been r">
+    <meta name="twitter:image" content="https://huggingface.co/blog/assets/leaderboards-on-the-hub/thumbnail_artificialanalysis.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Bringing the Artificial Analysis LLM Performance Leaderboard to Hugging Face", "image": ["https://huggingface.co/blog/assets/leaderboards-on-the-hub/thumbnail_artificialanalysis.png"], "datePublished": "2024-05-03T00:00:00", "dateModified": "2026-11-21T07:51:37.170063", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua75/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua75/artikel/bringing-the-artificial-analysis-llm-performance-leaderboard-to-h-58295.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Bringing the Artificial Analysis LLM Performance Leaderboard to Hugging Face?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in AI & Tech originally reported by Hugging Face."}}, {"@type": "Question", "name": "Which category does 'Bringing the Artificial Analysis LLM Performance Leaderboard' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the AI & Tech section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">AI & Tech</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Bringing the Artificial Analysis LLM Performance Leaderboard to Hugging Face</h1>
+        <div class="meta-line">🌐 Source: <strong>Hugging Face</strong> &bull; 📅 03 May 2024 &bull; ⏱️ 2 min read (495 words, 📖 Standard)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>Building applications with LLMs requires considering more than just quality: for many use-cases, speed and price are equally or more notable.</li><li style='margin-bottom:6px;'>It has been revealed that for consumer applications and chat experiences, speed and responsiveness are critical to user engagement.</li><li style='margin-bottom:6px;'>This is why Artificial Analysis (@ArtificialAnlys) developed a leaderboard evaluating price, speed and quality across >100 serverless LLM API endpoints, now coming to Hugging Face.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-58295"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-58295"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-58295"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Bringing the Artificial Analysis LLM Performance Leaderboard to Hugging Face" loading="lazy" src="https://huggingface.co/blog/assets/leaderboards-on-the-hub/thumbnail_artificialanalysis.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-58295">Building applications with LLMs requires considering more than just quality: for many use-cases, speed and price are equally or more notable.</p>
+<p>It has been revealed that for consumer applications and chat experiences, speed and responsiveness are critical to user engagement. Owners expect near-instant responses, and delays can directly lead to reduced engagement. When building more complex applications involving tool use or agentic systems, speed and cost become even more important, and can become the limiting factor on overall system capability. The time taken by sequential requests to LLMs can swiftly stack up for each user request adding to the cost. <span style="font-size:13px;">(Related: <a href="porting-fairseq-wmt19-translation-system-to-transformers-58670.html" style="color:#2563eb; font-weight:600;">Porting fairseq wmt19 translation system to transformer...</a>)</span></p>
+<p>This is why Artificial Analysis (@ArtificialAnlys) developed a leaderboard evaluating price, speed and quality across &gt;100 serverless LLM API endpoints, now coming to Hugging Face. <span style="font-size:13px;">(Related: <a href="faster-tensorflow-models-in-hugging-face-transformers-58666.html" style="color:#2563eb; font-weight:600;">Faster TensorFlow models in Hugging Face Transformers...</a>)</span></p>
+<p>The LLM Performance Leaderboard aims to provide comprehensive metrics to help AI engineers make decisions on which LLMs (both open &amp; proprietary) and API providers to use in AI-enabled applications.</p>
+<p>Recent findings suggest that when making decisions regarding which AI technologies to use, engineers need to consider quality, price and speed (latency &amp; throughput). The LLM Performance Leaderboard brings all three together to enable decision making in one place across both proprietary &amp; open models.</p>
+<p>Source: LLM Performance Leaderboard.</p>
+<p>For further definitions, see our full methodology page.</p>
+<p>The leaderboard allows exploration of performance under several different workloads (6 combinations in total):.</p>
+<p id="sec-mid-58295">We test every API endpoint on the leaderboard 8 times per day, and leaderboard figures represent the median measurement of the last 14 days. We also have percentile breakdowns within the collapsed tabs.</p>
+<p>Quality metrics are presently collected on a per-model basis and show results reports by model creators, but watch this space as we begin to share results from our independent quality evaluations across each endpoint.</p>
+<p>For further definitions, see our full methodology page.</p>
+<p>Our chart of Quality vs. Throughput (tokens/s) shows the range of options with different quality and performance characteristics.</p>
+<p>Source: artificialanalysis.ai/models.</p>
+<p>In some cases, design patterns involving multiple requests with faster and cheaper models can result in not only lower cost but better overall system quality compared to using a single larger model.</p>
+<p>Industry observers note that for example, consider a chatbot that needs to browse the web to find relevant information from recent news articles. One approach would be to use a large, high-quality model like GPT-4 Turbo to run a search then read and process the top handful of articles. Another would be to use a smaller, faster model like Llama 3 8B to read and extract highlights from dozens web pages in parallel, and then use GPT-4 Turbo to assess and summarize the most relevant results. The second approach will be more cost effective, even after accounting for reading 10x more content, and may result in higher quality results.</p>
+<p id="sec-end-58295">It has been revealed that please follow us on Twitter and LinkedIn for updates. We're available via message on either, as well as on our website and via email.</p>
+<p style="margin-top: 25px;">
+<a href="https://huggingface.co/blog/leaderboard-artificial-analysis" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="introducing-the-hugging-face-llm-inference-container-for-amazon-s-58452.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #58452. Introducing the Hugging Face LLM Inference Container for Amazon SageMaker
+        </a>
+        
+        <a href="open-source-text-generation-llm-ecosystem-at-hugging-face-58428.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #58428. Open-Source Text Generation & LLM Ecosystem at Hugging Face
+        </a>
+        
+        <a href="a-guide-to-setting-up-your-own-hugging-face-leaderboard-an-end-to-58359.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #58359. A guide to setting up your own Hugging Face leaderboard: an end-to-end example with Vectara's hallucination leaderboard
+        </a>
+        
+        <a href="bringing-serverless-gpu-inference-to-hugging-face-users-58316.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #58316. Bringing serverless GPU inference to Hugging Face users
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

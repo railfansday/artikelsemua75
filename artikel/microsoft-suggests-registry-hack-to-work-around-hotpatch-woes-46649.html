@@ -150,12 +150,12 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-46649">App problems in Windows after default hotpatching? Who could have foreseen that?</p>
-<p>Some Windows 11 applications might fail to install or launch after Microsoft's November hotpatch, but not to worry: there's a Registry tweak to work around it.</p>
+<p>Some Windows 11 applications might fail to install or launch after Microsoft's November hotpatch, but not to worry: there's a Registry tweak to work around it. <span style="font-size:13px;">(Related: <a href="tech-report-course-launch-community-event-58639.html" style="color:#2563eb; font-weight:600;">Tech Report: Course Launch Community Event...</a>)</span></p>
 <p>Microsoft has confirmed it isn't administrators' imaginations. The November hotpatch is causing application errors, including in little-used and obscure apps such as Outlook.</p>
 <p>Affected applications may fail during installation, launch, or use, displaying errors such as "ERROR_ALLOTTED_SPACE_EXCEEDED (0xC0000099)." Microsoft's investigation points to applications that load the 32-bit Windows Installer DLL, msi.dll. The problem is more common with 32-bit software, but can also affect 64-bit applications "under certain circumstances.".</p>
-<p>The workaround involves fiddling with the Registry on affected devices, so is not for the faint of heart and a backup is a good idea before diving in. Microsoft indicates the key "HotPatchTableSize" in the folder "HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management" needs to be set to "2000" followed by a restart.</p>
+<p>The workaround involves fiddling with the Registry on affected devices, so is not for the faint of heart and a backup is a good idea before diving in. Microsoft indicates the key "HotPatchTableSize" in the folder "HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management" needs to be set to "2000" followed by a restart. <span style="font-size:13px;">(Related: <a href="porting-fairseq-wmt19-translation-system-to-transformers-58670.html" style="color:#2563eb; font-weight:600;">Porting fairseq wmt19 translation system to transformer...</a>)</span></p>
 <p>Just the thing to round out the week for administrators.</p>
-<p id="sec-mid-46649">The matter affects the November hotpatch, not the standard monthly cumulative security upgrade. "Devices which installed the November 2026 Windows monthly security update are not expected to be affected by this issue," Microsoft said. <span style="font-size:13px;">(Related: <a href="the-open-evaluation-standard-benchmarking-nvidia-nemotron-3-nano--47134.html" style="color:#2563eb; font-weight:600;">The Open Evaluation Standard: Benchmarking NVIDIA Nemot...</a>)</span></p>
+<p id="sec-mid-46649">The matter affects the November hotpatch, not the standard monthly cumulative security upgrade. "Devices which installed the November 2026 Windows monthly security update are not expected to be affected by this issue," Microsoft said.</p>
 <p>Sources indicate that windows hotpatches are security updates that don't require a device restart (unless, as in this instance, administrators have to do so to address errors after a hotpatch is installed). Windows 11 hotpatching requires version 24H2 or later, an eligible subscription, and the necessary management and security configuration.</p>
 <p>"Hotpatch enhancement package size is significantly smaller than the standard cumulative updates," Microsoft said, and the goal is to "streamline the installation process and enhance compliance efficiency.".</p>
 <p>The offending hotpatch, KB5132043, was released on November 10. It followed the October 13 baseline, which was a prerequisite.</p>
@@ -184,20 +184,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
+        <a href="latest-update-introducing-the-newly-introduced-microsoft-iq-putti-58231.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #58231. Latest Update: Introducing the newly introduced Microsoft IQ: Putting your organization’s intelligence to work in every agent
+        </a>
+        
+        <a href="satya-nadella-kicks-off-microsoft-ignite-with-an-outlook-outage-m-53332.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #53332. Satya Nadella kicks off Microsoft Ignite with an Outlook outage mea culpa: ‘We have work to do’
+        </a>
+        
+        <a href="microsoft-wants-to-put-a-dollar-value-on-ais-work-but-can-you-tru-51035.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #51035. Microsoft wants to put a dollar value on AI’s work – but can you trust the math?
+        </a>
+        
         <a href="tech-report-microsoft-and-oracle-bring-agentic-ai-into-flow-of-en-46834.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #46834. Tech Report: Microsoft and Oracle bring agentic AI into flow of enterprise work
-        </a>
-        
-        <a href="latest-update-satya-nadella-kicks-off-microsoft-ignite-with-an-ou-41834.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #41834. Latest Update: Satya Nadella kicks off Microsoft Ignite with an Outlook outage mea culpa: ‘We have work to do’
-        </a>
-        
-        <a href="tech-report-microsoft-wants-to-put-a-dollar-value-on-ais-work-but-39525.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #39525. Tech Report: Microsoft wants to put a dollar value on AI’s work – but can you trust the math?
-        </a>
-        
-        <a href="introducing-the-latest-microsoft-iq-putting-your-organizations-in-35216.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #35216. Introducing the latest Microsoft IQ: Putting your organization’s intelligence to work in every agent
         </a>
         
     </div>

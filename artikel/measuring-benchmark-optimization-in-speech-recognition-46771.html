@@ -150,8 +150,8 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-46771">Industry observers note that public voice AI benchmarks increasingly suggest that models are performing at human levels. Yet those scores don't always reflect how models work in the real-world. Since public benchmarks are open and widely used, models can also become optimized for the tests themselves. Their scores may improve because they have learned benchmark-specific patterns and not because they have become better at the underlying task.</p>
-<p>Recent findings suggest that one reason is that traditional benchmarks overlook many of the conditions and qualities that make voice systems reliable, natural, contextually appropriate, and effective in practice. That's why we recently introduced held-out sets in Real World VoiceEQ, the Open-ASR Leaderboard, and the Far-field ASR Leaderboard: to measure more of what matters in real-world use. <span style="font-size:13px;">(Related: <a href="introducing-the-open-arabic-llm-leaderboard-47138.html" style="color:#2563eb; font-weight:600;">Introducing the Open Arabic LLM Leaderboard...</a>)</span></p>
-<p>Sources indicate that however, broader measurement alone does not solve the problem. This phenomenon, sometimes called benchmark optimization or "benchmaxxing," is often discussed around machine learning, however, it has been difficult to measure in speech recognition. <span style="font-size:13px;">(Related: <a href="industry-news-director-of-machine-learning-insights-47146.html" style="color:#2563eb; font-weight:600;">Industry News: Director of Machine Learning Insights...</a>)</span></p>
+<p>Recent findings suggest that one reason is that traditional benchmarks overlook many of the conditions and qualities that make voice systems reliable, natural, contextually appropriate, and effective in practice. That's why we recently introduced held-out sets in Real World VoiceEQ, the Open-ASR Leaderboard, and the Far-field ASR Leaderboard: to measure more of what matters in real-world use. <span style="font-size:13px;">(Related: <a href="few-shot-learning-in-practice-gpt-neo-and-the-accelerated-inferen-58653.html" style="color:#2563eb; font-weight:600;">Few-shot learning in practice: GPT-Neo and the 🤗 Accele...</a>)</span></p>
+<p>Sources indicate that however, broader measurement alone does not solve the problem. This phenomenon, sometimes called benchmark optimization or "benchmaxxing," is often discussed around machine learning, however, it has been difficult to measure in speech recognition. <span style="font-size:13px;">(Related: <a href="deep-learning-over-the-internet-training-language-models-collabor-58649.html" style="color:#2563eb; font-weight:600;">Deep Learning over the Internet: Training Language Mode...</a>)</span></p>
 <p>Our latest research introduces three tests to help quantify it. We evaluated 11 widely used open-source ASR models and found that several of the highest-scoring systems reproduced benchmark transcripts from the VoxPopuli English and LibriSpeech (clean, other) datasets – even when the audio contradicted them, relevant words had been silenced, or the audio equally supported two different written forms.</p>
 <p>Recent findings suggest that in some cases, models appeared to rely not only on what was stated, but also on subtle acoustic cues that indicated which benchmark they were being tested on. As a result, their scores overstated how well they could transcribe speech more generally.</p>
 <p>In a recent development, voxPopuli is known to contain a high number of transcription errors (which is why Artificial Analysis released a cleaned version). Our consensus disagreement probe tests what happens when leading ASR models encounter these errors: Do they accurately transcribe what the audio says, or reproduce the benchmark's incorrect reference transcript?</p>
@@ -205,20 +205,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
+        <a href="making-automatic-speech-recognition-work-on-large-files-with-wav2-58624.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #58624. Making automatic speech recognition work on large files with Wav2Vec2 in 🤗 Transformers
+        </a>
+        
+        <a href="speech-synthesis-recognition-and-more-with-speecht5-58502.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #58502. Speech Synthesis, Recognition, and More With SpeechT5
+        </a>
+        
+        <a href="ai-speech-recognition-in-unity-58450.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #58450. AI Speech Recognition in Unity
+        </a>
+        
         <a href="tech-report-on-device-speech-recognition-and-text-to-speech-in-go-46851.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #46851. Tech Report: On-Device Speech Recognition and Text-to-Speech in Google AI Edge Gallery
-        </a>
-        
-        <a href="making-automatic-speech-recognition-work-on-large-files-with-wav2-35545.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #35545. Making automatic speech recognition work on large files with Wav2Vec2 in 🤗 Transformers
-        </a>
-        
-        <a href="speech-synthesis-recognition-and-more-with-speecht5-35421.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #35421. Speech Synthesis, Recognition, and More With SpeechT5
-        </a>
-        
-        <a href="ai-speech-recognition-in-unity-35370.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #35370. AI Speech Recognition in Unity
         </a>
         
     </div>

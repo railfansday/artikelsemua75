@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Benchmarking Text Generation Inference</title>
+    <meta name="description" content="Recent findings suggest that in this blog we will be exploring Text Generation Inference’s (TGI) little brother, the TGI Benchmarking tool. It will help us">
+    <meta name="keywords" content="benchmarking, tool, inference, throughput, token, make, generation, want">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua75/artikel/benchmarking-text-generation-inference-58276.html">
+    
+    <meta property="og:title" content="Benchmarking Text Generation Inference">
+    <meta property="og:description" content="Recent findings suggest that in this blog we will be exploring Text Generation Inference’s (TGI) little brother, the TGI Benchmarking tool. It will help us">
+    <meta property="og:image" content="https://huggingface.co/blog/assets/tgi-benchmarking/tgi-benchmarking-thumbnail.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua75/artikel/benchmarking-text-generation-inference-58276.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Benchmarking Text Generation Inference">
+    <meta name="twitter:description" content="Recent findings suggest that in this blog we will be exploring Text Generation Inference’s (TGI) little brother, the TGI Benchmarking tool. It will help us">
+    <meta name="twitter:image" content="https://huggingface.co/blog/assets/tgi-benchmarking/tgi-benchmarking-thumbnail.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Benchmarking Text Generation Inference", "image": ["https://huggingface.co/blog/assets/tgi-benchmarking/tgi-benchmarking-thumbnail.png"], "datePublished": "2024-05-29T00:00:00", "dateModified": "2026-11-21T07:51:34.424408", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua75/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua75/artikel/benchmarking-text-generation-inference-58276.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Benchmarking Text Generation Inference?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Hugging Face."}}, {"@type": "Question", "name": "Which category does 'Benchmarking Text Generation Inference' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Benchmarking Text Generation Inference</h1>
+        <div class="meta-line">🌐 Source: <strong>Hugging Face</strong> &bull; 📅 29 May 2024 &bull; ⏱️ 9 min read (1730 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>Recent findings suggest that in this blog we will be exploring Text Generation Inference’s (TGI) little brother, the TGI Benchmarking tool.</li><li style='margin-bottom:6px;'>I’ll show you how to do this in a convenient Hugging Face Space.</li><li style='margin-bottom:6px;'>To get a better understanding of the need to profile, let's discuss some background information first.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-58276"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-58276"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-58276"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Benchmarking Text Generation Inference" loading="lazy" src="https://huggingface.co/blog/assets/tgi-benchmarking/tgi-benchmarking-thumbnail.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-58276">Recent findings suggest that in this blog we will be exploring Text Generation Inference’s (TGI) little brother, the TGI Benchmarking tool. It will help us understand how to profile TGI beyond simple throughput to better understand the tradeoffs to make decisions on how to tune your deployment for your needs. If you have ever felt like LLM deployments cost too much or if you want to tune your deployment to improve performance this blog is for you!</p>
+<p>I’ll show you how to do this in a convenient Hugging Face Space. You can take the results and use it on an Inference Endpoint or other copy of the same hardware. <span style="font-size:13px;">(Related: <a href="breaking-how-we-sped-up-transformer-inference-100x-for-api-custom-58668.html" style="color:#2563eb; font-weight:600;">Breaking: How we sped up transformer inference 100x for...</a>)</span></p>
+<p>To get a better understanding of the need to profile, let's discuss some background information first. <span style="font-size:13px;">(Related: <a href="industry-news-understanding-bigbirds-block-sparse-attention-58658.html" style="color:#2563eb; font-weight:600;">Industry News: Understanding BigBird's Block Sparse Att...</a>)</span></p>
+<p>Recent findings suggest that large Language Models (LLMs) are fundamentally inefficient. Based on the way decoders work, generation requires a new forward pass for each decoded token. As LLMs increase in size, and adoption rates surge across enterprises, the AI industry has done a great job of creating new optimizations and performance enhancing techniques.</p>
+<p>There have been dozens of improvements in many aspects of serving LLMs. We have seen Flash Attention, Paged Attention, streaming responses, improvements in batching, speculation, quantization of many kinds, improvements in web servers, adoptions of faster languages (sorry python 🐍), and many more. There are also use-case improvements like structured generation and watermarking that now have a place in the LLM inference world. The problem is that fast and efficient implementations require more and more niche skills to implement [1].</p>
+<p>In a recent development, text Generation Inference is a high-performance LLM inference server from Hugging Face designed to embrace and develop the latest techniques in improving the deployment and consumption of LLMs. Due to Hugging Face’s open-source partnerships, most (if not all) major Open Source LLMs are available in TGI on release day.</p>
+<p>Industry observers note that oftentimes users will have very different needs depending on their use-case requirements. Consider prompt and generation in a RAG use-case:.</p>
+<p>In a recent development, in RAG it's important to have the right document to get a quality response, you increase this chance by increasing N which includes more documents. This means that RAG will often try to max out an LLM’s context window to increase task performance. In contrast, think about basic chat. Typical chat scenarios have significantly fewer tokens than RAG:.</p>
+<p>Given that we have such different scenarios, we need to make sure that we configure our LLM server accordingly depending on which one is more relevant. Hugging Face has a benchmarking tool that can help us explore what configurations make the most sense and I'll explain how you can do this on a Hugging Face Space.</p>
+<p>Let’s make sure we have a common understanding of a few key concepts before we dive into the tool.</p>
+<p>Latency is a tricky measurement because it doesn’t tell you the whole picture. You might have a long generation or a short one which won't tell you much regarding your actual server performance.</p>
+<p>Industry observers note that it’s vital to understand that Throughput and Latency are orthogonal measurements, and depending on how we configure our server, we can optimize for one or the other. Our benchmarking tool will help us understand the trade-off via a data visualization.</p>
+<p>Here is a simplified view of how an LLM generates text. The model (typically) generates a single token for each forward pass. For the pre-filling stage in orange, the full prompt (What is.. of the US?)  is sent to the model and one token (Washington) is generated. In the decoding stage in blue, the generated token is appended to the previous input and then this (... the capital of the US? Washington) is sent through the model for another forward pass. Until the model generates the end-of-sequence-token (), this process will continue: send input through the model, generate a token, append the token to input.</p>
+<p>I only included a short example for illustration purposes, but consider that pre-filling only needs 1 forward pass through the model, but decoding can take hundreds or more. Even in our short example we can see more blue arrows than orange. We can see now why it takes so much time to get output from an LLM! Decoding is usually where we spend more time thinking through due to the many passes.</p>
+<p>We have all seen comparisons of tools, new algorithms, or models that show throughput. While this is an important part of the LLM inference story, it's missing some key information. At a minimum (you can of course go more in-depth) we need to know what the throughput AND what the latency is to make good decisions. One of the primary benefits of the TGI benchmarking tool is that it has this capability.</p>
+<p id="sec-mid-58276">Another key line of thought is considering what experience you want the user to have. Do you care more about serving to many users, or do you want each user once engaged with your system to have a fast response? Do you want to have a better Time To First Token (TTFT) or do you want blazing fast tokens to appear once they get their first token even if the first one is delayed?</p>
+<p>It has been revealed that here are some ideas on how that can play out. Remember there is no free lunch. But with enough GPUs and a proper configuration, you can have almost any meal you want.</p>
+<p>It has been revealed that the benchmarking tool is installed with TGI, but you need access to the server to run it. With that in mind I’ve provided this space derek-thomas/tgi-benchmark-space to combine a TGI docker image (pinned to latest) and a jupyter lab working space. It's designed to be duplicated, so dont be alarmed if it's sleeping. It will allow us to deploy a model of our choosing and easily run the benchmarking tool via a CLI. I’ve added some notebooks that will allow you to easily follow along. Feel free to dive into the Dockerfile to get a feel for how it’s built, especially if you want to tweak it.</p>
+<p>Please note that it's much better to run the benchmarking tool in a jupyter lab terminal rather than a notebook due to its interactive nature, but I'll put the commands in a notebook so I can annotate and it's easy to follow along.</p>
+<p>Recent findings suggest that if you used the same HW and settings I did, you should have a really similar chart to Figure 4. The benchmarking tool is showing us the throughput and latency for different batch sizes (amounts of user requests, slightly different than the language when we are launching TGI) for the current settings and HW given when we rolled out TGI. This is important to understand as we should upgrade the settings in how we launch TGI based on our findings with the benchmarking tool.</p>
+<p>The chart in Component 3 tends to be more interesting as we get longer pre-fills like in RAG. It does impact TTFT (shown on the X-axis) which is a massive part of the user experience. Remember we get to push our input tokens through in one forward pass even if we do have to build the KV cache from scratch. So it does tend to be faster in many cases per token than decoding.</p>
+<p>The chart in Component 5 is when we are decoding. Let's take a look at the shape the data points make. We can see that for batch sizes of 1-32 the shape is mostly vertical at ~5.3s. This is really good. This means that for no degradation in latency we can improve throughput significantly! What happens at 64 and 128? We can see that while our throughput is increasing, we are starting to tradeoff latency.</p>
+<p>Sources indicate that for these same values let's check out what is happening on the chart in Component 3. For batch size 32 we can see that we are still about 1 second for our TTFT. But we do start to see linear growth from 32 -&gt; 64 -&gt; 128, 2x the batch size has 2x the latency. Further there is no throughput gain! This means that we don't really get much benefit from the tradeoff.</p>
+<p>Industry observers note that if your batch size is in a vertical area, this is great, you can get more throughput and handle more owners for free. If your batch size is in a horizontal area, this means you are compute bound and increasing users just delays everyone with no benefit of throughput. You should improve your TGI configuration or scale your hardware.</p>
+<p>Sources indicate that now that we learned a bit about TGI’s behavior in various scenarios we can try different settings for TGI and benchmark again. It's good to go through this cycle a few times before deciding on a good configuration. If there is enough interest maybe we can have a part 2 which dives into the optimization for a use-case like chat or RAG.</p>
+<p>It's key to keep track of actual user behavior. When we estimate user behavior we have to start somewhere and make educated guesses. These number choices will make a significant impact on how we are able to profile. Luckily TGI can tell us this information in the logs, so be sure to check that out as well.</p>
+<p>Once you are done with your exploration, be sure to stop running everything so you won't incur further charges.</p>
+<p>It has been revealed that LLMs are bulky and expensive, but there are a number of ways to reduce that cost. LLM inference servers like TGI have done most of the work for us as long as we leverage their capabilities properly. The first step is to understand what is going on and what trade-offs you can make. We’ve seen how to do that with the TGI Benchmarking tool. We can take these results and use them on any equivalent HW in AWS, GCP, or Inference Endpoints.</p>
+<p>Thanks to Nicolas Patry and Olivier Dehaene for creating TGI and its benchmarking tool. Also special thanks to Nicholas Patry, Moritz Laurer, Nicholas Broad, Diego Maniloff, and Erik Rignér for their very helpful proofreading.</p>
+<p>[1] : Sara Hooker, The Hardware Lottery, 2020.</p>
+<p id="sec-end-58276">[2] : Pierre Lienhart, LLM Inference Series: 2. The two-phase process behind LLMs’ responses, 2023.</p>
+<p style="margin-top: 25px;">
+<a href="https://huggingface.co/blog/tgi-benchmarking" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="latest-update-hugging-face-text-generation-inference-available-fo-58346.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #58346. Latest Update: Hugging Face Text Generation Inference available for AWS Inferentia2
+        </a>
+        
+        <a href="introducing-multi-backends-trt-llm-vllm-support-for-text-generati-58134.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #58134. Introducing multi-backends (TRT-LLM, vLLM) support for Text Generation Inference
+        </a>
+        
+        <a href="how-to-generate-text-using-different-decoding-methods-for-languag-58675.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #58675. How to generate text: using different decoding methods for language generation with Transformers
+        </a>
+        
+        <a href="guiding-text-generation-with-constrained-beam-search-in-transform-58620.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #58620. Guiding Text Generation with Constrained Beam Search in 🤗 Transformers
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

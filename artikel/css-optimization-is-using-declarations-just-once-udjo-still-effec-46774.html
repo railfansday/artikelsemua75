@@ -150,11 +150,11 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-46774">CSS optimization is a deceptive topic. On the one hand, it feels like something simple that we should already have all the tooling for — especially when it comes to minification. On the other hand, the idea that we already exploited “everything” there is around CSS optimization may be considered naive. Such a claim looks hard to defend for a language that evolves almost daily.</p>
-<p>In this article, I’d like to pick a technique that’s at least 18 years old — UDJO, or “using declarations just once.”.</p>
-<p>According to recent reports, aware of an older source? Please comment! <span style="font-size:13px;">(Related: <a href="architectural-choices-in-chinas-open-source-ai-ecosystem-building-47121.html" style="color:#2563eb; font-weight:600;">Architectural Choices in China's Open-Source AI Ecosyst...</a>)</span></p>
+<p>In this article, I’d like to pick a technique that’s at least 18 years old — UDJO, or “using declarations just once.”. <span style="font-size:13px;">(Related: <a href="how-to-train-a-new-language-model-from-scratch-using-transformers-58676.html" style="color:#2563eb; font-weight:600;">How to train a new language model from scratch using Tr...</a>)</span></p>
+<p>According to recent reports, aware of an older source? Please comment!</p>
 <p>The technique is inspired by the principle of DRY, “don’t repeat yourself”, in that it works by identifying and reducing (if not eliminating) declaration repetition.</p>
 <p>So, if there’s something like display: flex and it appears two or more times, it gets reconciled in one rule:.</p>
-<p>Industry observers note that the outcome of the technique depends on how intelligently the deduplication is done and how long the selectors are. Intelligence determines if UDJO leads to an actual maintainability advantage — can the change of a declaration really be done to all the selectors attached? And the selector length influences how substantial file size savings are. <span style="font-size:13px;">(Related: <a href="industry-news-director-of-machine-learning-insights-47146.html" style="color:#2563eb; font-weight:600;">Industry News: Director of Machine Learning Insights...</a>)</span></p>
+<p>Industry observers note that the outcome of the technique depends on how intelligently the deduplication is done and how long the selectors are. Intelligence determines if UDJO leads to an actual maintainability advantage — can the change of a declaration really be done to all the selectors attached? And the selector length influences how substantial file size savings are. <span style="font-size:13px;">(Related: <a href="industry-news-the-reformer-pushing-the-limits-of-language-modelin-58674.html" style="color:#2563eb; font-weight:600;">Industry News: The Reformer - Pushing the limits of lan...</a>)</span></p>
 <p>If you’re interested, my article on “DRY CSS” describes the mechanics in more detail. The question here is: Is UDJO still effective and still relevant today?</p>
 <p>When we try to answer this question, however, we end up with a problem: When sites are complex and their style sheet declarations have not been de-duplicated before, UDJO can require a lot of work.</p>
 <p>Recent findings suggest that to save some time, I built tooling for this work. While it didn’t seem like it would immediately be as comprehensive as manually going through and testing style sheets, it seemed realistic enough that a tool could catch some repetition.</p>
@@ -192,20 +192,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="scott-eastwood-is-still-seeking-a-rush-just-at-a-slower-pace-45425.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #45425. Scott Eastwood Is Still Seeking a Rush, Just at a Slower Pace
+        <a href="scott-eastwood-is-still-seeking-a-rush-just-at-a-slower-pace-56904.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #56904. Scott Eastwood Is Still Seeking a Rush, Just at a Slower Pace
         </a>
         
-        <a href="microsofts-sidewinder-strategic-commander-was-a-failed-attempt-to-40417.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #40417. Microsoft's SideWinder Strategic Commander was a failed attempt to reimagine RTS controls. 23 years later, why are some players still using it?
+        <a href="microsofts-sidewinder-strategic-commander-was-a-failed-attempt-to-51854.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #51854. Microsoft's SideWinder Strategic Commander was a failed attempt to reimagine RTS controls. 23 years later, why are some players still using it?
         </a>
         
-        <a href="openenv-in-practice-evaluating-tool-using-agents-in-real-world-en-47111.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #47111. OpenEnv in Practice: Evaluating Tool-Using Agents in Real-World Environments
+        <a href="latest-update-match-day-morning-heres-what-west-ham-fans-need-tod-49512.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #49512. Latest Update: Match day morning : Here’s what West Ham fans need today – and it is more than just ‘hope’
         </a>
         
-        <a href="industry-news-ibm-and-uc-berkeley-diagnose-why-enterprise-agents--47105.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #47105. Industry News: IBM and UC Berkeley Diagnose Why Enterprise Agents Fail Using IT-Bench and MAST
+        <a href="how-to-train-a-new-language-model-from-scratch-using-transformers-58676.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #58676. How to train a new language model from scratch using Transformers and Tokenizers
         </a>
         
     </div>

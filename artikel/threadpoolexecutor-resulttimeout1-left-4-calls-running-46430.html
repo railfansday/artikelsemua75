@@ -151,10 +151,10 @@
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-46430">Industry observers note that future.result(timeout=1) raises TimeoutError after one second, but the thread keeps running the call to the end, and future.cancel() returns False because the work already started; if a tool call must really stop, run it in a child process and terminate that process on timeout. In my test, four agent tool calls that each "timed out" after 1 s all ran their full 5 s, and the next 0.1 s call on the same pool waited 1.10 s for a free thread.</p>
 <p>This story was written with the assistance of an AI writing program. All numbers come from CPython 3.14.4 on Linux 7.0, and both scripts ran twice with identical output.</p>
-<p>It has been revealed that here is the version that actually stops the work. It is the code I now use for agent tools that wrap slow, uncooperative functions:. <span style="font-size:13px;">(Related: <a href="tiny-agents-an-mcp-powered-agent-in-50-lines-of-code-47136.html" style="color:#2563eb; font-weight:600;">Tiny Agents: an MCP-powered agent in 50 lines of code...</a>)</span></p>
+<p>It has been revealed that here is the version that actually stops the work. It is the code I now use for agent tools that wrap slow, uncooperative functions:.</p>
 <p>The rest of this post is why the thread version cannot do this, and what it costs you when you try.</p>
-<p>Yesterday I wrote about subprocess.run(timeout=1) leaving orphans behind. The same question applies one layer up. A lot of agent frameworks run tool functions in a ThreadPoolExecutor so the event loop stays free, then put a timeout on the future. I wanted to know what that timeout actually does. <span style="font-size:13px;">(Related: <a href="assetopsbench-bridging-the-gap-between-ai-agent-benchmarks-and-in-47124.html" style="color:#2563eb; font-weight:600;">AssetOpsBench: Bridging the Gap Between AI Agent Benchm...</a>)</span></p>
-<p>Industry observers note that the test is small: a tool that sleeps 5 seconds and records when it finishes, a pool with four workers, and four calls, each awaited with result(timeout=1). Then a fresh 0.1 s call on the same pool, then the asyncio equivalent, asyncio.wait_for(asyncio.to_thread(...), timeout=1).</p>
+<p>Yesterday I wrote about subprocess.run(timeout=1) leaving orphans behind. The same question applies one layer up. A lot of agent frameworks run tool functions in a ThreadPoolExecutor so the event loop stays free, then put a timeout on the future. I wanted to know what that timeout actually does. <span style="font-size:13px;">(Related: <a href="tech-report-course-launch-community-event-58639.html" style="color:#2563eb; font-weight:600;">Tech Report: Course Launch Community Event...</a>)</span></p>
+<p>Industry observers note that the test is small: a tool that sleeps 5 seconds and records when it finishes, a pool with four workers, and four calls, each awaited with result(timeout=1). Then a fresh 0.1 s call on the same pool, then the asyncio equivalent, asyncio.wait_for(asyncio.to_thread(...), timeout=1). <span style="font-size:13px;">(Related: <a href="industry-news-the-reformer-pushing-the-limits-of-language-modelin-58674.html" style="color:#2563eb; font-weight:600;">Industry News: The Reformer - Pushing the limits of lan...</a>)</span></p>
 <p>Recent findings suggest that every timeout fired on schedule. None of them stopped anything. All four calls finished at 5.0 s and wrote their results into a list nobody was reading. If those calls had been sending emails or writing rows, all four side effects would have happened after the caller had already logged "tool timed out".</p>
 <p id="sec-mid-46430">Recent findings suggest that the concurrent.futures docs are honest about this: "If the call is at the moment being executed or finished running and cannot be cancelled then the method will return False." In other words, it removes queued work, nothing else. Python has no supported way to kill a thread. The timeout on result() is a timeout on your wait, not on the work.</p>
 <p>Recent findings suggest that that distinction is easy to miss because the exception type looks like a verdict. TimeoutError reads as "the call was stopped". It means "I stopped waiting".</p>
@@ -186,20 +186,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="trump-calls-putin-and-xi-friends-they-have-other-intends-47149.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #47149. Trump calls Putin and Xi friends. They have other intends.
+        <a href="running-if-with-diffusers-on-a-free-tier-google-colab-58471.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #58471. Running IF with 🧨 diffusers on a Free Tier Google Colab
         </a>
         
-        <a href="latest-update-running-an-ai-agent-on-a-local-llm-what-i-measured--47043.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #47043. Latest Update: Running an AI Agent on a Local LLM: What I Measured on One GPU
+        <a href="gradio-lite-serverless-gradio-running-entirely-in-your-browser-58383.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #58383. Gradio-Lite: Serverless Gradio Running Entirely in Your Browser
         </a>
         
-        <a href="intel-diamond-rapids-demonstrates-signs-of-life-in-sc26-demo-runn-47026.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #47026. Intel Diamond Rapids demonstrates signs of life in SC26 demo running live server
+        <a href="stop-treating-agents-as-one-off-projects-and-start-running-them-a-58311.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #58311. Stop treating agents as one-off projects and start running them as a continuous discipline
         </a>
         
-        <a href="paddleocr-35-running-ocr-and-document-parsing-tasks-with-a-transf-47002.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #47002. PaddleOCR 3.5: Running OCR and Document Parsing Tasks with a Transformers Backend
+        <a href="latest-update-running-privacy-preserving-inferences-on-hugging-fa-58305.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #58305. Latest Update: Running Privacy-Preserving Inferences on Hugging Face Endpoints
         </a>
         
     </div>

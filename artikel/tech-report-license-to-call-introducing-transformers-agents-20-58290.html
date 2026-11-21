@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Report: License to Call: Introducing Transformers Agents 2.0</title>
+    <meta name="description" content="We are releasing Transformers Agents 2.0! ⇒ 🎁 On top of our existing agent type, we introduce two fresh agents that can iterate based on past observations ">
+    <meta name="keywords" content="agent, agents, tools, specific, these, tool, code, based">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua75/artikel/tech-report-license-to-call-introducing-transformers-agents-20-58290.html">
+    
+    <meta property="og:title" content="Tech Report: License to Call: Introducing Transformers Agents 2.0">
+    <meta property="og:description" content="We are releasing Transformers Agents 2.0! ⇒ 🎁 On top of our existing agent type, we introduce two fresh agents that can iterate based on past observations ">
+    <meta property="og:image" content="https://huggingface.co/blog/assets/agents/thumbnail.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua75/artikel/tech-report-license-to-call-introducing-transformers-agents-20-58290.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Tech Report: License to Call: Introducing Transformers Agents 2.0">
+    <meta name="twitter:description" content="We are releasing Transformers Agents 2.0! ⇒ 🎁 On top of our existing agent type, we introduce two fresh agents that can iterate based on past observations ">
+    <meta name="twitter:image" content="https://huggingface.co/blog/assets/agents/thumbnail.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Tech Report: License to Call: Introducing Transformers Agents 2.0", "image": ["https://huggingface.co/blog/assets/agents/thumbnail.png"], "datePublished": "2024-05-13T00:00:00", "dateModified": "2026-11-21T07:51:36.482191", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua75/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua75/artikel/tech-report-license-to-call-introducing-transformers-agents-20-58290.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Tech Report: License to Call: Introducing Transformers Agents 2.0?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Hugging Face."}}, {"@type": "Question", "name": "Which category does 'Tech Report: License to Call: Introducing Transformers Agent' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Tech Report: License to Call: Introducing Transformers Agents 2.0</h1>
+        <div class="meta-line">🌐 Source: <strong>Hugging Face</strong> &bull; 📅 13 May 2024 &bull; ⏱️ 9 min read (1709 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>⇒ 🎁 On top of our existing agent type, we introduce two fresh agents that can iterate based on past observations to solve complex tasks.</li><li style='margin-bottom:6px;'>⇒ 💡 We aim for the code to be clear and modular, and for common attributes like the final prompt and tools to be transparent.</li><li style='margin-bottom:6px;'>⇒ 🤝 We add sharing options to boost community agents.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-58290"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-58290"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-58290"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Tech Report: License to Call: Introducing Transformers Agents 2.0" loading="lazy" src="https://huggingface.co/blog/assets/agents/thumbnail.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-58290">We are releasing Transformers Agents 2.0!</p>
+<p>⇒ 🎁 On top of our existing agent type, we introduce two fresh agents that can iterate based on past observations to solve complex tasks. <span style="font-size:13px;">(Related: <a href="transformer-based-encoder-decoder-models-58672.html" style="color:#2563eb; font-weight:600;">Transformer-based Encoder-Decoder Models...</a>)</span></p>
+<p>⇒ 💡 We aim for the code to be clear and modular, and for common attributes like the final prompt and tools to be transparent.</p>
+<p>⇒ 🤝 We add sharing options to boost community agents. <span style="font-size:13px;">(Related: <a href="tech-report-course-launch-community-event-58639.html" style="color:#2563eb; font-weight:600;">Tech Report: Course Launch Community Event...</a>)</span></p>
+<p>⇒ 💪 Extremely performant new agent framework, allowing a Llama-3-70B-Instruct agent to outperform GPT-4 based agents in the GAIA Leaderboard!</p>
+<p>🚀 Go try it out and climb ever higher on the GAIA leaderboard!</p>
+<p>transformers.agents has now been upgraded to the stand-alone library smolagents! The two libraries have very similar APIs, so switching is easy. Go checkout the smolagents introduction blog here.</p>
+<p>Large Language Models (LLMs) can tackle a wide range of tasks, but they often struggle with specific tasks like logic, calculation, and search. When prompted in these domains in which they do not perform well, they frequently fail to generate a correct answer.</p>
+<p>One approach to overcome this weakness is to create an agent, which is just a program driven by an LLM. The agent is empowered by tools to help it perform actions. When the agent needs a specific skill to solve a particular problem, it relies on an appropriate tool from its toolbox.</p>
+<p>Thus when during problem-solving the agent needs a specific skill, it can just rely on an appropriate tool from its toolbox.</p>
+<p>Experimentally, agent frameworks generally work very well, achieving state-of-the-art performance on several benchmarks. For instance, have a look at the top submissions for HumanEval: they are agent systems.</p>
+<p>Industry observers note that building agent workflows is complex, and we feel these systems need a lot of clarity and modularity. We launched Transformers Agents one year ago, and we’re doubling down on our core design goals.</p>
+<p>On top of that, we have sharing features that let you build on the shoulders of giants!</p>
+<p>Check out the documentation to learn how to use each component!</p>
+<p>How do agents work under the hood?</p>
+<p>Industry observers note that in essence, what an agent does is “allowing an LLM to use tools”. Agents have a key agent.run() method that:.</p>
+<p>For more general context about agents, you could read this excellent blog post by Lilian Weng or our earlier blog post about building agents with LangChain.</p>
+<p>To take a deeper dive in our package, go take a look at the agents documentation.</p>
+<p>In order to get access to the early access of this feature, please first install transformers from its main branch:.</p>
+<p>Agents 2.0 will be released in the v4.41.0 version, landing mid-May.</p>
+<p>Recent findings suggest that quick definition: Retrieval-Augmented-Generation (RAG) is “using an LLM to answer a user query, but basing the answer on information retrieved from a knowledge base”. It has many advantages over using a vanilla or fine-tuned LLM: to name a few, it allows to ground the answer on true facts and reduce confabulations, it allows to provide the LLM with domain-specific knowledge, and it allows fine-grained control of access to information from the knowledge base.</p>
+<p>Recent findings suggest that let’s say we want to perform RAG, and some parameters must be dynamically generated. For example, depending on the user query we could want to restrict the search to specific subsets of the knowledge base, or we could want to adjust the number of documents retrieved. The difficulty is: how to dynamically adjust these parameters based on the user query?</p>
+<p>Well, we can do this by giving our agent an access to these parameters!</p>
+<p>Run the line below to install the required dependencies:.</p>
+<p>We first load a knowledge base on which we want to perform RAG: this dataset is a compilation of the documentation pages for many huggingface packages, stored as markdown.</p>
+<p>Now we prepare the knowledge base by processing the dataset and storing it into a vector database to be used by the retriever. We are going to use LangChain, since it features excellent utilities for vector databases:.</p>
+<p>Now that we have the database ready, let’s build a RAG system that answers user queries based on it!</p>
+<p>We want our system to select only from the most relevant sources of information, depending on the query.</p>
+<p>Our documentation pages come from the following sources:.</p>
+<p>How can we select the relevant sources based on the user query?</p>
+<p>👉 Let us build our RAG system as an agent that will be free to choose its sources!</p>
+<p>We create a retriever tool that the agent can call with the parameters of its choice:.</p>
+<p id="sec-mid-58290">Now it’s straightforward to create an agent that leverages this tool!</p>
+<p>The agent will need these arguments upon initialization:.</p>
+<p>Our llm_engine must be a callable that takes as input a list of messages and returns text. It also needs to accept a stop_sequences argument that indicates when to stop its generation. For convenience, we directly use the HfEngine class provided in the package to get a LLM engine that calls our Inference API.</p>
+<p>Since we initialized the agent as a ReactJsonAgent, it has been automatically given a default system prompt that tells the LLM engine to process step-by-step and generate tool calls as JSON blobs (you could replace this prompt template with your own as needed).</p>
+<p>Then when its .run() method is rolled out, the agent takes care of calling the LLM engine, parsing the tool call JSON blobs and executing these tool calls, all in a loop that ends only when the final answer is provided.</p>
+<p>And we get the following output:.</p>
+<p>We can see the self-correction in action: the agent first tried to restrict sources, but due to the lack of corresponding documents it ended up not restricting sources at all.</p>
+<p>We can verify that by inspecting the llm output at the logs for step 2: print(agent.logs[2]['llm_output']).</p>
+<p>In a recent development, in this example, we want to build an agent and test it on the GAIA benchmark (Mialon et al. 2023). GAIA is an extremely difficult benchmark, with most questions requiring several steps of reasoning using different tools. A specifically difficult requirement is to have a powerful web browser, able to navigate to pages with specific constraints: discovering pages using the website’s inner navigation, selecting specific articles in time...</p>
+<p>In a recent development, web browsing requires diving deeper into subpages and scrolling through lots of text tokens that will not be necessary for the higher-level task-solving. We assign the web-browsing sub-tasks to a specialized web surfer agent. We provide it with some tools to browse the web and a specific prompt (check the repo to find specific implementations).</p>
+<p>Defining these tools is outside the scope of this post: but you can check the repository to find specific implementations.</p>
+<p>To allow this agent to be called by a higher-level task solving agent, we can simply encapsulate it in another tool:.</p>
+<p>Then we initialize the task-solving agent with this search tool:.</p>
+<p>Let's run the agent with the following task:.</p>
+<p>Use density measures from the chemistry materials licensed by Marisa Alviar-Agnew &amp; Henry Agnew under the CK-12 license in LibreText's Introductory Chemistry materials as compiled 08/21/2023. I have a gallon of honey and a gallon of mayonnaise at 25C. I remove one cup of honey at a time from the gallon of honey. How many times will I need to remove a cup to have the honey weigh less than the mayonaise? Assume the containers themselves weigh the same.</p>
+<p>Let’s take our agent framework for a spin and benchmark different models with it!</p>
+<p>All the code for the experiments below can be found here.</p>
+<p>The agents_reasoning_benchmark is a small - but mighty- reasoning test for evaluating agent performance. This benchmark was already used and explained in more detail in our earlier blog post.</p>
+<p>Industry observers note that the idea is that the choice of tools you use with your agents can radically alter performance for certain tasks. So this benchmark restricts the set of tools used to a calculator and a basic search tool. We picked questions from several datasets that could be solved using only these two tools:.</p>
+<p>Here we try 3 different engines: Mixtral-8x7B, Llama-3-70B-Instruct, and GPT-4 Turbo.</p>
+<p>The results are shown above - as the average of two complete runs for more precision. We also tested Command-R+ and Mixtral-8x22B, but do not show them for clarity.</p>
+<p>⇒ Llama-3-70B-Instruct leads the Open-Source models: it is on par with GPT-4, and it’s especially strong in a ReactCodeAgent  thanks to Llama 3’s strong coding performance!</p>
+<p>According to recent reports, 💡 It's interesting to compare JSON- and Code-based React agents: with less powerful LLM engines like Mixtral-8x7B, Code-based agents do not perform as well as JSON, since the LLM engine frequently fails to generate good code. But the Code version really shines with more powerful models as engines: in our experience, the Code version even outperforms the JSON with Llama-3-70B-Instruct. As a result, we use the Code version for our next challenge: testing on the complete GAIA benchmark.</p>
+<p>GAIA (Mialon et al., 2023) is an extremely difficult benchmark: you can see in the agent_reasoning_benchmark above that models do not perform above 50% even though we cherry-picked tasks that could be solved with 2 basic tools.</p>
+<p>Now we want to get a score on the complete set, we do not cherry-pick questions anymore. Thus we have to cover all modalities, which leads us to use these specific tools:.</p>
+<p>We first initialize these toole (for more detail, inspect the code in the repository).</p>
+<p>And after some time needed to complete the 165 questions, we submit our result to the GAIA Leaderboard, and… 🥁🥁🥁.</p>
+<p>⇒ Our agent ranks 4th: it beats many GPT-4-based agents, and is now the reigning contender for the Open-Source category!</p>
+<p>Industry observers note that we will keep improving this package in the coming months. We have already identified several exciting paths in our development roadmap:.</p>
+<p>Industry observers note that 👉 Go try out transformers agents! We’re looking forward to receiving your feedback and your ideas.</p>
+<p>Let’s fill the top of the leaderboard with more open-source models! 🚀.</p>
+<p id="sec-end-58290">transformers.agents has now been upgraded to the stand-alone library smolagents! The two libraries have very similar APIs, so switching is easy. Go checkout the smolagents introduction blog here.</p>
+<p style="margin-top: 25px;">
+<a href="https://huggingface.co/blog/agents" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="tech-report-introducing-snowball-fight-our-first-ml-agents-enviro-58634.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #58634. Tech Report: Introducing Snowball Fight ☃️, our first ML-Agents environment
+        </a>
+        
+        <a href="tech-report-introducing-ai-vs-ai-a-deep-reinforcement-learning-mu-58504.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #58504. Tech Report: Introducing ⚔️ AI vs. AI ⚔️ a deep reinforcement learning multi-agents competition system
+        </a>
+        
+        <a href="tech-report-introducing-nvidia-nemotron-3-nano-omni-long-context--47021.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #47021. Tech Report: Introducing NVIDIA Nemotron 3 Nano Omni: Long-Context Multimodal Intelligence for Documents, Audio and Video Agents
+        </a>
+        
+        <a href="introducing-optimum-the-optimization-toolkit-for-transformers-at--58648.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #58648. Introducing Optimum: The Optimization Toolkit for Transformers at Scale
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

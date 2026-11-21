@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patch Time Series Transformer in Hugging Face</title>
+    <meta name="description" content="Industry observers note that in this blog, we provide examples of how to get started with PatchTST. We first demonstrate the forecasting capability of Patc">
+    <meta name="keywords" content="model, forecasting, dataset, patchtst, target, performance, test, training">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua75/artikel/patch-time-series-transformer-in-hugging-face-58347.html">
+    
+    <meta property="og:title" content="Patch Time Series Transformer in Hugging Face">
+    <meta property="og:description" content="Industry observers note that in this blog, we provide examples of how to get started with PatchTST. We first demonstrate the forecasting capability of Patc">
+    <meta property="og:image" content="https://huggingface.co/blog/assets/patchtst/thumbnail.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua75/artikel/patch-time-series-transformer-in-hugging-face-58347.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Patch Time Series Transformer in Hugging Face">
+    <meta name="twitter:description" content="Industry observers note that in this blog, we provide examples of how to get started with PatchTST. We first demonstrate the forecasting capability of Patc">
+    <meta name="twitter:image" content="https://huggingface.co/blog/assets/patchtst/thumbnail.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Patch Time Series Transformer in Hugging Face", "image": ["https://huggingface.co/blog/assets/patchtst/thumbnail.png"], "datePublished": "2024-02-01T00:00:00", "dateModified": "2026-11-21T07:51:46.137681", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua75/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua75/artikel/patch-time-series-transformer-in-hugging-face-58347.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Patch Time Series Transformer in Hugging Face?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Hugging Face."}}, {"@type": "Question", "name": "Which category does 'Patch Time Series Transformer in Hugging Face' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Patch Time Series Transformer in Hugging Face</h1>
+        <div class="meta-line">🌐 Source: <strong>Hugging Face</strong> &bull; 📅 01 Feb 2024 &bull; ⏱️ 5 min read (1039 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>Industry observers note that in this blog, we provide examples of how to get started with PatchTST.</li><li style='margin-bottom:6px;'>The PatchTST model was proposed in A Time Series is Worth 64 Words: Long-term Forecasting with Transformers by Yuqi Nie, Nam H.</li><li style='margin-bottom:6px;'>At a high level, the model vectorizes individual time series in a batch into patches of a given size and encodes the resulting sequence of vectors via a Transformer that then outputs the prediction length forecast via an appropriate head.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-58347"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-58347"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-58347"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Patch Time Series Transformer in Hugging Face" loading="lazy" src="https://huggingface.co/blog/assets/patchtst/thumbnail.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-58347">Industry observers note that in this blog, we provide examples of how to get started with PatchTST. We first demonstrate the forecasting capability of PatchTST on the Electricity data. We will then demonstrate the transfer learning capability of PatchTST by using the previously trained model to do zero-shot forecasting on the electrical transformer (ETTh1) dataset. The zero-shot forecasting
+ performance will denote the test performance of the model in the target domain, without any
+ training on the target domain. Subsequently, we will do linear probing and (then) finetuning of
+ the pretrained model on the train part of the target data, and will validate the forecasting
+ performance on the test part of the target data.</p>
+<p>The PatchTST model was proposed in A Time Series is Worth 64 Words: Long-term Forecasting with Transformers by Yuqi Nie, Nam H. Nguyen, Phanwadee Sinthong, Jayant Kalagnanam and presented at ICLR 2023. <span style="font-size:13px;">(Related: <a href="how-to-train-a-new-language-model-from-scratch-using-transformers-58676.html" style="color:#2563eb; font-weight:600;">How to train a new language model from scratch using Tr...</a>)</span></p>
+<p>At a high level, the model vectorizes individual time series in a batch into patches of a given size and encodes the resulting sequence of vectors via a Transformer that then outputs the prediction length forecast via an appropriate head. <span style="font-size:13px;">(Related: <a href="transformer-based-encoder-decoder-models-58672.html" style="color:#2563eb; font-weight:600;">Transformer-based Encoder-Decoder Models...</a>)</span></p>
+<p>The model is based on two key components:.</p>
+<p>The patching design naturally has three-fold benefit:.</p>
+<p>In addition, PatchTST has a modular design to seamlessly support masked time series pre-training as well as direct time series forecasting.</p>
+<p>This demo requires Hugging Face Transformers for the model, and the IBM tsfm package for auxiliary data pre-processing. We can install both by cloning the tsfm repository and following the below steps.</p>
+<p>Here we train a PatchTST model directly on the Electricity dataset (available from https://github.com/zhouhaoyi/Informer2020), and evaluate its performance.</p>
+<p>In the next cell, please adjust the following parameters to suit your application:.</p>
+<p>According to recent reports, the data is first loaded into a Pandas dataframe and split into training, validation, and test parts. Then the Pandas dataframes are converted to the appropriate PyTorch dataset required for training.</p>
+<p>Next, we instantiate a randomly initialized PatchTST model with a configuration. The settings below control the different hyperparameters related to the architecture.</p>
+<p>For full details on the parameters, we refer to the documentation.</p>
+<p>Next, we can leverage the Hugging Face Trainer class to train the model based on the direct forecasting strategy. We first define the TrainingArguments which lists various hyperparameters for training such as the number of epochs, learning rate and so on.</p>
+<p>Sources indicate that next, we can leverage trainer.evaluate() to calculate test metrics. While this is not the target metric to judge in this task, it provides a reasonable check that the pretrained model has trained properly. Note that the training and evaluation loss for PatchTST is the Mean Squared Error (MSE) loss. Hence, we do not separately compute the MSE metric in any of the following evaluation experiments.</p>
+<p>The MSE of 0.131 is very close to the value reported for the Electricity dataset in the original PatchTST paper.</p>
+<p id="sec-mid-58347">Industry observers note that in this section, we will demonstrate the transfer learning capability of the PatchTST model. We use the model pre-trained on the Electricity dataset to do zero-shot forecasting on the ETTh1 dataset.</p>
+<p>According to recent reports, by Transfer Learning, we mean that we first pretrain the model for a forecasting task on a source dataset (which we did above on the Electricity dataset). Then, we will use the pretrained model for zero-shot forecasting on a target dataset. By zero-shot, we mean that we test the performance in the target domain without any additional training. We hope that the model gained enough knowledge from pretraining which can be transferred to a different dataset. Subsequently, we will do linear probing and (then) finetuning of the pretrained model on the train split of the target data and will validate the forecasting performance on the test split of the target data. In this example, the source dataset is the Electricity dataset and the target dataset is ETTh1.</p>
+<p>All evaluations are on the test part of the ETTh1 data.</p>
+<p>In a recent development, step 1: Directly evaluate the electricity-pretrained model. This is the zero-shot performance.</p>
+<p>Step 2: Evaluate after doing linear probing.</p>
+<p>Step 3: Evaluate after doing full finetuning.</p>
+<p>Sources indicate that below, we load the ETTh1 dataset as a Pandas dataframe. Next, we create 3 splits for training, validation, and testing. We then leverage the TimeSeriesPreprocessor class to prepare each split for the model.</p>
+<p>As we are going to test forecasting performance out-of-the-box, we load the model which we pretrained above.</p>
+<p>As can be seen, with a zero-shot forecasting approach we obtain an MSE of 0.370 which is near to the state-of-the-art result in the original PatchTST paper.</p>
+<p>Next, let's see how we can do by performing linear probing, which involves training a linear layer on top of a frozen pre-trained model. Linear probing is often done to test the performance of features of a pretrained model.</p>
+<p>We can do a quick linear probing on the train part of the target data to see any possible test performance improvement.</p>
+<p>As can be seen, by only training a simple linear layer on top of the frozen backbone, the MSE decreased from 0.370 to 0.357, beating the originally reported results!</p>
+<p>Finally, let's see if we can get additional improvements by doing a full fine-tune of the model.</p>
+<p>We can do a full model fine-tune (instead of probing the last linear layer as shown above) on the train part of the target data to see a possible test performance improvement. The code looks similar to the linear probing task above, except that we are not freezing any parameters.</p>
+<p>In this case, there is only a small improvement on the ETTh1 dataset with full fine-tuning. For other datasets there may be more substantial improvements. Let's save the model anyway.</p>
+<p id="sec-end-58347">Industry observers note that in this blog, we presented a step-by-step guide on training PatchTST for tasks related to forecasting and transfer learning, demonstrating various approaches for fine-tuning. We intend to facilitate easy integration of the PatchTST HF model for your forecasting use cases, and we hope that this content serves as a useful resource to expedite the adoption of PatchTST. Thank you for tuning in to our blog, and we hope you find this information beneficial for your projects.</p>
+<p style="margin-top: 25px;">
+<a href="https://huggingface.co/blog/patchtst" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="habana-labs-and-hugging-face-partner-to-accelerate-transformer-mo-58612.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #58612. Habana Labs and Hugging Face Partner to Accelerate Transformer Model Training
+        </a>
+        
+        <a href="fetch-consolidates-ai-tools-and-saves-30-development-time-with-hu-58497.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #58497. Fetch Consolidates AI Tools and Saves 30% Development Time with Hugging Face on AWS
+        </a>
+        
+        <a href="hugging-face-and-cloudflare-partner-to-make-real-time-speech-and--58065.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #58065. Hugging Face and Cloudflare Partner to Make Real-Time Speech and Video Seamless with FastRTC
+        </a>
+        
+        <a href="hugging-face-and-cerebras-bring-gemma-4-to-real-time-voice-ai-46883.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #46883. Hugging Face and Cerebras bring Gemma 4 to real-time voice AI
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

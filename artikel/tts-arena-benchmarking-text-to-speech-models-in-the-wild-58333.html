@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TTS Arena: Benchmarking Text-to-Speech Models in the Wild</title>
+    <meta name="description" content="Recent findings suggest that automated measurement of the quality of text-to-speech (TTS) models is very difficult. Assessing the naturalness and inflectio">
+    <meta name="keywords" content="models, arena, quality, leaderboard, model, text, recent, results">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua75/artikel/tts-arena-benchmarking-text-to-speech-models-in-the-wild-58333.html">
+    
+    <meta property="og:title" content="TTS Arena: Benchmarking Text-to-Speech Models in the Wild">
+    <meta property="og:description" content="Recent findings suggest that automated measurement of the quality of text-to-speech (TTS) models is very difficult. Assessing the naturalness and inflectio">
+    <meta property="og:image" content="https://huggingface.co/blog/assets/arenas-on-the-hub/thumbnail.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua75/artikel/tts-arena-benchmarking-text-to-speech-models-in-the-wild-58333.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="TTS Arena: Benchmarking Text-to-Speech Models in the Wild">
+    <meta name="twitter:description" content="Recent findings suggest that automated measurement of the quality of text-to-speech (TTS) models is very difficult. Assessing the naturalness and inflectio">
+    <meta name="twitter:image" content="https://huggingface.co/blog/assets/arenas-on-the-hub/thumbnail.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "TTS Arena: Benchmarking Text-to-Speech Models in the Wild", "image": ["https://huggingface.co/blog/assets/arenas-on-the-hub/thumbnail.png"], "datePublished": "2024-02-27T00:00:00", "dateModified": "2026-11-21T07:51:43.499434", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua75/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua75/artikel/tts-arena-benchmarking-text-to-speech-models-in-the-wild-58333.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding TTS Arena: Benchmarking Text-to-Speech Models in the Wild?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Hugging Face."}}, {"@type": "Question", "name": "Which category does 'TTS Arena: Benchmarking Text-to-Speech Models in the Wild' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>TTS Arena: Benchmarking Text-to-Speech Models in the Wild</h1>
+        <div class="meta-line">🌐 Source: <strong>Hugging Face</strong> &bull; 📅 27 Feb 2024 &bull; ⏱️ 3 min read (608 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>Recent findings suggest that automated measurement of the quality of text-to-speech (TTS) models is very difficult.</li><li style='margin-bottom:6px;'>In a recent development, the field of speech synthesis has long lacked an accurate method to measure the quality of different models.</li><li style='margin-bottom:6px;'>Human ranking for AI systems is not a novel approach.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-58333"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-58333"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-58333"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="TTS Arena: Benchmarking Text-to-Speech Models in the Wild" loading="lazy" src="https://huggingface.co/blog/assets/arenas-on-the-hub/thumbnail.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-58333">Recent findings suggest that automated measurement of the quality of text-to-speech (TTS) models is very difficult. Assessing the naturalness and inflection of a voice is a trivial task for humans, but it is much more difficult for AI. This is why today, we’re thrilled to announce the TTS Arena. Inspired by LMSys's Chatbot Arena for LLMs, we developed a tool that allows anyone to easily compare TTS models side-by-side. Just submit some text, listen to two different models speak it out, and vote on which model you think is the best. The results will be organized into a leaderboard that displays the community’s highest-rated models.</p>
+<p>In a recent development, the field of speech synthesis has long lacked an accurate method to measure the quality of different models. Objective metrics like WER (word error rate) are unreliable measures of model quality, and subjective measures such as MOS (mean opinion score) are typically small-scale experiments conducted with few listeners. As a result, these measurements are generally not useful for comparing two models of roughly similar quality. To address these drawbacks, we are inviting the community to rank models in an easy-to-use interface. By opening this tool and disseminating results to the public, we aim to democratize how models are ranked and to make model comparison and selection accessible to everyone. <span style="font-size:13px;">(Related: <a href="how-to-train-a-new-language-model-from-scratch-using-transformers-58676.html" style="color:#2563eb; font-weight:600;">How to train a new language model from scratch using Tr...</a>)</span></p>
+<p>Human ranking for AI systems is not a novel approach. Recently, LMSys applied this method in their Chatbot Arena with great results, collecting over 300,000 rankings so far. Because of its success, we adopted a similar framework for our leaderboard, inviting any person to rank synthesized audio.</p>
+<p>The leaderboard allows a user to enter text, which will be synthesized by two models. After listening to each sample, the user will vote on which model sounds more natural. Due to the risks of human bias and abuse, model names will be revealed only after a vote is submitted. <span style="font-size:13px;">(Related: <a href="block-sparse-matrices-for-smaller-and-faster-language-models-58673.html" style="color:#2563eb; font-weight:600;">Block Sparse Matrices for Smaller and Faster Language M...</a>)</span></p>
+<p>Recent findings suggest that we selected several SOTA (State of the Art) models for our leaderboard. While most are open-source models, we also included several proprietary models to allow developers to compare the state of open-source development with proprietary models.</p>
+<p>The models available at launch are:.</p>
+<p>Although there are many other open and closed source models available, we chose these because they are generally accepted as the highest-quality publicly available models.</p>
+<p id="sec-mid-58333">According to recent reports, the results from Arena voting will be made publicly available in a dedicated leaderboard. Note that it will be initially empty until sufficient votes are accumulated, then models will gradually appear. As raters submit new votes, the leaderboard will automatically patch.</p>
+<p>Similar to the Chatbot Arena, models will be ranked using an algorithm similar to the Elo rating system, commonly used in chess and other games.</p>
+<p>It has been revealed that we hope the TTS Arena proves to be a helpful resource for all developers. We'd love to hear your feedback! Please do not hesitate to let us know if you have any questions or suggestions by sending us an X/Twitter DM, or by opening a discussion in the community tab of the Space.</p>
+<p>Special thanks to all the people who helped make this possible, including Clémentine Fourrier, Lucian Pouget, Yoach Lacombe, Main Horse, and the Hugging Face team. In particular, I’d like to thank VB for his time and technical assistance. I’d also like to thank Sanchit Gandhi and Apolinário Passos for their feedback and support during the development process.</p>
+<p>Sources indicate that zyphra released Zonos as Apache 2. Quality is very good.https://www.zyphra.com/post/beta-release-of-zonos-v0-1#zonos_4.</p>
+<p>I am looking forward Google and Microsoft TTS models to be tested.</p>
+<p id="sec-end-58333">The ones that their browsers use are opensource?</p>
+<p style="margin-top: 25px;">
+<a href="https://huggingface.co/blog/arena-tts" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="open-tts-leaderboard-scalable-evaluation-for-multilingual-text-to-46662.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #46662. Open TTS Leaderboard: Scalable Evaluation for Multilingual Text-to-Speech and Voice Cloning
+        </a>
+        
+        <a href="a-dive-into-text-to-video-models-58467.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #58467. A Dive into Text-to-Video Models
+        </a>
+        
+        <a href="ethics-and-society-newsletter-4-bias-in-text-to-image-models-58435.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #58435. Ethics and Society Newsletter #4: Bias in Text-to-Image Models
+        </a>
+        
+        <a href="latest-update-the-open-medical-llm-leaderboard-benchmarking-large-58301.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #58301. Latest Update: The Open Medical-LLM Leaderboard: Benchmarking Large Language Models in Healthcare
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

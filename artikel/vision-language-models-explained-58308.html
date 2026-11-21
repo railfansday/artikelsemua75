@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vision Language Models Explained</title>
+    <meta name="description" content="Sources indicate that this blog post was written on April 2024 and provides a great introduction to internals of vision language models, an overview of exi">
+    <meta name="keywords" content="models, vision, image, language, model, text, different, fine">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua75/artikel/vision-language-models-explained-58308.html">
+    
+    <meta property="og:title" content="Vision Language Models Explained">
+    <meta property="og:description" content="Sources indicate that this blog post was written on April 2024 and provides a great introduction to internals of vision language models, an overview of exi">
+    <meta property="og:image" content="https://huggingface.co/blog/assets/vlms_explained/thumbnail.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua75/artikel/vision-language-models-explained-58308.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Vision Language Models Explained">
+    <meta name="twitter:description" content="Sources indicate that this blog post was written on April 2024 and provides a great introduction to internals of vision language models, an overview of exi">
+    <meta name="twitter:image" content="https://huggingface.co/blog/assets/vlms_explained/thumbnail.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Vision Language Models Explained", "image": ["https://huggingface.co/blog/assets/vlms_explained/thumbnail.png"], "datePublished": "2024-04-11T00:00:00", "dateModified": "2026-11-21T07:51:39.597630", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua75/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua75/artikel/vision-language-models-explained-58308.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Vision Language Models Explained?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Hugging Face."}}, {"@type": "Question", "name": "Which category does 'Vision Language Models Explained' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Vision Language Models Explained</h1>
+        <div class="meta-line">🌐 Source: <strong>Hugging Face</strong> &bull; 📅 11 Apr 2024 &bull; ⏱️ 6 min read (1275 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>Sources indicate that this blog post was written on April 2024 and provides a great introduction to internals of vision language models, an overview of existing suite of vision language models and how to fine-tune them.</li><li style='margin-bottom:6px;'>In a recent development, vision language models are models that can learn simultaneously from images and texts to tackle many tasks, from visual question answering to image captioning.</li><li style='margin-bottom:6px;'>Vision language models are broadly defined as multimodal models that can learn from images and text.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-58308"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-58308"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-58308"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Vision Language Models Explained" loading="lazy" src="https://huggingface.co/blog/assets/vlms_explained/thumbnail.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-58308">Sources indicate that this blog post was written on April 2024 and provides a great introduction to internals of vision language models, an overview of existing suite of vision language models and how to fine-tune them. We have written an April 2025 update, with more capabilities and more models. Make sure to check it out after reading this one!</p>
+<p>In a recent development, vision language models are models that can learn simultaneously from images and texts to tackle many tasks, from visual question answering to image captioning. In this post, we go through the main building blocks of vision language models: have an overview, grasp how they work, figure out how to find the right model, how to use them for inference and how to easily fine-tune them with the fresh version of trl released today! <span style="font-size:13px;">(Related: <a href="how-to-train-a-new-language-model-from-scratch-using-transformers-58676.html" style="color:#2563eb; font-weight:600;">How to train a new language model from scratch using Tr...</a>)</span></p>
+<p>Vision language models are broadly defined as multimodal models that can learn from images and text. They are a type of generative models that take image and text inputs, and generate text outputs. Large vision language models have good zero-shot capabilities, generalize well, and can work with many types of images, including documents, web pages, and more. The use cases include chatting about images, image recognition via instructions, visual question answering, document understanding, image captioning, and others. Some vision language models can also capture spatial properties in an image. These models can output bounding boxes or segmentation masks when prompted to detect or segment a particular subject, or they can localize different entities or answer questions about their relative or absolute positions. There’s a lot of diversity within the existing set of large vision language models, the data they were trained on, how they encode images, and, thus, their capabilities. <span style="font-size:13px;">(Related: <a href="how-to-generate-text-using-different-decoding-methods-for-languag-58675.html" style="color:#2563eb; font-weight:600;">How to generate text: using different decoding methods ...</a>)</span></p>
+<p>According to recent reports, there are many open vision language models on the Hugging Face Hub. Some of the most prominent ones are shown in the table below.</p>
+<p>There are many ways to select the most appropriate model for your use case.</p>
+<p>Vision Arena is a leaderboard solely based on anonymous voting of model outputs and is updated continuously. In this arena, the customers enter an image and a prompt, and outputs from two different models are sampled anonymously, then the user can pick their preferred output. This way, the leaderboard is constructed solely based on human preferences.</p>
+<p>Recent findings suggest that open VLM Leaderboard, is another leaderboard where various vision language models are ranked according to these metrics and average scores. You can also filter models according to model sizes, proprietary or open-source licenses, and rank for different metrics.</p>
+<p>VLMEvalKit is a toolkit to run benchmarks on a vision language models that powers the Open VLM Leaderboard. Another evaluation suite is LMMS-Eval, which provides a standard command line interface to evaluate Hugging Face models of your choice with datasets hosted on the Hugging Face Hub, like below:.</p>
+<p>In a recent development, both the Vision Arena and the Open VLM Leaderbard are limited to the models that are submitted to them, and require updates to add new models. If you want to find additional models, you can browse the Hub for models under the task image-text-to-text.</p>
+<p>According to recent reports, there are different benchmarks to evaluate vision language models that you may come across in the leaderboards. We will go through a few of them.</p>
+<p>Recent findings suggest that A Massive Multi-discipline Multimodal Understanding and Reasoning Benchmark for Expert AGI (MMMU) is the most comprehensive benchmark to evaluate vision language models. It contains 11.5K multimodal challenges that require college-level subject knowledge and reasoning across different disciplines such as arts and engineering.</p>
+<p>MMBench is an evaluation benchmark that consists of 3000 single-choice questions over 20 different skills, including OCR, object localization and more. The paper also introduces an evaluation strategy called CircularEval, where the answer choices of a question are shuffled in different combinations, and the model is expected to give the right answer at every turn. There are other more specific benchmarks across different domains, including MathVista (visual mathematical reasoning), AI2D (diagram understanding), ScienceQA (Science Question Answering) and OCRBench (document understanding).</p>
+<p>Industry observers note that there are various ways to pretrain a vision language model. The main trick is to unify the image and text representation and feed it to a text decoder for generation. The most common and prominent models often consist of an image encoder, an embedding projector to align image and text representations (often a dense neural network) and a text decoder stacked in this order. As for the training parts, different models have been following different approaches.</p>
+<p>For instance, LLaVA consists of a CLIP image encoder, a multimodal projector and a Vicuna text decoder. The authors fed a dataset of images and captions to GPT-4 and generated questions related to the caption and the image. The authors have frozen the image encoder and text decoder and have only trained the multimodal projector to align the image and text features by feeding the model images and generated questions and comparing the model output to the ground truth captions. After the projector pretraining, they keep the image encoder frozen, unfreeze the text decoder, and train the projector with the decoder. This way of pre-training and fine-tuning is the most common way of training vision language models.</p>
+<p>Structure of a Typical Vision Language Model.</p>
+<p id="sec-mid-58308">Projection and text embeddings are concatenated.</p>
+<p>Another example is KOSMOS-2, where the authors chose to fully train the model end-to-end, which is computationally expensive compared to LLaVA-like pre-training. The authors later did language-only instruction fine-tuning to align the model. Fuyu-8B, as another example, doesn’t even have an image encoder. Instead, image patches are directly fed to a projection layer and then the sequence goes through an auto-regressive decoder. Most of the time, you don’t need to pre-train a vision language model, as you can either use one of the existing ones or fine-tune them on your own use case. We will go through how to use these models using transformers and fine-tune using SFTTrainer.</p>
+<p>You can infer with Llava using the LlavaNext model as shown below.</p>
+<p>Let’s initialize the model and the processor first.</p>
+<p>We now pass the image and the text prompt to the processor, and then pass the processed inputs to the generate. Note that each model uses its own prompt template, be careful to use the right one to avoid performance degradation.</p>
+<p>Call decode to decode the output tokens.</p>
+<p>We are excited to announce that TRL’s SFTTrainer now includes experimental support for Vision Language Models! We provide an example here of how to perform SFT on a Llava 1.5 VLM using the llava-instruct dataset which contains 260k image-conversation pairs. The dataset contains user-assistant interactions formatted as a sequence of messages. For example, each conversation is paired with an image that the user asks questions about.</p>
+<p>To use the experimental VLM training support, you must install the latest version of TRL, with pip install -U trl. The full example script can be found here.</p>
+<p>Initialize the chat template for instruction fine-tuning.</p>
+<p>We will now initialize our model and tokenizer.</p>
+<p>Let’s create a data collator to combine text and image pairs.</p>
+<p>It has been revealed that initialize the SFTTrainer, passing in the model, the dataset splits, PEFT configuration and data collator and call train(). To push our final checkpoint to the Hub, call push_to_hub().</p>
+<p>Save the model and push to the Hugging Face Hub.</p>
+<p>You can find the trained model here.</p>
+<p>You can try the model we just trained directly in our VLM playground below ⬇️.</p>
+<p id="sec-end-58308">We would like to thank Pedro Cuenca, Lewis Tunstall, Kashif Rasul and Omar Sanseviero for their reviews and suggestions on this blog post.</p>
+<p style="margin-top: 25px;">
+<a href="https://huggingface.co/blog/vlms" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="a-dive-into-vision-language-models-58506.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #58506. A Dive into Vision-Language Models
+        </a>
+        
+        <a href="tech-report-accelerating-vision-language-models-bridgetower-on-ha-58434.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #58434. Tech Report: Accelerating Vision-Language Models: BridgeTower on Habana Gaudi2
+        </a>
+        
+        <a href="fine-tuning-florence-2-microsofts-cutting-edge-vision-language-mo-58258.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #58258. Fine-tuning Florence-2 - Microsoft's Cutting-edge Vision Language Models
+        </a>
+        
+        <a href="preference-optimization-for-vision-language-models-58246.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #58246. Preference Optimization for Vision Language Models
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

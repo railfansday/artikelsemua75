@@ -167,8 +167,8 @@ Meta TLX, a Native GPU Compiler Extension Supporting Advanced Hardware Capabilit
 									
 									2
 									min read.</p>
-<p>Meta developed Triton Low-Level Extensions (TLX), designed to bridge the gap between high-level GPU programming abstractions and the low-level execution control required to fully exploit modern GPU architectures. <span style="font-size:13px;">(Related: <a href="latest-update-aprielguard-a-guardrail-for-safety-and-adversarial--47132.html" style="color:#2563eb; font-weight:600;">Latest Update: AprielGuard: A Guardrail for Safety and ...</a>)</span></p>
-<p>According to Meta engineers, modern GPU architectures offer advanced performance-optimization features, including warp specialization, asynchronous memory movement, tensor memory, and cluster-level execution, which depart from Triton's traditional programming model, which simplifies kernel development but abstracts away low-level execution structures. <span style="font-size:13px;">(Related: <a href="ai-for-game-development-creating-a-farming-game-in-5-days-part-1-47141.html" style="color:#2563eb; font-weight:600;">AI for Game Development: Creating a Farming Game in 5 D...</a>)</span></p>
+<p>Meta developed Triton Low-Level Extensions (TLX), designed to bridge the gap between high-level GPU programming abstractions and the low-level execution control required to fully exploit modern GPU architectures. <span style="font-size:13px;">(Related: <a href="scaling-up-bert-like-model-inference-on-modern-cpu-part-2-58638.html" style="color:#2563eb; font-weight:600;">Scaling up BERT-like model Inference on modern CPU  - P...</a>)</span></p>
+<p>According to Meta engineers, modern GPU architectures offer advanced performance-optimization features, including warp specialization, asynchronous memory movement, tensor memory, and cluster-level execution, which depart from Triton's traditional programming model, which simplifies kernel development but abstracts away low-level execution structures. <span style="font-size:13px;">(Related: <a href="how-to-train-a-new-language-model-from-scratch-using-transformers-58676.html" style="color:#2563eb; font-weight:600;">How to train a new language model from scratch using Tr...</a>)</span></p>
 <p>Industry observers note that for example, a modern FlashAttention kernel may dedicate one warp group to issuing TMA transfers while another executes tensor-core computation. A Blackwell GEMM kernel may coordinate multiple warp groups, TMEM allocations, and cluster resources simultaneously. In both cases, performance depends not only on the computation being performed, but also on how multiple execution agents cooperate.</p>
 <p>Industry observers note that using these advanced features required "large amounts of architecture-specific orchestration code", as they were not readily available as Triton compilers abstractions. To address this challenge, Meta developed Triton Low-Level Extensions (TLX), designed to give engineers explicit control over GPU execution while preserving Triton's programming model.</p>
 <p>TLX introduces a latest Multiple Instructions, Multiple Warps (MIMW) execution model that bridges CUDA’s thread-level control and Triton’s block-level abstraction. It extends Triton across five key areas: warp-group orchestration, synchronization, memory orchestration, cluster execution, and optional layout.</p>
@@ -204,20 +204,20 @@ Meta TLX, a Native GPU Compiler Extension Supporting Advanced Hardware Capabilit
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="industry-news-gpu-management-why-idle-gpus-are-the-latest-grounde-46816.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #46816. Industry News: GPU Management: Why Idle GPUs Are the Latest Grounded Aircraft
+        <a href="industry-news-6-native-alternatives-to-butterfly-bush-55989.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #55989. Industry News: 6 Native Alternatives to Butterfly Bush
         </a>
         
-        <a href="latest-update-meta-ads-testing-youtube-analysis-and-industry-news-44061.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #44061. Latest Update: Meta Ads Testing, YouTube Analysis, and Industry News
+        <a href="industry-news-ace-hardware-is-clearing-out-holiday-decor-for-earl-55917.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #55917. Industry News: Ace Hardware Is Clearing Out Holiday Decor for Early Black Friday-Save Up to 40% on Lights, Inflatables, Trees, and More
         </a>
         
-        <a href="industry-news-meta-launches-shopping-platform-achados-in-brazil-43784.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #43784. Industry News: Meta launches shopping platform Achados in Brazil
+        <a href="tech-report-meta-ads-testing-youtube-analysis-and-industry-news-55531.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #55531. Tech Report: Meta Ads Testing, YouTube Analysis, and Industry News
         </a>
         
-        <a href="industry-news-freshworks-alums-raise-53m-to-take-on-salesforce-hu-41715.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #41715. Industry News: Freshworks alums raise $53M to take on Salesforce, HubSpot with AI-native CRM
+        <a href="industry-news-meta-pulls-down-controversial-terms-of-service-55422.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #55422. Industry News: Meta pulls down controversial terms of service
         </a>
         
     </div>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Report: CyberSecEval 2 - A Comprehensive Evaluation Framework for Cybersecurity Risks and Capabilities of Large Language Models</title>
+    <meta name="description" content="With the speed at which the generative AI space is moving, we believe an open approach is an important way to bring the ecosystem together and mitigate pot">
+    <meta name="keywords" content="llms, models, code, cyberseceval, cybersecurity, benchmarks, risks, open">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua75/artikel/tech-report-cyberseceval-2-a-comprehensive-evaluation-framework-f-58278.html">
+    
+    <meta property="og:title" content="Tech Report: CyberSecEval 2 - A Comprehensive Evaluation Framework for Cybersecurity Risks and Capabilities of Large Language Models">
+    <meta property="og:description" content="With the speed at which the generative AI space is moving, we believe an open approach is an important way to bring the ecosystem together and mitigate pot">
+    <meta property="og:image" content="https://huggingface.co/blog/assets/leaderboards-on-the-hub/thumbnail_llamaguard.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua75/artikel/tech-report-cyberseceval-2-a-comprehensive-evaluation-framework-f-58278.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Tech Report: CyberSecEval 2 - A Comprehensive Evaluation Framework for Cybersecurity Risks and Capabilities of Large Language Models">
+    <meta name="twitter:description" content="With the speed at which the generative AI space is moving, we believe an open approach is an important way to bring the ecosystem together and mitigate pot">
+    <meta name="twitter:image" content="https://huggingface.co/blog/assets/leaderboards-on-the-hub/thumbnail_llamaguard.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Tech Report: CyberSecEval 2 - A Comprehensive Evaluation Framework for Cybersecurity Risks and Capabilities of", "image": ["https://huggingface.co/blog/assets/leaderboards-on-the-hub/thumbnail_llamaguard.png"], "datePublished": "2024-05-24T00:00:00", "dateModified": "2026-11-21T07:51:34.826654", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua75/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua75/artikel/tech-report-cyberseceval-2-a-comprehensive-evaluation-framework-f-58278.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Tech Report: CyberSecEval 2 - A Comprehensive Evaluation Framework for Cybersecu?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Hugging Face."}}, {"@type": "Question", "name": "Which category does 'Tech Report: CyberSecEval 2 - A Comprehensive Evaluation Fra' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚠️ Warning</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Tech Report: CyberSecEval 2 - A Comprehensive Evaluation Framework for Cybersecurity Risks and Capabilities of Large Language Models</h1>
+        <div class="meta-line">🌐 Source: <strong>Hugging Face</strong> &bull; 📅 24 May 2024 &bull; ⏱️ 3 min read (506 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>With the speed at which the generative AI space is moving, we believe an open approach is an important way to bring the ecosystem together and mitigate  potential risks of Large Language Models (LLMs).</li><li style='margin-bottom:6px;'>CyberSecEval 2 benchmarks help evaluate LLMs’ propensity to generate insecure code and comply with requests to aid cyber attackers:.</li><li style='margin-bottom:6px;'>All the code is open source, and we hope the community will use it to measure and enhance the cybersecurity safety properties of LLMs.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-58278"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-58278"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-58278"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Tech Report: CyberSecEval 2 - A Comprehensive Evaluation Framework for Cybersecurity Risks and Capabilities of Large Language Models" loading="lazy" src="https://huggingface.co/blog/assets/leaderboards-on-the-hub/thumbnail_llamaguard.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-58278">With the speed at which the generative AI space is moving, we believe an open approach is an important way to bring the ecosystem together and mitigate  potential risks of Large Language Models (LLMs). Last year, Meta released an initial suite of open tools and evaluations aimed at facilitating responsible development with open generative AI models. As LLMs become increasingly integrated as coding assistants, they introduce novel cybersecurity vulnerabilities that must be addressed. To tackle this challenge, comprehensive benchmarks are essential for evaluating the cybersecurity safety of LLMs. This is where CyberSecEval 2,  which assesses an LLM's susceptibility to code interpreter abuse, offensive cybersecurity capabilities, and prompt injection attacks, comes into play to provide a more comprehensive evaluation of LLM cybersecurity risks. You can view the CyberSecEval 2 leaderboard here.</p>
+<p>CyberSecEval 2 benchmarks help evaluate LLMs’ propensity to generate insecure code and comply with requests to aid cyber attackers:. <span style="font-size:13px;">(Related: <a href="how-to-generate-text-using-different-decoding-methods-for-languag-58675.html" style="color:#2563eb; font-weight:600;">How to generate text: using different decoding methods ...</a>)</span></p>
+<p>All the code is open source, and we hope the community will use it to measure and enhance the cybersecurity safety properties of LLMs. <span style="font-size:13px;">(Related: <a href="tech-report-course-launch-community-event-58639.html" style="color:#2563eb; font-weight:600;">Tech Report: Course Launch Community Event...</a>)</span></p>
+<p>You can read more about all the benchmarks here.</p>
+<p>Our latest evaluation of state-of-the-art Large Language Models (LLMs) using CyberSecEval 2 reveals both progress and ongoing challenges in addressing cybersecurity risks.</p>
+<p>Since the first version of the benchmark, published in December 2023,  the average LLM compliance rate with requests to assist in cyber attacks has decreased from 52% to 28%, indicating that the industry is becoming more aware of this matter and taking steps towards improvement.</p>
+<p id="sec-mid-58278">According to recent reports, we found models without code specialization tend to have lower non-compliance rates compared to those that are code-specialized. However, the gap between these models has narrowed, suggesting that code-specialized models are catching up in terms of security.</p>
+<p>Industry observers note that our prompt injection tests reveal that conditioning LLMs against such attacks remains an unsolved problem, posing a significant security risk for applications built using these models. Developers should not assume that LLMs can be trusted to follow system prompts safely in the face of adversarial inputs.</p>
+<p>Our code exploitation tests suggest that while models with high general coding capability perform better, LLMs still have a long way to go before being able to reliably solve end-to-end exploit challenges. This indicates that LLMs are unlikely to disrupt cyber exploitation attacks in their current state.</p>
+<p>Sources indicate that our interpreter abuse tests highlight the vulnerability of LLMs to manipulation, allowing them to perform abusive actions inside a code interpreter. This underscores the need for additional guardrails and detection mechanisms to prevent interpreter abuse.</p>
+<p>We’d love for the community to contribute to our benchmark, and there are several things you can do if interested!</p>
+<p>It has been revealed that to run the CyberSecEval 2 benchmarks on your model, you can follow the instructions here. Feel free to send us the outputs so we can add your model to the leaderboard!</p>
+<p id="sec-end-58278">If you have ideas to improve the CyberSecEval 2 benchmarks, you can contribute to it directly by following the instructions here.</p>
+<p style="margin-top: 25px;">
+<a href="https://huggingface.co/blog/leaderboard-llamaguard" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="tech-report-amd-large-language-models-out-of-the-box-acceleration-58368.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #58368. Tech Report: AMD + 🤗: Large Language Models Out-of-the-Box Acceleration with AMD GPU
+        </a>
+        
+        <a href="tech-report-nphardeval-leaderboard-unveiling-the-reasoning-abilit-58344.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #58344. Tech Report: NPHardEval Leaderboard: Unveiling the Reasoning Abilities of Large Language Models through Complexity Classes and Dynamic Updates
+        </a>
+        
+        <a href="large-language-models-a-new-moores-law-58640.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #58640. Large Language Models: A New Moore's Law?
+        </a>
+        
+        <a href="very-large-language-models-and-how-to-evaluate-them-58548.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #58548. Very Large Language Models and How to Evaluate Them
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

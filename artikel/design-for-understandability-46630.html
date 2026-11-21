@@ -150,8 +150,8 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-46630">Industry observers note that this is a talk I gave at Google’s internal Code Health Summit in November of 2025. I’m sharing it here in the hopes that it sparks further learning and discussion.</p>
-<p>In a world where LLMs generate much of our code, understanding that code is more vital than ever. But with a system as large and complex as Google’s codebase, SWEs can easily fall into a pattern of learned helplessness where the best you can do is tweak the code and pray that it passes the tests. Without understanding, LLMs are little more than complexity-generating machines running at top speed. <span style="font-size:13px;">(Related: <a href="latest-update-welcome-gemma-googles-new-open-llm-47139.html" style="color:#2563eb; font-weight:600;">Latest Update: Welcome Gemma - Google’s new open LLM...</a>)</span></p>
-<p>There’s a better way to go about this. Just as our industry has learned to design software for testability, we can also design it for understandability. We can use ideas like design by contract, class invariants, modularity, and more to create systems that we can understand one piece at a time, rather than piling more onto the big ball of mud and hoping it doesn’t all collapse. <span style="font-size:13px;">(Related: <a href="industry-news-director-of-machine-learning-insights-47146.html" style="color:#2563eb; font-weight:600;">Industry News: Director of Machine Learning Insights...</a>)</span></p>
+<p>In a world where LLMs generate much of our code, understanding that code is more vital than ever. But with a system as large and complex as Google’s codebase, SWEs can easily fall into a pattern of learned helplessness where the best you can do is tweak the code and pray that it passes the tests. Without understanding, LLMs are little more than complexity-generating machines running at top speed. <span style="font-size:13px;">(Related: <a href="how-to-generate-text-using-different-decoding-methods-for-languag-58675.html" style="color:#2563eb; font-weight:600;">How to generate text: using different decoding methods ...</a>)</span></p>
+<p>There’s a better way to go about this. Just as our industry has learned to design software for testability, we can also design it for understandability. We can use ideas like design by contract, class invariants, modularity, and more to create systems that we can understand one piece at a time, rather than piling more onto the big ball of mud and hoping it doesn’t all collapse. <span style="font-size:13px;">(Related: <a href="industry-news-the-reformer-pushing-the-limits-of-language-modelin-58674.html" style="color:#2563eb; font-weight:600;">Industry News: The Reformer - Pushing the limits of lan...</a>)</span></p>
 <p>Is it easy? No. But is it worthwhile? Absolutely. These ideas aren’t latest, but they’re not nearly as widely taught or well understood as they deserve to be, and mastering them leads to a world where we can have more confidence in our code and increase velocity at the same time.</p>
 <p>According to recent reports, hi everyone, thanks for having me! Let’s get started.</p>
 <p>I’d like to start this talk with a question: If LLMs can code, then what is left for human SWEs?</p>
@@ -325,20 +325,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="training-design-for-text-to-image-models-lessons-from-ablations-47118.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #47118. Training Design for Text-to-Image Models: Lessons from Ablations
+        <a href="industry-news-how-motion-design-improves-saas-onboarding-and-feat-58165.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #58165. Industry News: How Motion Design Improves SaaS Onboarding and Feature Adoption
         </a>
         
-        <a href="breaking-openais-ai-models-boost-amds-upcoming-flagship-gpu-desig-46985.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #46985. Breaking: OpenAI's AI models boost AMD's upcoming flagship GPU design by up to 14% in PPA
+        <a href="technical-aspects-of-ai-generated-video-assets-for-web-design-58042.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #58042. Technical Aspects of AI-Generated Video Assets for Web Design
         </a>
         
-        <a href="what-is-the-best-ui-design-tool-8-tools-compared-by-the-job-they--46942.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #46942. What Is the Best UI design Tool? 8 Tools Compared by the Job They Do (2026)
+        <a href="tech-report-ai-lets-chemists-design-molecules-by-simply-describin-57999.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #57999. Tech Report: AI lets chemists design molecules by simply describing them
         </a>
         
-        <a href="retail-merchandising-principles-for-web-designers-and-developers--46847.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #46847. Retail Merchandising Principles for Web Designers and Developers: Display Design, Ranking Rules and Measurement
+        <a href="the-hidden-human-intelligence-of-design-57882.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #57882. The hidden human intelligence of design
         </a>
         
     </div>

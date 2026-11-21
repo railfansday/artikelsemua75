@@ -150,9 +150,9 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-46775">Recent findings suggest that today, we release DSpark draft model checkpoints for three models from our LFM2.5 family: LFM2.5-1.2B-Instruct, LFM2.5-2.6B, and LFM2.5-8B-A1B. These add a speculative decoding path that trades a minimal memory increase for a large decoding speedup without changing output quality:.</p>
-<p>The decode phase in LLM inference is traditionally memory-bound. Most latency comes from streaming weights from DRAM into SRAM, not from intense computation. Speculative decoding addresses this by using a lightweight draft model to produce candidate tokens, then having the target model verify them all in a single forward pass, sharing the cost of loading the weights across all tokens we verify. <span style="font-size:13px;">(Related: <a href="h-companys-new-holo2-model-takes-the-lead-in-ui-localization-47116.html" style="color:#2563eb; font-weight:600;">H Company's new Holo2 model takes the lead in UI Locali...</a>)</span></p>
+<p>The decode phase in LLM inference is traditionally memory-bound. Most latency comes from streaming weights from DRAM into SRAM, not from intense computation. Speculative decoding addresses this by using a lightweight draft model to produce candidate tokens, then having the target model verify them all in a single forward pass, sharing the cost of loading the weights across all tokens we verify. <span style="font-size:13px;">(Related: <a href="how-to-train-a-new-language-model-from-scratch-using-transformers-58676.html" style="color:#2563eb; font-weight:600;">How to train a new language model from scratch using Tr...</a>)</span></p>
 <p>Over the years, multiple approaches of speculation have been proposed, with the most prominent being EAGLE-3, DFlash, and, most recently, DSpark, which combines three components:.</p>
-<p>We follow the DSpark recipe with a larger and more diverse data mix covering SFT, chat, code, and function-calling data. Based on our ablations, the first versions of the draft models are simplified attention-only draft models, with 5 layers and a block of 9. For each draft model, we ran 15 epochs on the entire dataset and selected the epoch with the highest acceptance rate rather than the lowest loss. <span style="font-size:13px;">(Related: <a href="tech-report-we-got-claude-to-build-cuda-kernels-and-teach-open-mo-47120.html" style="color:#2563eb; font-weight:600;">Tech Report: We Got Claude to Build CUDA Kernels and te...</a>)</span></p>
+<p>We follow the DSpark recipe with a larger and more diverse data mix covering SFT, chat, code, and function-calling data. Based on our ablations, the first versions of the draft models are simplified attention-only draft models, with 5 layers and a block of 9. For each draft model, we ran 15 epochs on the entire dataset and selected the epoch with the highest acceptance rate rather than the lowest loss. <span style="font-size:13px;">(Related: <a href="block-sparse-matrices-for-smaller-and-faster-language-models-58673.html" style="color:#2563eb; font-weight:600;">Block Sparse Matrices for Smaller and Faster Language M...</a>)</span></p>
 <p>The resulting draft models are relatively small, with each around ~300M parameters.</p>
 <p>Under greedy decoding, a draft token is only accepted if it matches the target model’s distribution. On rejection, the target model's own token takes its place. The emitted sequence is therefore identical to baseline greedy by construction, so benchmark accuracy (pass@1 or exact match) is unchanged.</p>
 <p>Our DSpark draft models for LFM2.5 ship with day-one support for llama.cpp (implementation builds on top of the official codebase, which we run with experimental metal kernels) and **SGLang (**implementation builds on the official SGLang implementation of DSpark).</p>
@@ -193,20 +193,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="faster-training-and-inference-habana-gaudi2-vs-nvidia-a100-80gb-35441.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #35441. Faster Training and Inference: Habana Gaudi®2 vs Nvidia A100 80GB
+        <a href="breaking-faster-training-and-inference-habana-gaudi2-vs-nvidia-a1-58521.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #58521. Breaking: Faster Training and Inference: Habana Gaudi®2 vs Nvidia A100 80GB
         </a>
         
-        <a href="goodbye-cold-boot-how-we-made-lora-inference-300-faster-35287.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #35287. Goodbye cold boot - how we made LoRA Inference 300% faster
+        <a href="goodbye-cold-boot-how-we-made-lora-inference-300-faster-58370.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #58370. Goodbye cold boot - how we made LoRA Inference 300% faster
         </a>
         
-        <a href="speculative-decoding-for-2x-faster-whisper-inference-35276.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #35276. Speculative Decoding for 2x Faster Whisper Inference
+        <a href="speculative-decoding-for-2x-faster-whisper-inference-58363.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #58363. Speculative Decoding for 2x Faster Whisper Inference
         </a>
         
-        <a href="deepinfra-on-hugging-face-inference-providers-47017.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #47017. DeepInfra on Hugging Face Inference Providers 🔥
+        <a href="block-sparse-matrices-for-smaller-and-faster-language-models-58673.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #58673. Block Sparse Matrices for Smaller and Faster Language Models
         </a>
         
     </div>

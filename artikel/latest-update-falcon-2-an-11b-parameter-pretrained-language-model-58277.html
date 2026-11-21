@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latest Update: Falcon 2: An 11B parameter pretrained language model and VLM, trained on over 5000B tokens and 11 languages</title>
+    <meta name="description" content="Recent findings suggest that TII is launching a new generation of models, Falcon 2, focused on providing the open-source community with a series of smaller">
+    <meta name="keywords" content="falcon, model, models, data, trained, languages, generation, open">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua75/artikel/latest-update-falcon-2-an-11b-parameter-pretrained-language-model-58277.html">
+    
+    <meta property="og:title" content="Latest Update: Falcon 2: An 11B parameter pretrained language model and VLM, trained on over 5000B tokens and 11 languages">
+    <meta property="og:description" content="Recent findings suggest that TII is launching a new generation of models, Falcon 2, focused on providing the open-source community with a series of smaller">
+    <meta property="og:image" content="https://huggingface.co/blog/assets/179_falcon2-11b/thumbnail.jpg">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua75/artikel/latest-update-falcon-2-an-11b-parameter-pretrained-language-model-58277.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Latest Update: Falcon 2: An 11B parameter pretrained language model and VLM, trained on over 5000B tokens and 11 languages">
+    <meta name="twitter:description" content="Recent findings suggest that TII is launching a new generation of models, Falcon 2, focused on providing the open-source community with a series of smaller">
+    <meta name="twitter:image" content="https://huggingface.co/blog/assets/179_falcon2-11b/thumbnail.jpg">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Latest Update: Falcon 2: An 11B parameter pretrained language model and VLM, trained on over 5000B tokens and ", "image": ["https://huggingface.co/blog/assets/179_falcon2-11b/thumbnail.jpg"], "datePublished": "2024-05-24T00:00:00", "dateModified": "2026-11-21T07:51:34.622139", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua75/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua75/artikel/latest-update-falcon-2-an-11b-parameter-pretrained-language-model-58277.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Latest Update: Falcon 2: An 11B parameter pretrained language model and VLM, tra?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Hugging Face."}}, {"@type": "Question", "name": "Which category does 'Latest Update: Falcon 2: An 11B parameter pretrained languag' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Latest Update: Falcon 2: An 11B parameter pretrained language model and VLM, trained on over 5000B tokens and 11 languages</h1>
+        <div class="meta-line">🌐 Source: <strong>Hugging Face</strong> &bull; 📅 24 May 2024 &bull; ⏱️ 4 min read (789 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>Recent findings suggest that TII is launching a new generation of models, Falcon 2, focused on providing the open-source community with a series of smaller models with enhanced performance and multi-modal support.</li><li style='margin-bottom:6px;'>In a recent development, the first generation of Falcon models, featuring Falcon-40B and Falcon-180B, made a significant contribution to the open-source community, promoting the release of advanced LLMs with permissive licenses.</li><li style='margin-bottom:6px;'>The second generation of models is focused on increased usability and integrability, building a multi-modal ecosystem.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-58277"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-58277"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-58277"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Latest Update: Falcon 2: An 11B parameter pretrained language model and VLM, trained on over 5000B tokens and 11 languages" loading="lazy" src="https://huggingface.co/blog/assets/179_falcon2-11b/thumbnail.jpg" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-58277">Recent findings suggest that TII is launching a new generation of models, Falcon 2, focused on providing the open-source community with a series of smaller models with enhanced performance and multi-modal support. Our goal is to enable cheaper inference and encourage the development of more downstream applications with improved usability.</p>
+<p>In a recent development, the first generation of Falcon models, featuring Falcon-40B and Falcon-180B, made a significant contribution to the open-source community, promoting the release of advanced LLMs with permissive licenses. More detailed information on the previous generation of Falcon models can be found in the RefinedWeb, Penedo et al., 2023 and The Falcon Series of Open Language Models, Almazrouei et al., 2023 papers, and the Falcon and Falcon-180B blog posts. <span style="font-size:13px;">(Related: <a href="how-to-train-a-new-language-model-from-scratch-using-transformers-58676.html" style="color:#2563eb; font-weight:600;">How to train a new language model from scratch using Tr...</a>)</span></p>
+<p>The second generation of models is focused on increased usability and integrability, building a multi-modal ecosystem. We start this journey by releasing not only the base 11B LLM, but also the 11B VLM model that incorporates image understanding capabilities. The vision-language model, or VLM, will allow owners to engage in chats about visual content using text. <span style="font-size:13px;">(Related: <a href="how-to-generate-text-using-different-decoding-methods-for-languag-58675.html" style="color:#2563eb; font-weight:600;">How to generate text: using different decoding methods ...</a>)</span></p>
+<p>As with our previous work, the models offer support mainly in English but have good capabilities in ten other languages, including Spanish, French, and German.</p>
+<p>It has been revealed that falcon2-11B was trained on over 5,000 GT (billion tokens) of RefinedWeb, a high-quality filtered and deduplicated web dataset, enhanced with curated corpora. It followed a four-stage training strategy. The first three stages were focused on increasing the context length, from 2048 to 4096 and finally to 8192 tokens. The last stage aimed to further enhance performance using only high-quality data.</p>
+<p>Overall, the data sources included RefinedWeb-English, RefinedWeb-Europe (cs, de, es, fr, it, nl, pl, pt, ro, sv), high-quality technical data, code data, and conversational data extracted from public sources.</p>
+<p>The training stages were as follows:.</p>
+<p>The data was tokenized with Falcon2-11B tokenizer, the same tokenizer as for the previous Falcon models.</p>
+<p>The following table summarizes some of the crucial details about the model architecture:.</p>
+<p>Falcon2-11B was trained on 1024 A100 40GB GPUs for the majority of the training, using a 3D parallelism strategy (TP=8, PP=1, DP=128) combined with ZeRO and Flash-Attention 2.</p>
+<p>Performance on Open LLM Leaderboard tasks:.</p>
+<p id="sec-mid-58277">The Hugging Face Leaderboard team provided an official evaluation of our model on the Open LLM Leaderboard tasks. The model performs better than models such as Llama3-8B (trained on three times more data) and Mistral-7B, and on par with Gemma-7b.</p>
+<p>The evaluation results show that the Falcon2-11B demonstrates similar performance to Falcon-40B, at a four times smaller model size!</p>
+<p>Using the Multilingual LLM leaderboard, we compare the Falcon2-11B model to the Llama-7B and Bloom-7B. For reference, we also include Falcon-40B (that supports the same languages), Falcon-7B (that supports French) and Mistral-7B.</p>
+<p>According to recent reports, in the spirit of the original Falcon models, the Falcon2-11B was trained not only on English data but also on ten other languages. Our multilingual evaluation results show that the model presents good capabilities in the six languages (de, es, fr, it, nl, ro) featured on the Multilingual LLM Leaderboard and actually shows higher performance than the Falcon-40B and several other multilingual models on all the cited languages.</p>
+<p>We will soon release more extensive evaluation results for multilingual capabilities in the Falcon2-11B model card!</p>
+<p>We check the model's performance on code generation against the BigCode Leaderboard on the HumanEval benchmark for the Python language, obtaining pass@1 of 29.59%.</p>
+<p>And then, you'd run text generation using code like the following:.</p>
+<p>Falcon2-11B VLM is a vision-language model (VLM) built on top of the LLM, that additionally handles image inputs and is capable of answering queries about the images. To achieve this, we integrate the pretrained CLIP ViT-L/14 vision encoder with our Falcon2-11B chat-finetuned model, and train with image-text data.</p>
+<p>To enhance the VLM's perception of fine-grained details w.r.t small objects in images, we employ a dynamic encoding mechanism at high-resolution for image inputs, similar to LLaVA-Next.</p>
+<p>The training is done in two stages: pretraining and finetuning. In both stages, the visual encoder weights are kept frozen. In the pretraining stage, the LLM is kept frozen, and only the multimodal projector is trained on 558K image-caption pairs. This enables the multimodal projector to learn a mapping from visual to text embedding space. During finetuning, both the projector and LLM weights are trained on a corpus of 1.2M image-text instruction data from public datasets, which also includes multi-round conversations.</p>
+<p id="sec-end-58277">Sources indicate that the Falcon 2 models are made available under the TII Falcon 2 License, a permissive Apache 2.0-based software license which includes an acceptable use policy that promotes the responsible use of AI. This license was crafted within the spirit of TII's commitment to the open source community.</p>
+<p style="margin-top: 25px;">
+<a href="https://huggingface.co/blog/falcon2-11b" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="leveraging-pre-trained-language-model-checkpoints-for-encoder-dec-58669.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #58669. Leveraging Pre-trained Language Model Checkpoints for Encoder-Decoder Models
+        </a>
+        
+        <a href="latest-update-smolvla-efficient-vision-language-action-model-trai-57989.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #57989. Latest Update: SmolVLA: Efficient Vision-Language-Action Model trained on Lerobot Community Data
+        </a>
+        
+        <a href="botpsy-on-device-personal-assistant-with-a-sub-billion-parameter--46473.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #46473. BotPsy: On-Device Personal Assistant with a Sub-Billion-Parameter Agentic Language Model
+        </a>
+        
+        <a href="how-to-train-a-new-language-model-from-scratch-using-transformers-58676.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #58676. How to train a new language model from scratch using Transformers and Tokenizers
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

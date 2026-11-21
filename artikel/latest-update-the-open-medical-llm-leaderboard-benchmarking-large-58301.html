@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latest Update: The Open Medical-LLM Leaderboard: Benchmarking Large Language Models in Healthcare</title>
+    <meta name="description" content="Over the years, Large Language Models (LLMs) have emerged as a groundbreaking technology with immense potential to revolutionize various aspects of healthc">
+    <meta name="keywords" content="medical, model, leaderboard, healthcare, models, open, various, language">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua75/artikel/latest-update-the-open-medical-llm-leaderboard-benchmarking-large-58301.html">
+    
+    <meta property="og:title" content="Latest Update: The Open Medical-LLM Leaderboard: Benchmarking Large Language Models in Healthcare">
+    <meta property="og:description" content="Over the years, Large Language Models (LLMs) have emerged as a groundbreaking technology with immense potential to revolutionize various aspects of healthc">
+    <meta property="og:image" content="https://huggingface.co/blog/assets/leaderboards-on-the-hub/thumbnail_medicalllm.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua75/artikel/latest-update-the-open-medical-llm-leaderboard-benchmarking-large-58301.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Latest Update: The Open Medical-LLM Leaderboard: Benchmarking Large Language Models in Healthcare">
+    <meta name="twitter:description" content="Over the years, Large Language Models (LLMs) have emerged as a groundbreaking technology with immense potential to revolutionize various aspects of healthc">
+    <meta name="twitter:image" content="https://huggingface.co/blog/assets/leaderboards-on-the-hub/thumbnail_medicalllm.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Latest Update: The Open Medical-LLM Leaderboard: Benchmarking Large Language Models in Healthcare", "image": ["https://huggingface.co/blog/assets/leaderboards-on-the-hub/thumbnail_medicalllm.png"], "datePublished": "2024-04-19T00:00:00", "dateModified": "2026-11-21T07:51:38.308499", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua75/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua75/artikel/latest-update-the-open-medical-llm-leaderboard-benchmarking-large-58301.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Latest Update: The Open Medical-LLM Leaderboard: Benchmarking Large Language Mod?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in AI & Tech originally reported by Hugging Face."}}, {"@type": "Question", "name": "Which category does 'Latest Update: The Open Medical-LLM Leaderboard: Benchmarkin' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the AI & Tech section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">AI & Tech</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Latest Update: The Open Medical-LLM Leaderboard: Benchmarking Large Language Models in Healthcare</h1>
+        <div class="meta-line">🌐 Source: <strong>Hugging Face</strong> &bull; 📅 19 Apr 2024 &bull; ⏱️ 7 min read (1495 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>Over the years, Large Language Models (LLMs) have emerged as a groundbreaking technology with immense potential to revolutionize various aspects of healthcare.</li><li style='margin-bottom:6px;'>However, despite the immense potential of Large Language Models (LLMs) in healthcare, there are significant and specific challenges that need to be addressed.</li><li style='margin-bottom:6px;'>Industry observers note that when models are used for recreational conversational aspects, errors have little repercussions; this is not the case for uses in the medical domain however, where wrong explanation and answers can have severe consequences for patient care and outcomes.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-58301"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-58301"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-58301"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Latest Update: The Open Medical-LLM Leaderboard: Benchmarking Large Language Models in Healthcare" loading="lazy" src="https://huggingface.co/blog/assets/leaderboards-on-the-hub/thumbnail_medicalllm.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-58301">Over the years, Large Language Models (LLMs) have emerged as a groundbreaking technology with immense potential to revolutionize various aspects of healthcare. These models, such as GPT-3, GPT-4 and Med-PaLM 2 have demonstrated remarkable capabilities in understanding and generating human-like text, making them valuable tools for tackling complex medical tasks and improving patient care. They have notably shown promise in various medical applications, such as medical question-answering (QA), dialogue systems, and text generation. Moreover, with the exponential growth of electronic health records (EHRs), medical literature, and patient-generated data, LLMs could help healthcare professionals extract valuable insights and make informed decisions.</p>
+<p>However, despite the immense potential of Large Language Models (LLMs) in healthcare, there are significant and specific challenges that need to be addressed. <span style="font-size:13px;">(Related: <a href="how-to-train-a-new-language-model-from-scratch-using-transformers-58676.html" style="color:#2563eb; font-weight:600;">How to train a new language model from scratch using Tr...</a>)</span></p>
+<p>Industry observers note that when models are used for recreational conversational aspects, errors have little repercussions; this is not the case for uses in the medical domain however, where wrong explanation and answers can have severe consequences for patient care and outcomes. The accuracy and reliability of information provided by language models can be a matter of life or death, as it could potentially affect healthcare decisions, diagnosis, and treatment looks. <span style="font-size:13px;">(Related: <a href="how-to-generate-text-using-different-decoding-methods-for-languag-58675.html" style="color:#2563eb; font-weight:600;">How to generate text: using different decoding methods ...</a>)</span></p>
+<p>Sources indicate that for example, when given a medical query (see below), GPT-3 incorrectly recommended tetracycline for a pregnant patient, despite correctly explaining its contraindication due to potential harm to the fetus. Acting on this incorrect recommendation could lead to bone growth problems in the baby.</p>
+<p>Sources indicate that to fully utilize the power of LLMs in healthcare, it is crucial to develop and benchmark models using a setup specifically designed for the medical domain. This setup should take into account the unique characteristics and requirements of healthcare data and applications. The development of methods to evaluate the Medical-LLM is not just of academic interest but of practical importance, given the real-life risks they pose in the healthcare sector.</p>
+<p>The Open Medical-LLM Leaderboard aims to address these challenges and limitations by providing a standardized platform for evaluating and comparing the performance of various large language models on a diverse range of medical tasks and datasets. By offering a comprehensive assessment of each model's medical knowledge and question-answering capabilities, the leaderboard aims to foster the development of more effective and reliable medical LLMs.</p>
+<p>This platform enables researchers and practitioners to identify the strengths and weaknesses of different approaches, drive further advancements in the field, and ultimately contribute to better patient care and outcomes.</p>
+<p>The Medical-LLM Leaderboard includes a variety of tasks, and uses accuracy as its primary evaluation metric (accuracy measures the percentage of correct answers provided by a language model across the various medical QA datasets).</p>
+<p>It has been revealed that the MedQA dataset consists of multiple-choice questions from the United States Medical Licensing Examination (USMLE). It covers general medical knowledge and includes 11,450 questions in the development set and 1,273 questions in the test set. Each question has 4 or 5 answer choices, and the dataset is designed to assess the medical knowledge and reasoning skills required for medical licensure in the United States.</p>
+<p>MedMCQA is a large-scale multiple-choice QA dataset derived from Indian medical entrance examinations (AIIMS/NEET). It covers 2.4k healthcare topics and 21 medical subjects, with over 187,000 questions in the development set and 6,100 questions in the test set. Each question has 4 answer choices and is accompanied by an explanation. MedMCQA evaluates a model's general medical knowledge and reasoning capabilities.</p>
+<p>Recent findings suggest that pubMedQA is a closed-domain QA dataset, In which each question can be answered by looking at an associated context (PubMed abstract). It is consists of 1,000 expert-labeled question-answer pairs. Each question is accompanied by a PubMed abstract as context, and the task is to provide a yes/no/maybe answer based on the information in the abstract. The dataset is split into 500 questions for development and 500 for testing. PubMedQA assesses a model's ability to comprehend and reason over scientific biomedical literature.</p>
+<p>In a recent development, the MMLU benchmark (Measuring Massive Multitask Language Understanding) includes multiple-choice questions from various domains. For the Open Medical-LLM Leaderboard, we focus on the subsets most relevant to medical knowledge:.</p>
+<p>Each MMLU subset consists of multiple-choice questions with 4 answer options and is designed to evaluate a model's understanding of specific medical and biological domains.</p>
+<p>The Open Medical-LLM Leaderboard offers a robust assessment of a model's performance across various aspects of medical knowledge and reasoning.</p>
+<p>The Open Medical-LLM Leaderboard evaluates the performance of various large language models (LLMs) on a diverse set of medical question-answering tasks. Here are our key findings:.</p>
+<p>Google's model, Gemini Pro demonstrates strong performance in various medical domains, particularly excelling in data-intensive and procedural tasks like Biostatistics, Cell Biology, and Obstetrics &amp; Gynecology. However, it reveals moderate to low performance in critical areas such as Anatomy, Cardiology, and Dermatology, revealing gaps that require further refinement for comprehensive medical application.</p>
+<p>To submit your model for evaluation on the Open Medical-LLM Leaderboard, follow these steps:.</p>
+<p>According to recent reports, 1. Convert Model Weights to Safetensors Format.</p>
+<p>It has been revealed that first, convert your model weights to the safetensors format. Safetensors is a latest format for storing weights that is safer and faster to load and use. Converting your model to this format will also allow the leaderboard to display the number of parameters of your model in the main table.</p>
+<p id="sec-mid-58301">It has been revealed that 2. Ensure Compatibility with AutoClasses.</p>
+<p>Industry observers note that before submitting your model, make sure you can load your model and tokenizer using the AutoClasses from the Transformers library. Use the following code snippet to test the compatibility:.</p>
+<p>Recent findings suggest that if this step fails, follow the error messages to debug your model before submitting it. It's likely that your model has been improperly uploaded.</p>
+<p>Ensure that your model is publicly accessible. The leaderboard cannot evaluate models that are private or require special access permissions.</p>
+<p>4. Remote Code Execution (Coming Soon).</p>
+<p>At the moment, the Open Medical-LLM Leaderboard does not support models that require use_remote_code=True. However, the leaderboard team is actively working on adding this feature, so stay tuned for updates.</p>
+<p>5. Submit Your Model via the Leaderboard Website.</p>
+<p>Once your model is in the safetensors format, compatible with AutoClasses, and publicly accessible, you can submit it for evaluation using the "Submit here!" panel on the Open Medical-LLM Leaderboard website. Fill out the required information, such as the model name, description, and any additional details, and click the submit button.</p>
+<p>The leaderboard team will process your submission and evaluate your model's performance on the various medical QA datasets. Once the evaluation is complete, your model's scores will be added to the leaderboard, allowing you to compare its performance with other submitted models.</p>
+<p>The Open Medical-LLM Leaderboard is committed to expanding and adapting to meet the evolving needs of the research community and healthcare industry. Key areas of focus include:.</p>
+<p>If you're passionate about the intersection of AI and healthcare, building models for the healthcare domain, and care about safety and hallucination issues for medical LLMs, we invite you to join our vibrant community on Discord.</p>
+<p>Special thanks to all the people who helped make this possible, including Clémentine Fourrier and the Hugging Face team. I would like to thank Andreas Motzfeldt, Aryo Gema, &amp; Logesh Kumar Umapathi for their discussion and feedback on the leaderboard during development. Sincere gratitude to Prof. Pasquale Minervini for his time, technical assistance, and for providing GPU support from the University of Edinburgh.</p>
+<p>Recent findings suggest that open Life Science AI is a project that aims to revolutionize the application of Artificial intelligence in the life science and healthcare domains. It serves as a central hub for list of medical models, datasets, benchmarks, and tracking conference deadlines, fostering collaboration, innovation, and progress in the field of AI-assisted healthcare. We strive to establish Open Life Science AI as the premier destination for anyone interested in the intersection of AI and healthcare. We provide a platform for researchers, clinicians, policymakers, and industry experts to engage in dialogues, share insights, and explore the latest developments in the field.</p>
+<p>If you find our evaluations useful, please consider citing our work.</p>
+<p>Hello everyone, I would like to ask how long it takes from submitting the model to completing the test.</p>
+<p>Leader board on HF is down for months till this day...</p>
+<p>Still down, Is this still a thing or does someone need to come take over the project?</p>
+<p>Hopefully some volunteers to take over the project - wink wink nudge nudge.</p>
+<p>The growing role of LLMs in healthcare highlights both exciting opportunities and key challenges. Accurate medical information is essential because even small errors can have serious consequences for patients and healthcare professionals. Standardized medical benchmarks can help improve the reliability and safety of AI models. Similarly, patients should rely on qualified professionals for personalized care, including a trusted family dentist for their dental health needs.Family Dental Care - Best Dentist in Spring, TX.</p>
+<p id="sec-end-58301">https://www.familydentalcarespring.com/.</p>
+<p style="margin-top: 25px;">
+<a href="https://huggingface.co/blog/leaderboard-medicalllm" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="industry-news-the-hallucinations-leaderboard-an-open-effort-to-me-58350.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #58350. Industry News: The Hallucinations Leaderboard, an Open Effort to Measure Hallucinations in Large Language Models
+        </a>
+        
+        <a href="tech-report-nphardeval-leaderboard-unveiling-the-reasoning-abilit-58344.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #58344. Tech Report: NPHardEval Leaderboard: Unveiling the Reasoning Abilities of Large Language Models through Complexity Classes and Dynamic Updates
+        </a>
+        
+        <a href="co-emissions-and-models-performance-insights-from-the-open-llm-le-58139.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #58139. CO₂ Emissions and Models Performance: Insights from the Open LLM Leaderboard
+        </a>
+        
+        <a href="large-language-models-a-new-moores-law-58640.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #58640. Large Language Models: A New Moore's Law?
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

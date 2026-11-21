@@ -163,14 +163,14 @@ encounter an error, and release the lock in the middle of doing its important wo
 always_even mutex gets unlocked in an invalid state. In Rust, today, poisoning exists to handle
 this. If a guard is released abnormally (while panicking), it records that this happened in a
 boolean. Any future calls to lock() will return Err(PoisonError), which will trigger a panic
-when we unwrap it. The bad state is never observed and all is well. <span style="font-size:13px;">(Related: <a href="trump-calls-putin-and-xi-friends-they-have-other-intends-47149.html" style="color:#2563eb; font-weight:600;">Trump calls Putin and Xi friends. They have other inten...</a>)</span></p>
+when we unwrap it. The bad state is never observed and all is well.</p>
 <p>According to recent reports, you might have felt that the example I made up was somewhat contrived. That’s because it is. Real
 cases of this pattern can and do happen, but most of the use cases that involve mutexes are much
 simpler. Many critical sections are no longer than a variable assignment, or doesn’t have an invalid
 in-between state. There are cases in lower level programming where a mutex guards a piece of data
 that is not directly inside it, or is outside the view of the program entirely. In fact, I’ve
 written a wrapper for a C library that worked like that. Though I disagree with the notion that this
-is the common case. <span style="font-size:13px;">(Related: <a href="tokenization-in-transformers-v5-simpler-clearer-and-more-modular-47133.html" style="color:#2563eb; font-weight:600;">Tokenization in Transformers v5: Simpler, Clearer, and ...</a>)</span></p>
+is the common case.</p>
 <p>I do recommend anyone Rain’s blog on the matter, as she has some good examples of how
 you can cause violations of these critical sections (even without mutexes) and I wholeheartedly
 support the idea of a Poison wrapper for the use cases that need it. I suspect the domains she
@@ -181,9 +181,9 @@ ready to kill my darlings.1 Skip to the next
 section to continue the discussion on poisoning.</p>
 <p>In Rust, for most platforms, mutexes are implemented using the futex2 system call. It
 allows for operations to remain purely in user-space as long as the mutex in question isn’t
-contended, which is nice for performance reasons.</p>
+contended, which is nice for performance reasons. <span style="font-size:13px;">(Related: <a href="how-to-train-a-new-language-model-from-scratch-using-transformers-58676.html" style="color:#2563eb; font-weight:600;">How to train a new language model from scratch using Tr...</a>)</span></p>
 <p>Under the hood, a mutex is a simple 32-bit integer on most platforms even though it only holds three
-unique values:.</p>
+unique values:. <span style="font-size:13px;">(Related: <a href="latest-update-simple-considerations-for-simple-people-building-fa-58663.html" style="color:#2563eb; font-weight:600;">Latest Update: Simple considerations for simple people ...</a>)</span></p>
 <p>Recent findings suggest that flow chart showing how a mutex acquisition is implemented in Rust, using atomic operations and
 futex primitives. Note how the uncontended case remains entirely in user-space and does not sleep
 the thread.</p>
@@ -319,20 +319,20 @@ and that prevents more efficient implementations. ↩︎.</p>
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
+        <a href="industry-news-i-just-finished-my-kitchen-renovation-and-this-hidd-54991.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #54991. Industry News: I Just Finished My Kitchen Renovation, and This “Hidden” Island Feature Is the One Upgrade I’d Recommend to Everyone
+        </a>
+        
         <a href="industry-news-10-best-chrome-extensions-that-are-perfect-for-ever-46478.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #46478. Industry News: 10 Best Chrome Extensions That Are Perfect for Everyone
         </a>
         
-        <a href="industry-news-director-of-machine-learning-insights-47146.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #47146. Industry News: Director of Machine Learning Insights
+        <a href="industry-news-the-reformer-pushing-the-limits-of-language-modelin-58674.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #58674. Industry News: The Reformer - Pushing the limits of language modeling
         </a>
         
-        <a href="industry-news-one-year-since-the-deepseek-moment-47125.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #47125. Industry News: One Year Since the “DeepSeek Moment”
-        </a>
-        
-        <a href="industry-news-community-evals-because-were-done-trusting-black-bo-47115.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #47115. Industry News: Community Evals: Because we're done trusting black-box leaderboards over the community
+        <a href="industry-news-my-journey-to-a-serverless-transformers-pipeline-on-58660.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #58660. Industry News: My Journey to a serverless transformers pipeline on Google Cloud
         </a>
         
     </div>

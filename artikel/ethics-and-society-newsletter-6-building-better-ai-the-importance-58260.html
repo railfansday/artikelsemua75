@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ethics and Society Newsletter #6: Building Better AI: The Importance of Data Quality</title>
+    <meta name="description" content="In February, Reddit confirmed a latest content partnership with Google where they would provide data that would power the new Generative AI based search en">
+    <meta name="keywords" content="data, quality, high, dataset, model, models, datasets, documentation">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua75/artikel/ethics-and-society-newsletter-6-building-better-ai-the-importance-58260.html">
+    
+    <meta property="og:title" content="Ethics and Society Newsletter #6: Building Better AI: The Importance of Data Quality">
+    <meta property="og:description" content="In February, Reddit confirmed a latest content partnership with Google where they would provide data that would power the new Generative AI based search en">
+    <meta property="og:image" content="https://huggingface.co/blog/assets/182_ethics-soc-6/thumbnail.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua75/artikel/ethics-and-society-newsletter-6-building-better-ai-the-importance-58260.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Ethics and Society Newsletter #6: Building Better AI: The Importance of Data Quality">
+    <meta name="twitter:description" content="In February, Reddit confirmed a latest content partnership with Google where they would provide data that would power the new Generative AI based search en">
+    <meta name="twitter:image" content="https://huggingface.co/blog/assets/182_ethics-soc-6/thumbnail.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Ethics and Society Newsletter #6: Building Better AI: The Importance of Data Quality", "image": ["https://huggingface.co/blog/assets/182_ethics-soc-6/thumbnail.png"], "datePublished": "2024-06-24T00:00:00", "dateModified": "2026-11-21T07:51:32.371458", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua75/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua75/artikel/ethics-and-society-newsletter-6-building-better-ai-the-importance-58260.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Ethics and Society Newsletter #6: Building Better AI: The Importance of Data Qua?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in AI & Tech originally reported by Hugging Face."}}, {"@type": "Question", "name": "Which category does 'Ethics and Society Newsletter #6: Building Better AI: The Im' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the AI & Tech section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">AI & Tech</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Ethics and Society Newsletter #6: Building Better AI: The Importance of Data Quality</h1>
+        <div class="meta-line">🌐 Source: <strong>Hugging Face</strong> &bull; 📅 24 Jun 2024 &bull; ⏱️ 10 min read (2022 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>In February, Reddit confirmed a latest content partnership with Google where they would provide data that would power the new Generative AI based search engine using Retrieval Augmented Generation (RAG).</li><li style='margin-bottom:6px;'>In a recent development, in the age of artificial intelligence, massive amounts of data fuel the growth and sophistication of machine learning models.</li><li style='margin-bottom:6px;'>According to recent reports, so, what makes data "high-quality," and why is it crucial to prioritize data quality from the outset?</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-58260"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-58260"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-58260"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Ethics and Society Newsletter #6: Building Better AI: The Importance of Data Quality" loading="lazy" src="https://huggingface.co/blog/assets/182_ethics-soc-6/thumbnail.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-58260">In February, Reddit confirmed a latest content partnership with Google where they would provide data that would power the new Generative AI based search engine using Retrieval Augmented Generation (RAG). That attempt did not go as planned, and soon, people were seeing recommendations like adding glue to pizza:.</p>
+<p>In a recent development, in the age of artificial intelligence, massive amounts of data fuel the growth and sophistication of machine learning models. But not all data is created equal; AI systems require high-quality data to produce high-quality outputs. <span style="font-size:13px;">(Related: <a href="block-sparse-matrices-for-smaller-and-faster-language-models-58673.html" style="color:#2563eb; font-weight:600;">Block Sparse Matrices for Smaller and Faster Language M...</a>)</span></p>
+<p>According to recent reports, so, what makes data "high-quality," and why is it crucial to prioritize data quality from the outset? Achieving data quality is not just a matter of accuracy or quantity; it requires a holistic, responsible approach woven throughout the entire AI development lifecycle. As data quality has garnered renewed attention, we explore what constitutes "high quality" data, why prioritizing data quality from the outset is crucial, and how organizations can utilize AI for beneficial initiatives while mitigating risks to privacy, fairness, safety, and sustainability. <span style="font-size:13px;">(Related: <a href="industry-news-understanding-bigbirds-block-sparse-attention-58658.html" style="color:#2563eb; font-weight:600;">Industry News: Understanding BigBird's Block Sparse Att...</a>)</span></p>
+<p>In this article, we first provide a high-level overview of the relevant concepts, followed by a more detailed discussion.</p>
+<p>Recent findings suggest that good data isn't just accurate or plentiful; it's data fit for its intended purpose. Data quality must be evaluated based on the specific use cases it supports. For instance, the pretraining data for a heart disease prediction model must include detailed patient histories, current health status, and precise medication dosages, but in most cases, should not require patients' phone numbers or addresses for privacy. The key is to match the data to the needs of the task at hand. From a policy standpoint, consistently advocating for a safety-by-design approach towards responsible machine learning is crucial. This includes taking thoughtful steps at the data stage itself. Desirable aspects of data quality include (but are not limited to!):.</p>
+<p>While we have focused on a subset of data quality measures, many more measures have been defined that are useful for machine learning datasets, such as traceability and consistency.</p>
+<p>Investing in data quality is fundamental for improving AI model performance. In an era where AI and machine learning are increasingly integrated into decision-making processes, ensuring data quality is not just beneficial but essential. Properly curated data allows AI systems to function more effectively, accurately, and fairly. It supports the development of models that can handle diverse scenarios, promotes sustainable practices by optimizing resource usage, and upholds ethical standards by mitigating biases and enhancing transparency. Some key motivators of data quality:.</p>
+<p>The process toward high-quality datasets involves several key strategies. Meticulous data curation and preprocessing, such as deduplication, content filtering, and human feedback, e.g., through domain expertise and stakeholder feedback, are essential to maintain dataset relevance and accuracy to the task at hand. Participatory data collection and open community contributions enhance representation and inclusivity. Establishing a robust data governance framework with clear policies, standards, and accountability ensures consistent data management. Regular quality assessments using metrics like accuracy and completeness help identify and rectify complications. Thorough documentation, including dataset cards, improves usability, collaboration, and transparency. Lastly, while synthetic data can be beneficial, it should be used alongside real-world data and validated rigorously to prevent biases and ensure model performance. Some approaches to data quality include:.</p>
+<p>We dive deeper into these different aspects below.</p>
+<p>Industry observers note that investing in data quality is crucial for enhancing the performance of AI systems. Numerous studies have demonstrated that better data quality directly correlates with improved model outcomes, as most recently seen in the Yi 1.5 model release. Achieving high data quality involves meticulous data cleaning and preprocessing to remove noise, correct inaccuracies, fill in missing values, and standardize formats. Incorporating diverse, multi-source data prevents overfitting and exposes models to a wide range of real-world scenarios.</p>
+<p>According to recent reports, the benefits of high-quality data extend beyond improved metrics. Cleaner, smaller datasets allow models to be more compact and parameter-efficient, requiring fewer computational resources and energy for training and inference.</p>
+<p>According to recent reports, another crucial aspect of data quality is representation. Models are often trained on training data that over-represents dominant groups and perspectives, resulting in skewed object representations, imbalanced occupational and location biases, or the consistent depiction of harmful stereotypes. This means including data from all groups in society and capturing a wide range of languages, especially in text data. Diverse representation helps mitigate cultural biases and improves model performance across different populations. An example of such a dataset is CIVICS.</p>
+<p>Recent findings suggest that participatory approaches are key to achieving this. By involving a larger number of stakeholders in the data creation process, we can ensure that the data used to train models is more inclusive. Initiatives like "Data is Better Together" encourage community contributions to datasets, enriching the diversity and quality of the data. Similarly, the Masakhane project focuses on creating datasets for African languages, such as evaluation datasets, which have been underrepresented in AI research. These efforts ensure that AI systems are more equitable and effective across different contexts and populations, ultimately fostering more inclusive technological development.</p>
+<p>Maintaining high data quality practices is essential for enabling effective governance and accountability of AI systems. Transparency about data sources, licenses, and any preprocessing applied is crucial. Developers should provide clear documentation around data provenance, including where the data originated, how it was collected, and any transformations it underwent.</p>
+<p>In a recent development, this transparency empowers external audits and oversight, allowing for thorough examination and validation of the data used in AI models. Clear documentation and data traceability also help identify potential complications and implement mitigation strategies. This level of transparency is critical for building trust and facilitating responsible AI development, ensuring that AI systems operate ethically and responsibly.</p>
+<p id="sec-mid-58260">It has been revealed that another critical aspect is ensuring that data reflects the diversity required for AI models to adapt and generalize across contexts. This involves capturing a wide range of languages, cultures, environments, and edge cases representative of the real world. Participatory data collection approaches involving impacted communities can enrich datasets and improve representation, ensuring robust and adaptable models.</p>
+<p>Continuously evaluating model performance across different demographics is key to identifying generalizability gaps. Achieving adaptable AI hinges on continuous data collection and curation processes that ingest real-world feedback loops. As new products are released or business landscapes shift, the training data should evolve in lockstep to reflect these changes. Developers should implement processes to identify data drifts and model performance drops compared to the current state, ensuring the AI models remain relevant and effective in changing environments.</p>
+<p>Sources indicate that in the research realm, data quality has profound implications for the reproducibility and validity of findings. Poor quality training data can undermine the integrity of experiments and lead to non-reproducible results. Stringent data quality practices, such as meticulous documentation of preprocessing steps and sharing of datasets, enable other researchers to scrutinize findings and build upon previous work.</p>
+<p>Replicability, defined as the process of arriving at the same scientific findings using new data, is a bit more nuanced. Sometimes, the non-replicability of a study can actually aid in scientific progress by expanding research from a narrow applied field into broader areas. Regardless, replicability is also difficult without proper documentation of data collection procedures and training methodology, and the current reproducibility and replicability crisis in AI can be significantly ameliorated by high-quality, well-documented data.</p>
+<p>One of the crucial aspects for high-quality data, just as for code, is the thorough documentation of the data. Proper documentation enables consumers to understand the content and context of the data, facilitating better decision-making and enhancing the transparency and reliability of AI models. One of the innovative approaches to data documentation is using dataset cards, as offered by the Hugging Face hub. There are various methods to document data including data statements, datasheets, data nutrition labels, dataset cards, and dedicated research papers. Usually these documentation methods cover data sources and composition of the dataset, processing steps, descriptive statistics including demographics represented in the dataset, and the original purpose of the dataset (see for more details on the importance of data transparency). Data documentation, such as dataset cards, can help with:.</p>
+<p>Synthetic data has emerged as a cost-efficient alternative to real-world data, providing a scalable solution for training and testing AI models without the expenses and privacy concerns associated with collecting and managing large volumes of real data, as done for example in Cosmopedia. This approach enables organizations to generate diverse datasets tailored to specific needs, accelerating development cycles and reducing costs. However, it is crucial to be aware of the potential downsides. Synthetic data can inadvertently introduce biases if the algorithms generating the data are themselves biased, leading to skewed model outcomes. It is important to mark model output as generated content, e.g., by watermarking across modalities (overview). Additionally, over-reliance on synthetic data can result in model collapse, where the model becomes overly tuned to the synthetic data patterns. Therefore, while synthetic data is a powerful tool, it should be used judiciously, complemented by real-world data and robust validation processes to ensure model performance and fairness.</p>
+<p>Ensuring high data quality is essential for developing effective and reliable AI models. Here are some examples of data quality strategies that teams at Hugging Face have employed:.</p>
+<p>It has been revealed that A crucial aspect of data quality is filtering and deduplication. For instance, in creating large, high-quality datasets like FineWeb-Edu. Hugging Face employs tools such as DataTrove. Filtering involves selecting only relevant and high-quality data, ensuring that the dataset is comprehensive without unnecessary noise. Deduplication removes redundant entries, which improves the efficiency and performance of AI models. This meticulous approach ensures that the dataset remains robust and relevant.</p>
+<p>It has been revealed that responsible multi-modal data creation is another key area where Hugging Face has set an example. The OBELICS dataset showcases several best practices in this regard. One significant practice is opt-out filtering, where images that have been opted out of redistribution or model training are removed using APIs like Spawning. This respects the rights and preferences of content creators. Additionally, deduplication ensures that images appear no more than ten times across the dataset, reducing redundancy and ensuring diverse representation. Content filtering is also essential; employing open-source classifiers to detect and exclude NSFW content, and filtering images based on their URLs, maintains the dataset's appropriateness and relevance.</p>
+<p>According to recent reports, handling diverse data types is yet another strategy employed by Hugging Face. In creating The Stack V2, which covers a broad range of programming languages and frameworks, careful selection of repositories and projects was done to ensure diversity and comprehensiveness. Quality checks, both automated and manual, verify the syntactic correctness and functional relevance of the code in the dataset, maintaining its high quality - for example, the efforts in deduplication in the BigCode project.</p>
+<p>Industry observers note that gathering human feedback using data labeling tools (like Argilla) can have a significant impact on data quality, especially by including stakeholders in the data creation process. Examples of this include the improvement of the UltraFeedback dataset through human curation, leading to Notus, an improved version of the Zephyr model, or the community efforts of the Data is Better Together initiative.</p>
+<p>Beyond these specific practices, there are general strategies that can ensure data quality. Establishing a robust data governance framework is foundational. This framework should include policies, standards, and processes for data management, with clearly defined roles and responsibilities to ensure accountability and maintain high standards. Regular quality assessments are also vital. These assessments, which can utilize metrics like accuracy, completeness, consistency, and validity, help identify and address problems early. Tools such as data profiling and statistical analysis can be instrumental in this process.</p>
+<p>The most notable part of Hugging Face is our community. If you're a researcher focused on improving data quality in machine learning, especially within the context of open science, we want to support and showcase your work!</p>
+<p>~ Avijit and Lucie, on behalf of the Ethics &amp; Society regulars.</p>
+<p id="sec-end-58260">If you want to cite this blog post, please use the following (authors in alphabetical order):.</p>
+<p style="margin-top: 25px;">
+<a href="https://huggingface.co/blog/ethics-soc-6" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="ethics-and-society-newsletter-1-58552.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #58552. Ethics and Society Newsletter #1
+        </a>
+        
+        <a href="latest-update-lets-talk-about-biases-in-machine-learning-ethics-a-58519.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #58519. Latest Update: Let's talk about biases in machine learning! Ethics and Society Newsletter #2
+        </a>
+        
+        <a href="tech-report-ethics-and-society-newsletter-3-ethical-openness-at-h-58481.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #58481. Tech Report: Ethics and Society Newsletter #3: Ethical Openness at Hugging Face
+        </a>
+        
+        <a href="ethics-and-society-newsletter-4-bias-in-text-to-image-models-58435.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #58435. Ethics and Society Newsletter #4: Bias in Text-to-Image Models
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

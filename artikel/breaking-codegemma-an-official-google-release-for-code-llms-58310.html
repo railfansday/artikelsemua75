@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breaking: CodeGemma - an official Google release for code LLMs</title>
+    <meta name="description" content="CodeGemma is a family of open-access versions of Gemma specialized in code, and we’re excited to collaborate with Google on its release to make it as acces">
+    <meta name="keywords" content="codegemma, code, generation, model, inference, google, models, completion">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua75/artikel/breaking-codegemma-an-official-google-release-for-code-llms-58310.html">
+    
+    <meta property="og:title" content="Breaking: CodeGemma - an official Google release for code LLMs">
+    <meta property="og:description" content="CodeGemma is a family of open-access versions of Gemma specialized in code, and we’re excited to collaborate with Google on its release to make it as acces">
+    <meta property="og:image" content="https://huggingface.co/blog/assets/codegemma/thumbnail_b.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua75/artikel/breaking-codegemma-an-official-google-release-for-code-llms-58310.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Breaking: CodeGemma - an official Google release for code LLMs">
+    <meta name="twitter:description" content="CodeGemma is a family of open-access versions of Gemma specialized in code, and we’re excited to collaborate with Google on its release to make it as acces">
+    <meta name="twitter:image" content="https://huggingface.co/blog/assets/codegemma/thumbnail_b.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Breaking: CodeGemma - an official Google release for code LLMs", "image": ["https://huggingface.co/blog/assets/codegemma/thumbnail_b.png"], "datePublished": "2024-04-09T00:00:00", "dateModified": "2026-11-21T07:51:39.977408", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua75/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua75/artikel/breaking-codegemma-an-official-google-release-for-code-llms-58310.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Breaking: CodeGemma - an official Google release for code LLMs?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in AI & Tech originally reported by Hugging Face."}}, {"@type": "Question", "name": "Which category does 'Breaking: CodeGemma - an official Google release for code LL' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the AI & Tech section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">AI & Tech</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Breaking: CodeGemma - an official Google release for code LLMs</h1>
+        <div class="meta-line">🌐 Source: <strong>Hugging Face</strong> &bull; 📅 09 Apr 2024 &bull; ⏱️ 5 min read (1079 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>CodeGemma is a family of open-access versions of Gemma specialized in code, and we’re excited to collaborate with Google on its release to make it as accessible as possible.🤗.</li><li style='margin-bottom:6px;'>We’ve collaborated with Google to ensure the best integration into the Hugging Face ecosystem.</li><li style='margin-bottom:6px;'>CodeGemma is a family of code-specialist LLM models by Google, based on the pre-trained 2B and 7B Gemma checkpoints.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-58310"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-58310"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-58310"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Breaking: CodeGemma - an official Google release for code LLMs" loading="lazy" src="https://huggingface.co/blog/assets/codegemma/thumbnail_b.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-58310">CodeGemma is a family of open-access versions of Gemma specialized in code, and we’re excited to collaborate with Google on its release to make it as accessible as possible.🤗.</p>
+<p>CodeGemma comes in three flavors:.</p>
+<p>We’ve collaborated with Google to ensure the best integration into the Hugging Face ecosystem. You can find the three open-access models ready to use on the Hub. Among the features and integrations being released, we have:. <span style="font-size:13px;">(Related: <a href="block-sparse-matrices-for-smaller-and-faster-language-models-58673.html" style="color:#2563eb; font-weight:600;">Block Sparse Matrices for Smaller and Faster Language M...</a>)</span></p>
+<p>CodeGemma is a family of code-specialist LLM models by Google, based on the pre-trained 2B and 7B Gemma checkpoints. CodeGemma are further trained on an additional 500 billion tokens of primarily English language data, mathematics, and code to improve on logical and mathematical reasoning, and are suitable for code completion and generation. <span style="font-size:13px;">(Related: <a href="how-to-train-a-new-language-model-from-scratch-using-transformers-58676.html" style="color:#2563eb; font-weight:600;">How to train a new language model from scratch using Tr...</a>)</span></p>
+<p>Industry observers note that codeGemma 2B was trained exclusively on Code Infilling and is meant for fast code completion and generation, especially in settings where latency and/or privacy are crucial. CodeGemma 7B training mix includes code infilling data (80%) and natural language. It can be used for code completion, as well as code and language understanding and generation. CodeGemma 7B Instruct was fine-tuned for instruction following on top of CodeGemma 7B. It’s meant for conversational use, especially around code, programming, or mathematical reasoning topics. All the models have the same 8K token context size as their predecessors.</p>
+<p>This image is from the original report.</p>
+<p>Recent findings suggest that codeGemma-7B outperforms similarly-sized 7B models except DeepSeek-Coder-7B on HumanEval, a popular benchmark for evaluating code models on Python. The same goes for the evaluation of other programming languages like Java, JavaScript, and C++ from MultiPL-E, a translation of HumanEval. According to the technical report, the model performs best on GSM8K among 7B models. The instruct version CodeGemma-7B-it improves on the most popular languages on both HumanEval and MBPP (cf paper table 5). For more details, you can check the BigCode leaderboard or some metrics below.</p>
+<p>Here is a table from the original report with a breakdown per language.</p>
+<p>Recent findings suggest that codeGemma 2B and CodeGemma 7B use infilling (code, comments, docstrings, import statements) for code completion. CodeGemma was trained for this task using the fill-in-the-middle (FIM) objective, where you provide a prefix and a suffix as context for the completion. The following tokens are used to separate the different parts of the input:.</p>
+<p>Recent findings suggest that in addition to these, there's also &lt;|file_separator|&gt;, which provides multi-file contexts. We’ll show examples of use in the Using with transformers section.</p>
+<p>CodeGemma 7B Instruct uses the same prompt format as the base Gemma Instruction-tuned versions, following this conversation structure:.</p>
+<p>As is the case with Gemma, the easiest way to reproduce this format is with the chat template available in transformers.</p>
+<p>You can easily try the CodeGemma Model (7 billion parameters!) in this Space or in the Chatbot embedded below:.</p>
+<p>Industry observers note that under the hood, this playground uses Transformers implementation. You can also duplicate the Space for your use – it's self-contained, so you can examine the source code and adapt it as you wish!</p>
+<p>With Transformers release 4.39, you can use CodeGemma and leverage all the tools within the Hugging Face ecosystem, such as:.</p>
+<p id="sec-mid-58310">Like the Gemma models, CodeGemma is compatible with torch.compile() for an important inference speedup.</p>
+<p>Bonus: We made a Colab notebook for you to try out the model at the touch of a button here.</p>
+<p>To use CodeGemma with transformers, make sure to use the latest release:.</p>
+<p>The following snippet shows how to use codegemma-2b for code completion with transformers. It requires about 6 GB of RAM using float16 precision, making it perfectly suitable for consumer GPUs and on-device applications.</p>
+<p>It has been revealed that observe that the &lt;|fim_suffix|&gt; token appears in the position where the cursor would be placed in an editor, marking the position for the generation. &lt;|fim_prefix|&gt; provides the context that precedes the cursor, and the remaining until &lt;|fim_middle|&gt; is additional context after the cursor. Either of them can be empty if the cursor is located at the beginning or end of the file.</p>
+<p>The previous code may return something like the following:.</p>
+<p>It has been revealed that note the extra content after the correct completion. This is particularly the case for CodeGemma 7B, which is more verbose and tends to provide additional code or comments after completion. We must ignore everything that appears after the FIM tokens or the EOS token for code infilling. We can stop generation early with transformers by providing a list of terminators to the generate function, like this:.</p>
+<p>In this case, generation will stop as soon as the first delimiter is found:.</p>
+<p>Recent findings suggest that the original CodeGemma checkpoints are released in bfloat16 precision. If you load the model without indicating a torch_dtype, PyTorch will upcast them to float32. Casting to float16 is perfectly fine for use, and it can be much faster than bfloat16 on certain hardware. For maximum precision, we recommend you use bfloat16 rather than float32.</p>
+<p>You can also automatically quantize the model, loading it in 8-bit or 4-bit mode. 4-bit loading of CodeGemma 7B takes about 9 GB of memory to run, making it compatible with many consumer cards and all the GPUs in Google Colab. This is how you’d load the generation pipeline in 4-bit:.</p>
+<p>You can deploy and train Gemma on Google Cloud through Vertex AI or Google Kubernetes Engine (GKE), using Text Generation Inference and Transformers.</p>
+<p>To deploy the CodeGemma model from Hugging Face, go to the model page and click on Deploy -&gt; Google Cloud. This will bring you to the Google Cloud Console, where you can 1-click deploy CodeGemma on Vertex AI or GKE, powered by Text Generation Inference.</p>
+<p>You can also access CodeGemma directly through the Vertex AI Model Garden.</p>
+<p>You can deploy CodeGemma on Hugging Face's Inference Endpoints, which uses Text Generation Inference as the backend. Text Generation Inference is a production-ready inference container developed by Hugging Face to enable easy deployment of large language models. It has features such as continuous batching, token streaming, tensor parallelism for fast inference on multiple GPUs, production-ready logging and tracing, and is distributed under the Apache 2 license.</p>
+<p id="sec-end-58310">To deploy a CodeGemma model, go to the model page and click on the Deploy -&gt; Inference Endpoints widget. You can learn more about Deploying LLMs with Hugging Face Inference Endpoints in a previous blog post. Note that T4s do not support the bfloat16 format, so you will need to use a different GPU option.</p>
+<p style="margin-top: 25px;">
+<a href="https://huggingface.co/blog/codegemma" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="introducing-the-livecodebench-leaderboard-holistic-and-contaminat-58304.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #58304. Introducing the LiveCodeBench Leaderboard - Holistic and Contamination-Free Evaluation of Code LLMs
+        </a>
+        
+        <a href="3lm-a-benchmark-for-arabic-llms-in-stem-and-code-57881.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #57881. 📚 3LM: A Benchmark for Arabic LLMs in STEM and Code
+        </a>
+        
+        <a href="industry-news-gamestop-ceo-slams-code-in-a-box-games-in-the-wake--51674.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #51674. Industry News: GameStop CEO slams 'code-in-a-box' games in the wake of GTA 6's discless release
+        </a>
+        
+        <a href="tech-report-spider-man-brand-new-days-cut-daredevil-crossover-rev-51489.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #51489. Tech Report: Spider-Man: Brand New Day's Cut Daredevil Crossover Revealed In Official Photo Ahead Of Re-Release
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

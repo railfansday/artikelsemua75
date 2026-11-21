@@ -150,13 +150,13 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-46419">According to recent reports, A prediction log looks like a stable object. You query it, you get numbers, the numbers move when the model changes. That is the story you tell yourself.</p>
-<p>Here is the same table, read honestly. ai_predictions holds 48,737 rows written between 2026-06-21 and 2026-11-21, across 130 columns. Eight of those columns have never held a single value. Forty-four were born after the first row was inserted. Eleven stopped being written before this month began. <span style="font-size:13px;">(Related: <a href="assetopsbench-bridging-the-gap-between-ai-agent-benchmarks-and-in-47124.html" style="color:#2563eb; font-weight:600;">AssetOpsBench: Bridging the Gap Between AI Agent Benchm...</a>)</span></p>
+<p>Here is the same table, read honestly. ai_predictions holds 48,737 rows written between 2026-06-21 and 2026-11-21, across 130 columns. Eight of those columns have never held a single value. Forty-four were born after the first row was inserted. Eleven stopped being written before this month began.</p>
 <p>Every one of those facts changes what a WHERE clause means, and none appear in the query you wrote six weeks ago.</p>
 <p>All counts are from production, not an example schema.</p>
-<p>Sources indicate that postgres knows which columns exist. It does not know when each one started carrying data, or whether it still does. That is one pass over the catalog plus one aggregate per column, and you cannot write it as a single static SELECT because a column name cannot be a parameter. Build one statement per column: on 48k rows the sweep takes about 90 seconds. <span style="font-size:13px;">(Related: <a href="how-to-build-a-healthcare-robot-from-simulation-to-deployment-wit-47135.html" style="color:#2563eb; font-weight:600;">How to Build a Healthcare Robot from Simulation to Depl...</a>)</span></p>
-<p>Eight dead columns out of 130 is 6.2% of the schema. Four — eu_band, eu_band_hit_baseline, direction_gate, gate_reason — read like a band-based gating feature that was designed, migrated, and never wired up. They document an intention, not behaviour.</p>
+<p>Sources indicate that postgres knows which columns exist. It does not know when each one started carrying data, or whether it still does. That is one pass over the catalog plus one aggregate per column, and you cannot write it as a single static SELECT because a column name cannot be a parameter. Build one statement per column: on 48k rows the sweep takes about 90 seconds.</p>
+<p>Eight dead columns out of 130 is 6.2% of the schema. Four — eu_band, eu_band_hit_baseline, direction_gate, gate_reason — read like a band-based gating feature that was designed, migrated, and never wired up. They document an intention, not behaviour. <span style="font-size:13px;">(Related: <a href="transformer-based-encoder-decoder-models-58672.html" style="color:#2563eb; font-weight:600;">Transformer-based Encoder-Decoder Models...</a>)</span></p>
 <p>Grouping all 122 written columns by the month of their first non-null value gives the shape of the project rather than the shape of the data. Seventy-eight were present on day one.</p>
-<p>Sources indicate that the 12 that landed in late June are typical: goal_line_direction, training_word_version, opening_assessment, dtl_at. The 13 in August are the second-market block plus the veto experiment. October's two are free-text reasoning fields. Each is a legitimate feature; each also carved a hole. Before the feature existed the column is null, and a null in a column that was not yet born is indistinguishable from a null in a column that was measured and came back empty.</p>
+<p>Sources indicate that the 12 that landed in late June are typical: goal_line_direction, training_word_version, opening_assessment, dtl_at. The 13 in August are the second-market block plus the veto experiment. October's two are free-text reasoning fields. Each is a legitimate feature; each also carved a hole. Before the feature existed the column is null, and a null in a column that was not yet born is indistinguishable from a null in a column that was measured and came back empty. <span style="font-size:13px;">(Related: <a href="block-sparse-matrices-for-smaller-and-faster-language-models-58673.html" style="color:#2563eb; font-weight:600;">Block Sparse Matrices for Smaller and Faster Language M...</a>)</span></p>
 <p>According to recent reports, that is the whole problem in one sentence. NULL means three different things and Postgres has one symbol for it:.</p>
 <p>Industry observers note that only the third is a bug. The first is your history. If you cannot tell them apart, you cannot audit anything.</p>
 <p>Sources indicate that ah_v5_p_up is the probability output of a v5 scoring pass. Count non-null rows per month:.</p>
@@ -206,20 +206,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="industry-news-leicester-citys-league-one-rivals-sack-manager-just-37696.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #37696. Industry News: Leicester City's League One rivals sack manager just days before clash
+        <a href="industry-news-ex-birmingham-star-kevin-phillips-offers-stoke-pred-49762.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #49762. Industry News: Ex-Birmingham star Kevin Phillips offers Stoke prediction before top-of-the-table clash
         </a>
         
-        <a href="industry-news-one-year-since-the-deepseek-moment-47125.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #47125. Industry News: One Year Since the “DeepSeek Moment”
+        <a href="industry-news-clavicular-allegedly-told-17-year-old-to-call-vodka-58004.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #58004. Industry News: Clavicular allegedly told 17-year-old to call vodka ‘water’ to avoid Twitch ban before assault
         </a>
         
-        <a href="industry-news-one-shot-any-web-app-with-gradios-grhtml-47107.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #47107. Industry News: One-Shot Any Web App with Gradio's gr.HTML
+        <a href="industry-news-fictional-project-designs-home-in-kerala-to-feel-on-57156.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #57156. Industry News: Fictional Project designs home in Kerala to feel "one with the landscape"
         </a>
         
-        <a href="industry-news-the-frankenstein-table-46795.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #46795. Industry News: The Frankenstein Table
+        <a href="industry-news-the-nightmare-before-retirement-a-physicians-cautio-56786.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #56786. Industry News: The Nightmare Before Retirement: A Physician’s Cautionary Tale (2026 Edition)
         </a>
         
     </div>

@@ -150,12 +150,12 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-46796">Back in July, we ran a hackathon where more than 1,200 community members brought their own coding agents and tried to reproduce the papers published at ICML 2026, claim by claim. In 19 days, participants published 6,816 Trackio logbooks reproducing 2,226 papers, about a third of the conference 🤯.</p>
-<p>In this post, we're sharing what we learned from running this hackathon, and what it suggests about the role humans will play when agents are doing the research experiments. <span style="font-size:13px;">(Related: <a href="tiny-agents-an-mcp-powered-agent-in-50-lines-of-code-47136.html" style="color:#2563eb; font-weight:600;">Tiny Agents: an MCP-powered agent in 50 lines of code...</a>)</span></p>
-<p>Questions about how reproducible AI research really is are older than the current AI wave. But these questions are exacerbated by scale. ICML 2026 received 23,918 submissions and accepted 6,352 papers, roughly double the previous year, continuing an exponential trend that is at least partly driven by AI agents making it faster to run experiments and write them up. <span style="font-size:13px;">(Related: <a href="nvidia-brings-agents-to-life-with-dgx-spark-and-reachy-mini-47131.html" style="color:#2563eb; font-weight:600;">NVIDIA brings agents to life with DGX Spark and Reachy ...</a>)</span></p>
+<p>In this post, we're sharing what we learned from running this hackathon, and what it suggests about the role humans will play when agents are doing the research experiments.</p>
+<p>Questions about how reproducible AI research really is are older than the current AI wave. But these questions are exacerbated by scale. ICML 2026 received 23,918 submissions and accepted 6,352 papers, roughly double the previous year, continuing an exponential trend that is at least partly driven by AI agents making it faster to run experiments and write them up. <span style="font-size:13px;">(Related: <a href="block-sparse-matrices-for-smaller-and-faster-language-models-58673.html" style="color:#2563eb; font-weight:600;">Block Sparse Matrices for Smaller and Faster Language M...</a>)</span></p>
 <p>According to recent reports, reviewing capacity has not doubled along with it. Reviewers at most conferences are volunteers who may not have the time or expertise to fully review a paper. Here is a review of one accepted ICML 2026 spotlight paper, in the reviewer's own words:.</p>
 <p>"My low confidence score is because I did not check all the proofs carefully.".</p>
 <p>It has been revealed that note that this paper got strong scores and a spotlight. Keep it in mind, because we will come back to this exact paper later in the post, and to what happened when we finally did check the proofs carefully.</p>
-<p>It has been revealed that what has changed, though, is that the same technology driving the flood of submissions can also help us keep up with it. Coding agents like Claude Code, Codex, Cursor, and Pi can now read a paper, write the code, launch the experiments, and report back on what they found. Checking a paper carefully used to cost a reviewer a weekend; an agent can attempt it in an afternoon, in parallel, thousands of times over.</p>
+<p>It has been revealed that what has changed, though, is that the same technology driving the flood of submissions can also help us keep up with it. Coding agents like Claude Code, Codex, Cursor, and Pi can now read a paper, write the code, launch the experiments, and report back on what they found. Checking a paper carefully used to cost a reviewer a weekend; an agent can attempt it in an afternoon, in parallel, thousands of times over. <span style="font-size:13px;">(Related: <a href="tech-report-course-launch-community-event-58639.html" style="color:#2563eb; font-weight:600;">Tech Report: Course Launch Community Event...</a>)</span></p>
 <p>So the question we wanted to ask was: if we actually re-examined a major conference at scale, and tried to reproduce every paper, what would we find?</p>
 <p>In a recent development, rather than audit papers ourselves, we opened it up to the whole community, with all the diversity of agent frameworks, compute budgets, and scientific taste that brings. From July 15 to August 2, 2026, the ICML 2026 Open Reproductions challenge worked like this:.</p>
 <p>Participants received $20 in Hugging Face compute credits to run experiments on HF Jobs; across the challenge, participants launched 2,962 cloud jobs. Where a full reproduction was impossible, for example when a paper's dataset was proprietary or its checkpoints unreleased, participants ran toy reproductions on synthetic data mimicking the original's properties.</p>
@@ -218,20 +218,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="how-hugging-face-inference-endpoints-jobs-and-buckets-power-searc-46766.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #46766. How Hugging Face Inference Endpoints, Jobs, and Buckets Power Search on Papers with Code
+        <a href="exploring-the-daily-papers-page-on-hugging-face-58205.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #58205. Exploring the Daily Papers Page on Hugging Face
         </a>
         
-        <a href="local-llms-handle-textbook-rag-but-fail-on-new-research-papers-46589.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #46589. Local LLMs Handle Textbook RAG but Fail on New Research Papers
+        <a href="6-things-i-learned-while-hosting-the-design-drop-podcast-57479.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #57479. 6 Things I Learned While Hosting ‘The Design Drop’ Podcast
         </a>
         
-        <a href="6-things-i-learned-while-hosting-the-design-drop-podcast-46024.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #46024. 6 Things I Learned While Hosting ‘The Design Drop’ Podcast
+        <a href="i-ran-3-miles-a-day-for-21-daysheres-what-i-learned-about-my-brai-56975.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #56975. 'I Ran 3 Miles A Day For 21 Days—Here's What I Learned About My Brain And Body'
         </a>
         
-        <a href="i-ran-3-miles-a-day-for-21-daysheres-what-i-learned-about-my-brai-45473.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #45473. 'I Ran 3 Miles A Day For 21 Days—Here's What I Learned About My Brain And Body'
+        <a href="lessons-i-learned-from-deer-hunting-with-my-kids-56477.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #56477. Lessons I Learned from Deer Hunting with My Kids
         </a>
         
     </div>

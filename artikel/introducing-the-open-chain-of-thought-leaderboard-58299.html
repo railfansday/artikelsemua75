@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introducing the Open Chain of Thought Leaderboard</title>
+    <meta name="description" content="It has been revealed that chain-of-thought prompting is emerging as a powerful and effective design pattern for LLM-based apps and agents. The basic idea o">
+    <meta name="keywords" content="chain, thought, prompting, open, model, leaderboard, reasoning, accuracy">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua75/artikel/introducing-the-open-chain-of-thought-leaderboard-58299.html">
+    
+    <meta property="og:title" content="Introducing the Open Chain of Thought Leaderboard">
+    <meta property="og:description" content="It has been revealed that chain-of-thought prompting is emerging as a powerful and effective design pattern for LLM-based apps and agents. The basic idea o">
+    <meta property="og:image" content="https://huggingface.co/blog/assets/leaderboards-on-the-hub/thumbnail_cot.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua75/artikel/introducing-the-open-chain-of-thought-leaderboard-58299.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Introducing the Open Chain of Thought Leaderboard">
+    <meta name="twitter:description" content="It has been revealed that chain-of-thought prompting is emerging as a powerful and effective design pattern for LLM-based apps and agents. The basic idea o">
+    <meta name="twitter:image" content="https://huggingface.co/blog/assets/leaderboards-on-the-hub/thumbnail_cot.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Introducing the Open Chain of Thought Leaderboard", "image": ["https://huggingface.co/blog/assets/leaderboards-on-the-hub/thumbnail_cot.png"], "datePublished": "2024-04-23T00:00:00", "dateModified": "2026-11-21T07:51:37.868016", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua75/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua75/artikel/introducing-the-open-chain-of-thought-leaderboard-58299.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Introducing the Open Chain of Thought Leaderboard?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Hugging Face."}}, {"@type": "Question", "name": "Which category does 'Introducing the Open Chain of Thought Leaderboard' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Introducing the Open Chain of Thought Leaderboard</h1>
+        <div class="meta-line">🌐 Source: <strong>Hugging Face</strong> &bull; 📅 23 Apr 2024 &bull; ⏱️ 4 min read (886 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>It has been revealed that chain-of-thought prompting is emerging as a powerful and effective design pattern for LLM-based apps and agents.</li><li style='margin-bottom:6px;'>Unlike most performance based leaderboards, we’re not scoring the absolute accuracy a model achieves on a given task, but the difference between the accuracy with and without chain-of-thought prompting:.</li><li style='margin-bottom:6px;'>This allows us to truly inspect the impact that chain-of-thought has on model accuracy.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-58299"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-58299"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-58299"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Introducing the Open Chain of Thought Leaderboard" loading="lazy" src="https://huggingface.co/blog/assets/leaderboards-on-the-hub/thumbnail_cot.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-58299">It has been revealed that chain-of-thought prompting is emerging as a powerful and effective design pattern for LLM-based apps and agents. The basic idea of chain-of-thought prompting is to let a model generate a step-by-step solution (“reasoning trace”) before answering a question or taking a decision. With the Open CoT Leaderboard we’re tracking LLMs’ ability to generate effective chain-of-thought traces for challenging reasoning tasks.</p>
+<p>Unlike most performance based leaderboards, we’re not scoring the absolute accuracy a model achieves on a given task, but the difference between the accuracy with and without chain-of-thought prompting:. <span style="font-size:13px;">(Related: <a href="how-to-train-a-new-language-model-from-scratch-using-transformers-58676.html" style="color:#2563eb; font-weight:600;">How to train a new language model from scratch using Tr...</a>)</span></p>
+<p>This allows us to truly inspect the impact that chain-of-thought has on model accuracy. <span style="font-size:13px;">(Related: <a href="leveraging-pre-trained-language-model-checkpoints-for-encoder-dec-58669.html" style="color:#2563eb; font-weight:600;">Leveraging Pre-trained Language Model Checkpoints for E...</a>)</span></p>
+<p>Note: without CoT prompting, we use the loglikelihood accuracy to score the model on multiple choice evaluation.</p>
+<p>It has been revealed that chain-of-thought prompting is a universally applicable prompting strategy that may improve explainability and accuracy of LLM-based apps and agents (see, e.g., this collection for recent research and implementations)). With frameworks like Langchain or LMQL, it’s straightforward to insert sophisticated reasoning chains in your apps. But even if you’ve never heard about chain-of-thought before, you may have noticed, while using a ChatBot, that it tends to proceed step by step before answering your query. So, a systematic, up-to-date comparison of LLMs’ ability to generate effective chain-of-thought traces may inform the decisions of builders and consumers when choosing a model.</p>
+<p>Over time, static "accuracy-based" benchmarks risk becoming less informative: does a model score well because of its superior skill, because it has seen the correct answers during training, or because it has been developed in a competitive context that is governed by this very benchmark? These widely acknowledged problems are addressed by recent eval approaches such as ChatBot arenas, the use of LLMs as judges, or dynamic benchmarks with programmatically generated tasks. We hope the Open CoT Leaderboard contributes to these efforts, notably by being more robust to training data contamination: knowing the answer to a question doesn’t ensure that one can reason effectively about it.</p>
+<p>The Open CoT Leaderboard evaluates LLMs’ ability to generate effective chain-of-thought reasoning traces for the following tasks:.</p>
+<p>Except for the original version of LogiQA, all these tasks are part of the AGIEval benchmark, and have been re-published as logikon-bench.</p>
+<p>We’ve chosen these tasks because they.</p>
+<p>All tasks are rendered as multiple-choice problems, with the answer options being enumerated in the prompt.</p>
+<p>We use the following prompt template for assessing baseline and CoT accuracies – the reasoning traces (starting with Reasoning) are only added in the case “with CoT”:.</p>
+<p>The literature on chain-of-thought prompting has exploded in the last year, and the wealth of prompting strategies for CoT (involving, e.g., decoding, prompt wording, prompt chains, decomposition, aggregation and revision of reasoning traces) has become sheerly mindblowing.</p>
+<p>To cope with this variety, the evaluation pipeline behind the Open CoT Leaderboard implements CoT generation through modular and easily extensible prompt chains. So far, we have implemented two fairly simple prompting strategies:.</p>
+<p>Recent findings suggest that let’s have a look at an example. The following problem is from the LSAT logical reasoning benchmark.</p>
+<p>Mixtral-8x7B-Instruct-v0.1 is doing fairly well in generating the following chain-of-thought traces:.</p>
+<p id="sec-mid-58299">Recent findings suggest that the assumption that the argument depends on is the belief that removing long breaks from the school calendar would serve the interests of children more than the current calendar. This is not explicitly stated in the editorial, but it is the underlying assumption that justifies the proposed change.</p>
+<p>Therefore, the correct answer is:
+D) A school calendar made up of periods of study without long breaks would serve the interests of children more than a school calendar with long breaks.</p>
+<p>Common mistakes for this kind of problem include:.</p>
+<p>A plan for how to solve this problem could be:.</p>
+<p>Solving the problem step by step, following the initiative:.</p>
+<p>The premises of the argument are:.</p>
+<p>The conclusion of the argument is:.</p>
+<p>Therefore, the assumption on which the editorial's argument depends is D) A school calendar made up of periods of study without long breaks would serve the interests of children more than a school calendar with long breaks.</p>
+<p>Each of our two prompting strategies—Classic and Reflect—is combined and run with multiple decoding parameters:.</p>
+<p>Industry observers note that this gives us, in combination, six “CoT generation regimes.” When we evaluate a model, we let it generate, for every example in the test datasets, one chain-of-thought trace for each regime. The generated traces are then plugged into the prompt template shown above, which we use to score the models. We obtain, accordingly, six different numerical scores for accuracy with chain-of-thought (namely one for each regime). In the Open CoT Leaderboard, we report (for every model/task) the best marginal accuracy gain achieved under any regime.</p>
+<p>We’re gradually extending the Open CoT Leaderboard by evaluating more and more models, but current results (model count=30) already suggest some interesting insights.</p>
+<p>We’re planning to move ahead in different directions. And contributions to all these efforts are more than welcome.</p>
+<p>First, we’d love to evaluate your models! You can 📬 submit any open LLMs for evaluation on the Open CoT Leaderboard space, using the Submission tab!</p>
+<p>Then, we’d love some help on the following coding and data analysis tasks.</p>
+<p>Here’s where we can exchange our ideas and collaborate:.</p>
+<p id="sec-end-58299">Looking forward to hearing from you!</p>
+<p style="margin-top: 25px;">
+<a href="https://huggingface.co/blog/leaderboard-cot" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="introducing-the-open-ko-llm-leaderboard-leading-the-korean-llm-ev-58338.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #58338. Introducing the Open Ko-LLM Leaderboard: Leading the Korean LLM Evaluation Ecosystem
+        </a>
+        
+        <a href="introducing-the-open-leaderboard-for-hebrew-llms-58294.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #58294. Introducing the Open Leaderboard for Hebrew LLMs!
+        </a>
+        
+        <a href="introducing-the-open-finllm-leaderboard-58198.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #58198. Introducing the Open FinLLM Leaderboard
+        </a>
+        
+        <a href="tech-report-introducing-the-open-leaderboard-for-japanese-llms-58169.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #58169. Tech Report: Introducing the Open Leaderboard for Japanese LLMs!
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

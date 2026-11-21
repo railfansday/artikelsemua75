@@ -150,8 +150,8 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-46418">Today we are releasing DaisyRose-27B, RadixArk’s first model, built on Qwen3.8-27B and trained with reinforcement learning using Miles. We trained it on long-horizon agent tasks with sessions up to 1M tokens, with just 1,200 curated tasks in 18 days on 144 H200 GPUs. DaisyRose-27B improves Terminal-Bench 4.1 pass@1 from 5.6% to 12.0%. Beyond Terminal-Bench 4.1, it also delivers gains on a variety of other reasoning, instruction following, and coding benchmarks.</p>
-<p>The checkpoints are available under Apache 2.0:. <span style="font-size:13px;">(Related: <a href="industry-news-transformersjs-v4-now-available-on-npm-47112.html" style="color:#2563eb; font-weight:600;">Industry News: Transformers.js v4: Now Available on NPM...</a>)</span></p>
-<p>According to recent reports, the model retains Qwen3.8-27B’s architecture, tokenizer, chat template, image understanding, and 256K-token context window. The longer training sessions use harness summarization to span multiple trajectories. See the model card for model properties and inference settings. <span style="font-size:13px;">(Related: <a href="latest-update-introducing-falcon-h1-arabic-pushing-the-boundaries-47130.html" style="color:#2563eb; font-weight:600;">Latest Update: Introducing Falcon-H1-Arabic: Pushing th...</a>)</span></p>
+<p>The checkpoints are available under Apache 2.0:. <span style="font-size:13px;">(Related: <a href="leveraging-pre-trained-language-model-checkpoints-for-encoder-dec-58669.html" style="color:#2563eb; font-weight:600;">Leveraging Pre-trained Language Model Checkpoints for E...</a>)</span></p>
+<p>According to recent reports, the model retains Qwen3.8-27B’s architecture, tokenizer, chat template, image understanding, and 256K-token context window. The longer training sessions use harness summarization to span multiple trajectories. See the model card for model properties and inference settings. <span style="font-size:13px;">(Related: <a href="how-to-train-a-new-language-model-from-scratch-using-transformers-58676.html" style="color:#2563eb; font-weight:600;">How to train a new language model from scratch using Tr...</a>)</span></p>
 <p>In a recent development, we recommend serving DaisyRose-27B with SGLang and DSpark speculative decoding. The SGLang cookbook provides launch configurations for different GPUs and checkpoint formats.</p>
 <p>After starting the server with the served model name DaisyRose-27B on port 30000, you can send a request using the OpenAI Python client:.</p>
 <p>The model thinks before answering by default. Its reasoning is returned in reasoning_content, and its final answer in content. These settings follow the model card’s quickstart.</p>
@@ -196,20 +196,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
+        <a href="improving-hugging-face-training-efficiency-through-packing-with-f-58216.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #58216. Improving Hugging Face Training Efficiency Through Packing with Flash Attention 2
+        </a>
+        
+        <a href="post-training-isaac-gr00t-n15-for-lerobot-so-101-arm-57972.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #57972. Post-Training Isaac GR00T N1.5 for LeRobot SO-101 Arm
+        </a>
+        
+        <a href="smol2operator-post-training-gui-agents-for-computer-use-57787.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #57787. Smol2Operator: Post-Training GUI Agents for Computer Use
+        </a>
+        
         <a href="trl-v10-post-training-library-built-to-move-with-the-field-47077.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #47077. TRL v1.0: Post-Training Library Built to Move with the Field
-        </a>
-        
-        <a href="turning-database-grading-into-rl-rewards-post-training-agents-wit-46584.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #46584. Turning Database Grading into RL Rewards: Post-Training Agents with ThinkingBox
-        </a>
-        
-        <a href="improving-hugging-face-training-efficiency-through-packing-with-f-35093.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #35093. Improving Hugging Face Training Efficiency Through Packing with Flash Attention 2
-        </a>
-        
-        <a href="post-training-isaac-gr00t-n15-for-lerobot-so-101-arm-34843.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #34843. Post-Training Isaac GR00T N1.5 for LeRobot SO-101 Arm
         </a>
         
     </div>

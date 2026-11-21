@@ -150,9 +150,9 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-46425">Every hand-built Linux image eventually grows the same wart: a shell script that pipes commands into sfdisk, calls partprobe, runs resize2fs, and hopes the device really was /dev/sda.</p>
-<p>It works exactly once. Change the disk, add a partition, or boot the same image on a board that enumerates storage differently, and the script either fails halfway or, worse, succeeds against the wrong device. The deeper problem is that the script encodes positions. What you actually mean is "this disk should have a swap partition and a root partition that fills the rest.". <span style="font-size:13px;">(Related: <a href="training-design-for-text-to-image-models-lessons-from-ablations-47118.html" style="color:#2563eb; font-weight:600;">Training Design for Text-to-Image Models: Lessons from ...</a>)</span></p>
-<p>Sources indicate that systemd-repart is the declarative version of that idea. You write small .conf files describing the partitions that should exist, and the tool makes the partition table match. It is incremental by design: existing partitions are matched by type, missing ones are appended, and when the table already matches the configuration it does nothing at all. It is used to build OS images, and it can run from the initrd to adapt a minimal image to whatever disk it landed on. <span style="font-size:13px;">(Related: <a href="how-to-build-a-healthcare-robot-from-simulation-to-deployment-wit-47135.html" style="color:#2563eb; font-weight:600;">How to Build a Healthcare Robot from Simulation to Depl...</a>)</span></p>
-<p>This is the practical guide: the mental model, three working configurations, and the failure modes that cost people data.</p>
+<p>It works exactly once. Change the disk, add a partition, or boot the same image on a board that enumerates storage differently, and the script either fails halfway or, worse, succeeds against the wrong device. The deeper problem is that the script encodes positions. What you actually mean is "this disk should have a swap partition and a root partition that fills the rest.".</p>
+<p>Sources indicate that systemd-repart is the declarative version of that idea. You write small .conf files describing the partitions that should exist, and the tool makes the partition table match. It is incremental by design: existing partitions are matched by type, missing ones are appended, and when the table already matches the configuration it does nothing at all. It is used to build OS images, and it can run from the initrd to adapt a minimal image to whatever disk it landed on. <span style="font-size:13px;">(Related: <a href="fine-tuning-clip-with-remote-sensing-satellite-images-and-caption-58643.html" style="color:#2563eb; font-weight:600;">Fine tuning CLIP with Remote Sensing (Satellite) images...</a>)</span></p>
+<p>This is the practical guide: the mental model, three working configurations, and the failure modes that cost people data. <span style="font-size:13px;">(Related: <a href="how-to-train-a-new-language-model-from-scratch-using-transformers-58676.html" style="color:#2563eb; font-weight:600;">How to train a new language model from scratch using Tr...</a>)</span></p>
 <p>Start with the boundaries, because they explain most of the confusing behaviour:.</p>
 <p>Recent findings suggest that if you need to shrink a partition, this is the wrong tool. For creating and growing partitions on an image or a fresh disk, it is the right one.</p>
 <p>Definitions live in *.conf files read from:.</p>
@@ -212,20 +212,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="breaking-unlocking-agentic-rl-training-for-gpt-oss-a-practical-re-47123.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #47123. Breaking: Unlocking Agentic RL Training for GPT-OSS: A Practical Retrospective
+        <a href="practical-3d-asset-generation-a-step-by-step-guide-58419.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #58419. Practical 3D Asset Generation: A Step-by-Step Guide
         </a>
         
-        <a href="5-ai-tools-for-creating-audio-led-music-videos-a-practical-workfl-46838.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #46838. 5 AI Tools for Creating Audio-Led Music Videos: A Practical Workflow
+        <a href="stop-treating-agents-as-one-off-projects-and-start-running-them-a-58311.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #58311. Stop treating agents as one-off projects and start running them as a continuous discipline
         </a>
         
-        <a href="xxri-os-explores-the-lowest-end-of-the-linux-desktop-46713.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #46713. XXRI-OS explores the lowest end of the Linux desktop
+        <a href="building-a-human-review-pipeline-for-ai-search-a-practical-develo-58259.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #58259. Building a Human Review Pipeline for AI Search: A Practical Developer’s Guide
         </a>
         
-        <a href="build-once-run-on-any-agent-a-practical-guide-to-agent-skills-46684.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #46684. Build once, run on any agent: A practical guide to agent skills
+        <a href="how-to-learn-java-with-ai-a-practical-guide-for-beginners-58185.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #58185. How to Learn Java with AI: A Practical Guide for Beginners
         </a>
         
     </div>
