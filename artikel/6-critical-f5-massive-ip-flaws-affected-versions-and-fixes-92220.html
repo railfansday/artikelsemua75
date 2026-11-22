@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6 Critical F5 MASSIVE-IP Flaws: Affected Versions and Fixes</title>
+    <meta name="description" content="Last updated: 22 November 2026. F5 disclosed these flaws on 18 November 2026 and revised some advisories on 19 November, so details may have changed since.">
+    <meta name="keywords" content="critical, these, sources, flaws, affected, november, does, trigger">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua75/artikel/6-critical-f5-massive-ip-flaws-affected-versions-and-fixes-92220.html">
+    
+    <meta property="og:title" content="6 Critical F5 MASSIVE-IP Flaws: Affected Versions and Fixes">
+    <meta property="og:description" content="Last updated: 22 November 2026. F5 disclosed these flaws on 18 November 2026 and revised some advisories on 19 November, so details may have changed since.">
+    <meta property="og:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto/https%3A%2F%2Fdev-talk.com%2Fstorage%2Fimages%2Fposts%2F1795287436_6-critical-f5-big-ip-flaws.webp">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua75/artikel/6-critical-f5-massive-ip-flaws-affected-versions-and-fixes-92220.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="6 Critical F5 MASSIVE-IP Flaws: Affected Versions and Fixes">
+    <meta name="twitter:description" content="Last updated: 22 November 2026. F5 disclosed these flaws on 18 November 2026 and revised some advisories on 19 November, so details may have changed since.">
+    <meta name="twitter:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto/https%3A%2F%2Fdev-talk.com%2Fstorage%2Fimages%2Fposts%2F1795287436_6-critical-f5-big-ip-flaws.webp">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "6 Critical F5 MASSIVE-IP Flaws: Affected Versions and Fixes", "image": ["https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto/https%3A%2F%2Fdev-talk.com%2Fstorage%2Fimages%2Fposts%2F1795287436_6-critical-f5-big-ip-flaws.webp"], "datePublished": "2026-11-22T05:09:10", "dateModified": "2026-11-22T05:20:44.391398", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua75/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua75/artikel/6-critical-f5-massive-ip-flaws-affected-versions-and-fixes-92220.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding 6 Critical F5 MASSIVE-IP Flaws: Affected Versions and Fixes?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Dev."}}, {"@type": "Question", "name": "Which category does '6 Critical F5 MASSIVE-IP Flaws: Affected Versions and Fixes' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>6 Critical F5 MASSIVE-IP Flaws: Affected Versions and Fixes</h1>
+        <div class="meta-line">🌐 Source: <strong>Dev</strong> &bull; 📅 22 Nov 2026 &bull; ⏱️ 4 min read (820 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>F5 disclosed these flaws on 18 November 2026 and revised some advisories on 19 November, so details may have changed since.</li><li style='margin-bottom:6px;'>Industry observers note that on 18 November 2026, F5 published advisories for six critical vulnerabilities in the data plane of BIG-IP, the part that handles live traffic.</li><li style='margin-bottom:6px;'>In a recent development, five of the six are iRule commands.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-92220"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-92220"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-92220"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="6 Critical F5 MASSIVE-IP Flaws: Affected Versions and Fixes" loading="lazy" src="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto/https%3A%2F%2Fdev-talk.com%2Fstorage%2Fimages%2Fposts%2F1795287436_6-critical-f5-big-ip-flaws.webp" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-92220">Last updated: 22 November 2026. F5 disclosed these flaws on 18 November 2026 and revised some advisories on 19 November, so details may have changed since. I could not open F5's own support articles from my environment, so the facts below come from security vendors, government advisories and news reports that cite F5. SeeHow this was checked.</p>
+<p>Industry observers note that on 18 November 2026, F5 published advisories for six critical vulnerabilities in the data plane of BIG-IP, the part that handles live traffic. All six are stack-based buffer overflows. An unauthenticated remote attacker can crash the Traffic Management Microkernel (TMM), which interrupts traffic until it restarts, and F5 states the flaws may also allow remote code execution. F5 lists no workaround. The fix is an engineering hotfix. Each flaw needs a specific feature on a virtual server, which means you can check whether you are exposed without guessing. <span style="font-size:13px;">(Related: <a href="industry-news-these-are-the-senate-democrats-backing-schumer-and--92982.html" style="color:#2563eb; font-weight:600;">Industry News: These are the Senate Democrats backing S...</a>)</span></p>
+<p>In a recent development, five of the six are iRule commands. A device that does not use these commands, and does not run the APM policy combination, does not meet the trigger. That is the most useful fact in the whole advisory, and it also means the answer is in your own configuration.</p>
+<p>Sources indicate that A note on the count: most sources, including H-ISAC and the UK NHS alert, say six critical flaws. BleepingComputer's article names five (it leaves out DNS::scrape, CVE-2026-120722) and describes a sixth, CVE-2026-126822, as a separate high-severity APM SAML flaw. The Canadian Cyber Centre lists K articles for all six critical CVEs above. I treat six as the count.</p>
+<p>The Canadian Cyber Centre advisory lists affected versions as "prior to" the fixed build:. <span style="font-size:13px;">(Related: <a href="build-a-racetrack-codes-november-2026-92959.html" style="color:#2563eb; font-weight:600;">Build A Racetrack codes (November 2026)...</a>)</span></p>
+<p>Which hotfix build you get depends on your current build, and F5 documents that mapping in K000164239. Do not pick a build from this table alone. BIG-IQ, F5OS, F5 Distributed Cloud, NGINX and F5 AI Gateway are reported as not affected. F5 does not evaluate versions at End of Technical Support, so treat those as exposed if a trigger is configured. If you run a custom engineering hotfix today, you need a new one from F5 Support.</p>
+<p>F5 also says engineering hotfixes do not get the extensive QA of scheduled releases and carry no warranty. Strategy a maintenance window with a rollback, test on a standby, and do not assume a hotfix is a drop-in.</p>
+<p>Sources indicate that the steps below follow the read-only checks described by Rescana, which is a security vendor and not F5. Run them on the device with an account that can read the configuration.</p>
+<p>I wrote a small script for the search and ran it against a sample file with one rule per command, plus near-miss lines. It matched all five commands (and a commented-out mention) and ignored MR::message_foo and DNS::scrapeX:.</p>
+<p>Sources indicate that the script exits 1 when it finds nothing. That is not a clean bill of health on its own: rules created by automation may live in /config/bigip.conf or /config/partitions/*/bigip.conf, and the APM trigger is a policy, not an iRule. I tested the script on sample text, not on a real MAJOR-IP export.</p>
+<p id="sec-mid-92220">I did not run any of the tmsh commands, because I have no BIG-IP to test on. Check the syntax on your version before using them in a runbook.</p>
+<p>Sources indicate that no indicators of compromise have been published. These are monitoring leads from Rescana:.</p>
+<p>Because the possible impact includes code execution, a crash is worth treating as an incident until you know why it happened.</p>
+<p>F5 disclosed more than the six critical issues that day. Three more APM TMM crashes (CVE-2026-125272, CVE-2026-126822 and CVE-2026-121812) are fixed by the same hotfixes. Three others are fixed in scheduled releases 21.1.0.3, 17.5.1.10 and 17.1.3.6: CVE-2026-126336, CVE-2026-125274 (iControl SOAP, 8.8) and CVE-2026-120718 (iControl REST token expiry, 8.1). For the iControl SOAP issue, F5's listed mitigation is limiting access to trusted networks, and that can break high-availability setups if you block self-IPs.</p>
+<p>A different APM flaw, CVE-2026-94127, was disclosed on 22 September 2026 and exploited. It is a separate heap-based problem with a different trigger and is not one of these six. If you did not patch that one, start there.</p>
+<p>Yes, per F5, but only against a virtual server that has the trigger feature configured.</p>
+<p>No. These are data-plane problems. F5 says the management interface is not exposed. Restricting who can reach the affected virtual server does.</p>
+<p>In a recent development, F5 lists none for the six critical flaws. Only engineering hotfixes are available.</p>
+<p>F5 has not noted so in the sources I read, and one vendor reported no public exploit code and no KEV listing as of 18 November. That can change quickly. Check CISA's catalog and F5's advisories again before you set your patch timeline.</p>
+<p>BIG-IQ, F5OS, F5 Distributed Cloud, NGINX products and F5 AI Gateway are reported as not affected by these six.</p>
+<p id="sec-end-92220">Originally published on DEV Talk.</p>
+<p style="margin-top: 25px;">
+<a href="https://dev.to/devtalk94/6-critical-f5-big-ip-flaws-affected-versions-and-fixes-4g4i" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="four-php-security-releases-including-fixes-for-critical-vulnerabi-92426.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #92426. Four PHP security releases including fixes for critical vulnerabilities
+        </a>
+        
+        <a href="critical-php-flaws-allow-code-execution-but-dont-panic-php2shell--92291.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #92291. Critical PHP Flaws Allow Code Execution, but Don't Panic 'PHP2Shell'-Style
+        </a>
+        
+        <a href="f5-releases-emergency-patches-for-critical-big-ip-rce-flaws-92258.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #92258. F5 releases emergency patches for critical BIG-IP RCE flaws
+        </a>
+        
+        <a href="intel-continues-layoffs-with-cuts-to-its-it-department-hundreds-o-92917.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #92917. Intel continues layoffs with cuts to its IT department, hundreds of employees reportedly affected
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

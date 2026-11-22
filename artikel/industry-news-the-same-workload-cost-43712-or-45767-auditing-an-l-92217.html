@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Industry News: The same workload cost ¥43,712 or ¥45,767: auditing an LLM cost ledger that disagrees with itself</title>
+    <meta name="description" content="Every team shipping LLM features builds a per-call log, a daily aggregate and a dashboard, at different times and from different assumptions. Then someone ">
+    <meta name="keywords" content="calls, cost, rows, rollup, tokens, call, because, never">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua75/artikel/industry-news-the-same-workload-cost-43712-or-45767-auditing-an-l-92217.html">
+    
+    <meta property="og:title" content="Industry News: The same workload cost ¥43,712 or ¥45,767: auditing an LLM cost ledger that disagrees with itself">
+    <meta property="og:description" content="Every team shipping LLM features builds a per-call log, a daily aggregate and a dashboard, at different times and from different assumptions. Then someone ">
+    <meta property="og:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Flv4455mj6dpf8iogd9pm.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua75/artikel/industry-news-the-same-workload-cost-43712-or-45767-auditing-an-l-92217.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Industry News: The same workload cost ¥43,712 or ¥45,767: auditing an LLM cost ledger that disagrees with itself">
+    <meta name="twitter:description" content="Every team shipping LLM features builds a per-call log, a daily aggregate and a dashboard, at different times and from different assumptions. Then someone ">
+    <meta name="twitter:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Flv4455mj6dpf8iogd9pm.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Industry News: The same workload cost ¥43,712 or ¥45,767: auditing an LLM cost ledger that disagrees with itse", "image": ["https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Flv4455mj6dpf8iogd9pm.png"], "datePublished": "2026-11-22T05:11:00", "dateModified": "2026-11-22T05:20:44.243422", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua75/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua75/artikel/industry-news-the-same-workload-cost-43712-or-45767-auditing-an-l-92217.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Industry News: The same workload cost ¥43,712 or ¥45,767: auditing an LLM cost l?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in AI & Tech originally reported by Dev."}}, {"@type": "Question", "name": "Which category does 'Industry News: The same workload cost ¥43,712 or ¥45,767: au' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the AI & Tech section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">AI & Tech</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Industry News: The same workload cost ¥43,712 or ¥45,767: auditing an LLM cost ledger that disagrees with itself</h1>
+        <div class="meta-line">🌐 Source: <strong>Dev</strong> &bull; 📅 22 Nov 2026 &bull; ⏱️ 6 min read (1170 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>Every team shipping LLM features builds a per-call log, a daily aggregate and a dashboard, at different times and from different assumptions.</li><li style='margin-bottom:6px;'>In a recent development, this is an audit of that situation: 2.3 million model calls over three months, one line-item table, one rollup table, and a disagreement of ¥2,055.24.</li><li style='margin-bottom:6px;'>ai_call_logs holds one row per attempt with tokens, cost_yuan and a status.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-92217"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-92217"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-92217"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Industry News: The same workload cost ¥43,712 or ¥45,767: auditing an LLM cost ledger that disagrees with itself" loading="lazy" src="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Flv4455mj6dpf8iogd9pm.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-92217">Every team shipping LLM features builds a per-call log, a daily aggregate and a dashboard, at different times and from different assumptions. Then someone asks "what did last month cost" and you get two numbers four percent apart, with nobody able to say which is right.</p>
+<p>In a recent development, this is an audit of that situation: 2.3 million model calls over three months, one line-item table, one rollup table, and a disagreement of ¥2,055.24. The interesting part is not the gap's size but that it decomposes into a deletion and a freeze, while everything else reconciles to the cent. <span style="font-size:13px;">(Related: <a href="determined-woman-completes-7-marathons-in-a-year-while-pregnant-92977.html" style="color:#2563eb; font-weight:600;">“Determined” woman completes 7 marathons in a year whil...</a>)</span></p>
+<p>ai_call_logs holds one row per attempt with tokens, cost_yuan and a status. ai_cost_rollup_daily holds one row per day, model family and hour with calls, miss_tok, hit_tok, out_tok, recorded_cost and refreshed_at. <span style="font-size:13px;">(Related: <a href="obsessed-fan-breaks-into-youtubers-home-demanding-marriage-dies-a-92969.html" style="color:#2563eb; font-weight:600;">Obsessed fan breaks into YouTuber’s home demanding marr...</a>)</span></p>
+<p>Two grains, one money column each — and the aggregate carries no id, no reference to the rows it summarised. You can compute both totals, but you cannot ask the rollup which calls it saw. That omission is why drift survives.</p>
+<p>Totals hide compensating errors, so let the line-item table define the window.</p>
+<p>Industry observers note that september and October match to the cent on both calls and money. November is short by ¥2.52 and 44 calls because the month is still being written. August is off by ¥2,057.48, and that plus the ¥2.52 of in-flight November equals the grand-total gap: what is wrong with August?</p>
+<p>Industry observers note that three facts stack up. The line-item table starts at id 429,016, not 1, so roughly 429,000 rows no longer exist. The first surviving call is dated 2026-08-24, while the rollup starts 2026-08-08 — sixteen days earlier. Those orphan days hold 140,438 calls and ¥2,015.45 with no rows behind them.</p>
+<p>That is 98.0% of the gap, and neither table is broken. A retention job prunes detail; a separate job keeps aggregates; nothing forces the two policies to agree. The rollup is now the only witness to two weeks of spend, and it cannot be itemised or re-derived. On 2026-08-24 itself the rollup says 3,405 calls and ¥104.88 while 1,632 rows and ¥62.85 survive — the cut ran into that day too.</p>
+<p>According to recent reports, the useful test is not the average discrepancy but whether it is zero on days nobody touched. Re-running both sides per day, 2026-09-20 gives 17,871 rows and ¥563.52 on both, 2026-10-09 gives 13,703 and ¥229.67, 2026-11-10 gives 8,470 and ¥131.99. Identical to the second decimal, including the 10-09/10-10 boundary where the model mix changed. The rollup job is correct — correct at the moment it runs, which is the second defect.</p>
+<p>Recent findings suggest that every August and September bucket was last touched on 2026-10-09 and never again. That is the normal life cycle of a backfill: it runs once and is trusted forever — which makes "the rollup is the source of truth" a claim with an expiry date. A row that arrives late — a retried call, a time-skewed writer, a restored backup — lands in the line-item table and never reaches a bucket frozen five weeks ago.</p>
+<p>It has been revealed that the fix is not "refresh more often"; full-history refreshes get more expensive every month and eventually stop. Store source_max_id per bucket instead, and reconciliation becomes a question the schema can answer: is there any line item newer than the newest one this bucket counted?</p>
+<p id="sec-mid-92217">dedup_skip is a cache decision written into the same log as a call: 50.06% of rows, zero tokens, zero cost. Every dashboard deriving "calls this month" from count(*) overstates volume 2.20× — not because the number is wrong, but because "call" was never defined.</p>
+<p>Industry observers note that the three failure statuses total 102,618 rows — 4.47% of real attempts — and carry 30.9 million prompt tokens billed to nobody, since the writer only sets cost_yuan on success. That is about ¥65 of invisible spend at the ledger's blended rate, but the structural cost is worse: failures cluster in the same scenes as successes, so a reliability report built on count(*) never sees them.</p>
+<p>Recent findings suggest that of 1,044,063 successful calls, 61,609 have NULL cost and another 8,654 are explicitly zero — 98.2 million tokens the finance column never sees. Divide by count(*) and you average in 70,263 free calls, understating by about 6%; divide by count(cost) and you exclude a sixteenth of the traffic.</p>
+<p>cache_hit is worse, because it is named like a flag and typed integer while it holds cached tokens. Among successful calls, 18,800 rows have cache_hit &gt; 0 — 1.80% of rows — but those tokens are 2.38% of all prompt tokens (439,479,898 of 18,445,990,674). One column, two true percentages, 25% apart: a caching strategy judged on the first looks weaker than it is.</p>
+<p>Unit cost spans ¥0.0066 to ¥0.1296 across scenes, a 19.6× range driven by context length (3,790 to 63,999 tokens per call). The global mean is ¥0.0419 against a median of ¥0.0165, so "average cost per call" is a statement about traffic mix, not about the system: change the batch schedule and the headline moves while nothing else does. The honest unit is cost per delivered artifact, with the scene breakdown beside it.</p>
+<p>Of 1,044,059 successful calls in the window, 564,221 carry a match_id and 479,838 do not — 45.96% of traffic holding ¥9,668.76, or 22.1% of the money. Some is legitimate, but the column cannot distinguish "not about a match" from "forgot to propagate the id". Without a taxonomy of fixture-scoped scenes, cost per prediction divides by a denominator that mixes product work with overhead.</p>
+<p>The same hazard applies to the model name. GROUP BY model_name splits one model into 689,209 and 32,804 calls, because it is written both deepseek-v4.1-flash and DeepSeek-V4.1-flash; the -1017 variant has the same pair. A budget alert on the larger spelling misses 4.5% of that model's traffic.</p>
+<p>The one artifact worth keeping is the assertion, not the report: run it daily, exit non-zero, and the gap never accumulates for three months.</p>
+<p>Recent findings suggest that three details make it work where a dashboard does not. It compares per day, so a cancellation inside a month cannot hide a gap. It tolerates one cent rather than one percent: a 1% tolerance would have passed a ¥18,891 month wrong by ¥180. And it counts a missing bucket as drift rather than zero — absence looks identical to "no traffic" until you assert on it.</p>
+<p>The gap was ¥2,055.24 — 4.7% of three months of spend — invisible not because the data was wrong but because nothing compared the two tables. Both were correct. One had simply been edited by a retention policy the other never heard about.</p>
+<p>Industry observers note that if you take one thing: an aggregate without a back-reference is a rumour with a decimal point. The moment you can ask a rollup which rows it saw, cost reconciliation stops being archaeology and becomes a one-line assertion.</p>
+<p id="sec-end-92217">In a recent development, analytics and research content. Not betting advice. 18+.</p>
+<p style="margin-top: 25px;">
+<a href="https://dev.to/soccerdream_ai/the-same-workload-cost-y43712-or-y45767-auditing-an-llm-cost-ledger-that-disagrees-with-itself-53j9" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="industry-news-welcome-gemma-googles-new-open-llm-92766.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #92766. Industry News: Welcome Gemma - Google’s new open LLM
+        </a>
+        
+        <a href="industry-news-setting-up-aws-control-tower-these-scp-and-networki-92234.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #92234. Industry News: Setting Up AWS Control Tower? These SCP and Networking Mistakes Can Cost You Hours
+        </a>
+        
+        <a href="industry-news-mastercard-spotlights-xrp-ledger-after-groundbreaki-87691.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #87691. Industry News: Mastercard Spotlights XRP Ledger After Groundbreaking Test
+        </a>
+        
+        <a href="industry-news-ive-weighed-the-same-for-7-years-my-body-has-change-86793.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #86793. Industry News: I’ve Weighed the Same for 7 Years. My Body Has Changed Completely.
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

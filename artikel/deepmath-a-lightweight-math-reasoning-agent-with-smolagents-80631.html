@@ -158,7 +158,7 @@
 <p>Offload deterministic computation to a safe executor.</p>
 <p>Train models to prefer concise, computation-oriented traces over verbose text.</p>
 <p>DeepMath tackles this by combining a small Python executor with a fine-tuned LLM, enabling concise, computation-driven reasoning. The model learns to generate short Python snippets, which are executed in a sandbox and reintegrated into the context. GRPO fine-tuning encourages this behavior by rewarding correctness and encouraging shorter outputs.</p>
-<p>Figure 1: The vLLM client and server were modified to use the DeepMath agent in generating the candidates, while using the vLLM backend.</p>
+<p>Figure 1: The vLLM client and server were modified to use the DeepMath agent in generating the candidates, while using the vLLM backend. <span style="font-size:13px;">(Related: <a href="top-democrat-asks-trump-administration-to-stop-using-disappearing-92981.html" style="color:#2563eb; font-weight:600;">Top Democrat asks Trump administration to stop using di...</a>)</span></p>
 <p>Agent Interface: During inference, the model can output normal tokens or special agent calls containing Python snippets.</p>
 <p>Execution: Snippets run in a sandboxed environment with strict safety constraints (no file I/O, no network, timeouts).</p>
 <p>Concision: Replace multi-line textual calculations with short, focused snippets.</p>

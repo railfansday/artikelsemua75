@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find stale accounts and guests in Entra ID with the portal and Graph Explorer (read-only)</title>
+    <meta name="description" content="Some AI (AI-assisted): this article was drafted with AI assistance and reviewed and edited by a person. Microsoft statements were checked against Microsoft">
+    <meta name="keywords" content="microsoft, guests, read, accounts, graph, only, stale, entra">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua75/artikel/find-stale-accounts-and-guests-in-entra-id-with-the-portal-and-gr-92213.html">
+    
+    <meta property="og:title" content="Find stale accounts and guests in Entra ID with the portal and Graph Explorer (read-only)">
+    <meta property="og:description" content="Some AI (AI-assisted): this article was drafted with AI assistance and reviewed and edited by a person. Microsoft statements were checked against Microsoft">
+    <meta property="og:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F021rhfh72yye2r7bznny.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua75/artikel/find-stale-accounts-and-guests-in-entra-id-with-the-portal-and-gr-92213.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Find stale accounts and guests in Entra ID with the portal and Graph Explorer (read-only)">
+    <meta name="twitter:description" content="Some AI (AI-assisted): this article was drafted with AI assistance and reviewed and edited by a person. Microsoft statements were checked against Microsoft">
+    <meta name="twitter:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F021rhfh72yye2r7bznny.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Find stale accounts and guests in Entra ID with the portal and Graph Explorer (read-only)", "image": ["https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F021rhfh72yye2r7bznny.png"], "datePublished": "2026-11-22T05:12:09", "dateModified": "2026-11-22T05:20:44.075565", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua75/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua75/artikel/find-stale-accounts-and-guests-in-entra-id-with-the-portal-and-gr-92213.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Find stale accounts and guests in Entra ID with the portal and Graph Explorer (r?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Dev."}}, {"@type": "Question", "name": "Which category does 'Find stale accounts and guests in Entra ID with the portal a' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Find stale accounts and guests in Entra ID with the portal and Graph Explorer (read-only)</h1>
+        <div class="meta-line">🌐 Source: <strong>Dev</strong> &bull; 📅 22 Nov 2026 &bull; ⏱️ 4 min read (718 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>Some AI (AI-assisted): this article was drafted with AI assistance and reviewed and edited by a person.</li><li style='margin-bottom:6px;'>Industry observers note that accounts outlive the people they were made for.</li><li style='margin-bottom:6px;'>This is a half-hour, read-only way to do it.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-92213"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-92213"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-92213"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Find stale accounts and guests in Entra ID with the portal and Graph Explorer (read-only)" loading="lazy" src="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F021rhfh72yye2r7bznny.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-92213">Some AI (AI-assisted): this article was drafted with AI assistance and reviewed and edited by a person. Microsoft statements were checked against Microsoft Learn on 22 November 2026.</p>
+<p>Industry observers note that accounts outlive the people they were made for. A leaver whose account was never closed, a contractor's guest invite from two years ago: each is an extra way in that nobody is watching. Microsoft states there is no built-in report for inactive user accounts, so you build one from the last sign-in date. <span style="font-size:13px;">(Related: <a href="industry-news-these-are-the-senate-democrats-backing-schumer-and--92982.html" style="color:#2563eb; font-weight:600;">Industry News: These are the Senate Democrats backing S...</a>)</span></p>
+<p>This is a half-hour, read-only way to do it. You need a licence note, one portal view, four GET queries in Graph Explorer, and a few traps to avoid.</p>
+<p>Two cautions from Microsoft: the value can take up to 24 hours to upgrade, and it can be blank if the account never attempted a sign-in or its last attempt was before April 2020. Blank means look closer, not delete. <span style="font-size:13px;">(Related: <a href="ishowspeed-breaks-down-in-tears-after-finishing-gta-6-in-52-hours-92957.html" style="color:#2563eb; font-weight:600;">IShowSpeed breaks down in tears after finishing GTA 6 i...</a>)</span></p>
+<p>Graph Explorer is Microsoft's browser tool for trying Graph requests. Microsoft warns that if you sign in with an organisational account, a write request can change the tenant. So leave the method on GET, and when a query asks for permission, use Modify permissions to consent to AuditLog.Read.All and User.Read.All only.</p>
+<p>Everyone, with their sign-in dates:.</p>
+<p>It has been revealed that with signInActivity selected, Microsoft notes a page holds at most 500 consumers, so follow @odata.nextLink for more. This is also how you find blanks.</p>
+<p>People whose last successful sign-in is before a date (24 August 2026 is 90 days before this article was checked):.</p>
+<p>Microsoft documents userType as Member or Guest, filterable with eq. Its pages do not say whether selecting signInActivity alongside that filter is allowed, so if Graph rejects it, drop signInActivity from $select and look guests up individually.</p>
+<p id="sec-mid-92213">This finds invitations nobody accepted. Microsoft claims externalUserState is set for guests invited through the invitation API, so guests created another way may not appear.</p>
+<p>For a report without queries, go to ID Governance &gt; Dashboard, find the Guest access governance card and select View inactive guests. Microsoft notes it uses 90 days by default, counts from the creation date for guests who never signed in, refreshes daily and can be downloaded. It needs Entra ID Governance or the Entra Suite, so on P1 alone the Graph queries are your route.</p>
+<p>It has been revealed that microsoft's questions for each inactive user: is the person still employed, do they still need access, is the account needed for another reason? Add two practical ones. Is it a shared, service or emergency access account that rarely signs in by design? Could failed attempts, perhaps an attacker's, be refreshing the date on an account nobody uses?</p>
+<p>Sources indicate that when you do act, Microsoft's access review pattern for stale guests is to block sign-in for 30 days and then remove the user, and it says a deleted guest can be restored for up to 30 days. Access reviews of inactive guests need Entra ID Governance or the Entra Suite. A named person makes any change; nothing above changes a tenant.</p>
+<p>An empty result can mean "nothing stale" or "this cannot be seen with your licence". Write down which steps you could run.</p>
+<p>I work on OpsPilot at Cloudek, a read-only Microsoft 365 review workspace. The interactive demo runs in your browser with sample data: nothing to install and no tenant connected.</p>
+<p>Recent findings suggest that two of its sixteen Live read-only reviews cover this ground, a Stale accounts review and an Identity security review (which looks at idle and guest accounts, among other things). Findings come in plain English with the evidence behind them, graded A to F, and where a check needs a licence you do not have the result indicates "Not checked: needs ..." instead of passing. OpsPilot reads and reports, never changes your tenant.</p>
+<p>Customer access is an invitation-only free trial: 30 days, one organisation of up to 250 customers, read-only. To ask for an invitation, email info@cloudekhosting.com. You never need to send tenant data to start.</p>
+<p id="sec-end-92213">Recent findings suggest that sources (Microsoft Learn): How to manage inactive user accounts; Monitor and clean up stale guest accounts; signInActivity resource type; List users; user resource type; Use Graph Explorer to try Microsoft Graph APIs. Full guide with sources: https://www.cloudekhosting.com/blog/find-stale-accounts-and-guests-entra-id-read-only.html.</p>
+<p style="margin-top: 25px;">
+<a href="https://dev.to/cloudekhosting/find-stale-accounts-and-guests-in-entra-id-with-the-portal-and-graph-explorer-read-only-26k5" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="find-orphan-pages-and-buried-content-build-an-internal-link-graph-92884.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #92884. Find Orphan Pages and Buried Content: Build an Internal Link Graph for Your Site
+        </a>
+        
+        <a href="the-egg-mcmuffin-order-you-can-only-find-in-canada-92187.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #92187. The Egg McMuffin Order You Can Only Find In Canada
+        </a>
+        
+        <a href="industry-news-genshin-impact-fans-on-ps4-only-have-six-weeks-to-f-86381.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #86381. Industry News: Genshin Impact fans on PS4 only have six weeks to find another platform as support winds down with one final revision
+        </a>
+        
+        <a href="struggling-to-find-your-next-great-read-these-7-chatgpt-prompts-w-85544.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #85544. Struggling to find your next great read? These 7 ChatGPT prompts will change how you discover your next favorite book
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

@@ -4793,7 +4793,7 @@ Grafana 13.3 Adds Shared Dashboard Variables and Notebooks.</p>
                     </a>
                     <div class="badge-row">
                         <div>
-                            <span class="cat-badge" onclick="filterByCategory('AI & Tech', null)">AI & Tech</span>
+                            <span class="cat-badge" onclick="filterByCategory('General', null)">General</span>
                             <span class="cat-badge" style="background:#fef3c7; color:#d97706; margin-left:4px;">⚖️ Neutral</span>
                         </div>
                         <span class="source-badge">🌐 Darkreading</span>
@@ -4811,7 +4811,7 @@ Grafana 13.3 Adds Shared Dashboard Variables and Notebooks.</p>
                 </div>
                 <div id="content-92349" style="display:none;" data-raw-title="AI Raises the Stakes for Cyber Resilience">
                     <div class="badge-row" style="justify-content:flex-start;">
-                        <span class="cat-badge" onclick="filterByCategory('AI & Tech', null); closeModal();">AI & Tech</span>
+                        <span class="cat-badge" onclick="filterByCategory('General', null); closeModal();">General</span>
                         <span class="cat-badge" style="background:#fef3c7; color:#d97706; margin-left:4px;">⚖️ Neutral</span>
                         <span class="source-badge">🌐 Darkreading</span>
                         <a href="artikel/ai-raises-the-stakes-for-cyber-resilience-92349.html" class="cat-badge" style="background:#10b981; color:#fff; text-decoration:none;">↗ Open Full Page</a>
@@ -4843,6 +4843,160 @@ Grafana 13.3 Adds Shared Dashboard Variables and Notebooks.</p>
                     </div>
                     <hr style="border:0; border-top:1px solid var(--border); margin:15px 0;">
                     
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>Industry observers note that torchNeuron provides a new native backend for PyTorch on AWS Trainium.</li><li style='margin-bottom:6px;'>According to recent reports, torchNeuron is a PyTorch plugin that brings a fresh backend for Trainium enabling support for eager mode, torch.compile and native distributed APIs like FSDP and TP.</li><li style='margin-bottom:6px;'>In a recent development, starting Oct.</li></ul>
+        </div>
+        
+                    
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-92372" onclick="jumpToSection(event, 'sec-start-92372')" style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-92372" onclick="jumpToSection(event, 'sec-mid-92372')" style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-92372" onclick="jumpToSection(event, 'sec-end-92372')" style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="TorchNeuron: running HF models on AWS Trainium is easier than ever" loading="lazy" src="https://huggingface.co/blog/assets/hf-torchneuron/thumbnail.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-92372">Industry observers note that torchNeuron provides a new native backend for PyTorch on AWS Trainium. Transformers, Diffusers and Kernels natively support it, making it easier than ever to run models on Trainium and to share them on the HF hub.</p>
+<p>According to recent reports, torchNeuron is a PyTorch plugin that brings a fresh backend for Trainium enabling support for eager mode, torch.compile and native distributed APIs like FSDP and TP. Read the Pytorch blog to learn more about TorchNeuron.</p>
+<p>In a recent development, starting Oct. 20, 2026, TorchNeuron will be available as a public beta. Researchers and developers will be able to install it with pip install torch-neuronx.</p>
+<p>To date, the Hugging Face experience on AWS Trainium and Inferentia — AI chips designed respectively for cost-effective training and inference at scale — has been delivered through optimum-neuron. This library relies on the torch-neuronx package, which is based on PyTorch XLA. It was the natural choice at the time, but it meant thinking like a compiler: lazy tensors instead of eager execution, static shapes only, a recompilation for every graph break. Optimum Neuron existed to hide that complexity, and maintained custom code (modeling classes, trainers, etc) to do so.</p>
+<p>TorchNeuron changes this. It integrates directly into PyTorch and exposes neuron as a native device, with eager execution, PyTorch's own distributed primitives (DTensor, FSDP2) and torch.compile.</p>
+<p>For the Hugging Face libraries, Trainium becomes a device like any other: Transformers, Diffusers, Accelerate, PEFT and TRL run on it directly, with the same classes and scripts you would use on any other accelerator. From now on, we recommend that Neuron customers use these libraries directly instead of going through Optimum Neuron.</p>
+<p>Text generation is now natively supported in Transformers for a wide range of models. With TorchNeuron, 89% of the top 100 most-used text-generation model architectures are supported out of the box, compared to 46% with Optimum Neuron v0.4.5. You just need to pass the device_map=neuron argument in your code and your model will be moved to the Neuron devices.</p>
+<p>It has been revealed that the following is an example of text-generation with tensor parallelism, which will enable to fully benefit from your Neuron instance. Note that it uses a static cache for generation as this is strongly recommended with Neuron to prevent frequent recompilations.</p>
+<p>In a recent development, now that Neuron is a native PyTorch device, training on Trainium uses the same Hugging Face libraries as any other accelerator: Transformers, Accelerate, PEFT and TRL. You no longer need a dedicated trainer or a Neuron-specific fork of the model code. A standard TRL fine-tuning script runs on a Trainium instance with only a few Neuron-specific settings.</p>
+<p>Industry observers note that here is a supervised fine-tuning script built on TRL's SFTTrainer. If you have fine-tuned a model with TRL on GPUs before, it should look familiar.</p>
+<p>Recent findings suggest that parallelism is handled natively by Transformers. You put a DistributedConfig with the tensor-parallel (TP) and FSDP sizes in model_init_kwargs, SFTTrainer passes it to from_pretrained, and the model is sharded as its weights are loaded. The Trainer sees that the model is already distributed and does not wrap it again. You don't need an --fsdp flag or an Accelerate FSDP config.</p>
+<p id="sec-mid-92372">In a recent development, nothing in the script is tied to Trainium: the same code runs on any hardware. A few things are worth knowing when you run it on Trainium:.</p>
+<p>The command below rolls out training with torchrun, which starts one process per NeuronCore. TP_SIZE and FSDP_SIZE set the parallelism layout, and their product is the number of processes: here 4 x 8 = 32, matching --nproc_per_node. The 32 processes form a 4 x 8 grid. Tensor parallelism splits each layer across the 4 cores of a TP group, and FSDP shards the parameters, gradients and optimizer state across the 8 TP groups.</p>
+<p>We ran it on 8 Trainium2 chips (32 NeuronCores), which is half a trn2.48xlarge instance.</p>
+<p>Industry observers note that training runs to completion, and trainer.save_model writes a standard Transformers checkpoint. Nothing in it is tied to Neuron: you can push it to the Hugging Face Hub as is and load it on any other hardware.</p>
+<p>In a recent development, many pipelines from the Diffusers library are compatible with TorchNeuron in eager and compiled mode. FLUX.1-dev, FLUX.2, Qwen-Image, Qwen-Image-2.1 and H3 are also compatible with tensor parallelism to make the most of your Neuron devices. The following is an example showing how you can use TP:.</p>
+<p>You can run this piece of code with: NEURON_LOGICAL_NC_CONFIG=2 torchrun --nproc_per_node=8 run.py.</p>
+<p>More and more pipleines will be compatible with TP. If a pipeline you like is not, you can also add support for it following this guide.</p>
+<p>Make sure to check out the kernels from the Neuron team  as more and more Neuron kernels will become available on the Hub to speed up your models. Neuron kernels can be written using the Neuron Kernel Interface (NKI), which gives lower control to optimize operations. This way, users can run their own custom operations and share them on the hub.</p>
+<p>You can use for example this kernel to speed up your vision transformers with up to a x2.4 speedup on Trainium!</p>
+<p>Special thanks to the AWS team for their work on TorchNeuron and for their reactivity to our feedback to make the HF integration as good as possible.</p>
+<p>hi, which models are supported with this? is mobernbert and t5gemma2 on the list?</p>
+<p id="sec-end-92372">Hi, we now have a space where you can chek if a model is supported: https://huggingface.co/spaces/aws-neuron/torch-neuronx-model-support.</p>
+<p style="margin-top: 25px;">
+<a href="https://huggingface.co/blog/hf-torchneuron" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+                    
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="artikel/aws-weekly-roundup-amazon-polly-generative-engine-torchneuron-for-92571.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #92571. AWS Weekly Roundup: Amazon Polly Generative engine, TorchNeuron for Trainium, and more (October 26, 2026)
+        </a>
+        
+        <a href="artikel/profiling-torchneuron-part-1-system-level-profiling-on-aws-traini-92355.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #92355. Profiling TorchNeuron (Part 1): System-level profiling on AWS Trainium.
+        </a>
+        
+        <a href="artikel/does-your-model-run-on-aws-trainium-look-it-up-92332.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #92332. Does Your Model Run on AWS Trainium? Look It Up
+        </a>
+        
+    </div>
+    
+                </div>
+            </div>
+
+            <div class="article-card" id="artikel-92371" data-id="92371" data-url="artikel/lightgbm-vs-a-four-week-average-for-forecasting-bike-share-rental-92371.html" data-title="lightgbm vs. a four-week average for forecasting bike-share rentals" data-category="General" data-sentiment="⚖️ Neutral" data-source="towardsdatascience">
+                <div>
+                    <a href="artikel/lightgbm-vs-a-four-week-average-for-forecasting-bike-share-rental-92371.html" style="text-decoration:none;">
+                        <img src="https://via.placeholder.com/350x180/2563eb/ffffff?text=Global+News" alt="LightGBM vs. a Four-Week Average for Forecasting Bike-Share Rentals" loading="lazy">
+                    </a>
+                    <div class="badge-row">
+                        <div>
+                            <span class="cat-badge" onclick="filterByCategory('General', null)">General</span>
+                            <span class="cat-badge" style="background:#fef3c7; color:#d97706; margin-left:4px;">⚖️ Neutral</span>
+                        </div>
+                        <span class="source-badge">🌐 Towardsdatascience</span>
+                    </div>
+                    <h2><a href="artikel/lightgbm-vs-a-four-week-average-for-forecasting-bike-share-rental-92371.html">#92371. LightGBM vs. a Four-Week Average for Forecasting Bike-Share Rentals</a></h2>
+                    <div class="article-meta">📅 20 Nov 2026 • ⏱️ 1m • ⚡ Quick Read (88 w)</div>
+                </div>
+                <div class="card-actions">
+                    <a class="btn" href="artikel/lightgbm-vs-a-four-week-average-for-forecasting-bike-share-rental-92371.html">📖 Baca</a>
+                    <button class="btn" style="background:#334155;" onclick="openModal(92371)">👁️ Quick</button>
+                    <button class="btn btn-save" id="save-btn-92371" onclick="toggleBookmark(92371)">🔖 Save</button>
+                    <button class="btn btn-share" onclick="copyShareLink('artikel/lightgbm-vs-a-four-week-average-for-forecasting-bike-share-rental-92371.html', this)">🔗 Share</button>
+                    <button class="btn" style="background:#0284c7;" onclick="copyArticleSummary(92371, this)">✂️ Digest</button>
+                    <button class="btn btn-pdf" onclick="downloadPDF('content-92371', 'LightGBM vs. a Four-Week Average for Forecasting Bike-Share Rentals')">📄 PDF</button>
+                </div>
+                <div id="content-92371" style="display:none;" data-raw-title="LightGBM vs. a Four-Week Average for Forecasting Bike-Share Rentals">
+                    <div class="badge-row" style="justify-content:flex-start;">
+                        <span class="cat-badge" onclick="filterByCategory('General', null); closeModal();">General</span>
+                        <span class="cat-badge" style="background:#fef3c7; color:#d97706; margin-left:4px;">⚖️ Neutral</span>
+                        <span class="source-badge">🌐 Towardsdatascience</span>
+                        <a href="artikel/lightgbm-vs-a-four-week-average-for-forecasting-bike-share-rental-92371.html" class="cat-badge" style="background:#10b981; color:#fff; text-decoration:none;">↗ Open Full Page</a>
+                    </div>
+                    <h2 style="margin-top:8px;">LightGBM vs. a Four-Week Average for Forecasting Bike-Share Rentals</h2>
+                    <p style="font-size:12px; color:var(--text-muted);">📅 20 Nov 2026 | ⏱️ 1 min read (88 words, ⚡ Quick Read) | Source: Towardsdatascience</p>
+                    <div class="social-share-bar">
+                        <button class="share-pill" style="background:#25d366;" onclick="shareToSocial('whatsapp', 'LightGBM vs. a Four-Week Average for Forecasting Bike-Share Rentals', 'artikel/lightgbm-vs-a-four-week-average-for-forecasting-bike-share-rental-92371.html')">💬 WhatsApp</button>
+                        <button class="share-pill" style="background:#000000;" onclick="shareToSocial('twitter', 'LightGBM vs. a Four-Week Average for Forecasting Bike-Share Rentals', 'artikel/lightgbm-vs-a-four-week-average-for-forecasting-bike-share-rental-92371.html')">✖ X / Twitter</button>
+                        <button class="share-pill" style="background:#1877f2;" onclick="shareToSocial('facebook', 'LightGBM vs. a Four-Week Average for Forecasting Bike-Share Rentals', 'artikel/lightgbm-vs-a-four-week-average-for-forecasting-bike-share-rental-92371.html')">f Facebook</button>
+                        <button class="share-pill" style="background:#229ed9;" onclick="shareToSocial('telegram', 'LightGBM vs. a Four-Week Average for Forecasting Bike-Share Rentals', 'artikel/lightgbm-vs-a-four-week-average-for-forecasting-bike-share-rental-92371.html')">✈ Telegram</button>
+                        <button class="share-pill" style="background:#64748b;" onclick="copyFullArticleText('content-92371', this)">📋 Copy Text</button>
+                        <button class="share-pill" style="background:#0f172a;" onclick="copyMarkdownText('LightGBM vs. a Four-Week Average for Forecasting Bike-Share Rentals', 'content-92371', this)">📝 Markdown</button>
+                        <button class="share-pill" style="background:#0d6efd;" onclick="speakArticle('content-92371', this)">🔊 Listen</button>
+                        <button class="share-pill" style="background:#475569;" onclick="printArticle('content-92371')">🖨️ Print</button>
+                        <button class="share-pill" style="background:#7c3aed;" onclick="toggleAutoScroll(this)">📜 Auto-Scroll</button>
+                        <button class="share-pill" style="background:#d97706;" onclick="copyCitation('LightGBM vs. a Four-Week Average for Forecasting Bike-Share Rentals', 'Towardsdatascience', '20 Nov 2026', this)">📌 Cite</button>
+                        <button class="share-pill" style="background:#0284c7;" onclick="showQRCode(92371, 'artikel/lightgbm-vs-a-four-week-average-for-forecasting-bike-share-rental-92371.html')">📱 QR Code</button>
+                    </div>
+                    <div id="qrcode-92371" style="display:none; text-align:center; margin:15px 0; padding:10px; background:#fff; border-radius:8px; width:fit-content; margin-left:auto; margin-right:auto;"></div>
+                    
+                    <div style="margin: 15px 0; padding: 10px; background: var(--bg-color); border: 1px solid var(--border); border-radius: 8px;">
+                        <textarea id="notes-92371" placeholder="Tulis catatan pribadi atau highlight teks artikel di sini..." style="width: 100%; height: 60px; background: transparent; border: none; color: var(--text-main); resize: vertical; outline: none; font-family: inherit;" oninput="savePersonalNote(92371)"></textarea>
+                    </div>
+
+                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+                        <div id="timeRemaining-92371" style="font-size:12px; font-weight:600; color:var(--primary);">⏱️ ~1 mins left to finish</div>
+                        <div id="readPct-92371" style="font-size:12px; font-weight:700; color:var(--text-muted);">📖 0% read</div>
+                    </div>
+                    <hr style="border:0; border-top:1px solid var(--border); margin:15px 0;">
+                    
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>In a recent development, A 48-hour Capital Bikeshare experiment pits XGBoost, Ridge, SARIMA, and Prophet against simple baselines, with care for missing hours and leakage.</li><li style='margin-bottom:6px;'>A 48-hour Capital Bikeshare experiment pits XGBoost, Ridge, SARIMA, and Prophet against simple baselines, with care for missing hours and leakage.</li><li style='margin-bottom:6px;'>Recent findings suggest that the post LightGBM vs.</li></ul>
+        </div>
+        
                     
             
             
@@ -24465,7 +24619,7 @@ Kehinde’s story highlights the point that identities matter in economies of ca
                 </div>
                 <div id="content-92208" style="display:none;" data-raw-title="Latest Update: The HackerNoon Newsletter: Fridges, Hackers, AI and La Flemme (11_21_2026)">
                     <div class="badge-row" style="justify-content:flex-start;">
-                        <span class="cat-badge" onclick="filterByCategory('AI & Tech', null); closeModal();">AI & Tech</span>
+                        <span class="cat-badge" onclick="filterByCategory('General', null); closeModal();">General</span>
                         <span class="cat-badge" style="background:#fef3c7; color:#d97706; margin-left:4px;">⚖️ Neutral</span>
                         <span class="source-badge">🌐 Hackernoon</span>
                         <a href="artikel/latest-update-the-hackernoon-newsletter-fridges-hackers-ai-and-la-92208.html" class="cat-badge" style="background:#10b981; color:#fff; text-decoration:none;">↗ Open Full Page</a>
@@ -24767,7 +24921,7 @@ Discussion
         
 <div style="text-align:center; margin-bottom:20px;"><img alt="Industry News: A Tiny Data Model for a Daily Puzzle Archive" loading="lazy" src="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fxi8say4h8udyf25ba32h.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
 <div style="text-align:center; margin:20px 0;">
-<script type="text/javascript">
+    <script type="text/javascript">
         atOptions = {
             'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
             'format' : 'iframe',
@@ -24803,6 +24957,29 @@ Discussion
 <script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
 </div>
 
+            <div class="article-body" style="line-height: 1.8;">
+                <p>Latest questionnaire captures critical data and information that improves the agency’s ability to assess incidents, identify trends and prioritize response actions.</p>
+                <p style="margin-top: 25px;">
+                    <a href="https://www.darkreading.com/cyberattacks-data-breaches/cisa-announces-enhanced-reporting-form-cyber-incidents" target="_blank" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;">
+                        &rarr; Read original article
+                    </a>
+                </p>
+            </div>
+            
+<div style="text-align:center; margin:20px 0;">
+    <script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+    <script type="text/javascript" src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js"></script>
+</div>
+
+            
                     
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
@@ -25299,7 +25476,7 @@ Discussion
         </div>
         
 <div style="text-align:center; margin:20px 0;">
-<script type="text/javascript">
+    <script type="text/javascript">
         atOptions = {
             'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
             'format' : 'iframe',
@@ -25385,6 +25562,29 @@ Discussion
 <script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
 </div>
 
+            <div class="article-body" style="line-height: 1.8;">
+                <p>It has been revealed that dark Reading Confidential Episode 22: You can love AI without being blind to the cybersecurity risks. The tendency for humans to anthropomorphize the conversations and interactions we're having with AI is growing into potential delusion.</p>
+                <p style="margin-top: 25px;">
+                    <a href="https://www.darkreading.com/cyber-risk/people-are-getting-weird-about-ai" target="_blank" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;">
+                        &rarr; Read original article
+                    </a>
+                </p>
+            </div>
+            
+<div style="text-align:center; margin:20px 0;">
+    <script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+    <script type="text/javascript" src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js"></script>
+</div>
+
+            
                     
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
@@ -26486,7 +26686,7 @@ Discussion
         
 <div style="text-align:center; margin-bottom:20px;"><img alt="Latest Update: How to Automate AI Search (llms.txt) &amp; EU EAA (WCAG 2.2) Audits with Apify, MCP &amp; n8n" loading="lazy" src="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fyqstbpm4c19e8scqkh3d.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
 <div style="text-align:center; margin:20px 0;">
-<script type="text/javascript">
+    <script type="text/javascript">
         atOptions = {
             'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
             'format' : 'iframe',
@@ -26525,6 +26725,29 @@ Discussion
 <script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
 </div>
 
+            <div class="article-body" style="line-height: 1.8;">
+                <p>Researchers unpacked, mapped, and recreated complex software and the Turla malware, raising opportunities and concerns for organizations and cybersecurity analysts.</p>
+                <p style="margin-top: 25px;">
+                    <a href="https://www.darkreading.com/application-security/ai-reverse-engineering-apps" target="_blank" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;">
+                        &rarr; Read original article
+                    </a>
+                </p>
+            </div>
+            
+<div style="text-align:center; margin:20px 0;">
+    <script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+    <script type="text/javascript" src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js"></script>
+</div>
+
+            
                     
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
@@ -27562,7 +27785,7 @@ limitations.</li></ul>
         
 <div style="text-align:center; margin-bottom:20px;"><img alt="Breaking: Top 10 AI Tools in 2023 That Will Make Your Life Easier" loading="lazy" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiu91xnR3LQV62WoiA0scuFOTa-Xx9vIwouaceeyosFtZrJB0UivYIWtbcF3TCWEjKhRQVBiSeB00RQI0-cO_eBG6d05_6UV7zYw9qzyHMJ6u2m9_itNW2mFAS8LChEhhJQ14aJbI3GrkEsY9xCTExAT-qxUSh5asVFMAmX-ceWufpgV_DrG9tk3Y4umw/w1600-h1600-p-k-no-nu/Blue%20Purple%20Futuristic%20Modern%203D%20Tech%20Company%20Business%20Presentation-min.jpg" style="max-width:100%; height:auto; border-radius:8px;"/></div>
 <div style="text-align:center; margin:20px 0;">
-<script type="text/javascript">
+    <script type="text/javascript">
         atOptions = {
             'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
             'format' : 'iframe',
@@ -27700,6 +27923,29 @@ greater role in shaping the future of business and technology.</p>
 <script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
 </div>
 
+            <div class="article-body" style="line-height: 1.8;">
+                <p>A command in Claude Code inadvertently saves files with credentials and other sensitive data to public Git repositories, creating security gaps for organizations.</p>
+                <p style="margin-top: 25px;">
+                    <a href="https://www.darkreading.com/cyber-risk/ai-coding-agents-leak-secrets-github" target="_blank" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;">
+                        &rarr; Read original article
+                    </a>
+                </p>
+            </div>
+            
+<div style="text-align:center; margin:20px 0;">
+    <script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+    <script type="text/javascript" src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js"></script>
+</div>
+
+            
                     
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
@@ -27975,6 +28221,14 @@ greater role in shaping the future of business and technology.</p>
             📰 #92978. Democrats aim to intensify the focus on Nvidia in fresh Congress
         </a>
         
+        <a href="artikel/trl-v10-post-training-library-built-to-move-with-the-field-92696.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #92696. TRL v1.0: Post-Training Library Built to Move with the Field
+        </a>
+        
+        <a href="artikel/autosynthdata-generating-training-data-for-enterprise-agents-92419.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #92419. AutoSynthData: Generating Training Data for Enterprise Agents
+        </a>
+        
     </div>
     
                 </div>
@@ -28241,7 +28495,7 @@ Discussion
                     </a>
                     <div class="badge-row">
                         <div>
-                            <span class="cat-badge" onclick="filterByCategory('AI & Tech', null)">AI & Tech</span>
+                            <span class="cat-badge" onclick="filterByCategory('General', null)">General</span>
                             <span class="cat-badge" style="background:#fef3c7; color:#d97706; margin-left:4px;">⚖️ Neutral</span>
                         </div>
                         <span class="source-badge">🌐 Blogspot</span>
@@ -28259,7 +28513,7 @@ Discussion
                 </div>
                 <div id="content-92181" style="display:none;" data-raw-title="LimeWire AI Studio Review 2023: Details, Pricing & Features">
                     <div class="badge-row" style="justify-content:flex-start;">
-                        <span class="cat-badge" onclick="filterByCategory('AI & Tech', null); closeModal();">AI & Tech</span>
+                        <span class="cat-badge" onclick="filterByCategory('General', null); closeModal();">General</span>
                         <span class="cat-badge" style="background:#fef3c7; color:#d97706; margin-left:4px;">⚖️ Neutral</span>
                         <span class="source-badge">🌐 Blogspot</span>
                         <a href="artikel/limewire-ai-studio-review-2023-details-pricing-features-92181.html" class="cat-badge" style="background:#10b981; color:#fff; text-decoration:none;">↗ Open Full Page</a>

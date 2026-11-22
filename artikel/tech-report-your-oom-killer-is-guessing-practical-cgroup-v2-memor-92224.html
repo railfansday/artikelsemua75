@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Report: Your OOM Killer Is Guessing: Practical cgroup v2 Memory Control on Linux</title>
+    <meta name="description" content="Recent findings suggest that at 03:12 the kernel killed your SSH session instead of the service that was eating 14 GB. Nothing was broken. Nothing was limi">
+    <meta name="keywords" content="memory, cgroup, kernel, limit, recent, service, killer, process">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua75/artikel/tech-report-your-oom-killer-is-guessing-practical-cgroup-v2-memor-92224.html">
+    
+    <meta property="og:title" content="Tech Report: Your OOM Killer Is Guessing: Practical cgroup v2 Memory Control on Linux">
+    <meta property="og:description" content="Recent findings suggest that at 03:12 the kernel killed your SSH session instead of the service that was eating 14 GB. Nothing was broken. Nothing was limi">
+    <meta property="og:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fimages.unsplash.com%2Fphoto-1518770660439-4636190af475%3Fw%3D1000%26q%3D80">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua75/artikel/tech-report-your-oom-killer-is-guessing-practical-cgroup-v2-memor-92224.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Tech Report: Your OOM Killer Is Guessing: Practical cgroup v2 Memory Control on Linux">
+    <meta name="twitter:description" content="Recent findings suggest that at 03:12 the kernel killed your SSH session instead of the service that was eating 14 GB. Nothing was broken. Nothing was limi">
+    <meta name="twitter:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fimages.unsplash.com%2Fphoto-1518770660439-4636190af475%3Fw%3D1000%26q%3D80">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Tech Report: Your OOM Killer Is Guessing: Practical cgroup v2 Memory Control on Linux", "image": ["https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fimages.unsplash.com%2Fphoto-1518770660439-4636190af475%3Fw%3D1000%26q%3D80"], "datePublished": "2026-11-22T05:07:08", "dateModified": "2026-11-22T05:20:44.584271", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua75/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua75/artikel/tech-report-your-oom-killer-is-guessing-practical-cgroup-v2-memor-92224.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Tech Report: Your OOM Killer Is Guessing: Practical cgroup v2 Memory Control on ?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Dev."}}, {"@type": "Question", "name": "Which category does 'Tech Report: Your OOM Killer Is Guessing: Practical cgroup v' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Tech Report: Your OOM Killer Is Guessing: Practical cgroup v2 Memory Control on Linux</h1>
+        <div class="meta-line">🌐 Source: <strong>Dev</strong> &bull; 📅 22 Nov 2026 &bull; ⏱️ 7 min read (1426 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>Recent findings suggest that at 03:12 the kernel killed your SSH session instead of the service that was eating 14 GB.</li><li style='margin-bottom:6px;'>That is the default on most Linux systems: every process competes for the same pool of memory.</li><li style='margin-bottom:6px;'>Recent findings suggest that cgroup v2 gives you a better answer than "hope the score is right".</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-92224"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-92224"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-92224"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Tech Report: Your OOM Killer Is Guessing: Practical cgroup v2 Memory Control on Linux" loading="lazy" src="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fimages.unsplash.com%2Fphoto-1518770660439-4636190af475%3Fw%3D1000%26q%3D80" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-92224">Recent findings suggest that at 03:12 the kernel killed your SSH session instead of the service that was eating 14 GB. Nothing was broken. Nothing was limited either. The whole machine was one big cgroup, and the OOM killer picked a victim by badness score, not by blame.</p>
+<p>That is the default on most Linux systems: every process competes for the same pool of memory. When the pool runs dry, the kernel chooses something to kill. It might choose the leak. It might choose your database. It might choose sshd.</p>
+<p>Recent findings suggest that cgroup v2 gives you a better answer than "hope the score is right". You can put a ceiling on a service, make it slow down before it gets there, and read exactly what happened afterwards. The knobs are small and the semantics are not obvious. This article is about the semantics. <span style="font-size:13px;">(Related: <a href="latest-update-la-noire-2-leak-resurfaces-after-source-gets-gta-6--92958.html" style="color:#2563eb; font-weight:600;">Latest Update: LA Noire 2 leak resurfaces after source ...</a>)</span></p>
+<p>According to recent reports, the lab below was run on Debian 13 (kernel 6.12, systemd 257). The cgroup files are the same on any system using the unified hierarchy. <span style="font-size:13px;">(Related: <a href="top-democrat-asks-trump-administration-to-stop-using-disappearing-92981.html" style="color:#2563eb; font-weight:600;">Top Democrat asks Trump administration to stop using di...</a>)</span></p>
+<p>Recent findings suggest that if that prints cgroup2fs, you are on cgroup v2 and everything below applies. If it prints tmpfs, you are on the old hierarchy and the file names are different (memory.limit_in_bytes, memory.memsw.limit_in_bytes). Check before copying any of this.</p>
+<p>Also check that the memory controller is actually available:.</p>
+<p>If memory is missing, the controller is disabled in the kernel command line or not compiled in, and none of the unit settings will do anything.</p>
+<p>Industry observers note that every cgroup has a memory.current file. It is the total memory at the moment charged to that cgroup and its descendants, in bytes.</p>
+<p>That number is not RSS. It includes:.</p>
+<p>memory.stat breaks it down. The two lines you will use most are anon and file:.</p>
+<p>According to recent reports, this distinction matters because file is mostly reclaimable. A service that reads 2 GB of logs can show 2 GB in memory.current while being under no real pressure: the kernel can throw those pages away and read them again later. A service whose anon grows by 200 MB per hour has a leak, and no amount of cache dropping will fix it.</p>
+<p>The kernel documentation is explicit that file includes tmpfs and shared memory. That is worth remembering the next time a service with a small RSS hits its limit because something wrote 500 MB to /dev/shm.</p>
+<p>There are five memory files you will actually use, plus three for observation.</p>
+<p>The vital pair is memory.high and memory.max, because people treat them as interchangeable and they are not.</p>
+<p>memory.high is a speed limit. When usage goes over it, the kernel does not kill anything. It applies heavy reclaim pressure and throttles the tasks that are trying to charge more memory. The kernel documentation is blunt about the guarantee: going over the high limit never invokes the OOM killer, and under extreme conditions the limit may be breached. memory.events counts these episodes in the high field.</p>
+<p>memory.max is a wall. When usage reaches it and reclaim cannot bring it down, the OOM killer is invoked in that cgroup. The doc again: "If a cgroup's memory usage reaches this limit and can't be reduced, the OOM killer is invoked in the cgroup." It also warns that usage may go over the limit temporarily, because accounting and allocation are not atomic.</p>
+<p>That is the whole design: high buys you time and backpressure; max is the last line of defense. systemd's own documentation recommends exactly that split, using MemoryHigh= as the main control and MemoryMax= as the fallback.</p>
+<p>cgroup v2 has a no-internal-process rule: a non-root cgroup can contain processes or child cgroups, not both. systemd builds slices (which contain units) and services (which contain processes) on top of that rule.</p>
+<p>According to recent reports, the practical consequence is that a limit is never just yours. If myapp.service sits under myapp.slice, and the slice is capped at 2 GB, then a 4 GB MemoryMax= on the service is not reachable. systemctl show exposes the result:.</p>
+<p>EffectiveMemoryMax is the most stringent limit of the unit and its parent slices, capped by physical memory. When a limit "does not work", this is the first field to read.</p>
+<p>Recent findings suggest that here is a real experiment. It uses a transient user scope so nothing permanent is created:.</p>
+<p>Inspect what systemd actually applied:.</p>
+<p id="sec-mid-92224">Sources indicate that the numbers are bytes and the suffixes are base 1024: 384M is 402653184. Now read the cgroup files directly, using the path systemd reported:.</p>
+<p>Nothing controversial so far: a sleeping process, three limits, and an empty event counter.</p>
+<p>Now the interesting part. Allocate 200 MB of anonymous memory inside a scope limited to 256 MB, with swap disabled:.</p>
+<p>84 milliseconds. The allocation fits, the limit is never approached, and nothing is throttled.</p>
+<p>Repeat it with MemoryHigh=128M added, while keeping MemoryMax=256M:.</p>
+<p>This is where the intuition breaks. The process did not get killed. It also did not finish. After 58 seconds it was still allocating, sitting in uninterruptible sleep (D state) inside the kernel's reclaim path. The cgroup counters told the story:.</p>
+<p>494 throttle events, zero OOM kills. The process had charged about 186 MB, well above the 128 MB high limit, and the kernel kept throttling it instead of killing it. I stopped the unit at 58 seconds; it had not printed its completion line.</p>
+<p>Two lessons, and they are the reason this section exists:.</p>
+<p>In a recent development, if your goal is "never exceed X", use MemoryMax. If your goal is "slow down before you hit X", use MemoryHigh — but set it above the real anonymous working set, not at a number you wish the service used.</p>
+<p>For a unit managed by systemd, do not edit files under /usr/lib/systemd/system. Use a drop-in:.</p>
+<p>A few details that are easy to get wrong:.</p>
+<p>The most common failure is setting MemoryMax to the RSS you see in ps on a quiet afternoon. That number excludes page cache, tmpfs, socket buffers, and the startup peak.</p>
+<p>Recent findings suggest that example: a Python API with a 600 MB steady-state heap, a 900 MB startup spike, and 200 MB of page cache under load. MemoryMax=1.2G and MemoryHigh=1G gives the startup room, keeps the cache, and leaves the high limit above the anonymous working set. Setting MemoryHigh=700M because "700 MB sounded right" would reproduce the stall from the lab.</p>
+<p>When something gets OOM-killed, these are the commands that answer "what happened":.</p>
+<p>memory.reclaim is the manual version of the reclaim the kernel performs under pressure. On Linux 5.19+:.</p>
+<p>It has been revealed that the kernel may reclaim more or less than requested; if it reclaims less, the write fails with EAGAIN. It is a nudge, not a guarantee, and the documentation is careful to say that proactive reclaim is not itself a memory-pressure signal.</p>
+<p>It has been revealed that memory.events is hierarchical; memory.events.local counts only events at that cgroup level. If max is climbing but oom_kill is zero, the cgroup is touching the wall and recovering. If oom_kill is climbing, something is dying repeatedly, and a supervisor with Restart=always will turn that into a loop.</p>
+<p>The kernel log line looks like this (values omitted because they depend on the process):.</p>
+<p>The anon-rss and file-rss split tells you whether the victim was heap-heavy or cache-heavy. The PID tells you whether the killer picked the process you expected.</p>
+<p>By default memory.oom.group is 0, so the OOM killer selects one task inside the cgroup, not the whole unit. That is why a multi-process service can lose one worker, restart it, and appear healthy while the leak continues. If you need all-or-nothing behavior, memory.oom.group=1 makes the cgroup an indivisible workload; tasks with oom_score_adj of -1000 are still exempt. Treat that as an advanced option, not a default.</p>
+<p>systemd-oomd is a separate, optional service that watches PSI and can kill a whole cgroup before the kernel OOM path runs. It acts on units marked ManagedOOMMemoryPressure=kill and is configured through oomd.conf. It is a useful backstop on desktops and laptops; it is not a substitute for per-unit limits, and it is not installed everywhere.</p>
+<p>MemoryHigh is a throttle, not a cap. MemoryMax is the cap, and it kills inside the cgroup instead of across the machine. Set MemoryMax from measured peaks with headroom, set MemoryHigh above the anonymous working set, and read memory.events when you want to know which one fired.</p>
+<p id="sec-end-92224">In a recent development, the OOM killer is not malicious. It is just the only thing left when nobody set a limit.</p>
+<p style="margin-top: 25px;">
+<a href="https://dev.to/lyraalishaikh/your-oom-killer-is-guessing-practical-cgroup-v2-memory-control-on-linux-2jdn" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="tech-report-animal-control-called-to-rescue-alligator-that-turned-92971.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #92971. Tech Report: Animal control called to rescue alligator that turned out to be a pool floatie
+        </a>
+        
+        <a href="tech-report-sizing-gpu-memory-for-a-rag-service-kv-cache-context--92712.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #92712. Tech Report: Sizing GPU Memory for a RAG Service: KV Cache, Context and Concurrency
+        </a>
+        
+        <a href="tech-report-cadence-health-licensed-practical-nurse-ny-license-re-89859.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #89859. Tech Report: Cadence Health: Licensed Practical Nurse – NY license required
+        </a>
+        
+        <a href="tech-report-scientists-control-a-virtual-fruit-fly-with-map-of-in-88693.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #88693. Tech Report: Scientists control a virtual fruit fly with map of insect’s brain
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>
