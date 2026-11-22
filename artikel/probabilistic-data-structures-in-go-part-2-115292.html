@@ -157,15 +157,15 @@
 UltraLogLog •
 Log-linear histogram •
 MinHash.</p>
-<p>A binary fuse filter is a set that trades certainty for space, like a Bloom filter1. It can tell you that an item is definitely not in the set, or that it probably is (which might be a false positive). The filter doesn't store the items, so it's much more compact than a regular set. <span style="font-size:13px;">(Related: <a href="latest-update-japan-debuts-a-dumbphone-that-doesnt-connect-to-int-115850.html" style="color:#2563eb; font-weight:600;">Latest Update: Japan debuts a ‘dumbphone’ that doesn’t ...</a>)</span></p>
-<p>Sources indicate that unlike a Bloom filter, a binary fuse filter is static: you build it once from all the items, and you can't add more later. In exchange, it uses less memory than a Bloom filter with the same false positive rate. For example, a fuse filter for 1,000,000 items with a 0.39% false positive rate takes 1.13 MB (9 bits per item), while a Bloom filter takes 1.51 MB (12 bits per item). <span style="font-size:13px;">(Related: <a href="breaking-determined-woman-completes-7-marathons-in-a-year-while-p-115854.html" style="color:#2563eb; font-weight:600;">Breaking: “Determined” woman completes 7 marathons in a...</a>)</span></p>
+<p>A binary fuse filter is a set that trades certainty for space, like a Bloom filter1. It can tell you that an item is definitely not in the set, or that it probably is (which might be a false positive). The filter doesn't store the items, so it's much more compact than a regular set.</p>
+<p>Sources indicate that unlike a Bloom filter, a binary fuse filter is static: you build it once from all the items, and you can't add more later. In exchange, it uses less memory than a Bloom filter with the same false positive rate. For example, a fuse filter for 1,000,000 items with a 0.39% false positive rate takes 1.13 MB (9 bits per item), while a Bloom filter takes 1.51 MB (12 bits per item).</p>
 <p>This makes binary fuse filters a good fit for data that is written once and read many times, like the key set of an immutable file in a database (to skip files that don't have the key), or a list of known bad items, such as leaked passwords or malicious URLs.</p>
 <p>The fingerprint type (T in New[T]) determines the false positive rate and the memory use:.</p>
-<p>According to recent reports, the constructor takes an iterator of items to add to the filter and the expected number of items (0 if unknown). The number is only used to preallocate memory, so a good estimate makes the build faster.</p>
+<p>According to recent reports, the constructor takes an iterator of items to add to the filter and the expected number of items (0 if unknown). The number is only used to preallocate memory, so a good estimate makes the build faster. <span style="font-size:13px;">(Related: <a href="block-sparse-matrices-for-smaller-and-faster-language-models-127316.html" style="color:#2563eb; font-weight:600;">Block Sparse Matrices for Smaller and Faster Language M...</a>)</span></p>
 <p>You can check if an item is in the filter, but you cannot add or delete an item, count the number of items, or iterate over them.</p>
 <p>The filter2 is an array of b-bit fingerprints (for example, b = 8 for uint8). Each item is hashed to a 64-bit value h, which gives the item's fingerprint f (b bits computed from h) and three positions in the array (cells). The array is filled so that for every item, the XOR of its cells equals f.</p>
 <p>To check an item, you compute h, look up its three cells, and compare their XOR with f. For an item in the set, they always match. For any other item, the XOR is a random b-bit value, which matches f with probability 2^-b.</p>
-<p>Industry observers note that each check reads three cells, so for large filters it's three cache misses, against one for a blocked Bloom filter. However, since the reads are independent, the CPU can do them concurrently, so the checks are about as fast as with a Bloom filter.</p>
+<p>Industry observers note that each check reads three cells, so for large filters it's three cache misses, against one for a blocked Bloom filter. However, since the reads are independent, the CPU can do them concurrently, so the checks are about as fast as with a Bloom filter. <span style="font-size:13px;">(Related: <a href="industry-news-hyperparameter-search-with-transformers-and-ray-tun-127314.html" style="color:#2563eb; font-weight:600;">Industry News: Hyperparameter Search with Transformers ...</a>)</span></p>
 <p>The filter uses the local wyhash3 implementation for hashing. It performs roughly the same as xxh34 but has a much simpler implementation, without SIMD or assembly.</p>
 <p>Here's an excerpt from the full benchmarks5, comparing unsure to xorfilter6 (binary fuse by the authors of the paper) and bloom (unsure's own Bloom filter) with 8-bit fingerprints (ns/op, lower is better):.</p>
 <p>Memory, bits per item (lower is better):.</p>
@@ -279,16 +279,16 @@ MinHash.</p>
             📰 #115492. PRX Part 4: Our Data Strategy
         </a>
         
-        <a href="ai-data-center-power-demand-will-double-by-2030-thanks-to-4-trill-115831.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #115831. AI data center power demand will double by 2030 thanks to $4 trillion in spending, adding an entire Great Britain to energy strain
+        <a href="breaking-scaling-up-bert-inference-on-cpu-part-1-127298.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #127298. Breaking: Scaling-up BERT Inference on CPU (Part 1)
         </a>
         
-        <a href="show-dont-certify-how-to-prepare-for-your-first-data-analyst-job-115820.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #115820. Show, Don't Certify: How to Prepare for Your First Data Analyst Job
+        <a href="industry-news-scaling-up-bert-like-model-inference-on-modern-cpu--127281.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #127281. Industry News: Scaling up BERT-like model Inference on modern CPU  - Part 2
         </a>
         
-        <a href="power-and-cooling-limits-force-ai-clusters-with-100000-accelerato-115814.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #115814. Power and cooling limits force AI clusters with 100,000+ accelerators to use multiple data centers
+        <a href="breaking-introducing-the-data-measurements-tool-an-interactive-to-127279.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #127279. Breaking: Introducing the Data Measurements Tool: an Interactive Tool for Looking at Datasets
         </a>
         
     </div>

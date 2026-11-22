@@ -1,85 +1,85 @@
 {
-  "generatedAt": "2026-11-22T12:35:52.520549",
-  "totalArticles": 12419,
+  "generatedAt": "2026-11-22T23:36:27.984580",
+  "totalArticles": 12464,
   "categoryBreakdown": {
-    "General": 10131,
-    "Business & Policy": 577,
-    "AI & Tech": 1000,
-    "Hardware & Chips": 153,
-    "Gadgets": 327,
-    "EV & Auto": 231
+    "General": 10180,
+    "AI & Tech": 1009,
+    "Hardware & Chips": 156,
+    "Business & Policy": 558,
+    "Gadgets": 324,
+    "EV & Auto": 237
   },
   "topSources": {
     "Hugging Face": 915,
-    "Co": 826,
+    "Co": 809,
     "Sciencedaily": 211,
     "Eschoolnews": 200,
-    "Cbssports": 172,
+    "Cbssports": 170,
     "Electrek": 149,
-    "Yahoo": 142,
+    "Yahoo": 143,
     "Dw": 140,
-    "Dailymail": 137,
-    "Realworkfromanywhere": 123
+    "Dailymail": 139,
+    "Realworkfromanywhere": 120
   },
   "latestHeadlines": [
     {
-      "id": 115855,
-      "title": "Latest Update: Umamusume horse girls are taking over a Denver Broncos NFL game",
-      "url": "https://railfansday.github.io/artikelsemua75/artikel/latest-update-umamusume-horse-girls-are-taking-over-a-denver-bron-115855.html",
+      "id": 127319,
+      "title": "How to train a new language model from scratch using Transformers and Tokenizers",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/how-to-train-a-new-language-model-from-scratch-using-transformers-127319.html",
       "category": "General"
     },
     {
-      "id": 115854,
-      "title": "Breaking: “Determined” woman completes 7 marathons in a year while pregnant",
-      "url": "https://railfansday.github.io/artikelsemua75/artikel/breaking-determined-woman-completes-7-marathons-in-a-year-while-p-115854.html",
+      "id": 127318,
+      "title": "How to generate text: using different decoding methods for language generation with Transformers",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/how-to-generate-text-using-different-decoding-methods-for-languag-127318.html",
       "category": "General"
     },
     {
-      "id": 115853,
-      "title": "University launches $5m smart system that checks who is actually listening in class",
-      "url": "https://railfansday.github.io/artikelsemua75/artikel/university-launches-5m-smart-system-that-checks-who-is-actually-l-115853.html",
+      "id": 127317,
+      "title": "The Reformer - Pushing the limits of language modeling",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/the-reformer-pushing-the-limits-of-language-modeling-127317.html",
       "category": "General"
     },
     {
-      "id": 115852,
-      "title": "School sends out minibus to catch absent pupils playing GTA 6",
-      "url": "https://railfansday.github.io/artikelsemua75/artikel/school-sends-out-minibus-to-catch-absent-pupils-playing-gta-6-115852.html",
+      "id": 127316,
+      "title": "Block Sparse Matrices for Smaller and Faster Language Models",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/block-sparse-matrices-for-smaller-and-faster-language-models-127316.html",
       "category": "General"
     },
     {
-      "id": 115851,
-      "title": "Industry News: Take-Two CEO is shutting down questions about GTA 7 just days after GTA 6’s launch",
-      "url": "https://railfansday.github.io/artikelsemua75/artikel/industry-news-take-two-ceo-is-shutting-down-questions-about-gta-7-115851.html",
-      "category": "Business & Policy"
-    },
-    {
-      "id": 115850,
-      "title": "Latest Update: Japan debuts a ‘dumbphone’ that doesn’t connect to internet and looks like a Nokia brick",
-      "url": "https://railfansday.github.io/artikelsemua75/artikel/latest-update-japan-debuts-a-dumbphone-that-doesnt-connect-to-int-115850.html",
+      "id": 127315,
+      "title": "Tech Report: Transformer-based Encoder-Decoder Models",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/tech-report-transformer-based-encoder-decoder-models-127315.html",
       "category": "General"
     },
     {
-      "id": 115849,
-      "title": "Industry News: GTA 6 players report game-breaking crashes on PS5 and Xbox",
-      "url": "https://railfansday.github.io/artikelsemua75/artikel/industry-news-gta-6-players-report-game-breaking-crashes-on-ps5-a-115849.html",
+      "id": 127314,
+      "title": "Industry News: Hyperparameter Search with Transformers and Ray Tune",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/industry-news-hyperparameter-search-with-transformers-and-ray-tun-127314.html",
       "category": "General"
     },
     {
-      "id": 115848,
-      "title": "Tech Report: Animal control called to rescue alligator that turned out to be a pool floatie",
-      "url": "https://railfansday.github.io/artikelsemua75/artikel/tech-report-animal-control-called-to-rescue-alligator-that-turned-115848.html",
+      "id": 127313,
+      "title": "Porting fairseq wmt19 translation system to transformers",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/porting-fairseq-wmt19-translation-system-to-transformers-127313.html",
       "category": "General"
     },
     {
-      "id": 115847,
-      "title": "Tech Report: Chipotle is giving customers free burritos with Thanksgiving Eve BOGO deal",
-      "url": "https://railfansday.github.io/artikelsemua75/artikel/tech-report-chipotle-is-giving-customers-free-burritos-with-thank-115847.html",
+      "id": 127312,
+      "title": "Leveraging Pre-trained Language Model Checkpoints for Encoder-Decoder Models",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/leveraging-pre-trained-language-model-checkpoints-for-encoder-dec-127312.html",
       "category": "General"
     },
     {
-      "id": 115846,
-      "title": "Obsessed fan breaks into YouTuber’s home demanding marriage, dies after family beats him",
-      "url": "https://railfansday.github.io/artikelsemua75/artikel/obsessed-fan-breaks-into-youtubers-home-demanding-marriage-dies-a-115846.html",
+      "id": 127311,
+      "title": "Industry News: How we sped up transformer inference 100x for 🤗 API customers",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/industry-news-how-we-sped-up-transformer-inference-100x-for-api-c-127311.html",
+      "category": "General"
+    },
+    {
+      "id": 127310,
+      "title": "Fit More and Train Faster With ZeRO via DeepSpeed and FairScale",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/fit-more-and-train-faster-with-zero-via-deepspeed-and-fairscale-127310.html",
       "category": "General"
     }
   ]

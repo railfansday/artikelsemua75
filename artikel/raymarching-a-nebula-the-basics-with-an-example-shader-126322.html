@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raymarching a nebula: the basics, with an example shader</title>
+    <meta name="description" content="In an earlier devlog, we explained how we optimised the nebula of Vesper Protocol. Several readers asked us to start from the beginning. So here are the ba">
+    <meta name="keywords" content="shader, step, nebula, devlog, each, pixel, recent, shadertoy">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua75/artikel/raymarching-a-nebula-the-basics-with-an-example-shader-126322.html">
+    
+    <meta property="og:title" content="Raymarching a nebula: the basics, with an example shader">
+    <meta property="og:description" content="In an earlier devlog, we explained how we optimised the nebula of Vesper Protocol. Several readers asked us to start from the beginning. So here are the ba">
+    <meta property="og:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fjwawyp46172wvei21tbl.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua75/artikel/raymarching-a-nebula-the-basics-with-an-example-shader-126322.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Raymarching a nebula: the basics, with an example shader">
+    <meta name="twitter:description" content="In an earlier devlog, we explained how we optimised the nebula of Vesper Protocol. Several readers asked us to start from the beginning. So here are the ba">
+    <meta name="twitter:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fjwawyp46172wvei21tbl.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Raymarching a nebula: the basics, with an example shader", "image": ["https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fjwawyp46172wvei21tbl.png"], "datePublished": "2026-11-22T23:06:29", "dateModified": "2026-11-22T23:14:51.346843", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua75/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua75/artikel/raymarching-a-nebula-the-basics-with-an-example-shader-126322.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Raymarching a nebula: the basics, with an example shader?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Dev."}}, {"@type": "Question", "name": "Which category does 'Raymarching a nebula: the basics, with an example shader' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Raymarching a nebula: the basics, with an example shader</h1>
+        <div class="meta-line">🌐 Source: <strong>Dev</strong> &bull; 📅 22 Nov 2026 &bull; ⏱️ 3 min read (652 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>In an earlier devlog, we explained how we optimised the nebula of Vesper Protocol.</li><li style='margin-bottom:6px;'>A typical game engine draws triangles: it projects their vertices onto the screen and colours the pixels they cover.</li><li style='margin-bottom:6px;'>Sources indicate that raymarching flips the problem around.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-126322"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-126322"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-126322"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Raymarching a nebula: the basics, with an example shader" loading="lazy" src="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fjwawyp46172wvei21tbl.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-126322">In an earlier devlog, we explained how we optimised the nebula of Vesper Protocol. Several readers asked us to start from the beginning. So here are the basics of volumetric raymarching, step by step, with a complete GLSL shader you can paste into Shadertoy.</p>
+<p>A typical game engine draws triangles: it projects their vertices onto the screen and colours the pixels they cover. That works very well for a spaceship or a wall. But a nebula has no surface: it is a cloud of gas, more or less dense, that light partly passes through. <span style="font-size:13px;">(Related: <a href="my-journey-to-a-serverless-transformers-pipeline-on-google-cloud-127303.html" style="color:#2563eb; font-weight:600;">My Journey to a serverless transformers pipeline on Goo...</a>)</span></p>
+<p>Sources indicate that raymarching flips the problem around. For each pixel, we cast a ray from the camera and walk along it in small steps. At each step we ask: "how dense is the gas here?" We accumulate what we see until we leave the volume or the gas becomes opaque.</p>
+<p>Recent findings suggest that everything happens in a fragment shader, the program the graphics card runs for every pixel. On Shadertoy, this program is called mainImage and receives the pixel position.</p>
+<p>According to recent reports, A ray is an origin (the camera, ro) and a direction (rd). We start by centring the pixel coordinates and correcting for the screen's aspect ratio:.</p>
+<p>The point at distance t along the ray is simply ro + rd * t. Increasing the focal length narrows the field of view, like zooming in.</p>
+<p>Industry observers note that we need a function density(p) that returns the amount of gas at point p. To get natural swirls, we use value noise: pseudo-random numbers placed on a 3D grid and smoothly interpolated. By adding several layers of ever finer noise (octaves), we get fBm (fractional Brownian motion), the basis of almost every procedural cloud. <span style="font-size:13px;">(Related: <a href="industry-news-hyperparameter-search-with-transformers-and-ray-tun-127314.html" style="color:#2563eb; font-weight:600;">Industry News: Hyperparameter Search with Transformers ...</a>)</span></p>
+<p>To break up the overly regular look, we distort the coordinates with a first fBm before computing a second one (domain warping): the swirls stretch like gas. We then confine this noise inside a soft sphere, otherwise it would fill all of space, and subtract a threshold to carve holes between the clouds.</p>
+<p id="sec-mid-126322">Recent findings suggest that when light passes through a gas, part of it is absorbed. The Beer–Lambert law says that the fraction that gets through, the transmittance, decreases exponentially with the density crossed:.</p>
+<p>Recent findings suggest that our nebula is also emissive: gas heated by the star glows. At each step, we add the light emitted there to the pixel colour, attenuated by all the gas already crossed (the current transmittance). This is front-to-back compositing:.</p>
+<p>Order matters: add the light with the old transmittance, then update it.</p>
+<p>Industry observers note that here is the whole shader, ready to paste into Shadertoy. It adds two details: a small random offset of each ray's starting point, and an early exit once the gas becomes opaque.</p>
+<p>This shader is deliberately simple: it recomputes all the noise at every step, at full resolution. In the game, we precompute it into a 3D texture and render at half resolution. That is the topic of our devlog on optimising the nebula shader (in French), which explains how we went from 9 ms to 2.1 ms per frame.</p>
+<p>A live WebGL preview of this exact code runs on the Flexarion devlog.</p>
+<p>To tweak it, open a newly introduced shader on Shadertoy, replace the default code with the code from step 4, then press Alt + Enter. Try changing STEP, the emission colours or the absorption coefficient to see the effect of each parameter.</p>
+<p>Recent findings suggest that this nebula surrounds Tau-Heliade, the dying star of Vesper Protocol. If you prefer logic to rendering, read our tutorial on ternary logic, or play the mini demo in your browser. All English articles are in the Flexarion devlog.</p>
+<p id="sec-end-126322">Originally published on the Flexarion devlog. Flexarion is a fictional video game studio created for a computer science student project. Text licensed under CC BY-NC 4.0.</p>
+<p style="margin-top: 25px;">
+<a href="https://dev.to/matto_yanni2_5018bfec28/raymarching-a-nebula-the-basics-with-an-example-shader-4a7m" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="a-guide-to-setting-up-your-own-hugging-face-leaderboard-an-end-to-127003.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #127003. A guide to setting up your own Hugging Face leaderboard: an end-to-end example with Vectara's hallucination leaderboard
+        </a>
+        
+        <a href="the-example-we-advertise-is-the-answer-we-owe-126301.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #126301. The example we advertise is the answer we owe
+        </a>
+        
+        <a href="breaking-nate-bargatze-is-sort-of-leading-by-example-124763.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #124763. Breaking: Nate Bargatze Is (Sort Of) Leading By Example
+        </a>
+        
+        <a href="a-better-airport-outfit-starts-with-the-basics-121413.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #121413. A Better Airport Outfit Starts With the Basics
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Beginner's Guide to Local AI with Inkling, Qwen, and Unsloth</title>
+    <meta name="description" content="We have AI at home! Set up your own free personal ChatGPT on your PC with Unsloth and Inkling or Qwen. It's private, and the whole house can use it. With t">
+    <meta name="keywords" content="model, unsloth, inkling, recent, context, mini, models, card">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua75/artikel/a-beginners-guide-to-local-ai-with-inkling-qwen-and-unsloth-119671.html">
+    
+    <meta property="og:title" content="A Beginner's Guide to Local AI with Inkling, Qwen, and Unsloth">
+    <meta property="og:description" content="We have AI at home! Set up your own free personal ChatGPT on your PC with Unsloth and Inkling or Qwen. It's private, and the whole house can use it. With t">
+    <meta property="og:image" content="https://www.gpupartner.com/blog/beginners-guide-local-ai-inkling-qwen-unsloth/opengraph-image-17m7t5?6653c98c6cd84ba6">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua75/artikel/a-beginners-guide-to-local-ai-with-inkling-qwen-and-unsloth-119671.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="A Beginner's Guide to Local AI with Inkling, Qwen, and Unsloth">
+    <meta name="twitter:description" content="We have AI at home! Set up your own free personal ChatGPT on your PC with Unsloth and Inkling or Qwen. It's private, and the whole house can use it. With t">
+    <meta name="twitter:image" content="https://www.gpupartner.com/blog/beginners-guide-local-ai-inkling-qwen-unsloth/opengraph-image-17m7t5?6653c98c6cd84ba6">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "A Beginner's Guide to Local AI with Inkling, Qwen, and Unsloth", "image": ["https://www.gpupartner.com/blog/beginners-guide-local-ai-inkling-qwen-unsloth/opengraph-image-17m7t5?6653c98c6cd84ba6"], "datePublished": "2026-11-22T21:01:16", "dateModified": "2026-11-22T23:09:47.145491", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua75/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua75/artikel/a-beginners-guide-to-local-ai-with-inkling-qwen-and-unsloth-119671.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding A Beginner's Guide to Local AI with Inkling, Qwen, and Unsloth?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in AI & Tech originally reported by Gpupartner."}}, {"@type": "Question", "name": "Which category does 'A Beginner's Guide to Local AI with Inkling, Qwen, and Unslo' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the AI & Tech section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">AI & Tech</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>A Beginner's Guide to Local AI with Inkling, Qwen, and Unsloth</h1>
+        <div class="meta-line">🌐 Source: <strong>Gpupartner</strong> &bull; 📅 22 Nov 2026 &bull; ⏱️ 10 min read (2092 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>Set up your own free personal ChatGPT on your PC with Unsloth and Inkling or Qwen.</li><li style='margin-bottom:6px;'>With the launch of open-weight models like Qwen, cloud-based LLM providers seem like they're more of infrastructure or appliance businesses when it comes to most routine tasks that an AI model can handle.</li><li style='margin-bottom:6px;'>Industry observers note that openAI and Anthropic have displayed a pattern of dropping model quality in the 'latest' version and controlling exactly what you're allowed to run on their models.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-119671"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-119671"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-119671"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="A Beginner's Guide to Local AI with Inkling, Qwen, and Unsloth" loading="lazy" src="https://www.gpupartner.com/blog/beginners-guide-local-ai-inkling-qwen-unsloth/opengraph-image-17m7t5?6653c98c6cd84ba6" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-119671">We have AI at home! Set up your own free personal ChatGPT on your PC with Unsloth and Inkling or Qwen. It's private, and the whole house can use it.</p>
+<p>With the launch of open-weight models like Qwen, cloud-based LLM providers seem like they're more of infrastructure or appliance businesses when it comes to most routine tasks that an AI model can handle. <span style="font-size:13px;">(Related: <a href="how-to-train-a-new-language-model-from-scratch-using-transformers-127319.html" style="color:#2563eb; font-weight:600;">How to train a new language model from scratch using Tr...</a>)</span></p>
+<p>Industry observers note that openAI and Anthropic have displayed a pattern of dropping model quality in the 'latest' version and controlling exactly what you're allowed to run on their models. Add to this ballooning costs and privacy concerns, and we get a pretty good case for moving away from this 'convenient' cloud experience. <span style="font-size:13px;">(Related: <a href="block-sparse-matrices-for-smaller-and-faster-language-models-127316.html" style="color:#2563eb; font-weight:600;">Block Sparse Matrices for Smaller and Faster Language M...</a>)</span></p>
+<p>That's basically where I was too. I wanted to offload certain token-heavy research, data collection, or coding tasks to an AI model without staring at usage limits all day. So, as any reasonable human being would do, I decided to set up my own local AI: a Claude and ChatGPT replacement that runs at home on my own hardware.</p>
+<p>According to recent reports, since this was my first attempt, my primary focus was keeping it simple and hosting it on Windows. If you're a beginner, you can follow along to get one going on your home network too.</p>
+<p>Once you have the hardware sorted, it takes about 10-15 minutes (excluding download times).</p>
+<p>Install Unsloth Desktop, download a quantized AI model that fits your GPU's VRAM, set your context size, and turn on LAN access so everyone at home can use it.</p>
+<p>Not much (other than the hardware). Here's a short list:.</p>
+<p>In a recent development, that's it. No terminal commands, Python environments, or subscriptions required.</p>
+<p>It depends on how much VRAM your graphics card has. As a rough guide, 8-12GB of VRAM handles smaller 9B-12B models, while 32GB comfortably runs 27B-35B models with plenty of room for long conversations.</p>
+<p>On consumer-grade hardware, we'll need smaller models. The full-size Qwen model sits at around 56GB and won't really fit on a consumer graphics card unless you're running a Mac with unified memory. That's where quantization comes in.</p>
+<p>Quantization shrinks a model by compressing weights and moving to a lower precision. You basically trade some accuracy for a model that actually fits on your GPU and runs faster.</p>
+<p>The same photo stored at 8, 4 and 2 bits per pixel. A model's weights lose detail the same way going from Q8 to Q4 to Q2.</p>
+<p>It has been revealed that if you're wondering whether this tradeoff is worth it, well, it depends. You'll find that certain types of workloads don't really care and give similar outputs, while others may be nearly unusable.</p>
+<p>Recent findings suggest that for this guide, we'll be going with Qwen3.8-27B with 4-bit quantization on my system with an RTX 5090. Going up a tier is an option thanks to its 32GB of VRAM, but I wanted to allow for a larger context window (how much of the conversation the model can keep in mind at once) rather than cramming in the largest model that fits.</p>
+<p>According to recent reports, qwen3.8-27B at each precision with a 128K context, from our VRAM calculator. At 4-bit, the model and the context fit a 32 GB card with room to spare.</p>
+<p>If you want to run a model of this caliber with excellent performance, a hilariously overpriced RTX 5090 (remember when $1,999 felt too high?) is unfortunately still not a terrible 'deal' these days. The other option is way more expensive enterprise-grade GPUs.</p>
+<p>Industry observers note that if you're on a GPU with less VRAM, you can still get something very usable going right away. The table below gives you a rough idea of where you can start.</p>
+<p>RTX 5060 8GB, RTX 3060 12GB, RTX 5070 12GB.</p>
+<p>Qwen3-14B, gpt-oss-20b (MoE), Gemma 4 26B (MoE), Qwen3-Coder-30B (MoE), Qwen3.6-35B (MoE), Inkling 2 Mini (MoE).</p>
+<p>RTX 5060 Ti 16GB, RTX 5070 Ti, RTX 5080, RTX PRO 2000.</p>
+<p>Gemma 4 31B, Qwen3.8-27B, Inkling 2 Mini.</p>
+<p>RTX 3090, RTX 4090, RX 7900 XTX, RTX PRO 4000.</p>
+<p>RTX 5090 32GB, RTX PRO 4500 32GB, RTX PRO 5000 48GB, RTX PRO 6000 96GB.</p>
+<p>RTX 5060 8GB, RTX 3060 12GB, RTX 5070 12GB.</p>
+<p>Qwen3-14B, gpt-oss-20b (MoE), Gemma 4 26B (MoE), Qwen3-Coder-30B (MoE), Qwen3.6-35B (MoE), Inkling 2 Mini (MoE).</p>
+<p>RTX 5060 Ti 16GB, RTX 5070 Ti, RTX 5080, RTX PRO 2000.</p>
+<p>Gemma 4 31B, Qwen3.8-27B, Inkling 2 Mini.</p>
+<p>RTX 3090, RTX 4090, RX 7900 XTX, RTX PRO 4000.</p>
+<p>RTX 5090 32GB, RTX PRO 4500 32GB, RTX PRO 5000 48GB, RTX PRO 6000 96GB.</p>
+<p>Industry observers note that models marked MoE (mixture of experts) only run a few billion of their parameters for each token. They keep a decent speed on a smaller card with the rest held in system RAM, which is why a 35B model sits in the 16 GB row. On an RTX 5060 Ti 16GB, our calculator puts Qwen3.6-35B at about 47 tokens per second this way.</p>
+<p>Feel free to experiment with several models until you find one that fits your needs. You can also use GPUPartner's VRAM Calculator to get an estimate.</p>
+<p>Sources indicate that inkling 2 Mini, yes. Inkling 2 Small, no.</p>
+<p>Recent findings suggest that inkling 2 Mini is the newest model in this size class. Thinking Machines Lab released it on November 17, 2026: 26.4B parameters, Apache 2.0, vision support and a 1M-token context. Unsloth's recommended file, UD-Q4_K_XL, is 17.6 GB. That is within 0.1 GB of the Qwen3.8-27B file in this guide, so it sits on a 32GB card the same way and leaves about 14GB for context.</p>
+<p>It has been revealed that nothing else in this guide changes. Revision Unsloth Desktop first, because Inkling 2 needs a recent build, then search for Inkling 2 Mini in the same drop-down in Step 2.</p>
+<p>Those figures are Unsloth's. They count RAM and VRAM together and cover the model alone, so a long context needs more. Inkling 2 Mini is a mixture-of-experts model with 5.4B parameters active, so the 4-bit file also runs on a 16 GB card with the remainder in system RAM, a little slower.</p>
+<p>Inkling 2 Small is small in name only. It is a 594B model, and the smallest file Unsloth publishes is 171.7 GB. That is unified-memory territory: a 256GB Mac Studio or a DGX Station, not a graphics card.</p>
+<p>According to recent reports, yes. You'll find good alternatives in Apple's Mac lineup thanks to its unified memory. Macs are pretty good at running larger models, even if they don't offer the best performance. Just make sure you grab the MLX flavor that is custom-built for Apple Silicon.</p>
+<p>The same trade applies to unified-memory PCs like the MSI PRO MAX EDGE AI+ 11M and NVIDIA's DGX Spark.</p>
+<p>It takes three steps: install Unsloth Desktop, download your model, and set the context size. I'll go over these steps in more detail below so you can follow along.</p>
+<p>It has been revealed that first, we'll need a solution that 'serves' the AI model to you. My pursuit of simplicity narrowed my choices down to LM Studio or Unsloth Desktop. Both abstract away a ton of terminal commands and handle Python environments and dependencies behind a nice, simple UI, which makes them excellent picks for a first home setup.</p>
+<p>Recent findings suggest that I landed on Unsloth Desktop mostly because, well, I liked the name better. Also, it didn't try to push the very thing I was trying to escape when I opened its website: a subscription.</p>
+<p>The community seems to like it overall too, so that's another point in its favor.</p>
+<p id="sec-mid-119671">Once you've clicked through the installer and launched Unsloth, you'll see a window like this one.</p>
+<p>Unsloth Desktop on first launch, before any model is loaded.</p>
+<p>Sources indicate that on the top left of this main window, you can pick the model that you want to use from the drop down. We'll be using Qwen3.8-27B.</p>
+<p>It has been revealed that the model picker. Qwen3.8-27B is first on the Recommended list.</p>
+<p>Sources indicate that you should see a submenu like the one below when you click on a model. I'll be using Unsloth's UD-Q4_K_XL version. The M and S versions are smaller, but the XL version behaves much closer to the full-size model without filling up our VRAM, so it seemed like a good pick for my GPU.</p>
+<p>According to recent reports, every quantization of Qwen3.8-27B with its download size. The gear next to the downloaded one holds the context setting.</p>
+<p>Once the download completes, you should see a gear icon to the right of the model as shown in the screenshot above. Here, you can set your context size manually or leave it on Auto if you aren't sure how much you need.</p>
+<p>I'll be setting mine to 128K (unquantized) and might reassess after I've run the model through a few of my routine tasks for a few weeks. Again, you can use this VRAM calculator to help you with these numbers for your specific GPU.</p>
+<p>At this point, our first local AI is up and running, and you can start chatting with it right inside Unsloth.</p>
+<p>Remember, your mileage may vary depending on your setup.</p>
+<p>It has been revealed that short answer: Unsloth Desktop has LAN sharing built in. Set a Remote password, start LAN access, and share the address it gives you with anyone on your home network.</p>
+<p>Recent findings suggest that once Unsloth Desktop is set up with a model, you might want to give family members or friends access too. For now, we'll only serve it over our local network, so my family can use it without needing physical access to this PC.</p>
+<p>Head into Unsloth Desktop settings (gear icon on bottom left), and look for the 'Remote &amp; LAN' tab.</p>
+<p>In a recent development, settings, Remote &amp; LAN. LAN access is the second card. The Remote access card above it is for a later part.</p>
+<p>Most of this section will be greyed out until you set a Remote password. Once you've set a password, you'll see a 'Start' button for LAN access. Click that and you should see an address that anyone on your home network can open in a browser to use a local AI model within a chat interface. They'll sign in as 'unsloth' with the Remote password you set.</p>
+<p>Just keep in mind that the PC needs to stay on with Unsloth running for anyone to reach it.</p>
+<p>Industry observers note that not with this setup alone. Everything so far is limited to your local home network.</p>
+<p>If you just need a chat interface like ChatGPT, Gemini, etc. to work within your home network, you're basically done at this point! You and anyone on your network can start talking to an AI model hosted on your machine right away.</p>
+<p>In a recent development, in the next parts, we'll cover performance, tunneling, as well as setting up an agent that runs locally and uses only the web tools you allow it to use. This will let you automate more complex tasks like coding, research, and so much more without being tied to a subscription or usage limits and censorship.</p>
+<p>As always, my focus remains simplicity that allows my family to use it without too much guidance or help.</p>
+<p>PS. If you have any recommendations for agentic harnesses or even models to try, feel free to let me know and I'll give them a go!</p>
+<p>Free, open-source app for macOS, Windows and Linux; runs GGUF and MLX models.</p>
+<p>Remote &amp; LAN settings, LAN access start and port behaviour.</p>
+<p>Official 16-bit weights (~56 GB) and parameter count.</p>
+<p>Quantized files and sizes, including UD-Q4_K_XL (~18 GB).</p>
+<p>Unsloth: Inkling 2 Mini run-locally guide.</p>
+<p>26.4B parameters, Apache 2.0, 1M context, UD-Q4_K_XL at 17.6 GB, memory by precision.</p>
+<p>Unsloth: Inkling 2 Small run-locally guide.</p>
+<p>594B parameters, smallest file 171.7 GB.</p>
+<p>Thinking Machines Lab: Inkling-2-Mini model card.</p>
+<p>Official weights, released November 17, 2026.</p>
+<p>32 GB GDDR7 consumer GPU used for this build.</p>
+<p>Free, open-source app for macOS, Windows and Linux; runs GGUF and MLX models.</p>
+<p>Remote &amp; LAN settings, LAN access start and port behaviour.</p>
+<p>Official 16-bit weights (~56 GB) and parameter count.</p>
+<p>Quantized files and sizes, including UD-Q4_K_XL (~18 GB).</p>
+<p>Unsloth: Inkling 2 Mini run-locally guide.</p>
+<p>26.4B parameters, Apache 2.0, 1M context, UD-Q4_K_XL at 17.6 GB, memory by precision.</p>
+<p>Unsloth: Inkling 2 Small run-locally guide.</p>
+<p>594B parameters, smallest file 171.7 GB.</p>
+<p>Thinking Machines Lab: Inkling-2-Mini model card.</p>
+<p>Official weights, released November 17, 2026.</p>
+<p id="sec-end-119671">32 GB GDDR7 consumer GPU used for this build.</p>
+<p style="margin-top: 25px;">
+<a href="https://www.gpupartner.com/blog/beginners-guide-local-ai-inkling-qwen-unsloth" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="industry-news-how-to-calculate-your-rising-and-moon-sign-a-beginn-125771.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #125771. Industry News: How to Calculate Your Rising and Moon Sign: A Beginner’s Guide
+        </a>
+        
+        <a href="madrid-5-day-itinerary-a-guide-to-culture-gastronomy-and-local-li-122785.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #122785. Madrid 5-Day Itinerary: A Guide to Culture, Gastronomy, and Local Life
+        </a>
+        
+        <a href="profiling-in-pytorch-part-1-a-beginners-guide-to-torchprofiler-115546.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #115546. Profiling in PyTorch (Part 1): A Beginner's Guide to torch.profiler
+        </a>
+        
+        <a href="industry-news-welcome-inkling-2-mini-cutting-edge-performance-for-115115.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #115115. Industry News: Welcome Inkling 2 Mini, Cutting-edge Performance for your Local Setup
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

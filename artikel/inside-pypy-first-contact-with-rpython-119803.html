@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inside PyPy: First Contact with RPython</title>
+    <meta name="description" content="I get restless now and then and I want to implement a programming language. Then after mustering the resolve, I stew, for there is no good implementation l">
+    <meta name="keywords" content="rpython, language, programming, then, function, pypy, first, there">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua75/artikel/inside-pypy-first-contact-with-rpython-119803.html">
+    
+    <meta property="og:title" content="Inside PyPy: First Contact with RPython">
+    <meta property="og:description" content="I get restless now and then and I want to implement a programming language. Then after mustering the resolve, I stew, for there is no good implementation l">
+    <meta property="og:image" content="https://bernsteinbear.com/favicon.ico">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua75/artikel/inside-pypy-first-contact-with-rpython-119803.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Inside PyPy: First Contact with RPython">
+    <meta name="twitter:description" content="I get restless now and then and I want to implement a programming language. Then after mustering the resolve, I stew, for there is no good implementation l">
+    <meta name="twitter:image" content="https://bernsteinbear.com/favicon.ico">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Inside PyPy: First Contact with RPython", "image": ["https://bernsteinbear.com/favicon.ico"], "datePublished": "2026-11-19T00:00:00+00:00", "dateModified": "2026-11-22T23:09:54.456704", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua75/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua75/artikel/inside-pypy-first-contact-with-rpython-119803.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Inside PyPy: First Contact with RPython?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Bernsteinbear."}}, {"@type": "Question", "name": "Which category does 'Inside PyPy: First Contact with RPython' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Inside PyPy: First Contact with RPython</h1>
+        <div class="meta-line">🌐 Source: <strong>Bernsteinbear</strong> &bull; 📅 19 Nov 2026 &bull; ⏱️ 5 min read (1099 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>I get restless now and then and I want to implement a programming language.</li><li style='margin-bottom:6px;'>There do exist established general-purpose tools for building fast programming
+language implementations:.</li><li style='margin-bottom:6px;'>And more nascent ones such as Deegen, which was used to reimplement Lua.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-119803"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-119803"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-119803"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Inside PyPy: First Contact with RPython" loading="lazy" src="https://bernsteinbear.com/favicon.ico" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-119803">I get restless now and then and I want to implement a programming language. Then after mustering the resolve, I stew, for there is no good implementation
+language.1 What am I to do, build my own programming language so
+that I can then use it to implement the first language? So I go back to
+modifying an existing implementation instead.</p>
+<p>There do exist established general-purpose tools for building fast programming
+language implementations:. <span style="font-size:13px;">(Related: <a href="how-to-train-a-new-language-model-from-scratch-using-transformers-127319.html" style="color:#2563eb; font-weight:600;">How to train a new language model from scratch using Tr...</a>)</span></p>
+<p>And more nascent ones such as Deegen, which was used to reimplement Lua.</p>
+<p>They each take different approaches:. <span style="font-size:13px;">(Related: <a href="how-to-generate-text-using-different-decoding-methods-for-languag-127318.html" style="color:#2563eb; font-weight:600;">How to generate text: using different decoding methods ...</a>)</span></p>
+<p>While none of these spark joy, they do each have benefits, including
+accomplishing the primary goal of offloading a lot of the language runtime
+choices and nasty details.</p>
+<p>Recent findings suggest that in this post we will take a first look at RPython because it is the kind of
+VM implementor’s programming language that I keep thinking about. More on that
+later.</p>
+<p>It has been revealed that before we continue, please heed this warning: RPython is an implementation
+detail of PyPy. It has not had the years of polish that the rest of the system
+has had. Please do not badger maintainers.</p>
+<p>We’re going to build a little program in RPython. I am mostly following along
+with the docs, specifically
+Getting Started with
+RPython.</p>
+<p>In a recent development, there’s a little more ceremony than you might be used to and that’s because
+we’re going to run this file in two modes: normal Python 2 interpreter and
+compiled to C. This is the weirdness of RPython.</p>
+<p>If you don’t have python2 installed, you can install PyPy, which helpfully
+still implements Python 2.</p>
+<p>If this all went fine, you will see it print 6.</p>
+<p>None of this is RPython yet. For that, we need a hint more ceremony.</p>
+<p>This is when we clone the PyPy project, in which we will find RPython.</p>
+<p>Sources indicate that now edit the Python program. Below the entry_point definition, add the
+following function:.</p>
+<p>This target function looks unused, but it is actually a hint to RPython: this
+is where the compiler should start translating.</p>
+<p>Let us now compile this program. Either inside the PyPy directory or with
+PYTHONPATH=/path/to/pypy, run:.</p>
+<p>It has been revealed that if all goes well, you will see a whole mess of output, including a partially
+rendered Mandelbrot fractal. Finally, you will see something like:.</p>
+<p>This is the RPython compilation process. In it, RPython is analyzing types,
+removing memory allocations, monomorphizing functions, and generating C code. Then it hands this C code off to a C compiler to compile.</p>
+<p>You should have in your current directory an executable named double-c, which
+you can run like ./double-c. It should also print 6.</p>
+<p>Recent findings suggest that so far, this is not so different from Python. But let’s try something Pythonic. Let’s see what happens when we also use + to mean string concatenation.</p>
+<p id="sec-mid-119803">Sources indicate that under normal Python 2, this will work just fine, printing aa and then 6. Under RPython, though, you get this inscrutable error (again, rough edges):.</p>
+<p>and are unceremoniously dropped into the debugger, Pdb (hit Ctrl-D or type
+exit).</p>
+<p>In a recent development, from this message you are meant to intuit that RPython did not enjoy that two
+different types flowed into the double function. It helpfully tells you that
+there was a UnionError when trying to reconcile the SomeChar and
+SomeInteger types that flowed into the function’s first parameter. It then
+gives you a pointer to the offending line and an IR dump.</p>
+<p>This happens because RPython requires function parameters to be monomorphic. Though the variables are syntactically untyped, RPython computes a type
+analysis to discover what type each variable should be. When "a" and 3 both
+flow into x, boom, complaint.2.</p>
+<p>To get around this, we do what all good C++ programmers do and we templatize
+the function. The RPython spelling of this is, as with many other features, a
+function annotation:.</p>
+<p>You will find now that RPython happily compiles the program. This works because
+it makes a newly introduced copy of double for every input type of the first (0)
+argument.</p>
+<p>“Hey wait a minute,”, you might ask, “doesn’t this mean it stops being a valid
+Python 2 program?”.</p>
+<p>You can still run the program as long as you provide the location of the
+RPython libraries via PYTHONPATH (as before):.</p>
+<p>This runs ~instantly, which is a big relief. Developing an interpreter project
+with a 30 second or more turnaround time for each compile would be really
+frustrating.</p>
+<p>It has been revealed that this has been a taste of RPython, both great and somewhat frustrating. I
+intentionally made it about RPython as a programming language rather than
+being so focused on RPython as a programming language implementation tool
+because I want some of its features to exist in a general purpose programming
+language… that then also might be used to implement other programming
+languages.</p>
+<p>In a recent development, I bring it up because I want to rehash the stuff that I occasionally grumble
+about in the vicinity of PLDI but for some reason have not written about
+online. Perhaps writing about it will encourage people.</p>
+<p>I think there is a lot of good stuff in RPython:.</p>
+<p>I wish some stuff were different, or at least modifiable:.</p>
+<p>I will probably add more to this list as I continue to remember some years of
+these conversations.</p>
+<p>I don’t really have the time, energy, or expertise to build such a thing. There
+are so many design decisions along the way. It would probably accidentally grow
+to be huge and ossify along the way, and what a bummer that would be.</p>
+<p>If you have any pointers to existing projects or a way to implement such a
+thing in a really lightweight form (read: sub 10k lines, portable ideas), I
+would be very interested.</p>
+<p>Here are some pointers to other projects in the neighborhood:.</p>
+<p>Thanks for CF Bolz-Tereick first for allowing me to talk their ear off about
+this for years and second for reviewing this post.</p>
+<p>I don’t want to implement atop Racket. C++ and C give me endless
+nightmares and are completely DIY. Yes, yes, I have built large VMs on C++
+and C before. One time I posted so hard about the frustration that my tech
+lead unfollowed me on Twitter. I don’t really want to try to think about GC
+in Rust. ↩.</p>
+<p id="sec-end-119803">Industry observers note that I initially thought any variable had to be monomorphic but I
+could not get an error from programs such as x = "a"; x = 3. ↩.</p>
+<p style="margin-top: 25px;">
+<a href="https://bernsteinbear.com/blog/inside-pypy-first-contact-with-rpython/" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="jon-hamm-and-wife-anna-osceola-have-welcomed-their-first-babyinsi-122151.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #122151. Jon Hamm and Wife Anna Osceola Have Welcomed Their First Baby—Inside the ‘Mad Men’ Star’s Bachelor Pad Turned Family Home
+        </a>
+        
+        <a href="star-trek-first-contact-at-30-resistance-is-futile-when-it-comes--116347.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #116347. 'Star Trek: First Contact' at 30: Resistance is futile when it comes to the 'Next Generation' crew's greatest big-screen adventure
+        </a>
+        
+        <a href="as-star-trek-first-contact-turns-30-director-jonathan-frakes-refl-116297.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #116297. As 'Star Trek: First Contact' turns 30, Director Jonathan Frakes reflects on his triumphant time-travel blockbuster (interview)
+        </a>
+        
+        <a href="breaking-introducing-snowball-fight-our-first-ml-agents-environme-127277.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #127277. Breaking: Introducing Snowball Fight ☃️, our first ML-Agents environment
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

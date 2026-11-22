@@ -150,13 +150,13 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-115107">You type one line into Claude or ChatGPT: "Write a press release about our newly introduced booking page and publish it." A minute later you have a live news page with its own link.</p>
-<p>This post reveals what happens in between. It is a walk through the LivePublicator MCP server: which tools the assistant calls, in what order, and why we built it so that a normal release takes three calls. <span style="font-size:13px;">(Related: <a href="tech-report-jimmy-johns-reveals-christmas-vacation-meal-with-excl-115839.html" style="color:#2563eb; font-weight:600;">Tech Report: Jimmy John’s reveals Christmas Vacation me...</a>)</span></p>
-<p>Sources indicate that livePublicator is a remote MCP server. The address is https://livepublicator.com/api/mcp (streamable HTTP, OAuth 2.1). You add it as a custom connector in Claude or as an app in ChatGPT, sign in once, and the assistant gets nine tools. <span style="font-size:13px;">(Related: <a href="latest-update-taco-bell-adds-make-it-flamin-hot-option-for-scorch-115843.html" style="color:#2563eb; font-weight:600;">Latest Update: Taco Bell adds ‘Make It Flamin’ Hot’ opt...</a>)</span></p>
+<p>This post reveals what happens in between. It is a walk through the LivePublicator MCP server: which tools the assistant calls, in what order, and why we built it so that a normal release takes three calls.</p>
+<p>Sources indicate that livePublicator is a remote MCP server. The address is https://livepublicator.com/api/mcp (streamable HTTP, OAuth 2.1). You add it as a custom connector in Claude or as an app in ChatGPT, sign in once, and the assistant gets nine tools. <span style="font-size:13px;">(Related: <a href="industry-news-fine-tuning-clip-with-remote-sensing-satellite-imag-127286.html" style="color:#2563eb; font-weight:600;">Industry News: Fine tuning CLIP with Remote Sensing (Sa...</a>)</span></p>
 <p>Sources indicate that you don't need to sign in to try it. One tool, preview_press_release, works without an account and makes a private preview page that expires after 7 days. It publishes nothing.</p>
 <p>Before the assistant drafts anything, it calls get_account once. The answer holds the firm, the saved press contact, the saved spokesperson, the credits left, and whether releases go live after the automatic checks or wait for a person.</p>
 <p>It has been revealed that this one call removes most of the back and forth. The assistant no longer asks "who is your press contact?" every time. If a contact is saved, create_release fills it in.</p>
 <p>The assistant writes the whole release itself, from the chat or from a page you point it to:.</p>
-<p>Industry observers note that then it sends everything in one call. Here is a short example (the company is made up):.</p>
+<p>Industry observers note that then it sends everything in one call. Here is a short example (the company is made up):. <span style="font-size:13px;">(Related: <a href="industry-news-hyperparameter-search-with-transformers-and-ray-tun-127314.html" style="color:#2563eb; font-weight:600;">Industry News: Hyperparameter Search with Transformers ...</a>)</span></p>
 <p id="sec-mid-115107">The server checks length, structure, links, image size and content, and it returns every problem at once. That part matters for agents. If the server stopped at the first error, the assistant would fix one field, resend, hit the next error, and burn five calls on one draft. With every problem in one answer, it fixes them all and resends once.</p>
 <p>If nothing is wrong, the answer is a private preview link and an edit link. Nothing is published yet, and no credit is used.</p>
 <p>Recent findings suggest that the assistant highlights you the preview and the key facts it wrote. Only after you clearly say "publish" does it call publish_release, with confirm: true.</p>
@@ -189,20 +189,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="claude-code-has-been-leaking-secrets-through-its-dont-ask-again-f-115219.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #115219. Claude Code Has Been Leaking Secrets Through Its "Don't Ask Again" Feature
+        <a href="breaking-three-cats-one-rabies-outbreak-what-happens-next-124669.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #124669. Breaking: Three Cats, One Rabies Outbreak: What Happens Next?
         </a>
         
-        <a href="tech-report-three-cats-one-rabies-outbreak-what-happens-next-113237.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #113237. Tech Report: Three Cats, One Rabies Outbreak: What Happens Next?
+        <a href="ask-dr-paola-help-what-happens-if-cherry-eye-is-left-untreated-no-124616.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #124616. Ask Dr. Paola - HELP! What Happens If Cherry Eye Is Left Untreated? (November 2, 2026)
         </a>
         
-        <a href="industry-news-ask-dr-paola-help-what-happens-if-cherry-eye-is-lef-113227.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #113227. Industry News: Ask Dr. Paola - HELP! What Happens If Cherry Eye Is Left Untreated? (November 2, 2026)
+        <a href="tech-report-updating-to-chatgpt-sites-using-claude-design-guide-a-124055.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #124055. Tech Report: Updating to ChatGPT Sites, Using Claude Design Guide, and Industry News
         </a>
         
-        <a href="breaking-updating-to-chatgpt-sites-using-claude-design-guide-and--112839.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #112839. Breaking: Updating to ChatGPT Sites, Using Claude Design Guide, and Industry News
+        <a href="industry-news-claude-and-chatgpt-project-tips-training-ai-agents--124017.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #124017. Industry News: Claude and ChatGPT Project Tips, Training AI Agents to Work Without You, and Industry News
         </a>
         
     </div>

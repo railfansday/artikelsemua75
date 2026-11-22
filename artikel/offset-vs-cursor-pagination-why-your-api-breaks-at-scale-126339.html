@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offset vs Cursor Pagination: Why Your API Breaks at Scale</title>
+    <meta name="description" content="Recent findings suggest that most APIs start with offset-based pagination. It feels natural: GET /items?page=500&limit=20 is easy to understand, easy to bu">
+    <meta name="keywords" content="pagination, offset, database, cursor, items, page, rows, records">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua75/artikel/offset-vs-cursor-pagination-why-your-api-breaks-at-scale-126339.html">
+    
+    <meta property="og:title" content="Offset vs Cursor Pagination: Why Your API Breaks at Scale">
+    <meta property="og:description" content="Recent findings suggest that most APIs start with offset-based pagination. It feels natural: GET /items?page=500&limit=20 is easy to understand, easy to bu">
+    <meta property="og:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fq7spc2tq1wiixy6np83n.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua75/artikel/offset-vs-cursor-pagination-why-your-api-breaks-at-scale-126339.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Offset vs Cursor Pagination: Why Your API Breaks at Scale">
+    <meta name="twitter:description" content="Recent findings suggest that most APIs start with offset-based pagination. It feels natural: GET /items?page=500&limit=20 is easy to understand, easy to bu">
+    <meta name="twitter:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fq7spc2tq1wiixy6np83n.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Offset vs Cursor Pagination: Why Your API Breaks at Scale", "image": ["https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fq7spc2tq1wiixy6np83n.png"], "datePublished": "2026-11-22T23:03:18", "dateModified": "2026-11-22T23:14:52.076385", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua75/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua75/artikel/offset-vs-cursor-pagination-why-your-api-breaks-at-scale-126339.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Offset vs Cursor Pagination: Why Your API Breaks at Scale?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Dev."}}, {"@type": "Question", "name": "Which category does 'Offset vs Cursor Pagination: Why Your API Breaks at Scale' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Offset vs Cursor Pagination: Why Your API Breaks at Scale</h1>
+        <div class="meta-line">🌐 Source: <strong>Dev</strong> &bull; 📅 22 Nov 2026 &bull; ⏱️ 3 min read (515 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>Recent findings suggest that most APIs start with offset-based pagination.</li><li style='margin-bottom:6px;'>However, once your database table grows to hundreds of thousands or millions of rows, offset pagination quietly degrades performance and causes subtle data anomalies that frustrate end customers.</li><li style='margin-bottom:6px;'>Here is why offset pagination fails at scale and how cursor-based pagination fixes it.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-126339"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-126339"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-126339"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Offset vs Cursor Pagination: Why Your API Breaks at Scale" loading="lazy" src="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fq7spc2tq1wiixy6np83n.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-126339">Recent findings suggest that most APIs start with offset-based pagination. It feels natural: GET /items?page=500&amp;limit=20 is easy to understand, easy to build, and works seamlessly when your database tables contain a few thousand records.</p>
+<p>However, once your database table grows to hundreds of thousands or millions of rows, offset pagination quietly degrades performance and causes subtle data anomalies that frustrate end customers. <span style="font-size:13px;">(Related: <a href="industry-news-how-we-sped-up-transformer-inference-100x-for-api-c-127311.html" style="color:#2563eb; font-weight:600;">Industry News: How we sped up transformer inference 100...</a>)</span></p>
+<p>Here is why offset pagination fails at scale and how cursor-based pagination fixes it. <span style="font-size:13px;">(Related: <a href="tech-report-transformer-based-encoder-decoder-models-127315.html" style="color:#2563eb; font-weight:600;">Tech Report: Transformer-based Encoder-Decoder Models...</a>)</span></p>
+<p>To understand why offset pagination slows down, look at what the database engine does under the hood when executing an OFFSET query.</p>
+<p>It has been revealed that when you request OFFSET 100000, the database does not magically jump to row 100,001. It must scan and sort 100,020 rows in memory or disk, throw away the first 100,000 rows, and return only the remaining 20 rows.</p>
+<p>As the offset increases, query execution time increases linearly ($O(N)$ time complexity). What took 2 milliseconds on page 1 can take several seconds on page 5,000, consuming massive CPU and RAM resources.</p>
+<p>In a recent development, performance is only half the matter. Offset pagination also suffers from window shifting during concurrent writes.</p>
+<p>Imagine a user is viewing Page 1 (items 1 through 20). While they are reading, 5 fresh records are inserted into the database. When the user navigates to Page 2 (OFFSET 20), the database fetches rows 21 through 40 based on the current state.</p>
+<p>Because 5 newly introduced items were inserted at the top:.</p>
+<p id="sec-mid-126339">According to recent reports, if records are deleted instead, items get silently skipped, and the user never sees them. In high-frequency write systems like audit logs, social feeds, or IoT streams, this makes pagination unreliable.</p>
+<p>Cursor pagination (also known as keyset pagination) changes the query strategy. Instead of telling the database "skip N rows," you pass a pointer (the "cursor") to the last item retrieved and ask for "the next N items after this specific record.".</p>
+<p>This relies on an indexed column, such as an auto-incrementing ID or a timestamp combined with a unique identifier.</p>
+<p>It has been revealed that because the WHERE clause leverages an index, the database jumps directly to the matching row without scanning previous records. Performance remains $O(1)$ regardless of how deep into the dataset you paginate.</p>
+<p>Additionally, inserting or deleting items above or below the current cursor will not shift the relative position of the remaining items, keeping pagination results stable.</p>
+<p>In practice, backend APIs typically encode cursor values into a single opaque string (often Base64) to abstract the implementation details from the client.</p>
+<p>Here is a conceptual Node.js handler pattern returning a cursor response:.</p>
+<p>Cursor pagination is superior for performance and accuracy, but it comes with tradeoffs: you lose the ability to jump directly to an arbitrary page number (e.g., "Jump to Page 42").</p>
+<p>Understanding your data access patterns early prevents expensive database migrations and API redesigns down the road.</p>
+<p id="sec-end-126339">Tanmay builds AI agents and automation for businesses and is open to freelance projects. Connect with me on LinkedIn to discuss backend architectures, system design, or engineering automation.</p>
+<p style="margin-top: 25px;">
+<a href="https://dev.to/tanmay2627/offset-vs-cursor-pagination-why-your-api-breaks-at-scale-32ei" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="industry-news-how-we-sped-up-transformer-inference-100x-for-api-c-127311.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #127311. Industry News: How we sped up transformer inference 100x for 🤗 API customers
+        </a>
+        
+        <a href="few-shot-learning-in-practice-gpt-neo-and-the-accelerated-inferen-127296.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #127296. Few-shot learning in practice: GPT-Neo and the 🤗 Accelerated Inference API
+        </a>
+        
+        <a href="introducing-optimum-the-optimization-toolkit-for-transformers-at--127291.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #127291. Introducing Optimum: The Optimization Toolkit for Transformers at Scale
+        </a>
+        
+        <a href="a-gentle-introduction-to-8-bit-matrix-multiplication-for-transfor-127205.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #127205. A Gentle Introduction to 8-bit Matrix Multiplication for transformers at scale using transformers, accelerate and bitsandbytes
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

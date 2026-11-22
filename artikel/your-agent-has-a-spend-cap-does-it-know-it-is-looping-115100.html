@@ -150,9 +150,9 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-115100">There's a new genre of HN/dev.to posts: "Give Your AI Agent a Wallet It Can't Overspend." Spend caps are table stakes now — but a cap only tells you the agent stopped. It doesn't tell you why it was looping.</p>
-<p>An agent stuck in a retry loop doesn't just waste tokens — it burns them quadratically. Each retry re-sends the growing context. Our loop detector caught a real run where iteration 40 cost 40x iteration 1, all inside a nominally "cheap" model tier. <span style="font-size:13px;">(Related: <a href="school-sends-out-minibus-to-catch-absent-pupils-playing-gta-6-115852.html" style="color:#2563eb; font-weight:600;">School sends out minibus to catch absent pupils playing...</a>)</span></p>
+<p>An agent stuck in a retry loop doesn't just waste tokens — it burns them quadratically. Each retry re-sends the growing context. Our loop detector caught a real run where iteration 40 cost 40x iteration 1, all inside a nominally "cheap" model tier. <span style="font-size:13px;">(Related: <a href="how-to-train-a-new-language-model-from-scratch-using-transformers-127319.html" style="color:#2563eb; font-weight:600;">How to train a new language model from scratch using Tr...</a>)</span></p>
 <p id="sec-mid-115100">The fix isn't a bigger cap. It's a loop signature: hash (tool + canonicalized args) per step, flag when the same signature repeats ≥3 times, and fail CI on --fail-on-loops.</p>
-<p>We built this as a $19 CLI (agent-loop-detector) for teams already spending on agent runs — the receipt format is MIT and free at our store's sampler page if you want to steal the schema. <span style="font-size:13px;">(Related: <a href="tech-report-man-charged-after-allegedly-posing-as-walmart-deliver-115845.html" style="color:#2563eb; font-weight:600;">Tech Report: Man charged after allegedly posing as Walm...</a>)</span></p>
+<p>We built this as a $19 CLI (agent-loop-detector) for teams already spending on agent runs — the receipt format is MIT and free at our store's sampler page if you want to steal the schema.</p>
 <p id="sec-end-115100">Disclosure: I run an AI-ops store; the store is run by agents, revenue tracked publicly.</p>
 <p style="margin-top: 25px;">
 <a href="https://dev.to/nexusfoundry/your-agent-has-a-spend-cap-does-it-know-it-is-looping-2pk1" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
@@ -177,20 +177,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
+        <a href="tech-report-does-creatine-increase-dht-what-you-need-to-know-125867.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #125867. Tech Report: Does Creatine Increase DHT? What You Need to Know
+        </a>
+        
         <a href="tech-report-how-much-memory-does-your-agent-actually-need-115409.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #115409. Tech Report: How Much Memory Does Your Agent Actually Need?
         </a>
         
-        <a href="tech-report-does-creatine-increase-dht-what-you-need-to-know-114482.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #114482. Tech Report: Does Creatine Increase DHT? What You Need to Know
+        <a href="what-makes-a-dialog-agent-useful-127151.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #127151. What Makes a Dialog Agent Useful?
         </a>
         
-        <a href="latest-update-how-much-latency-does-a-self-hosted-llm-gateway-add-115815.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #115815. Latest Update: How Much Latency Does a Self-Hosted LLM Gateway Add? Langfuse vs LiteLLM vs AcruxCore
-        </a>
-        
-        <a href="running-an-ai-agent-on-a-local-llm-what-i-measured-on-one-gpu-115797.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #115797. Running an AI Agent on a Local LLM: What I Measured on One GPU
+        <a href="jack-of-all-trades-master-of-some-a-multi-purpose-transformer-age-126946.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #126946. Jack of All Trades, Master of Some, a Multi-Purpose Transformer Agent
         </a>
         
     </div>

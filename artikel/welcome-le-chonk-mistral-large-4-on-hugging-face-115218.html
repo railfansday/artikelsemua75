@@ -150,10 +150,10 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-115218">Industry observers note that mistral Large 4 (aka Le Chonk) is a multimodal, multilingual, Mixture-of-Experts (MoE) model from Mistral. It takes text and images as input and generates text. It has about 1T total, 49B active parameter, and a context window of 1M tokens.</p>
-<p>The model is released in two official variants:.</p>
-<p>There are also GGUFs created by Unsloth and the llama.cpp team. It’s distributed under the Mistral Ecosystem Open-Weight License (an MIT derivative that establishes limitations for model-as-a-service offerings).</p>
-<p>Industry observers note that mistral Large 4 is particularly strong for cybersecurity, coding agents, and multimodality. In this post, we look at how the model works, its capabilities, architecture and more! <span style="font-size:13px;">(Related: <a href="industry-news-take-two-ceo-is-shutting-down-questions-about-gta-7-115851.html" style="color:#2563eb; font-weight:600;">Industry News: Take-Two CEO is shutting down questions ...</a>)</span></p>
-<p>Mistral Large 4 combines a large pool of experts with sparse attention and a Pixtral vision encoder. The language model selects a small group of experts for each token, while its attention indexer selects which earlier token positions to attend to. These are two different forms of sparsity, where one selects feed-forward networks, the other selects context positions. <span style="font-size:13px;">(Related: <a href="breaking-determined-woman-completes-7-marathons-in-a-year-while-p-115854.html" style="color:#2563eb; font-weight:600;">Breaking: “Determined” woman completes 7 marathons in a...</a>)</span></p>
+<p>The model is released in two official variants:. <span style="font-size:13px;">(Related: <a href="how-to-train-a-new-language-model-from-scratch-using-transformers-127319.html" style="color:#2563eb; font-weight:600;">How to train a new language model from scratch using Tr...</a>)</span></p>
+<p>There are also GGUFs created by Unsloth and the llama.cpp team. It’s distributed under the Mistral Ecosystem Open-Weight License (an MIT derivative that establishes limitations for model-as-a-service offerings). <span style="font-size:13px;">(Related: <a href="leveraging-pre-trained-language-model-checkpoints-for-encoder-dec-127312.html" style="color:#2563eb; font-weight:600;">Leveraging Pre-trained Language Model Checkpoints for E...</a>)</span></p>
+<p>Industry observers note that mistral Large 4 is particularly strong for cybersecurity, coding agents, and multimodality. In this post, we look at how the model works, its capabilities, architecture and more!</p>
+<p>Mistral Large 4 combines a large pool of experts with sparse attention and a Pixtral vision encoder. The language model selects a small group of experts for each token, while its attention indexer selects which earlier token positions to attend to. These are two different forms of sparsity, where one selects feed-forward networks, the other selects context positions.</p>
 <p>You can find all the checkpoints in the Mistral Large 4 collection.</p>
 <p>Mistral Large 4 scores 82% on the Artificial Analysis Cyber Index test that asks a model to reproduce a real vulnerability in open-source software and then patch the software. Mistral reports that several closed frontier models score near zero on the same test because they refuse to attempt the work. This is super notable for defenders, because fixing a vulnerability usually requires reproducing the vulnerability. In Mistral’s internal testing, Mistral Large 4 was also useful for malware analysis, vulnerability prioritisation and writing detection rules, which the model was not explicitly trained for.</p>
 <p>In a recent development, mistral mainly positions the model for defensive security work. Vulnerability research and incident response often appear like attacks in model input, so closed source filters can block them. A team that depends on an API can also lose access in the middle of an incident. Crucially, open weight models put both the usage policy and the deployment under the user’s control. That stated, the model still declines harmful requests: on cyber prompts from JailbreakBench, StrongREJECT and AgentHarm, its average refusal rate is higher than any other open weight model.</p>
@@ -217,20 +217,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="welcome-spacy-to-the-hugging-face-hub-104407.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #104407. Welcome spaCy to the Hugging Face Hub
+        <a href="industry-news-welcome-spacy-to-the-hugging-face-hub-127293.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #127293. Industry News: Welcome spaCy to the Hugging Face Hub
         </a>
         
-        <a href="tech-report-welcome-stable-baselines3-to-the-hugging-face-hub-104383.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #104383. Tech Report: Welcome Stable-baselines3 to the Hugging Face Hub 🤗
+        <a href="breaking-welcome-stable-baselines3-to-the-hugging-face-hub-127269.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #127269. Breaking: Welcome Stable-baselines3 to the Hugging Face Hub 🤗
         </a>
         
-        <a href="industry-news-welcome-fastai-to-the-hugging-face-hub-104360.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #104360. Industry News: Welcome fastai to the Hugging Face Hub
+        <a href="welcome-fastai-to-the-hugging-face-hub-127245.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #127245. Welcome fastai to the Hugging Face Hub
         </a>
         
-        <a href="welcome-paddlepaddle-to-the-hugging-face-hub-104269.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #104269. Welcome PaddlePaddle to the Hugging Face Hub
+        <a href="welcome-paddlepaddle-to-the-hugging-face-hub-127154.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #127154. Welcome PaddlePaddle to the Hugging Face Hub
         </a>
         
     </div>

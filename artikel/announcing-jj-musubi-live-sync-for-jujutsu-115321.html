@@ -155,17 +155,17 @@ model (or rather, that is the extent of its security model).</li></ul>
 live-syncs copies of a Jujutsu (jj) repository across multiple machines. Every time jj
 snapshots my work, jj-musubi syncs it to every machine in moments, and also commits, rebases,
 fetches, and so on.</p>
-<p>This simple capability is surprisingly powerful.</p>
+<p>This simple capability is surprisingly powerful. <span style="font-size:13px;">(Related: <a href="simple-considerations-for-simple-people-building-fancy-neural-net-127306.html" style="color:#2563eb; font-weight:600;">Simple considerations for simple people building fancy ...</a>)</span></p>
 <p>jj-musubi makes repos on multiple machines feel like jj workspaces (worktrees if you speak git).</p>
 <p>It’s intended for use by one person who works across several machines, so it has no security
-model (or rather, that is the extent of its security model).</p>
+model (or rather, that is the extent of its security model). <span style="font-size:13px;">(Related: <a href="how-to-train-a-new-language-model-from-scratch-using-transformers-127319.html" style="color:#2563eb; font-weight:600;">How to train a new language model from scratch using Tr...</a>)</span></p>
 <p>Recent findings suggest that jujutsu already treats the working copy as a commit. Running jj status records a snapshot of
 my edits in that commit, which jj-musubi then syncs to my other machines. I like to have my
-shell prompt run jj status, so in practice I rarely have to think about snapshots. <span style="font-size:13px;">(Related: <a href="jujutsu-kaisens-gojo-voice-actor-had-no-idea-he-was-recording-for-115826.html" style="color:#2563eb; font-weight:600;">Jujutsu Kaisen’s Gojo voice actor had no idea he was re...</a>)</span></p>
+shell prompt run jj status, so in practice I rarely have to think about snapshots.</p>
 <p>It has been revealed that jj-musubi does not write to the working copy. Each machine has its own working copy and
 workspaces as usual, so syncs of commits, snapshots, and rewrites can bring in new history while
 a build is running, without changing the files under it. On a laptop, I can work offline, and my
-machine will sync when I’m back on the network. <span style="font-size:13px;">(Related: <a href="breaking-determined-woman-completes-7-marathons-in-a-year-while-p-115854.html" style="color:#2563eb; font-weight:600;">Breaking: “Determined” woman completes 7 marathons in a...</a>)</span></p>
+machine will sync when I’m back on the network.</p>
 <p>Sources indicate that this has also proven handy when I have agents working on several machines. I can give each agent
 its own jj workspace on different systems, then run jj diff -r devbox/agent-1@ on the laptop
 to see what one of them has done so far. If one finds a bug that another needs to fix, they can
@@ -234,20 +234,20 @@ hear about it.</p>
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="jujutsu-kaisens-gojo-voice-actor-had-no-idea-he-was-recording-for-115826.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #115826. Jujutsu Kaisen’s Gojo voice actor had no idea he was recording for GTA 6: “Sit on my lap daddy”
+        <a href="announcing-the-ai-research-residency-program-127258.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #127258. Announcing the 🤗 AI Research Residency Program
         </a>
         
-        <a href="best-black-friday-deals-now-live-google-pixel-samsung-amazon-echo-115716.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #115716. Best Black Friday deals now live: Google Pixel, Samsung, Amazon Echo, TVs, Anker, much more
+        <a href="announcing-the-hugging-face-fellowship-program-127240.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #127240. Announcing the Hugging Face Fellowship Program
         </a>
         
-        <a href="breaking-black-friday-streaming-deals-start-going-live-paramount--115694.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #115694. Breaking: Black Friday streaming deals start going live: Paramount+ for $2.99, Apple TV+ for $6.99, more
+        <a href="industry-news-announcing-evaluation-on-the-hub-127226.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #127226. Industry News: Announcing Evaluation on the Hub
         </a>
         
-        <a href="industry-news-build-live-video-chat-with-webrtc-from-first-call-t-115692.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #115692. Industry News: Build Live Video Chat With WebRTC: From First Call to Production Debugging
+        <a href="industry-news-diffusion-models-live-event-127171.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #127171. Industry News: Diffusion Models Live Event
         </a>
         
     </div>

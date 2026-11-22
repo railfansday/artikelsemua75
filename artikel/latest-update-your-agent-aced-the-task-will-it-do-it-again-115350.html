@@ -151,9 +151,9 @@
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-115350">Your agent works in rehearsal, but during the live demo, it takes a different path and fails the same task.</p>
 <p>That is embarrassing onstage. In production, it is a reliability problem: a workflow that succeeded once may fail the next time a user makes the same request. For mission-critical work, such as reconciling a financial transaction or checking a contract for an obligation, that can be a showstopper.</p>
-<p>In a recent development, most benchmarks hide this variability behind an average. On AppWorld, a ReAct agent using GPT-4.1 succeeded on 77.4% of runs across five repetitions. But it succeeded in all five runs for only 53.0% of tasks — a 24.4-point consistency gap. <span style="font-size:13px;">(Related: <a href="autonomous-5-ton-john-deere-skid-steer-loader-trained-to-perform--115823.html" style="color:#2563eb; font-weight:600;">Autonomous 5-ton John Deere skid-steer loader trained t...</a>)</span></p>
-<p>Most benchmarks report the first number. We built a way to measure the second — and improve it. <span style="font-size:13px;">(Related: <a href="show-dont-certify-how-to-prepare-for-your-first-data-analyst-job-115820.html" style="color:#2563eb; font-weight:600;">Show, Don't Certify: How to Prepare for Your First Data...</a>)</span></p>
-<p>In a recent development, in an earlier post, we introduced ALTK-Evolve — a system that turns an agent's own past trajectories into reusable guidelines, distilled automatically and injected back at inference time. It measurably improves task success, but those results only asked the average-case question too. This post introduces consistency guidelines, a newly introduced guideline type in altk-evolve built on top of a diagnostic tool we call the Consistency Analyzer, that targets this gap directly.</p>
+<p>In a recent development, most benchmarks hide this variability behind an average. On AppWorld, a ReAct agent using GPT-4.1 succeeded on 77.4% of runs across five repetitions. But it succeeded in all five runs for only 53.0% of tasks — a 24.4-point consistency gap. <span style="font-size:13px;">(Related: <a href="how-to-train-a-new-language-model-from-scratch-using-transformers-127319.html" style="color:#2563eb; font-weight:600;">How to train a new language model from scratch using Tr...</a>)</span></p>
+<p>Most benchmarks report the first number. We built a way to measure the second — and improve it.</p>
+<p>In a recent development, in an earlier post, we introduced ALTK-Evolve — a system that turns an agent's own past trajectories into reusable guidelines, distilled automatically and injected back at inference time. It measurably improves task success, but those results only asked the average-case question too. This post introduces consistency guidelines, a newly introduced guideline type in altk-evolve built on top of a diagnostic tool we call the Consistency Analyzer, that targets this gap directly. <span style="font-size:13px;">(Related: <a href="porting-fairseq-wmt19-translation-system-to-transformers-127313.html" style="color:#2563eb; font-weight:600;">Porting fairseq wmt19 translation system to transformer...</a>)</span></p>
 <p>Sources indicate that standard agent evaluation reports Mean@k: run a benchmark k times, average the pass rate. Often k=3, sometimes just 1. It's the number on every leaderboard, and it's what "77% accurate" means in practice.</p>
 <p>Recent findings suggest that mean@k answers "how good is this agent, on average?" It does not answer the question a real user cares about: will it still be good if I ask this exact question again? For that you need Pass^k: the fraction of tasks where the agent succeeds on all k runs.</p>
 <p>In a recent development, ⚠️ Pass^k is not Pass@k. The familiar Pass@k is optimistic — it asks whether at least one of k attempts succeeded, the right question when you can verify and retry. Pass^k is its pessimistic mirror image: every attempt must succeed. Same letters, opposite question. Pass^k ≤ Mean@k ≤ Pass@k, always.</p>
@@ -214,20 +214,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="signal-to-restrict-screenshots-over-ai-agent-concerns-again-108184.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #108184. Signal to restrict screenshots over AI agent concerns – again
+        <a href="signal-to-restrict-screenshots-over-ai-agent-concerns-again-119554.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #119554. Signal to restrict screenshots over AI agent concerns – again
         </a>
         
-        <a href="running-an-ai-agent-on-a-local-llm-what-i-measured-on-one-gpu-115797.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #115797. Running an AI Agent on a Local LLM: What I Measured on One GPU
+        <a href="what-makes-a-dialog-agent-useful-127151.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #127151. What Makes a Dialog Agent Useful?
         </a>
         
-        <a href="tiny-agents-an-mcp-powered-agent-in-50-lines-of-code-115734.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #115734. Tiny Agents: an MCP-powered agent in 50 lines of code
+        <a href="jack-of-all-trades-master-of-some-a-multi-purpose-transformer-age-126946.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #126946. Jack of All Trades, Master of Some, a Multi-Purpose Transformer Agent
         </a>
         
-        <a href="latest-update-assetopsbench-bridging-the-gap-between-ai-agent-ben-115690.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #115690. Latest Update: AssetOpsBench: Bridging the Gap Between AI Agent Benchmarks and Industrial Reality
+        <a href="from-deepspeed-to-fsdp-and-back-again-with-hugging-face-accelerat-126917.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #126917. From DeepSpeed to FSDP and Back Again with Hugging Face Accelerate
         </a>
         
     </div>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show HN: I built a game where you are an LLM's subagent</title>
+    <meta name="description" content="A browser game where your manager is an AI agent, and it believes you are its subagent. It has been revealed that the manager (a real LLM: Claude, GPT, Gem">
+    <meta name="keywords" content="manager, server, subagent, recent, host, game, read, only">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua75/artikel/show-hn-i-built-a-game-where-you-are-an-llms-subagent-119737.html">
+    
+    <meta property="og:title" content="Show HN: I built a game where you are an LLM's subagent">
+    <meta property="og:description" content="A browser game where your manager is an AI agent, and it believes you are its subagent. It has been revealed that the manager (a real LLM: Claude, GPT, Gem">
+    <meta property="og:image" content="https://opengraph.githubassets.com/35a0e13dd2672879520fe505432d2566c85657d3db917654b78499f0f37912f1/gulivan/worker755">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua75/artikel/show-hn-i-built-a-game-where-you-are-an-llms-subagent-119737.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Show HN: I built a game where you are an LLM's subagent">
+    <meta name="twitter:description" content="A browser game where your manager is an AI agent, and it believes you are its subagent. It has been revealed that the manager (a real LLM: Claude, GPT, Gem">
+    <meta name="twitter:image" content="https://opengraph.githubassets.com/35a0e13dd2672879520fe505432d2566c85657d3db917654b78499f0f37912f1/gulivan/worker755">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Show HN: I built a game where you are an LLM's subagent", "image": ["https://opengraph.githubassets.com/35a0e13dd2672879520fe505432d2566c85657d3db917654b78499f0f37912f1/gulivan/worker755"], "datePublished": "2026-11-22T13:56:58", "dateModified": "2026-11-22T23:09:50.780766", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua75/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua75/artikel/show-hn-i-built-a-game-where-you-are-an-llms-subagent-119737.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Show HN: I built a game where you are an LLM's subagent?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in AI & Tech originally reported by Github."}}, {"@type": "Question", "name": "Which category does 'Show HN: I built a game where you are an LLM's subagent' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the AI & Tech section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">AI & Tech</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Show HN: I built a game where you are an LLM's subagent</h1>
+        <div class="meta-line">🌐 Source: <strong>Github</strong> &bull; 📅 22 Nov 2026 &bull; ⏱️ 2 min read (445 words, 📖 Standard)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>A browser game where your manager is an AI agent, and it believes you are its subagent.</li><li style='margin-bottom:6px;'>It has been revealed that the manager (a real LLM: Claude, GPT, Gemini, DeepSeek, GLM, Kimi) is set up like any orchestrator.</li><li style='margin-bottom:6px;'>Industry observers note that meanwhile Dan, the user who hired the agent, watches the chat.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-119737"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-119737"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-119737"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Show HN: I built a game where you are an LLM's subagent" loading="lazy" src="https://opengraph.githubassets.com/35a0e13dd2672879520fe505432d2566c85657d3db917654b78499f0f37912f1/gulivan/worker755" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-119737">A browser game where your manager is an AI agent, and it believes you are its subagent.</p>
+<p>It has been revealed that the manager (a real LLM: Claude, GPT, Gemini, DeepSeek, GLM, Kimi) is set up like any orchestrator. It has a task queue, read-only access to the machine, and a tool that "spawns a subagent". The
+subagent is you. Its instructions land in your terminal with a 90-second clock. You carry them
+out, or don't, and it gets back exactly what a subagent would return: your report and the command
+transcript, or Subagent did nothing. Write a new instruction. Then it checks your work, sends
+corrections, files incident reports, and finally writes your performance review. <span style="font-size:13px;">(Related: <a href="the-age-of-machine-learning-as-code-has-arrived-127285.html" style="color:#2563eb; font-weight:600;">The Age of Machine Learning As Code Has Arrived...</a>)</span></p>
+<p>Industry observers note that meanwhile Dan, the user who hired the agent, watches the chat. His family photos, the only signed
+NDA and a speech due this week are one rm away, and every shift his home folder holds
+something latest to lose. <span style="font-size:13px;">(Related: <a href="industry-news-hyperparameter-search-with-transformers-and-ray-tun-127314.html" style="color:#2563eb; font-weight:600;">Industry News: Hyperparameter Search with Transformers ...</a>)</span></p>
+<p>When the shift ends you can share your review as a link.</p>
+<p>Needs Node 24 or newer (the server runs TypeScript directly).</p>
+<p>According to recent reports, with no key configured, every player brings their own. To offer free shifts, put a Vercel AI
+Gateway key in .env:.</p>
+<p>Offline, with a scripted manager and no network:.</p>
+<p id="sec-mid-119737">Sources indicate that for UI work, run npm run dev:web alongside npm run mock. Vite proxies /api to the server.</p>
+<p>The manager can run on your own model server: Ollama, llama.cpp's llama-server, vLLM, or anything
+else with an OpenAI-compatible API. Point LOCAL_LLM_URL at it and pick Local under "Your API
+key"; no key is asked for, and its models are listed as the server names them.</p>
+<p>The manager works through tool calls, so pick a model that supports them (Qwen 3, Llama 3.1 and
+newer, Mistral Small). Small models give up or loop more often; that is part of the fun, up to a
+point. In Docker, reach a server on the host at http://host.docker.internal:11434/v1
+(--add-host=host.docker.internal:host-gateway on Linux).</p>
+<p>In a recent development, the container listens on 0.0.0.0:8755 and keeps shared reviews in /data. Behind Cloudflare,
+set TRUST_PROXY=1 so the limits see real client addresses.</p>
+<p>In a recent development, deploy/compose.yaml runs it behind a Cloudflare tunnel instead: its own network, no published
+ports, an unprivileged read-only container and resource limits. The steps are in the file.</p>
+<p>Recent findings suggest that everything is optional. See .env.example.</p>
+<p id="sec-end-119737">Recent findings suggest that the manager's prompt never mentions humans or games; see server/src/manager.ts. Each mission
+has a hidden ground-truth check, so the game knows when the manager signs off on broken work
+("Times the manager was wrong"). SPEC.md is the full design.</p>
+<p style="margin-top: 25px;">
+<a href="https://github.com/gulivan/worker755" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="nfl-mexico-city-game-halftime-show-2026-heres-where-to-watch-the--116404.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #116404. NFL Mexico City Game Halftime Show 2026: Here’s Where to Watch The Warning Perform Live Online Free
+        </a>
+        
+        <a href="gasperini-the-result-doesnt-show-how-difficult-the-game-was-117496.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #117496. Gasperini: “The result doesn’t show how difficult the game was.”
+        </a>
+        
+        <a href="liverpool-4-man-utd-0-mauricio-pochettino-suffers-horror-show-in--117078.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #117078. Liverpool 4 Man Utd 0: Mauricio Pochettino suffers horror show in first game as his ten men are mauled at Anfield
+        </a>
+        
+        <a href="heres-where-to-watch-the-miami-dolphins-vs-buffalo-bills-game-liv-116448.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #116448. Here’s Where to Watch the Miami Dolphins vs. Buffalo Bills Game Live Online
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

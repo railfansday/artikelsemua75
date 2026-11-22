@@ -150,10 +150,10 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-115512">I’ve been bashing on updating this site’s design for the last couple of weeks. It’s high time things get a fresh coat of paint, right? The last version of CSS-Tricks was pushed five years ago. That’s ancient in web (and dog) years.</p>
-<p>Recent findings suggest that it’s not like the site has simply sat all that time. We pushed lots of changes and shipped newly introduced features, particularly since 2024, but we never really got the paint brushes out of storage.</p>
-<p>Now, before there’s a chorus of “things don’t look thaaaat different” I want to say I’m rarely a fan of complete re-builds and tend to lean into iterative releases. And the newly introduced v20 theme is what I’d call an iterative rollup that’s worthy of a version bump. <span style="font-size:13px;">(Related: <a href="developer-builds-a-discord-kitten-thats-actually-an-ai-girlfriend-115841.html" style="color:#2563eb; font-weight:600;">Developer builds a ‘Discord kitten’ that’s actually an ...</a>)</span></p>
+<p>Recent findings suggest that it’s not like the site has simply sat all that time. We pushed lots of changes and shipped newly introduced features, particularly since 2024, but we never really got the paint brushes out of storage. <span style="font-size:13px;">(Related: <a href="large-language-models-a-newly-introduced-moores-law-127283.html" style="color:#2563eb; font-weight:600;">Large Language Models: A Newly introduced Moore's Law?...</a>)</span></p>
+<p>Now, before there’s a chorus of “things don’t look thaaaat different” I want to say I’m rarely a fan of complete re-builds and tend to lean into iterative releases. And the newly introduced v20 theme is what I’d call an iterative rollup that’s worthy of a version bump. <span style="font-size:13px;">(Related: <a href="how-to-generate-text-using-different-decoding-methods-for-languag-127318.html" style="color:#2563eb; font-weight:600;">How to generate text: using different decoding methods ...</a>)</span></p>
 <p>Let’s go over the most notable updates to see why.</p>
-<p>First and foremost, some of the biggest changes are what you don’t see. As you might imagine, this site has carried over plenty of pieces across 19 years. I decided to excavate the theme and definitely found some ghosts to bust. <span style="font-size:13px;">(Related: <a href="show-dont-certify-how-to-prepare-for-your-first-data-analyst-job-115820.html" style="color:#2563eb; font-weight:600;">Show, Don't Certify: How to Prepare for Your First Data...</a>)</span></p>
+<p>First and foremost, some of the biggest changes are what you don’t see. As you might imagine, this site has carried over plenty of pieces across 19 years. I decided to excavate the theme and definitely found some ghosts to bust.</p>
 <p>In a recent development, for example, the global compiled JavaScript file retained some scripts that just weren’t being used anymore. Things like handling embedded versions of the newsletter from before we began self-hosting the posts. There were relics that catered specifically to the Flexbox Guide for handling toggles back before we had proper HTML . There was a jQuery lazy-loader thing that is well-covered by WordPress core now. We had some scripts for serving third-party ads that are no longer needed now that we’re self-hosting ads. Things like that. The overall JavaScript was nicely trimmed from 151.6 KB (55.3 KB gzipped) to 133.8 KB (48.1 KB).</p>
 <p>I also decided to formally retire the CSS-Tricks Forum. We put it in “archive mode” back in, like, 2018. None of those discussions are particularly valuable for today as they were over 10 years ago, so I deactivated the bbPress plugin that powered it and cleared out the database… and wow, that carved a whopping 400 MB from the ol’ database, not to mention it allowed me to drop several custom templates from the theme.</p>
 <p>In a recent development, there were more ghosts busted along the way and, to be sure, there are still some lurking around. But it’s way less scary poking around the theme directory now, and further cleanup should be a lot easier from here on out.</p>
@@ -230,16 +230,16 @@
             📰 #115516. Breaking: RSS Club: CSS-Tricks Redesign Preview
         </a>
         
-        <a href="whats-important-19-css-refraction-effects-scroll-state-queries-cu-115539.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #115539. What’s !important #19: CSS Refraction Effects, Scroll State Queries, @custom-media, and More
+        <a href="industry-news-how-to-use-css-attribute-selectors-to-build-more-fl-126750.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #126750. Industry News: How to Use CSS Attribute Selectors to Build More Flexible User Interfaces
         </a>
         
-        <a href="breaking-re-implementing-nth-child-with-modern-css-115527.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #115527. Breaking: Re-Implementing :nth-child() With Modern CSS
+        <a href="how-to-build-an-accessible-customer-reviews-section-with-html-and-126695.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #126695. How to Build an Accessible Customer Reviews Section with HTML and CSS
         </a>
         
-        <a href="taming-typography-building-a-modern-css-reset-115519.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #115519. Taming Typography: Building a Modern CSS Reset
+        <a href="breaking-tricks-from-openai-gpt-oss-you-can-use-with-transformers-126534.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #126534. Breaking: Tricks from OpenAI gpt-oss YOU 🫵 can use with transformers
         </a>
         
     </div>

@@ -150,10 +150,10 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-115409">Sources indicate that in our previous post, we compared ALTK-Evolve with ACE and indicated that how you deliver an agent's self-distilled guidelines — a few retrieved per task vs. the whole set injected — drives both accuracy and cost. This post steps back to the question that comes before it: how much should you give it?</p>
-<p>Equipping an agent with agentic memory sounds simple: distill lessons from its past work, put them back in context, and more experience should mean better performance. It doesn't always work that way. When we scaled the evaluation to eight models — from a 30B dense model to frontier proprietary systems — one finding stood out:. <span style="font-size:13px;">(Related: <a href="latest-update-japan-debuts-a-dumbphone-that-doesnt-connect-to-int-115850.html" style="color:#2563eb; font-weight:600;">Latest Update: Japan debuts a ‘dumbphone’ that doesn’t ...</a>)</span></p>
-<p>Agentic memory is not a feature you switch on. It's a dose you calibrate to the model.</p>
+<p>Equipping an agent with agentic memory sounds simple: distill lessons from its past work, put them back in context, and more experience should mean better performance. It doesn't always work that way. When we scaled the evaluation to eight models — from a 30B dense model to frontier proprietary systems — one finding stood out:. <span style="font-size:13px;">(Related: <a href="how-to-train-a-new-language-model-from-scratch-using-transformers-127319.html" style="color:#2563eb; font-weight:600;">How to train a new language model from scratch using Tr...</a>)</span></p>
+<p>Agentic memory is not a feature you switch on. It's a dose you calibrate to the model. <span style="font-size:13px;">(Related: <a href="leveraging-pre-trained-language-model-checkpoints-for-encoder-dec-127312.html" style="color:#2563eb; font-weight:600;">Leveraging Pre-trained Language Model Checkpoints for E...</a>)</span></p>
 <p>ALTK-Evolve lets an agent learn from its own past trajectories: distilling reusable guidelines and injecting them back at inference time, with no weight updates and no human annotation.</p>
-<p>The right dose differs by model tier: strong models with headroom want the full guideline set, weaker models do best with a compact core plus per-task retrieval, and saturated models show no measurable gain. <span style="font-size:13px;">(Related: <a href="la-noire-2-leak-resurfaces-after-source-gets-gta-6-ending-right-115834.html" style="color:#2563eb; font-weight:600;">LA Noire 2 leak resurfaces after source gets GTA 6 endi...</a>)</span></p>
+<p>The right dose differs by model tier: strong models with headroom want the full guideline set, weaker models do best with a compact core plus per-task retrieval, and saturated models show no measurable gain.</p>
 <p>Curated retrieval can be both the most accurate and the cheapest option: gpt-oss-120b gained +16.1pp task completion at only +5% tokens — and prompt caching keeps even the full guideline set affordable in production.</p>
 <p>According to recent reports, not every model benefits from the same amount of memory. Across eight models spanning the capability spectrum, we saw three recurring patterns:.</p>
 <p>In a recent development, strong models with headroom want the full guideline set — every guideline, including rare edge-case lessons. They have the capacity to absorb and apply all of it. DeepSeek-V3.2 (671B MoE) climbed +9.5 percentage points in task completion when given its full self-mined guideline set.</p>
@@ -217,20 +217,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="tech-report-does-creatine-increase-dht-what-you-need-to-know-114482.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #114482. Tech Report: Does Creatine Increase DHT? What You Need to Know
+        <a href="tech-report-does-creatine-increase-dht-what-you-need-to-know-125867.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #125867. Tech Report: Does Creatine Increase DHT? What You Need to Know
         </a>
         
-        <a href="latest-update-how-much-latency-does-a-self-hosted-llm-gateway-add-115815.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #115815. Latest Update: How Much Latency Does a Self-Hosted LLM Gateway Add? Langfuse vs LiteLLM vs AcruxCore
+        <a href="tech-report-what-actually-happens-when-a-kafka-region-fails-126646.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #126646. Tech Report: What Actually Happens When a Kafka Region Fails?
         </a>
         
-        <a href="tech-report-proton-pass-is-up-to-60-off-for-black-fridayand-it-do-115673.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #115673. Tech Report: Proton Pass is up to 60% off for Black Friday—and it does way more than just store your passwords
+        <a href="tech-report-power-bi-mcp-server-how-to-brief-an-ai-agent-to-build-126503.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #126503. Tech Report: Power BI MCP server: how to brief an AI agent to build accurate measures
         </a>
         
-        <a href="tech-report-how-an-agent-built-a-3d-paris-gallery-by-chaining-two-115533.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #115533. Tech Report: How an Agent Built a 3D Paris Gallery by Chaining Two Hugging Face Spaces
+        <a href="tech-report-agent-anomaly-detection-safeguarding-agents-across-ot-126411.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #126411. Tech Report: Agent Anomaly Detection: Safeguarding agents across other clouds
         </a>
         
     </div>

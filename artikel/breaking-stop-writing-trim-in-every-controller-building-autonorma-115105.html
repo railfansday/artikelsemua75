@@ -150,12 +150,12 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-115105">How many times have you reviewed a pull request in ASP.NET Core and spotted something like this?</p>
-<p>Recent findings suggest that across enterprise .NET codebases, input canonicalization is often treated as an afterthought. It gets scattered across controllers, MediatR handlers, FluentValidation transform rules, and repository methods.</p>
+<p>Recent findings suggest that across enterprise .NET codebases, input canonicalization is often treated as an afterthought. It gets scattered across controllers, MediatR handlers, FluentValidation transform rules, and repository methods. <span style="font-size:13px;">(Related: <a href="how-to-generate-text-using-different-decoding-methods-for-languag-127318.html" style="color:#2563eb; font-weight:600;">How to generate text: using different decoding methods ...</a>)</span></p>
 <p>Inevitably, someone forgets a .Trim() on an endpoint:.</p>
 <p>Recent findings suggest that to solve this, developers often reach for a global JsonConverter. But as many discover the hard way, global string converters introduce serious production bugs.</p>
-<p>Here is why naive solutions break, and how we architected AutoNormalize—an open-source input canonicalization engine for ASP.NET Core, System.Text.Json, and EF Core that recently hit v1.0.0 on NuGet. (You can also try the live normalization rules and zero-allocation benchmarks in our interactive web sandbox). <span style="font-size:13px;">(Related: <a href="university-launches-5m-smart-system-that-checks-who-is-actually-l-115853.html" style="color:#2563eb; font-weight:600;">University launches $5m smart system that checks who is...</a>)</span></p>
+<p>Here is why naive solutions break, and how we architected AutoNormalize—an open-source input canonicalization engine for ASP.NET Core, System.Text.Json, and EF Core that recently hit v1.0.0 on NuGet. (You can also try the live normalization rules and zero-allocation benchmarks in our interactive web sandbox). <span style="font-size:13px;">(Related: <a href="porting-fairseq-wmt19-translation-system-to-transformers-127313.html" style="color:#2563eb; font-weight:600;">Porting fairseq wmt19 translation system to transformer...</a>)</span></p>
 <p>If you register a global string converter or reflectively trim every string property in a request, you immediately introduce a security vulnerability:.</p>
-<p>The Fix: Defense-in-depth heuristic shielding. AutoNormalize automatically shields sensitive property names (Password, ApiKey, Token, Secret, Salt, Signature) by default, while providing explicit declarative attributes ([DoNotNormalize], [PreserveWhitespace]) for fine-grained control. <span style="font-size:13px;">(Related: <a href="breaking-determined-woman-completes-7-marathons-in-a-year-while-p-115854.html" style="color:#2563eb; font-weight:600;">Breaking: “Determined” woman completes 7 marathons in a...</a>)</span></p>
+<p>The Fix: Defense-in-depth heuristic shielding. AutoNormalize automatically shields sensitive property names (Password, ApiKey, Token, Secret, Salt, Signature) by default, while providing explicit declarative attributes ([DoNotNormalize], [PreserveWhitespace]) for fine-grained control.</p>
 <p>Modern C# promotes immutable data transfer objects:.</p>
 <p>It has been revealed that if you attempt post-deserialization normalization via reflection or object traversal, you will hit a wall. Positional records have init-only properties and are instantiated via a primary constructor. Mutating them post-construction requires unsafe reflection or creating a fresh copy via with expressions, allocating unnecessary memory.</p>
 <p>The Fix: In-Flight System.Text.Json Modifiers. Rather than touching the object after it is constructed, AutoNormalize hooks IJsonTypeInfoResolver.Modifiers in System.Text.Json. We attach a property-scoped converter during serialization metadata contract building:.</p>
@@ -195,20 +195,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
+        <a href="sygra-the-one-stop-framework-for-building-data-for-llms-and-slms-126493.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #126493. SyGra: The One-Stop Framework for Building Data for LLMs and SLMs
+        </a>
+        
+        <a href="inside-a-modern-hamptons-home-with-views-in-nearly-every-directio-123618.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #123618. Inside a Modern Hamptons Home With Views in Nearly Every Direction
+        </a>
+        
         <a href="taming-typography-building-a-modern-css-reset-115519.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #115519. Taming Typography: Building a Modern CSS Reset
         </a>
         
-        <a href="inside-a-modern-hamptons-home-with-views-in-nearly-every-directio-112231.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #112231. Inside a Modern Hamptons Home With Views in Nearly Every Direction
-        </a>
-        
-        <a href="latest-update-trump-vows-to-stop-us-companies-from-building-data--108002.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #108002. Latest Update: Trump vows to stop U.S. companies from building data centers abroad, threatens 'tremendous tax'
-        </a>
-        
-        <a href="industry-news-sygra-the-one-stop-framework-for-building-data-for--103609.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #103609. Industry News: SyGra: The One-Stop Framework for Building Data for LLMs and SLMs
+        <a href="simple-considerations-for-simple-people-building-fancy-neural-net-127306.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #127306. Simple considerations for simple people building fancy neural networks
         </a>
         
     </div>

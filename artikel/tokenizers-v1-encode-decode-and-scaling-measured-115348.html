@@ -150,10 +150,10 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-115348">The tokenizer has not historically been the bottleneck within ML workflows. Compute-wise, tokenization is light compared to the heavy modeling happening in the rest of the pipeline. Yet, in some cases, it has rapidly become key to accelerating (or slowing down) your machine learning work.</p>
-<p>As models become faster and workloads scale, that balance begins to shift. Training on massive datasets, serving many concurrent requests, or repeatedly processing long inputs can put enough pressure on the tokenizer that it starves the model of data. <span style="font-size:13px;">(Related: <a href="openais-ai-models-boost-amds-upcoming-flagship-gpu-design-by-up-t-115821.html" style="color:#2563eb; font-weight:600;">OpenAI's AI models boost AMD's upcoming flagship GPU de...</a>)</span></p>
-<p>This is why we have chosen to heavily focus on performance for the upcoming version 1 of tokenizers. Tokenization should be light and should scale with your workflow. Your GPUs should never sit idle waiting for the CPU to complete its tokenization.</p>
+<p>As models become faster and workloads scale, that balance begins to shift. Training on massive datasets, serving many concurrent requests, or repeatedly processing long inputs can put enough pressure on the tokenizer that it starves the model of data. <span style="font-size:13px;">(Related: <a href="how-to-train-a-new-language-model-from-scratch-using-transformers-127319.html" style="color:#2563eb; font-weight:600;">How to train a new language model from scratch using Tr...</a>)</span></p>
+<p>This is why we have chosen to heavily focus on performance for the upcoming version 1 of tokenizers. Tokenization should be light and should scale with your workflow. Your GPUs should never sit idle waiting for the CPU to complete its tokenization. <span style="font-size:13px;">(Related: <a href="introducing-optimum-the-optimization-toolkit-for-transformers-at--127291.html" style="color:#2563eb; font-weight:600;">Introducing Optimum: The Optimization Toolkit for Trans...</a>)</span></p>
 <p>In this article, we look at what makes v1 faster than v0.23, often by tens of times.</p>
-<p>In a recent development, this work was entirely possible thanks to the rest of the ecosystem. Tokenization is a very active area of open source work, and libraries such as gigatoken, tiktoken, kitoken, tokie, fastokens, wordchipper and ai-tokenizer, as well as many others, have each pushed on what a fast tokenizer can be. We read that work, and several of the ideas below reached us because another project revealed they were worth trying. <span style="font-size:13px;">(Related: <a href="la-noire-2-leak-resurfaces-after-source-gets-gta-6-ending-right-115834.html" style="color:#2563eb; font-weight:600;">LA Noire 2 leak resurfaces after source gets GTA 6 endi...</a>)</span></p>
+<p>In a recent development, this work was entirely possible thanks to the rest of the ecosystem. Tokenization is a very active area of open source work, and libraries such as gigatoken, tiktoken, kitoken, tokie, fastokens, wordchipper and ai-tokenizer, as well as many others, have each pushed on what a fast tokenizer can be. We read that work, and several of the ideas below reached us because another project revealed they were worth trying.</p>
 <p>Before this refactor, tokenizers was nowhere near the performance it could have had, so contributing to it may not have seemed worth it. With this refactor, we hope to make clear that we intend tokenizers to be a library worth contributing to.</p>
 <p>We also thank IBM, NVIDIA, and the ExecuTorch team for contributing patches and helping us test across a wide range of hardware to broaden platform support.</p>
 <p>Sources indicate that we showcase results for the release candidate of tokenizers v1 against other widely used alternatives. We go over single-threaded, multi-threaded, scaling across threads, per-model comparison, per-language comparison, latency, decoding throughput, memory heap, as well as crate size.</p>
@@ -211,20 +211,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="running-an-ai-agent-on-a-local-llm-what-i-measured-on-one-gpu-115797.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #115797. Running an AI Agent on a Local LLM: What I Measured on One GPU
+        <a href="how-to-train-a-new-language-model-from-scratch-using-transformers-127319.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #127319. How to train a new language model from scratch using Transformers and Tokenizers
         </a>
         
-        <a href="lerobot-v050-scaling-every-dimension-115635.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #115635. LeRobot v0.5.0: Scaling Every Dimension
+        <a href="breaking-scaling-up-bert-inference-on-cpu-part-1-127298.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #127298. Breaking: Scaling-up BERT Inference on CPU (Part 1)
         </a>
         
-        <a href="qcon-san-francisco-2026-scaling-tech-by-aligning-humans-115259.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #115259. QCon San Francisco 2026: Scaling Tech by Aligning Humans
+        <a href="industry-news-scaling-up-bert-like-model-inference-on-modern-cpu--127281.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #127281. Industry News: Scaling up BERT-like model Inference on modern CPU  - Part 2
         </a>
         
-        <a href="tech-report-senior-product-marketing-manager-scaling-creators-at--112409.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #112409. Tech Report: Senior Product Marketing Manager - Scaling Creators at Kit
+        <a href="latest-update-rocket-money-x-hugging-face-scaling-volatile-ml-mod-127036.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #127036. Latest Update: Rocket Money x Hugging Face: Scaling Volatile ML Models in Production​
         </a>
         
     </div>
