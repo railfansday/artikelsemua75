@@ -150,12 +150,12 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-80633">Sources indicate that we gave Claude the ability to fine-tune language models using a upcoming tool called Hugging Face Skills. Not just write training scripts, but to actually submit jobs to cloud GPUs, monitor progress, and push finished models to the Hugging Face Hub. This tutorial demonstrates you how it works and how to use it yourself.</p>
-<p>Claude Code can use "skills"—packaged instructions, scripts, and domain knowledge—to accomplish specialized tasks. The hf-llm-trainer skill teaches Claude everything it needs to know about training: which GPU to pick for your model size, how to configure Hub authentication, when to use LoRA versus full fine-tuning, and how to handle the dozens of other decisions that go into a successful training run. <span style="font-size:13px;">(Related: <a href="tech-report-how-to-train-a-fresh-language-model-from-scratch-usin-81563.html" style="color:#2563eb; font-weight:600;">Tech Report: How to train a fresh language model from s...</a>)</span></p>
+<p>Claude Code can use "skills"—packaged instructions, scripts, and domain knowledge—to accomplish specialized tasks. The hf-llm-trainer skill teaches Claude everything it needs to know about training: which GPU to pick for your model size, how to configure Hub authentication, when to use LoRA versus full fine-tuning, and how to handle the dozens of other decisions that go into a successful training run.</p>
 <p>With this skill, you can tell Claude things like:.</p>
-<p>The model trains on Hugging Face GPUs while you do other things. When it's done, your fine-tuned model appears on the Hub, ready to use. <span style="font-size:13px;">(Related: <a href="latest-update-leveraging-pre-trained-language-model-checkpoints-f-81556.html" style="color:#2563eb; font-weight:600;">Latest Update: Leveraging Pre-trained Language Model Ch...</a>)</span></p>
+<p>The model trains on Hugging Face GPUs while you do other things. When it's done, your fine-tuned model appears on the Hub, ready to use. <span style="font-size:13px;">(Related: <a href="tech-report-determined-woman-completes-7-marathons-in-a-year-whil-92974.html" style="color:#2563eb; font-weight:600;">Tech Report: “Determined” woman completes 7 marathons i...</a>)</span></p>
 <p>It has been revealed that this isn't a toy demo. The skill supports the same training methods used in production: supervised fine-tuning, direct preference optimization, and reinforcement learning with verifiable rewards. You can train models from 0.5B to 70B parameters, convert them to GGUF for local deployment, and run multi-stage pipelines that combine different techniques.</p>
 <p>It has been revealed that hugging Face skills are compatible with Claude Code, Codex, and Gemini CLI. With integrations on the way for Cursor, Windsurf, and Continue.</p>
-<p>This repo includes gemini-extension.json to integrate with the Gemini CLI.</p>
+<p>This repo includes gemini-extension.json to integrate with the Gemini CLI. <span style="font-size:13px;">(Related: <a href="woman-evicted-after-apartments-ai-assistant-mistakenly-approves-r-92942.html" style="color:#2563eb; font-weight:600;">Woman evicted after apartment’s AI assistant mistakenly...</a>)</span></p>
 <p>You have to authenticate to your Hugging Face account with a write-access token so that the job can create a model repo.</p>
 <p>Configure Hugging Face MCP Server to use your write token by sending it in either the HF_TOKEN or Authorization: Bearer HTTP Headers.</p>
 <p>For Claude Code: claude mcp add --transport http hf-skills https://huggingface.co/mcp?bouquet=skills --header "Authorization: Bearer $HF_TOKEN".</p>
@@ -245,6 +245,10 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
+        <a href="we-got-claude-to-build-cuda-kernels-and-teach-open-models-92794.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #92794. We Got Claude to Build CUDA Kernels and teach open models!
+        </a>
+        
         <a href="open-source-text-generation-llm-ecosystem-at-hugging-face-81308.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #81308. Open-Source Text Generation & LLM Ecosystem at Hugging Face
         </a>
@@ -255,10 +259,6 @@
         
         <a href="fine-tune-any-llm-from-the-hugging-face-hub-with-together-ai-80768.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #80768. Fine-tune Any LLM from the Hugging Face Hub with Together AI
-        </a>
-        
-        <a href="we-got-claude-to-build-cuda-kernels-and-teach-open-models-69938.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #69938. We Got Claude to Build CUDA Kernels and teach open models!
         </a>
         
     </div>

@@ -1,86 +1,86 @@
 {
-  "generatedAt": "2026-11-21T23:54:48.456732",
-  "totalArticles": 12451,
+  "generatedAt": "2026-11-22T05:10:35.520876",
+  "totalArticles": 12414,
   "categoryBreakdown": {
-    "General": 10140,
-    "AI & Tech": 990,
-    "Hardware & Chips": 162,
-    "Business & Policy": 602,
-    "Gadgets": 332,
-    "EV & Auto": 225
+    "Business & Policy": 586,
+    "Hardware & Chips": 157,
+    "General": 10122,
+    "AI & Tech": 995,
+    "Gadgets": 326,
+    "EV & Auto": 228
   },
   "topSources": {
     "Hugging Face": 914,
-    "Co": 841,
+    "Co": 825,
     "Sciencedaily": 211,
     "Eschoolnews": 200,
     "Cbssports": 172,
     "Electrek": 149,
     "Yahoo": 145,
-    "Dw": 139,
+    "Dw": 140,
     "Dailymail": 138,
-    "Realworkfromanywhere": 127
+    "Realworkfromanywhere": 122
   },
   "latestHeadlines": [
     {
-      "id": 81566,
-      "title": "Tech Report: Predicting and detecting failures: How Azure strengthens reliability for mission-critical workloads",
-      "url": "https://railfansday.github.io/artikelsemua75/artikel/tech-report-predicting-and-detecting-failures-how-azure-strengthe-81566.html",
+      "id": 92980,
+      "title": "These are the Senate Democrats backing Schumer and Van Hollen for majority leader",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/these-are-the-senate-democrats-backing-schumer-and-van-hollen-for-92980.html",
+      "category": "Business & Policy"
+    },
+    {
+      "id": 92979,
+      "title": "Top Democrat asks Trump administration to stop using disappearing messaging apps",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/top-democrat-asks-trump-administration-to-stop-using-disappearing-92979.html",
+      "category": "Business & Policy"
+    },
+    {
+      "id": 92978,
+      "title": "Democrats aim to intensify the focus on Nvidia in fresh Congress",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/democrats-aim-to-intensify-the-focus-on-nvidia-in-fresh-congress-92978.html",
+      "category": "Hardware & Chips"
+    },
+    {
+      "id": 92977,
+      "title": "Democratic stars try to keep 2028 spotlight as newbies surge after midterms",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/democratic-stars-try-to-keep-2028-spotlight-as-newbies-surge-afte-92977.html",
       "category": "General"
     },
     {
-      "id": 81565,
-      "title": "Designing Azure silicon on Azure silicon: EDA workloads on Cobalt 200",
-      "url": "https://railfansday.github.io/artikelsemua75/artikel/designing-azure-silicon-on-azure-silicon-eda-workloads-on-cobalt--81565.html",
+      "id": 92976,
+      "title": "Three 'e-waste' Nvidia V100s hit 100 tokens per second on Qwen 3.6 35B in a $1,042 homelab rig",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/three-e-waste-nvidia-v100s-hit-100-tokens-per-second-on-qwen-36-3-92976.html",
+      "category": "Hardware & Chips"
+    },
+    {
+      "id": 92975,
+      "title": "Umamusume horse girls are taking over a Denver Broncos NFL game",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/umamusume-horse-girls-are-taking-over-a-denver-broncos-nfl-game-92975.html",
       "category": "General"
     },
     {
-      "id": 81564,
-      "title": "Latest Update: Stop treating agents as one-off projects and start running them as a continuous discipline",
-      "url": "https://railfansday.github.io/artikelsemua75/artikel/latest-update-stop-treating-agents-as-one-off-projects-and-start--81564.html",
+      "id": 92974,
+      "title": "Tech Report: “Determined” woman completes 7 marathons in a year while pregnant",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/tech-report-determined-woman-completes-7-marathons-in-a-year-whil-92974.html",
       "category": "General"
     },
     {
-      "id": 81563,
-      "title": "Tech Report: How to train a fresh language model from scratch using Transformers and Tokenizers",
-      "url": "https://railfansday.github.io/artikelsemua75/artikel/tech-report-how-to-train-a-fresh-language-model-from-scratch-usin-81563.html",
+      "id": 92973,
+      "title": "Ukraine deploys homemade 'flying modems' in daring drone attack to destroy Crimean Bridge, ditching Elon Musk's Starlink",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/ukraine-deploys-homemade-flying-modems-in-daring-drone-attack-to--92973.html",
       "category": "General"
     },
     {
-      "id": 81562,
-      "title": "How to generate text: using different decoding methods for language generation with Transformers",
-      "url": "https://railfansday.github.io/artikelsemua75/artikel/how-to-generate-text-using-different-decoding-methods-for-languag-81562.html",
+      "id": 92972,
+      "title": "Latest Update: University debuts $5m smart system that checks who is actually listening in class",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/latest-update-university-debuts-5m-smart-system-that-checks-who-i-92972.html",
       "category": "General"
     },
     {
-      "id": 81561,
-      "title": "The Reformer - Pushing the limits of language modeling",
-      "url": "https://railfansday.github.io/artikelsemua75/artikel/the-reformer-pushing-the-limits-of-language-modeling-81561.html",
-      "category": "General"
-    },
-    {
-      "id": 81560,
-      "title": "Block Sparse Matrices for Smaller and Faster Language Models",
-      "url": "https://railfansday.github.io/artikelsemua75/artikel/block-sparse-matrices-for-smaller-and-faster-language-models-81560.html",
-      "category": "General"
-    },
-    {
-      "id": 81559,
-      "title": "Transformer-based Encoder-Decoder Models",
-      "url": "https://railfansday.github.io/artikelsemua75/artikel/transformer-based-encoder-decoder-models-81559.html",
-      "category": "General"
-    },
-    {
-      "id": 81558,
-      "title": "Hyperparameter Search with Transformers and Ray Tune",
-      "url": "https://railfansday.github.io/artikelsemua75/artikel/hyperparameter-search-with-transformers-and-ray-tune-81558.html",
-      "category": "General"
-    },
-    {
-      "id": 81557,
-      "title": "Porting fairseq wmt19 translation system to transformers",
-      "url": "https://railfansday.github.io/artikelsemua75/artikel/porting-fairseq-wmt19-translation-system-to-transformers-81557.html",
-      "category": "General"
+      "id": 92971,
+      "title": "Intel Diamond Rapids reveals signs of life in SC26 demo running live server",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/intel-diamond-rapids-reveals-signs-of-life-in-sc26-demo-running-l-92971.html",
+      "category": "Hardware & Chips"
     }
   ]
 }

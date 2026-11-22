@@ -150,7 +150,7 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-80632">Every multilayer perceptron is built on the same deal: the edges carry numbers and the nodes carry the nonlinearity. A weight multiplies a signal, a fixed activation such as ReLU or GELU bends it, and the network learns by adjusting the numbers. It works, but the deal is arbitrary. The Kolmogorov-Arnold representation theorem says there is another way to build a function, one where the edges themselves are learnable functions and the nodes only add. Kolmogorov-Arnold Networks, or KANs, take that theorem literally, and the result is a model that is more interpretable, more parameter-efficient on structured problems, and surprisingly good at rediscovering symbolic laws from data.</p>
-<p>In a recent development, the Kolmogorov-Arnold representation theorem, proved in 1957, states that any continuous multivariate function on a bounded domain can be written as a finite composition of continuous univariate functions and addition. In its two-layer form:. <span style="font-size:13px;">(Related: <a href="latest-update-stop-treating-agents-as-one-off-projects-and-start--81564.html" style="color:#2563eb; font-weight:600;">Latest Update: Stop treating agents as one-off projects...</a>)</span></p>
+<p>In a recent development, the Kolmogorov-Arnold representation theorem, proved in 1957, states that any continuous multivariate function on a bounded domain can be written as a finite composition of continuous univariate functions and addition. In its two-layer form:.</p>
 <p>That is a striking claim. It claims a function of n variables never needs a genuinely multivariate nonlinearity. It only needs univariate functions, applied to single inputs, combined by addition. The outer functions 
 
 Φq\Phi_qΦq​
@@ -159,8 +159,8 @@
 
 ϕq,p\phi_{q,p}ϕq,p​
 
- depend on f, and the theorem says nothing about how smooth they are. In the worst case they can be fractal and pathological, which is why the theorem sat on the shelf for decades as a curiosity rather than a blueprint.</p>
-<p>The KAN idea is to turn the theorem into a trainable architecture by restricting those univariate functions to a smooth, parameterised family: B-splines. If the true function is reasonably well behaved, a spline can approximate each univariate piece closely, and the network can learn the decomposition from data. The theorem supplies the structure; the splines supply the learnability.</p>
+ depend on f, and the theorem says nothing about how smooth they are. In the worst case they can be fractal and pathological, which is why the theorem sat on the shelf for decades as a curiosity rather than a blueprint. <span style="font-size:13px;">(Related: <a href="industry-news-supermicro-sued-by-shareholders-over-claims-nvidia--92957.html" style="color:#2563eb; font-weight:600;">Industry News: Supermicro sued by shareholders over cla...</a>)</span></p>
+<p>The KAN idea is to turn the theorem into a trainable architecture by restricting those univariate functions to a smooth, parameterised family: B-splines. If the true function is reasonably well behaved, a spline can approximate each univariate piece closely, and the network can learn the decomposition from data. The theorem supplies the structure; the splines supply the learnability. <span style="font-size:13px;">(Related: <a href="obsessed-fan-breaks-into-youtubers-home-demanding-marriage-dies-a-92960.html" style="color:#2563eb; font-weight:600;">Obsessed fan breaks into YouTuber’s home demanding marr...</a>)</span></p>
 <p>An MLP layer is a linear map followed by a fixed nonlinearity applied at each node. A KAN layer inverts that arrangement. Every edge carries a learnable univariate function, and every node simply sums its incoming signals:.</p>
 <p>Sources indicate that there is no activation function at the node at all. The nonlinearity lives entirely on the edges, inside the 
 
@@ -180,7 +180,7 @@ BiB_iBi​
 
 cic_ici​
 
- are the learnable parameters. The grid controls resolution: a coarse grid gives a smooth, low-capacity function, while a fine grid can capture sharp features. One practical advantage is grid extension. A KAN trained on a coarse grid can be refined to a finer grid by fitting the finer spline to the learned function, without retraining from scratch. That is the analogue of increasing resolution in a numerical method, and it gives a principled way to add capacity during training. <span style="font-size:13px;">(Related: <a href="tech-report-how-to-train-a-fresh-language-model-from-scratch-usin-81563.html" style="color:#2563eb; font-weight:600;">Tech Report: How to train a fresh language model from s...</a>)</span></p>
+ are the learnable parameters. The grid controls resolution: a coarse grid gives a smooth, low-capacity function, while a fine grid can capture sharp features. One practical advantage is grid extension. A KAN trained on a coarse grid can be refined to a finer grid by fitting the finer spline to the learned function, without retraining from scratch. That is the analogue of increasing resolution in a numerical method, and it gives a principled way to add capacity during training.</p>
 <p>Stacking layers composes these univariate functions, so a deep KAN can represent functions whose structure is compositional: a sum of functions of sums of functions, and so on. The width of a layer sets how many univariate pieces are available at that stage, just as width in an MLP sets how many features are available.</p>
 <p>The first payoff is interpretability. In an MLP, the learned object is a weight matrix, and understanding what a single weight means requires tracing it through the rest of the network. In a KAN, the learned object on each edge is a one-dimensional function, and a one-dimensional function can be plotted. You can look at an edge and see that it learned something close to a sine wave, a logarithm, or a saturating curve. After training, edges whose functions are near zero can be pruned, and the remaining functions can be fitted with symbolic expressions, turning the trained network into a readable formula. That is why KANs have attracted attention in scientific machine learning: when the data come from a physical law, the network has a chance of rediscovering the law rather than merely approximating it.</p>
 <p>Recent findings suggest that the second payoff is parameter efficiency on structured problems. A function with a compositional structure, such as 
@@ -224,20 +224,20 @@ f(x,y)=sin⁡(xy)f(x, y) = \sin(x y)f(x,y)=sin(xy)
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="simple-considerations-for-simple-people-building-fancy-neural-net-81550.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #81550. Simple considerations for simple people building fancy neural networks
+        <a href="industry-news-beyond-lora-can-you-beat-the-most-popular-fine-tuni-92645.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #92645. Industry News: Beyond LoRA: Can you beat the most popular fine-tuning technique?
         </a>
         
-        <a href="the-design-workflow-is-broken-here-is-how-vitalii-khomenko-thinks-80783.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #80783. The Design Workflow Is Broken. Here Is How Vitalii Khomenko Thinks It Should Be Fixed
+        <a href="industry-news-announcing-aws-lambda-web-functions-92554.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #92554. Industry News: Announcing AWS Lambda Web Functions
         </a>
         
-        <a href="nick-walker-shares-his-pre-arnold-classic-upper-body-workout-79724.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #79724. Nick Walker Shares His Pre-Arnold Classic Upper-Body Workout
+        <a href="aws-weekly-roundup-aws-lambda-web-functions-amazon-s3-on-the-verc-92543.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #92543. AWS Weekly Roundup: AWS Lambda Web Functions, Amazon S3 on the Vercel Marketplace, and more (October 19, 2026)
         </a>
         
-        <a href="breaking-andrew-jacked-shares-his-back-building-training-ahead-of-79706.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #79706. Breaking: Andrew Jacked Shares His Back-Building Training Ahead of the Arnold Classic
+        <a href="industry-news-aws-weekly-roundup-gpt-61-terra-on-bedrock-step-fun-92528.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #92528. Industry News: AWS Weekly Roundup: GPT-6.1 Terra on Bedrock, Step Functions as agent tools, and more (November 2, 2026)
         </a>
         
     </div>

@@ -150,9 +150,9 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-80613">Sentence Transformers is a Python library for using and training embedding and reranker models for applications like retrieval augmented generation, semantic search, and more. With the v5.4 update, you can now encode and compare texts, images, audio, and videos using the same familiar API. In this blogpost, I'll show you how to use these upcoming multimodal capabilities for both embedding and reranking.</p>
-<p>Multimodal embedding models map inputs from different modalities into a shared embedding space, while multimodal reranker models score the relevance of mixed-modality pairs. This opens up use cases like visual document retrieval, cross-modal search, and multimodal RAG pipelines. <span style="font-size:13px;">(Related: <a href="how-to-generate-text-using-different-decoding-methods-for-languag-81562.html" style="color:#2563eb; font-weight:600;">How to generate text: using different decoding methods ...</a>)</span></p>
-<p>If you want to train your own multimodal models, check out the companion blogpost: Training and Finetuning Multimodal Embedding &amp; Reranker Models with Sentence Transformers. <span style="font-size:13px;">(Related: <a href="tech-report-how-to-train-a-fresh-language-model-from-scratch-usin-81563.html" style="color:#2563eb; font-weight:600;">Tech Report: How to train a fresh language model from s...</a>)</span></p>
-<p>According to recent reports, traditional embedding models convert text into fixed-size vectors. Multimodal embedding models extend this by mapping inputs from different modalities (text, images, audio, or video) into a shared embedding space. This means you can compare a text query against image documents (or vice versa) using the same similarity functions you're already familiar with.</p>
+<p>Multimodal embedding models map inputs from different modalities into a shared embedding space, while multimodal reranker models score the relevance of mixed-modality pairs. This opens up use cases like visual document retrieval, cross-modal search, and multimodal RAG pipelines. <span style="font-size:13px;">(Related: <a href="tech-report-determined-woman-completes-7-marathons-in-a-year-whil-92974.html" style="color:#2563eb; font-weight:600;">Tech Report: “Determined” woman completes 7 marathons i...</a>)</span></p>
+<p>If you want to train your own multimodal models, check out the companion blogpost: Training and Finetuning Multimodal Embedding &amp; Reranker Models with Sentence Transformers.</p>
+<p>According to recent reports, traditional embedding models convert text into fixed-size vectors. Multimodal embedding models extend this by mapping inputs from different modalities (text, images, audio, or video) into a shared embedding space. This means you can compare a text query against image documents (or vice versa) using the same similarity functions you're already familiar with. <span style="font-size:13px;">(Related: <a href="top-democrat-asks-trump-administration-to-stop-using-disappearing-92979.html" style="color:#2563eb; font-weight:600;">Top Democrat asks Trump administration to stop using di...</a>)</span></p>
 <p>It has been revealed that similarly, traditional reranker (Cross Encoder) models compute relevance scores between pairs of texts. Multimodal rerankers can score pairs where one or both elements are images, combined text-image documents, or other modalities.</p>
 <p>For example, you can compare a text query against image documents, find video clips matching a description, or build RAG pipelines that work across modalities.</p>
 <p>Multimodal models require some extra dependencies. Install the extras for the modalities you need (see Installation for more details):.</p>
@@ -213,20 +213,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="training-and-finetuning-multimodal-embedding-reranker-models-with-69846.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #69846. Training and Finetuning Multimodal Embedding & Reranker Models with Sentence Transformers
+        <a href="training-and-finetuning-multimodal-embedding-reranker-models-with-92712.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #92712. Training and Finetuning Multimodal Embedding & Reranker Models with Sentence Transformers
+        </a>
+        
+        <a href="multi-vector-late-interaction-embedding-models-with-sentence-tran-92536.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #92536. Multi-Vector (Late Interaction) Embedding Models with Sentence Transformers
+        </a>
+        
+        <a href="training-and-finetuning-multi-vector-embedding-models-with-senten-92503.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #92503. Training and Finetuning Multi-Vector Embedding Models with Sentence Transformers
         </a>
         
         <a href="tech-report-train-400x-faster-static-embedding-models-with-senten-81026.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #81026. Tech Report: Train 400x faster Static Embedding Models with Sentence Transformers
-        </a>
-        
-        <a href="industry-news-training-and-finetuning-reranker-models-with-senten-80976.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #80976. Industry News: Training and Finetuning Reranker Models with Sentence Transformers
-        </a>
-        
-        <a href="training-and-finetuning-sparse-embedding-models-with-sentence-tra-80898.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #80898. Training and Finetuning Sparse Embedding Models with Sentence Transformers
         </a>
         
     </div>

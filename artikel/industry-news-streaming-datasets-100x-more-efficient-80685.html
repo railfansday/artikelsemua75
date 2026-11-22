@@ -150,8 +150,8 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-80685">We boosted load_dataset('dataset', streaming=True), streaming datasets without downloading them with one line of code!</p>
-<p>Start training on multi-TB datasets immediately, without complex setups, downloading, no "disk out of space", or 429 “stop requesting!” errors.It's super fast! Outrunning our local SSDs when training on 64xH100 with 256 workers downloading data. We've improved streaming to have 100x fewer requests, → 10× faster data resolution → 2x sample/sec, → 0 worker crashes at 256 concurrent workers. <span style="font-size:13px;">(Related: <a href="latest-update-stop-treating-agents-as-one-off-projects-and-start--81564.html" style="color:#2563eb; font-weight:600;">Latest Update: Stop treating agents as one-off projects...</a>)</span></p>
-<p>Loading data, especially at the terabyte scale, is a major pain in any machine learning workflow. We suffered this while training SmolLM3, at one point we had to wait 3 hours before each run to download enough data. <span style="font-size:13px;">(Related: <a href="industry-news-distributed-training-train-bartt5-for-summarization-81544.html" style="color:#2563eb; font-weight:600;">Industry News: Distributed Training: Train BART/T5 for ...</a>)</span></p>
+<p>Start training on multi-TB datasets immediately, without complex setups, downloading, no "disk out of space", or 429 “stop requesting!” errors.It's super fast! Outrunning our local SSDs when training on 64xH100 with 256 workers downloading data. We've improved streaming to have 100x fewer requests, → 10× faster data resolution → 2x sample/sec, → 0 worker crashes at 256 concurrent workers. <span style="font-size:13px;">(Related: <a href="silicon-motion-demos-sm8466-pcie-60-ssd-controller-expected-to-sh-92968.html" style="color:#2563eb; font-weight:600;">Silicon Motion demos SM8466 PCIe 6.0 SSD controller, ex...</a>)</span></p>
+<p>Loading data, especially at the terabyte scale, is a major pain in any machine learning workflow. We suffered this while training SmolLM3, at one point we had to wait 3 hours before each run to download enough data. <span style="font-size:13px;">(Related: <a href="tech-report-determined-woman-completes-7-marathons-in-a-year-whil-92974.html" style="color:#2563eb; font-weight:600;">Tech Report: “Determined” woman completes 7 marathons i...</a>)</span></p>
 <p>According to recent reports, streaming has always been possible in the datasets library, but large scale training with massive datasets remained a challenge. That changes today 🔥. We spent a few months improving the backend, focusing on streaming datasets to make it faster and more efficient.</p>
 <p>Industry observers note that first things first: our changes are backwards compatible. You can still stream any dataset from the Hub with the same simple streaming=True flag. It's as easy as ever. 🚀.</p>
 <p>Thousands of AI developers around the world use datasets daily; they should just get improved performance with zero extra work.</p>
@@ -204,20 +204,20 @@ To improve throughput during streaming itself, we've introduced two latest featu
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
+        <a href="industry-news-paramount-black-friday-deal-score-2-months-of-ad-fr-82091.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #82091. Industry News: Paramount+ Black Friday deal: Score 2 months of ad-free streaming for just $2.99/month
+        </a>
+        
+        <a href="industry-news-netflixs-best-christmas-movies-now-streaming-81988.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #81988. Industry News: Netflixs best Christmas movies now streaming
+        </a>
+        
         <a href="industry-news-image-search-with-datasets-81506.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #81506. Industry News: Image search with 🤗 datasets
         </a>
         
         <a href="industry-news-a-complete-guide-to-audio-datasets-81406.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #81406. Industry News: A Complete Guide to Audio Datasets
-        </a>
-        
-        <a href="industry-news-data-is-better-together-enabling-communities-to-col-81201.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #81201. Industry News: Data is better together: Enabling communities to collectively build better datasets together using Argilla and Hugging Face Spaces
-        </a>
-        
-        <a href="industry-news-brad-pitt-action-film-with-82-rotten-tomatoes-score-79795.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #79795. Industry News: Brad Pitt Action Film With 82% Rotten Tomatoes Score Is Dominating Streaming Right Now
         </a>
         
     </div>
