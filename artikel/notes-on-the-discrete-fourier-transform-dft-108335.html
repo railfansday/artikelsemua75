@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes on the discrete Fourier transform (DFT)</title>
+    <meta name="description" content="Recent findings suggest that in the previous post on this topic, weâve seen how the Discrete-Time Fourier Series (DTFS) and transform (DTFT) are used to ">
+    <meta name="keywords" content="signal, matrix, discrete, fourier, roots, unity, transform, post">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua75/artikel/notes-on-the-discrete-fourier-transform-dft-108335.html">
+    
+    <meta property="og:title" content="Notes on the discrete Fourier transform (DFT)">
+    <meta property="og:description" content="Recent findings suggest that in the previous post on this topic, weâve seen how the Discrete-Time Fourier Series (DTFS) and transform (DTFT) are used to ">
+    <meta property="og:image" content="https://via.placeholder.com/350x180/2563eb/ffffff?text=Global+News+Desk">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua75/artikel/notes-on-the-discrete-fourier-transform-dft-108335.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Notes on the discrete Fourier transform (DFT)">
+    <meta name="twitter:description" content="Recent findings suggest that in the previous post on this topic, weâve seen how the Discrete-Time Fourier Series (DTFS) and transform (DTFT) are used to ">
+    <meta name="twitter:image" content="https://via.placeholder.com/350x180/2563eb/ffffff?text=Global+News+Desk">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Notes on the discrete Fourier transform (DFT)", "image": ["https://via.placeholder.com/350x180/2563eb/ffffff?text=Global+News+Desk"], "datePublished": "2026-11-22T06:52:25", "dateModified": "2026-11-22T12:42:07.104575", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua75/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua75/artikel/notes-on-the-discrete-fourier-transform-dft-108335.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Notes on the discrete Fourier transform (DFT)?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Thegreenplace."}}, {"@type": "Question", "name": "Which category does 'Notes on the discrete Fourier transform (DFT)' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Notes on the discrete Fourier transform (DFT)</h1>
+        <div class="meta-line">🌐 Source: <strong>Thegreenplace</strong> &bull; 📅 22 Nov 2026 &bull; ⏱️ 8 min read (1583 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>Recent findings suggest that in the previous post on this
+topic,
+weâve seen how the Discrete-Time Fourier Series (DTFS) and transform
+(DTFT) are used to analyze infinite-duration periodic and non-periodic
+discrete signals.</li><li style='margin-bottom:6px;'>Suppose we have N samples of a signal - itâs a list of N
+numbers:.</li><li style='margin-bottom:6px;'>We want to analyze the frequencies present in this signal; in other
+words, to find the coefficients in a series of complex exponentials that
+reconstructs the signal.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-108335"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-108335"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-108335"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Notes on the discrete Fourier transform (DFT)" loading="lazy" src="https://via.placeholder.com/350x180/2563eb/ffffff?text=Global+News+Desk" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-108335">Recent findings suggest that in the previous post on this
+topic,
+weâve seen how the Discrete-Time Fourier Series (DTFS) and transform
+(DTFT) are used to analyze infinite-duration periodic and non-periodic
+discrete signals. Now, itâs time to turn to realistic digital signal
+processing where signals are not only discrete, but also finite in
+duration.</p>
+<p>Suppose we have N samples of a signal - itâs a list of N
+numbers:.</p>
+<p>We want to analyze the frequencies present in this signal; in other
+words, to find the coefficients in a series of complex exponentials that
+reconstructs the signal. One option is to assume that x[n] is an
+infinite domain signal with zero values outside our N samples, and then
+compute its DTFT:. <span style="font-size:13px;">(Related: <a href="taco-bell-adds-make-it-flamin-hot-option-for-scorching-custom-ord-115836.html" style="color:#2563eb; font-weight:600;">Taco Bell adds ‘Make It Flamin’ Hot’ option for scorchi...</a>)</span></p>
+<p>However, this is a continuous function of frequency w, so itâs
+difficult compute on an actual computer; we cannot evaluate and
+store it for all w, so we have to choose which w to compute it
+for. We'll soon see how this choice is made.</p>
+<p>According to recent reports, but there's an alternative way to look at the problem. We only have N
+samples of the signal x, so we can assume they represent a single period
+of a periodic signal. And in that case, we can use DTFS; recall that the
+coefficients of the series are:.</p>
+<p>As weâve seen in the post on the DTFS,
+this series can be used to
+reconstruct a discrete, periodic signal precisely. Since our signal
+x[n] is finite and we assume itâs just one period of a periodic
+signal, it means we can also reconstruct x[n] precisely using a
+DTFS.</p>
+<p>This is the main insight behind the Discrete Fourier Transform (DFT). First, by convention [1] we define:.</p>
+<p>In a recent development, this is called the Discrete Fourier Transform of x[n]. The term
+transform may be a bit puzzling here - after all, weâre just using the
+series coefficients - so isnât it more proper to just say series? Perhaps, though in mathematics a transform has a pretty general
+meaning of "a mapping that takes a mathematical object and produces
+another object"; in that sense, "transform" is proper here because we
+take an object - x[n] and produce another object - X[k]. <span style="font-size:13px;">(Related: <a href="industry-news-animal-control-called-to-rescue-alligator-that-turn-115841.html" style="color:#2563eb; font-weight:600;">Industry News: Animal control called to rescue alligato...</a>)</span></p>
+<p>Moreover, DFT and DTFT are intimately related. Recall how we said
+earlier that the DTFT is tricky to compute because w is a
+continuous variable? Well, the DFT gives us a way to sample that
+variable into the discrete domain:.</p>
+<p>So the DFT can be seen as exactly N equally spaced samples of
+the DTFT.</p>
+<p>Since the goal of this post is specifically to demonstrate computable
+methods of applying Fourier analysis to discrete digital signals, hereâs
+the Python code to calculate the DFT of a signal:.</p>
+<p>It shouldnât be hard to see the correspondence between this code and the
+mathematical formula for X[k]. Pythonâs Numpy code is vectorized
+by default, so the weights array is computed in whole for every
+k (because n is an array of indices [0..N-1]).</p>
+<p>Industry observers note that in my earlier post on the complex roots of
+unity,
+weâve seen how powers of the roots of unity form an orthogonal basis for
+\mathbb{C}^n. Now letâs show the beautiful theoretical
+connection between this fact and the DFT.</p>
+<p>Recall that the N-th roots of unity can be written as:.</p>
+<p>Since all z_k are just powers of w=z_1=e^{i2\pi/N}, we
+can write them as:.</p>
+<p>The conjugates of the roots of unity are roots of unity themselves:.</p>
+<p>With z_k^* being the same as z_{N-k}, so when we
+enumerate all the roots of unity, weâre also enumerating their
+conjugates, just in a reversed order.</p>
+<p>With that in mind, letâs denote [2] \omega=z_1^*=e^{-i2\pi/N},
+and examine the sequence:.</p>
+<p>The vectors formed by (element-wise) raising \mu_N to integer powers
+from 0 to N-1 can be collected into a matrix:.</p>
+<p>In the roots of unity
+post,
+weâve proven that the rows of this matrix form an orthogonal basis over
+\mathbb{C}^N. In other words, any vector in \mathbb{C}^N
+can be represented as a linear combination of the rows of F.</p>
+<p>I hope you can see where this is going! Letâs consider the signal
+x[n] as a column vector in \mathbb{C}^N. The DFT of
+x can be computed by multiplying x by the matrix
+F:.</p>
+<p>Take a minute to convince yourself this is true, by working through the
+multiplication for a specific row k, e.g. X[2] is
+computed via row-column multiplication the third row (counting from 0)
+of F and x[n].</p>
+<p>Our F is called the Fourier Matrix or the DFT Matrix. Previously weâve seen Python code that directly computes the DFT; hereâs
+a version that does this via the matrix multiplication approach:.</p>
+<p>Sources indicate that more than the computational convenience though, thereâs theoretical
+elegance here. Back when we were discussing the continuous Fourier
+series,
+weâve seen how the trigonometric functions (or - equivalently - complex
+exponentials) form an orthogonal basis for square integrable functions.</p>
+<p id="sec-mid-108335">Here, we see a similar linear algebra connection in discrete time - the
+vectors formed from powers of complex roots of unity form an orthogonal
+basis in \mathbb{C}^N and can thus be used to represent any
+sequence of N complex values.</p>
+<p>Which brings us to the next topic: reconstructing a signal from its DFT
+representation.</p>
+<p>Sources indicate that there are two equivalent approaches to find the inverse DFT - the
+formula we can use to reconstruct x[n] given X[k]. The
+first approach is going back to DTFS, where the reconstruction formula
+is:.</p>
+<p>Recall that our convention is X[k]=Na_k. Therefore:.</p>
+<p>This is the Inverse Discrete Fourier Transform formula.</p>
+<p>Letâs examine the other approach now, because it uses our linear algebra
+interpretation in an enlightening way.</p>
+<p>Recall the Fourier matrix F, and consider F_c - the same
+matrix where every element is the conjugate of the corresponding element
+of F. If:.</p>
+<p>What happens if we multiply F by F_c?</p>
+<p>We have seen in the roots of unity
+post
+that this amounts to:.</p>
+<p>Where I is the identity matrix. Since F is a square
+matrix, any matrix that multiplies with it to give the identity is its
+inverse:.</p>
+<p>It has been revealed that which is the same reconstruction formula we obtained from the DTFS. In
+mathematics, itâs always a good sign when we obtain the same result
+using different methods!</p>
+<p>Recent findings suggest that the linear algebra interpretation here is clear: the vectors formed by
+the powers of roots of unity form an orthogonal basis over
+\mathbb{C}^N. Therefore, every vector x\in\mathbb{C}^N
+can be represented as a linear combination of these vectors. Moreover,
+this transformation is invertible, and the original vector can be
+reconstructed by left-multiplying its DFT vector X by
+F^{-1}.</p>
+<p>Itâs time for a fully worked example; the entire Python code for this
+example is available on GitHub;
+read through its main function, which is well
+commented.</p>
+<p>Recall the sampled triangular signal weâve used in the previous
+post;
+here, letâs use a single cycle:.</p>
+<p>In code, this is just an array of numbers:.</p>
+<p>Calculating the DFT of this signal using the code shown earlier produces
+the following values; remember that X[k] consists of complex
+numbers, so we represent them as a magnitude-phase pair. Phase is only
+shown for nonzero coefficients, because the phase of zero is
+undefined [3]:.</p>
+<p>Industry observers note that obviously, weâd get exactly the same numbers by using the matrix
+multiplication method of computing the DFT. And to reconstruct the
+signal, we multiply by the computed IDFT matrix to get the original
+signal back. The reconstruction matches the original signal precisely,
+with any differences being attributable to floating point round-off.</p>
+<p>The sample code
+contains another method of computing the DFT of
+this signal - by calling NumPyâs
+fft.fft
+function. This refers to the Fast Fourier Transform, which is
+considered to be one of the most notable algorithms of the 20th
+century. By exploiting the structure of the Fourier matrix F,
+FFT computes the product F\cdot x in O(N \log N)
+operations, compared with O(N^2) for direct matrix-vector
+multiplication. I strategy to cover how this works in a future post.</p>
+<p>Industry observers note that looking carefully at the signal used in the Example section above, we
+see that itâs actually one full cycle out of a sampled triangle wave. This is convenient, because repeating the block reproduces the original
+triangle wave. But what happens when the samples cover only part of the
+cycle?</p>
+<p>Take for example just the first 10 samples of the triangle wave:.</p>
+<p>Recent findings suggest that if we naively extend this signal periodically, things wonât line up
+(there will be a jump at the end of every cycle). We can still calculate
+its DFT, of course; these are the coefficients weâll get:.</p>
+<p>In a recent development, while the coefficients still come in conjugate pairs (because the
+samples are real), the original triangleâs frequencies no longer
+coincide with the DFTâs frequency bins, so their contributions spread
+across multiple bins. This is called spectral
+leakage.</p>
+<p>According to recent reports, by applying the IDFT we can still reconstruct the original 10-sample
+signal perfectly! So if all we need is reconstruction, spectral leakage
+isnât an problem; but if weâre doing frequency analysis, it skews the
+situation somewhat, adding frequencies that didnât really exist in the
+underlying triangle wave - just to account for the discontinuity. In
+real-world signal processing, such issues are usually addressed by
+applying special window functions to the signal after sampling - these
+help alleviate leakage by tapering the signal close to zero at the
+edges.</p>
+<p id="sec-end-108335">For comments, please send me
+ an email.</p>
+<p style="margin-top: 25px;">
+<a href="https://eli.thegreenplace.net/2026/notes-on-the-discrete-fourier-transform-dft/" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="breaking-apertus-15-release-notes-115241.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #115241. Breaking: Apertus 1.5 Release Notes
+        </a>
+        
+        <a href="latest-update-top-10-ai-tools-that-will-transform-your-content-cr-115069.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #115069. Latest Update: Top 10 AI Tools That Will Transform Your Content Creation in 2025
+        </a>
+        
+        <a href="how-to-turn-any-bread-dough-into-rolls-transform-your-favorite-br-115001.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #115001. How to turn any bread dough into rolls: Transform your favorite bread loaf into shareable rolls.
+        </a>
+        
+        <a href="latest-update-waugh-thistleton-architects-set-to-transform-dereli-114392.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #114392. Latest Update: Waugh Thistleton Architects set to transform derelict bathing pavilion into Tracey Emin-backed studios and sauna
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

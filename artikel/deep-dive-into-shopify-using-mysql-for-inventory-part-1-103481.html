@@ -157,13 +157,13 @@
 <p>Let's first list down the problem of Inventory reservation, which Shopify was trying to do better on. <span style="font-size:13px;">(Related: <a href="show-dont-certify-how-to-prepare-for-your-first-data-analyst-job-115820.html" style="color:#2563eb; font-weight:600;">Show, Don't Certify: How to Prepare for Your First Data...</a>)</span></p>
 <p>It has been revealed that all E-commerce apps need to reserve inventory when you make a purchase. Normal purchase flow is Customer adding some X SKUs (items) in varying quantity to my cart. Customer clicks Pay/Checkout and these items are reserved unless I complete the purchase or the transaction times out (let's say 15 minutes after I clicked buy now).</p>
 <p>It has been revealed that this ain't the only way though. There are other ways to achieve this, go explore some books or ask your favourite AI agent.</p>
-<p>Before this migration, Shopify used the classic pattern of Redis as the quantity counter and SQL (mySQL here) database as ultimate source of truth.</p>
+<p>Before this migration, Shopify used the classic pattern of Redis as the quantity counter and SQL (mySQL here) database as ultimate source of truth. <span style="font-size:13px;">(Related: <a href="la-noire-2-leak-resurfaces-after-source-gets-gta-6-ending-right-115829.html" style="color:#2563eb; font-weight:600;">LA Noire 2 leak resurfaces after source gets GTA 6 endi...</a>)</span></p>
 <p>Reserving some items means you run a LUA script. Restore if the transaction didn't finish.</p>
 <p>Recent findings suggest that one main matter with this is quite classic. How do you make the operation atomic?</p>
 <p>According to recent reports, see. It is not as easy as those Youtube Videos seems to imply.</p>
 <p>It has been revealed that but why? My single server eCommerce app has no such challenges when I started to learn (way before AI, lucky me).</p>
 <p>I mean, you can always get an ice-cream and forget that issues happen. We will care, when they happen. Let's just ship.</p>
-<p>Sources indicate that ok, seriously. What if mySQL could be used? But everyone knows that single row for each SKU doesn't scale.</p>
+<p>Sources indicate that ok, seriously. What if mySQL could be used? But everyone knows that single row for each SKU doesn't scale. <span style="font-size:13px;">(Related: <a href="breaking-japan-debuts-a-dumbphone-that-doesnt-connect-to-internet-115844.html" style="color:#2563eb; font-weight:600;">Breaking: Japan debuts a ‘dumbphone’ that doesn’t conne...</a>)</span></p>
 <p>Recent findings suggest that each row need to be locked. Suppose 100 people simultaneously want Wired Headphones (I want one). The query would be something like:.</p>
 <p>Sources indicate that this query looks innocent. But it's not. mySQL (InnoDB) has REPEATBALE_READ as default isolation level.</p>
 <p>Industry observers note that under REPEATABLE READ InnoDB ensures that this upgrade is reproducible; it will always affect the same records because it blocks any other statements from impacting the results. While this transaction is open, no other client may INSERT, UPDATE or DELETE a record whose value overlaps this query.</p>
