@@ -152,10 +152,10 @@
 <p id="sec-start-92651">CSS can now make choices about type that used to sit outside a reset. text-wrap: pretty can prevent a stranded word, container query units can scale a heading to the column it occupies, and text-box can trim the half-leading built into a line box. Some of these features are experimental and browser support is uneven, so they need guardrails rather than blind inclusion.</p>
 <p>I’ve put together tidy-typography.css, which gathers the useful parts into a default stylesheet: rendering and fallback rules, fluid sizing, vertical rhythm, wrapping, hyphenation, and OpenType detail.</p>
 <p>In a recent development, use it whole, or take the declaration that solves the particular irritation in front of you. I’ll walk you through all the details in this article and give you the full code at the end.</p>
-<p>font-synthesis: none stops a browser from inventing bold or italic when the family lacks that face. The smoothing and text-rendering declarations are rendering hints, mainly for WebKit; results still vary by platform. <span style="font-size:13px;">(Related: <a href="obsessed-fan-breaks-into-youtubers-home-demanding-marriage-dies-a-92960.html" style="color:#2563eb; font-weight:600;">Obsessed fan breaks into YouTuber’s home demanding marr...</a>)</span></p>
-<p>text-size-adjust disables mobile font inflation that can make a deliberately sized layout jump on rotation. font-size-adjust: from-font uses font metrics to reduce the apparent size change while a fallback swaps for a webfont. <span style="font-size:13px;">(Related: <a href="tech-report-determined-woman-completes-7-marathons-in-a-year-whil-92974.html" style="color:#2563eb; font-weight:600;">Tech Report: “Determined” woman completes 7 marathons i...</a>)</span></p>
-<p>(As with other snippets in this article, this ⁠:root block is a partial excerpt the final stylesheet combines it with additional custom properties defined later on.).</p>
-<p>Recent findings suggest that viewport-based fluid type does not know how wide its element is. A heading in a narrow sidebar can therefore scale as though it fills the viewport.</p>
+<p>font-synthesis: none stops a browser from inventing bold or italic when the family lacks that face. The smoothing and text-rendering declarations are rendering hints, mainly for WebKit; results still vary by platform.</p>
+<p>text-size-adjust disables mobile font inflation that can make a deliberately sized layout jump on rotation. font-size-adjust: from-font uses font metrics to reduce the apparent size change while a fallback swaps for a webfont.</p>
+<p>(As with other snippets in this article, this ⁠:root block is a partial excerpt the final stylesheet combines it with additional custom properties defined later on.). <span style="font-size:13px;">(Related: <a href="block-sparse-matrices-for-smaller-and-faster-language-models-104430.html" style="color:#2563eb; font-weight:600;">Block Sparse Matrices for Smaller and Faster Language M...</a>)</span></p>
+<p>Recent findings suggest that viewport-based fluid type does not know how wide its element is. A heading in a narrow sidebar can therefore scale as though it fills the viewport. <span style="font-size:13px;">(Related: <a href="latest-update-transformer-based-encoder-decoder-models-104429.html" style="color:#2563eb; font-weight:600;">Latest Update: Transformer-based Encoder-Decoder Models...</a>)</span></p>
 <p>container-type: inline-size makes the wrapper a container query, so its children can use cqi: a unit based on the container rather than the viewport. Replacing vw in clamp() lets the same heading scale appropriately in an article column or a 300px sidebar without component-specific media queries.</p>
 <p>line-height includes space above the cap-height and below the baseline: half-leading. It becomes obvious when text must align tightly with another element. text-box-trim removes it, while text-box-edge measures from capital-letter caps to the alphabetic baseline. This is a metrics-aware alternative to font-specific negative-margin nudges.</p>
 <p>It has been revealed that selectors Level 5 proposes :heading, matching h1 to h6 and [role="heading"]. It has not landed in browsers, so keep it behind an @supports selector() check.</p>
@@ -209,6 +209,10 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
+        <a href="tech-report-modern-css-might-make-your-front-end-more-complex-103139.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #103139. Tech Report: Modern CSS Might Make Your Front-End More Complex
+        </a>
+        
         <a href="re-implementing-nth-child-with-modern-css-92660.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #92660. Re-Implementing :nth-child() With Modern CSS
         </a>
@@ -217,12 +221,8 @@
             📰 #92185. The Midnight Reset Problem: Building Around a Clock You Do Not Control
         </a>
         
-        <a href="tech-report-modern-css-might-make-your-front-end-more-complex-91719.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #91719. Tech Report: Modern CSS Might Make Your Front-End More Complex
-        </a>
-        
-        <a href="aprielguard-a-guardrail-for-safety-and-adversarial-robustness-in--92825.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #92825. AprielGuard: A Guardrail for Safety and Adversarial Robustness in Modern LLM Systems
+        <a href="simple-considerations-for-simple-people-building-fancy-neural-net-104420.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #104420. Simple considerations for simple people building fancy neural networks
         </a>
         
     </div>

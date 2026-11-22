@@ -3,217 +3,217 @@
   <title>Portal Berita Interaktif - Atom Feed</title>
   <link href="https://railfansday.github.io/artikelsemua75/atom.xml" rel="self"/>
   <link href="https://railfansday.github.io/artikelsemua75/"/>
-  <updated>2026-11-22T05:10:28Z</updated>
+  <updated>2026-11-22T11:03:43Z</updated>
   <id>https://railfansday.github.io/artikelsemua75/</id>
   
   <entry>
-    <title>These are the Senate Democrats backing Schumer and Van Hollen for majority leader</title>
-    <link href="https://railfansday.github.io/artikelsemua75/artikel/these-are-the-senate-democrats-backing-schumer-and-van-hollen-for-92980.html"/>
-    <id>https://railfansday.github.io/artikelsemua75/artikel/these-are-the-senate-democrats-backing-schumer-and-van-hollen-for-92980.html</id>
-    <updated>2026-11-20T06:00:46Z</updated>
-    <summary>The Post is tracking senators’ public comments on the fight for Senate majority leader in the next Congress. → Read original article...</summary>
+    <title>Predicting and detecting failures: How Azure strengthens reliability for mission-critical workloads</title>
+    <link href="https://railfansday.github.io/artikelsemua75/artikel/predicting-and-detecting-failures-how-azure-strengthens-reliabili-104436.html"/>
+    <id>https://railfansday.github.io/artikelsemua75/artikel/predicting-and-detecting-failures-how-azure-strengthens-reliabili-104436.html</id>
+    <updated>2026-11-04T16:00:00Z</updated>
+    <summary>Azure Failure Prediction and Detection (AFPD) helps reduce interruptions by predicting hardware failures, moving eligible workloads, and notifying customers when action is needed. See what that means for SAP on Azure and other mission-critical worklo...</summary>
   </entry>
   <entry>
-    <title>Top Democrat asks Trump administration to stop using disappearing messaging apps</title>
-    <link href="https://railfansday.github.io/artikelsemua75/artikel/top-democrat-asks-trump-administration-to-stop-using-disappearing-92979.html"/>
-    <id>https://railfansday.github.io/artikelsemua75/artikel/top-democrat-asks-trump-administration-to-stop-using-disappearing-92979.html</id>
-    <updated>2026-11-20T09:45:00Z</updated>
-    <summary>Rep. Jamie Raskin (D-Maryland), who is poised to lead the House Judiciary Committee, sent letters to federal law enforcement agencies. → Read original article...</summary>
+    <title>Industry News: Designing Azure silicon on Azure silicon: EDA workloads on Cobalt 200</title>
+    <link href="https://railfansday.github.io/artikelsemua75/artikel/industry-news-designing-azure-silicon-on-azure-silicon-eda-worklo-104435.html"/>
+    <id>https://railfansday.github.io/artikelsemua75/artikel/industry-news-designing-azure-silicon-on-azure-silicon-eda-worklo-104435.html</id>
+    <updated>2026-11-05T16:00:00Z</updated>
+    <summary>Recent findings suggest that discover how Microsoft is accelerating electronic design automation (EDA) workloads with Azure Cobalt 200 VMs. Explore early performance results demonstrating faster simulation, verification, and static timing analysis, a...</summary>
   </entry>
   <entry>
-    <title>Democrats aim to intensify the focus on Nvidia in fresh Congress</title>
-    <link href="https://railfansday.github.io/artikelsemua75/artikel/democrats-aim-to-intensify-the-focus-on-nvidia-in-fresh-congress-92978.html"/>
-    <id>https://railfansday.github.io/artikelsemua75/artikel/democrats-aim-to-intensify-the-focus-on-nvidia-in-fresh-congress-92978.html</id>
-    <updated>2026-11-20T10:00:00Z</updated>
-    <summary>Lawmakers are seeking to learn more about the Trump administration’s relationship with the chipmaker and whether top officials stood to profit from a known export loophole. → Read original article...</summary>
+    <title>Stop treating agents as one-off projects and start running them as a continuous discipline</title>
+    <link href="https://railfansday.github.io/artikelsemua75/artikel/stop-treating-agents-as-one-off-projects-and-start-running-them-a-104434.html"/>
+    <id>https://railfansday.github.io/artikelsemua75/artikel/stop-treating-agents-as-one-off-projects-and-start-running-them-a-104434.html</id>
+    <updated>2026-11-05T17:00:00Z</updated>
+    <summary>Recent findings suggest that AI must be selected, architected, and managed as a continuous business discipline, not a series of isolated projects. The post Stop treating agents as one-off projects and start running them as a continuous discipline app...</summary>
   </entry>
   <entry>
-    <title>Democratic stars try to keep 2028 spotlight as newbies surge after midterms</title>
-    <link href="https://railfansday.github.io/artikelsemua75/artikel/democratic-stars-try-to-keep-2028-spotlight-as-newbies-surge-afte-92977.html"/>
-    <id>https://railfansday.github.io/artikelsemua75/artikel/democratic-stars-try-to-keep-2028-spotlight-as-newbies-surge-afte-92977.html</id>
-    <updated>2026-11-20T10:00:00Z</updated>
-    <summary>Some Democratic presidential hopefuls who planned to launch their campaigns shortly after the midterms changed their plans after the unexpectedly large wins. → Read original article...</summary>
+    <title>How to train a new language model from scratch using Transformers and Tokenizers</title>
+    <link href="https://railfansday.github.io/artikelsemua75/artikel/how-to-train-a-new-language-model-from-scratch-using-transformers-104433.html"/>
+    <id>https://railfansday.github.io/artikelsemua75/artikel/how-to-train-a-new-language-model-from-scratch-using-transformers-104433.html</id>
+    <updated>2020-02-14T00:00:00Z</updated>
+    <summary>Content not available. → Read original article...</summary>
   </entry>
   <entry>
-    <title>Three 'e-waste' Nvidia V100s hit 100 tokens per second on Qwen 3.6 35B in a $1,042 homelab rig</title>
-    <link href="https://railfansday.github.io/artikelsemua75/artikel/three-e-waste-nvidia-v100s-hit-100-tokens-per-second-on-qwen-36-3-92976.html"/>
-    <id>https://railfansday.github.io/artikelsemua75/artikel/three-e-waste-nvidia-v100s-hit-100-tokens-per-second-on-qwen-36-3-92976.html</id>
-    <updated>2026-11-19T11:00:00Z</updated>
-    <summary>A homelab builder benchmarked three used Nvidia V100s on Qwen 3.6 35B, achieving about 100 tokens per second in a custom setup costing $1,042 with just “e-waste” GPUs. The smaller, dense Qwen 3.6 27B manages about 24 tokens per second on the same pla...</summary>
+    <title>How to generate text: using different decoding methods for language generation with Transformers</title>
+    <link href="https://railfansday.github.io/artikelsemua75/artikel/how-to-generate-text-using-different-decoding-methods-for-languag-104432.html"/>
+    <id>https://railfansday.github.io/artikelsemua75/artikel/how-to-generate-text-using-different-decoding-methods-for-languag-104432.html</id>
+    <updated>2020-03-01T00:00:00Z</updated>
+    <summary>Content not available. → Read original article...</summary>
   </entry>
   <entry>
-    <title>Umamusume horse girls are taking over a Denver Broncos NFL game</title>
-    <link href="https://railfansday.github.io/artikelsemua75/artikel/umamusume-horse-girls-are-taking-over-a-denver-broncos-nfl-game-92975.html"/>
-    <id>https://railfansday.github.io/artikelsemua75/artikel/umamusume-horse-girls-are-taking-over-a-denver-broncos-nfl-game-92975.html</id>
-    <updated>2026-11-20T10:05:45Z</updated>
-    <summary>Umamusume: Pretty Derby is teaming up with the Denver Broncos for their clash against the Miami Dolphins, bringing Gold Ship and Mejiro McQueen to the NFL in specially designed uniforms. From appearing at the Grand Prix de Paris to being plastered ac...</summary>
+    <title>The Reformer - Pushing the limits of language modeling</title>
+    <link href="https://railfansday.github.io/artikelsemua75/artikel/the-reformer-pushing-the-limits-of-language-modeling-104431.html"/>
+    <id>https://railfansday.github.io/artikelsemua75/artikel/the-reformer-pushing-the-limits-of-language-modeling-104431.html</id>
+    <updated>2020-07-03T00:00:00Z</updated>
+    <summary>Content not available. → Read original article...</summary>
   </entry>
   <entry>
-    <title>Tech Report: “Determined” woman completes 7 marathons in a year while pregnant</title>
-    <link href="https://railfansday.github.io/artikelsemua75/artikel/tech-report-determined-woman-completes-7-marathons-in-a-year-whil-92974.html"/>
-    <id>https://railfansday.github.io/artikelsemua75/artikel/tech-report-determined-woman-completes-7-marathons-in-a-year-whil-92974.html</id>
-    <updated>2026-11-20T10:54:46Z</updated>
-    <summary>A woman has revealed that she completed seven marathons in 2026 despite being pregnant for a few of them, admitting that it was a bit “bizarre” at times. For a lot of people, running a marathon is a goal that they work towards for months, if not year...</summary>
+    <title>Block Sparse Matrices for Smaller and Faster Language Models</title>
+    <link href="https://railfansday.github.io/artikelsemua75/artikel/block-sparse-matrices-for-smaller-and-faster-language-models-104430.html"/>
+    <id>https://railfansday.github.io/artikelsemua75/artikel/block-sparse-matrices-for-smaller-and-faster-language-models-104430.html</id>
+    <updated>2020-09-10T00:00:00Z</updated>
+    <summary>Content not available. → Read original article...</summary>
   </entry>
   <entry>
-    <title>Ukraine deploys homemade 'flying modems' in daring drone attack to destroy Crimean Bridge, ditching Elon Musk's Starlink</title>
-    <link href="https://railfansday.github.io/artikelsemua75/artikel/ukraine-deploys-homemade-flying-modems-in-daring-drone-attack-to--92973.html"/>
-    <id>https://railfansday.github.io/artikelsemua75/artikel/ukraine-deploys-homemade-flying-modems-in-daring-drone-attack-to--92973.html</id>
-    <updated>2026-11-19T11:11:29Z</updated>
-    <summary>Recent findings suggest that ukrainian forces ditched Elon Musk's Starlink wireless system and used their own relay network of "flying modems" to maintain a live feed of an attack on the Crimean Bridge, even amid Russian attempts to block the signal....</summary>
+    <title>Latest Update: Transformer-based Encoder-Decoder Models</title>
+    <link href="https://railfansday.github.io/artikelsemua75/artikel/latest-update-transformer-based-encoder-decoder-models-104429.html"/>
+    <id>https://railfansday.github.io/artikelsemua75/artikel/latest-update-transformer-based-encoder-decoder-models-104429.html</id>
+    <updated>2020-10-10T00:00:00Z</updated>
+    <summary>Content not available. → Read original article...</summary>
   </entry>
   <entry>
-    <title>Latest Update: University debuts $5m smart system that checks who is actually listening in class</title>
-    <link href="https://railfansday.github.io/artikelsemua75/artikel/latest-update-university-debuts-5m-smart-system-that-checks-who-i-92972.html"/>
-    <id>https://railfansday.github.io/artikelsemua75/artikel/latest-update-university-debuts-5m-smart-system-that-checks-who-i-92972.html</id>
-    <updated>2026-11-20T12:04:27Z</updated>
-    <summary>A university in China has rolled out a $5 million surveillance system that actually checks if people are paying attention in class. Sources indicate that plenty of schools across the globe have embraced technology in their classrooms. Some of these h...</summary>
+    <title>Hyperparameter Search with Transformers and Ray Tune</title>
+    <link href="https://railfansday.github.io/artikelsemua75/artikel/hyperparameter-search-with-transformers-and-ray-tune-104428.html"/>
+    <id>https://railfansday.github.io/artikelsemua75/artikel/hyperparameter-search-with-transformers-and-ray-tune-104428.html</id>
+    <updated>2020-11-02T00:00:00Z</updated>
+    <summary>Content not available. → Read original article...</summary>
   </entry>
   <entry>
-    <title>Intel Diamond Rapids reveals signs of life in SC26 demo running live server</title>
-    <link href="https://railfansday.github.io/artikelsemua75/artikel/intel-diamond-rapids-reveals-signs-of-life-in-sc26-demo-running-l-92971.html"/>
-    <id>https://railfansday.github.io/artikelsemua75/artikel/intel-diamond-rapids-reveals-signs-of-life-in-sc26-demo-running-l-92971.html</id>
-    <updated>2026-11-19T11:30:00Z</updated>
-    <summary>Intel’s next-gen Xeon Diamond Rapids CPUs appeared at Supercomputing 2026 (SC26) in two separate booths, but neither was from Intel directly. Most interesting was a running server at the CXL booth, showcasing a demo with a Diamond Rapids CPU. The ser...</summary>
+    <title>Latest Update: Porting fairseq wmt19 translation system to transformers</title>
+    <link href="https://railfansday.github.io/artikelsemua75/artikel/latest-update-porting-fairseq-wmt19-translation-system-to-transfo-104427.html"/>
+    <id>https://railfansday.github.io/artikelsemua75/artikel/latest-update-porting-fairseq-wmt19-translation-system-to-transfo-104427.html</id>
+    <updated>2020-11-03T00:00:00Z</updated>
+    <summary>Content not available. → Read original article...</summary>
   </entry>
   <entry>
-    <title>School sends out minibus to catch absent pupils playing GTA 6</title>
-    <link href="https://railfansday.github.io/artikelsemua75/artikel/school-sends-out-minibus-to-catch-absent-pupils-playing-gta-6-92970.html"/>
-    <id>https://railfansday.github.io/artikelsemua75/artikel/school-sends-out-minibus-to-catch-absent-pupils-playing-gta-6-92970.html</id>
-    <updated>2026-11-20T12:45:36Z</updated>
-    <summary>A school in the UK has sent staff out in a minibus to bring absent pupils to class during GTA 6’s launch week, while also offering a prize draw to students who attend every day. GTA 6 is finally here, and for many, the allure of taking a sick day to ...</summary>
+    <title>Leveraging Pre-trained Language Model Checkpoints for Encoder-Decoder Models</title>
+    <link href="https://railfansday.github.io/artikelsemua75/artikel/leveraging-pre-trained-language-model-checkpoints-for-encoder-dec-104426.html"/>
+    <id>https://railfansday.github.io/artikelsemua75/artikel/leveraging-pre-trained-language-model-checkpoints-for-encoder-dec-104426.html</id>
+    <updated>2020-11-09T00:00:00Z</updated>
+    <summary>Content not available. → Read original article...</summary>
   </entry>
   <entry>
-    <title>Industry News: Take-Two CEO is shutting down questions about GTA 7 just days after GTA 6’s launch</title>
-    <link href="https://railfansday.github.io/artikelsemua75/artikel/industry-news-take-two-ceo-is-shutting-down-questions-about-gta-7-92969.html"/>
-    <id>https://railfansday.github.io/artikelsemua75/artikel/industry-news-take-two-ceo-is-shutting-down-questions-about-gta-7-92969.html</id>
-    <updated>2026-11-20T13:28:55Z</updated>
-    <summary>Take-Two CEO Strauss Zelnick is already being asked about GTA 7, despite GTA 6 only being days old. Rockstar released GTA 6 on November 19 for PS5 and Xbox Series X|S, ending a 13-year wait for a newly introduced numbered Grand Theft Auto. But while ...</summary>
+    <title>How we sped up transformer inference 100x for 🤗 API customers</title>
+    <link href="https://railfansday.github.io/artikelsemua75/artikel/how-we-sped-up-transformer-inference-100x-for-api-customers-104425.html"/>
+    <id>https://railfansday.github.io/artikelsemua75/artikel/how-we-sped-up-transformer-inference-100x-for-api-customers-104425.html</id>
+    <updated>2021-01-18T00:00:00Z</updated>
+    <summary>Content not available. → Read original article...</summary>
   </entry>
   <entry>
-    <title>Silicon Motion demos SM8466 PCIe 6.0 SSD controller, expected to ship by 2028 — controller boasts improved quality of service, samples imminent</title>
-    <link href="https://railfansday.github.io/artikelsemua75/artikel/silicon-motion-demos-sm8466-pcie-60-ssd-controller-expected-to-sh-92968.html"/>
-    <id>https://railfansday.github.io/artikelsemua75/artikel/silicon-motion-demos-sm8466-pcie-60-ssd-controller-expected-to-sh-92968.html</id>
-    <updated>2026-11-19T12:00:00Z</updated>
-    <summary>Silicon Motion is showing off its PCIe 6.0 SSD controller for data center applications for the first time at the SC26 conference in Chicago. The final iteration of Silicon Motion's SM8466 controller was taped out recently, and drives based on the chi...</summary>
+    <title>Fit More and Train Faster With ZeRO via DeepSpeed and FairScale</title>
+    <link href="https://railfansday.github.io/artikelsemua75/artikel/fit-more-and-train-faster-with-zero-via-deepspeed-and-fairscale-104424.html"/>
+    <id>https://railfansday.github.io/artikelsemua75/artikel/fit-more-and-train-faster-with-zero-via-deepspeed-and-fairscale-104424.html</id>
+    <updated>2021-01-19T00:00:00Z</updated>
+    <summary>Content not available. → Read original article...</summary>
   </entry>
   <entry>
-    <title>Tech Report: Japan releases a ‘dumbphone’ that doesn’t connect to internet and looks like a Nokia brick</title>
-    <link href="https://railfansday.github.io/artikelsemua75/artikel/tech-report-japan-releases-a-dumbphone-that-doesnt-connect-to-int-92967.html"/>
-    <id>https://railfansday.github.io/artikelsemua75/artikel/tech-report-japan-releases-a-dumbphone-that-doesnt-connect-to-int-92967.html</id>
-    <updated>2026-11-20T13:35:07Z</updated>
-    <summary>A brand-new phone that doesn’t connect to the internet has been debuted in Japan, and it looks like the classic Nokia phones that you might remember. For years, smartphone users have been trying to find creative solutions to cut down their screen tim...</summary>
+    <title>Faster TensorFlow models in Hugging Face Transformers</title>
+    <link href="https://railfansday.github.io/artikelsemua75/artikel/faster-tensorflow-models-in-hugging-face-transformers-104423.html"/>
+    <id>https://railfansday.github.io/artikelsemua75/artikel/faster-tensorflow-models-in-hugging-face-transformers-104423.html</id>
+    <updated>2021-01-26T00:00:00Z</updated>
+    <summary>Content not available. → Read original article...</summary>
   </entry>
   <entry>
-    <title>GTA 6 players report game-breaking crashes on PS5 and Xbox</title>
-    <link href="https://railfansday.github.io/artikelsemua75/artikel/gta-6-players-report-game-breaking-crashes-on-ps5-and-xbox-92966.html"/>
-    <id>https://railfansday.github.io/artikelsemua75/artikel/gta-6-players-report-game-breaking-crashes-on-ps5-and-xbox-92966.html</id>
-    <updated>2026-11-20T14:08:39Z</updated>
-    <summary>GTA 6 players are reporting crashes on PS5 and Xbox, with some even unable to get past the opening minutes of the game. While many GTA 6 fans across PlayStation and Xbox are enjoying their time in Leonida, it’s not all sunshine and rainbows for every...</summary>
+    <title>Hugging Face on PyTorch / XLA TPUs</title>
+    <link href="https://railfansday.github.io/artikelsemua75/artikel/hugging-face-on-pytorch-xla-tpus-104422.html"/>
+    <id>https://railfansday.github.io/artikelsemua75/artikel/hugging-face-on-pytorch-xla-tpus-104422.html</id>
+    <updated>2021-02-09T00:00:00Z</updated>
+    <summary>Content not available. → Read original article...</summary>
   </entry>
   <entry>
-    <title>Pakistan undersea cable fault causes internet failure near Strait of Hormuz</title>
-    <link href="https://railfansday.github.io/artikelsemua75/artikel/pakistan-undersea-cable-fault-causes-internet-failure-near-strait-92965.html"/>
-    <id>https://railfansday.github.io/artikelsemua75/artikel/pakistan-undersea-cable-fault-causes-internet-failure-near-strait-92965.html</id>
-    <updated>2026-11-19T12:30:00Z</updated>
-    <summary>Pakistan's telecommunications authority, the PTA, has confirmed that internet connectivity challenges affecting the country's residents are related to the failure of an international submarine cable. SEA-ME-WE 5 is located almost seven miles off the ...</summary>
+    <title>Retrieval Augmented Generation with Huggingface Transformers and Ray</title>
+    <link href="https://railfansday.github.io/artikelsemua75/artikel/retrieval-augmented-generation-with-huggingface-transformers-and--104421.html"/>
+    <id>https://railfansday.github.io/artikelsemua75/artikel/retrieval-augmented-generation-with-huggingface-transformers-and--104421.html</id>
+    <updated>2021-02-10T00:00:00Z</updated>
+    <summary>Content not available. → Read original article...</summary>
   </entry>
   <entry>
-    <title>Breaking: Animal control called to rescue alligator that turned out to be a pool floatie</title>
-    <link href="https://railfansday.github.io/artikelsemua75/artikel/breaking-animal-control-called-to-rescue-alligator-that-turned-ou-92964.html"/>
-    <id>https://railfansday.github.io/artikelsemua75/artikel/breaking-animal-control-called-to-rescue-alligator-that-turned-ou-92964.html</id>
-    <updated>2026-11-20T14:37:27Z</updated>
-    <summary>Animal control was forced to respond to a call about an alligator on the loose, but it turned out to be just a pool floatie. Seriously. Over the years, plenty of people have rushed to call emergency services to report something that, when investigate...</summary>
+    <title>Simple considerations for simple people building fancy neural networks</title>
+    <link href="https://railfansday.github.io/artikelsemua75/artikel/simple-considerations-for-simple-people-building-fancy-neural-net-104420.html"/>
+    <id>https://railfansday.github.io/artikelsemua75/artikel/simple-considerations-for-simple-people-building-fancy-neural-net-104420.html</id>
+    <updated>2021-02-25T00:00:00Z</updated>
+    <summary>Content not available. → Read original article...</summary>
   </entry>
   <entry>
-    <title>Chipotle is giving customers free burritos with Thanksgiving Eve BOGO deal</title>
-    <link href="https://railfansday.github.io/artikelsemua75/artikel/chipotle-is-giving-customers-free-burritos-with-thanksgiving-eve--92963.html"/>
-    <id>https://railfansday.github.io/artikelsemua75/artikel/chipotle-is-giving-customers-free-burritos-with-thanksgiving-eve--92963.html</id>
-    <updated>2026-11-20T15:06:49Z</updated>
-    <summary>Chipotle is bringing back its Thanksgiving BOGO promotion, giving customers a chance to score a free meal ahead of the holiday. The fast food chain unveiled on November 20 that its Back Home BOGO deal will return for one night only, allowing Rewards ...</summary>
+    <title>Hugging Face Reads, Feb. 2021 - Long-range Transformers</title>
+    <link href="https://railfansday.github.io/artikelsemua75/artikel/hugging-face-reads-feb-2021-long-range-transformers-104419.html"/>
+    <id>https://railfansday.github.io/artikelsemua75/artikel/hugging-face-reads-feb-2021-long-range-transformers-104419.html</id>
+    <updated>2021-03-09T00:00:00Z</updated>
+    <summary>Content not available. → Read original article...</summary>
   </entry>
   <entry>
-    <title>Tech Report: Intel 18A yields hit 70% as organization signs Microsoft as EMIB customer</title>
-    <link href="https://railfansday.github.io/artikelsemua75/artikel/tech-report-intel-18a-yields-hit-70-as-organization-signs-microso-92962.html"/>
-    <id>https://railfansday.github.io/artikelsemua75/artikel/tech-report-intel-18a-yields-hit-70-as-organization-signs-microso-92962.html</id>
-    <updated>2026-11-19T13:00:00Z</updated>
-    <summary>Sources indicate that lip-Bu Tan, chief executive of Intel, said on Thursday that yields of chips made using the firm's latest 18A (1.8nm-class) fabrication process have achieved 70%, which is more or less in line with what one would expect from an a...</summary>
+    <title>Fine-Tune Wav2Vec2 for English ASR in Hugging Face with 🤗 Transformers</title>
+    <link href="https://railfansday.github.io/artikelsemua75/artikel/fine-tune-wav2vec2-for-english-asr-in-hugging-face-with-transform-104418.html"/>
+    <id>https://railfansday.github.io/artikelsemua75/artikel/fine-tune-wav2vec2-for-english-asr-in-hugging-face-with-transform-104418.html</id>
+    <updated>2021-03-12T00:00:00Z</updated>
+    <summary>Content not available. → Read original article...</summary>
   </entry>
   <entry>
-    <title>Developer vibe codes Windows 11 alternative operating system for amd64, arm64, and riscv64 hardware</title>
-    <link href="https://railfansday.github.io/artikelsemua75/artikel/developer-vibe-codes-windows-11-alternative-operating-system-for--92961.html"/>
-    <id>https://railfansday.github.io/artikelsemua75/artikel/developer-vibe-codes-windows-11-alternative-operating-system-for--92961.html</id>
-    <updated>2026-11-19T13:30:00Z</updated>
-    <summary>Recent findings suggest that there’s a latest vibe-coded OS in town going by the name of LiberNT. Its name provides a big clue to its nature: Liber (free), NT (New Technology architecture, as in Windows NT). As it has been released under GNU’s GPL3.0...</summary>
+    <title>My Journey to a serverless transformers pipeline on Google Cloud</title>
+    <link href="https://railfansday.github.io/artikelsemua75/artikel/my-journey-to-a-serverless-transformers-pipeline-on-google-cloud-104417.html"/>
+    <id>https://railfansday.github.io/artikelsemua75/artikel/my-journey-to-a-serverless-transformers-pipeline-on-google-cloud-104417.html</id>
+    <updated>2021-03-18T00:00:00Z</updated>
+    <summary>Content not available. → Read original article...</summary>
   </entry>
   <entry>
-    <title>Obsessed fan breaks into YouTuber’s home demanding marriage, dies after family beats him</title>
-    <link href="https://railfansday.github.io/artikelsemua75/artikel/obsessed-fan-breaks-into-youtubers-home-demanding-marriage-dies-a-92960.html"/>
-    <id>https://railfansday.github.io/artikelsemua75/artikel/obsessed-fan-breaks-into-youtubers-home-demanding-marriage-dies-a-92960.html</id>
-    <updated>2026-11-20T15:06:51Z</updated>
-    <summary>An obsessed fan who broke into an influencer’s home and demanded that she marry him has died after being beaten by her family members and neighbors. It has been revealed that according to NDTV, Abhinav had developed one-sided romantic feelings for Bi...</summary>
+    <title>The Partnership: Amazon SageMaker and Hugging Face</title>
+    <link href="https://railfansday.github.io/artikelsemua75/artikel/the-partnership-amazon-sagemaker-and-hugging-face-104416.html"/>
+    <id>https://railfansday.github.io/artikelsemua75/artikel/the-partnership-amazon-sagemaker-and-hugging-face-104416.html</id>
+    <updated>2021-03-23T00:00:00Z</updated>
+    <summary>Content not available. → Read original article...</summary>
   </entry>
   <entry>
-    <title>Industry News: Man charged after allegedly posing as Walmart delivery driver to steal Pokemon cards</title>
-    <link href="https://railfansday.github.io/artikelsemua75/artikel/industry-news-man-charged-after-allegedly-posing-as-walmart-deliv-92959.html"/>
-    <id>https://railfansday.github.io/artikelsemua75/artikel/industry-news-man-charged-after-allegedly-posing-as-walmart-deliv-92959.html</id>
-    <updated>2026-11-20T15:29:06Z</updated>
-    <summary>A man has been charged with felony retail theft after police say he posed as a Walmart delivery driver to steal Pokemon cards from a store in Dodgeville, Wisconsin. Recent findings suggest that dodgeville police identified the man as Charles L. LaCha...</summary>
+    <title>Understanding BigBird's Block Sparse Attention</title>
+    <link href="https://railfansday.github.io/artikelsemua75/artikel/understanding-bigbirds-block-sparse-attention-104415.html"/>
+    <id>https://railfansday.github.io/artikelsemua75/artikel/understanding-bigbirds-block-sparse-attention-104415.html</id>
+    <updated>2021-03-31T00:00:00Z</updated>
+    <summary>Content not available. → Read original article...</summary>
   </entry>
   <entry>
-    <title>Devs of Steam heist game robbed IRL as hacker refunds players’ in-game purchases</title>
-    <link href="https://railfansday.github.io/artikelsemua75/artikel/devs-of-steam-heist-game-robbed-irl-as-hacker-refunds-players-in--92958.html"/>
-    <id>https://railfansday.github.io/artikelsemua75/artikel/devs-of-steam-heist-game-robbed-irl-as-hacker-refunds-players-in--92958.html</id>
-    <updated>2026-11-20T16:21:35Z</updated>
-    <summary>The developers of One-armed Robber are asking players to spend their surprise refunds in the free Steam heist game after a hacker sent the money back without the studio’s permission. Duhndal released One-armed Robber in December 2023. The first-perso...</summary>
+    <title>Breaking: Distributed Training: Train BART/T5 for Summarization using 🤗 Transformers and Amazon SageMaker</title>
+    <link href="https://railfansday.github.io/artikelsemua75/artikel/breaking-distributed-training-train-bartt5-for-summarization-usin-104414.html"/>
+    <id>https://railfansday.github.io/artikelsemua75/artikel/breaking-distributed-training-train-bartt5-for-summarization-usin-104414.html</id>
+    <updated>2021-04-08T00:00:00Z</updated>
+    <summary>Content not available. → Read original article...</summary>
   </entry>
   <entry>
-    <title>Industry News: Supermicro sued by shareholders over claims Nvidia executive’s wife knew about illicit China sales</title>
-    <link href="https://railfansday.github.io/artikelsemua75/artikel/industry-news-supermicro-sued-by-shareholders-over-claims-nvidia--92957.html"/>
-    <id>https://railfansday.github.io/artikelsemua75/artikel/industry-news-supermicro-sued-by-shareholders-over-claims-nvidia--92957.html</id>
-    <updated>2026-11-19T14:00:00Z</updated>
-    <summary>More information about the alleged knowledge of chip diversion by a Supermicro executive is being revealed as shareholders’ civil lawsuit against the company progresses. According to The Telegraph, the investors alleged that there was “no way Cenly C...</summary>
+    <title>Breaking: Introducing 🤗 Accelerate</title>
+    <link href="https://railfansday.github.io/artikelsemua75/artikel/breaking-introducing-accelerate-104413.html"/>
+    <id>https://railfansday.github.io/artikelsemua75/artikel/breaking-introducing-accelerate-104413.html</id>
+    <updated>2021-04-16T00:00:00Z</updated>
+    <summary>Content not available. → Read original article...</summary>
   </entry>
   <entry>
-    <title>Taco Bell adds ‘Make It Flamin’ Hot’ option for scorching custom orders</title>
-    <link href="https://railfansday.github.io/artikelsemua75/artikel/taco-bell-adds-make-it-flamin-hot-option-for-scorching-custom-ord-92956.html"/>
-    <id>https://railfansday.github.io/artikelsemua75/artikel/taco-bell-adds-make-it-flamin-hot-option-for-scorching-custom-ord-92956.html</id>
-    <updated>2026-11-20T16:29:31Z</updated>
-    <summary>Taco Bell is turning up the heat with a latest ‘Make It Flamin’ Hot’ customization option that lets customers add spicy Fritos to some of their favorite menu items. The fast-food giant has announced a upcoming limited-time feature that allows custome...</summary>
+    <title>Scaling-up BERT Inference on CPU (Part 1)</title>
+    <link href="https://railfansday.github.io/artikelsemua75/artikel/scaling-up-bert-inference-on-cpu-part-1-104412.html"/>
+    <id>https://railfansday.github.io/artikelsemua75/artikel/scaling-up-bert-inference-on-cpu-part-1-104412.html</id>
+    <updated>2021-04-20T00:00:00Z</updated>
+    <summary>Content not available. → Read original article...</summary>
   </entry>
   <entry>
-    <title>Grandma who accidentally invited a stranger to Thanksgiving is getting her own Lifetime movie</title>
-    <link href="https://railfansday.github.io/artikelsemua75/artikel/grandma-who-accidentally-invited-a-stranger-to-thanksgiving-is-ge-92955.html"/>
-    <id>https://railfansday.github.io/artikelsemua75/artikel/grandma-who-accidentally-invited-a-stranger-to-thanksgiving-is-ge-92955.html</id>
-    <updated>2026-11-20T16:44:05Z</updated>
-    <summary>The viral story of a grandmother who accidentally invited a stranger to Thanksgiving dinner is being turned into a Lifetime movie, nearly 10 years after their unlikely friendship began. Wanda Dench and Jamal Hinton first made headlines in 2016 when a...</summary>
+    <title>Industry News: Using &amp; Mixing Hugging Face Models with Gradio 2.0</title>
+    <link href="https://railfansday.github.io/artikelsemua75/artikel/industry-news-using-mixing-hugging-face-models-with-gradio-20-104411.html"/>
+    <id>https://railfansday.github.io/artikelsemua75/artikel/industry-news-using-mixing-hugging-face-models-with-gradio-20-104411.html</id>
+    <updated>2021-05-25T00:00:00Z</updated>
+    <summary>Content not available. → Read original article...</summary>
   </entry>
   <entry>
-    <title>Tech Report: Intel continues layoffs with cuts to its IT department, hundreds of employees reportedly affected</title>
-    <link href="https://railfansday.github.io/artikelsemua75/artikel/tech-report-intel-continues-layoffs-with-cuts-to-its-it-departmen-92954.html"/>
-    <id>https://railfansday.github.io/artikelsemua75/artikel/tech-report-intel-continues-layoffs-with-cuts-to-its-it-departmen-92954.html</id>
-    <updated>2026-11-19T14:58:13Z</updated>
-    <summary>It has been revealed that intel has reduced its workforce by approximately 27,800 employees under Lip-Bu Tan, based on the organization's reported headcount figures, but this does not seem to be enough. The company has reportedly initiated another ro...</summary>
+    <title>Industry News: Few-shot learning in practice: GPT-Neo and the 🤗 Accelerated Inference API</title>
+    <link href="https://railfansday.github.io/artikelsemua75/artikel/industry-news-few-shot-learning-in-practice-gpt-neo-and-the-accel-104410.html"/>
+    <id>https://railfansday.github.io/artikelsemua75/artikel/industry-news-few-shot-learning-in-practice-gpt-neo-and-the-accel-104410.html</id>
+    <updated>2021-06-03T00:00:00Z</updated>
+    <summary>Content not available. → Read original article...</summary>
   </entry>
   <entry>
-    <title>Developer builds a ‘Discord kitten’ that’s actually an AI girlfriend</title>
-    <link href="https://railfansday.github.io/artikelsemua75/artikel/developer-builds-a-discord-kitten-thats-actually-an-ai-girlfriend-92953.html"/>
-    <id>https://railfansday.github.io/artikelsemua75/artikel/developer-builds-a-discord-kitten-thats-actually-an-ai-girlfriend-92953.html</id>
-    <updated>2026-11-20T17:57:20Z</updated>
-    <summary>A developer has built an AI girlfriend that can hold a conversation on Discord, giving the years-old “Discord kitten” meme a latest spin. It has been revealed that the developer, who goes by @tgu_non on X, posted a video demo of the project on Novemb...</summary>
+    <title>Breaking: Sentence Transformers in the Hugging Face Hub</title>
+    <link href="https://railfansday.github.io/artikelsemua75/artikel/breaking-sentence-transformers-in-the-hugging-face-hub-104409.html"/>
+    <id>https://railfansday.github.io/artikelsemua75/artikel/breaking-sentence-transformers-in-the-hugging-face-hub-104409.html</id>
+    <updated>2021-06-28T00:00:00Z</updated>
+    <summary>Content not available. → Read original article...</summary>
   </entry>
   <entry>
-    <title>Breaking: ‘Minecraft Mommy’ goes viral on TikTok for giving good boys gaming tips</title>
-    <link href="https://railfansday.github.io/artikelsemua75/artikel/breaking-minecraft-mommy-goes-viral-on-tiktok-for-giving-good-boy-92952.html"/>
-    <id>https://railfansday.github.io/artikelsemua75/artikel/breaking-minecraft-mommy-goes-viral-on-tiktok-for-giving-good-boy-92952.html</id>
-    <updated>2026-11-20T19:15:41Z</updated>
-    <summary>A TikTok creator dubbed “Minecraft Mommy” is going viral for teaching her “good boys” how to find diamonds and kill zombies in one hit. Recent findings suggest that the diamond-hunting clip appeared on footyfanatics5 under the title “Minecraft Diamon...</summary>
+    <title>Breaking: Deploy Hugging Face models easily with Amazon SageMaker</title>
+    <link href="https://railfansday.github.io/artikelsemua75/artikel/breaking-deploy-hugging-face-models-easily-with-amazon-sagemaker-104408.html"/>
+    <id>https://railfansday.github.io/artikelsemua75/artikel/breaking-deploy-hugging-face-models-easily-with-amazon-sagemaker-104408.html</id>
+    <updated>2021-07-08T00:00:00Z</updated>
+    <summary>Content not available. → Read original article...</summary>
   </entry>
   <entry>
-    <title>Jimmy John’s reveals Christmas Vacation meal with exclusive Cousin Eddie collectibles</title>
-    <link href="https://railfansday.github.io/artikelsemua75/artikel/jimmy-johns-reveals-christmas-vacation-meal-with-exclusive-cousin-92951.html"/>
-    <id>https://railfansday.github.io/artikelsemua75/artikel/jimmy-johns-reveals-christmas-vacation-meal-with-exclusive-cousin-92951.html</id>
-    <updated>2026-11-20T19:20:34Z</updated>
-    <summary>Jimmy John’s is celebrating the holiday season with a limited-time meal inspired by National Lampoon’s Christmas Vacation, featuring new menu items and exclusive collectibles based on the classic comedy. The sandwich chain has partnered with Warner B...</summary>
+    <title>Welcome spaCy to the Hugging Face Hub</title>
+    <link href="https://railfansday.github.io/artikelsemua75/artikel/welcome-spacy-to-the-hugging-face-hub-104407.html"/>
+    <id>https://railfansday.github.io/artikelsemua75/artikel/welcome-spacy-to-the-hugging-face-hub-104407.html</id>
+    <updated>2021-07-13T00:00:00Z</updated>
+    <summary>Content not available. → Read original article...</summary>
   </entry>
 </feed>

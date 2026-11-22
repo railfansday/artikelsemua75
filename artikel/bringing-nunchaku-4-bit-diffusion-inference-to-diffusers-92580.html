@@ -150,8 +150,8 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-92580">Large diffusion transformers can create stunning images (or even videos, audio snippets, and now text), but loading a modern text-to-image model in BF16 precision often requires 20-30 GB of VRAM, which puts these models out of reach of most consumer GPUs. Quantization is a powerful solution to this problem, and Diffusers already integrates several quantization backends such as bitsandbytes, GGUF, torchao, and Quanto, which we covered in Exploring Quantization Backends in Diffusers.</p>
-<p>Most of these backends are weight-only. This means that they store the weights in low precision and dequantize them back to high precision at compute time. This reduces memory usage significantly, but it usually does not make inference faster, and can even add a small latency overhead. <span style="font-size:13px;">(Related: <a href="these-are-the-senate-democrats-backing-schumer-and-van-hollen-for-92980.html" style="color:#2563eb; font-weight:600;">These are the Senate Democrats backing Schumer and Van ...</a>)</span></p>
-<p>SVDQuant, the quantization method behind the popular Nunchaku inference engine, takes a different approach. It runs the main transformer layers with 4-bit weights and activations (W4A4), reducing memory while also speeding up the denoising loop. The details are covered below, but until now, using these checkpoints required a separate inference library. <span style="font-size:13px;">(Related: <a href="top-democrat-asks-trump-administration-to-stop-using-disappearing-92979.html" style="color:#2563eb; font-weight:600;">Top Democrat asks Trump administration to stop using di...</a>)</span></p>
+<p>Most of these backends are weight-only. This means that they store the weights in low precision and dequantize them back to high precision at compute time. This reduces memory usage significantly, but it usually does not make inference faster, and can even add a small latency overhead. <span style="font-size:13px;">(Related: <a href="block-sparse-matrices-for-smaller-and-faster-language-models-104430.html" style="color:#2563eb; font-weight:600;">Block Sparse Matrices for Smaller and Faster Language M...</a>)</span></p>
+<p>SVDQuant, the quantization method behind the popular Nunchaku inference engine, takes a different approach. It runs the main transformer layers with 4-bit weights and activations (W4A4), reducing memory while also speeding up the denoising loop. The details are covered below, but until now, using these checkpoints required a separate inference library. <span style="font-size:13px;">(Related: <a href="how-to-train-a-new-language-model-from-scratch-using-transformers-104433.html" style="color:#2563eb; font-weight:600;">How to train a new language model from scratch using Tr...</a>)</span></p>
 <p>Industry observers note that with current Diffusers, loading a Nunchaku checkpoint is as simple as calling from_pretrained(), with no local CUDA compilation required thanks to the kernels package. In addition, the companion diffuse-compressor toolkit lets you quantize new architectures yourself and publish them as regular Diffusers repositories.</p>
 <p>First, install the requirements. You need a recent version of Diffusers and the Hugging Face kernels package:.</p>
 <p>Then load a pre-quantized pipeline like any other Diffusers model:.</p>
@@ -216,20 +216,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="industry-news-diffusers-welcomes-stable-diffusion-3-92840.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #92840. Industry News: Diffusers welcomes Stable Diffusion 3
+        <a href="industry-news-stable-diffusion-with-diffusers-104316.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #104316. Industry News: Stable Diffusion with 🧨 Diffusers
         </a>
         
-        <a href="breaking-introducing-modular-diffusers-composable-building-blocks-92760.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #92760. Breaking: Introducing Modular Diffusers - Composable Building Blocks for Diffusion Pipelines
+        <a href="training-stable-diffusion-with-dreambooth-using-diffusers-104294.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #104294. Training Stable Diffusion with Dreambooth using Diffusers
         </a>
         
-        <a href="stable-diffusion-with-diffusers-81446.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #81446. Stable Diffusion with 🧨 Diffusers
+        <a href="swift-diffusers-fast-stable-diffusion-for-mac-104252.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #104252. Swift 🧨Diffusers - Fast Stable Diffusion for Mac
         </a>
         
-        <a href="latest-update-training-stable-diffusion-with-dreambooth-using-dif-81424.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #81424. Latest Update: Training Stable Diffusion with Dreambooth using Diffusers
+        <a href="industry-news-accelerating-stable-diffusion-inference-on-intel-cp-104240.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #104240. Industry News: Accelerating Stable Diffusion Inference on Intel CPUs
         </a>
         
     </div>

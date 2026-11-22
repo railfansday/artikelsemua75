@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latest Update: Streaming datasets: 100x More Efficient</title>
+    <meta name="description" content="We boosted load_dataset('dataset', streaming=True), streaming datasets without downloading them with one line of code! Start training on multi-TB datasets ">
+    <meta name="keywords" content="streaming, data, datasets, dataset, training, recent, requests, storage">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua75/artikel/latest-update-streaming-datasets-100x-more-efficient-103555.html">
+    
+    <meta property="og:title" content="Latest Update: Streaming datasets: 100x More Efficient">
+    <meta property="og:description" content="We boosted load_dataset('dataset', streaming=True), streaming datasets without downloading them with one line of code! Start training on multi-TB datasets ">
+    <meta property="og:image" content="https://huggingface.co/blog/assets/streaming_datasets/streaming_datasets.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua75/artikel/latest-update-streaming-datasets-100x-more-efficient-103555.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Latest Update: Streaming datasets: 100x More Efficient">
+    <meta name="twitter:description" content="We boosted load_dataset('dataset', streaming=True), streaming datasets without downloading them with one line of code! Start training on multi-TB datasets ">
+    <meta name="twitter:image" content="https://huggingface.co/blog/assets/streaming_datasets/streaming_datasets.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Latest Update: Streaming datasets: 100x More Efficient", "image": ["https://huggingface.co/blog/assets/streaming_datasets/streaming_datasets.png"], "datePublished": "2025-10-27T00:00:00", "dateModified": "2026-11-22T10:07:22.336808", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua75/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua75/artikel/latest-update-streaming-datasets-100x-more-efficient-103555.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Latest Update: Streaming datasets: 100x More Efficient?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Hugging Face."}}, {"@type": "Question", "name": "Which category does 'Latest Update: Streaming datasets: 100x More Efficient' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Latest Update: Streaming datasets: 100x More Efficient</h1>
+        <div class="meta-line">🌐 Source: <strong>Hugging Face</strong> &bull; 📅 27 Oct 2025 &bull; ⏱️ 5 min read (994 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>We boosted load_dataset('dataset', streaming=True), streaming datasets without downloading them with one line of code!</li><li style='margin-bottom:6px;'>Start training on multi-TB datasets immediately, without complex setups, downloading, no "disk out of space", or 429 “stop requesting!” errors.It's super fast!</li><li style='margin-bottom:6px;'>Loading data, especially at the terabyte scale, is a major pain in any machine learning workflow.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-103555"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-103555"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-103555"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Latest Update: Streaming datasets: 100x More Efficient" loading="lazy" src="https://huggingface.co/blog/assets/streaming_datasets/streaming_datasets.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-103555">We boosted load_dataset('dataset', streaming=True), streaming datasets without downloading them with one line of code!</p>
+<p>Start training on multi-TB datasets immediately, without complex setups, downloading, no "disk out of space", or 429 “stop requesting!” errors.It's super fast! Outrunning our local SSDs when training on 64xH100 with 256 workers downloading data. We've improved streaming to have 100x fewer requests, → 10× faster data resolution → 2x sample/sec, → 0 worker crashes at 256 concurrent workers. <span style="font-size:13px;">(Related: <a href="stop-treating-agents-as-one-off-projects-and-start-running-them-a-104434.html" style="color:#2563eb; font-weight:600;">Stop treating agents as one-off projects and start runn...</a>)</span></p>
+<p>Loading data, especially at the terabyte scale, is a major pain in any machine learning workflow. We suffered this while training SmolLM3, at one point we had to wait 3 hours before each run to download enough data. <span style="font-size:13px;">(Related: <a href="breaking-distributed-training-train-bartt5-for-summarization-usin-104414.html" style="color:#2563eb; font-weight:600;">Breaking: Distributed Training: Train BART/T5 for Summa...</a>)</span></p>
+<p>According to recent reports, streaming has always been possible in the datasets library, but large scale training with massive datasets remained a challenge. That changes today 🔥. We spent a few months improving the backend, focusing on streaming datasets to make it faster and more efficient.</p>
+<p>In a recent development, first things first: our changes are backwards compatible. You can still stream any dataset from the Hub with the same simple streaming=True flag. It's as easy as ever. 🚀.</p>
+<p>Thousands of AI developers around the world use datasets daily; they should just get improved performance with zero extra work.</p>
+<p>In a recent development, streaming was a lifesaver to rapidly understand a dataset, but to train models, people were usually downloading the data locally, or using a cloud storage service such as S3. That's what we were doing for training SmolVLM, we had all of our data on S3 and were streaming directly from it.</p>
+<p>We wanted to change that, so we decided to use streaming from the Hub when we were developing nanoVLM. Soon we found a major issue: our test run generated over 100,000 requests in under a minute, which got our IP blocked by the Hub! 😅 This happened because every DataLoader worker was initializing the dataset independently. As we dug deeper, we found that this creates a storm of redundant requests, many of which are unnecessary. Our changes ultimately reduced startup requests by a factor of 100. In total, our improvements delivered:.</p>
+<p>So, what changed? We focused on two phases: startup and streaming.</p>
+<p>1. Startup⚡️
+The initial resolution of data files was creating a ton of requests. We made two major changes:.</p>
+<p>2. Streaming 🏎️
+To improve throughput during streaming itself, we've introduced two newly introduced features:.</p>
+<p>This is how we can increase the minimum request size when streaming from 32MiB (default) to 128MiB and configure prefetching:.</p>
+<p>Together, these improvements can double your data throughput, allowing you to train faster and more efficiently.</p>
+<p>According to recent reports, hugging Face uses Xet: a dedupe-based storage which enables fast deduped uploads and downloads. Unlike traditional remote storage, data transfers are faster on Xet because duplicated data is only transferred once. For example: uploading a large scale dataset to Hugging Face leverages Xet which accelerates uploads. Once the dataset is uploaded, it can be streamed right away.</p>
+<p>Deduplication for Parquet is enabled through Parquet Content Defined Chunking (CDC). Thanks to Parquet CDC and Xet deduplication, uploading datasets on Hugging Face is faster than on any traditional remote storage.</p>
+<p id="sec-mid-103555">This is supported by our pyspark_huggingface package, a Spark Data Source to read/write HF datasets. It includes Parquet CDC and Xet support, accelerating data transfers on HF dramatically.</p>
+<p>Some data file formats are not supported in datasets, and sometimes there is a need for more control, so we made it easy to build custom streaming pipelines. This has been battle-tested in the LeRobot library to sample video frames, and in the WebDataset library to stream TAR archives.</p>
+<p>We improved the HfFileSystem in the huggingface_hub library to efficiently read files from remote Hugging Face dataset repositories and stream data:.</p>
+<p>Passing a HfFileSystem to a torch DataLoader reuses the cached results from .ls() and .glob() which eliminates the need for additional requests when listing data files.</p>
+<p>In a recent development, we're now using these streaming enhancements in nanoVLM to train the next generation of SmolVLMs. With these tweaks, we achieve better performance from streaming than from training on our cluster's hierarchical hard disk setup. In fact, streaming is now as fast as reading the data from local SSDs! Previously, transferring data to local SSDs was the process that used to delay our trainings by three-hours. For more details, check out our GitHub.</p>
+<p>In a recent development, these powerful new features landed in the datasets and huggingface_hub libraries. To take advantage of them, simply enhancement your libraries and check out the documentation:.</p>
+<p>To celebrate this, we preconcatenated and shuffled all the data sources in FineVision into FineVisionMax. You can use this single combined dataset to train your VLM – no need to handle multiple datasets manually!</p>
+<p>And you can see how we do it at scale in nanoVLM!</p>
+<p>steaming is always the way to go since generally neural nets trainings are stateful any way🚀.</p>
+<p>Hey guys, just a quick question:.</p>
+<p>Is streaming the right way for this scenario: I have limited storage (say &lt; 100GB). The training dataset has around 1T token (and used 6TB of real storage).</p>
+<p>Recent findings suggest that will the already "streamed" dataset be stored on disk or will it be deleted after the training steps have completed on one chunk/parquet? I want to avoid the scenario that my local disk is filled up during training, because I only have limited local space.</p>
+<p>yes, just stream it, it's a no brainer in your case which won't fill your disk at all just make sure your networking infra is fast enough.</p>
+<p>To understand clearly, you upload the Perquet DS (I do need to store it somewhere, and Perquet is optimized on Hub) here on the Hub and use the streaming feature while having a constant net connection, right?</p>
+<p id="sec-end-103555">Sources indicate that yes! Probably the easiest way to get Parquet already optimised for streaming is to use the datasets.Dataset push_to_hub method (https://huggingface.co/docs/datasets/main/en/package_reference/main_classes#datasets.DatasetDict.push_to_hub).</p>
+<p style="margin-top: 25px;">
+<a href="https://huggingface.co/blog/streaming-datasets" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="latest-update-hosting-your-models-and-datasets-on-hugging-face-sp-104401.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #104401. Latest Update: Hosting your Models and Datasets on Hugging Face Spaces using Streamlit
+        </a>
+        
+        <a href="introducing-the-data-measurements-tool-an-interactive-tool-for-lo-104393.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #104393. Introducing the Data Measurements Tool: an Interactive Tool for Looking at Datasets
+        </a>
+        
+        <a href="image-search-with-datasets-104376.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #104376. Image search with 🤗 datasets
+        </a>
+        
+        <a href="efficient-table-pre-training-without-real-data-an-introduction-to-104350.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #104350. Efficient Table Pre-training without Real Data: An Introduction to TAPEX
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

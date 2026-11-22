@@ -157,16 +157,16 @@ model types, and its test suite is big: 88,000+ CPU tests on main, plus
 (SDPA) for T5. As a side effect, UMT5's decoder could attend to future tokens. During training, it could peek at the answer it was supposed to predict. Nothing crashed, and the bug stayed in main for almost two months.</p>
 <p>According to recent reports, when we later replayed those commits, a small UMT5 model running on CPU flagged
 it on every one of them. This post is about that model and the tests built
-around it. <span style="font-size:13px;">(Related: <a href="intel-diamond-rapids-reveals-signs-of-life-in-sc26-demo-running-l-92971.html" style="color:#2563eb; font-weight:600;">Intel Diamond Rapids reveals signs of life in SC26 demo...</a>)</span></p>
+around it. <span style="font-size:13px;">(Related: <a href="stop-treating-agents-as-one-off-projects-and-start-running-them-a-104434.html" style="color:#2563eb; font-weight:600;">Stop treating agents as one-off projects and start runn...</a>)</span></p>
 <p>Sources indicate that transformers supports over 750
 model types, and its test suite is big: 88,000+ CPU tests on main, plus
 200,000+ GPU tests in a daily run. Model tests are only part of it: we also
 test pipelines, training, distributed execution, quantization and attention
-kernels.</p>
+kernels. <span style="font-size:13px;">(Related: <a href="how-to-train-a-new-language-model-from-scratch-using-transformers-104433.html" style="color:#2563eb; font-weight:600;">How to train a new language model from scratch using Tr...</a>)</span></p>
 <p>According to recent reports, the integration tests load real checkpoints and exercise the model's API on
 real hardware. Running all of that on every PR would mean keeping a lot of GPUs
 busy all day long, which isn't practical. By the time a scheduled run finds a
-regression, it may already be in main. <span style="font-size:13px;">(Related: <a href="developer-vibe-codes-windows-11-alternative-operating-system-for--92961.html" style="color:#2563eb; font-weight:600;">Developer vibe codes Windows 11 alternative operating s...</a>)</span></p>
+regression, it may already be in main.</p>
 <p>According to recent reports, our approach is to shrink the model instead. We build a fixture: a small
 model made from the real checkpoint's configuration, with fewer and narrower
 layers but every kind of layer it has, and its tokenizer and processor files
@@ -292,20 +292,20 @@ and contribute a usage path or review a generated contract.</p>
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="industry-news-transformersjs-v4-now-available-on-npm-92780.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #92780. Industry News: Transformers.js v4: Now Available on NPM!
+        <a href="how-to-train-a-new-language-model-from-scratch-using-transformers-104433.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #104433. How to train a new language model from scratch using Transformers and Tokenizers
         </a>
         
-        <a href="industry-news-introducing-mellum2-a-12b-mixture-of-experts-model--92677.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #92677. Industry News: Introducing Mellum2: A 12B Mixture-of-Experts Model by JetBrains
+        <a href="industry-news-building-a-playlist-generator-with-sentence-transfo-104335.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #104335. Industry News: Building a Playlist Generator with Sentence Transformers
         </a>
         
-        <a href="industry-news-a-tiny-data-model-for-a-daily-puzzle-archive-92206.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #92206. Industry News: A Tiny Data Model for a Daily Puzzle Archive
+        <a href="breaking-training-a-language-model-with-transformers-using-tensor-104228.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #104228. Breaking: Training a language model with 🤗 Transformers using TensorFlow and TPUs
         </a>
         
-        <a href="industry-news-senior-contracts-manager-at-supabase-89668.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #89668. Industry News: Senior Contracts Manager at Supabase
+        <a href="industry-news-introducing-bertopic-integration-with-the-hugging-f-104210.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #104210. Industry News: Introducing BERTopic Integration with the Hugging Face Hub
         </a>
         
     </div>

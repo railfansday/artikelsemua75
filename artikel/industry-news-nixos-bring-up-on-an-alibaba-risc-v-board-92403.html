@@ -150,8 +150,8 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-92403">In the process of scouring Alibaba for a cheap Versal devkit, I unexpectedly came into possession of a Zhihe Computing A210 RISC-V SoC.1.</p>
-<p>Industry observers note that it’s a cool board: there’s a ridiculous amount of IO exposed by the baseboard, not to mention 8 cores clocked at 1.9 GHz is nothing to sniff at for a RISC-V CPU. I’m not sure I could recommend buying any RISC-V SoC currently2, but all these distros that are starting to support RISC-V need to run tests somewhere that isn’t Spike/QEMU. <span style="font-size:13px;">(Related: <a href="these-are-the-senate-democrats-backing-schumer-and-van-hollen-for-92980.html" style="color:#2563eb; font-weight:600;">These are the Senate Democrats backing Schumer and Van ...</a>)</span></p>
-<p>I decided to make this board into a NixOS build server so I could learn more about the state of RISC-V support in NixOS and to get some practice in Linux bringup. <span style="font-size:13px;">(Related: <a href="intel-diamond-rapids-reveals-signs-of-life-in-sc26-demo-running-l-92971.html" style="color:#2563eb; font-weight:600;">Intel Diamond Rapids reveals signs of life in SC26 demo...</a>)</span></p>
+<p>Industry observers note that it’s a cool board: there’s a ridiculous amount of IO exposed by the baseboard, not to mention 8 cores clocked at 1.9 GHz is nothing to sniff at for a RISC-V CPU. I’m not sure I could recommend buying any RISC-V SoC currently2, but all these distros that are starting to support RISC-V need to run tests somewhere that isn’t Spike/QEMU. <span style="font-size:13px;">(Related: <a href="industry-news-designing-azure-silicon-on-azure-silicon-eda-worklo-104435.html" style="color:#2563eb; font-weight:600;">Industry News: Designing Azure silicon on Azure silicon...</a>)</span></p>
+<p>I decided to make this board into a NixOS build server so I could learn more about the state of RISC-V support in NixOS and to get some practice in Linux bringup. <span style="font-size:13px;">(Related: <a href="industry-news-few-shot-learning-in-practice-gpt-neo-and-the-accel-104410.html" style="color:#2563eb; font-weight:600;">Industry News: Few-shot learning in practice: GPT-Neo a...</a>)</span></p>
 <p>My complete A210 NixOS configuration can be found here; I confirmed sound, HDMI, Bluetooth/Wi-Fi, ethernet, and the GPU were all working, but YMMV.</p>
 <p>Nix makes cross compiling to RISC-V a breeze:.</p>
 <p>It really is that easy—building pkgs.hello will produce a bona fide RISC-V executable (you don’t even need a Nix file for one-off builds, just run nix build nixpkgs#pkgsCross.riscv64.hello). Some black magic in callPackage ensures that compile-time tools are built for buildPlatform and build artifacts are built for hostPlatform.</p>
@@ -221,20 +221,20 @@ Alas, this is (in my opinion) still better than trying to use the prebuilt kerne
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="industry-news-wells-fargo-faces-labor-board-complaint-over-union--89978.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #89978. Industry News: Wells Fargo faces labor board complaint over union vote
+        <a href="industry-news-carsten-hllers-monumental-slides-bring-play-to-mexi-103165.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #103165. Industry News: Carsten Höller’s Monumental Slides Bring Play to Mexico City
         </a>
         
-        <a href="industry-news-former-alibaba-execs-everful-raises-485m-to-connect-87519.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #87519. Industry News: Former Alibaba exec’s Everful raises $48.5M to connect retailers with Chinese factories
+        <a href="industry-news-8-board-games-that-teach-money-skills-from-first-co-102445.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #102445. Industry News: 8 Board Games That Teach Money Skills – From First Coins to First Stocks
         </a>
         
-        <a href="industry-news-bayern-munich-board-member-claims-no-club-would-buy-83464.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #83464. Industry News: Bayern Munich board member claims ‘no club would buy’ Jamal Musiala due to health condition
+        <a href="industry-news-a-small-daily-habit-to-bring-out-the-best-version-o-96666.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #96666. Industry News: A Small Daily Habit To Bring Out The Best Version Of You, By A Psychologist
         </a>
         
-        <a href="industry-news-take-two-ceo-is-shutting-down-questions-about-gta-7-92969.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #92969. Industry News: Take-Two CEO is shutting down questions about GTA 7 just days after GTA 6’s launch
+        <a href="industry-news-federal-reserve-board-announces-approval-of-applica-96551.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #96551. Industry News: Federal Reserve Board announces approval of application by Isabella Bank Corporation
         </a>
         
     </div>

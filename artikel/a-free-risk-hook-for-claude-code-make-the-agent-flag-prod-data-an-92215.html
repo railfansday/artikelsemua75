@@ -150,8 +150,8 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-92215">According to recent reports, it's late, the agent has been working well for an hour, and you have started approving things on reflex. The next command in the queue is this:.</p>
-<p>Maybe that is what you asked for. Maybe the agent read "clean up the old deployment" more broadly than you meant. Either way, the moment to notice is before it runs, and by hour two your attention is the weakest part of the setup.</p>
-<p>The risk hook is a small Node script that makes that moment hard to miss. It reads every Bash command Claude Code is about to run, sorts risky ones into three tiers, and denies them until the agent has written a plain risk flag in the chat and re-run the command with an explicit acknowledgement. This post indicates how to install it, what a flag looks like, how to tune it, and where it stops. <span style="font-size:13px;">(Related: <a href="three-e-waste-nvidia-v100s-hit-100-tokens-per-second-on-qwen-36-3-92976.html" style="color:#2563eb; font-weight:600;">Three 'e-waste' Nvidia V100s hit 100 tokens per second ...</a>)</span></p>
+<p>Maybe that is what you asked for. Maybe the agent read "clean up the old deployment" more broadly than you meant. Either way, the moment to notice is before it runs, and by hour two your attention is the weakest part of the setup. <span style="font-size:13px;">(Related: <a href="understanding-bigbirds-block-sparse-attention-104415.html" style="color:#2563eb; font-weight:600;">Understanding BigBird's Block Sparse Attention...</a>)</span></p>
+<p>The risk hook is a small Node script that makes that moment hard to miss. It reads every Bash command Claude Code is about to run, sorts risky ones into three tiers, and denies them until the agent has written a plain risk flag in the chat and re-run the command with an explicit acknowledgement. This post indicates how to install it, what a flag looks like, how to tune it, and where it stops. <span style="font-size:13px;">(Related: <a href="hugging-face-reads-feb-2021-long-range-transformers-104419.html" style="color:#2563eb; font-weight:600;">Hugging Face Reads, Feb. 2021 - Long-range Transformers...</a>)</span></p>
 <p>The hook sits on two Claude Code events:.</p>
 <p>Some examples of what lands where:.</p>
 <p>A hit on something environment-touching escalates to HIGH when the command carries a prod or staging marker. A local operation on a file that merely has "prod" in its name is not escalated.</p>
@@ -172,7 +172,7 @@
 <p>This is a guardrail against inattention, not a security boundary.</p>
 <p>According to recent reports, the risk hook stops the dangerous command. It can't stop your API key landing in the model's context.</p>
 <p>According to recent reports, most key leaks are not attacks. They are ordinary debugging steps that print a value where the model reads it:.</p>
-<p>Industry observers note that once a value is in context it can end up in transcripts and logs too. None of these is a risky command, so no risk rule fires. <span style="font-size:13px;">(Related: <a href="these-are-the-senate-democrats-backing-schumer-and-van-hollen-for-92980.html" style="color:#2563eb; font-weight:600;">These are the Senate Democrats backing Schumer and Van ...</a>)</span></p>
+<p>Industry observers note that once a value is in context it can end up in transcripts and logs too. None of these is a risky command, so no risk rule fires.</p>
 <p>Sources indicate that sometimes the agent needs to use a real key, not only check it exists. That is the case we built EnvSecure for. It is a Claude Code mod for macOS: the value sits in Keychain, the agent writes $NAME in a Bash command, you approve the command in a side pane, and the model gets back envsecure: ok or envsecure: failed. The output goes to the pane, not the chat.</p>
 <p id="sec-end-92215">If the habits above don't cover your setup, it's at https://envsecure.syncoderslabs.com/.</p>
 <p style="margin-top: 25px;">
@@ -198,20 +198,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="latest-update-tiny-agents-an-mcp-powered-agent-in-50-lines-of-cod-92837.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #92837. Latest Update: Tiny Agents: an MCP-powered agent in 50 lines of code
+        <a href="synthetic-data-save-money-time-and-carbon-with-open-source-104092.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #104092. Synthetic data: save money, time and carbon with open source
         </a>
         
-        <a href="industry-news-attackers-crash-claudes-office-party-flaw-to-run-ma-92386.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #92386. Industry News: Attackers Crash Claude's 'Office Party' Flaw to Run Malicious Code on Linux
+        <a href="introducing-the-livecodebench-leaderboard-holistic-and-contaminat-104054.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #104054. Introducing the LiveCodeBench Leaderboard - Holistic and Contamination-Free Evaluation of Code LLMs
         </a>
         
-        <a href="how-to-run-claude-code-and-other-coding-agents-in-the-cloud-247-92344.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #92344. How to Run Claude Code and Other Coding Agents in the Cloud 24/7
+        <a href="our-transformers-code-agent-beats-the-gaia-benchmark-104010.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #104010. Our Transformers Code Agent beats the GAIA benchmark 🏅
         </a>
         
-        <a href="how-to-learn-supply-chain-analytics-in-2027-with-claude-code-92324.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #92324. How to Learn Supply Chain Analytics in 2027 with Claude Code
+        <a href="dabstep-data-agent-benchmark-for-multi-step-reasoning-103887.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #103887. DABStep: Data Agent Benchmark for Multi-step Reasoning
         </a>
         
     </div>

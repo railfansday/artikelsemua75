@@ -155,17 +155,17 @@ model (or rather, that is the extent of its security model).</li></ul>
 live-syncs copies of a Jujutsu (jj) repository across multiple machines. Every time jj
 snapshots my work, jj-musubi syncs it to every machine in moments, and also commits, rebases,
 fetches, and so on.</p>
-<p>This simple capability is surprisingly powerful.</p>
+<p>This simple capability is surprisingly powerful. <span style="font-size:13px;">(Related: <a href="simple-considerations-for-simple-people-building-fancy-neural-net-104420.html" style="color:#2563eb; font-weight:600;">Simple considerations for simple people building fancy ...</a>)</span></p>
 <p>jj-musubi makes repos on multiple machines feel like jj workspaces (worktrees if you speak git).</p>
 <p>It’s intended for use by one person who works across several machines, so it has no security
-model (or rather, that is the extent of its security model).</p>
+model (or rather, that is the extent of its security model). <span style="font-size:13px;">(Related: <a href="how-to-train-a-new-language-model-from-scratch-using-transformers-104433.html" style="color:#2563eb; font-weight:600;">How to train a new language model from scratch using Tr...</a>)</span></p>
 <p>Jujutsu already treats the working copy as a commit. Running jj status records a snapshot of
 my edits in that commit, which jj-musubi then syncs to my other machines. I like to have my
-shell prompt run jj status, so in practice I rarely have to think about snapshots. <span style="font-size:13px;">(Related: <a href="intel-diamond-rapids-reveals-signs-of-life-in-sc26-demo-running-l-92971.html" style="color:#2563eb; font-weight:600;">Intel Diamond Rapids reveals signs of life in SC26 demo...</a>)</span></p>
+shell prompt run jj status, so in practice I rarely have to think about snapshots.</p>
 <p>According to recent reports, jj-musubi does not write to the working copy. Each machine has its own working copy and
 workspaces as usual, so syncs of commits, snapshots, and rewrites can bring in newly introduced history while
 a build is running, without changing the files under it. On a laptop, I can work offline, and my
-machine will sync when I’m back on the network. <span style="font-size:13px;">(Related: <a href="tech-report-determined-woman-completes-7-marathons-in-a-year-whil-92974.html" style="color:#2563eb; font-weight:600;">Tech Report: “Determined” woman completes 7 marathons i...</a>)</span></p>
+machine will sync when I’m back on the network.</p>
 <p>This has also proven handy when I have agents working on several machines. I can give each agent
 its own jj workspace on different systems, then run jj diff -r devbox/agent-1@ on the laptop
 to see what one of them has done so far. If one finds a bug that another needs to fix, they can
@@ -234,20 +234,20 @@ hear about it.</p>
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="tech-report-where-should-your-code-live-in-a-docker-sandbox-92601.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #92601. Tech Report: Where should your code live in a Docker Sandbox?
+        <a href="tech-report-announcing-the-ai-research-residency-program-104373.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #104373. Tech Report: Announcing the 🤗 AI Research Residency Program
         </a>
         
-        <a href="tech-report-i-priced-a-gpt-live-11-voice-receptionist-140-per-100-92197.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #92197. Tech Report: I Priced a GPT-Live-1.1 Voice Receptionist: $140 per 1,000 Calls (and Where the Hidden Bill Lives)
+        <a href="tech-report-announcing-our-fresh-content-guidelines-and-policy-104200.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #104200. Tech Report: Announcing our fresh Content Guidelines and Policy
         </a>
         
-        <a href="tech-roundup-zillow-preview-listings-go-live-in-realscout-87779.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #87779. Tech Roundup: Zillow Preview listings go live in RealScout
+        <a href="tech-report-i-would-want-to-know-my-horses-backstory-live-science-100111.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #100111. Tech Report: 'I would want to know my horse's backstory': Live Science readers share which animals they'd want to speak with
         </a>
         
-        <a href="tech-report-playstation-cancels-in-development-live-service-shoot-86434.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #86434. Tech Report: PlayStation Cancels In-Development Live-Service Shooter, Fairgames, At Jade Raymond's Former Haven Studio
+        <a href="tech-report-live-updates-trump-expresses-optimism-on-dealing-with-99651.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #99651. Tech Report: Live updates: Trump expresses optimism on dealing with Democrats; Vance deflects on Iran war
         </a>
         
     </div>

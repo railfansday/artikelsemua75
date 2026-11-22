@@ -150,9 +150,9 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-92197">By Shivam Kumar, VisionQuantech — 22 November 2026.</p>
-<p>OpenAI shipped GPT-Live-1.1 (gpt-live-1.1) to the API on 20 November 2026, and as a builder the first thing I did was price it. Not the demo. The real thing: an AI receptionist answering a business phone line all day. The headline number is good — $140 per 1,000 calls — but the bill has a second half that nobody quotes. Let us do the math properly. <span style="font-size:13px;">(Related: <a href="three-e-waste-nvidia-v100s-hit-100-tokens-per-second-on-qwen-36-3-92976.html" style="color:#2563eb; font-weight:600;">Three 'e-waste' Nvidia V100s hit 100 tokens per second ...</a>)</span></p>
-<p>GPT-Live-1.1 is a full-duplex voice model: it listens while it speaks, so callers can interrupt. Sessions start at the v1/live/sessions endpoint. Version 1.0 went GA on 10 September 2026 at $0.05/min; 1.1 keeps that active rate and improves transcription accuracy and accent/pronunciation stability across languages. <span style="font-size:13px;">(Related: <a href="tech-report-determined-woman-completes-7-marathons-in-a-year-whil-92974.html" style="color:#2563eb; font-weight:600;">Tech Report: “Determined” woman completes 7 marathons i...</a>)</span></p>
-<p>The real change is standby pricing. Active conversation costs $0.05/min. Standby — the line open, nobody talking — costs $0.02/min, 60% cheaper. Billing is per second. On standby the model's inference pauses but the WebRTC connection, session ID, and conversation history stay alive, and speech wakes it. The API fires session.paused and session.resumed events so your backend can track state.</p>
+<p>OpenAI shipped GPT-Live-1.1 (gpt-live-1.1) to the API on 20 November 2026, and as a builder the first thing I did was price it. Not the demo. The real thing: an AI receptionist answering a business phone line all day. The headline number is good — $140 per 1,000 calls — but the bill has a second half that nobody quotes. Let us do the math properly.</p>
+<p>GPT-Live-1.1 is a full-duplex voice model: it listens while it speaks, so callers can interrupt. Sessions start at the v1/live/sessions endpoint. Version 1.0 went GA on 10 September 2026 at $0.05/min; 1.1 keeps that active rate and improves transcription accuracy and accent/pronunciation stability across languages. <span style="font-size:13px;">(Related: <a href="stop-treating-agents-as-one-off-projects-and-start-running-them-a-104434.html" style="color:#2563eb; font-weight:600;">Stop treating agents as one-off projects and start runn...</a>)</span></p>
+<p>The real change is standby pricing. Active conversation costs $0.05/min. Standby — the line open, nobody talking — costs $0.02/min, 60% cheaper. Billing is per second. On standby the model's inference pauses but the WebRTC connection, session ID, and conversation history stay alive, and speech wakes it. The API fires session.paused and session.resumed events so your backend can track state. <span style="font-size:13px;">(Related: <a href="how-to-train-a-new-language-model-from-scratch-using-transformers-104433.html" style="color:#2563eb; font-weight:600;">How to train a new language model from scratch using Tr...</a>)</span></p>
 <p>Standby is WebRTC-only, and you configure it on the session:.</p>
 <p>idle_timeout_s takes 5–60 seconds: how long a quiet line waits before dropping into standby. vad_threshold runs 0–1 (default 0.5) and tunes voice-activity-detection sensitivity — lower catches quieter speech, higher ignores background noise. Pick the timeout to match your call pattern: a reception desk with long lookups wants a short timeout; a fast Q&amp;A line wants a longer one so it does not keep pausing mid-sentence.</p>
 <p>There is also a 15-second WebRTC initialisation charge, credited once the session runs. Treat it as a setup cost, not a trap.</p>
@@ -187,20 +187,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
+        <a href="tech-report-the-witcher-3-uses-gen-ai-to-enhance-geralts-polish-v-97771.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #97771. Tech Report: The Witcher 3 uses gen-AI to enhance Geralt's Polish voice following actor's stroke - "I do think this is one of those ways where you can use AI ethically"
+        </a>
+        
         <a href="tech-report-where-should-your-code-live-in-a-docker-sandbox-92601.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #92601. Tech Report: Where should your code live in a Docker Sandbox?
         </a>
         
-        <a href="tech-report-announcing-jj-musubi-live-sync-for-jujutsu-92485.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #92485. Tech Report: Announcing jj-musubi: live sync for Jujutsu
+        <a href="tech-report-the-brains-hidden-fear-mechanism-may-explain-anxiety--103266.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #103266. Tech Report: The brain’s hidden fear mechanism may explain anxiety and PTSD
         </a>
         
-        <a href="tech-report-are-glp-1-drugs-quietly-changing-our-sex-lives-91502.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #91502. Tech Report: Are GLP-1 Drugs Quietly Changing Our Sex Lives?
-        </a>
-        
-        <a href="tech-report-ryan-koup-kuperus-shares-how-the-reason-outdoors-is-s-91131.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #91131. Tech Report: Ryan ‘Koup’ Kuperus Shares How the Reason Outdoors is Saving Lives and Building a Community
+        <a href="tech-report-blackrock-the-growth-is-already-priced-in-102596.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #102596. Tech Report: BlackRock: The Growth Is Already Priced In
         </a>
         
     </div>

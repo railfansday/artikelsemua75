@@ -152,9 +152,9 @@ Thinking Machines released Inkling 2 Small, the next generation of the Inkling f
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-92598">Update: Inkling 2 Small is here! 🤗
 Thinking Machines released Inkling 2 Small, the next generation of the Inkling family. We have updated this post with a upcoming section on Inkling 2 Small, covering what changed in the architecture and how to run it with transformers.</p>
-<p>Inkling is Thinking Machines' family of open multimodal models, and it now spans two generations on the Hub:. <span style="font-size:13px;">(Related: <a href="obsessed-fan-breaks-into-youtubers-home-demanding-marriage-dies-a-92960.html" style="color:#2563eb; font-weight:600;">Obsessed fan breaks into YouTuber’s home demanding marr...</a>)</span></p>
-<p>In this post, we start with the first-generation architecture, then walk through what changed in Inkling 2 Small and how to run it. The rest of the post covers inference, use cases, post-training, and deployment, with examples built on the first-generation checkpoints.</p>
-<p>It has been revealed that inkling is the first large open model with ~1T parameters and 1M context window to natively receive image, text, and audio inputs, trained on 45 trillion tokens of text, images, audio and video. It’s focused on reasoning across modalities such as audio, images, and text. It is intended for domain adaptation via fine-tuning. We’ve tinkered (pun intended) with this model to build some demos and explore the architecture, and we think it’s great for building a new wave of multimodal reasoning apps. <span style="font-size:13px;">(Related: <a href="three-e-waste-nvidia-v100s-hit-100-tokens-per-second-on-qwen-36-3-92976.html" style="color:#2563eb; font-weight:600;">Three 'e-waste' Nvidia V100s hit 100 tokens per second ...</a>)</span></p>
+<p>Inkling is Thinking Machines' family of open multimodal models, and it now spans two generations on the Hub:. <span style="font-size:13px;">(Related: <a href="block-sparse-matrices-for-smaller-and-faster-language-models-104430.html" style="color:#2563eb; font-weight:600;">Block Sparse Matrices for Smaller and Faster Language M...</a>)</span></p>
+<p>In this post, we start with the first-generation architecture, then walk through what changed in Inkling 2 Small and how to run it. The rest of the post covers inference, use cases, post-training, and deployment, with examples built on the first-generation checkpoints. <span style="font-size:13px;">(Related: <a href="stop-treating-agents-as-one-off-projects-and-start-running-them-a-104434.html" style="color:#2563eb; font-weight:600;">Stop treating agents as one-off projects and start runn...</a>)</span></p>
+<p>It has been revealed that inkling is the first large open model with ~1T parameters and 1M context window to natively receive image, text, and audio inputs, trained on 45 trillion tokens of text, images, audio and video. It’s focused on reasoning across modalities such as audio, images, and text. It is intended for domain adaptation via fine-tuning. We’ve tinkered (pun intended) with this model to build some demos and explore the architecture, and we think it’s great for building a new wave of multimodal reasoning apps.</p>
 <p>Inkling is a decoder-only multimodal Mixture-of-Experts (MoEs) model with 975B total and 41B active parameters. There are a lot of things going on, so let’s break each part down:.</p>
 <p>Here’s a quick glance of the architecture.</p>
 <p>Relative attention: Instead of RoPE, which is the usual method to inject positional information in transformers models, Inkling uses relative attention to encode position information. Each attention layer learns position directly in the attention logits. Aside from key-query-values, there's a fourth projection producing a per-token, per-head relative feature R. This projection tensor is then tweaked with distance information (distance between the key and the query vector) and propagated into the attention module.</p>
@@ -233,20 +233,20 @@ Thinking Machines released Inkling 2 Small, the next generation of the Inkling f
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="tech-report-thinking-machines-lab-releases-inkling-2-mini-for-loc-80665.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #80665. Tech Report: Thinking Machines Lab Releases Inkling 2 Mini for Local Devices
+        <a href="thinking-machines-lab-releases-inkling-2-mini-for-local-devices-103542.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #103542. Thinking Machines Lab Releases Inkling 2 Mini for Local Devices
         </a>
         
         <a href="welcome-inkling-2-mini-cutting-edge-performance-for-your-local-se-92217.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #92217. Welcome Inkling 2 Mini, Cutting-edge Performance for your Local Setup
         </a>
         
-        <a href="tech-report-welcome-gemma-googles-new-open-llm-92843.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #92843. Tech Report: Welcome Gemma - Google’s new open LLM
+        <a href="welcome-spacy-to-the-hugging-face-hub-104407.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #104407. Welcome spaCy to the Hugging Face Hub
         </a>
         
-        <a href="welcome-gemma-4-frontier-multimodal-intelligence-on-device-92724.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #92724. Welcome Gemma 4: Frontier multimodal intelligence on device
+        <a href="tech-report-welcome-stable-baselines3-to-the-hugging-face-hub-104383.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #104383. Tech Report: Welcome Stable-baselines3 to the Hugging Face Hub 🤗
         </a>
         
     </div>

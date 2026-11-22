@@ -167,11 +167,11 @@ AWS Releases a Free Local Emulator of AWS Built Entirely by Agents.</p>
 									
 									6
 									min read.</p>
-<p>AWS has released AWS Emulator, a free local implementation of more than 200 of its services dedicated to the public domain under CC0, and notes that "thousands of autonomous AI agents wrote every line of code" in it. As InfoQ reported at launch, it ships as a single Rust binary generated from AWS's 438 public API models and listens on port 9297. The week since has brought the first independent fidelity numbers and a divided practitioner reaction. <span style="font-size:13px;">(Related: <a href="industry-news-take-two-ceo-is-shutting-down-questions-about-gta-7-92969.html" style="color:#2563eb; font-weight:600;">Industry News: Take-Two CEO is shutting down questions ...</a>)</span></p>
+<p>AWS has released AWS Emulator, a free local implementation of more than 200 of its services dedicated to the public domain under CC0, and notes that "thousands of autonomous AI agents wrote every line of code" in it. As InfoQ reported at launch, it ships as a single Rust binary generated from AWS's 438 public API models and listens on port 9297. The week since has brought the first independent fidelity numbers and a divided practitioner reaction. <span style="font-size:13px;">(Related: <a href="stop-treating-agents-as-one-off-projects-and-start-running-them-a-104434.html" style="color:#2563eb; font-weight:600;">Stop treating agents as one-off projects and start runn...</a>)</span></p>
 <p>Pointing an existing SDK, CLI, or coding agent at the emulator is a matter of environment variables, after which the launch post by Daniel Abib notes, "your existing tests, CLI scripts, and coding agents keep working the way they already do":.</p>
 <p>Sources indicate that the same shell serves an agent. In the post, Kiro is asked to create and read back a DynamoDB table and problems the ordinary CLI calls against the local endpoint:.</p>
-<p>Matt Wood, AWS's chief AI and technology officer, argues that the loop matters because of what an agent does while a check is slow: "A coding agent can build a lot of software around an incorrect assumption." He also names the failure mode an emulator introduces:. <span style="font-size:13px;">(Related: <a href="tech-report-determined-woman-completes-7-marathons-in-a-year-whil-92974.html" style="color:#2563eb; font-weight:600;">Tech Report: “Determined” woman completes 7 marathons i...</a>)</span></p>
-<p>Sources indicate that an agent learns from the environment it experiences. If the emulator accepts behavior that AWS rejects, training can reinforce a mistake. An agent might also discover a shortcut that succeeds only because of an emulator defect.</p>
+<p>Matt Wood, AWS's chief AI and technology officer, argues that the loop matters because of what an agent does while a check is slow: "A coding agent can build a lot of software around an incorrect assumption." He also names the failure mode an emulator introduces:.</p>
+<p>Sources indicate that an agent learns from the environment it experiences. If the emulator accepts behavior that AWS rejects, training can reinforce a mistake. An agent might also discover a shortcut that succeeds only because of an emulator defect. <span style="font-size:13px;">(Related: <a href="breaking-distributed-training-train-bartt5-for-summarization-usin-104414.html" style="color:#2563eb; font-weight:600;">Breaking: Distributed Training: Train BART/T5 for Summa...</a>)</span></p>
 <p>The fidelity scores exist to expose that gap: each release publishes per service how many tests pass out of how many were verified against real AWS, with the failing tests public too, and Abib asks readers to "read a score as a snapshot of a product that's improving.".</p>
 <p>Senior principal engineer Matthew Goldberg traces the project to a three-line prompt given to Kiro, "the simplest prompt that I could think of without any expectation that this would work":.</p>
 <p>According to recent reports, kiro came back after 15 minutes with a passable first version of an Amazon Simple Queue Service (Amazon SQS). I refined my prompt and had Kiro build me the rest of AWS over the weekend. And it did. It obviously had gaps, but it was compelling enough that my team started using it to test our software that Monday.</p>
@@ -214,20 +214,20 @@ AWS Releases a Free Local Emulator of AWS Built Entirely by Agents.</p>
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
+        <a href="tech-report-whatsapp-starts-rolling-out-built-in-cloud-backup-on--103588.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #103588. Tech Report: WhatsApp starts rolling out built-in cloud backup on Android, and it’s free
+        </a>
+        
+        <a href="thinking-machines-lab-releases-inkling-2-mini-for-local-devices-103542.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #103542. Thinking Machines Lab Releases Inkling 2 Mini for Local Devices
+        </a>
+        
+        <a href="tech-report-star-wars-galactic-racer-will-get-local-split-screen--97570.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #97570. Tech Report: Star Wars Galactic Racer will get local split-screen multiplayer in early 2027 with new 'Free Play' mode, finally letting racers yell at one another in a tangible space
+        </a>
+        
         <a href="latest-update-holo31-fast-local-computer-use-agents-92674.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #92674. Latest Update: Holo3.1: Fast & Local Computer Use Agents
-        </a>
-        
-        <a href="we-got-local-models-to-triage-the-openclaw-repo-for-free-92643.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #92643. We got local models to triage the OpenClaw repo for FREE!*
-        </a>
-        
-        <a href="aws-weekly-roundup-amazon-bedrock-managed-agents-powered-by-opena-92560.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #92560. AWS Weekly Roundup: Amazon Bedrock Managed Agents powered by OpenAI, Q3 service availability updates, Kiro workflows, and more (October 5, 2026)
-        </a>
-        
-        <a href="tech-report-test-your-applications-against-aws-locally-with-aws-e-92514.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #92514. Tech Report: Test your applications against AWS locally with AWS Emulator
         </a>
         
     </div>

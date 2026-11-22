@@ -151,8 +151,8 @@
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-92415">Recent findings suggest that probabilistic data structures give you approximate answers to questions about the data they handle. Does the set contain a certain item? How many unique items are in the collection? What is the 99th percentile in a stream of numbers? How similar are two sets? Unlike deterministic structures, the answers might not be exact, but in return, you can save a lot of memory.</p>
 <p>Previously, we reviewed the following data structures: Bloom filter (for checking if an item is in a set), Count-min sketch (for counting items), HyperLogLog (for counting unique items), T-digest (for finding quantiles), and Top-k (for finding the most frequent items).</p>
-<p>Industry observers note that in this post, we'll talk about other probabilistic structures and compare them to the ones we've already covered. We'll look at how they work and what kinds of guarantees they provide. <span style="font-size:13px;">(Related: <a href="industry-news-take-two-ceo-is-shutting-down-questions-about-gta-7-92969.html" style="color:#2563eb; font-weight:600;">Industry News: Take-Two CEO is shutting down questions ...</a>)</span></p>
-<p>All examples use unsure — a package that implements these structures in Go. <span style="font-size:13px;">(Related: <a href="these-are-the-senate-democrats-backing-schumer-and-van-hollen-for-92980.html" style="color:#2563eb; font-weight:600;">These are the Senate Democrats backing Schumer and Van ...</a>)</span></p>
+<p>Industry observers note that in this post, we'll talk about other probabilistic structures and compare them to the ones we've already covered. We'll look at how they work and what kinds of guarantees they provide. <span style="font-size:13px;">(Related: <a href="industry-news-designing-azure-silicon-on-azure-silicon-eda-worklo-104435.html" style="color:#2563eb; font-weight:600;">Industry News: Designing Azure silicon on Azure silicon...</a>)</span></p>
+<p>All examples use unsure — a package that implements these structures in Go.</p>
 <p>Binary fuse filter •
 UltraLogLog •
 Log-linear histogram •
@@ -161,7 +161,7 @@ MinHash.</p>
 <p>It has been revealed that unlike a Bloom filter, a binary fuse filter is static: you build it once from all the items, and you can't add more later. In exchange, it uses less memory than a Bloom filter with the same false positive rate. For example, a fuse filter for 1,000,000 items with a 0.39% false positive rate takes 1.13 MB (9 bits per item), while a Bloom filter takes 1.51 MB (12 bits per item).</p>
 <p>This makes binary fuse filters a good fit for data that is written once and read many times, like the key set of an immutable file in a database (to skip files that don't have the key), or a list of known bad items, such as leaked passwords or malicious URLs.</p>
 <p>The fingerprint type (T in Latest[T]) determines the false positive rate and the memory use:.</p>
-<p>The constructor takes an iterator of items to add to the filter and the expected number of items (0 if unknown). The number is only used to preallocate memory, so a good estimate makes the build faster.</p>
+<p>The constructor takes an iterator of items to add to the filter and the expected number of items (0 if unknown). The number is only used to preallocate memory, so a good estimate makes the build faster. <span style="font-size:13px;">(Related: <a href="block-sparse-matrices-for-smaller-and-faster-language-models-104430.html" style="color:#2563eb; font-weight:600;">Block Sparse Matrices for Smaller and Faster Language M...</a>)</span></p>
 <p>You can check if an item is in the filter, but you cannot add or delete an item, count the number of items, or iterate over them.</p>
 <p>The filter2 is an array of b-bit fingerprints (for example, b = 8 for uint8). Each item is hashed to a 64-bit value h, which gives the item's fingerprint f (b bits computed from h) and three positions in the array (cells). The array is filled so that for every item, the XOR of its cells equals f.</p>
 <p>According to recent reports, to check an item, you compute h, look up its three cells, and compare their XOR with f. For an item in the set, they always match. For any other item, the XOR is a random b-bit value, which matches f with probability 2^-b.</p>
@@ -279,16 +279,16 @@ MinHash.</p>
             📰 #92618. PRX Part 4: Our Data Strategy
         </a>
         
-        <a href="ai-data-center-power-demand-will-double-by-2030-thanks-to-4-trill-92950.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #92950. AI data center power demand will double by 2030 thanks to $4 trillion in spending, adding an entire Great Britain to energy strain
+        <a href="scaling-up-bert-inference-on-cpu-part-1-104412.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #104412. Scaling-up BERT Inference on CPU (Part 1)
         </a>
         
-        <a href="show-dont-certify-how-to-prepare-for-your-first-data-analyst-job-92935.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #92935. Show, Don't Certify: How to Prepare for Your First Data Analyst Job
+        <a href="scaling-up-bert-like-model-inference-on-modern-cpu-part-2-104395.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #104395. Scaling up BERT-like model Inference on modern CPU  - Part 2
         </a>
         
-        <a href="power-and-cooling-limits-force-ai-clusters-with-100000-accelerato-92926.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #92926. Power and cooling limits force AI clusters with 100,000+ accelerators to use multiple data centers
+        <a href="introducing-the-data-measurements-tool-an-interactive-tool-for-lo-104393.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #104393. Introducing the Data Measurements Tool: an Interactive Tool for Looking at Datasets
         </a>
         
     </div>

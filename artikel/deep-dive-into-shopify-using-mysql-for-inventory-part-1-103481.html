@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deep Dive into Shopify using mySQL for inventory Part 1</title>
+    <meta name="description" content="Recent findings suggest that I am Pavitar. A Software Engineer with knack for understanding and owning systems. You will see me larping about Distributed s">
+    <meta name="keywords" content="shopify, recent, some, index, rows, clustered, deep, inventory">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua75/artikel/deep-dive-into-shopify-using-mysql-for-inventory-part-1-103481.html">
+    
+    <meta property="og:title" content="Deep Dive into Shopify using mySQL for inventory Part 1">
+    <meta property="og:description" content="Recent findings suggest that I am Pavitar. A Software Engineer with knack for understanding and owning systems. You will see me larping about Distributed s">
+    <meta property="og:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F16ne2ok15pxla6gtgixi.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua75/artikel/deep-dive-into-shopify-using-mysql-for-inventory-part-1-103481.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Deep Dive into Shopify using mySQL for inventory Part 1">
+    <meta name="twitter:description" content="Recent findings suggest that I am Pavitar. A Software Engineer with knack for understanding and owning systems. You will see me larping about Distributed s">
+    <meta name="twitter:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F16ne2ok15pxla6gtgixi.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Deep Dive into Shopify using mySQL for inventory Part 1", "image": ["https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F16ne2ok15pxla6gtgixi.png"], "datePublished": "2026-11-22T10:01:28", "dateModified": "2026-11-22T10:07:16.201332", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua75/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua75/artikel/deep-dive-into-shopify-using-mysql-for-inventory-part-1-103481.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Deep Dive into Shopify using mySQL for inventory Part 1?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Dev."}}, {"@type": "Question", "name": "Which category does 'Deep Dive into Shopify using mySQL for inventory Part 1' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Deep Dive into Shopify using mySQL for inventory Part 1</h1>
+        <div class="meta-line">🌐 Source: <strong>Dev</strong> &bull; 📅 22 Nov 2026 &bull; ⏱️ 5 min read (1028 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>Recent findings suggest that I am Pavitar.</li><li style='margin-bottom:6px;'>Feel free to ping me on  LinkedIn if you are also intrigued by the intricacies of computer systems.</li><li style='margin-bottom:6px;'>We are going to try to understand the design decisions made in this blog post.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-103481"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-103481"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-103481"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Deep Dive into Shopify using mySQL for inventory Part 1" loading="lazy" src="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F16ne2ok15pxla6gtgixi.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-103481">Recent findings suggest that I am Pavitar. A Software Engineer with knack for understanding and owning systems. You will see me larping about Distributed systems in my LeetCode t-shirt, bragging about my Leetcode achievements (not many yet), grinding on Codeforces and writing deep dives on Concurrency and Systems concepts.</p>
+<p>Feel free to ping me on  LinkedIn if you are also intrigued by the intricacies of computer systems.</p>
+<p>We are going to try to understand the design decisions made in this blog post.</p>
+<p>Shopify Engineering Blog: https://shopify.engineering/scaling-inventory-reservations. <span style="font-size:13px;">(Related: <a href="scaling-up-bert-inference-on-cpu-part-1-104412.html" style="color:#2563eb; font-weight:600;">Scaling-up BERT Inference on CPU (Part 1)...</a>)</span></p>
+<p>Recent findings suggest that I have been seeing lots of post on LinkedIn about this migration blog. I also saw comments asking some deep question. So, I thought of starting my blogging journey with a deep dive on how Shopify did it. In my humble opinion, their article does an amazing job of hiding the complex decision made and the reasoning behind it. <span style="font-size:13px;">(Related: <a href="my-journey-to-a-serverless-transformers-pipeline-on-google-cloud-104417.html" style="color:#2563eb; font-weight:600;">My Journey to a serverless transformers pipeline on Goo...</a>)</span></p>
+<p>Let's first list down the problem of Inventory reservation, which Shopify was trying to do better on.</p>
+<p>It has been revealed that all E-commerce apps need to reserve inventory when you make a purchase. Normal purchase flow is Customer adding some X SKUs (items) in varying quantity to my cart. Customer clicks Pay/Checkout and these items are reserved unless I complete the purchase or the transaction times out (let's say 15 minutes after I clicked buy now).</p>
+<p>It has been revealed that this ain't the only way though. There are other ways to achieve this, go explore some books or ask your favourite AI agent.</p>
+<p>Before this migration, Shopify used the classic pattern of Redis as the quantity counter and SQL (mySQL here) database as ultimate source of truth.</p>
+<p>Reserving some items means you run a LUA script. Restore if the transaction didn't finish.</p>
+<p>Recent findings suggest that one main matter with this is quite classic. How do you make the operation atomic?</p>
+<p>According to recent reports, see. It is not as easy as those Youtube Videos seems to imply.</p>
+<p>It has been revealed that but why? My single server eCommerce app has no such challenges when I started to learn (way before AI, lucky me).</p>
+<p>I mean, you can always get an ice-cream and forget that issues happen. We will care, when they happen. Let's just ship.</p>
+<p>Sources indicate that ok, seriously. What if mySQL could be used? But everyone knows that single row for each SKU doesn't scale.</p>
+<p>Recent findings suggest that each row need to be locked. Suppose 100 people simultaneously want Wired Headphones (I want one). The query would be something like:.</p>
+<p>Sources indicate that this query looks innocent. But it's not. mySQL (InnoDB) has REPEATBALE_READ as default isolation level.</p>
+<p>Industry observers note that under REPEATABLE READ InnoDB ensures that this upgrade is reproducible; it will always affect the same records because it blocks any other statements from impacting the results. While this transaction is open, no other client may INSERT, UPDATE or DELETE a record whose value overlaps this query.</p>
+<p>The consequences of the above paragraphs are large. Transaction wait in line to revision a SKU. If you purchased 3 SKUs, you are amplify the waiting by 3 rows. More rows you touch, more contention you cause.</p>
+<p id="sec-mid-103481">Sounds boring, right? We will see shortly.</p>
+<p>Shopify Engineers did something clever. It is so obvious but you won't think of it unless you (not your AI model 😝) have deep knowledge of how Databases work under the hood (read some books, boring things). Shopify split the the SKU quantity into individual rows.</p>
+<p>According to recent reports, but this is not without problems. Listing some obvious problems.</p>
+<p>Before we get to how they solved some of these, let's understand their Database Schema for the product table.</p>
+<p>They have shop_id , inventory_item_id and inventory_group_id as main fields mentioned.</p>
+<p>Industry observers note that this is inventory management system. So, you need to have the following queries fast:.</p>
+<p>Recent findings suggest that there is a obvious hierarchy here. First thing you will search with is shop_id and ask for a specific inventory_item_id. I don't have any clue about usage of inventory_group_id, so I will just keep it at last.</p>
+<p>This is where Composite Primary Key fits in. It is created with shop_id , inventory_item_id and inventory_group_id in the same order + ID field (why? Keep reading).</p>
+<p>Industry observers note that let me speed this up a bit. All the rows need to have a natural order for database to store. If you don't provide a Primay key, it creates it's own internal Primary Key as it is needed to store the data in some order.</p>
+<p>In a recent development, this Primary Key is used to create Clustered Index. Clustered Index defines the order in which rows are ordered when stored (physically in the B-tree Pages).</p>
+<p>A non-clustered Index is just index on a specific column with pointers to Clustered Index. Thus, row insertion, deletion or updation need to patch the clustered index as well as the non-clustered indexes. (See, this is why indexes make write slower databases).</p>
+<p>Shopify team mentions that they tried using UUID before settling for the above Composite Primary Key.</p>
+<p>Why wouldn't UUID work? Well, there are quite a few problems:.</p>
+<p>So, the stage is set for a composite index. But why would the last part of composite key be id? To satisfy the Uniqueness constraints of Clustered index. And to count the quantities, you cannot have more than a specific number of rows per item. Else, think about 10k rows for a low value high moving item. it will fill up so many pages.</p>
+<p>It has been revealed that I see. Too addicted to those summarisation by AI. Let's go through what we know:.</p>
+<p>Industry observers note that too much info to digest, right? Let me give you a break and some reference resources to go through, before we get to the 2nd Part.</p>
+<p>In a recent development, my favorite is Database Internals by Alex Petrov. Read the first section. Take your time.</p>
+<p>If curious, read upto transaction management. You will understand deeply about how row locking work.</p>
+<p id="sec-end-103481">As for how InnoDB locking work, Check out this Blog (Mentioned by Shopify Blog).</p>
+<p style="margin-top: 25px;">
+<a href="https://dev.to/kick933/deep-dive-into-shopify-using-mysql-for-inventory-part-1-4a55" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="deep-dive-vision-transformers-on-hugging-face-optimum-graphcore-104319.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #104319. Deep Dive: Vision Transformers On Hugging Face Optimum Graphcore
+        </a>
+        
+        <a href="comparing-the-performance-of-llms-a-deep-dive-into-roberta-llama--104133.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #104133. Comparing the Performance of LLMs: A Deep Dive into Roberta, Llama 2, and Mistral for Disaster Tweets Analysis with Lora
+        </a>
+        
+        <a href="open-llm-leaderboard-drop-deep-dive-104128.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #104128. Open LLM Leaderboard: DROP deep dive
+        </a>
+        
+        <a href="a-deep-dive-into-brittany-snow-and-hunter-morenos-increasingly-pu-100593.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #100593. A Deep Dive Into Brittany Snow and Hunter Moreno’s Increasingly Public Relationship
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

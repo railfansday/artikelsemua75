@@ -152,8 +152,8 @@
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-92501">Sources indicate that GPU support is now available for EC2 G-series GPU instances for Event Functions running on AWS Lambda Managed Instances (LMI). You can now run GPU-accelerated workloads, including machine learning inference, media processing, rendering, and scientific computing, on GPU instances with serverless simplicity. GPU-accelerated functions are deployed as container (Open Container Initiative, OCI) images. You build an OCI image, point the function at it, and let Lambda handle provisioning, scaling, and event integration. There are no GPU drivers, CUDA versions, or AMIs to reconcile, and no clusters or device plugins to operate. GPU-accelerated functions run on the same Lambda Managed Instances foundation that already gives you Amazon EC2 pricing and specialized compute without managing servers.</p>
 <p>Why customers need this
-         Customers keep asking to run GPU workloads with the simplicity of serverless. Building on self-managed GPU infrastructure means selecting instances, installing and reconciling GPU drivers and CUDA libraries, planning capacity, writing scaling logic, and hand-building the event integrations that connect the GPU step to the rest of the application. Serverless GPU services that hide that work often sit outside your AWS environment, with no native event sources, identity, or networking. <span style="font-size:13px;">(Related: <a href="tech-report-japan-releases-a-dumbphone-that-doesnt-connect-to-int-92967.html" style="color:#2563eb; font-weight:600;">Tech Report: Japan releases a ‘dumbphone’ that doesn’t ...</a>)</span></p>
-<p>Cost is the second problem. GPUs are expensive, and utilization is usually low because a single workload rarely saturates a GPU. A small inference task can leave most of a provisioned GPU idle while you pay for the whole thing. <span style="font-size:13px;">(Related: <a href="three-e-waste-nvidia-v100s-hit-100-tokens-per-second-on-qwen-36-3-92976.html" style="color:#2563eb; font-weight:600;">Three 'e-waste' Nvidia V100s hit 100 tokens per second ...</a>)</span></p>
+         Customers keep asking to run GPU workloads with the simplicity of serverless. Building on self-managed GPU infrastructure means selecting instances, installing and reconciling GPU drivers and CUDA libraries, planning capacity, writing scaling logic, and hand-building the event integrations that connect the GPU step to the rest of the application. Serverless GPU services that hide that work often sit outside your AWS environment, with no native event sources, identity, or networking. <span style="font-size:13px;">(Related: <a href="predicting-and-detecting-failures-how-azure-strengthens-reliabili-104436.html" style="color:#2563eb; font-weight:600;">Predicting and detecting failures: How Azure strengthen...</a>)</span></p>
+<p>Cost is the second problem. GPUs are expensive, and utilization is usually low because a single workload rarely saturates a GPU. A small inference task can leave most of a provisioned GPU idle while you pay for the whole thing. <span style="font-size:13px;">(Related: <a href="how-we-sped-up-transformer-inference-100x-for-api-customers-104425.html" style="color:#2563eb; font-weight:600;">How we sped up transformer inference 100x for 🤗 API cus...</a>)</span></p>
 <p>Sources indicate that this feature closes both gaps. You bring a function, and Lambda runs it on a GPU in minutes, triggered by the same AWS events as any other Lambda Event Function, billed and secured the same way. It also maximizes utilization of every GPU you pay for, by consolidating functions onto instances and keeping GPUs busy across concurrent requests.</p>
 <p>What you can build
          You can run both AI/ML inference and non-ML workloads using GPU-accelerated compute on Lambda Managed Instances. This capability is optimized for inference rather than training, and custom models rather than large foundation models already available on services like Amazon Bedrock. Common workloads include:.</p>
@@ -218,6 +218,10 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
+        <a href="latest-update-aws-lambda-now-runs-gpu-inference-with-48-concurren-103525.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #103525. Latest Update: AWS Lambda Now Runs GPU Inference with 48 Concurrent Invocations Sharing One Model per GPU
+        </a>
+        
         <a href="industry-news-announcing-aws-lambda-web-functions-92554.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #92554. Industry News: Announcing AWS Lambda Web Functions
         </a>
@@ -228,10 +232,6 @@
         
         <a href="industry-news-aws-weekly-roundup-gpt-61-terra-on-bedrock-step-fun-92528.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #92528. Industry News: AWS Weekly Roundup: GPT-6.1 Terra on Bedrock, Step Functions as agent tools, and more (November 2, 2026)
-        </a>
-        
-        <a href="breaking-benchmarking-aws-amplify-lambda-web-functions-and-ecs-fo-92246.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #92246. Breaking: Benchmarking AWS Amplify, Lambda, Web Functions, and ECS for Next.js
         </a>
         
     </div>

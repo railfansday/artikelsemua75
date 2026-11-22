@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Deploy a Dockerized Web App Behind an Nginx Reverse Proxy with Free SSL on Ubuntu</title>
+    <meta name="description" content="published: false description: A step-by-step guide to running a Docker container bound to localhost, routing traffic through Nginx, and automating HTTPS wi">
+    <meta name="keywords" content="nginx, docker, http, container, server, port, running, traffic">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua75/artikel/how-to-deploy-a-dockerized-web-app-behind-an-nginx-reverse-proxy--103490.html">
+    
+    <meta property="og:title" content="How to Deploy a Dockerized Web App Behind an Nginx Reverse Proxy with Free SSL on Ubuntu">
+    <meta property="og:description" content="published: false description: A step-by-step guide to running a Docker container bound to localhost, routing traffic through Nginx, and automating HTTPS wi">
+    <meta property="og:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F95cc1nsogsdranys6rql.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua75/artikel/how-to-deploy-a-dockerized-web-app-behind-an-nginx-reverse-proxy--103490.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="How to Deploy a Dockerized Web App Behind an Nginx Reverse Proxy with Free SSL on Ubuntu">
+    <meta name="twitter:description" content="published: false description: A step-by-step guide to running a Docker container bound to localhost, routing traffic through Nginx, and automating HTTPS wi">
+    <meta name="twitter:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F95cc1nsogsdranys6rql.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "How to Deploy a Dockerized Web App Behind an Nginx Reverse Proxy with Free SSL on Ubuntu", "image": ["https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F95cc1nsogsdranys6rql.png"], "datePublished": "2026-11-22T10:01:00", "dateModified": "2026-11-22T10:07:16.720077", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua75/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua75/artikel/how-to-deploy-a-dockerized-web-app-behind-an-nginx-reverse-proxy--103490.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding How to Deploy a Dockerized Web App Behind an Nginx Reverse Proxy with Free SSL o?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Dev."}}, {"@type": "Question", "name": "Which category does 'How to Deploy a Dockerized Web App Behind an Nginx Reverse P' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>How to Deploy a Dockerized Web App Behind an Nginx Reverse Proxy with Free SSL on Ubuntu</h1>
+        <div class="meta-line">🌐 Source: <strong>Dev</strong> &bull; 📅 22 Nov 2026 &bull; ⏱️ 3 min read (670 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>published: false
+description: A step-by-step guide to running a Docker container bound to localhost, routing traffic through Nginx, and automating HTTPS with Let's Encrypt on Ubuntu 24.04.</li><li style='margin-bottom:6px;'>Industry observers note that running a containerized web application directly on a public port like :3000 or :8080 works during local development, but it creates serious security and reliability gaps in production.</li><li style='margin-bottom:6px;'>In this guide, you will deploy a containerized web service on an Ubuntu 24.04 LTS server using a production-ready architecture.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-103490"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-103490"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-103490"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="How to Deploy a Dockerized Web App Behind an Nginx Reverse Proxy with Free SSL on Ubuntu" loading="lazy" src="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F95cc1nsogsdranys6rql.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-103490">published: false
+description: A step-by-step guide to running a Docker container bound to localhost, routing traffic through Nginx, and automating HTTPS with Let's Encrypt on Ubuntu 24.04.</p>
+<p>Industry observers note that running a containerized web application directly on a public port like :3000 or :8080 works during local development, but it creates serious security and reliability gaps in production. Exposing a container port directly to the internet leaves your traffic unencrypted over plain HTTP, makes managing multiple services on a single server difficult, and bypasses reverse-proxy protections like rate limiting and clean header forwarding. <span style="font-size:13px;">(Related: <a href="predicting-and-detecting-failures-how-azure-strengthens-reliabili-104436.html" style="color:#2563eb; font-weight:600;">Predicting and detecting failures: How Azure strengthen...</a>)</span></p>
+<p>In this guide, you will deploy a containerized web service on an Ubuntu 24.04 LTS server using a production-ready architecture. Instead of exposing the container to the public internet, you will bind it strictly to 127.0.0.1, route incoming requests through Nginx, and secure your domain with an auto-renewing Let's Encrypt SSL certificate. <span style="font-size:13px;">(Related: <a href="how-to-train-a-new-language-model-from-scratch-using-transformers-104433.html" style="color:#2563eb; font-weight:600;">How to train a new language model from scratch using Tr...</a>)</span></p>
+<p>By the end of this tutorial, all external traffic will follow this request flow:.</p>
+<p>Before you begin, make sure you have:.</p>
+<p>Note: Replace ://yourdomain.com with your actual domain name throughout every command and configuration file in this tutorial.</p>
+<p>Start by updating your server's package index and installing the prerequisite packages needed to add Docker's official repository alongside Nginx.</p>
+<p>Next, add Docker's official GPG key and repository so you install the maintained Docker Engine rather than an outdated distribution package:.</p>
+<p>Add your non-root user to the docker group so you can manage containers without prefixing every command with sudo:.</p>
+<p>Now configure UFW (Uncomplicated Firewall) to allow SSH connections and standard web traffic (80 and 443 via the Nginx Full profile) while blocking all other incoming ports:.</p>
+<p>Verify both your firewall rules and Docker installation:.</p>
+<p>You should see output confirming that ports 22, 80, and 443 are open and Docker is installed:.</p>
+<p>When developers run docker run -p 8080:80 ..., Docker binds port 8080 to 0.0.0.0 (every network interface on the host) and automatically modifies iptables rules—often bypassing UFW completely. That means anyone who knows your server's IP address could visit http://YOUR_SERVER_IP:8080 and bypass Nginx and HTTPS altogether.</p>
+<p>To prevent this, explicitly bind the host port to 127.0.0.1 so only processes running on the same server (like Nginx) can reach the container.</p>
+<p>Launch a lightweight demo web container (nginxdemos/hello) bound strictly to localhost:.</p>
+<p>Here is what each flag accomplishes:.</p>
+<p>Confirm the container is running and responds locally:.</p>
+<p id="sec-mid-103490">Now configure Nginx to accept public requests for ://yourdomain.com and forward them internally to http://127.0.0.1:8080.</p>
+<p>Create a dedicated server block configuration file in /etc/nginx/sites-available/:.</p>
+<p>Paste the following configuration, replacing ://yourdomain.com with your actual domain:.</p>
+<p>It has been revealed that save and close the file (Ctrl + O, Enter, Ctrl + X in nano). Next, enable the site by creating a symbolic link in sites-enabled, remove the default welcome site if you no longer need it, and test your Nginx syntax:.</p>
+<p>If the configuration test succeeds, reload Nginx to apply the changes:.</p>
+<p>Verify that your domain now serves the containerized application over HTTP:.</p>
+<p>With HTTP routing confirmed, use Certbot to problem a free TLS certificate from Let's Encrypt and automatically configure Nginx to redirect all HTTP traffic to HTTPS.</p>
+<p>Install Certbot and its Nginx plugin:.</p>
+<p>Once validated, Certbot modifies /etc/nginx/sites-available/://yourdomain.com to attach your SSL certificate and enable automatic HTTP-to-HTTPS redirection.</p>
+<p>First, verify that HTTP requests now return a 301 Moved Permanently redirect to HTTPS:.</p>
+<p>Next, confirm that Certbot's scheduled systemd timer will renew your certificate automatically before its 90-day expiration:.</p>
+<p>If you see Congratulations, all simulated renewals succeeded, your TLS automation is ready for production.</p>
+<p>Even with clean configs, two issues commonly trip up fresh deployments:.</p>
+<p>A 502 Bad Gateway means Nginx is reachable, but it cannot connect to your upstream container on 127.0.0.1:8080.</p>
+<p>Let's Encrypt must connect to your server over port 80 to verify domain ownership.</p>
+<p>You now have a containerized web application running behind an Nginx reverse proxy on Ubuntu 24.04, isolated from direct public port access and encrypted with automated Let's Encrypt SSL certificates.</p>
+<p id="sec-end-103490">From here, you can expand this setup by:.</p>
+<p style="margin-top: 25px;">
+<a href="https://dev.to/bmwohi254/how-to-deploy-a-dockerized-web-app-behind-an-nginx-reverse-proxy-with-free-ssl-on-ubuntu-2j14" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="making-a-web-app-generator-with-open-ml-models-104189.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #104189. Making a web app generator with open ML models
+        </a>
+        
+        <a href="portugoalnet-improvements-upcoming-app-and-new-ssl-technology-96045.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #96045. PortuGOAL.net improvements: upcoming App and new SSL technology
+        </a>
+        
+        <a href="one-shot-any-web-app-with-gradios-grhtml-92773.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #92773. One-Shot Any Web App with Gradio's gr.HTML
+        </a>
+        
+        <a href="breaking-deploy-hugging-face-models-easily-with-amazon-sagemaker-104408.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #104408. Breaking: Deploy Hugging Face models easily with Amazon SageMaker
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

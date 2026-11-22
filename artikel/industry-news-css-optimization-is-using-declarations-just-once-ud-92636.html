@@ -150,14 +150,14 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-92636">It has been revealed that CSS optimization is a deceptive topic. On the one hand, it feels like something simple that we should already have all the tooling for — especially when it comes to minification. On the other hand, the idea that we already exploited “everything” there is around CSS optimization may be considered naive. Such a claim looks hard to defend for a language that evolves almost daily.</p>
-<p>In this article, I’d like to pick a technique that’s at least 18 years old — UDJO, or “using declarations just once.”. <span style="font-size:13px;">(Related: <a href="top-democrat-asks-trump-administration-to-stop-using-disappearing-92979.html" style="color:#2563eb; font-weight:600;">Top Democrat asks Trump administration to stop using di...</a>)</span></p>
-<p>Aware of an older source? Please comment! <span style="font-size:13px;">(Related: <a href="la-noire-2-leak-resurfaces-after-source-gets-gta-6-ending-right-92945.html" style="color:#2563eb; font-weight:600;">LA Noire 2 leak resurfaces after source gets GTA 6 endi...</a>)</span></p>
+<p>In this article, I’d like to pick a technique that’s at least 18 years old — UDJO, or “using declarations just once.”. <span style="font-size:13px;">(Related: <a href="how-to-train-a-new-language-model-from-scratch-using-transformers-104433.html" style="color:#2563eb; font-weight:600;">How to train a new language model from scratch using Tr...</a>)</span></p>
+<p>Aware of an older source? Please comment!</p>
 <p>The technique is inspired by the principle of DRY, “don’t repeat yourself”, in that it works by identifying and reducing (if not eliminating) declaration repetition.</p>
 <p>So, if there’s something like display: flex and it appears two or more times, it gets reconciled in one rule:.</p>
 <p>In a recent development, the outcome of the technique depends on how intelligently the deduplication is done and how long the selectors are. Intelligence determines if UDJO leads to an actual maintainability advantage — can the change of a declaration really be done to all the selectors attached? And the selector length influences how significant file size savings are.</p>
 <p>According to recent reports, if you’re interested, my article on “DRY CSS” describes the mechanics in more detail. The question here is: Is UDJO still effective and still relevant today?</p>
 <p>When we try to answer this question, however, we end up with a problem: When sites are complex and their style sheet declarations have not been de-duplicated before, UDJO can require a lot of work.</p>
-<p>Industry observers note that to save some time, I built tooling for this work. While it didn’t seem like it would immediately be as comprehensive as manually going through and testing style sheets, it seemed realistic enough that a tool could catch some repetition.</p>
+<p>Industry observers note that to save some time, I built tooling for this work. While it didn’t seem like it would immediately be as comprehensive as manually going through and testing style sheets, it seemed realistic enough that a tool could catch some repetition. <span style="font-size:13px;">(Related: <a href="industry-news-designing-azure-silicon-on-azure-silicon-eda-worklo-104435.html" style="color:#2563eb; font-weight:600;">Industry News: Designing Azure silicon on Azure silicon...</a>)</span></p>
 <p>Skipping ahead, I created CSS Dedup not only to identify repetition, but also to deduplicate what could safely be optimized (CSS Dedup has some documentation on this but in essence, deduplication affects selector locations, which is part of how the cascade works). This, then, gives us some data:.</p>
 <p id="sec-mid-92636">It has been revealed that for the first batch, I arbitrarily picked 20 websites to analyze. I then used CSS Dedup to check what the file size changes would be if we deduplicated what seemed provably safe, and also what seemed probably safe, but only if it led to file size savings.</p>
 <p>Industry observers note that I picked those two options to provide the “natural” result of deduplication, but also the one site owners may be most interested in to reduce repetition but also decrease transfer size. After all, UDJO as a CSS optimization technique can improve both maintainability and performance.</p>
@@ -192,20 +192,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="industry-news-take-two-ceo-is-shutting-down-questions-about-gta-7-92969.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #92969. Industry News: Take-Two CEO is shutting down questions about GTA 7 just days after GTA 6’s launch
+        <a href="industry-news-using-mixing-hugging-face-models-with-gradio-20-104411.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #104411. Industry News: Using & Mixing Hugging Face Models with Gradio 2.0
         </a>
         
-        <a href="industry-news-is-the-galaxy-s26-ultra-still-a-good-buy-at-the-end-92714.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #92714. Industry News: Is the Galaxy S26 Ultra still a good buy at the end of 2026?
+        <a href="industry-news-proximal-policy-optimization-ppo-104325.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #104325. Industry News: Proximal Policy Optimization (PPO)
         </a>
         
-        <a href="industry-news-getting-the-source-right-not-just-the-fact-source-a-92439.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #92439. Industry News: Getting the Source Right, Not Just the Fact: Source-Aware Verification for MCP Agents
+        <a href="industry-news-optimum-nvidia-unlocking-blazingly-fast-llm-inferen-104126.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #104126. Industry News: Optimum-NVIDIA Unlocking blazingly fast LLM inference in just 1 line of code
         </a>
         
-        <a href="industry-news-just-10-minutes-of-daily-exercise-could-unlock-deep-91944.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #91944. Industry News: Just 10 minutes of daily exercise could unlock deeper sleep
+        <a href="scott-eastwood-is-still-seeking-a-rush-just-at-a-slower-pace-102603.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #102603. Scott Eastwood Is Still Seeking a Rush, Just at a Slower Pace
         </a>
         
     </div>

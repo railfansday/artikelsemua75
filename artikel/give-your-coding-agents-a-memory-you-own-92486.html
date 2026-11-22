@@ -157,11 +157,11 @@ disappears when the session ends. Each upcoming agent, on each new host, starts 
 Memory made the case
 that coding agents already produce the record we keep losing. As they search a
 codebase, try approaches, hit errors, read documentation, and change direction, they
-leave behind a dense account of not just what changed, but why.</p>
+leave behind a dense account of not just what changed, but why. <span style="font-size:13px;">(Related: <a href="stop-treating-agents-as-one-off-projects-and-start-running-them-a-104434.html" style="color:#2563eb; font-weight:600;">Stop treating agents as one-off projects and start runn...</a>)</span></p>
 <p>While the diagnosis is correct, traces are only potential memory. The session logs of
 an agent are still just an archive. You cannot grep your way to “why did we move
 off the streaming parser?” across ten thousand turns. For an agent to use those traces
-while it works, they need indexing, retrieval, ranking, and exact provenance. <span style="font-size:13px;">(Related: <a href="tech-report-determined-woman-completes-7-marathons-in-a-year-whil-92974.html" style="color:#2563eb; font-weight:600;">Tech Report: “Determined” woman completes 7 marathons i...</a>)</span></p>
+while it works, they need indexing, retrieval, ranking, and exact provenance. <span style="font-size:13px;">(Related: <a href="retrieval-augmented-generation-with-huggingface-transformers-and--104421.html" style="color:#2563eb; font-weight:600;">Retrieval Augmented Generation with Huggingface Transfo...</a>)</span></p>
 <p>That is what funes provides. It is a durable
 memory layer for your agents (Claude Code, Codex, pi, and Hermes). It is built from the
 sessions already on your machine. It works locally and becomes part of your agent's
@@ -172,7 +172,7 @@ and embedding and reranking happen on your machine. Install it:.</p>
 <p>Industry observers note that that one add command builds the first index, gives the agent recall and get
 tools, and installs the automation that indexes each completed turn. Indexing is
 incremental, with new runs adding new turns rather than embedding the whole history
- again. The older and deeper content can backfill in bounded steps. <span style="font-size:13px;">(Related: <a href="industry-news-take-two-ceo-is-shutting-down-questions-about-gta-7-92969.html" style="color:#2563eb; font-weight:600;">Industry News: Take-Two CEO is shutting down questions ...</a>)</span></p>
+ again. The older and deeper content can backfill in bounded steps.</p>
 <p>According to recent reports, from there, you just work. When a task touches a past decision, rationale, or finding,
 the agent can reach for recall itself. You do not need to remember the old session or
 paste its context into the fresh one.</p>
@@ -284,20 +284,20 @@ supported.</p>
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
+        <a href="latest-update-introducing-agentsjs-give-tools-to-your-llms-using--104180.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #104180. Latest Update: Introducing Agents.js: Give tools to your LLMs using JavaScript
+        </a>
+        
+        <a href="industry-news-personal-copilot-train-your-own-coding-assistant-104135.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #104135. Industry News: Personal Copilot: Train Your Own Coding Assistant
+        </a>
+        
         <a href="give-sandboxed-agents-live-web-access-with-the-firecrawl-kit-for--92587.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #92587. Give sandboxed agents live web access with the Firecrawl kit for Docker Sandboxes
         </a>
         
         <a href="ai-coding-agents-leak-thousands-of-secrets-to-github-92370.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #92370. AI Coding Agents Leak Thousands of Secrets to GitHub
-        </a>
-        
-        <a href="how-to-run-claude-code-and-other-coding-agents-in-the-cloud-247-92344.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #92344. How to Run Claude Code and Other Coding Agents in the Cloud 24/7
-        </a>
-        
-        <a href="tech-report-introducing-agentsjs-give-tools-to-your-llms-using-ja-81303.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #81303. Tech Report: Introducing Agents.js: Give tools to your LLMs using JavaScript
         </a>
         
     </div>

@@ -150,9 +150,9 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-92406">In a recent development, our latest release, Apertus 1.5, extends the 8B and 70B Apertus 1.0 models with image/audio understanding, an optional thinking mode, a four times longer context window, improved instruction-following, and better tool use. The updated 8B and 70B model weights were released to Hugging Face on July 24, 2026 under an Apache 2.0 license. Further details are now available from the project Technical Report, and summarized here.</p>
-<p>Industry observers note that apertus 1.5 is a continued pretraining of the first generation model: adding 4 trillion tokens of text and multimodal training data to the 8B model and 2 trillion tokens to the 70B model, for a total of 19T and 17T, respectively. As with every Apertus release, the models are fully open: open weights, open data, open values, and full training details. <span style="font-size:13px;">(Related: <a href="three-e-waste-nvidia-v100s-hit-100-tokens-per-second-on-qwen-36-3-92976.html" style="color:#2563eb; font-weight:600;">Three 'e-waste' Nvidia V100s hit 100 tokens per second ...</a>)</span></p>
-<p>The full Apertus 1.5 training pipeline.</p>
-<p>We introduce multimodality in v1.5 models in an early-fusion manner, where images and audio enter Apertus as discrete tokens in the same sequence with text tokens, instead of using a separate vision encoder. Images are tokenized with the Emu3.5 tokenizer (a 512×512 image becomes 1,024 tokens) and audio with WavTokenizer (40 tokens per second). We only extend the vocabulary, so the architecture stays unchanged and training runs at text-only speed. The models understand images and audio but generate only text. <span style="font-size:13px;">(Related: <a href="top-democrat-asks-trump-administration-to-stop-using-disappearing-92979.html" style="color:#2563eb; font-weight:600;">Top Democrat asks Trump administration to stop using di...</a>)</span></p>
+<p>Industry observers note that apertus 1.5 is a continued pretraining of the first generation model: adding 4 trillion tokens of text and multimodal training data to the 8B model and 2 trillion tokens to the 70B model, for a total of 19T and 17T, respectively. As with every Apertus release, the models are fully open: open weights, open data, open values, and full training details. <span style="font-size:13px;">(Related: <a href="industry-news-designing-azure-silicon-on-azure-silicon-eda-worklo-104435.html" style="color:#2563eb; font-weight:600;">Industry News: Designing Azure silicon on Azure silicon...</a>)</span></p>
+<p>The full Apertus 1.5 training pipeline. <span style="font-size:13px;">(Related: <a href="my-journey-to-a-serverless-transformers-pipeline-on-google-cloud-104417.html" style="color:#2563eb; font-weight:600;">My Journey to a serverless transformers pipeline on Goo...</a>)</span></p>
+<p>We introduce multimodality in v1.5 models in an early-fusion manner, where images and audio enter Apertus as discrete tokens in the same sequence with text tokens, instead of using a separate vision encoder. Images are tokenized with the Emu3.5 tokenizer (a 512×512 image becomes 1,024 tokens) and audio with WavTokenizer (40 tokens per second). We only extend the vocabulary, so the architecture stays unchanged and training runs at text-only speed. The models understand images and audio but generate only text.</p>
 <p>Starting from Apertus 1.0, we continue pretraining in four stages:.</p>
 <p>Overall, more than half of the training tokens are text-only, which preserves the language abilities of Apertus 1.0. The text data is refreshed with sources such as FineWeb2-HQ+, FinePDFs, and Nemotron-CC. All upcoming data, multimodal included, meets the same bar as before: publicly available, permissively licensed, and with robots.txt opt-outs respected retroactively. Every source is listed in apertus-data-transparency.</p>
 <p>Post-training runs in five stages: SFT → long-context SFT → RL → DPO → charter alignment (SDPO).</p>
@@ -196,20 +196,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="anthropic-decides-to-go-head-to-head-with-gta-vi-release-schedule-92577.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #92577. Anthropic decides to go head-to-head with GTA VI release, schedules IPO for the same day
+        <a href="testing-json-ld-like-an-api-7-checks-before-your-next-release-104131.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #104131. Testing JSON-LD Like an API: 7 Checks Before Your Next Release
         </a>
         
-        <a href="another-critical-php-security-release-has-dropped-92574.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #92574. Another critical PHP security release has dropped
+        <a href="codegemma-an-official-google-release-for-code-llms-104061.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #104061. CodeGemma - an official Google release for code LLMs
         </a>
         
-        <a href="nike-tuned-air-a-huge-stride-forward-in-air-filled-trainer-design-91670.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #91670. Nike Tuned Air "a huge stride forward" in air-filled trainer design notes innovation lead
+        <a href="were-not-saying-theyre-perfect-notes-architect-fighting-to-save-m-102945.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #102945. “We're not saying they're perfect” notes architect fighting to save Melbourne's public housing blocks
         </a>
         
-        <a href="production-notes-test-91452.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #91452. production notes test
+        <a href="production-notes-test-102870.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #102870. production notes test
         </a>
         
     </div>
