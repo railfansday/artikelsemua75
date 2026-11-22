@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A real Linux kernel, compiled to WebAssembly</title>
+    <meta name="description" content="A real Linux kernel, compiled to WebAssembly. It boots to a shell in less than a second. Try it · Performance · Features · CLI · How it works · Benchmarks ">
+    <meta name="keywords" content="kernel, guest, linux, unkernel, wasm, page, runs, file">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua75/artikel/a-real-linux-kernel-compiled-to-webassembly-108314.html">
+    
+    <meta property="og:title" content="A real Linux kernel, compiled to WebAssembly">
+    <meta property="og:description" content="A real Linux kernel, compiled to WebAssembly. It boots to a shell in less than a second. Try it · Performance · Features · CLI · How it works · Benchmarks ">
+    <meta property="og:image" content="https://opengraph.githubassets.com/ed0a3bfae68ccb6970d9e0cf4b0f220b1ac744150d8e7662af2342d9e0932f35/pithings/unkernel">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua75/artikel/a-real-linux-kernel-compiled-to-webassembly-108314.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="A real Linux kernel, compiled to WebAssembly">
+    <meta name="twitter:description" content="A real Linux kernel, compiled to WebAssembly. It boots to a shell in less than a second. Try it · Performance · Features · CLI · How it works · Benchmarks ">
+    <meta name="twitter:image" content="https://opengraph.githubassets.com/ed0a3bfae68ccb6970d9e0cf4b0f220b1ac744150d8e7662af2342d9e0932f35/pithings/unkernel">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "A real Linux kernel, compiled to WebAssembly", "image": ["https://opengraph.githubassets.com/ed0a3bfae68ccb6970d9e0cf4b0f220b1ac744150d8e7662af2342d9e0932f35/pithings/unkernel"], "datePublished": "2026-11-17T16:35:46", "dateModified": "2026-11-22T11:55:33.948708", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua75/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua75/artikel/a-real-linux-kernel-compiled-to-webassembly-108314.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding A real Linux kernel, compiled to WebAssembly?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Github."}}, {"@type": "Question", "name": "Which category does 'A real Linux kernel, compiled to WebAssembly' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>A real Linux kernel, compiled to WebAssembly</h1>
+        <div class="meta-line">🌐 Source: <strong>Github</strong> &bull; 📅 17 Nov 2026 &bull; ⏱️ 10 min read (2050 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>A real Linux kernel, compiled to WebAssembly.</li><li style='margin-bottom:6px;'>Try it ·
+  Performance ·
+  Features ·
+  CLI ·
+  How it works ·
+  Benchmarks ·
+  JavaScript SDK.</li><li style='margin-bottom:6px;'>Industry observers note that unkernel is Linux 7.x built as a single wasm module with a real MMU.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-108314"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-108314"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-108314"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="A real Linux kernel, compiled to WebAssembly" loading="lazy" src="https://opengraph.githubassets.com/ed0a3bfae68ccb6970d9e0cf4b0f220b1ac744150d8e7662af2342d9e0932f35/pithings/unkernel" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-108314">A real Linux kernel, compiled to WebAssembly. It boots to a shell in less than a second.</p>
+<p>Try it ·
+  Performance ·
+  Features ·
+  CLI ·
+  How it works ·
+  Benchmarks ·
+  JavaScript SDK.</p>
+<p>Industry observers note that unkernel is Linux 7.x built as a single wasm module with a real MMU. The
+kernel (syscalls, scheduler, memory management, ext4, TCP/IP) is compiled
+code, not emulated, so programs get Linux's own behavior down to the edge
+cases. Only user programs are emulated: unmodified aarch64 (arm64) Linux
+binaries, so Alpine and Debian packages run as they are. <span style="font-size:13px;">(Related: <a href="industry-news-take-two-ceo-is-shutting-down-questions-about-gta-7-115851.html" style="color:#2563eb; font-weight:600;">Industry News: Take-Two CEO is shutting down questions ...</a>)</span></p>
+<p>Open a page and you have a Linux machine with a
+shell, a package manager, a persistent disk, internet access, and a screen
+with sound. It runs entirely on your device, with nothing to install and no
+server, and every layer is open source. How it works
+explains the design. <span style="font-size:13px;">(Related: <a href="latest-update-japan-debuts-a-dumbphone-that-doesnt-connect-to-int-115850.html" style="color:#2563eb; font-weight:600;">Latest Update: Japan debuts a ‘dumbphone’ that doesn’t ...</a>)</span></p>
+<p>Much of what makes a system feel slow lives in the kernel: starting
+processes, syscalls, page faults, file and network I/O. In unkernel that
+path runs at wasm speed.</p>
+<p>Recent findings suggest that the syscall and fork numbers were measured on 2026-11-14 (with the
+riscv64 user space the project started with; the path through the kernel
+is the same), the JIT numbers on 2026-11-18. CPU-heavy programs are well
+behind native: apk search over the main index takes about 0.8 s, apk add python3 about 3.4 s. Benchmarks has the full numbers.</p>
+<p>Anything a program relies on, from /proc and epoll to cgroups and
+overlayfs, behaves as it does on a server, because it runs the same code.</p>
+<p>Known limits lists what is still missing.</p>
+<p>Open unkernel.dev. A shell appears
+after a download of about 10 MB. Your changes are saved in the browser, and
+the status icon opens options, diagnostics, and export or reset for your
+disk. Ctrl-A n (or ⌘A n on a Mac) or + on the status line opens another
+terminal window with its own shell, up to 9; Ctrl-A and a digit switches.</p>
+<p>The page takes a few URL parameters:.</p>
+<p>In a recent development, browsers can't open raw TCP sockets, so the page reaches the internet
+through a Wisp proxy. The default one accepts only known origins, so if you
+host the page somewhere else, point ?wisp= at your own proxy.</p>
+<p>This boots Alpine, with networking over your host's sockets. Press
+Ctrl-] to quit. The package holds the kernel and a small base system;
+the first run downloads the Alpine image (about 4 MB) from the GitHub
+release of your version and keeps it in ~/.cache/unkernel.</p>
+<p>It has been revealed that without --data, changes to the root file system are kept in memory and
+gone at exit; with it, each distro keeps its own in /data/distros//. --distro also takes an image file or an http(s) URL, and
+UNKERNEL_CACHE_DIR moves the download cache.</p>
+<p>Exit codes: 0 power off, 1 halt or boot failure, 2 restart, 124 timeout, 253
+kernel panic, 254 wasm trap, 255 fatal error. The CLI is built on the
+JavaScript SDK: --mount uses its host
+mounts and --forward its
+vm.connect().</p>
+<p>Most "Linux in the browser" projects take one of three approaches:.</p>
+<p>unkernel keeps the best of each: the real Linux kernel, running at native
+wasm speed, under unmodified binaries with a real MMU.</p>
+<p>The kernel is compiled straight to WebAssembly. User programs run on
+kwemu, an aarch64 CPU written in Zig and linked into the kernel. kwemu
+walks the kernel's own page tables, so memory management is done by the
+real Linux code.</p>
+<p>When a program makes a syscall, kwemu returns to the kernel, which handles
+it as native wasm. There is no emulated trap and no emulated kernel mode in
+between. Task switches use JSPI (WebAssembly.Suspending), so the kernel
+gets real stacks that it can suspend and resume.</p>
+<p>kwemu runs blocks of guest code decoded once into compact ops (what has
+no op runs through a reference interpreter), and hot user code goes
+through a second tier: a JIT that compiles those blocks to wasm modules
+at run time, with output that matches the interpreter bit for bit. Benchmarks shows what each tier costs.</p>
+<p>Devices are small paravirtual drivers that talk to the JavaScript host:
+block (kwblk), network (kwnet, with a
+user-mode TCP/IP stack in JS), display, input and
+sound (kwfb, kwinput, kwsnd),
+vsock (kwvsock) and shared memory
+(kwshm).</p>
+<p>The design helps most with syscalls. These were measured under Node:.</p>
+<p>According to recent reports, in this test (2026-11-14) fork is faster than native. Pure computation is
+slower. kwemu's decoded-op interpreter runs integer code at about 250-300
+million guest instructions per second under Node (2026-11-17), and the
+JIT makes real Alpine work 1.6 to 2.3 times as fast as that (2026-11-18:
+an ash loop 2.5 s against 4.0 s, seq 100000 | sort -r 3.1 s against
+7.1 s, seq 250000 | gzip | gunzip 3.5 s against 6.5 s), which is still
+well behind native.</p>
+<p>According to recent reports, importing unkernel picks the Node or browser entry automatically, and
+unkernel/node or unkernel/web selects one explicitly. The kernel ships
+in the package (unkernel/unkernel.wasm) and loads from next to the entry,
+streamed and compiled while it downloads. It carries a small base system
+that mounts a distro image read-only under an overlay root and runs its
+init; createKernel() without distro boots the base shell
+(busybox and unkernel's tools), which needs no download.</p>
+<p id="sec-mid-108314">The distro images are not in the package. On Node, fetchDistro("alpine")
+(or "debian") downloads one once from the GitHub release of the
+package's version, checks it against the release's distros.json (size and
+SHA-256), keeps it in ~/.cache/unkernel (UNKERNEL_CACHE_DIR) and
+returns its path; nothing else in the SDK downloads anything. In the
+browser, host the image yourself (it is read lazily with range requests)
+and pass its URL:.</p>
+<p>Changes to the root file system stay in memory, unless a persistent data
+disk (labelled kwdata) is attached: then each distro keeps them in
+/data/distros// on it.</p>
+<p>Sources indicate that networking is off unless you pass net. Any object with connect and
+lookup methods can carry the guest's TCP and DNS, so you can write your
+own backend.</p>
+<p>createImageFromKwsparse(file, template) makes a latest data disk from the
+template the kernel carries (bundledBoot(module).datadisk). In the
+browser, openHttpDisk(url) keeps your writes in IndexedDB and
+openDataDisk() gives you the persistent data disk that
+the page uses. Anything that implements
+BlockDevice works too, and a disk of your own can be the root:
+cmdline: "console=hvc0 root=/dev/wda rw" with initrd: null.</p>
+<p>According to recent reports, exec() runs a program on pipes and resolves with { stdout, stderr, exitCode, signal }, also for a non-zero exit. Pass encoding: "buffer"
+for bytes, and cwd or env as you would to child_process. On the
+distro images programs run as the user user (uid 1000, in
+/home/user), who has sudo without a password; pass user: "root" (or
+another name or uid) to run as someone else. The base shell is root's.</p>
+<p>spawn(file, args, { cols, rows }) runs a program on a pty, in the
+zigpty / node-pty shape, with resize(), kill(signal) and close() (a
+hangup). Run as many as you like. Keep reading output: the guest program
+waits while nobody does.</p>
+<p>With pty: false the program gets pipes: stdin, stdout and stderr
+web streams, byte for byte.</p>
+<p>A file system is a plain object tree (a function is a computed file,
+evaluated once per open), a MemoryFs you read and write from the host,
+nodeFs(dir), or your own Fs: getattr, readdir and open by path,
+sync or async, plus whichever change methods you want. Mounts are served
+over 9p on vsock. Each guest write reaches the host as it happens, and a
+host change shows in the guest within a second.</p>
+<p>According to recent reports, these are byte streams with real flow control and no network in between. vsock is on unless you pass vsock: false.</p>
+<p>According to recent reports, vm.connect(port) reaches a TCP server on the guest's loopback through
+the guest's kwtty, over vsock, so it needs no network. It resolves once
+the guest has connected (PtyError ECONNREFUSED if nothing listens) with
+readable and writable byte streams, half-close included, close() and
+closed. The CLI's --forward HOSTPORT:GUESTPORT uses it.</p>
+<p>vm.fetch(url, init) sends an HTTP/1.1 request to a server in the guest
+and returns a Response whose body streams. It always connects to the
+guest's 127.0.0.1 at the URL's port; the host name only goes into the
+Host header, so vm.fetch("http://localhost:8000/") reaches a dev server
+listening on port 8000. fetchOver(connect, url, init) is the same client
+over any byte stream.</p>
+<p>/dev/shm exists once the guest's init has mounted it, so wait for the
+guest before create() (an exec() waits for it). openId(id) opens a
+memfd that a guest program exported through /dev/kwshm. views()
+exists only when the kernel runs inline.</p>
+<p>Industry observers note that evdev also has button(), move(), moveTo() and wheel() for a
+mouse or tablet. onInput tells you when a program opens the keyboard
+and mouse; until then, send keys to the console. readFrame() waits for
+a fresh frame.</p>
+<p>The kernel runs in a worker thread or Web Worker, with the same API. Disks
+and the network are given as specs, which the worker builds: { kind: "file", path } on Node, { kind: "http", url } and { kind: "data", template: "bundled" } in browsers. Input and frames go through shared
+memory when it is available (vm.transport says). This mode is
+experimental.</p>
+<p>An SMP kernel (a bundle with the SMP patch) boots on several CPUs with
+cpus: 4, each CPU in a thread of its own on one shared memory. In
+browsers that needs a cross-origin isolated page and worker: true,
+because a CPU blocks while it waits for another, which a page's main
+thread may not; webCpuBlocker() notes why it cannot, and
+vm.stats().cpus how many CPUs the kernel got.</p>
+<p>Recent findings suggest that on a server, worker: true keeps the event loop free at no cost in speed,
+and cpus: 4 gets most of what more CPUs give (about 3x on parallel work;
+8 or 16 add little, and each CPU adds to boot time and takes 9 MiB of
+guest memory). node test/profile.ts measures your host, and the page's
+/profile.html a browser.</p>
+<p>The SDK has some limits, on top of the kernel's known
+limits. There is no guest agent beyond terminal sessions, so
+you drive the guest through a terminal or its console, or over vsock with your
+own program. stop() doesn't shut the guest down cleanly, so prefer
+poweroff. Only one kernel can run per thread. Types ship as .d.mts and use
+the DOM's WebAssembly types, so a Node-only TypeScript project needs "lib": ["dom"] or skipLibCheck.</p>
+<p>It has been revealed that you need Linux (x86-64 or arm64), Zig 0.16, Node 24, clang 21+ with the
+wasm target, and the usual build tools. ./setup.sh --check lists what's
+missing. The first build takes about 12 minutes, most of it spent on a
+patched wasm-ld, and uses 5 GiB of disk.</p>
+<p>The build makes the kernel bundle vendor/build/bundle/unkernel.wasm and
+the distro images vendor/build/distro/{alpine,debian}.erofs with their
+index distros.json; a source checkout uses those and never downloads
+them. guest/README.md describes the base system and how
+to add a distro.</p>
+<p>In a recent development, kernel/README.md maps the kernel directory and its
+build steps. AGENTS.md and .agents/ hold the
+contributor notes: the kernel, its devices and the guest image, invariants,
+workflows, which tests to run, and the roadmap.</p>
+<p>Made with ♥ by Pooya Parsa (pi0), sponsored by
+▲ Vercel.</p>
+<p>Sources indicate that everything is open source: the kernel patches, the emulator and its JIT,
+the patched linker, the SDK and the page. ./setup.sh rebuilds the kernel
+file from source.</p>
+<p>According to recent reports, the project is GPL-2.0-or-later (LICENSE) unless a file indicates
+otherwise. The JavaScript SDK and page (js/, web/, SDK tests) are MIT
+(LICENSE-MIT), so you can embed them anywhere.</p>
+<p id="sec-end-108314">It has been revealed that the npm package ships a Linux kernel (GPL-2.0) with a small base system
+(Alpine's static busybox, GPL-2.0, and unkernel's own tools), so it is MIT AND GPL-2.0-only. The distro images it downloads hold the distributions'
+packages, which keep their own licenses. The
+kernel's source is Linux 7.3.4 plus
+kernel/patches/linux (arch/wasm is based on
+linux-wasm's). Those patches and
+kernel/tools/fake-llvm are GPL-2.0-only, and the patches in
+kernel/patches/llvm follow LLVM's license (Apache-2.0 WITH
+LLVM-exception).</p>
+<p style="margin-top: 25px;">
+<a href="https://github.com/pithings/unkernel" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="how-google-traced-gke-api-timeouts-to-a-linux-kernel-tcp-bug-115287.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #115287. How Google Traced GKE API Timeouts to a Linux Kernel TCP Bug
+        </a>
+        
+        <a href="industry-news-your-ssl-certificates-can-now-last-200-days-at-most-115778.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #115778. Industry News: Your SSL certificates can now last 200 days at most: The real risk isn’t renewal
+        </a>
+        
+        <a href="motorola-razr-flex-leaks-in-real-life-with-fold-8-and-iphone-duo--115700.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #115700. Motorola Razr Flex leaks in real life with Fold 8 and iPhone Duo shape, mystery chipset
+        </a>
+        
+        <a href="introducing-waypoint-1-real-time-interactive-video-diffusion-from-115699.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #115699. Introducing Waypoint-1: Real-time interactive video diffusion from Overworld
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

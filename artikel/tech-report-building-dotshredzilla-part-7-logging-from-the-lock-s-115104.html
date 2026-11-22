@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Report: Building DotShredzilla (Part 7): Logging From the Lock Screen, 36 Free Badges, and the Backup That Signed Everyone Out</title>
+    <meta name="description" content="Part 6 ended with version 1.6.0 in Play review: no forced ads, Pro for life, and ad hours a server can trust. Version 1.7.0 came from the same place as eve">
+    <meta name="keywords" content="notification, workout, recent, version, android, first, sign, signed">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua75/artikel/tech-report-building-dotshredzilla-part-7-logging-from-the-lock-s-115104.html">
+    
+    <meta property="og:title" content="Tech Report: Building DotShredzilla (Part 7): Logging From the Lock Screen, 36 Free Badges, and the Backup That Signed Everyone Out">
+    <meta property="og:description" content="Part 6 ended with version 1.6.0 in Play review: no forced ads, Pro for life, and ad hours a server can trust. Version 1.7.0 came from the same place as eve">
+    <meta property="og:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fw8nr1hnsku7vqax7amw1.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua75/artikel/tech-report-building-dotshredzilla-part-7-logging-from-the-lock-s-115104.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Tech Report: Building DotShredzilla (Part 7): Logging From the Lock Screen, 36 Free Badges, and the Backup That Signed Everyone Out">
+    <meta name="twitter:description" content="Part 6 ended with version 1.6.0 in Play review: no forced ads, Pro for life, and ad hours a server can trust. Version 1.7.0 came from the same place as eve">
+    <meta name="twitter:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fw8nr1hnsku7vqax7amw1.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Tech Report: Building DotShredzilla (Part 7): Logging From the Lock Screen, 36 Free Badges, and the Backup Tha", "image": ["https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fw8nr1hnsku7vqax7amw1.png"], "datePublished": "2026-11-22T11:57:55", "dateModified": "2026-11-22T12:01:01.590502", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua75/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua75/artikel/tech-report-building-dotshredzilla-part-7-logging-from-the-lock-s-115104.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Tech Report: Building DotShredzilla (Part 7): Logging From the Lock Screen, 36 F?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Dev."}}, {"@type": "Question", "name": "Which category does 'Tech Report: Building DotShredzilla (Part 7): Logging From t' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Tech Report: Building DotShredzilla (Part 7): Logging From the Lock Screen, 36 Free Badges, and the Backup That Signed Everyone Out</h1>
+        <div class="meta-line">🌐 Source: <strong>Dev</strong> &bull; 📅 22 Nov 2026 &bull; ⏱️ 6 min read (1102 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>Part 6 ended with version 1.6.0 in Play review: no forced ads, Pro for life, and ad hours a server can trust.</li><li style='margin-bottom:6px;'>It has been revealed that between sets my phone is in my pocket or on the bench, locked.</li><li style='margin-bottom:6px;'>DotShredzilla is an Android workout tracker from FreeRave (DotSuite), written in Kotlin with Jetpack Compose and Firebase, and open source under Apache License 2.0: github.com/kareem2099/Shredzilla.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-115104"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-115104"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-115104"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Tech Report: Building DotShredzilla (Part 7): Logging From the Lock Screen, 36 Free Badges, and the Backup That Signed Everyone Out" loading="lazy" src="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fw8nr1hnsku7vqax7amw1.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-115104">Part 6 ended with version 1.6.0 in Play review: no forced ads, Pro for life, and ad hours a server can trust. Version 1.7.0 came from the same place as every other release, a training session.</p>
+<p>It has been revealed that between sets my phone is in my pocket or on the bench, locked. Unlocking it with chalk on my hands to tap "Log set" got old fast. So the biggest feature of 1.7.0 doesn't live in the app at all. It lives in the notification shade. <span style="font-size:13px;">(Related: <a href="latest-update-japan-debuts-a-dumbphone-that-doesnt-connect-to-int-115850.html" style="color:#2563eb; font-weight:600;">Latest Update: Japan debuts a ‘dumbphone’ that doesn’t ...</a>)</span></p>
+<p>DotShredzilla is an Android workout tracker from FreeRave (DotSuite), written in Kotlin with Jetpack Compose and Firebase, and open source under Apache License 2.0: github.com/kareem2099/Shredzilla. <span style="font-size:13px;">(Related: <a href="la-noire-2-leak-resurfaces-after-source-gets-gta-6-ending-right-115834.html" style="color:#2563eb; font-weight:600;">LA Noire 2 leak resurfaces after source gets GTA 6 endi...</a>)</span></p>
+<p>Recent findings suggest that when a workout starts, a notification shows what you're doing and what comes next, on the lock screen too. Its buttons cover most of a workout:.</p>
+<p>Sources indicate that the timer in the notification is the system's, not mine. The notification is posted once with a target time, and Android draws the clock. It counts up the workout time and counts down the rest:.</p>
+<p>According to recent reports, VISIBILITY_PUBLIC is what makes the buttons usable without unlocking. That's a choice worth making on purpose: the lock screen shows the list, the exercise and your last set, and nothing else from your account.</p>
+<p>In a recent development, the reply box gets whatever the keyboard sends. On my phone that can be Arabic-Indic digits (٩ ٨) or a decimal comma, so the parser normalizes first, then counts the numbers:.</p>
+<p>It has been revealed that one number means reps at the same load. Two numbers mean load and reps, and the load follows the last set's kind: plates stay plates, and a per-side machine doubles what you typed. Anything else gets a short "Try 8, or 9 8" message instead of a wrong set.</p>
+<p>It has been revealed that buttons on a notification go to a BroadcastReceiver, and a receiver isn't allowed to open screens. So Finish is a normal tap target that opens the app on the workout summary, not a background action.</p>
+<p>The receiver also needs the running workout. If Android has killed the app in the meantime, the buttons say "Open DotShredzilla to continue your workout" rather than logging a set into nothing. Tapping the notification itself brings the workout back.</p>
+<p>Detailed and Compact are free. Rest focus puts the countdown first, and Progress bar uses NotificationCompat.ProgressStyle with a segment per exercise. On Android 16 it also asks to be promoted, which turns it into a Live Update chip in the status bar:.</p>
+<p>Here's the whole thing in 20 seconds, recorded on my own phone:.</p>
+<p>In a recent development, 1.7.0 also added the first notifications that aren't about a workout in progress. Every one of them is judged against your own training, not a fixed schedule:.</p>
+<p>The permission isn't requested on first launch. It's requested on your first rest, the moment a notification is obviously useful. Quiet hours (10 PM to 8 AM by default) hold everything back, and each kind has its own switch.</p>
+<p>The rules themselves are plain functions that take a snapshot of your training and return what's due today. A WorkManager job runs them in the background, and unit tests cover the edges, like a deload week that shouldn't trigger a weekly goal alert.</p>
+<p>Pro is the layer that interprets your data. Badges are motivation, and motivation shouldn't be paywalled. So all 36 are free: milestones, training, strength, consistency, body and community.</p>
+<p id="sec-mid-115104">Two lessons from earlier parts revealed up again:.</p>
+<p>Industry observers note that badges earned before the feature existed are saved quietly. The first launch after the upgrade would otherwise have shown a stack of banners for things you did months ago. After that, each new badge gets its own banner.</p>
+<p>My favorite one is Pocket logger: log a set from the notification.</p>
+<p>Industry observers note that event badges come from Remote Config. A JSON list in badge_events defines a title, a window and a goal ("train 3 times this week"), so an event can start without an app update. A broken entry is skipped instead of breaking the badges page, and an earned event badge stays on the account after the event ends.</p>
+<p>Version 1.7.1 gives out numbers instead, #1 to #100, from a Cloud Function in a Firestore transaction:.</p>
+<p>Recent findings suggest that the number lives in founders/{uid}, which its member can read and nobody can write from the app. I first wanted to put it in the profile document, but version 1.6.0 creates email accounts with a plain set(), which replaces the whole document. A field there could be wiped by an app version that's still installed. A separate document no app version ever writes is safer than any rule about fields.</p>
+<p>Since then the function has moved from "account created" to "onboarding finished", so a sign-up someone abandons halfway doesn't take one of the hundred numbers.</p>
+<p>The worst bug of this release was simple to describe: on some installs, the app forgot the sign-in every time it closed. Sign in, close, open: signed out.</p>
+<p>In a recent development, the cause was Android's Auto Backup. Firebase Auth stores the signed-in user encrypted, with a key from the Android Keystore. Auto Backup happily restored Firebase's files to the latest install, including the encrypted keyset. The Keystore key that opens it never leaves the device, by design. So Firebase found a keyset it couldn't use, couldn't save any sign-in with it, and every launch started signed out.</p>
+<p>According to recent reports, the fix has two halves. Latest backups leave those files out, in both rule files, because Android 12 and later read data_extraction_rules.xml and older versions read backup_rules.xml:.</p>
+<p>Phones that already restored a broken keyset needed more. At startup, if no sign-in is saved, the old keyset protects nothing, so it's removed before Firebase Auth starts and Firebase creates a working one on the next sign-in:.</p>
+<p>Recent findings suggest that while I was in there, I removed a second way to get signed out. The app used to sign out when the profile couldn't be loaded, which on a weak gym connection happened often. Now only an account that was deleted or disabled is signed out. Anything else opens the app and syncs later.</p>
+<p>1.7.0 had already been approved by Play. I never published it, and shipped 1.7.1 with the fix instead.</p>
+<p>Recent findings suggest that version 1.7.1 is live on Google Play. Next, DotShredzilla learns five languages, including right-to-left Arabic.</p>
+<p>What would you want to do from a notification without opening the app?</p>
+<p id="sec-end-115104">Source: github.com/kareem2099/Shredzilla.</p>
+<p style="margin-top: 25px;">
+<a href="https://dev.to/freerave/building-dotshredzilla-part-7-logging-from-the-lock-screen-36-free-badges-and-the-backup-that-2h55" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="tech-report-whatsapp-starts-rolling-out-built-in-cloud-backup-on--103588.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #103588. Tech Report: WhatsApp starts rolling out built-in cloud backup on Android, and it’s free
+        </a>
+        
+        <a href="tech-report-chipotle-is-giving-customers-free-burritos-with-thank-115847.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #115847. Tech Report: Chipotle is giving customers free burritos with Thanksgiving Eve BOGO deal
+        </a>
+        
+        <a href="latest-update-latest-windows-11-lock-screen-zero-day-unlocks-bitl-115829.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #115829. Latest Update: Latest Windows 11 lock screen zero-day unlocks BitLocker-protected PCs with just a few keystrokes
+        </a>
+        
+        <a href="tech-report-playing-gta-6-this-weekend-heres-16-spoiler-free-tips-115800.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #115800. Tech Report: Playing GTA 6 this weekend? Here's 16 spoiler-free tips for your first playthrough
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

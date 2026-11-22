@@ -1,85 +1,85 @@
 {
-  "generatedAt": "2026-11-22T11:03:52.548177",
-  "totalArticles": 12456,
+  "generatedAt": "2026-11-22T12:35:52.520549",
+  "totalArticles": 12419,
   "categoryBreakdown": {
-    "General": 10163,
+    "General": 10131,
+    "Business & Policy": 577,
     "AI & Tech": 1000,
-    "Hardware & Chips": 160,
-    "Business & Policy": 574,
-    "Gadgets": 328,
+    "Hardware & Chips": 153,
+    "Gadgets": 327,
     "EV & Auto": 231
   },
   "topSources": {
-    "Hugging Face": 914,
-    "Co": 831,
+    "Hugging Face": 915,
+    "Co": 826,
     "Sciencedaily": 211,
     "Eschoolnews": 200,
     "Cbssports": 172,
     "Electrek": 149,
-    "Yahoo": 144,
+    "Yahoo": 142,
     "Dw": 140,
     "Dailymail": 137,
     "Realworkfromanywhere": 122
   },
   "latestHeadlines": [
     {
-      "id": 104436,
-      "title": "Predicting and detecting failures: How Azure strengthens reliability for mission-critical workloads",
-      "url": "https://railfansday.github.io/artikelsemua75/artikel/predicting-and-detecting-failures-how-azure-strengthens-reliabili-104436.html",
+      "id": 115855,
+      "title": "Latest Update: Umamusume horse girls are taking over a Denver Broncos NFL game",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/latest-update-umamusume-horse-girls-are-taking-over-a-denver-bron-115855.html",
       "category": "General"
     },
     {
-      "id": 104435,
-      "title": "Industry News: Designing Azure silicon on Azure silicon: EDA workloads on Cobalt 200",
-      "url": "https://railfansday.github.io/artikelsemua75/artikel/industry-news-designing-azure-silicon-on-azure-silicon-eda-worklo-104435.html",
+      "id": 115854,
+      "title": "Breaking: “Determined” woman completes 7 marathons in a year while pregnant",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/breaking-determined-woman-completes-7-marathons-in-a-year-while-p-115854.html",
       "category": "General"
     },
     {
-      "id": 104434,
-      "title": "Stop treating agents as one-off projects and start running them as a continuous discipline",
-      "url": "https://railfansday.github.io/artikelsemua75/artikel/stop-treating-agents-as-one-off-projects-and-start-running-them-a-104434.html",
+      "id": 115853,
+      "title": "University launches $5m smart system that checks who is actually listening in class",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/university-launches-5m-smart-system-that-checks-who-is-actually-l-115853.html",
       "category": "General"
     },
     {
-      "id": 104433,
-      "title": "How to train a new language model from scratch using Transformers and Tokenizers",
-      "url": "https://railfansday.github.io/artikelsemua75/artikel/how-to-train-a-new-language-model-from-scratch-using-transformers-104433.html",
+      "id": 115852,
+      "title": "School sends out minibus to catch absent pupils playing GTA 6",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/school-sends-out-minibus-to-catch-absent-pupils-playing-gta-6-115852.html",
       "category": "General"
     },
     {
-      "id": 104432,
-      "title": "How to generate text: using different decoding methods for language generation with Transformers",
-      "url": "https://railfansday.github.io/artikelsemua75/artikel/how-to-generate-text-using-different-decoding-methods-for-languag-104432.html",
+      "id": 115851,
+      "title": "Industry News: Take-Two CEO is shutting down questions about GTA 7 just days after GTA 6’s launch",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/industry-news-take-two-ceo-is-shutting-down-questions-about-gta-7-115851.html",
+      "category": "Business & Policy"
+    },
+    {
+      "id": 115850,
+      "title": "Latest Update: Japan debuts a ‘dumbphone’ that doesn’t connect to internet and looks like a Nokia brick",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/latest-update-japan-debuts-a-dumbphone-that-doesnt-connect-to-int-115850.html",
       "category": "General"
     },
     {
-      "id": 104431,
-      "title": "The Reformer - Pushing the limits of language modeling",
-      "url": "https://railfansday.github.io/artikelsemua75/artikel/the-reformer-pushing-the-limits-of-language-modeling-104431.html",
+      "id": 115849,
+      "title": "Industry News: GTA 6 players report game-breaking crashes on PS5 and Xbox",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/industry-news-gta-6-players-report-game-breaking-crashes-on-ps5-a-115849.html",
       "category": "General"
     },
     {
-      "id": 104430,
-      "title": "Block Sparse Matrices for Smaller and Faster Language Models",
-      "url": "https://railfansday.github.io/artikelsemua75/artikel/block-sparse-matrices-for-smaller-and-faster-language-models-104430.html",
+      "id": 115848,
+      "title": "Tech Report: Animal control called to rescue alligator that turned out to be a pool floatie",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/tech-report-animal-control-called-to-rescue-alligator-that-turned-115848.html",
       "category": "General"
     },
     {
-      "id": 104429,
-      "title": "Latest Update: Transformer-based Encoder-Decoder Models",
-      "url": "https://railfansday.github.io/artikelsemua75/artikel/latest-update-transformer-based-encoder-decoder-models-104429.html",
+      "id": 115847,
+      "title": "Tech Report: Chipotle is giving customers free burritos with Thanksgiving Eve BOGO deal",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/tech-report-chipotle-is-giving-customers-free-burritos-with-thank-115847.html",
       "category": "General"
     },
     {
-      "id": 104428,
-      "title": "Hyperparameter Search with Transformers and Ray Tune",
-      "url": "https://railfansday.github.io/artikelsemua75/artikel/hyperparameter-search-with-transformers-and-ray-tune-104428.html",
-      "category": "General"
-    },
-    {
-      "id": 104427,
-      "title": "Latest Update: Porting fairseq wmt19 translation system to transformers",
-      "url": "https://railfansday.github.io/artikelsemua75/artikel/latest-update-porting-fairseq-wmt19-translation-system-to-transfo-104427.html",
+      "id": 115846,
+      "title": "Obsessed fan breaks into YouTuber’s home demanding marriage, dies after family beats him",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/obsessed-fan-breaks-into-youtubers-home-demanding-marriage-dies-a-115846.html",
       "category": "General"
     }
   ]

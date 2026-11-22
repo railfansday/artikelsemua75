@@ -150,8 +150,8 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-103519">Industry observers note that amazon Web Services released managed cluster extensions for Amazon SageMaker HyperPod Slurm on November 20, 2026, bringing declarative configuration to software on running nodes through APIs or the SageMaker AI console. The first two extensions cover observability and user management, including directory integration.</p>
-<p>The launch addresses the part of a shared AI training cluster that changes after provisioning. HyperPod had already added API-driven Slurm configuration, AMI-based node setup, continuous provisioning, automatic topology management and deep health checks during 2026. Those features manage the cluster’s definition, capacity, network layout and hardware health; cluster extensions apply the same approach to node software that changes as research teams, monitoring requirements and package versions evolve. <span style="font-size:13px;">(Related: <a href="stop-treating-agents-as-one-off-projects-and-start-running-them-a-104434.html" style="color:#2563eb; font-weight:600;">Stop treating agents as one-off projects and start runn...</a>)</span></p>
-<p>Administrators can install, configure, upgrade and remove the AWS-managed packages through the console, AWS CLI or an SDK. HyperPod validates settings against the selected extension version’s schema before rollout and records the requested version and settings as the desired state. A node agent then applies only the components required by each node’s role, including on nodes added through scaling or replacement. <span style="font-size:13px;">(Related: <a href="scaling-up-bert-inference-on-cpu-part-1-104412.html" style="color:#2563eb; font-weight:600;">Scaling-up BERT Inference on CPU (Part 1)...</a>)</span></p>
+<p>The launch addresses the part of a shared AI training cluster that changes after provisioning. HyperPod had already added API-driven Slurm configuration, AMI-based node setup, continuous provisioning, automatic topology management and deep health checks during 2026. Those features manage the cluster’s definition, capacity, network layout and hardware health; cluster extensions apply the same approach to node software that changes as research teams, monitoring requirements and package versions evolve. <span style="font-size:13px;">(Related: <a href="university-launches-5m-smart-system-that-checks-who-is-actually-l-115853.html" style="color:#2563eb; font-weight:600;">University launches $5m smart system that checks who is...</a>)</span></p>
+<p>Administrators can install, configure, upgrade and remove the AWS-managed packages through the console, AWS CLI or an SDK. HyperPod validates settings against the selected extension version’s schema before rollout and records the requested version and settings as the desired state. A node agent then applies only the components required by each node’s role, including on nodes added through scaling or replacement. <span style="font-size:13px;">(Related: <a href="latest-update-woman-evicted-after-apartments-ai-assistant-mistake-115830.html" style="color:#2563eb; font-weight:600;">Latest Update: Woman evicted after apartment’s AI assis...</a>)</span></p>
 <p>Updates submit only the settings being changed. HyperPod merges them into the stored configuration and restarts only affected components, without replacing nodes or rerunning lifecycle scripts. Upcoming extension versions can also be installed without an AMI upgrade. HyperPod checks the stored settings against the new version’s schema before rollout, and upgrades only move forward.</p>
 <p>Each extension reports Creating or Updating during rollout, Active when every node runs the requested configuration without a reported problem, and Degraded when nodes fail or report problems. DescribeClusterExtension groups node-level health issues by cause with a code, message and affected-node count. HyperPod retries internal failures; administrators can correct other causes and retry affected nodes with an update call containing no configuration changes.</p>
 <p>The sagemaker-observability extension collects node, GPU, Elastic Fabric Adapter, Slurm job and Slurm cluster metrics, sending them to Amazon CloudWatch or Amazon Managed Service for Prometheus. Metric categories, levels and collection intervals are configurable, while nodes run only role-relevant components, such as DCGM and EFA exporters on GPU nodes and Slurm cluster metrics on the controller.</p>
@@ -193,20 +193,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
+        <a href="tech-report-aws-weekly-roundup-amazon-bedrock-managed-agents-powe-115459.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #115459. Tech Report: AWS Weekly Roundup: Amazon Bedrock Managed Agents powered by OpenAI, Q3 service availability updates, Kiro workflows, and more (October 5, 2026)
+        </a>
+        
+        <a href="aws-lambda-now-supports-gpu-instances-for-event-functions-on-lamb-115407.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #115407. AWS Lambda now supports GPU instances for Event Functions on Lambda Managed Instances
+        </a>
+        
+        <a href="breaking-aws-quick-adds-chat-built-flows-and-multi-agent-orchestr-115208.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #115208. Breaking: AWS Quick Adds Chat-Built Flows and Multi-Agent Orchestration
+        </a>
+        
         <a href="aws-routes-hyperpod-inference-across-regions-from-one-endpoint-103522.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #103522. AWS Routes HyperPod Inference Across Regions From One Endpoint
-        </a>
-        
-        <a href="aws-weekly-roundup-amazon-bedrock-managed-agents-powered-by-opena-92560.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #92560. AWS Weekly Roundup: Amazon Bedrock Managed Agents powered by OpenAI, Q3 service availability updates, Kiro workflows, and more (October 5, 2026)
-        </a>
-        
-        <a href="industry-news-aws-lambda-now-supports-gpu-instances-for-event-fun-92501.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #92501. Industry News: AWS Lambda now supports GPU instances for Event Functions on Lambda Managed Instances
-        </a>
-        
-        <a href="aws-quick-adds-chat-built-flows-and-multi-agent-orchestration-92360.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #92360. AWS Quick Adds Chat-Built Flows and Multi-Agent Orchestration
         </a>
         
     </div>

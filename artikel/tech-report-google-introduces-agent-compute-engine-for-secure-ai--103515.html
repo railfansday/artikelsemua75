@@ -167,8 +167,8 @@ Google Reveals Agent Compute Engine for Secure AI Agent Execution.</p>
 									
 									2
 									min read.</p>
-<p>Google recently declared Agent Compute Engine, a managed service that runs AI agents in isolated microVMs, with checkpointing capabilities to suspend and resume execution environments. The design keeps credentials, API keys, and OAuth refresh tokens outside the agent sandbox, using an external Agent Gateway to authenticate requests and inject the required secrets. <span style="font-size:13px;">(Related: <a href="stop-treating-agents-as-one-off-projects-and-start-running-them-a-104434.html" style="color:#2563eb; font-weight:600;">Stop treating agents as one-off projects and start runn...</a>)</span></p>
-<p>Sources indicate that google designed Agent Compute Engine to address three requirements at global scale: keeping sandboxes free of exploitable credentials, even when agents make mistakes; minimizing the cost and latency of resuming idle agents; and preserving persistent workspaces across sessions and operating system updates. The infrastructure team writes:. <span style="font-size:13px;">(Related: <a href="latest-update-porting-fairseq-wmt19-translation-system-to-transfo-104427.html" style="color:#2563eb; font-weight:600;">Latest Update: Porting fairseq wmt19 translation system...</a>)</span></p>
+<p>Google recently declared Agent Compute Engine, a managed service that runs AI agents in isolated microVMs, with checkpointing capabilities to suspend and resume execution environments. The design keeps credentials, API keys, and OAuth refresh tokens outside the agent sandbox, using an external Agent Gateway to authenticate requests and inject the required secrets. <span style="font-size:13px;">(Related: <a href="autonomous-5-ton-john-deere-skid-steer-loader-trained-to-perform--115823.html" style="color:#2563eb; font-weight:600;">Autonomous 5-ton John Deere skid-steer loader trained t...</a>)</span></p>
+<p>Sources indicate that google designed Agent Compute Engine to address three requirements at global scale: keeping sandboxes free of exploitable credentials, even when agents make mistakes; minimizing the cost and latency of resuming idle agents; and preserving persistent workspaces across sessions and operating system updates. The infrastructure team writes:. <span style="font-size:13px;">(Related: <a href="university-launches-5m-smart-system-that-checks-who-is-actually-l-115853.html" style="color:#2563eb; font-weight:600;">University launches $5m smart system that checks who is...</a>)</span></p>
 <p>Agent Compute Engine achieves this by using copy-on-write memory sharing to run multiple agents on a single operating system template, and pausing idle microVMs via fast checkpoint and restore.</p>
 <p>In the deep dive "Inside Agent Compute Engine," Ramanathan Venkatapathy and Rohit Jnagal, distinguished engineers at Google, describe the service’s architecture, covering microVM isolation, credential management, agent identity, storage, and scheduling at scale. They explain the strict separation between the agent harness and sandbox:.</p>
 <p>The orchestration harness (the brain) runs completely outside the execution sandbox (the hands), helping ensure that untrusted guest environments only execute explicit commands dispatched by the harness and stream output back. This boundary establishes a deterministic audit trail correlating every harness-initiated tool call with expected compute activity inside the sandbox.</p>
@@ -205,20 +205,20 @@ Google Reveals Agent Compute Engine for Secure AI Agent Execution.</p>
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="google-donates-agent-substrate-and-gvisor-to-the-cncf-to-secure-a-92456.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #92456. Google Donates Agent Substrate and gVisor to the CNCF to Secure AI Agents at Scale
+        <a href="google-donates-agent-substrate-and-gvisor-to-the-cncf-to-secure-a-115329.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #115329. Google Donates Agent Substrate and gVisor to the CNCF to Secure AI Agents at Scale
         </a>
         
-        <a href="tech-report-introducing-the-newly-introduced-microsoft-iq-putting-104220.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #104220. Tech Report: Introducing the newly introduced Microsoft IQ: Putting your organization’s intelligence to work in every agent
+        <a href="tech-report-welcome-gemma-googles-fresh-open-llm-115754.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #115754. Tech Report: Welcome Gemma - Google’s fresh open LLM
         </a>
         
-        <a href="tech-report-holo1-latest-family-of-gui-automation-vlms-powering-g-103802.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #103802. Tech Report: Holo1: Latest family of GUI automation VLMs powering GUI agent Surfer-H
+        <a href="tech-report-google-ai-ultra-upgrade-adds-youtube-premium-family-115733.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #115733. Tech Report: Google AI Ultra upgrade adds YouTube Premium Family
         </a>
         
-        <a href="tech-report-googles-top-10-line-for-cmos-points-at-generic-tips-p-101128.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #101128. Tech Report: Google’s ‘Top 10’ Line For CMOs Points At Generic Tips Posts via @sejournal, @MattGSouthern
+        <a href="tech-report-from-prompt-to-app-build-with-google-maps-in-ai-studi-115660.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #115660. Tech Report: From prompt to app: Build with Google Maps in AI Studio
         </a>
         
     </div>

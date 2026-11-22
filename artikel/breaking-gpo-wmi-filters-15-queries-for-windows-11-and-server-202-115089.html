@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breaking: GPO WMI Filters: 15 Queries for Windows 11 and Server 2025</title>
+    <meta name="description" content="GPO WMI filters let a Group Policy Object apply only to computers that match a WMI query, such as Windows 11 workstations, laptops, virtual machines or mem">
+    <meta name="keywords" content="filters, query, filter, filtering, recent, item, queries, group">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua75/artikel/breaking-gpo-wmi-filters-15-queries-for-windows-11-and-server-202-115089.html">
+    
+    <meta property="og:title" content="Breaking: GPO WMI Filters: 15 Queries for Windows 11 and Server 2025">
+    <meta property="og:description" content="GPO WMI filters let a Group Policy Object apply only to computers that match a WMI query, such as Windows 11 workstations, laptops, virtual machines or mem">
+    <meta property="og:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F6yexieyedhzmsdgd5rsl.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua75/artikel/breaking-gpo-wmi-filters-15-queries-for-windows-11-and-server-202-115089.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Breaking: GPO WMI Filters: 15 Queries for Windows 11 and Server 2025">
+    <meta name="twitter:description" content="GPO WMI filters let a Group Policy Object apply only to computers that match a WMI query, such as Windows 11 workstations, laptops, virtual machines or mem">
+    <meta name="twitter:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F6yexieyedhzmsdgd5rsl.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Breaking: GPO WMI Filters: 15 Queries for Windows 11 and Server 2025", "image": ["https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F6yexieyedhzmsdgd5rsl.png"], "datePublished": "2026-11-22T12:00:07", "dateModified": "2026-11-22T12:01:00.844941", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua75/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua75/artikel/breaking-gpo-wmi-filters-15-queries-for-windows-11-and-server-202-115089.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Breaking: GPO WMI Filters: 15 Queries for Windows 11 and Server 2025?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Dev."}}, {"@type": "Question", "name": "Which category does 'Breaking: GPO WMI Filters: 15 Queries for Windows 11 and Ser' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">📈 Bullish</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Breaking: GPO WMI Filters: 15 Queries for Windows 11 and Server 2025</h1>
+        <div class="meta-line">🌐 Source: <strong>Dev</strong> &bull; 📅 22 Nov 2026 &bull; ⏱️ 4 min read (789 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>GPO WMI filters let a Group Policy Object apply only to computers that match a WMI query, such as Windows 11 workstations, laptops, virtual machines or member servers, even when they sit in the same OU as machines that should be left alone.</li><li style='margin-bottom:6px;'>It has been revealed that short answer: In GPMC, right-click WMI Filters under your domain, choose New, add a query such as SELECT * FROM Win32_OperatingSystem WHERE ProductType = "1" AND BuildNumber >= "22000" in namespace root\CIMv2 and save.</li><li style='margin-bottom:6px;'>According to recent reports, need this done for you?</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-115089"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-115089"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-115089"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Breaking: GPO WMI Filters: 15 Queries for Windows 11 and Server 2025" loading="lazy" src="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2F6yexieyedhzmsdgd5rsl.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-115089">GPO WMI filters let a Group Policy Object apply only to computers that match a WMI query, such as Windows 11 workstations, laptops, virtual machines or member servers, even when they sit in the same OU as machines that should be left alone. The client runs the query when it processes policy; if the query returns at least one result, the GPO applies, and if it returns nothing, the GPO is skipped. This guide highlights how to create and link filters, gives 15 ready-made queries, and covers testing, performance and troubleshooting.</p>
+<p>It has been revealed that short answer: In GPMC, right-click WMI Filters under your domain, choose New, add a query such as SELECT * FROM Win32_OperatingSystem WHERE ProductType = "1" AND BuildNumber &gt;= "22000" in namespace root\CIMv2 and save. Select the GPO, and on the Scope tab choose the filter under WMI Filtering. Test the query first with Get-CimInstance -Query on a target machine: any output means the GPO will apply. (Reviewed October 2026.). <span style="font-size:13px;">(Related: <a href="la-noire-2-leak-resurfaces-after-source-gets-gta-6-ending-right-115834.html" style="color:#2563eb; font-weight:600;">LA Noire 2 leak resurfaces after source gets GTA 6 endi...</a>)</span></p>
+<p>According to recent reports, need this done for you? GPO still applying to the wrong machines? A working sysadmin can fix it remotely: Windows and Microsoft 365 help, $39 an hour, starts within 1 business day. What is included. <span style="font-size:13px;">(Related: <a href="developer-vibe-codes-windows-11-alternative-operating-system-for--115837.html" style="color:#2563eb; font-weight:600;">Developer vibe codes Windows 11 alternative operating s...</a>)</span></p>
+<p>In short: In GPMC, right-click WMI Filters under your domain, choose Latest, add a query such as SELECT * FROM Win32_OperatingSystem WHERE ProductType = “1” AND BuildNumber &gt;= “22000” in namespace root\CIMv2 and save.</p>
+<p>Recent findings suggest that WMI filtering is one of four ways to narrow where a GPO applies. Pick the lightest method that does the job.</p>
+<p>Use GPO WMI filters when the deciding attribute is a property of the machine that nobody wants to track by hand, such as the OS build or whether it is a laptop.</p>
+<p>You can check which filter a GPO uses from PowerShell:.</p>
+<p>The GroupPolicy module has no cmdlets to create or link WMI filters; use GPMC for that.</p>
+<p>In a recent development, all queries use the root\CIMv2 namespace. Build and product type values come from the Win32_OperatingSystem class: ProductType is 1 for workstations, 2 for domain controllers and 3 for other servers.</p>
+<p>A wrong query silently stops a GPO from applying everywhere, so test every one of your GPO WMI filters on a machine that should match and on one that should not.</p>
+<p id="sec-mid-115089">Sources indicate that the last two lines show the values you can build a query from. To test several machines at once over WinRM:.</p>
+<p>It has been revealed that each linked filter runs on every client at startup, sign-in and every background refresh (every 90 minutes plus a random offset by default). Most queries against Win32_OperatingSystem or Win32_ComputerSystem return in milliseconds, but a few habits keep GPO WMI filters cheap:.</p>
+<p>According to recent reports, if the GPO only contains Group Policy Preferences (drive maps, printers, registry items, shortcuts), item-level targeting is often the better tool. It lets each item decide for itself, it has ready-made tests for operating system, portable computer, battery present, IP address range, security group and registry match, and it also offers a WMI Query item when nothing else fits.</p>
+<p>In a recent development, administrative Templates, security settings and scripts cannot use item-level targeting; they need GPO WMI filters, security filtering or a separate OU. Our drive mapping guide indicates item-level targeting in practice.</p>
+<p>In a recent development, GPO WMI filters are stored in AD as msWMI-Som objects. To list them with their queries:.</p>
+<p>Sources indicate that msWMI-Parm1 holds the description and msWMI-Parm2 the namespace and query in a packed string. In GPMC, right-click a filter and choose Export… to save it as a .mof file; right-click WMI Filters » Import… to load it in another domain. A GPO backup contains only the link to its WMI filter, not the filter, so export filters as part of your GPO backup routine.</p>
+<p>It has been revealed that to stop filtering a GPO, select it and set WMI Filtering on the Scope tab to . Before deleting a filter from the WMI Filters node, check which GPOs use it with the Get-GPO -All command above and unlink it from each, then export a copy in case you need it back. Well-named GPO WMI filters with clear descriptions, tested on real machines and shared across GPOs, stay reliable for years.</p>
+<p>GPO WMI Filters: the questions this guide answers.</p>
+<p>Official documentation: Create WMI filters for the GPO, Win32_OperatingSystem class, Win32_ComputerSystem class.</p>
+<p>Related guides: GPO security filtering: target or exclude people and computers · Map Network Drives Group Policy: 2026 Item-Level Targeting Made Easy · Troubleshoot Group Policy not applying: gpresult, RSoP and Events 1058/1030.</p>
+<p id="sec-end-115089">Originally published on srvScripts — tested how-to guides and free tools for people who run servers.</p>
+<p style="margin-top: 25px;">
+<a href="https://dev.to/srvscripts/gpo-wmi-filters-15-queries-for-windows-11-and-server-2025-56pn" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="developer-vibe-codes-windows-11-alternative-operating-system-for--115837.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #115837. Developer vibe codes Windows 11 alternative operating system for amd64, arm64, and riscv64 hardware
+        </a>
+        
+        <a href="latest-update-latest-windows-11-lock-screen-zero-day-unlocks-bitl-115829.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #115829. Latest Update: Latest Windows 11 lock screen zero-day unlocks BitLocker-protected PCs with just a few keystrokes
+        </a>
+        
+        <a href="latest-update-msi-edgemesa-n-ai-review-rtx-spark-power-comes-to-w-115810.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #115810. Latest Update: MSI EdgeMesa N AI+ review: RTX Spark power comes to Windows on Arm desktops, but there are trade-offs
+        </a>
+        
+        <a href="lawyers-9450-private-ai-server-with-12-used-nvidia-v100s-now-runs-115807.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #115807. Lawyer’s $9,450 private AI server with 12 used Nvidia V100s now runs every DeepSeek V4.1 Flash expert
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

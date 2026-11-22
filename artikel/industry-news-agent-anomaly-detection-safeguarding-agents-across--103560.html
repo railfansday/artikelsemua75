@@ -150,8 +150,8 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-103560">Agent Anomaly Detection is in Private Preview, including monitoring for agents that run outside Google Cloud. To request access, see the Agent Anomaly Detection overview.</p>
-<p>Our launch post introduced Agent Anomaly Detection, which helps you understand and act on agent behavior that drifts outside its intended boundaries. It covered agents on Google Cloud, such as Agent Runtime, Cloud Run, and Google Kubernetes Engine (GKE). Many teams also run agents on other clouds: on AWS Lambda next to an inventory database, as a hosted agent in Microsoft Foundry, or on-premises next to a system that can't move. Those agents carry the same behavioral risks, and until now Agent Anomaly Detection couldn't review them. <span style="font-size:13px;">(Related: <a href="stop-treating-agents-as-one-off-projects-and-start-running-them-a-104434.html" style="color:#2563eb; font-weight:600;">Stop treating agents as one-off projects and start runn...</a>)</span></p>
-<p id="sec-mid-103560">Agent Anomaly Detection works from an agent's traces and logs, so it doesn't need access to the agent's runtime. If those traces and logs reach your Google Cloud project, it can detect anomalous behavior wherever the agent runs. In this post, we explain what Agent Anomaly Detection needs from an agent on other cloud, then show what it found for an agent on AWS Lambda and an agent on Microsoft Foundry. <span style="font-size:13px;">(Related: <a href="my-journey-to-a-serverless-transformers-pipeline-on-google-cloud-104417.html" style="color:#2563eb; font-weight:600;">My Journey to a serverless transformers pipeline on Goo...</a>)</span></p>
+<p>Our launch post introduced Agent Anomaly Detection, which helps you understand and act on agent behavior that drifts outside its intended boundaries. It covered agents on Google Cloud, such as Agent Runtime, Cloud Run, and Google Kubernetes Engine (GKE). Many teams also run agents on other clouds: on AWS Lambda next to an inventory database, as a hosted agent in Microsoft Foundry, or on-premises next to a system that can't move. Those agents carry the same behavioral risks, and until now Agent Anomaly Detection couldn't review them. <span style="font-size:13px;">(Related: <a href="university-launches-5m-smart-system-that-checks-who-is-actually-l-115853.html" style="color:#2563eb; font-weight:600;">University launches $5m smart system that checks who is...</a>)</span></p>
+<p id="sec-mid-103560">Agent Anomaly Detection works from an agent's traces and logs, so it doesn't need access to the agent's runtime. If those traces and logs reach your Google Cloud project, it can detect anomalous behavior wherever the agent runs. In this post, we explain what Agent Anomaly Detection needs from an agent on other cloud, then show what it found for an agent on AWS Lambda and an agent on Microsoft Foundry. <span style="font-size:13px;">(Related: <a href="latest-update-japan-debuts-a-dumbphone-that-doesnt-connect-to-int-115850.html" style="color:#2563eb; font-weight:600;">Latest Update: Japan debuts a ‘dumbphone’ that doesn’t ...</a>)</span></p>
 <p>It has been revealed that agent Anomaly Detection reads the logging and observability buckets that you choose when you enable it. Telemetry from anywhere works when:.</p>
 <p id="sec-end-103560">Agents built with the Agent Development Kit (ADK) for Python, version 2.12.0 or later, can produce this telemetry with ADK's Google Cloud exporters and a few environment variables, which the next section highlights.</p>
 <p style="margin-top: 25px;">
@@ -177,20 +177,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="securing-your-agents-a-hands-on-guide-to-agent-anomaly-detection-92592.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #92592. Securing Your Agents: A Hands-On Guide to Agent Anomaly Detection
+        <a href="securing-your-agents-a-hands-on-guide-to-agent-anomaly-detection-115476.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #115476. Securing Your Agents: A Hands-On Guide to Agent Anomaly Detection
         </a>
         
-        <a href="tech-report-how-agent-anomaly-detection-scores-on-benchmarks-we-d-92705.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #92705. Tech Report: How Agent Anomaly Detection scores on benchmarks we didn't write
+        <a href="latest-update-how-agent-anomaly-detection-scores-on-benchmarks-we-115568.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #115568. Latest Update: How Agent Anomaly Detection scores on benchmarks we didn't write
         </a>
         
-        <a href="latest-update-tiny-agents-in-python-a-mcp-powered-agent-in-70-lin-103809.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #103809. Latest Update: Tiny Agents in Python: a MCP-powered agent in ~70 lines of code
+        <a href="tiny-agents-an-mcp-powered-agent-in-50-lines-of-code-115734.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #115734. Tiny Agents: an MCP-powered agent in 50 lines of code
         </a>
         
-        <a href="industry-news-back-to-the-future-evaluating-ai-agents-on-predicti-103745.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #103745. Industry News: Back to The Future: Evaluating AI Agents on Predicting Future Events
+        <a href="industry-news-a-new-framework-for-evaluating-voice-agents-eva-115618.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #115618. Industry News: A New Framework for Evaluating Voice Agents (EVA)
         </a>
         
     </div>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Report: Inkling-2-Mini in 5.4 GB Memory</title>
+    <meta name="description" content="LookAtMyQuant is a quantization compiler. It measures how much each stored piece of a model hurts the output when compressed. It then picks a code for each">
+    <meta name="keywords" content="model, drafter, packed, against, code, file, math, text">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua75/artikel/tech-report-inkling-2-mini-in-54-gb-memory-108330.html">
+    
+    <meta property="og:title" content="Tech Report: Inkling-2-Mini in 5.4 GB Memory">
+    <meta property="og:description" content="LookAtMyQuant is a quantization compiler. It measures how much each stored piece of a model hurts the output when compressed. It then picks a code for each">
+    <meta property="og:image" content="https://opengraph.githubassets.com/bd7b020ec2edadf1175111a7c0ef3810c4cd5dfe90d30c5607666100edf33fe7/ShinMegamiBoson/lookatmyquant">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua75/artikel/tech-report-inkling-2-mini-in-54-gb-memory-108330.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Tech Report: Inkling-2-Mini in 5.4 GB Memory">
+    <meta name="twitter:description" content="LookAtMyQuant is a quantization compiler. It measures how much each stored piece of a model hurts the output when compressed. It then picks a code for each">
+    <meta name="twitter:image" content="https://opengraph.githubassets.com/bd7b020ec2edadf1175111a7c0ef3810c4cd5dfe90d30c5607666100edf33fe7/ShinMegamiBoson/lookatmyquant">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Tech Report: Inkling-2-Mini in 5.4 GB Memory", "image": ["https://opengraph.githubassets.com/bd7b020ec2edadf1175111a7c0ef3810c4cd5dfe90d30c5607666100edf33fe7/ShinMegamiBoson/lookatmyquant"], "datePublished": "2026-11-21T18:02:19", "dateModified": "2026-11-22T11:55:35.264386", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua75/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua75/artikel/tech-report-inkling-2-mini-in-54-gb-memory-108330.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Tech Report: Inkling-2-Mini in 5.4 GB Memory?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Github."}}, {"@type": "Question", "name": "Which category does 'Tech Report: Inkling-2-Mini in 5.4 GB Memory' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Tech Report: Inkling-2-Mini in 5.4 GB Memory</h1>
+        <div class="meta-line">🌐 Source: <strong>Github</strong> &bull; 📅 21 Nov 2026 &bull; ⏱️ 11 min read (2270 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>LookAtMyQuant is a quantization compiler.</li><li style='margin-bottom:6px;'>On Gemma 4 E2B, its GGUF has 12× lower KL than Q4_K_M at the same file size.</li><li style='margin-bottom:6px;'>Recent findings suggest that lookAtMyQuant 2 takes Qwen3.5-4B to 1.23 GB, 2.3 bits per weight.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-108330"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-108330"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-108330"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Tech Report: Inkling-2-Mini in 5.4 GB Memory" loading="lazy" src="https://opengraph.githubassets.com/bd7b020ec2edadf1175111a7c0ef3810c4cd5dfe90d30c5607666100edf33fe7/ShinMegamiBoson/lookatmyquant" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-108330">LookAtMyQuant is a quantization compiler. It measures how much each stored piece of a model hurts the output when compressed. It then picks a code for each piece so the whole model fits a size budget with the least damage.</p>
+<p>On Gemma 4 E2B, its GGUF has 12× lower KL than Q4_K_M at the same file size. The method and every result are on the site.</p>
+<p>The code is under the MIT license.</p>
+<p>Recent findings suggest that lookAtMyQuant 2 takes Qwen3.5-4B to 1.23 GB, 2.3 bits per weight. The file solves 330 of 540 exact-answer math problems. Prism ML's Bonsai 2 Ternary 4B solves 328 at 1.20 GB, and the original solves 359. Its KL from the original on held-out text is 0.45 nats, against 0.59 for Bonsai.</p>
+<p>The recipe is post-training quantization with trellis codes, calibrated on the model's own worked math solutions with digit tokens weighted 10×, and with bits allocated per row by Fisher information. 4,000 steps of distillation follow, in which every layer is re-quantized once from the original weights. The page has the findings, the full recipe and its cost, about $34 of GPU time. <span style="font-size:13px;">(Related: <a href="developer-vibe-codes-windows-11-alternative-operating-system-for--115837.html" style="color:#2563eb; font-weight:600;">Developer vibe codes Windows 11 alternative operating s...</a>)</span></p>
+<p>According to recent reports, the recipe's code is here, and the next section runs it. The 1.23 GB file itself is the lm2-qwen35-4b-1.2gb release, packed for the Apple Silicon runtime.</p>
+<p>Sources indicate that the same recipe takes Qwen3.8-27B from 53.7 GB to 7.2 GB, 2.1 bits per weight, calibrated and distilled on English prose and chat, code and math. The file solves 401 of the 540 math problems, as many as the original, and Unsloth's UD-IQ2_XXS GGUF of the same size solves 348. It also scores above that GGUF on HumanEval (73.8% against 67.1%), MMLU (78.8% against 75.0%) and GSM8K (94.5% against 92.7%).</p>
+<p>Beside it sits a 4-bit DSpine drafter (1.02 GB, converted from tencent/Qwen3.8-27B-DSpine-b16 with runtime_mlx/convert_dspine.py and packed with pack_drafter.py), which roughly doubles decode speed on math and code on Apple silicon.</p>
+<p>Extended to a 26.4B physical / 5.4B active 3×-looped MoE (L6–17 looped 3× = 48 logical visits, 128 experts top-8), the compiler and full-MoE proximal fine-tuning (SQYFR / SQYFR v2) compress thinkingmachines/Inkling-2-Mini from 18.89 GB of text weights into six Apple Silicon MLX builds spanning 8 GB iPhones up to lossless teacher parity: 3.85 GB (1.18 bpp), 4.72 GB (1.45 bpp), 5.38 GB (1.65 bpp), 8.87 GB (2.72 bpp), 11.18 GB (3.43 bpp), and 12.76 GB (3.92 bpp) — combining 4 KB SRAM hashed block-vector trellis codes (ht2/ht3), row trellis codes (rtr1/rtr4), dedicated attention projection floors, a tr2 floor on the tail lm_head bucket (head.7), and exact native NVFP4 passthrough (69/192 and 109/192 highest-sensitivity expert buckets kept at 0.0 error in the 11.2 GB and 12.8 GB builds). <span style="font-size:13px;">(Related: <a href="developer-builds-a-discord-kitten-thats-actually-an-ai-girlfriend-115841.html" style="color:#2563eb; font-weight:600;">Developer builds a ‘Discord kitten’ that’s actually an ...</a>)</span></p>
+<p>Evaluated untruncated (max_new_tokens = 1,536, greedy, reasoning_effort="none") on the same BF16 teacher, openai/gsm8k (test[:200]), all 164 executable openai/openai_humaneval problems (strict &lt;|content_text|&gt; execution across every build), 4 Vision VQA tests (with the untouched 637 MB BF16 vision tower), and 16+13-language TextMix windows:.</p>
+<p>At 12.76 GB, Inkling-2-Mini-LookAtMyQuant-12.8GB matches 100.0% of the untouched BF16 teacher on every benchmark (349 / 349 pooled) in 32.5% less text weight memory. Both 11.18 GB and 8.87 GB retain 99.2–99.3% 3-task mean (345 / 349 = 98.9% pooled), with 8.87 GB cutting KL 2.34× on English/chat/code (0.0208 vs 0.0486) and 29.6% across all 13 languages (0.0571 vs 0.0811) below Unsloth's 9.14 GB UD-Q2_K_XL GGUF. Below 2 bpp, SQYFR v2 (jointly training all 24.46B MoE experts and 130–144 attention trellis projections on position-0-aligned BF16 teacher &lt;|content_thinking|&gt; -&gt; &lt;|content_text|&gt; rollouts with 6.0× control-boundary weighting, full-rank live Hessian projections, and 250 exact-P continuous scale + steering polish steps) lifts 5.38 GB (1.65 bpp) to 90.0% top-1 agreement (free_KL = 0.0864), 87.0% GSM8K, and 71.3% strict HumanEval (117 / 164), lifts 4.72 GB (1.45 bpp, sized to fit under the 12 GB iPhone 5.99 GiB Jetsam ceiling alongside the 179 MB drafter at 4.35 GiB active / 5.35 GiB decode peak) to 82.5% GSM8K and 67.1% strict HumanEval (110 / 164), and rescues 3.85 GB (1.18 bpp, 3.54 GiB active / 4.57 GiB decode peak for 8 GB devices) from static PTQ collapse (1.0% GSM8K, 1.8% HumanEval) to 78.5% GSM8K (157 / 200), 48.2% strict HumanEval (79 / 164), and 4 / 4 Vision.</p>
+<p>All six run through lamq and runtime_mlx via unified single-launch Metal kernels (UnifiedMoESide mixing unrotated NVFP4 and Hadamard-rotated trellis experts across decode, speculative verify, and M5 MetalPerformancePrimitives prefill + FlashAttention-2 SDPA + exact unbiased temp &gt; 0 speculative sampling), optionally paired with the 178.9 MB 4-bit DSpark drafters: on Apple M5 Max, 12.8 GB reaches 2,016 tok/s T=512 prefill, 60.5 tok/s serial, and 112.7 tok/s median lossless drafted decode (119.2 tok/s math, 106.2 tok/s code; 12.72 GB active RAM); 11.2 GB reaches 2,032 tok/s prefill, 62.4 tok/s serial, and 103.7 tok/s median (111.7 tok/s math; 11.13 GB active RAM); 8.9 GB decodes at 63.5 tok/s serial and 106.0 tok/s median (125.8 tok/s reasoning, 123.8 tok/s math; 9.41 GB active RAM); 5.4 GB reaches 1,807 tok/s prefill, 75.3 tok/s serial, and 124.4 tok/s median (142.9 tok/s math, 126.5 tok/s reasoning; 5.33 GB active RAM); 4.7 GB decodes up to 122.6 tok/s on math (98.7 tok/s median, 3.53 tok/check; 4.68 GB active RAM); and 3.9 GB decodes at 75.5 tok/s serial and 103.1 tok/s median (117.9 tok/s math, 128.3 tok/s short math; 3.81 GB active RAM).</p>
+<p>On Apple silicon, install the runtime package directly (this installs mlx, mlx-lm, numpy, and huggingface-hub without the PyTorch compiler dependencies):.</p>
+<p>From a local clone, pip install -e . installs the lamq command, or run python -m runtime_mlx without installing.</p>
+<p>According to recent reports, command line. Pass either a local model folder or a Hugging Face repo ID:.</p>
+<p>lamq generate reads stdin when -p is omitted, supports --raw, --system, --thinking, --temp, --mode linear|chat-fork|copy-wide, --no-adaptive, and --json. lamq info  inspects a packed model's format and dimensions without loading weights.</p>
+<p>In a recent development, python integration. runtime_mlx.load returns an (model, tokenizer) pair compatible with mlx_lm.generate and mlx_lm.stream_generate (auto-detecting opgraph-packed-1 models such as Qwen3.5-4B / Qwen3.8-27B, inkling2-packed models such as Inkling-2-Mini, and lamq.json exports such as Gemma 4 E2B):.</p>
+<p>For streaming, multi-turn chat, or speculative decoding through one interface, use Runtime:.</p>
+<p>Install the dependencies and download the model and WikiText-2. The code reads SmolLM2-360M's config when it starts, so do this first.</p>
+<p>Measure. This compresses one piece at a time, leaves the rest exact, and records the KL to the original model. The full set for this model, 2,312 measurements, took about 50 minutes on an L40S.</p>
+<p>Allocate. This picks one code per piece, with the least summed KL inside the budget. It needs no GPU. This command uses the SmolLM2-360M measurements in this repository, with a budget of 3.044 bits per weight.</p>
+<p>The plan it writes has the same widths as results/compiler/aims/sm_lin_3044.json.</p>
+<p>In a recent development, build and score. This quantizes the model to the blueprint, one matrix at a time. It then reports perplexity and KL to the original on WikiText-2 test.</p>
+<p id="sec-mid-108330">Recent findings suggest that our run of that proposal is in results/batch/cc_sm_lin_3044.json. It reached perplexity 16.64 and KL 0.0926, against an original perplexity of 15.31. Add --layers 1 --calib 8 --eval 2 for a quick check that everything works.</p>
+<p>Sources indicate that each step is a named job; python run_batch.py --list prints its command. The jobs need Qwen3.5-4B in models/Qwen3.5-4B on the volume and the text mix (modal run --detach modal_fetch.py --text). Every file they make goes to lm2/ on the volume.</p>
+<p>lm2BuildSmoke, lm2FinetuneSmoke and lm2MathSmoke run the same code on two layers, 60 steps and 36 problems, in a few minutes each.</p>
+<p>Industry observers note that the row strategy. lm2Build reads results/compiler/rows/q35_rowplan_1p2GB.json, which gives 1 to 4 bits to each of 1,520 row groups. row_allocation.py made it. Its build-control command builds and packs a control with a fixed split of rows, prepare-rows allocates rows inside the control's packed bytes with rowgroup_alloc.py, and build-rows builds under the plan and checks the packed size against it.</p>
+<p>The codebooks. The four e-means codebooks the build decodes with are in cache/codes/. --trellis-fit lloyd gives the earlier ones, and a plan made before the change keeps them unless the flag states otherwise.</p>
+<p>Recent equal-byte recipe improvements. Two zero-byte additions are available in the compiler and fine-tuning scripts:.</p>
+<p>Where these jobs differ from our run. Our GSM8K solutions were written earlier, with thinking always off. Our text KL on 13 sources used 52 windows picked from the text mix by a separate tool; --sources mix takes the mix's own evaluation windows, on which our file scores 0.44 where the page reports 0.45.</p>
+<p>According to recent reports, run_batch.py names every job, and modal_app.py runs them. modal_fetch.py downloads models and the text mix used for calibration and evaluation.</p>
+<p>The runs behind the site used these machines, each with 8 CPU cores:.</p>
+<p>It has been revealed that gguf_compiler.py makes intends out of llama.cpp's own tensor types, so the result runs in llama.cpp as it is. public_eval.py scores public quantizations the same way as our plans. Both run inside the image in modal_gguf.py, which builds llama.cpp with CUDA.</p>
+<p>quantize.py --export  writes a plan in the format runtime_mlx/ reads. A plan with trellis codes also needs --trellis-rows 16,8, which runs each trellis path along a row of its matrix, so that decoding an entry reads only that row. On Apple silicon, pip install . installs mlx and mlx-lm; requirements.txt holds the PyTorch compiler dependencies.</p>
+<p>On Gemma 4 E2B at 2.5 GB, the trellis initiative has 26% lower KL than the Lloyd–Max plan and decodes about 22% slower. runtime_mlx/test_trellis_gen.py and runtime_mlx/test_trellis.py check the trellis kernels against the matrices the quantizer built.</p>
+<p>Sources indicate that runtime_mlx/fast_q35.py decodes the packed 1.2 GB Qwen3.5-4B file one token at a time, straight from its trellis codes. runtime_mlx/drafter_q35.py adds speculative decoding. A small drafter proposes the seven tokens after the model's latest one in a single pass. The model then checks all eight positions in one pass over its coded weights (runtime_mlx/block_q35.py) and keeps the proposals that match its own choice, so the text is exactly its own greedy text.</p>
+<p>On an M5 Max, over 30 held-out prompts of up to 256 tokens, generation with the drafter was 2.0 times as fast: 176 tokens a second against 88, timed in alternation in one process on 2026-11-11. A check kept 4.3 tokens on average. Over eight everyday prompts it was 1.5 times as fast. The gain follows how predictable the text is: 2.5 times on algebra, 2.0 on code, 1.2 on chat and 1.05 on a story, and one of the 30 held-out prompts ran slower with the drafter. The text matched plain greedy decoding on every prompt. These are speeds after the first token; reading the prompt takes about 0.1 s either way.</p>
+<p>Two later changes are in this code. Each was measured against the version before it on 40 paired generations: proposing from the 96,033 most common tokens was 6.0% faster, and picking the winning token inside the packed product was 5.3% faster. Linear mode also enables self-calibrating adaptive fallback by default (adaptive=True; pass --no-adaptive to disable): when rolling acceptance drops below the measured break-even ratio of drafted-check latency to serial-step latency (accounting for cache flush and drafter context replay), it pauses drafting for short exact serial bursts and resumes once acceptance recovers, preserving bit-exact greedy parity while avoiding slowdowns on low-acceptance prose.</p>
+<p>Recent findings suggest that the drafter is a DSpine model, trained with SpecForge from the published DFlash drafter for Qwen3.5-4B on the 1.2 GB file's own greedy answers. modal_drafter.py runs the training as one Modal job, and it cost $42. On 300 held-out prompts the trained drafter gets 4.65 tokens per check, against 4.30 for the stock DFlash drafter.</p>
+<p>Sources indicate that pack_drafter.py stores the drafter at 4 bits a weight in the build's own code, with no calibration data: 464 MB against 1.83 GB at 16 bits. On 60 held-out prompts the 4-bit drafter kept 4.35 tokens per check against 4.38, and the text was the same. drafter_q35.py loads either form and writes the packed one out dense as it loads. The 4-bit drafter is the lm2-drafter-4bit release. It runs beside the packed 1.2 GB file, the lm2-qwen35-4b-1.2gb release.</p>
+<p>Recent findings suggest that the benchmark defaults to linear verification. Use --mode chat-fork to try a second candidate at an ambiguous early position, or --mode copy-wide for known contiguous copies. Copy mode uses the source cursor and tunes the gate/up and down projections for 16-slot checks. Both modes verify all emitted tokens with the packed target. To benchmark the chat fork, run:.</p>
+<p>It has been revealed that for a copy benchmark, pass --mode copy-wide --heldout path/to/copy-prompts.json. The JSON entries carry source, prompt_len, and input_ids from the packed model's tokenizer.</p>
+<p>The checks, and the packer for a drafter of your own:.</p>
+<p>runtime_mlx/pack_dense.py writes the packed file from the fine-tuned build's dense weights, and runtime_mlx/modal_pack.py runs it on Modal. check_drafter.py compares the drafter in MLX with SpecForge's own model on reference blocks that drafter/reference.py writes.</p>
+<p>Each test file runs on its own from the repository root, and all seven finish in under a minute.</p>
+<p>Recent findings suggest that runtime_mlx/test_core.py checks the runtime against the quantizer's math. Run python runtime_mlx/make_ref.py first, which writes 1.6 GB of reference files.</p>
+<p id="sec-end-108330">Sources indicate that runtime_mlx/test_fast_q35.py and runtime_mlx/test_block_q35.py check the Qwen3.5 kernels against NumPy products of independently unpacked codes, with no model. When LAMQ_Q35_PACKED names a packed file, the second also checks a block of tokens against decoding them one at a time. When LAMQ_Q38_PACKED names the packed Qwen3.8-27B file, it runs the same checks on a model whose output head is stored apart from its embedding.</p>
+<p style="margin-top: 25px;">
+<a href="https://github.com/ShinMegamiBoson/lookatmyquant" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="tech-report-adding-mcp-tools-to-reachy-mini-115541.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #115541. Tech Report: Adding MCP Tools to Reachy Mini
+        </a>
+        
+        <a href="tech-report-how-much-memory-does-your-agent-actually-need-115409.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #115409. Tech Report: How Much Memory Does Your Agent Actually Need?
+        </a>
+        
+        <a href="industry-news-welcome-inkling-2-mini-cutting-edge-performance-for-115115.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #115115. Industry News: Welcome Inkling 2 Mini, Cutting-edge Performance for your Local Setup
+        </a>
+        
+        <a href="tech-report-the-unexpected-pan-you-need-this-holiday-season-the-c-114999.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #114999. Tech Report: The unexpected pan you need this holiday season : The case to make everything mini.
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

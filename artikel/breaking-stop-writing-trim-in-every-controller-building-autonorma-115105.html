@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breaking: Stop Writing .Trim() in Every Controller: Building AutoNormalize for Modern .NET</title>
+    <meta name="description" content="How many times have you reviewed a pull request in ASP.NET Core and spotted something like this? Recent findings suggest that across enterprise .NET codeba">
+    <meta name="keywords" content="autonormalize, string, normalization, dictionary, core, recent, input, json">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua75/artikel/breaking-stop-writing-trim-in-every-controller-building-autonorma-115105.html">
+    
+    <meta property="og:title" content="Breaking: Stop Writing .Trim() in Every Controller: Building AutoNormalize for Modern .NET">
+    <meta property="og:description" content="How many times have you reviewed a pull request in ASP.NET Core and spotted something like this? Recent findings suggest that across enterprise .NET codeba">
+    <meta property="og:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fraw.githubusercontent.com%2FSkyDevLab%2FDotNet.AutoNormalize%2Fmain%2Fassets%2Fbranding%2Fgithub-social-preview.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua75/artikel/breaking-stop-writing-trim-in-every-controller-building-autonorma-115105.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Breaking: Stop Writing .Trim() in Every Controller: Building AutoNormalize for Modern .NET">
+    <meta name="twitter:description" content="How many times have you reviewed a pull request in ASP.NET Core and spotted something like this? Recent findings suggest that across enterprise .NET codeba">
+    <meta name="twitter:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fraw.githubusercontent.com%2FSkyDevLab%2FDotNet.AutoNormalize%2Fmain%2Fassets%2Fbranding%2Fgithub-social-preview.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Breaking: Stop Writing .Trim() in Every Controller: Building AutoNormalize for Modern .NET", "image": ["https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fraw.githubusercontent.com%2FSkyDevLab%2FDotNet.AutoNormalize%2Fmain%2Fassets%2Fbranding%2Fgithub-social-preview.png"], "datePublished": "2026-11-22T11:56:18", "dateModified": "2026-11-22T12:01:01.678835", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua75/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua75/artikel/breaking-stop-writing-trim-in-every-controller-building-autonorma-115105.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Breaking: Stop Writing .Trim() in Every Controller: Building AutoNormalize for M?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Dev."}}, {"@type": "Question", "name": "Which category does 'Breaking: Stop Writing .Trim() in Every Controller: Building' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Breaking: Stop Writing .Trim() in Every Controller: Building AutoNormalize for Modern .NET</h1>
+        <div class="meta-line">🌐 Source: <strong>Dev</strong> &bull; 📅 22 Nov 2026 &bull; ⏱️ 3 min read (563 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>How many times have you reviewed a pull request in ASP.NET Core and spotted something like this?</li><li style='margin-bottom:6px;'>Recent findings suggest that across enterprise .NET codebases, input canonicalization is often treated as an afterthought.</li><li style='margin-bottom:6px;'>Inevitably, someone forgets a .Trim() on an endpoint:.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-115105"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-115105"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-115105"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Breaking: Stop Writing .Trim() in Every Controller: Building AutoNormalize for Modern .NET" loading="lazy" src="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fraw.githubusercontent.com%2FSkyDevLab%2FDotNet.AutoNormalize%2Fmain%2Fassets%2Fbranding%2Fgithub-social-preview.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-115105">How many times have you reviewed a pull request in ASP.NET Core and spotted something like this?</p>
+<p>Recent findings suggest that across enterprise .NET codebases, input canonicalization is often treated as an afterthought. It gets scattered across controllers, MediatR handlers, FluentValidation transform rules, and repository methods.</p>
+<p>Inevitably, someone forgets a .Trim() on an endpoint:.</p>
+<p>Recent findings suggest that to solve this, developers often reach for a global JsonConverter. But as many discover the hard way, global string converters introduce serious production bugs.</p>
+<p>Here is why naive solutions break, and how we architected AutoNormalize—an open-source input canonicalization engine for ASP.NET Core, System.Text.Json, and EF Core that recently hit v1.0.0 on NuGet. (You can also try the live normalization rules and zero-allocation benchmarks in our interactive web sandbox). <span style="font-size:13px;">(Related: <a href="university-launches-5m-smart-system-that-checks-who-is-actually-l-115853.html" style="color:#2563eb; font-weight:600;">University launches $5m smart system that checks who is...</a>)</span></p>
+<p>If you register a global string converter or reflectively trim every string property in a request, you immediately introduce a security vulnerability:.</p>
+<p>The Fix: Defense-in-depth heuristic shielding. AutoNormalize automatically shields sensitive property names (Password, ApiKey, Token, Secret, Salt, Signature) by default, while providing explicit declarative attributes ([DoNotNormalize], [PreserveWhitespace]) for fine-grained control. <span style="font-size:13px;">(Related: <a href="breaking-determined-woman-completes-7-marathons-in-a-year-while-p-115854.html" style="color:#2563eb; font-weight:600;">Breaking: “Determined” woman completes 7 marathons in a...</a>)</span></p>
+<p>Modern C# promotes immutable data transfer objects:.</p>
+<p>It has been revealed that if you attempt post-deserialization normalization via reflection or object traversal, you will hit a wall. Positional records have init-only properties and are instantiated via a primary constructor. Mutating them post-construction requires unsafe reflection or creating a fresh copy via with expressions, allocating unnecessary memory.</p>
+<p>The Fix: In-Flight System.Text.Json Modifiers. Rather than touching the object after it is constructed, AutoNormalize hooks IJsonTypeInfoResolver.Modifiers in System.Text.Json. We attach a property-scoped converter during serialization metadata contract building:.</p>
+<p>The string token is canonicalized directly off the Utf8JsonReader stream and passed into the constructor parameters at birth. It is 100% Native AOT compatible and preserves record immutability invariants.</p>
+<p id="sec-mid-115105">In a recent development, if an API accepts a Dictionary, normalizing dictionary keys in-place can corrupt the underlying hash buckets. If keys "key " and "key" are normalized to the same string, your dictionary will throw an ArgumentException: An item with the same key has already been added.</p>
+<p>Sources indicate that the Fix: Strict boundary invariants. AutoNormalize strictly normalizes dictionary values, never dictionary keys.</p>
+<p>If every incoming API request and database entity passes through a normalization engine, overhead must be virtually unmeasurable.</p>
+<p>For clean strings (strings that do not contain leading/trailing whitespace and are already in Unicode Normalization Form C), AutoNormalize implements a zero-allocation fast path:.</p>
+<p>BenchmarkDotNet results on .NET 9.0 (Windows 11, RyuJIT AVX2):.</p>
+<p>In a recent development, (Fun benchmarking lesson: During early microbenchmarks, our baseline measured 0.0077 ns—about 0.03 CPU cycles! RyuJIT had detected our compile-time string literal and constant-folded the call away. Always use runtime dynamic allocations like string.Concat in BenchmarkDotNet suites to prevent dead-code elimination.).</p>
+<p>AutoNormalize is designed to be configured once at application startup.</p>
+<p>One line wires up JSON options, Minimal API endpoint filters, and MVC model binders for query/route/form inputs:.</p>
+<p>If you use Entity Framework Core, install AutoNormalize.EntityFrameworkCore to automatically intercept SaveChanges() and canonicalize entities before database persistence:.</p>
+<p>Input canonicalization should be automatic, safe-by-default, and invisible to your everyday application logic.</p>
+<p>AutoNormalize is fully open-source under the MIT license and multi-targets .NET 8.0, .NET 9.0, and .NET Standard 2.0.</p>
+<p id="sec-end-115105">We’d love to hear how your team at the moment handles input normalization. Have you encountered the password trimming or immutable record pitfalls in your own projects? Let's discuss in the comments below!</p>
+<p style="margin-top: 25px;">
+<a href="https://dev.to/skydevlab/stop-writing-trim-in-every-controller-building-autonormalize-for-modern-net-29c3" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="taming-typography-building-a-modern-css-reset-115519.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #115519. Taming Typography: Building a Modern CSS Reset
+        </a>
+        
+        <a href="inside-a-modern-hamptons-home-with-views-in-nearly-every-directio-112231.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #112231. Inside a Modern Hamptons Home With Views in Nearly Every Direction
+        </a>
+        
+        <a href="latest-update-trump-vows-to-stop-us-companies-from-building-data--108002.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #108002. Latest Update: Trump vows to stop U.S. companies from building data centers abroad, threatens 'tremendous tax'
+        </a>
+        
+        <a href="industry-news-sygra-the-one-stop-framework-for-building-data-for--103609.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #103609. Industry News: SyGra: The One-Stop Framework for Building Data for LLMs and SLMs
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

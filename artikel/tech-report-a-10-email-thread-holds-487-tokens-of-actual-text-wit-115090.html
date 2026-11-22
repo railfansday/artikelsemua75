@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Report: A 10-email thread holds 487 tokens of actual text. With quoted replies the model reads 5,068.</title>
+    <meta name="description" content="You build a small tool that summarizes support tickets. Each ticket is an email thread, and your help desk stores every message the way it arrived. You joi">
+    <meta name="keywords" content="message, thread, tokens, text, every, line, each, quoted">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua75/artikel/tech-report-a-10-email-thread-holds-487-tokens-of-actual-text-wit-115090.html">
+    
+    <meta property="og:title" content="Tech Report: A 10-email thread holds 487 tokens of actual text. With quoted replies the model reads 5,068.">
+    <meta property="og:description" content="You build a small tool that summarizes support tickets. Each ticket is an email thread, and your help desk stores every message the way it arrived. You joi">
+    <meta property="og:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fy4i26w4fcxpqqna9ginv.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua75/artikel/tech-report-a-10-email-thread-holds-487-tokens-of-actual-text-wit-115090.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Tech Report: A 10-email thread holds 487 tokens of actual text. With quoted replies the model reads 5,068.">
+    <meta name="twitter:description" content="You build a small tool that summarizes support tickets. Each ticket is an email thread, and your help desk stores every message the way it arrived. You joi">
+    <meta name="twitter:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fy4i26w4fcxpqqna9ginv.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Tech Report: A 10-email thread holds 487 tokens of actual text. With quoted replies the model reads 5,068.", "image": ["https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fy4i26w4fcxpqqna9ginv.png"], "datePublished": "2026-11-22T12:00:01", "dateModified": "2026-11-22T12:01:00.947572", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua75/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua75/artikel/tech-report-a-10-email-thread-holds-487-tokens-of-actual-text-wit-115090.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Tech Report: A 10-email thread holds 487 tokens of actual text. With quoted repl?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Dev."}}, {"@type": "Question", "name": "Which category does 'Tech Report: A 10-email thread holds 487 tokens of actual te' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Tech Report: A 10-email thread holds 487 tokens of actual text. With quoted replies the model reads 5,068.</h1>
+        <div class="meta-line">🌐 Source: <strong>Dev</strong> &bull; 📅 22 Nov 2026 &bull; ⏱️ 4 min read (868 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>You build a small tool that summarizes support tickets.</li><li style='margin-bottom:6px;'>It has been revealed that nothing went wrong.</li><li style='margin-bottom:6px;'>It has been revealed that A token is a chunk of text the model reads; APIs bill per million of them.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-115090"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-115090"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-115090"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Tech Report: A 10-email thread holds 487 tokens of actual text. With quoted replies the model reads 5,068." loading="lazy" src="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fy4i26w4fcxpqqna9ginv.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-115090">You build a small tool that summarizes support tickets. Each ticket is an email thread, and your help desk stores every message the way it arrived. You join the messages, send them to a model, and get a good summary back. The token count in the response is about ten times what you expected from looking at the conversation.</p>
+<p>It has been revealed that nothing went wrong. The model read exactly what you sent, and most of it was the same text, copied again and again by the mail client.</p>
+<p>It has been revealed that A token is a chunk of text the model reads; APIs bill per million of them. A tokenizer is the program that cuts text into tokens; I used tiktoken with o200k_base, the one OpenAI's current models use. Input tokens are what you send, output tokens are what the model writes back, and output usually costs five or six times more per token. A quoted reply is the previous message pasted under your answer, each line starting with &gt;, under a line like "On Mon, Nov 3, Dana wrote:". A list price is the vendor's official price per million tokens, before any discount. <span style="font-size:13px;">(Related: <a href="tech-report-score-tp-link-archer-with-full-wi-fi-7-support-and-10-115827.html" style="color:#2563eb; font-weight:600;">Tech Report: Score TP-Link Archer with full Wi-Fi 7 sup...</a>)</span></p>
+<p>In a recent development, I wrote a synthetic 10-message thread: a customer charged twice, a support agent, a refund. The messages are short, between 26 and 65 tokens each, with a two-line signature. Every reply quotes the whole previous message, which already contains its own quote, which contains the one before. That is the default in most mail clients. Lines are wrapped at 72 characters, as in plain-text mail. <span style="font-size:13px;">(Related: <a href="tech-report-man-charged-after-allegedly-posing-as-walmart-deliver-115845.html" style="color:#2563eb; font-weight:600;">Tech Report: Man charged after allegedly posing as Walm...</a>)</span></p>
+<p>Industry observers note that the whole conversation is 487 tokens of fresh text. Stored message by message, it's 5,068: 10.4 times as much. Even the last message on its own, 1,030 tokens, is more than twice the whole conversation, because it carries every earlier message plus the clutter around them.</p>
+<p>If every message only copied the earlier text, a thread of N messages would come out at about (N + 1) / 2 times the new text, so 5.5x for ten messages. That alone grows fast: twenty messages would be 10.5x. Two things push the real number higher.</p>
+<p>Sources indicate that the first is the &gt; markers. Each level of quoting adds another &gt; to the start of every line, and the tokenizer bills it. A line of 10 tokens costs 11 at depth one, 15 at depth five and 19 at depth nine. In the 10th message, markers alone are 36% of the tokens. Clients that nest as &gt;&gt;&gt; without spaces are a bit cheaper (4,240 tokens for the same thread), but not much.</p>
+<p id="sec-mid-115090">The second is everything around the text. Every "On ... wrote:" line and every signature gets quoted along with the message and copied down the thread at every level.</p>
+<p>Say your summarizer sends 300 tokens of instructions plus the thread and gets back a 150-token summary, for 1,000 tickets a day. At gpt-5.6's list price of $2 per million input and $12 per million output (from the catalog snapshot of the LLM gateway I work on), a thread costs $0.0125 as stored and $0.0034 with the quotes removed. That's 3.7x, or $376 against $101 a month. On gpt-5.6-mini it's $37.61 against $10.12. On claude-haiku-5.5 and claude-sonnet-5.5 it's 4.0x, because their output is relatively cheaper, so input is a larger share of the bill.</p>
+<p>The fix is to cut the quoted block before the text reaches the model. Each message keeps only what its author wrote, and the thread as a whole still has every word once:.</p>
+<p>Industry observers note that the pattern finds the "wrote:" line and every line under it that starts with &gt;, and removes them together. In my test thread it gives back each message's own text exactly, and the ten stripped messages add up to the 487 tokens in the table.</p>
+<p>According to recent reports, it only handles plain-text quoting. HTML mail usually wraps the quote in a  or a div with a client-specific class, and the "wrote:" line is localized: a German client indicates "schrieb", a Russian one says "написал". You'll need a pattern per format you actually receive, or a mail-parsing library that knows them.</p>
+<p>In a recent development, some replies answer inline, writing between quoted lines: "&gt; Which card? / The Visa ending in 4471." Strip the quote there and the answer loses its question. If your consumers do this, keep the quoted line directly above each inline answer.</p>
+<p>According to recent reports, the saving depends on the job. My summarizer reads the whole thread once, so input dominates. A bot that drafts a reply to each incoming message pays for instructions and output every time, and with the same numbers it saves only 27% (1.37x). Measure your own split before expecting 3.7x.</p>
+<p id="sec-end-115090">Recent findings suggest that finally, the thread is synthetic and counted with one tokenizer. Real threads have longer signatures, legal footers and forwarded chains, so they probably repeat even more, but I haven't measured that. Claude and Gemini tokenize differently, though they still read every copy. To check your own data, compare the token count of one stored thread with and without quotes.</p>
+<p style="margin-top: 25px;">
+<a href="https://dev.to/altrouter/a-10-email-thread-holds-487-tokens-of-actual-text-with-quoted-replies-the-model-reads-5068-40f" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="homelabbers-second-gen-optane-build-uses-two-rtx-3090s-to-run-28--115736.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #115736. Homelabber’s second-gen Optane build uses two RTX 3090s to run 2.8-trillion-parameter Kimi AI model at 3.11 tokens per second
+        </a>
+        
+        <a href="prx-part-3-training-a-text-to-image-model-in-24h-115641.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #115641. PRX Part 3 — Training a Text-to-Image Model in 24h!
+        </a>
+        
+        <a href="tech-report-fine-tuning-a-350m-model-for-better-structured-output-115365.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #115365. Tech Report: Fine-tuning a 350M Model for Better Structured Outputs in 100 GRPO Steps
+        </a>
+        
+        <a href="tech-report-miami-artists-art-basel-boycott-campaign-calls-for-al-114585.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #114585. Tech Report: Miami artists’ Art Basel boycott campaign calls for alternatives to fair week’s commercial model
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

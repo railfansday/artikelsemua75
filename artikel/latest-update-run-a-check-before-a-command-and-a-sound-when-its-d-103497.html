@@ -150,11 +150,11 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-103497">Sources indicate that your deploy script should only run if the tests pass. Your long build should tell you when it's done, so you stop checking the tab. And when you start a server, you want to know when it's actually ready, not just started.</p>
-<p>You chain it: npm test &amp;&amp; ./deploy.sh. Then you add ; say done at the end, and then || say failed, and the one line becomes a puzzle of &amp;&amp;, || and parentheses. For "ready", you watch the log until the line you're waiting for scrolls past. <span style="font-size:13px;">(Related: <a href="breaking-deploy-hugging-face-models-easily-with-amazon-sagemaker-104408.html" style="color:#2563eb; font-weight:600;">Breaking: Deploy Hugging Face models easily with Amazon...</a>)</span></p>
+<p>You chain it: npm test &amp;&amp; ./deploy.sh. Then you add ; say done at the end, and then || say failed, and the one line becomes a puzzle of &amp;&amp;, || and parentheses. For "ready", you watch the log until the line you're waiting for scrolls past.</p>
 <p>With cmdbook, each of these has its own place on the command.</p>
-<p>It has been revealed that 1. Pre: check first. Put npm test in the command's Pre field. It runs before the main command, in the same shell. If it fails, the main command is skipped, and the run demonstrates the test output.</p>
-<p id="sec-mid-103497">2. Post: react to the result. Three fields, so you don't build the &amp;&amp; / || yourself:.</p>
-<p>Sources indicate that 3. Health check: know when it's ready. Tell cmdbook what "ready" means for this command: a port that accepts connections, a URL that returns 200, or a line in the output like Server started on port. While it runs, the command indicates running — healthy, or health check failed if it doesn't get there in time. <span style="font-size:13px;">(Related: <a href="stop-treating-agents-as-one-off-projects-and-start-running-them-a-104434.html" style="color:#2563eb; font-weight:600;">Stop treating agents as one-off projects and start runn...</a>)</span></p>
+<p>It has been revealed that 1. Pre: check first. Put npm test in the command's Pre field. It runs before the main command, in the same shell. If it fails, the main command is skipped, and the run demonstrates the test output. <span style="font-size:13px;">(Related: <a href="show-dont-certify-how-to-prepare-for-your-first-data-analyst-job-115820.html" style="color:#2563eb; font-weight:600;">Show, Don't Certify: How to Prepare for Your First Data...</a>)</span></p>
+<p id="sec-mid-103497">2. Post: react to the result. Three fields, so you don't build the &amp;&amp; / || yourself:. <span style="font-size:13px;">(Related: <a href="build-a-racetrack-codes-november-2026-115836.html" style="color:#2563eb; font-weight:600;">Build A Racetrack codes (November 2026)...</a>)</span></p>
+<p>Sources indicate that 3. Health check: know when it's ready. Tell cmdbook what "ready" means for this command: a port that accepts connections, a URL that returns 200, or a line in the output like Server started on port. While it runs, the command indicates running — healthy, or health check failed if it doesn't get there in time.</p>
 <p>According to recent reports, your script stays the same. The checks and the notifications live next to it, not inside it.</p>
 <p>All of this is in cmdbook's free blueprint.</p>
 <p id="sec-end-103497">Try cmdbook here: printf.app/cmdbook.</p>
@@ -181,20 +181,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="check-what-your-ai-agents-do-before-they-do-it-with-semantic-gove-103570.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #103570. Check what your AI agents do before they do it, with Semantic governance policies
+        <a href="what-to-check-before-adding-a-tripo-model-to-a-website-115538.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #115538. What to Check Before Adding a Tripo Model to a Website
         </a>
         
-        <a href="industry-news-can-you-burn-yard-waste-on-your-property-check-the--101812.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #101812. Industry News: Can You Burn Yard Waste on Your Property? Check the Rules Before You Risk a $10,000 Fine
+        <a href="run-a-vllm-server-on-hf-jobs-in-one-command-115506.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #115506. Run a vLLM Server on HF Jobs in One Command
         </a>
         
-        <a href="ai-citations-what-to-check-before-reacting-to-a-lost-one-via-sejo-101146.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #101146. AI Citations: What To Check Before Reacting To A Lost One via @sejournal, @MattGSouthern
+        <a href="can-you-burn-yard-waste-on-your-property-check-the-rules-before-y-113295.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #113295. Can You Burn Yard Waste on Your Property? Check the Rules Before You Risk a $10,000 Fine
         </a>
         
-        <a href="trump-orders-federal-contractors-to-check-with-white-house-before-99491.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #99491. Trump orders federal contractors to check with White House before responding to Congress
+        <a href="latest-update-ai-citations-what-to-check-before-reacting-to-a-los-112589.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #112589. Latest Update: AI Citations: What To Check Before Reacting To A Lost One via @sejournal, @MattGSouthern
         </a>
         
     </div>

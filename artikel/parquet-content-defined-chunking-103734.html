@@ -150,9 +150,9 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-103734">Reduce Parquet file upload and download times on Hugging Face Hub by leveraging the latest Xet storage layer and Apache Arrow’s Parquet Content-Defined Chunking (CDC) feature enabling more efficient and scalable data workflows.</p>
-<p>Industry observers note that TL;DR: Parquet Content-Defined Chunking (CDC) is now available in PyArrow and Pandas, enabling efficient deduplication of Parquet files on content-addressable storage systems like Hugging Face's Xet storage layer. CDC dramatically reduces data transfer and storage costs by uploading or downloading only the changed data chunks. Enable CDC by passing the use_content_defined_chunking argument:. <span style="font-size:13px;">(Related: <a href="industry-news-designing-azure-silicon-on-azure-silicon-eda-worklo-104435.html" style="color:#2563eb; font-weight:600;">Industry News: Designing Azure silicon on Azure silicon...</a>)</span></p>
+<p>Industry observers note that TL;DR: Parquet Content-Defined Chunking (CDC) is now available in PyArrow and Pandas, enabling efficient deduplication of Parquet files on content-addressable storage systems like Hugging Face's Xet storage layer. CDC dramatically reduces data transfer and storage costs by uploading or downloading only the changed data chunks. Enable CDC by passing the use_content_defined_chunking argument:. <span style="font-size:13px;">(Related: <a href="industry-news-take-two-ceo-is-shutting-down-questions-about-gta-7-115851.html" style="color:#2563eb; font-weight:600;">Industry News: Take-Two CEO is shutting down questions ...</a>)</span></p>
 <p>Apache Parquet is a columnar storage format that is widely used in the data engineering community.</p>
-<p>Industry observers note that as of today, Hugging Face hosts nearly 21 PB of datasets, with Parquet files alone accounting for over 4 PB of that storage. Optimizing Parquet storage is therefore a high priority. Hugging Face has introduced a latest storage layer called Xet that leverages content-defined chunking to efficiently deduplicate chunks of data reducing storage costs and improving download/upload speeds. <span style="font-size:13px;">(Related: <a href="faster-tensorflow-models-in-hugging-face-transformers-104423.html" style="color:#2563eb; font-weight:600;">Faster TensorFlow models in Hugging Face Transformers...</a>)</span></p>
+<p>Industry observers note that as of today, Hugging Face hosts nearly 21 PB of datasets, with Parquet files alone accounting for over 4 PB of that storage. Optimizing Parquet storage is therefore a high priority. Hugging Face has introduced a latest storage layer called Xet that leverages content-defined chunking to efficiently deduplicate chunks of data reducing storage costs and improving download/upload speeds. <span style="font-size:13px;">(Related: <a href="industry-news-gta-6-players-report-game-breaking-crashes-on-ps5-a-115849.html" style="color:#2563eb; font-weight:600;">Industry News: GTA 6 players report game-breaking crash...</a>)</span></p>
 <p>Sources indicate that while Xet is format agnostic, Parquet's layout and column-chunk (data page) based compression can produce entirely different byte-level representations for data with minor changes, leading to suboptimal deduplication performance. To address this, the Parquet files should be written in a way that minimizes the byte-level differences between similar data, which is where content-defined chunking (CDC) comes into play.</p>
 <p>Let's explore the performance benefits of the new Parquet CDC feature used alongside Hugging Face's Xet storage layer.</p>
 <p>For demonstration purposes, we will use a manageable sized subset of OpenOrca dataset.</p>
@@ -229,20 +229,20 @@ CSV functions, incremental Parquet writer or reading only the parquet metadata:.
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="tech-report-announcing-our-fresh-content-guidelines-and-policy-104200.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #104200. Tech Report: Announcing our fresh Content Guidelines and Policy
+        <a href="tech-report-find-orphan-pages-and-buried-content-build-an-interna-115808.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #115808. Tech Report: Find Orphan Pages and Buried Content: Build an Internal Link Graph for Your Site
         </a>
         
-        <a href="how-to-add-ai-content-detection-to-your-nodejs-app-104095.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #104095. How to Add AI Content Detection to Your Node.js App
+        <a href="latest-update-tech-lawsuits-defined-2026-and-lawmakers-want-more-115724.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #115724. Latest Update: Tech lawsuits defined 2026 — and lawmakers want more
         </a>
         
-        <a href="how-to-test-ai-generated-content-before-it-reaches-your-users-104066.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #104066. How to Test AI-Generated Content Before It Reaches Your Users
+        <a href="nemotron-35-content-safety-customizable-multimodal-safety-for-glo-115536.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #115536. Nemotron 3.5 Content Safety: Customizable Multimodal Safety for Global Enterprise AI
         </a>
         
-        <a href="improving-parquet-dedupe-on-hugging-face-hub-103960.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #103960. Improving Parquet Dedupe on Hugging Face Hub
+        <a href="amazon-aurora-postgresql-now-supports-direct-querying-of-apache-i-115471.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #115471. Amazon Aurora PostgreSQL now supports direct querying of Apache Iceberg and Parquet data in your data lake
         </a>
         
     </div>
