@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CinePile 2.0 - making stronger datasets with adversarial refinement</title>
+    <meta name="description" content="Sources indicate that in this blog post we share the journey of releasing CinePile 2.0, a significantly improved version of our long video QA dataset. The ">
+    <meta name="keywords" content="cinepile, questions, adversarial, refinement, models, video, dataset, datasets">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua75/artikel/cinepile-20-making-stronger-datasets-with-adversarial-refinement-149764.html">
+    
+    <meta property="og:title" content="CinePile 2.0 - making stronger datasets with adversarial refinement">
+    <meta property="og:description" content="Sources indicate that in this blog post we share the journey of releasing CinePile 2.0, a significantly improved version of our long video QA dataset. The ">
+    <meta property="og:image" content="https://huggingface.co/blog/assets/188_cinepile2/thumbnail.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua75/artikel/cinepile-20-making-stronger-datasets-with-adversarial-refinement-149764.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="CinePile 2.0 - making stronger datasets with adversarial refinement">
+    <meta name="twitter:description" content="Sources indicate that in this blog post we share the journey of releasing CinePile 2.0, a significantly improved version of our long video QA dataset. The ">
+    <meta name="twitter:image" content="https://huggingface.co/blog/assets/188_cinepile2/thumbnail.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "CinePile 2.0 - making stronger datasets with adversarial refinement", "image": ["https://huggingface.co/blog/assets/188_cinepile2/thumbnail.png"], "datePublished": "2024-10-23T00:00:00", "dateModified": "2026-11-23T17:17:23.531221", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua75/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua75/artikel/cinepile-20-making-stronger-datasets-with-adversarial-refinement-149764.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding CinePile 2.0 - making stronger datasets with adversarial refinement?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Hugging Face."}}, {"@type": "Question", "name": "Which category does 'CinePile 2.0 - making stronger datasets with adversarial ref' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>CinePile 2.0 - making stronger datasets with adversarial refinement</h1>
+        <div class="meta-line">🌐 Source: <strong>Hugging Face</strong> &bull; 📅 23 Oct 2024 &bull; ⏱️ 4 min read (797 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>Sources indicate that in this blog post we share the journey of releasing CinePile 2.0, a significantly improved version of our long video QA dataset.</li><li style='margin-bottom:6px;'>We're excited to share both CinePile 2.0 and our adversarial refinement method implementation, which we believe can strengthen many existing datasets and directly be part of future dataset creation pipelines.</li><li style='margin-bottom:6px;'>If you are mainly interested in the adversarial refinement method, you can jump directly to the Adversarial Refinement section.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-149764"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-149764"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-149764"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="CinePile 2.0 - making stronger datasets with adversarial refinement" loading="lazy" src="https://huggingface.co/blog/assets/188_cinepile2/thumbnail.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-149764">Sources indicate that in this blog post we share the journey of releasing CinePile 2.0, a significantly improved version of our long video QA dataset. The improvements in the new dataset rely on a new approach that we coined adversarial dataset refinement.</p>
+<p>We're excited to share both CinePile 2.0 and our adversarial refinement method implementation, which we believe can strengthen many existing datasets and directly be part of future dataset creation pipelines. <span style="font-size:13px;">(Related: <a href="industry-news-hosting-your-models-and-datasets-on-hugging-face-sp-150200.html" style="color:#2563eb; font-weight:600;">Industry News: Hosting your Models and Datasets on Hugg...</a>)</span></p>
+<p>If you are mainly interested in the adversarial refinement method, you can jump directly to the Adversarial Refinement section.</p>
+<p>In May 2024, we launched CinePile, a long video QA dataset with about 300,000 training samples and 5,000 test samples. <span style="font-size:13px;">(Related: <a href="distributed-training-train-bartt5-for-summarization-using-transfo-150213.html" style="color:#2563eb; font-weight:600;">Distributed Training: Train BART/T5 for Summarization u...</a>)</span></p>
+<p>The first release stood out from other datasets in two aspects:.</p>
+<p>Industry observers note that part of the secret sauce behind it is that it relies on movie clips from YouTube and Q&amp;A distilled from precise audio descriptions designed for visually impaired audiences. These descriptions offer rich context beyond basic visuals (e.g., "What color is the car?"), helping us create more complex questions.</p>
+<p>It has been revealed that to automate question creation, we first built question templates by inspecting existing datasets like MovieQA and TVQA. We clustered the questions in these datasets using a textual similarity model WhereIsAI/UAE-Large-V1 and then prompted GPT-4 with 10 random examples from each cluster to generate a question template and a prototypical question for each:.</p>
+<p>It has been revealed that since templates aren't always relevant to every movie clip, we used Gemini 1.0 Pro to select the most appropriate ones for each scene. Next, we feed a language model the scene's text, selected template names (e.g., "Physical Possession"), sample questions, and a system prompt to create scene-specific questions. A well-designed prompt helps the model focus on the entire scene, generating deeper questions while avoiding superficial ones. We found that:.</p>
+<p>Using this approach, we generate approximately 32 questions per video. Prior to releasing CinePile, we implemented several mechanisms to ensure the quality of the dataset/benchmark that we cover in the next section.</p>
+<p>While our process typically generates well-formed, answerable questions, some turn out to be trivial or rely on basic concepts that don't require watching the clip. To address this, we used several large language models (LLMs) to identify and filter three types of issues:.</p>
+<p>Through continued use of the benchmark by our team and the broader community, we identified several areas for improvement that drove us to consider CinePile 2.0.</p>
+<p>For CinePile's second release, we worked together with Hugging Face (following their successful experimentation with fine-tuning Video Llava 7B on CinePile) to identify and prioritize several areas of improvement.</p>
+<p>While the degeneracy filtering was useful in CinePile 1.0, it had several limitations:.</p>
+<p>In a recent development, to address these issues, we introduced a upcoming Adversarial Refinement pipeline that helps improve weak questions rather than simply discarding them. This approach can be more easily applied at scale. Throughout this post, we'll refer to the model(s) that identify degenerate questions (using only the question and answer choices, without visual or dialogue information) as the "Deaf-Blind LLM.".</p>
+<p id="sec-mid-149764">The Adversarial Refinement pipeline aims to modify questions or answers until a Deaf-Blind LLM cannot easily predict the correct answer. Here's how it works:.</p>
+<p>Recent findings suggest that given the computational demands of this iterative process, we needed a powerful yet accessible LLM that could run locally to avoid API usage limits, delays, and cloud service costs. We chose:.</p>
+<p>To account for random chance, we:.</p>
+<p>Briefly, this was the impact of running adversarial refinement in CinePile:.</p>
+<p>Recent findings suggest that in this release, we're publishing both our adversarial refinement pipeline and the code for identifying weak questions. The complete implementation, including all prompts, is available in our public repository.</p>
+<p>It has been revealed that after testing both previously evaluated models and 16 new Video-LLMs on the modified test set, we’ve highlighted the top performers in the figure below. Here’s what the results show:.</p>
+<p>Gemini 1.5 Pro led among commercial Vision Language Models (VLMs).</p>
+<p>GPT-based models showed competitive performance.</p>
+<p>Gemini 1.5 Flash, a lighter version of Gemini 1.5 Pro.</p>
+<p>In a recent development, the open-source video-LLM community has made significant progress from the first to the current release of CinePile. This is what we learned:.</p>
+<p>LLaVa-One Vision leads open-source models.</p>
+<p>Smaller models showed competitive performance.</p>
+<p>Industry observers note that the hard-split results in CinePile clearly demonstrate that current models still lag far behind human capability in understanding visual narratives and story elements. This gap highlights the value of CinePile's new release as a benchmark for measuring progress toward more sophisticated visual understanding.</p>
+<p id="sec-end-149764">Recent findings suggest that we've released a upcoming CinePile Leaderboard that will be continuously updated as new models emerge. Visit the space to learn how to submit your own models for evaluation.</p>
+<p style="margin-top: 25px;">
+<a href="https://huggingface.co/blog/cinepile2" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="industry-news-hosting-your-models-and-datasets-on-hugging-face-sp-150200.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #150200. Industry News: Hosting your Models and Datasets on Hugging Face Spaces using Streamlit
+        </a>
+        
+        <a href="introducing-the-data-measurements-tool-an-interactive-tool-for-lo-150192.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #150192. Introducing the Data Measurements Tool: an Interactive Tool for Looking at Datasets
+        </a>
+        
+        <a href="making-automatic-speech-recognition-work-on-large-files-with-wav2-150180.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #150180. Making automatic speech recognition work on large files with Wav2Vec2 in 🤗 Transformers
+        </a>
+        
+        <a href="image-search-with-datasets-150175.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #150175. Image search with 🤗 datasets
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

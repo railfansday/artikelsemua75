@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Industry News: SmolVLM - small yet mighty Vision Language Model</title>
+    <meta name="description" content="In a recent development, this blog post introduces SmolVLM, a 2B VLM, SOTA for its memory footprint. SmolVLM is small, fast, memory-efficient, and fully op">
+    <meta name="keywords" content="smolvlm, model, training, models, fine, used, vision, using">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua75/artikel/industry-news-smolvlm-small-yet-mighty-vision-language-model-149744.html">
+    
+    <meta property="og:title" content="Industry News: SmolVLM - small yet mighty Vision Language Model">
+    <meta property="og:description" content="In a recent development, this blog post introduces SmolVLM, a 2B VLM, SOTA for its memory footprint. SmolVLM is small, fast, memory-efficient, and fully op">
+    <meta property="og:image" content="https://huggingface.co/blog/assets/smolvlm/banner.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua75/artikel/industry-news-smolvlm-small-yet-mighty-vision-language-model-149744.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Industry News: SmolVLM - small yet mighty Vision Language Model">
+    <meta name="twitter:description" content="In a recent development, this blog post introduces SmolVLM, a 2B VLM, SOTA for its memory footprint. SmolVLM is small, fast, memory-efficient, and fully op">
+    <meta name="twitter:image" content="https://huggingface.co/blog/assets/smolvlm/banner.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Industry News: SmolVLM - small yet mighty Vision Language Model", "image": ["https://huggingface.co/blog/assets/smolvlm/banner.png"], "datePublished": "2024-11-26T00:00:00", "dateModified": "2026-11-23T17:17:20.157006", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua75/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua75/artikel/industry-news-smolvlm-small-yet-mighty-vision-language-model-149744.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Industry News: SmolVLM - small yet mighty Vision Language Model?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Hugging Face."}}, {"@type": "Question", "name": "Which category does 'Industry News: SmolVLM - small yet mighty Vision Language Mo' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Industry News: SmolVLM - small yet mighty Vision Language Model</h1>
+        <div class="meta-line">🌐 Source: <strong>Hugging Face</strong> &bull; 📅 26 Nov 2024 &bull; ⏱️ 9 min read (1723 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>In a recent development, this blog post introduces SmolVLM, a 2B VLM, SOTA for its memory footprint.</li><li style='margin-bottom:6px;'>This year has seen a boom in multimodal AI with many large vision language models released.</li><li style='margin-bottom:6px;'>In this blog post, we introduce SmolVLM, a new family of 2B small vision language models that can be used commercially and deployed to smaller local setups, with completely open training pipelines.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-149744"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-149744"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-149744"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Industry News: SmolVLM - small yet mighty Vision Language Model" loading="lazy" src="https://huggingface.co/blog/assets/smolvlm/banner.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-149744">In a recent development, this blog post introduces SmolVLM, a 2B VLM, SOTA for its memory footprint. SmolVLM is small, fast, memory-efficient, and fully open-source. All model checkpoints, VLM datasets, training recipes and tools are released under the Apache 2.0 license.</p>
+<p>This year has seen a boom in multimodal AI with many large vision language models released. The trends were to initially scale up compute, later scale up the data diversity by generating synthetic data with large models, and, recently, scale down to make these models more efficient. Small open models allow local deployment to browser or edge devices, cut inference costs, and enable user customization. Some notable examples of these models include PaliGemma 3B, moondream2, and Qwen2VL. <span style="font-size:13px;">(Related: <a href="latest-update-how-to-train-a-newly-introduced-language-model-from-150232.html" style="color:#2563eb; font-weight:600;">Latest Update: How to train a newly introduced language...</a>)</span></p>
+<p>In this blog post, we introduce SmolVLM, a new family of 2B small vision language models that can be used commercially and deployed to smaller local setups, with completely open training pipelines. <span style="font-size:13px;">(Related: <a href="how-to-generate-text-using-different-decoding-methods-for-languag-150231.html" style="color:#2563eb; font-weight:600;">How to generate text: using different decoding methods ...</a>)</span></p>
+<p>We release three models: SmolVLM-Base, which can be used for downstream fine-tuning, SmolVLM-Synthetic, the fine-tuned variant on synthetic data, and SmolVLM Instruct, the fine-tuned instruction variant, which can be used out of the box for interactive end-user applications.</p>
+<p>Sources indicate that this release comes with open-source models integrated into transformers, a demo built on SmolVLM Instruct, and a supervised fine-tuning script. We have used the datasets previously used for Idefics3: the Cauldron and Docmatix, which are also fully open-source.</p>
+<p>Recent findings suggest that the Main Building: 
+  Located at the center of the complex, the main building features intricate tile work with traditional Thai motifs that cover every inch of the structure. This includes patterns such as dragons, mythical creatures, flowers, and geometric shapes. The roofline has an elaborate design featuring multiple layers of tiles adorned with gold accents.</p>
+<p>Towers &amp; Spires: 
+  There are several towers within the Grand Palace including the Phra Nakhon Si Ayutthaya National Museum Tower which houses exhibits on Thai culture and heritage. Another notable tower is the Wat Yai Chai Mongkol Tower where you can find beautiful murals depicting scenes from Buddhist mythology.</p>
+<p>Architecture Style: 
+  The architectural style combines elements of Hindu and Khmer styles seen commonly throughout Southeast Asia. You'll notice influences like stupas (dome-shaped structures), lotus flower carvings, and ornate details typical of these regions' religious buildings.</p>
+<p>Recent findings suggest that visitor Experience: 
+  While exploring the Grand Palace, visitors should be aware of certain rules due to security measures taken by authorities. These include no photography inside certain areas or using flashbulbs outside. Additionally, there may be queues during peak tourist seasons so plan accordingly if you're traveling here.</p>
+<p>By following these guidelines, your trip will undoubtedly enhance both your understanding of Thailand’s rich historical tapestry and personal enjoyment!</p>
+<p>According to recent reports, for SmolVLM, we closely followed the architecture from Idefics3, to the point that we use the same implementation in transformers. There are, however a few key differences:.</p>
+<p>We present benchmarks for the tasks we mention in training details.</p>
+<p>It has been revealed that smolVLM provides the best memory usage among the existing suite of vision language models in transformers. This allows it to run efficiently on-device, such as a laptop! You can see above the GPU memory usage in GBs for each model, running inference with one or two input images, and using the same images and text prompts in all tests. SmolVLM's efficiency in image encoding is built into the model. SmolVLM encodes each 384x384 image patch to 81 tokens. This results in SmolVLM encoding our test prompt and a single image in 1.2k tokens, whereas Qwen2-VL uses 16k tokens. This also explains why the memory consumption increases so much for 2 images with Qwen and InternVL. In contrast, the increase is much more moderate for SmolVLM and PaliGemma, which use a similar approach.</p>
+<p>SmolVLM's tiny memory footprint also implies that it requires far fewer computations to prefill the model and generate. Compared to Qwen2-VL, the prefill throughput is 3.3 to 4.5 times faster, and the generation throughput is 7.5 to 16 times faster.</p>
+<p>Given SmolVLM's long context and the possibility of tweaking the internal frame resizing of the model, we explored its suitability as an accessible option for basic video analysis tasks, particularly when computational resources are limited.</p>
+<p>It has been revealed that in our evaluation of SmolVLM's video understanding capabilities, we implemented a straightforward video processing pipeline code, extracting up to 50 evenly sampled frames from each video while avoiding internal frame resizing. This simple approach yielded surprisingly competitive results on the CinePile benchmark, with a score of 27.14%, a performance that positions the model between InternVL2 (2B) and Video LlaVa (7B).</p>
+<p>The quantitative results align with our qualitative testing, looking at an example from the FineVideo dataset:.</p>
+<p>While in the second question, we see some temporal understanding limitations (the cook points to one ingredient after the other rather than pointing/holding all of them at the same time) SmolVLM demonstrated great scene understanding and object recognition capabilities.</p>
+<p>We integrated SmolVLM with VLMEvalKit to facilitate easy evaluation across additional benchmarks.</p>
+<p>By running the following command, you can evaluate SmolVLM or your fine-tuned SmolVLM model.</p>
+<p>For example, to evaluate on MMMU dev validation set and MathVista mini and store the results in a folder called smol.</p>
+<p>You can easily load SmolVLM using the Auto classes in transformers. Under the hood, the model and processor are mapped to the same implementations used for Idefics3.</p>
+<p id="sec-mid-149744">Image and text can be interleaved arbitrarily, and you can pass in multiple images. Here’s how you can use the chat template and pass in the formatted input to the processor.</p>
+<p>Start generating with preprocessed input and decode the generated output.</p>
+<p>In a recent development, first, we had to train SmolLM2 to extend it context, but we will discuss that in the next subsection. Once we had a long context SmolLM2, we trained SmolVLM using the same data that we used for Idefics3. Mainly, we used The Cauldron and Docmatix. The full list of datasets we used can be consulted here.</p>
+<p>Sources indicate that smolLM2’s pre-training context window is insufficient for VLMs. Images are encoded into many tokens, and we wanted to support multiple images. To address this, we extended it to 16k tokens by increasing the RoPE base value from 10k to 273k, following the guidelines in “Scaling Laws of RoPE-based Extrapolation”. We fine-tuned the model on a mixture of long- and short-context datasets. For long-context datasets, we used the “books” subset of Dolma (primarily Project Gutenberg) and code documents with 8k+ tokens from The Stack, each contributing 20% to the final mixture. For short-context datasets, we streamlined the original SmolLM2 pre-training mix to include 20% FineWeb-Edu, 20% DCLM, and 20% from our math dataset (to be released soon). The math dataset was upsampled to mitigate a performance drop observed on GSM8k during the context extension process. All experiments were implemented using the EasyContext repository.</p>
+<p>It has been revealed that for our training run, we saved checkpoints every 25 optimization steps, allowing us to evaluate and potentially recover the model's state at different points in training. This practice is crucial for identifying the optimal model version, as training longer doesn't always guarantee better performance. We evaluated the performance across multiple vision-language benchmarks, each weighted according to their importance. The core benchmarks included the following:.</p>
+<p>To select the optimal checkpoint, we created a single metric by combining these benchmarks with different manually assigned weights to reflect their relative importance in assessing the model's capabilities. We used this single metric to select the best checkpoint. Generally, the models tended to do great on most benchmarks with more training, but their relative performance on DocVQA would decrease considerably.</p>
+<p>You can fine-tune SmolVLM using transformers and apply alignment techniques using TRL 🚀.</p>
+<p>It has been revealed that we provide a notebook to fine-tune it on the VQAv2 dataset, optionally using  LoRA, QLoRA or full fine-tuning. In the notebook, you can find some tricks to save up even more memory and have a larger batch size to fit SmolVLM inside consumer GPUs, like L4, for training. With batch sizes of 4, 8-bit loading with QLoRA and gradient checkpointing we can fine-tune in L4, and it consumes around ~16 GBs of VRAM. This makes it possible to fine-tune your SmolVLM using Colab! You can play around with the parameters to get a nice point in training duration-memory trade-off.</p>
+<p>SmolVLM also comes with TRL integration so you can apply Direct Preference Optimization (DPO) easily through the CLI. Get started by running pip install trl accelerate peft and then run the following command to fine-tune on RLAIF-V dataset:.</p>
+<p>According to recent reports, the resulting LoRA adapter weights are SmolVLM-Instruct-DPO. A detailed tutorial on preference tuning vision-based LLM can be found here: dpo_vlm.</p>
+<p>You can cite us in the following way:.</p>
+<p>In a recent development, we introduced SmolVLM, a fully open, small, and mighty VLM for the community! We also provide tools for the community to use and customize it. We are looking forward to seeing what you will create with SmolVLM.</p>
+<p>Below are some resources if you would like to read more about all things related to SmolVLM.</p>
+<p>Small nit for the example there is a typo on the link for second image it should be:image2 = load_image("https://huggingface.co/spaces/HuggingFaceTB/SmolVLM/resolve/main/example_images/rococo_1.jpg").</p>
+<p>Industry observers note that you are right @ridha ! Would you like to open a PR so that the fix is attributed to you? You can do it by clicking the "Upgrade on GitHub" button just below this post's title. If you don't have time that's perfectly ok, we'll get to it in a day or so :).</p>
+<p>Hi, wanna ask how to using the same arch, but try training from scratch with another langual model? Is that supported?</p>
+<p>https://github.com/huggingface/smollm/blob/main/finetuning/Smol_VLM_FT.ipynbis not working,.</p>
+<p>https://github.com/huggingface/smollm/blob/main/vision/finetuning/Smol_VLM_FT.ipynbseems to be the correct one.</p>
+<p>Recent findings suggest that great to see compact vision models getting practical. I built a privacy-first, cross-platform web UI that runs SmolVLM2-2.2B-Instruct (vision) alongside SmolLM3-3B (text). It auto-detects CUDA/MPS/CPU, pulls models on first run, and serves a clean Gradio interface.</p>
+<p>Vision: describe images, visual Q&amp;A, quick OCRText: code generation, explanation, summarization, multilingual promptsLocal only: no API keys or cloud services.</p>
+<p>I’m actively collecting feedback: ideal image sizes, better defaults for generation params, and presets that make visual tasks smoother. If you’re testing SmolVLM* locally, I’d love your notes.</p>
+<p>Repo: https://github.com/mikecastrodemaria/SmolLM3-M2-Interface-Multimodale.</p>
+<p id="sec-end-149744">Thanks for any pointers, complications, or PRs!</p>
+<p style="margin-top: 25px;">
+<a href="https://huggingface.co/blog/smolvlm" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="introducing-idefics2-a-powerful-8b-vision-language-model-for-the--149869.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #149869. Introducing Idefics2: A Powerful 8B Vision-Language Model for the community
+        </a>
+        
+        <a href="paligemma-googles-cutting-edge-open-vision-language-model-149850.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #149850. PaliGemma – Google's Cutting-Edge Open Vision Language Model
+        </a>
+        
+        <a href="smolvla-efficient-vision-language-action-model-trained-on-lerobot-149574.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #149574. SmolVLA: Efficient Vision-Language-Action Model trained on Lerobot Community Data
+        </a>
+        
+        <a href="vision-language-model-alignment-in-trl-149430.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #149430. Vision Language Model Alignment in TRL ⚡️
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

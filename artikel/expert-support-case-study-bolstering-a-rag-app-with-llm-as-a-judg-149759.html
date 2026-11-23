@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expert Support case study: Bolstering a RAG app with LLM-as-a-Judge</title>
+    <meta name="description" content="This is a guest blog post authored by Digital Green. Digital green is participating in a CGIAR-led collaboration to bring agricultural support to smallhold">
+    <meta name="keywords" content="farmers, judge, agricultural, information, agriculture, performance, gemini, support">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua75/artikel/expert-support-case-study-bolstering-a-rag-app-with-llm-as-a-judg-149759.html">
+    
+    <meta property="og:title" content="Expert Support case study: Bolstering a RAG app with LLM-as-a-Judge">
+    <meta property="og:description" content="This is a guest blog post authored by Digital Green. Digital green is participating in a CGIAR-led collaboration to bring agricultural support to smallhold">
+    <meta property="og:image" content="https://huggingface.co/blog/assets/digital-green-llm-judge/thumbnail.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua75/artikel/expert-support-case-study-bolstering-a-rag-app-with-llm-as-a-judg-149759.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Expert Support case study: Bolstering a RAG app with LLM-as-a-Judge">
+    <meta name="twitter:description" content="This is a guest blog post authored by Digital Green. Digital green is participating in a CGIAR-led collaboration to bring agricultural support to smallhold">
+    <meta name="twitter:image" content="https://huggingface.co/blog/assets/digital-green-llm-judge/thumbnail.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Expert Support case study: Bolstering a RAG app with LLM-as-a-Judge", "image": ["https://huggingface.co/blog/assets/digital-green-llm-judge/thumbnail.png"], "datePublished": "2024-10-28T00:00:00", "dateModified": "2026-11-23T17:17:22.681751", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua75/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua75/artikel/expert-support-case-study-bolstering-a-rag-app-with-llm-as-a-judg-149759.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Expert Support case study: Bolstering a RAG app with LLM-as-a-Judge?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in AI & Tech originally reported by Hugging Face."}}, {"@type": "Question", "name": "Which category does 'Expert Support case study: Bolstering a RAG app with LLM-as-' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the AI & Tech section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">AI & Tech</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Expert Support case study: Bolstering a RAG app with LLM-as-a-Judge</h1>
+        <div class="meta-line">🌐 Source: <strong>Hugging Face</strong> &bull; 📅 28 Oct 2024 &bull; ⏱️ 6 min read (1203 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>This is a guest blog post authored by Digital Green.</li><li style='margin-bottom:6px;'>Sources indicate that there are an estimated 500 million smallholder farmers globally: they play a critical role in global food security.</li><li style='margin-bottom:6px;'>An “agricultural extension service” offers technical advice on agriculture to farmers, and also supplies them with the necessary inputs and services to support their agricultural production.Agriculture extension agents are 300K in India alone, they provide necessary information about improved agriculture practice and help in decision making for the smallholder farmers.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-149759"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-149759"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-149759"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Expert Support case study: Bolstering a RAG app with LLM-as-a-Judge" loading="lazy" src="https://huggingface.co/blog/assets/digital-green-llm-judge/thumbnail.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-149759">This is a guest blog post authored by Digital Green. Digital green is participating in a CGIAR-led collaboration to bring agricultural support to smallholder farmers.</p>
+<p>Sources indicate that there are an estimated 500 million smallholder farmers globally: they play a critical role in global food security. Timely access to accurate information is essential for these farmers to make informed decisions and improve their yields.</p>
+<p>An “agricultural extension service” offers technical advice on agriculture to farmers, and also supplies them with the necessary inputs and services to support their agricultural production.Agriculture extension agents are 300K in India alone, they provide necessary information about improved agriculture practice and help in decision making for the smallholder farmers. <span style="font-size:13px;">(Related: <a href="few-shot-learning-in-practice-gpt-neo-and-the-accelerated-inferen-150209.html" style="color:#2563eb; font-weight:600;">Few-shot learning in practice: GPT-Neo and the 🤗 Accele...</a>)</span></p>
+<p>Sources indicate that but although their number is impressive, extension workers are not in large enough numbers to cope with all the demand: they interact with farmers at typically in the ratio of 1:1000. Reaching the agriculture extension workers and farmers through partnership and technology remains the key. <span style="font-size:13px;">(Related: <a href="the-partnership-amazon-sagemaker-and-hugging-face-150215.html" style="color:#2563eb; font-weight:600;">The Partnership: Amazon SageMaker and Hugging Face...</a>)</span></p>
+<p>Enter project GAIA, a collaborative initiative pioneered by CGIAR.It brought together Hugging Face as mentor through the Expert Support program, and Digital Green as project partner.</p>
+<p>Sources indicate that GAIA has a lofty goal to bring years of agriculture knowledge in the form of research papers meticulously maintained in GARDIAN portal in the hands of the farmers. There are close to 46000 research papers and reports that have agricultural knowledge globally carried over multiple decades across different crops.</p>
+<p>Digital Green immediately saw the potential of developing intelligent chatbots powered by Retrieval-Augmented Generation (RAG) on approved, curated information. Thus they decided to develop Farmer.chat, a chatbot that leverages the capabilities of large language models (LLMs) to deliver personalized and reliable agricultural advice to the farmers and front line extension workers.</p>
+<p>In a recent development, creating such a chatbot for a huge variety of languages, geographies, crops, and use cases, is a gigantic challenge:  information disseminated has to be contextual to the local level details about the farm, in the language and tone that farmers can understand and accurate (grounded in trustworthy sources) for farmers to act on it. To evaluate the performance of the system, the CGIAR team and HF expert collaborated to set up a strong evaluation suite, in the form of an LLM-as-a-judge system.</p>
+<p>Let’s take a look at how they tackled this challenge!</p>
+<p>The full system uses many components in order to provide chatbot answers grounded in several tools and external knowledge. It has several key elements:.</p>
+<p>Recent findings suggest that now this system has many moving parts, and each part has a radical impart on some aspects of performance. So we need to carefully run performance evaluation.</p>
+<p>It has been revealed that in the last one year, the usage of Farmer.chat has grown to service more than 20k farmers handling over 340k queries. How can we evaluate the performance of the system at this scale?</p>
+<p>During weekly brainstorming sessions, Hugging Face hinted to LLM as a judge and provided a link to their notebook LLM as a Judge. This resource was discussed in detail, and what followed became a practice that has helped navigating Farmer.chat’s development.</p>
+<p>Farmer.Chat employs a sophisticated Retrieval-Augmented Generation (RAG) pipeline to deliver accurate and relevant information to farmers that is grounded in the knowledge base. The RAG pipeline uses an LLM to retrieve information from a vast knowledge base and then generate a concise and informative response.</p>
+<p>But how do we measure the effectiveness of this pipeline?</p>
+<p>The difficulty here is that there is no deterministic metric that one could use to rate the quality of an answer, its conciseness, its precision...</p>
+<p>That is where LLM-as-a-judge technique steps in. The idea is simple: ask an LLM to rate the output on any metric. The immense advantage is that the metric can be anything: LLM-as-a-Judge is extremely versatile.</p>
+<p id="sec-mid-149759">For example, you can use it to evaluate the clarity of a prompt as follows:.</p>
+<p>As mentioned in this article that we referred to earlier, the key to use LLM-as-a-judge is to clearly define the task, the criteria and the integer rating scale.</p>
+<p>The research team behind Farmer.Chat leverages the capabilities of LLMs to evaluate several crucial metrics:.</p>
+<p>It empowers us to go beyond simply measuring how many questions a chatbot can answer or how swiftly it responds. Instead, we can delve deeper into the quality of the responses and understand the user experience in a more nuanced way.</p>
+<p>For RAG accuracy we use LLM-as-a-judge to evaluate on a binary scale: zero or one. But the way the task is broken down leads to a well established process that comes up with a score that we tested with human evaluators on roughly 360 questions: LLM answers are found to actually do a great job and have high correlation with human evaluations!</p>
+<p>Here is the prompt, which was inspired from the RAGAS library.</p>
+<p>The context variable above is the input chunks given for generating the answers while statements are the atomic factual statements generated by another LLM call.</p>
+<p>This was a very vital step as it enables evaluation at scale which is important when dealing with large numbers of documents and queries. The LLM-as-a-judge at core leads to metrics that act as a compass navigating the various options available for our AI pipeline.</p>
+<p>We created a sample dataset of &gt; 700 user queries randomized across different value chains (crops) and date (months). While this upgrade itself had 11 different versions that evaluated using RAG accuracy and percentage answered, the same approach was used to measure performance of the leading LLMs without any prompt changes in each LLM call. For this experiment, we selected GPT-4-Turbo by OpenAI, Gemini-1.5 in Pro and Flash versions, and Llama-3-70B-Instruct.</p>
+<p>What we see is that amongst the four models, the highest level of factually correct answers (“Faithful” column) is obtained with Gemini-1.5-pro, followed very closely by Gemini-1.5-Flash and GPT-4-turbo.</p>
+<p>What we found was that purely on the basis of faithfulness, Gemini-1.5-Pro beats the other models. But if we also take into account which percentage of questions the model accepted to answer, Llama-3-70B and Gemini-1.5-Flash perform better.</p>
+<p>In the end, we picked Gemini-1.5-Flash due to the superior trade-off of a low percentage of unanswered questions and very high faithfulness.</p>
+<p>In a recent development, by leveraging LLMs as judges, we gain a deeper understanding of user behavior and the effectiveness of AI-powered tools in the agricultural context. This data-driven approach is crucial for:.</p>
+<p>In a recent development, the ability of LLMs to act as judges in evaluating the performance of AI systems is a game-changer. It allows us to measure the impact of these systems in a more objective and data-driven way, ultimately leading to the development of more robust, effective, and user-friendly AI tools for agriculture.</p>
+<p>According to recent reports, in the span of over a year, we have continuously evolved our product. In this small timeframe we have been able to:.</p>
+<p>The results were published recently in this scientific article, focusing on the quantitative study of user research.</p>
+<p id="sec-end-149759">If you are interested in the Hugging Face Expert Support program for your company, don't hesitate to contact us here - our sales team will get in touch to discuss your needs!</p>
+<p style="margin-top: 25px;">
+<a href="https://huggingface.co/blog/digital-green-llm-judge" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="investing-in-performance-fine-tune-small-models-with-llm-insights-149741.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #149741. Investing in Performance: Fine-tune small models with LLM insights  - a CFM case study
+        </a>
+        
+        <a href="tech-report-case-study-millisecond-latency-using-hugging-face-inf-150183.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #150183. Tech Report: Case Study: Millisecond Latency using Hugging Face Infinity and modern CPUs
+        </a>
+        
+        <a href="ryghts-journey-to-empower-healthcare-and-life-sciences-with-exper-149868.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #149868. Ryght’s Journey to Empower Healthcare and Life Sciences with Expert Support from Hugging Face
+        </a>
+        
+        <a href="going-multimodal-how-prezi-is-leveraging-the-hub-and-the-expert-s-149831.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #149831. Going multimodal: How Prezi is leveraging the Hub and the Expert Support Program to accelerate their ML roadmap
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

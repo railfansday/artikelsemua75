@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Industry News: Converting Vertex-Colored Meshes to Textured Meshes</title>
+    <meta name="description" content="Convert vertex-colored meshes to UV-mapped, textured meshes. Vertex colors are a straightforward way to add color information directly to a mesh's vertices">
+    <meta name="keywords" content="mesh, vertex, texture, meshes, mapped, colored, textured, colors">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua75/artikel/industry-news-converting-vertex-colored-meshes-to-textured-meshes-149785.html">
+    
+    <meta property="og:title" content="Industry News: Converting Vertex-Colored Meshes to Textured Meshes">
+    <meta property="og:description" content="Convert vertex-colored meshes to UV-mapped, textured meshes. Vertex colors are a straightforward way to add color information directly to a mesh's vertices">
+    <meta property="og:image" content="https://huggingface.co/blog/assets/vertex-colored-to-textured-mesh/thumbnail.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua75/artikel/industry-news-converting-vertex-colored-meshes-to-textured-meshes-149785.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Industry News: Converting Vertex-Colored Meshes to Textured Meshes">
+    <meta name="twitter:description" content="Convert vertex-colored meshes to UV-mapped, textured meshes. Vertex colors are a straightforward way to add color information directly to a mesh's vertices">
+    <meta name="twitter:image" content="https://huggingface.co/blog/assets/vertex-colored-to-textured-mesh/thumbnail.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Industry News: Converting Vertex-Colored Meshes to Textured Meshes", "image": ["https://huggingface.co/blog/assets/vertex-colored-to-textured-mesh/thumbnail.png"], "datePublished": "2024-09-30T00:00:00", "dateModified": "2026-11-23T17:17:27.194300", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua75/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua75/artikel/industry-news-converting-vertex-colored-meshes-to-textured-meshes-149785.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Industry News: Converting Vertex-Colored Meshes to Textured Meshes?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Hugging Face."}}, {"@type": "Question", "name": "Which category does 'Industry News: Converting Vertex-Colored Meshes to Textured ' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Industry News: Converting Vertex-Colored Meshes to Textured Meshes</h1>
+        <div class="meta-line">🌐 Source: <strong>Hugging Face</strong> &bull; 📅 30 Sep 2024 &bull; ⏱️ 2 min read (423 words, 📖 Standard)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>Convert vertex-colored meshes to UV-mapped, textured meshes.</li><li style='margin-bottom:6px;'>Vertex colors are a straightforward way to add color information directly to a mesh's vertices.</li><li style='margin-bottom:6px;'>According to recent reports, this tutorial walks through a quick solution to convert vertex-colored meshes to UV-mapped, textured meshes.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-149785"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-149785"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-149785"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Industry News: Converting Vertex-Colored Meshes to Textured Meshes" loading="lazy" src="https://huggingface.co/blog/assets/vertex-colored-to-textured-mesh/thumbnail.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-149785">Convert vertex-colored meshes to UV-mapped, textured meshes.</p>
+<p>Vertex colors are a straightforward way to add color information directly to a mesh's vertices. This is often the way generative 3D models like InstantMesh produce meshes. However, most applications prefer UV-mapped, textured meshes. <span style="font-size:13px;">(Related: <a href="industry-news-block-sparse-matrices-for-smaller-and-faster-langua-150229.html" style="color:#2563eb; font-weight:600;">Industry News: Block Sparse Matrices for Smaller and Fa...</a>)</span></p>
+<p>According to recent reports, this tutorial walks through a quick solution to convert vertex-colored meshes to UV-mapped, textured meshes. This includes The Short Version to get results swiftly, and The Long Version for an in-depth walkthrough.</p>
+<p>It has been revealed that install the InstantTexture library for easy conversion. This is a small library we wrote that implements the steps described in The Long Version below.</p>
+<p>The code below converts a vertex-colored .obj mesh to a UV-mapped, textured .glb mesh and saves it to output.glb.</p>
+<p>Let's visualize the output mesh.</p>
+<p>For a detailed walkthrough, continue reading.</p>
+<p>Install the following dependencies:.</p>
+<p>Load the vertex-colored input mesh. This should be a .obj file located at input_mesh_path.</p>
+<p>If it's a local file, use trimesh.load() instead of trimesh.load_remote().</p>
+<p>Access the vertex colors of the mesh.</p>
+<p>If this fails, ensure the mesh is a valid .obj file with vertex colors.</p>
+<p>Generate the uv map using xatlas. <span style="font-size:13px;">(Related: <a href="latest-update-how-to-train-a-newly-introduced-language-model-from-150232.html" style="color:#2563eb; font-weight:600;">Latest Update: How to train a newly introduced language...</a>)</span></p>
+<p>This is the most time-consuming part of the process.</p>
+<p>Remap the vertices and vertex colors to the uv map.</p>
+<p id="sec-mid-149785">Define the desired texture size.</p>
+<p>Construct a texture buffer that is upscaled by an upscale_factor to create a higher quality texture.</p>
+<p>Fill in the texture of the UV-mapped mesh using barycentric interpolation.</p>
+<p>Let's visualize how the texture looks so far.</p>
+<p>As we can see, the texture has a lot of holes.</p>
+<p>To correct for this, we'll combine 4 techniques:.</p>
+<p>As we can see, the texture is now much smoother and has no holes.</p>
+<p>This can be further improved with more advanced techniques or manual texture editing.</p>
+<p>Finally, we can construct a new mesh with the generated uv coordinates and texture.</p>
+<p>Sources indicate that et voilà! The mesh is UV-mapped and textured.</p>
+<p>To export it when running locally, call mesh.export("output.glb").</p>
+<p>As you can see, the mesh still has many small artifacts.</p>
+<p>The quality of the UV map and texture are also far below the standards of a production-ready mesh.</p>
+<p>However, if you're looking for a quick solution to map from a vertex-colored mesh to a UV-mapped mesh, then this approach may be useful for you.</p>
+<p>This tutorial walked through how to convert a vertex-colored mesh to a UV-mapped, textured mesh.</p>
+<p id="sec-end-149785">If you have any questions or feedback, please feel free to open an concern on GitHub or on the Space.</p>
+<p style="margin-top: 25px;">
+<a href="https://huggingface.co/blog/vertex-colored-to-textured-mesh" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="industry-news-block-sparse-matrices-for-smaller-and-faster-langua-150229.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #150229. Industry News: Block Sparse Matrices for Smaller and Faster Language Models
+        </a>
+        
+        <a href="industry-news-faster-tensorflow-models-in-hugging-face-transforme-150222.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #150222. Industry News: Faster TensorFlow models in Hugging Face Transformers
+        </a>
+        
+        <a href="industry-news-fine-tune-wav2vec2-for-english-asr-in-hugging-face--150217.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #150217. Industry News: Fine-Tune Wav2Vec2 for English ASR in Hugging Face with 🤗 Transformers
+        </a>
+        
+        <a href="industry-news-welcome-spacy-to-the-hugging-face-hub-150206.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #150206. Industry News: Welcome spaCy to the Hugging Face Hub
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

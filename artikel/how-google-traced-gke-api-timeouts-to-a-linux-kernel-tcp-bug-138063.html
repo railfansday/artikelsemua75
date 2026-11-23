@@ -167,9 +167,9 @@ How Google Traced GKE API Timeouts to a Linux Kernel TCP Bug.</p>
 									
 									3
 									min read.</p>
-<p>Google recently detailed how three interacting bugs across Google Kubernetes Engine (GKE), Private Service Connect, and the Linux kernel caused intermittent Kubernetes API connectivity failures, blocking around 800 developers from deploying to production. <span style="font-size:13px;">(Related: <a href="welcome-gemma-googles-new-open-llm-138637.html" style="color:#2563eb; font-weight:600;">Welcome Gemma - Google’s new open LLM...</a>)</span></p>
-<p>In January, a customer running multiple GKE clusters with Private Service Connect (PSC) for private control-plane access experienced intermittent timeouts when pods attempted to reach the Kubernetes API server. <span style="font-size:13px;">(Related: <a href="japan-debuts-a-dumbphone-that-doesnt-connect-to-internet-and-look-138624.html" style="color:#2563eb; font-weight:600;">Japan debuts a ‘dumbphone’ that doesn’t connect to inte...</a>)</span></p>
-<p>Packet captures revealed that the control plane was responding to new TCP connection requests with stale ACK packets belonging to previously closed connections. The root cause involved three separate bugs across different networking layers. Akash Thakur, senior technical solutions engineer at Google Cloud, describes how engineers across multiple Google teams identified three root causes and ultimately addressed them:.</p>
+<p>Google recently detailed how three interacting bugs across Google Kubernetes Engine (GKE), Private Service Connect, and the Linux kernel caused intermittent Kubernetes API connectivity failures, blocking around 800 developers from deploying to production. <span style="font-size:13px;">(Related: <a href="my-journey-to-a-serverless-transformers-pipeline-on-google-cloud-150216.html" style="color:#2563eb; font-weight:600;">My Journey to a serverless transformers pipeline on Goo...</a>)</span></p>
+<p>In January, a customer running multiple GKE clusters with Private Service Connect (PSC) for private control-plane access experienced intermittent timeouts when pods attempted to reach the Kubernetes API server.</p>
+<p>Packet captures revealed that the control plane was responding to new TCP connection requests with stale ACK packets belonging to previously closed connections. The root cause involved three separate bugs across different networking layers. Akash Thakur, senior technical solutions engineer at Google Cloud, describes how engineers across multiple Google teams identified three root causes and ultimately addressed them:. <span style="font-size:13px;">(Related: <a href="how-to-generate-text-using-different-decoding-methods-for-languag-150231.html" style="color:#2563eb; font-weight:600;">How to generate text: using different decoding methods ...</a>)</span></p>
 <p>Industry observers note that in a race to fix the problem, we involved engineers across Google Kubernetes Engine (GKE), Private Service Connect, networking, hostnet, kernel, and the Linux upstream community, who together tracked down not one but three distinct root causes. And the final fix landed not as a config change or a feature flag, but as a patch to the Linux kernel itself.</p>
 <p>The investigation identified three interacting causes: packet reordering in PSC, Envoy's half-close behavior preventing TCP connections from being properly closed, and a Linux kernel bug that discarded certain reordered FIN packets.</p>
 <p>It has been revealed that thakur describes a complex troubleshooting case involving I/O timeouts across Private Service Connect, virtual network interfaces, and the Linux TCP state machine, which ultimately revealed a kernel problem leaving sockets stuck indefinitely in the FIN_WAIT_2 state. Thakur explains:.</p>
@@ -206,20 +206,20 @@ How Google Traced GKE API Timeouts to a Linux Kernel TCP Bug.</p>
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
+        <a href="industry-news-google-claims-last-weeks-critical-vmware-bug-was-un-149289.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #149289. Industry News: Google claims last week’s critical VMware bug was under attack in September
+        </a>
+        
+        <a href="latest-update-googles-branded-api-data-cdn-advice-ask-maps-calls--146773.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #146773. Latest Update: Google’s Branded API Data, CDN Advice & Ask Maps Calls – SEO Pulse via @sejournal, @MattGSouthern
+        </a>
+        
         <a href="google-project-zero-slashes-bug-disclosure-deadlines-splitting-ex-138029.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #138029. Google Project Zero Slashes Bug Disclosure Deadlines, Splitting Experts
         </a>
         
-        <a href="welcome-gemma-googles-new-open-llm-138637.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #138637. Welcome Gemma - Google’s new open LLM
-        </a>
-        
-        <a href="google-home-speakers-get-a-major-gemini-upgrade-soon-but-only-for-138520.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #138520. Google Home speakers get a major Gemini upgrade ‘soon,’ but only for paid subscribers
-        </a>
-        
-        <a href="google-wallet-may-soon-be-able-to-store-your-social-security-card-138504.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #138504. Google Wallet may soon be able to store your Social Security card
+        <a href="tech-report-how-we-sped-up-transformer-inference-100x-for-api-cus-150224.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #150224. Tech Report: How we sped up transformer inference 100x for 🤗 API customers
         </a>
         
     </div>

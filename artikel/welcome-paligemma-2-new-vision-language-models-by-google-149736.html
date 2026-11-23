@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome PaliGemma 2 – New vision language models by Google</title>
+    <meta name="description" content="We are excited to welcome Google's all-new vision language models, PaliGemma 2, a new iteration of PaliGemma. Like its predecessor, PaliGemma 2 uses the sa">
+    <meta name="keywords" content="fine, paligemma, models, model, tuned, dataset, tuning, google">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua75/artikel/welcome-paligemma-2-new-vision-language-models-by-google-149736.html">
+    
+    <meta property="og:title" content="Welcome PaliGemma 2 – New vision language models by Google">
+    <meta property="og:description" content="We are excited to welcome Google's all-new vision language models, PaliGemma 2, a new iteration of PaliGemma. Like its predecessor, PaliGemma 2 uses the sa">
+    <meta property="og:image" content="https://huggingface.co/blog/assets/paligemma/Paligemma2.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua75/artikel/welcome-paligemma-2-new-vision-language-models-by-google-149736.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Welcome PaliGemma 2 – New vision language models by Google">
+    <meta name="twitter:description" content="We are excited to welcome Google's all-new vision language models, PaliGemma 2, a new iteration of PaliGemma. Like its predecessor, PaliGemma 2 uses the sa">
+    <meta name="twitter:image" content="https://huggingface.co/blog/assets/paligemma/Paligemma2.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Welcome PaliGemma 2 – New vision language models by Google", "image": ["https://huggingface.co/blog/assets/paligemma/Paligemma2.png"], "datePublished": "2024-12-05T00:00:00", "dateModified": "2026-11-23T17:17:18.610464", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua75/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua75/artikel/welcome-paligemma-2-new-vision-language-models-by-google-149736.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Welcome PaliGemma 2 – New vision language models by Google?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in AI & Tech originally reported by Hugging Face."}}, {"@type": "Question", "name": "Which category does 'Welcome PaliGemma 2 – New vision language models by Google' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the AI & Tech section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">AI & Tech</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Welcome PaliGemma 2 – New vision language models by Google</h1>
+        <div class="meta-line">🌐 Source: <strong>Hugging Face</strong> &bull; 📅 05 Dec 2024 &bull; ⏱️ 5 min read (1094 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>We are excited to welcome Google's all-new vision language models, PaliGemma 2, a new iteration of PaliGemma.</li><li style='margin-bottom:6px;'>It has been revealed that paliGemma 2 comes with newly introduced pre-trained (pt) models, in sizes of 3B, 10B, and 28B parameters.</li><li style='margin-bottom:6px;'>In a recent development, the pre-trained models have been designed for easy fine-tuning to downstream tasks.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-149736"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-149736"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-149736"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Welcome PaliGemma 2 – New vision language models by Google" loading="lazy" src="https://huggingface.co/blog/assets/paligemma/Paligemma2.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-149736">We are excited to welcome Google's all-new vision language models, PaliGemma 2, a new iteration of PaliGemma. Like its predecessor, PaliGemma 2 uses the same powerful SigLIP for vision, but it upgrades to the latest Gemma 2 for the text decoder part.</p>
+<p>It has been revealed that paliGemma 2 comes with newly introduced pre-trained (pt) models, in sizes of 3B, 10B, and 28B parameters. All of them support various input resolutions: 224x224, 448x448, and 896x896. These combinations provide a lot of flexibility for different use cases, so practitioners can choose the balance they need in the quality / efficiency space. In contrast, the previous PaliGemma was only available in the 3B variant. <span style="font-size:13px;">(Related: <a href="latest-update-how-to-train-a-newly-introduced-language-model-from-150232.html" style="color:#2563eb; font-weight:600;">Latest Update: How to train a newly introduced language...</a>)</span></p>
+<p>In a recent development, the pre-trained models have been designed for easy fine-tuning to downstream tasks. The first PaliGemma was widely adopted by the community for multiple purposes. With the increased flexibility from the additional variants, combined with better pre-trained quality, we can’t wait to see what the community can do this time. <span style="font-size:13px;">(Related: <a href="industry-news-block-sparse-matrices-for-smaller-and-faster-langua-150229.html" style="color:#2563eb; font-weight:600;">Industry News: Block Sparse Matrices for Smaller and Fa...</a>)</span></p>
+<p>As an example, Google is also releasing some fine-tuned variants on the DOCCI dataset, demonstrating versatile and robust captioning capabilities that are long, nuanced and detailed. The fine-tuned DOCCI models are available for the 3B and 10B variants, and support input resolution of 448x448.</p>
+<p>This release includes all the open model repositories, transformers integration, fine-tuning scripts, and a demo of a model we fine-tuned ourselves for visual question answering on the VQAv2 dataset.</p>
+<p>In a recent development, paliGemma 2 is a newly introduced iteration of the PaliGemma vision language model released by Google in May. PaliGemma 2 connects the powerful SigLIP image encoder with the Gemma 2 language model.</p>
+<p>The new models are based on the Gemma 2 2B, 9B, and 27B language models, resulting in the corresponding 3B, 10B, and 28B PaliGemma 2 variants, whose names take into account the additional parameters of the (compact) image encoder. As mentioned above, they support three different resolutions, providing great flexibility for fine-tuning to downstream tasks.</p>
+<p>PaliGemma 2 is distributed under the Gemma license, which allows for redistribution, commercial use, fine-tuning and creation of model derivatives.</p>
+<p>This release comes with the following checkpoints in bfloat16 precision:.</p>
+<p>9 pre-trained models: 3B, 10B, and 28B with resolutions of 224x224, 448x448, and 896x896.</p>
+<p>2 models fine-tuned on DOCCI: Two models fine-tuned on the DOCCI dataset (image-text caption pairs), supporting the 3B and 10B PaliGemma 2 variants and input resolution of 448x448.</p>
+<p>As seen with the previous PaliGemma release, the pre-trained (pt) models work great for further fine-tuning on downstream tasks.</p>
+<p>Recent findings suggest that the pt models are pre-trained on the following data mixture. The diversity of the pre-training dataset allows fine-tuning on downstream tasks in similar domains to be carried out using comparatively fewer examples.</p>
+<p>WebLI: A web-scale multilingual image-text dataset built from the public web. A wide range of WebLI splits is used to acquire versatile model capabilities, such as visual semantic understanding, object localization, visually-situated text understanding, and multilinguality.</p>
+<p>CC3M-35L: Curated English image-alt_text pairs from webpages (Sharma et al., 2018). To label this dataset, the authors used Google Cloud Translation API to translate into 34 additional languages.</p>
+<p>Visual Question Generation with Question Answering Validation (VQ2A): An improved dataset for question answering. The dataset is translated into the same additional 34 languages, using the Google Cloud Translation API.</p>
+<p id="sec-mid-149736">Sources indicate that openImages: Detection and object-aware questions and answers (Piergiovanni et al. 2022) generated by handcrafted rules on the OpenImages dataset.</p>
+<p>WIT: Images and texts collected from Wikipedia (Srinivasan et al., 2021).</p>
+<p>The PaliGemma 2 team internally fine-tuned the PT models on a wide variety of visual-language understanding tasks, and they provide benchmarks of these fine-tuned models in the model card and the technical report.</p>
+<p>PaliGemma 2 fine-tuned on the DOCCI dataset, can accomplish a wide range of captioning tasks, including text rendering, capturing spatial relations, and including world knowledge in captions.</p>
+<p>You can find below the performance of the DOCCI fine-tuned PaliGemma 2 checkpoints, compared with other models (taken from Table 6 in the technical report).</p>
+<p>Below you can find some model outputs for the DOCCI checkpoint that showcase the versatility of the model.</p>
+<p>For demonstration purposes, we in the Hugging Face team fine-tuned PaliGemma 2 3B with 448x448 resolution on a small portion of the VQAv2 dataset. We used LoRA fine-tuning and PEFT, as explained later in the fine-tuning section. The demo below showcases the final result. Feel free to examine the code in the Space to see how it works, or clone it to adapt to your own fine-tunes.</p>
+<p>You can run inference on the PaliGemma 2 models with 🤗 transformers, using the PaliGemmaForConditionalGeneration and AutoProcessor APIs. Please, make sure you install transformers version 4.47 or later:.</p>
+<p>After that, you can run inference like follows. As usual, please make sure to follow the prompt format that was used to train the model for the task you are using:.</p>
+<p>You can also use the transformers bitsandbytes integration to load the models with quantization. The following example uses 4-bit nf4:.</p>
+<p>We quickly tested performance degradation in the presence of quantization by evaluating a 3B fine-tuned checkpoint on the textvqa dataset, using 224x224 input images. These are the results we got on the 5,000 entries of the validation set:.</p>
+<p>In a recent development, these are very encouraging figures! Of course, quantization is most interesting for the larger checkpoints, we recommend you always measure results on the domains and tasks you’ll be using.</p>
+<p>If you have previously fine-tuned PaliGemma, the API to fine-tune PaliGemma 2 is the same, you can use your code out of the box. We provide a fine-tuning script and a notebook for you to fine-tune the model, freeze parts of the model, or apply memory efficient fine-tuning techniques like LoRA or QLoRA.</p>
+<p>In a recent development, we have LoRA-fine-tuned a PaliGemma 2 model on half of the VQAv2 validation split for demonstration purposes. This took half an hour on 3 A100s with 80GB VRAM. The model can be found here, and this is a Gradio demo that showcases it.</p>
+<p>The new PaliGemma 2 release is even more exciting than the previous one, with various sizes fitting everyone’s needs and stronger pre-trained models. We are looking forward to seeing what the community will build!</p>
+<p>Industry observers note that we thank the Google team for releasing this amazing, and open, model family. Big thanks to Pablo Montalvo for integrating the model to transformers, and to Lysandre, Raushan, Arthur, Yieh-Dar and the rest of the team for reviewing, testing, and merging in no time.</p>
+<p id="sec-end-149736">exgtract the parameterfrom the image.</p>
+<p style="margin-top: 25px;">
+<a href="https://huggingface.co/blog/paligemma2" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="paligemma-2-mix-new-instruction-vision-language-models-by-google-149677.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #149677. PaliGemma 2 Mix - New Instruction Vision Language Models by Google
+        </a>
+        
+        <a href="paligemma-googles-cutting-edge-open-vision-language-model-149850.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #149850. PaliGemma – Google's Cutting-Edge Open Vision Language Model
+        </a>
+        
+        <a href="a-dive-into-vision-language-models-150062.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #150062. A Dive into Vision-Language Models
+        </a>
+        
+        <a href="accelerating-vision-language-models-bridgetower-on-habana-gaudi2-149992.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #149992. Accelerating Vision-Language Models: BridgeTower on Habana Gaudi2
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

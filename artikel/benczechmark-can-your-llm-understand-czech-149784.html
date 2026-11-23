@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🇨🇿 BenCzechMark - Can your LLM Understand Czech?</title>
+    <meta name="description" content="It has been revealed that the 🇨🇿 BenCzechMark is the first and most comprehensive evaluation suite for assessing the abilities of Large Language Models (LL">
+    <meta name="keywords" content="models, benczechmark, model, czech, tasks, suite, language, categories">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua75/artikel/benczechmark-can-your-llm-understand-czech-149784.html">
+    
+    <meta property="og:title" content="🇨🇿 BenCzechMark - Can your LLM Understand Czech?">
+    <meta property="og:description" content="It has been revealed that the 🇨🇿 BenCzechMark is the first and most comprehensive evaluation suite for assessing the abilities of Large Language Models (LL">
+    <meta property="og:image" content="https://huggingface.co/blog/assets/187_benczechmark/thumbnail.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua75/artikel/benczechmark-can-your-llm-understand-czech-149784.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="🇨🇿 BenCzechMark - Can your LLM Understand Czech?">
+    <meta name="twitter:description" content="It has been revealed that the 🇨🇿 BenCzechMark is the first and most comprehensive evaluation suite for assessing the abilities of Large Language Models (LL">
+    <meta name="twitter:image" content="https://huggingface.co/blog/assets/187_benczechmark/thumbnail.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "🇨🇿 BenCzechMark - Can your LLM Understand Czech?", "image": ["https://huggingface.co/blog/assets/187_benczechmark/thumbnail.png"], "datePublished": "2024-10-01T00:00:00", "dateModified": "2026-11-23T17:17:26.997754", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua75/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua75/artikel/benczechmark-can-your-llm-understand-czech-149784.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding 🇨🇿 BenCzechMark - Can your LLM Understand Czech??", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in AI & Tech originally reported by Hugging Face."}}, {"@type": "Question", "name": "Which category does '🇨🇿 BenCzechMark - Can your LLM Understand Czech?' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the AI & Tech section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">AI & Tech</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>🇨🇿 BenCzechMark - Can your LLM Understand Czech?</h1>
+        <div class="meta-line">🌐 Source: <strong>Hugging Face</strong> &bull; 📅 01 Oct 2024 &bull; ⏱️ 2 min read (454 words, 📖 Standard)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>It has been revealed that the 🇨🇿 BenCzechMark is the first and most comprehensive evaluation suite for assessing the abilities of Large Language Models (LLMs) in the Czech language.</li><li style='margin-bottom:6px;'>To achieve this, we've sourced 50 tasks spanning 9 categories, with 90% of tasks having native, non-translated content.</li><li style='margin-bottom:6px;'>In this blog, we introduce both the evaluation suite itself and the BenCzechMark leaderboard, featuring over 25 open-source models of various sizes!</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-149784"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-149784"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-149784"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="🇨🇿 BenCzechMark - Can your LLM Understand Czech?" loading="lazy" src="https://huggingface.co/blog/assets/187_benczechmark/thumbnail.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-149784">It has been revealed that the 🇨🇿 BenCzechMark is the first and most comprehensive evaluation suite for assessing the abilities of Large Language Models (LLMs) in the Czech language. It aims to test how well LLMs can:.</p>
+<p>To achieve this, we've sourced 50 tasks spanning 9 categories, with 90% of tasks having native, non-translated content.</p>
+<p>In this blog, we introduce both the evaluation suite itself and the BenCzechMark leaderboard, featuring over 25 open-source models of various sizes! <span style="font-size:13px;">(Related: <a href="industry-news-block-sparse-matrices-for-smaller-and-faster-langua-150229.html" style="color:#2563eb; font-weight:600;">Industry News: Block Sparse Matrices for Smaller and Fa...</a>)</span></p>
+<p>The 🇨🇿 BenCzechMark (in it’s current version) is divided into 9 categories to comprehensively assess LLM abilities. For each task,.</p>
+<p>The translated portion of the dataset (10% of the total) was mostly translated via CUBBITT LINDAT Translation, except for CsFever, where the authors used DeepL for translation. <span style="font-size:13px;">(Related: <a href="tech-report-porting-fairseq-wmt19-translation-system-to-transform-150226.html" style="color:#2563eb; font-weight:600;">Tech Report: Porting fairseq wmt19 translation system t...</a>)</span></p>
+<p>This is the complete list of categories, alongside the datasets and metrics used:.</p>
+<p>According to recent reports, since we use different metrics for the tasks, simply averaging wouldn't work due to varying scales. Instead, we've introduced a novel way to determine a final score: we let the models fight!</p>
+<p>It has been revealed that for every task and metric, we compute a test for statistical significance at α=0.05. This means the probability that the performance of model A equals that of model B is estimated to be less than 0.05. We use the following tests, each with varying statistical power:.</p>
+<p id="sec-mid-149784">Recent findings suggest that we then compute a model's duel win score (DWS) - the proportion of duels won against all other models on that task. Finally, we calculate aggregate scores as follows:.</p>
+<p>This yields an easy-to-understand model score: Macro-averaged model win-rate!</p>
+<p>To identify the top-performing open-source model in our suite, we evaluated 26 open-weight models using the following parameters:.</p>
+<p>Industry observers note that the results can be explored in our Space. While Llama-450B emerged as the clear overall winner, it didn’t dominate every category. Interestingly, some models have excelled in specific areas — for instance:.</p>
+<p>One of our main goals at BenCzechMark is to empower researchers to assess their models' capabilities in Czech and to encourage the community to train and discover models that excel in the Czech language.</p>
+<p>If you know of a model that stands out, we'd love for you to submit it to our leaderboard, making the competition even more exciting!</p>
+<p>To help you get started, we've prepared a straightforward 3-step guide, which you can find in the BenCzechMark space under the Submission tab.</p>
+<p>We'd like to extend our thanks to all contributors from BUT FIT, FI MUNI, CIIRC CTU, and Hugging Face for their invaluable work in bringing BenCzechMark to life.</p>
+<p id="sec-end-149784">We're also grateful to the organizations that provided source data for some of the tasks, namely Umímeto, CERMAT, and ČNK.</p>
+<p style="margin-top: 25px;">
+<a href="https://huggingface.co/blog/benczechmark" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="starcoder-a-state-of-the-art-llm-for-code-150026.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #150026. StarCoder: A State-of-the-Art LLM for Code
+        </a>
+        
+        <a href="introducing-the-hugging-face-llm-inference-container-for-amazon-s-150010.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #150010. Introducing the Hugging Face LLM Inference Container for Amazon SageMaker
+        </a>
+        
+        <a href="whats-going-on-with-the-open-llm-leaderboard-149994.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #149994. What's going on with the Open LLM Leaderboard?
+        </a>
+        
+        <a href="open-source-text-generation-llm-ecosystem-at-hugging-face-149986.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #149986. Open-Source Text Generation & LLM Ecosystem at Hugging Face
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

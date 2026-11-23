@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Share your open ML datasets on Hugging Face Hub!</title>
+    <meta name="description" content="If you're working on data-intensive research or machine learning projects, you need a reliable way to share and host your datasets. Public datasets such as">
+    <meta name="keywords" content="datasets, dataset, hugging, face, data, features, community, share">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua75/artikel/share-your-open-ml-datasets-on-hugging-face-hub-149754.html">
+    
+    <meta property="og:title" content="Share your open ML datasets on Hugging Face Hub!">
+    <meta property="og:description" content="If you're working on data-intensive research or machine learning projects, you need a reliable way to share and host your datasets. Public datasets such as">
+    <meta property="og:image" content="https://huggingface.co/blog/assets/researcher-dataset-sharing/thumbnail.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua75/artikel/share-your-open-ml-datasets-on-hugging-face-hub-149754.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Share your open ML datasets on Hugging Face Hub!">
+    <meta name="twitter:description" content="If you're working on data-intensive research or machine learning projects, you need a reliable way to share and host your datasets. Public datasets such as">
+    <meta name="twitter:image" content="https://huggingface.co/blog/assets/researcher-dataset-sharing/thumbnail.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Share your open ML datasets on Hugging Face Hub!", "image": ["https://huggingface.co/blog/assets/researcher-dataset-sharing/thumbnail.png"], "datePublished": "2024-11-12T00:00:00", "dateModified": "2026-11-23T17:17:21.928498", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua75/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua75/artikel/share-your-open-ml-datasets-on-hugging-face-hub-149754.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Share your open ML datasets on Hugging Face Hub!?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Hugging Face."}}, {"@type": "Question", "name": "Which category does 'Share your open ML datasets on Hugging Face Hub!' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Share your open ML datasets on Hugging Face Hub!</h1>
+        <div class="meta-line">🌐 Source: <strong>Hugging Face</strong> &bull; 📅 12 Nov 2024 &bull; ⏱️ 7 min read (1418 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>If you're working on data-intensive research or machine learning projects, you need a reliable way to share and host your datasets.</li><li style='margin-bottom:6px;'>Hugging Face Hub makes it seamless to host and share datasets, trusted by many leading research institutions, companies, and government agencies, including Nvidia, Google, Stanford, NASA, THUDM and Barcelona Supercomputing Center.</li><li style='margin-bottom:6px;'>By hosting a dataset on the Hugging Face Hub, you get instant access to features that can maximize your work's impact:.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-149754"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-149754"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-149754"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Share your open ML datasets on Hugging Face Hub!" loading="lazy" src="https://huggingface.co/blog/assets/researcher-dataset-sharing/thumbnail.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-149754">If you're working on data-intensive research or machine learning projects, you need a reliable way to share and host your datasets. Public datasets such as Common Crawl, ImageNet, Common Voice and more are critical to the open ML ecosystem, yet they can be challenging to host and share.</p>
+<p>Hugging Face Hub makes it seamless to host and share datasets, trusted by many leading research institutions, companies, and government agencies, including Nvidia, Google, Stanford, NASA, THUDM and Barcelona Supercomputing Center. <span style="font-size:13px;">(Related: <a href="industry-news-faster-tensorflow-models-in-hugging-face-transforme-150222.html" style="color:#2563eb; font-weight:600;">Industry News: Faster TensorFlow models in Hugging Face...</a>)</span></p>
+<p>By hosting a dataset on the Hugging Face Hub, you get instant access to features that can maximize your work's impact:. <span style="font-size:13px;">(Related: <a href="hugging-face-on-pytorch-xla-tpus-150221.html" style="color:#2563eb; font-weight:600;">Hugging Face on PyTorch / XLA TPUs...</a>)</span></p>
+<p>The Hub can host terabyte-scale datasets, with high per-file and per-repository limits. If you have data to share, the Hugging Face datasets team can help suggest the best format for uploading your data for community usage. The 🤗 Datasets library makes it easy to upload and download your files, or even create a dataset from scratch. 🤗 Datasets also enables dataset streaming , making it possible to work with large datasets without needing to download the entire thing. This can be invaluable to allow researchers with less computational resources to work with your datasets, or to select small portions of a huge dataset for testing, development or prototyping.</p>
+<p>The Hugging Face Hub can host the large datasets often created for machine learning research.</p>
+<p>Note: The Xet team is right now working on a backend enhancement that will increase per-file limits from the current 50 GB to 500 GB while also improving storage and transfer efficiency.</p>
+<p>Recent findings suggest that beyond just hosting your data, the Hub provides powerful tools for exploration. With the Datasets Viewer, people can explore and interact with datasets hosted on the Hub directly in their browser. This provides an easy way for others to view and explore your data without downloading it first.</p>
+<p>In a recent development, hugging Face datasets supports many different modalities (audio, images, video, etc.) and file formats (CSV, JSON, Parquet, etc.), and compression formats (Gzip, Zip, etc.). Check out the Datasets File Formats page for more details.</p>
+<p>The Dataset Viewer for the Infinity-Instruct dataset.</p>
+<p>The Datasets Viewer also includes a few features which make it easier to explore a dataset.</p>
+<p>It has been revealed that built-in Full Text Search is one of the most powerful features of the Datasets Viewer. Any text columns in a dataset immediately become searchable.</p>
+<p>The Arxiver dataset contains 63.4k rows of arXiv research papers converted to Markdown. By using Full Text Search, it's easy to find the papers containing a specific author such as Ilya Sutskever below.</p>
+<p>It has been revealed that the Datasets Viewer allows you to sort the dataset by clicking on the column headers. This makes it easy to find the most relevant examples in a dataset.</p>
+<p>Below is an example of a dataset sorted by the helpfulness column in descending order for the HelpSteer2 dataset.</p>
+<p>In a recent development, hugging Face is fortunate to have third party integrations with the leading open source data tools. By hosting a dataset on the Hub, it instantly makes the dataset compatible with the tools customers are most familiar with.</p>
+<p>Here are some of the libraries Hugging Face supports out of the box:.</p>
+<p>Most of these libraries enable you to load or stream a dataset in 1 single line of code.</p>
+<p>Here are some examples with Pandas, Polars and DuckDB:.</p>
+<p>You can find more information about integrated libraries in the Datasets documentation. Along with the libraries listed above, there are many more community supported tools which support the Hugging Face Hub such as Lilac and Spotlight.</p>
+<p>The SQL Console provides an interactive SQL editor that runs entirely in your browser, enabling instant data exploration without any setup. Key features include:.</p>
+<p id="sec-mid-149754">It has been revealed that on every public dataset you should see a new SQL Console badge. With just one click you can open a SQL Console to query that dataset.</p>
+<p>While making datasets accessible is key, protecting sensitive data is equally crucial. The Hugging Face Hub provides robust security features to help you maintain control over your data while sharing it with the right audiences.</p>
+<p>The Hugging Face Hub supports unique access control options for who has access to the dataset.</p>
+<p>For more details about gated datasets, see the gated datasets documentation. For more fine-grained controls, there are Enterprise plan features where organizations can create resource security groups, use SSO, and more.</p>
+<p>Along with access controls, the Hugging Face Hub offers several security scanners:.</p>
+<p>Sources indicate that having a secure platform with powerful features is valuable, but the true impact of research comes from reaching the right audience. Reach and visibility are crucial for researchers sharing datasets - it helps maximize research impact, enables reproducibility, facilitates collaboration, and ensures valuable data can benefit the broader scientific community.</p>
+<p>Recent findings suggest that with over 5M builders actively using the platform, the Hugging Face Hub provides researchers with powerful tools for community engagement and visibility. Here's what you can expect:.</p>
+<p>The Hub makes it easy to ask questions and discuss datasets.</p>
+<p>Sources indicate that now that you understand the benefits of hosting your dataset on the Hub, you might be wondering how to get started. Here are some comprehensive resources to guide you through the process:.</p>
+<p>The following pages will be useful if you want to share large datasets:.</p>
+<p>If you want any further help uploading a dataset to the Hub or want to upload a particularly large dataset, please contact datasets@huggingface.co.</p>
+<p>it would be nice to have a small section on (showing off datasets linkages) how to link the datasets to eachother and to models in the dataset card.</p>
+<p>Hello @lhoestq   and the Hugging Face team,Sorry the long comment but hope it would be worth it.🙏🏿.</p>
+<p>Thank you for this comprehensive guide on sharing datasets on the Hub! Your emphasis on making datasets accessible while maintaining security and visibility resonates deeply with our recent work.We recently launched the Ugandan Cultural Context Benchmark (UCCB) on Hugging Face (https://huggingface.co/datasets/CraneAILabs/UCCB), which represents a significant milestone for African AI evaluation. As the first comprehensive benchmark testing AI's understanding of African cultural contexts, UCCB addresses a critical gap where models often fail due to training data that predominantly reflects Western experiences.</p>
+<p>Industry observers note that your article's points about reach and community engagement particularly struck us. With only 0.02% of internet content in African languages and Africa contributing less than 1% to global AI training data, initiatives like UCCB are essential for building more inclusive AI systems. The dataset features 1,039 expert-verified questions across 24 cultural domains, from traditional medicine to modern slang, testing whether AI truly understands African contexts beyond mere translation.</p>
+<p>According to recent reports, we believe sharing the story behind UCCB and our methodology could inspire similar initiatives across Africa and other underrepresented regions. While we attempted to join the Blog Explorers organization toshare our journey, we understand access is limited. However, we wonder if there might be an opportunity to collaborate with Hugging Face experts on a blog post that highlights:.</p>
+<p>How African researchers are leveraging the Hub's infrastructure to address regional AI challengesThe importance of culturally-aware benchmarks in the global AI ecosystemPractical insights for other regions looking to create similar evaluation frameworksThe role of community collaboration in building datasets that truly represent diverse perspectives.</p>
+<p>As you noted in your article, "the true impact of research comes from reaching the right audience." We believe showcasing African AI innovation on Hugging Face's platform could inspire more regional contributions and demonstrate how the Hub enables researchers worldwide to shape AI development, not just consume it.</p>
+<p>Would you or someone from the team be open to exploring a collaborative blog post? Even guidance on independently publishing our story in a way that aligns with Hugging Face's community values would be invaluable. We're committed to the same principles of open science and community engagement that make the Hub special.(We have tried to reach out to the team at Hugging Face but no one has given us any time for months now🥲).</p>
+<p>Sources indicate that thank you for building infrastructure that empowers global voices in AI. Looking forward to any opportunities to share how African perspectives are contributing to more equitable AI development.</p>
+<p id="sec-end-149754">Recent findings suggest that best regards,Kato Steven Mubiru &amp; Bronson Bakunga@katostevenmubiru P.S. The Dataset Viewer and SQL Console features you highlighted have been instrumental in making UCCB accessible to researchers with limited computational resources - exactly the democratization we need for inclusive AI development!</p>
+<p style="margin-top: 25px;">
+<a href="https://huggingface.co/blog/researcher-dataset-sharing" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="duckdb-analyze-50000-datasets-stored-on-the-hugging-face-hub-150005.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #150005. DuckDB: analyze 50,000+ datasets stored on the Hugging Face Hub
+        </a>
+        
+        <a href="sentence-transformers-in-the-hugging-face-hub-150208.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #150208. Sentence Transformers in the Hugging Face Hub
+        </a>
+        
+        <a href="industry-news-welcome-spacy-to-the-hugging-face-hub-150206.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #150206. Industry News: Welcome spaCy to the Hugging Face Hub
+        </a>
+        
+        <a href="industry-news-hosting-your-models-and-datasets-on-hugging-face-sp-150200.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #150200. Industry News: Hosting your Models and Datasets on Hugging Face Spaces using Streamlit
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

@@ -150,8 +150,8 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-138232">📄 Tech Report: http://allenai.org/papers/benchmirt | 📊 Data: https://huggingface.co/collections/allenai/benchmirt | 💻 Code: https://github.com/allenai/BenchMIRT.</p>
-<p>Today we’re introducing BenchMIRT, a new method for auditing LLM benchmarks at the level of individual prompts—the questions and tasks a model is scored on. <span style="font-size:13px;">(Related: <a href="introducing-the-open-arabic-llm-leaderboard-138636.html" style="color:#2563eb; font-weight:600;">Introducing the Open Arabic LLM Leaderboard...</a>)</span></p>
-<p>In a recent development, A benchmark is usually designed to measure a particular ability, such as safety, general reasoning, or instruction following. But the individual tasks inside it may depend on more than that stated goal. Take BBQ, a benchmark designed to test whether models rely on social stereotypes. One question asks about a grandson and grandfather trying to book an Uber. It probes age bias, but also requires the model to track who’s who and reason from the evidence provided rather than assumptions. <span style="font-size:13px;">(Related: <a href="breaking-ai-for-game-development-creating-a-farming-game-in-5-day-138640.html" style="color:#2563eb; font-weight:600;">Breaking: AI for Game Development: Creating a Farming G...</a>)</span></p>
+<p>Today we’re introducing BenchMIRT, a new method for auditing LLM benchmarks at the level of individual prompts—the questions and tasks a model is scored on. <span style="font-size:13px;">(Related: <a href="latest-update-how-to-train-a-newly-introduced-language-model-from-150232.html" style="color:#2563eb; font-weight:600;">Latest Update: How to train a newly introduced language...</a>)</span></p>
+<p>In a recent development, A benchmark is usually designed to measure a particular ability, such as safety, general reasoning, or instruction following. But the individual tasks inside it may depend on more than that stated goal. Take BBQ, a benchmark designed to test whether models rely on social stereotypes. One question asks about a grandson and grandfather trying to book an Uber. It probes age bias, but also requires the model to track who’s who and reason from the evidence provided rather than assumptions. <span style="font-size:13px;">(Related: <a href="industry-news-block-sparse-matrices-for-smaller-and-faster-langua-150229.html" style="color:#2563eb; font-weight:600;">Industry News: Block Sparse Matrices for Smaller and Fa...</a>)</span></p>
 <p>Sources indicate that and even within a single benchmark, different groups of questions and tasks can measure different things. WildJailbreak, for example, includes harmful jailbreak prompts alongside benign prompts designed to test whether a model refuses harmless requests too often. The harmful prompts are more closely associated with safety, while the benign prompts are more closely associated with general reasoning. Averaging them into a single benchmark score can obscure that difference.</p>
 <p>BenchMIRT helps researchers separate those signals and see what’s actually driving a benchmark’s score. It does this by analyzing how models perform on each question or task and estimating which underlying capabilities are most closely associated with getting it right.</p>
 <p>Recent findings suggest that benchMIRT takes cues from Item Response Theory (IRT), a technique originating in psychometrics—the field concerned with measuring abilities and traits from patterns of test responses. IRT starts from a simple idea: not every question tells you the same amount about the person taking a test. Some are harder than others, and some do a better job of distinguishing stronger performers from weaker ones.</p>
@@ -200,20 +200,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="welcome-gemma-googles-new-open-llm-138637.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #138637. Welcome Gemma - Google’s new open LLM
+        <a href="starcoder-a-state-of-the-art-llm-for-code-150026.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #150026. StarCoder: A State-of-the-Art LLM for Code
         </a>
         
-        <a href="introducing-the-open-arabic-llm-leaderboard-138636.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #138636. Introducing the Open Arabic LLM Leaderboard
+        <a href="introducing-the-hugging-face-llm-inference-container-for-amazon-s-150010.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #150010. Introducing the Hugging Face LLM Inference Container for Amazon SageMaker
         </a>
         
-        <a href="university-launches-5m-smart-system-that-checks-who-is-actually-l-138634.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #138634. University launches $5m smart system that checks who is actually listening in class
+        <a href="whats-going-on-with-the-open-llm-leaderboard-149994.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #149994. What's going on with the Open LLM Leaderboard?
         </a>
         
-        <a href="aprielguard-a-guardrail-for-safety-and-adversarial-robustness-in--138626.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #138626. AprielGuard: A Guardrail for Safety and Adversarial Robustness in Modern LLM Systems
+        <a href="open-source-text-generation-llm-ecosystem-at-hugging-face-149986.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #149986. Open-Source Text Generation & LLM Ecosystem at Hugging Face
         </a>
         
     </div>

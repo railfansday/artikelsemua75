@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introducing smolagents: simple agents that write actions in code.</title>
+    <meta name="description" content="Today we are launching smolagents, a very simple library that unlocks agentic capabilities for language models. Here’s a glimpse:. Sources indicate that an">
+    <meta name="keywords" content="code, agents, tool, workflow, agent, smolagents, actions, llms">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua75/artikel/introducing-smolagents-simple-agents-that-write-actions-in-code-149719.html">
+    
+    <meta property="og:title" content="Introducing smolagents: simple agents that write actions in code.">
+    <meta property="og:description" content="Today we are launching smolagents, a very simple library that unlocks agentic capabilities for language models. Here’s a glimpse:. Sources indicate that an">
+    <meta property="og:image" content="https://huggingface.co/blog/assets/smolagents/thumbnail.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua75/artikel/introducing-smolagents-simple-agents-that-write-actions-in-code-149719.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Introducing smolagents: simple agents that write actions in code.">
+    <meta name="twitter:description" content="Today we are launching smolagents, a very simple library that unlocks agentic capabilities for language models. Here’s a glimpse:. Sources indicate that an">
+    <meta name="twitter:image" content="https://huggingface.co/blog/assets/smolagents/thumbnail.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Introducing smolagents: simple agents that write actions in code.", "image": ["https://huggingface.co/blog/assets/smolagents/thumbnail.png"], "datePublished": "2024-12-31T00:00:00", "dateModified": "2026-11-23T17:17:15.517939", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua75/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua75/artikel/introducing-smolagents-simple-agents-that-write-actions-in-code-149719.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Introducing smolagents: simple agents that write actions in code.?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Hugging Face."}}, {"@type": "Question", "name": "Which category does 'Introducing smolagents: simple agents that write actions in ' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Introducing smolagents: simple agents that write actions in code.</h1>
+        <div class="meta-line">🌐 Source: <strong>Hugging Face</strong> &bull; 📅 31 Dec 2024 &bull; ⏱️ 7 min read (1389 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>Today we are launching smolagents, a very simple library that unlocks agentic capabilities for language models.</li><li style='margin-bottom:6px;'>Sources indicate that any efficient system using AI will need to provide LLMs some kind of access to the real world: for instance the possibility to call a search tool to get external information, or to act on certain programs in order to solve a task.</li><li style='margin-bottom:6px;'>AI Agents are programs where LLM outputs control the workflow.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-149719"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-149719"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-149719"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Introducing smolagents: simple agents that write actions in code." loading="lazy" src="https://huggingface.co/blog/assets/smolagents/thumbnail.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-149719">Today we are launching smolagents, a very simple library that unlocks agentic capabilities for language models. Here’s a glimpse:.</p>
+<p>Sources indicate that any efficient system using AI will need to provide LLMs some kind of access to the real world: for instance the possibility to call a search tool to get external information, or to act on certain programs in order to solve a task. In other words, LLMs should have agency. Agentic programs are the gateway to the outside world for LLMs. <span style="font-size:13px;">(Related: <a href="latest-update-how-to-train-a-newly-introduced-language-model-from-150232.html" style="color:#2563eb; font-weight:600;">Latest Update: How to train a newly introduced language...</a>)</span></p>
+<p>AI Agents are programs where LLM outputs control the workflow.</p>
+<p>Any system leveraging LLMs will integrate the LLM outputs into code. The influence of the LLM's input on the code workflow is the level of agency of LLMs in the system. <span style="font-size:13px;">(Related: <a href="tech-report-porting-fairseq-wmt19-translation-system-to-transform-150226.html" style="color:#2563eb; font-weight:600;">Tech Report: Porting fairseq wmt19 translation system t...</a>)</span></p>
+<p>Note that with this definition, "agent" is not a discrete, 0 or 1 definition: instead, "agency" evolves on a continuous spectrum, as you give more or less power to the LLM on your workflow.</p>
+<p>The table below illustrates how agency varies across systems:.</p>
+<p>The multi-step agent has this code structure:.</p>
+<p>So this system runs in a loop, executing a upcoming action at each step (the action can involve calling some pre-determined tools that are just functions), until its observations make it apparent that a satisfactory state has been reached to solve the given task. Here’s an example of how a multi-step agent can solve a simple math question:.</p>
+<p>Agents are useful when you need an LLM to determine the workflow of an app. But they’re often overkill. The question is: do I really need flexibility in the workflow to efficiently solve the task at hand? If the pre-determined workflow falls short too often, that means you need more flexibility. Let's take an example: say you're making an app that handles customer requests on a surfing trip website.</p>
+<p>You could know in advance that the requests will belong to either of 2 buckets (based on user choice), and you have a predefined workflow for each of these 2 cases.</p>
+<p>Industry observers note that if that deterministic workflow fits all queries, by all means just code everything! This will give you a 100% reliable system with no risk of error introduced by letting unpredictable LLMs meddle in your workflow. For the sake of simplicity and robustness, it's advised to regularize towards not using any agentic behaviour.</p>
+<p>But what if the workflow can't be determined that well in advance?</p>
+<p>For instance, a user wants to ask : "I can come on Monday, but I forgot my passport so risk being delayed to Wednesday, is it possible to take me and my stuff to surf on Tuesday morning, with a cancellation insurance?" This question hinges on many factors, and probably none of the predetermined criteria above will suffice for this request.</p>
+<p>If the pre-determined workflow falls short too often, that means you need more flexibility.</p>
+<p>That is where an agentic setup helps.</p>
+<p>In the above example, you could just make a multi-step agent that has access to a weather API for weather forecasts, Google Maps API to compute travel distance, an employee availability dashboard and a RAG system on your knowledge base.</p>
+<p>Until recently, computer programs were restricted to pre-determined workflows, trying to handle complexity by piling up if/else switches. They focused on extremely narrow tasks, like "compute the sum of these numbers" or "find the shortest path in this graph". But actually, most real-life tasks, like our trip example above, do not fit in pre-determined workflows. Agentic systems open up the vast world of real-world tasks to programs!</p>
+<p>In a multi-step agent, at each step, the LLM can write an action, in the form of some calls to external tools. A common format (used by Anthropic, OpenAI, and many others) for writing these actions is generally different shades of "writing actions as a JSON of tools names and arguments to use, which you then parse to know which tool to execute and with which arguments".</p>
+<p>Multiple research papers have shown that having the tool calling LLMs in code is much better.</p>
+<p>Recent findings suggest that the reason for this is simply that we crafted our code languages specifically to be the best possible way to express actions performed by a computer. If JSON snippets were a better expression, JSON would be the top programming language and programming would be hell on earth.</p>
+<p>The figure below, taken from Executable Code Actions Elicit Better LLM Agents, illustrates some advantages of writing actions in code:.</p>
+<p>Writing actions in code rather than JSON-like snippets provides better:.</p>
+<p>We built smolagents with these objectives:.</p>
+<p id="sec-mid-149719">✨ Simplicity: the logic for agents fits in ~thousands lines of code (see this file). We kept abstractions to their minimal shape above raw code!</p>
+<p>🧑‍💻 First-class support for Code Agents, i.e. agents that write their actions in code (as opposed to "agents being used to write code"). To make it secure, we support executing in sandboxed environments via E2B.</p>
+<p>🤗 Hub integrations: you can share and load tools to/from the Hub, and more is to come!</p>
+<p>🌐 Support for any LLM: it supports models hosted on the Hub loaded in their transformers version or through our inference API, but also supports models from OpenAI, Anthropic and many others via our LiteLLM integration.</p>
+<p>smolagents is the successor to transformers.agents, and will be replacing it as transformers.agents gets deprecated in the future.</p>
+<p>To build an agent, you need at least two elements:.</p>
+<p>For the model, you can use any LLM, either open models using our HfApiModel class, that leverages Hugging Face's free inference API (as shown in the leopard example above), or you can use LiteLLMModel to leverage litellm and pick from a list of 100+ different cloud LLMs.</p>
+<p>For the tool, you can just make a function with type hints on inputs and outputs, and docstrings giving descriptions for inputs, and use the @tool decorator to make it a tool.</p>
+<p>Here’s how to make a custom tool that gets travel times from Google Maps, and how to use it into a travel planner agent:.</p>
+<p>After a few steps of gathering travel times and running calculations, the agent returns this final proposition:.</p>
+<p>After building a tool, sharing it to the Hub is as simple as:.</p>
+<p>In a recent development, you can see the result under this space. You can check the logic for the tool under the file tool.py in the space. As you can see, the tool was actually exported to a class inheriting from class Tool, which is the underlying structure for all our tools.</p>
+<p>We've created CodeAgent instances with some leading models, and compared them on this benchmark that gathers questions from a few different benchmarks to propose a varied blend of challenges.</p>
+<p>Find the benchmark here for more detail on the agentic setup used, and see a comparison of code agents versus tool calling agents (spoilers: code works better).</p>
+<p>This comparison demonstrates that open source models can now take on the best closed models!</p>
+<p>thanks for clarifying, what actually agents are,this is a great post btw, using agents to solve real-world problems is going to be interesting.</p>
+<p>Sources indicate that /me went ahead and made a simple agent that fetches a random XKCD comic. Give it a look! 😄 👉 http://github.com/hemanth/notebooks/blob/main/notebooks/smolagents.ipynb.</p>
+<p>Hi Great Project by the way but i am having a small problem,.</p>
+<p>Sources indicate that I'm using smolagents with a QWEN 32B model (via CodeAgent) and have run into an glitch with the generated code. Sometimes, the code produced by the agent includes multiple calls to final_answer, with one appearing in the middle of the script. Because final_answer is designed to signal the end of execution, any code following its first occurrence (for example, calls like task_to_do()) doesn't get executed.</p>
+<p>In a recent development, question:Is there an agent configuration, workaround, or best practice within smolagents that can allow all code to execute even if final_answer is called early? Any guidance or suggestions would be greatly appreciated.</p>
+<p>This is great and got to know this by doing Agents course.</p>
+<p>Thank you for the introduction to this area in a way that leaves the rabbit hole ready to go down!</p>
+<p>It is so easy for learners, and they can polish their skill set accordingly.</p>
+<p id="sec-end-149719">Yes, InferenceClientModel has replaced the HfApiModel in newer versions of smolagents.You can use HfApiModel with older versions of smolagents.</p>
+<p style="margin-top: 25px;">
+<a href="https://huggingface.co/blog/smolagents" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="latest-update-introducing-snowball-fight-our-first-ml-agents-envi-150190.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #150190. Latest Update: Introducing Snowball Fight ☃️, our first ML-Agents environment
+        </a>
+        
+        <a href="introducing-ai-vs-ai-a-deep-reinforcement-learning-multi-agents-c-150060.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #150060. Introducing ⚔️ AI vs. AI ⚔️ a deep reinforcement learning multi-agents competition system
+        </a>
+        
+        <a href="introducing-agentsjs-give-tools-to-your-llms-using-javascript-149981.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #149981. Introducing Agents.js: Give tools to your LLMs using JavaScript
+        </a>
+        
+        <a href="introducing-the-livecodebench-leaderboard-holistic-and-contaminat-149866.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #149866. Introducing the LiveCodeBench Leaderboard - Holistic and Contamination-Free Evaluation of Code LLMs
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

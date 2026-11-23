@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Steadfast Enhancement II - Rewriting ASTs</title>
+    <meta name="description" content="Steadfast is a new Ruby project that aims to provide a new way to dynamically generate Ruby code at runtime by synthesizing and manipulating ASTs, as an al">
+    <meta name="keywords" content="call, rewrite, node, steadfast, method, code, body, need">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua75/artikel/steadfast-enhancement-ii-rewriting-asts-149394.html">
+    
+    <meta property="og:title" content="Steadfast Enhancement II - Rewriting ASTs">
+    <meta property="og:description" content="Steadfast is a new Ruby project that aims to provide a new way to dynamically generate Ruby code at runtime by synthesizing and manipulating ASTs, as an al">
+    <meta property="og:image" content="https://via.placeholder.com/350x180/2563eb/ffffff?text=Global+News+Desk">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua75/artikel/steadfast-enhancement-ii-rewriting-asts-149394.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Steadfast Enhancement II - Rewriting ASTs">
+    <meta name="twitter:description" content="Steadfast is a new Ruby project that aims to provide a new way to dynamically generate Ruby code at runtime by synthesizing and manipulating ASTs, as an al">
+    <meta name="twitter:image" content="https://via.placeholder.com/350x180/2563eb/ffffff?text=Global+News+Desk">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Steadfast Enhancement II - Rewriting ASTs", "image": ["https://via.placeholder.com/350x180/2563eb/ffffff?text=Global+News+Desk"], "datePublished": "2026-11-23T07:49:26", "dateModified": "2026-11-23T17:16:35.887870", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua75/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua75/artikel/steadfast-enhancement-ii-rewriting-asts-149394.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Steadfast Enhancement II - Rewriting ASTs?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Noteflakes."}}, {"@type": "Question", "name": "Which category does 'Steadfast Enhancement II - Rewriting ASTs' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Steadfast Enhancement II - Rewriting ASTs</h1>
+        <div class="meta-line">🌐 Source: <strong>Noteflakes</strong> &bull; 📅 23 Nov 2026 &bull; ⏱️ 9 min read (1710 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>Steadfast is a new Ruby project that aims to provide a new way to dynamically
+  generate Ruby code at runtime by synthesizing and manipulating ASTs, as an
+  alternative to the common technique of calling eval with a dynamically generated string containing Ruby source code.</li><li style='margin-bottom:6px;'>In the last Steadfast update I
+discussed the foundations of the project, its general API design, and my work on
+implementing the basic capacity of turning ASTs back to source code (using
+Steadfast.to_source), as well as providing some facilities for translating
+backtrace locations for code derived from AST that were composed of pieces of
+code from different locations.</li><li style='margin-bottom:6px;'>Over the last few days, I’ve concentrated on implementing the ability to
+transform an existing AST by replacing specific nodes therein.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-149394"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-149394"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-149394"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Steadfast Enhancement II - Rewriting ASTs" loading="lazy" src="https://via.placeholder.com/350x180/2563eb/ffffff?text=Global+News+Desk" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-149394">Steadfast is a new Ruby project that aims to provide a new way to dynamically
+  generate Ruby code at runtime by synthesizing and manipulating ASTs, as an
+  alternative to the common technique of calling eval with a dynamically generated string containing Ruby source code.</p>
+<p>In the last Steadfast update I
+discussed the foundations of the project, its general API design, and my work on
+implementing the basic capacity of turning ASTs back to source code (using
+Steadfast.to_source), as well as providing some facilities for translating
+backtrace locations for code derived from AST that were composed of pieces of
+code from different locations. <span style="font-size:13px;">(Related: <a href="latest-update-how-to-train-a-newly-introduced-language-model-from-150232.html" style="color:#2563eb; font-weight:600;">Latest Update: How to train a newly introduced language...</a>)</span></p>
+<p>Over the last few days, I’ve concentrated on implementing the ability to
+transform an existing AST by replacing specific nodes therein. Previously, I
+called this “mutating” an AST, but actually I realized this term might be
+confusing, since Prism ASTs are inherently immutable, that is, they cannot be
+modified. Instead, you need to create a copy of an AST node with the requisite
+changes, so using the verb “mutate” is in fact incorrect. So henceforth I’ll use
+the term “rewrite” instead, which seems more fitting, since we’re basically
+taking existing code and rewriting it. <span style="font-size:13px;">(Related: <a href="how-to-generate-text-using-different-decoding-methods-for-languag-150231.html" style="color:#2563eb; font-weight:600;">How to generate text: using different decoding methods ...</a>)</span></p>
+<p>Industry observers note that so, if Prism nodes are immutable, how can we rewrite them? Basically, Prism lets
+us create a copy of a given node, with specific attributes assigned newly introduced values:.</p>
+<p>Now, there are some interesting nuances to this, because Prism nodes basically
+have three different kinds of attributes:.</p>
+<p>In a recent development, that last group of node attributes, locations, is actually what Steadfast uses
+in order to convert a given AST back to a string containing Ruby code. So, if we
+want to rewrite a given node, we can’t just create a copy of it with its plain
+value attributes changed. For example, if we have a method call foo, which we
+want to change to bar, we can’t just rewrite the corresponding CallNode with
+a modified name attribute, because the location attribute for this (called
+message_loc) will still point to the original source code containing the
+string foo. We actually need to replace the CallNode with a another
+CallNode that actually represents a call to bar.</p>
+<p>Sources indicate that that means that we need to be able to synthesize that node. Here’s how this
+might be done:.</p>
+<p>We can then proceed to replace the call_node.</p>
+<p>In the above example, we acquire the lambda AST, then we get its body, create a
+copy of it containing the synthesized call to bar, and create a copy of the
+original AST, with the rewritten body.</p>
+<p>As you can see, this is not very convenient. We need to reach into the AST to
+extract the body of the lambda, which is a StatementsNode, and we then need to
+inject the replacement method call into it. Once the body is rewritten, we need
+to create a copy of the lambda node itself, so it will point to the new body.</p>
+<p>In the above example, we just needed to touch the body node, which is a subnode
+of the lambda root node, but in other cases we might need to drill down and make
+changes to some subnodes that are nested a lot deeper in the AST, which means
+that for any node that was replaced, we also need to replace all its parent
+nodes.</p>
+<p>In a recent development, so this is what I set out to solve with Steadfast.rewrite. The implementation
+is quite simple: for any modification (rewrite) of a subnode, we automatically
+create modified copies of all its parent right up to the root. That’s why
+Steadfast.rewrite trakes an AST as its first argument, and returns a rewritten
+AST as its return value.</p>
+<p>To show how Steadfast.rewrite can be used, let’s look at two possible
+applications of this technique:.</p>
+<p>In the previous revision, I discussed a possible way to do tail call optimization by rewriting an AST. Take for example a recursive factorial method:.</p>
+<p>We can do tail call optimization by rewriting it as follows:.</p>
+<p>Industry observers note that basically, we rewrite the method by putting everything in a loop, and replacing
+the tail call with a multiple local variable assignment. Here’s how we can do it
+using Steadfast.rewrite:.</p>
+<p>Industry observers note that the method above extracts the AST for the given method, separates the method
+body into a body (containing all statements but the tail), and a tail which
+references the last statement. We then synthesize a loop node containing the
+body and the converted tail, and call Steadfast.rewrite to replace the
+original body with the loop. Finally, we call eval with the rewritten source
+code, which effectively redefines the method. Here’s how we make the loop node:.</p>
+<p>Industry observers note that we synthesize a call to loop, and then use Steadfast.rewrite to inject the
+given list of statements into its body. To convert the tail call, we use a
+similar technique:.</p>
+<p id="sec-mid-149394">We synthesize a multi-write node (representing assignment to multiple local
+variables) with the given variable names, and we use Steadfast.rewrite to
+inject the tail call arguments into the assignment as an array.</p>
+<p>Recent findings suggest that A nifty feature of Elixir is the ability to use a pipe operator (|&gt;) for
+putting data through a series of transformations. This does not really exist in
+Ruby, though you can use the somewhat unwieldy syntax .then { ... }. While
+method chaining is quite useful for many kinds of computations, sometimes you
+wish you had something like a pipe operator in Ruby, the idea being that at each
+step of the pipe, we inject the last return value as the first argument to the
+next method call. What if we could do something like the following:.</p>
+<p>Since in Ruby, binary operators are implemented as method calls, but with a
+special syntax, the following is synonymous with the above:.</p>
+<p>Interestingly, the AST representation of the code will have the call to pow at
+the top of the AST (that is, on the outside), with the preceding calls being
+expressed as the receiver of that method call, something like the following:.</p>
+<p>Industry observers note that but this code is just an intent, it won’t acutally work since any of those calls
+to add, mul and pow needs to provide two arguments. We need to be able to
+transform this syntax into a sequence of method calls where the result of each
+method call is injected as an argument into the next one.</p>
+<p>The rewrite operation we need to do is to flip the receiver and the argument for
+each call to &gt;&gt;, such that the argument becomes the method call, and the
+receiver is injected as an additional first argument into that method call, in
+order to achieve the following:.</p>
+<p>Here again, we can use Steadfast.rewrite to do just that:.</p>
+<p>Sources indicate that in this example, instead of providing Steadfast.rewrite with a list of
+specific node replacements, we give it a block that is invoked for each node in
+the AST. The block should return either a replacement node, or the original
+node, in which case no replacement is made.</p>
+<p>It has been revealed that in the rewriter block, we filter out anything that is not a call to &gt;&gt; (since
+in Ruby, binary operators are actually method calls). Notice how we use next n
+to tell Steadfast.rewrite that no replacement is made and that we want to
+continue visiting other nodes. We then extract the call_node to the right of the
+&gt;&gt; operator (its argument), and replace the operator call with this call node,
+with its arguments rewritten so as to inject the value to the left of the
+operator into the call.</p>
+<p>In a recent development, notice how we recursively call Steadfast.rewrite(n.receiver, &amp;r). In order to
+make it possible for us to recurse inside the block, Steadfast.rewrite yields,
+along with the node, a reference to the block itself, which lets us call
+Steadfast.rewrite recursively with the same block. This technique is
+interesting in and of itself, and is quite useful as you can see, since working
+with ASTs is inherently recursive.</p>
+<p>Pipe operator syntax transformation and tail call optimization are but two
+possible applications of AST rewriting, but Steadfast.rewrite can also be used
+for inlining method calls, and more generally, for such things as wrapping code
+in a loop, or in a begin/rescue block, unrolling loops, injecting arguments into
+method calls… the possibilities are endless!</p>
+<p>In the upcoming stages of this project, I’ll use Steadfast.rewrite to
+implement the code quoting tool (aka quote/unquote), as well as for synthesizing
+different kinds of AST nodes.</p>
+<p>In a recent development, the Steadfast.rewrite implementation is surprisigingly succint, about 35LOC. At the heart of it is the following method that visits each node in the AST:.</p>
+<p>It has been revealed that we start the visit by invoking the rewrite block with the given node. If a
+replacement node was returned by the block, we return it immediately. Otherwise,
+we dive into the node attributes (using deconstruct_keys), and visit each
+subnode, or array of subnodes. If any replacements were returned for any of the
+attributes, we make a copy of the node with the relevant changes. Thus we ensure
+that any replacement to a nested node will result in its parent being replaced
+as well, all the way up to the root of the AST.</p>
+<p>To allow Steadfast.rewrite to be called with a hash of replacements instead of a visitor block, we do the following:.</p>
+<p>And that’s basically all there is to it - we have a general purpose tool for
+rewriting ASTs!</p>
+<p>My blueprint for this coming week is to spend some time on creating tools for
+synthesizing different kinds of nodes more easily. We’ve seen some examples of
+this in the discussion above, for example:.</p>
+<p>I already have some ideas about how this could be improved and generalized, and
+I also want to design an API that will be convenient to use, even for people who
+are less familiar with ASTs.</p>
+<p id="sec-end-149394">Sources indicate that in addition, some more work should be done on being able to maintain correct
+backtraces for exceptions raised in code based on synthetic ASTs. This is
+definitely something on which I’m going to spend more time, and more tests.</p>
+<p style="margin-top: 25px;">
+<a href="https://noteflakes.com/articles/2026-11-22-steadfast-update-2" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="industry-news-the-vibe-code-revolution-ai-hackers-are-rewriting-w-148750.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #148750. Industry News: The vibe code revolution: AI hackers are rewriting what your camera can do
+        </a>
+        
+        <a href="latest-update-zenless-zone-zeros-new-krampus-squad-know-when-youv-143999.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #143999. Latest Update: Zenless Zone Zero's new Krampus squad know when you've been bad or good in a Christmas-y enhancement to close out 2025
+        </a>
+        
+        <a href="battlefield-6s-latest-enhancement-dubbed-the-games-simultaneously-143888.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #143888. Battlefield 6's latest enhancement dubbed the game's simultaneously best and worst patch as it runs into all kinds of issues
+        </a>
+        
+        <a href="breaking-zenless-zone-zeros-big-end-of-year-enhancement-brings-mu-143822.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #143822. Breaking: Zenless Zone Zero's big end-of-year enhancement brings multiplayer combat, free Zhao, and the first dual-form Agent
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

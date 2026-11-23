@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Benchmarking Language Model Performance on 5th Gen Xeon at GCP</title>
+    <meta name="description" content="Industry observers note that TL;DR: We benchmark 2 representative agentic AI workload components, text embedding and text generation, on two Google Cloud C">
+    <meta name="keywords" content="benchmark, text, intel, generation, xeon, agentic, google, cloud">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua75/artikel/benchmarking-language-model-performance-on-5th-gen-xeon-at-gcp-149730.html">
+    
+    <meta property="og:title" content="Benchmarking Language Model Performance on 5th Gen Xeon at GCP">
+    <meta property="og:description" content="Industry observers note that TL;DR: We benchmark 2 representative agentic AI workload components, text embedding and text generation, on two Google Cloud C">
+    <meta property="og:image" content="https://huggingface.co/blog/assets/optimum_intel/intel_thumbnail.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua75/artikel/benchmarking-language-model-performance-on-5th-gen-xeon-at-gcp-149730.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Benchmarking Language Model Performance on 5th Gen Xeon at GCP">
+    <meta name="twitter:description" content="Industry observers note that TL;DR: We benchmark 2 representative agentic AI workload components, text embedding and text generation, on two Google Cloud C">
+    <meta name="twitter:image" content="https://huggingface.co/blog/assets/optimum_intel/intel_thumbnail.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Benchmarking Language Model Performance on 5th Gen Xeon at GCP", "image": ["https://huggingface.co/blog/assets/optimum_intel/intel_thumbnail.png"], "datePublished": "2024-12-17T00:00:00", "dateModified": "2026-11-23T17:17:17.344877", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua75/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua75/artikel/benchmarking-language-model-performance-on-5th-gen-xeon-at-gcp-149730.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Benchmarking Language Model Performance on 5th Gen Xeon at GCP?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Hugging Face."}}, {"@type": "Question", "name": "Which category does 'Benchmarking Language Model Performance on 5th Gen Xeon at G' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Benchmarking Language Model Performance on 5th Gen Xeon at GCP</h1>
+        <div class="meta-line">🌐 Source: <strong>Hugging Face</strong> &bull; 📅 17 Dec 2024 &bull; ⏱️ 4 min read (865 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>Industry observers note that TL;DR: We benchmark 2 representative agentic AI workload components, text embedding and text generation, on two Google Cloud Compute Engine Xeon-based CPU instances, namely N2 and C4.</li><li style='margin-bottom:6px;'>In a recent development, people believe the next frontier of artificial intelligence lies in agentic AI.</li><li style='margin-bottom:6px;'>People are bringing more and more tools into agentic AI systems, and most of these tools are now work on CPU, this brings a concern that there will be non-negligible host-accelerator traffic overheads in this paradigm.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-149730"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-149730"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-149730"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Benchmarking Language Model Performance on 5th Gen Xeon at GCP" loading="lazy" src="https://huggingface.co/blog/assets/optimum_intel/intel_thumbnail.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-149730">Industry observers note that TL;DR: We benchmark 2 representative agentic AI workload components, text embedding and text generation, on two Google Cloud Compute Engine Xeon-based CPU instances, namely N2 and C4. The results consistently shows that C4 has 10x to 24x higher throughput over N2 in text embedding and 2.3x to 3.6x higher throughput over N2 in text generation. Taking price into consideration, C4's hourly price is about 1.3x of N2, in this sense, C4 keeps 7x ~ 19x TCO(Total Cost of Ownership) advantage over N2 in text embedding and 1.7x ~ 2.9x TCO advantage in text generation. The results indicate that it is possible to deploy light-weight Agentic AI solutions wholly on CPUs.</p>
+<p>In a recent development, people believe the next frontier of artificial intelligence lies in agentic AI. The fresh paradigm uses the perceive - reason - action pipeline to combine LLM's sophisticated reasoning and iterative planning capabilities with a strong context understanding enhancement. The context understanding capability is provided by tools like vector databases and sensor input, to ceate more context-aware AI systems which can autonomously solve complex, multi-step problems. Moreover, the function calling capability of LLMs make it possible for the AI agent to directly take the action, going far beyond the chatting a chatbot offers. Agentic AI offers exciting prospects to enhance productivity and operations across industries. <span style="font-size:13px;">(Related: <a href="simple-considerations-for-simple-people-building-fancy-neural-net-150219.html" style="color:#2563eb; font-weight:600;">Simple considerations for simple people building fancy ...</a>)</span></p>
+<p>People are bringing more and more tools into agentic AI systems, and most of these tools are now work on CPU, this brings a concern that there will be non-negligible host-accelerator traffic overheads in this paradigm. At the same time, model builders and vendors are building Small Language Models (SLMs) that are smaller yet powerful, the latest examples being Meta's 1B and 3B llama3.2 models, advanced multilingual text generation and tool calling capabilities. Further, CPUs are evolving and beginning to offer increased AI support, Intel Advanced Matrix Extensions (AMX), a new AI tensor accelerator, was introduced in its 4th generation of Xeon CPUs. Putting these 3 threads together, it would be interesting to see the potential of CPU to host the whole agentic AI systems, especially when it uses SLMs. <span style="font-size:13px;">(Related: <a href="latest-update-how-to-train-a-newly-introduced-language-model-from-150232.html" style="color:#2563eb; font-weight:600;">Latest Update: How to train a newly introduced language...</a>)</span></p>
+<p>In this post, we will benchmark 2 representative components of agentic AI: text embedding and text generation and compare the gen-on-gen performance boost of CPU on these 2 components. We picked Google Cloud Compute Engine C4 instance and N2 instance for comparison. The logic behind is: C4 is powered by 5th generation Intel Xeon processors (code-named Emerald Rapids) , the latest generatiton of Xeon CPU available on Google Cloud which integrates Intel AMX to boost AI performance; and N2 is powered by 3rd generation Intel Xeon processors (code-named Ice Lake), the previous generation of Xeon CPU on Google Cloud which only has AVX-512 and no AMX. We'll demonstrate the benefits of AMX.</p>
+<p>We will use optimum-benchmark, Hugging Face's unified benchmark library for multi-backends and multi-devices, to measure the performance. The benchmark runs on optimum-intel backend. optimum-intel is an Hugging Face acceleration library to accelerate end-to-end pipelines on Intel architectures (CPU, GPU). Our benchmark cases are as below:.</p>
+<p>In a recent development, visit google cloud console and click on create a VM under your project. Then, follow the below steps to create a single 96-vcpu instance which corresponds to one Intel Ice Lake CPU socket.</p>
+<p>Follow the below steps to create a 96-vcpu instance which corresponds to one Intel Emerald Rapids socket. Please note that we use the same CPU core count between C4 and N2 in this post to ensure an iso-core-count benchmark.</p>
+<p>In a recent development, follow below steps to set up the environment easily. For reproducibility, we list the version and commit we are using in the commands.</p>
+<p id="sec-mid-149730">We are in container now, do following steps:.</p>
+<p>Recent findings suggest that you need enhancement examples/ipex_bert.yaml in optimum-benchmark directory as below to benchmark WhereIsAI/UAE-Large-V1. We change numa binding to 0,1 because both N2 and C4 have 2 NUMA domains per socket, you can double check with lscpu.</p>
+<p>Then, run benchmark:
+$ optimum-benchmark --config-dir examples/ --config-name ipex_bert.</p>
+<p>You can patch examples/ipex_llama.yaml as below to benchmark meta-llama/Llama-3.2-3.</p>
+<p>Then, run benchmark:
+$ optimum-benchmark --config-dir examples/ --config-name ipex_llama.</p>
+<p>The GCP C4 instance delivers approximately 10x to 24x higher throughput over N2 in the text embedding benchmark cases.</p>
+<p>It has been revealed that consistently, the C4 instance indicates approximately 2.3x to 3.6x higher throughput over N2 in the text generation benchmark. Across batch sizes of 1 to 16, throughput is 13x better without significantly compromising latency. It enables concurrent query serving without needing to sacrifice user experience.</p>
+<p id="sec-end-149730">In a recent development, in this post, we benchmarked 2 representative workloads of agentic AI on Google Cloud Compute Engine CPU instances: C4 and N2. The results show prominent performance boost thanks to AMX and memory capability improvements on Intel Xeon CPUs. Intel released Xeon 6 processors with P-cores (code-named Granite Rapids) one month ago, and it offers ~2x performance boost in Llama 3. We believe, with the newly introduced Granite Rapids CPU, we can explore to deploy light-weight Agentic AI solutions wholly on CPU, to avoid intensive host-accelerator traffic overheads. We will benchmark it once Google Cloud Compute Engine has Granite Rapids instance and report results.</p>
+<p style="margin-top: 25px;">
+<a href="https://huggingface.co/blog/intel-gcp-c4" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="latest-update-how-to-train-a-newly-introduced-language-model-from-150232.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #150232. Latest Update: How to train a newly introduced language model from scratch using Transformers and Tokenizers
+        </a>
+        
+        <a href="tech-report-leveraging-pre-trained-language-model-checkpoints-for-150225.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #150225. Tech Report: Leveraging Pre-trained Language Model Checkpoints for Encoder-Decoder Models
+        </a>
+        
+        <a href="introducing-the-worlds-largest-open-multilingual-language-model-b-150135.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #150135. Introducing The World's Largest Open Multilingual Language Model: BLOOM
+        </a>
+        
+        <a href="how-to-train-a-language-model-with-megatron-lm-150112.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #150112. How to train a Language Model with Megatron-LM
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

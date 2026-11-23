@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latest Update: Hugging Face + PyCharm</title>
+    <meta name="description" content="Sources indicate that it’s a Tuesday morning. As a Transformers maintainer, I’m doing the same thing I do most weekday mornings: Opening PyCharm, loading u">
+    <meta name="keywords" content="model, code, recent, models, chat, just, text, pycharm">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua75/artikel/latest-update-hugging-face-pycharm-149755.html">
+    
+    <meta property="og:title" content="Latest Update: Hugging Face + PyCharm">
+    <meta property="og:description" content="Sources indicate that it’s a Tuesday morning. As a Transformers maintainer, I’m doing the same thing I do most weekday mornings: Opening PyCharm, loading u">
+    <meta property="og:image" content="https://huggingface.co/blog/assets/pycharm-integration/thumbnail.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua75/artikel/latest-update-hugging-face-pycharm-149755.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Latest Update: Hugging Face + PyCharm">
+    <meta name="twitter:description" content="Sources indicate that it’s a Tuesday morning. As a Transformers maintainer, I’m doing the same thing I do most weekday mornings: Opening PyCharm, loading u">
+    <meta name="twitter:image" content="https://huggingface.co/blog/assets/pycharm-integration/thumbnail.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Latest Update: Hugging Face + PyCharm", "image": ["https://huggingface.co/blog/assets/pycharm-integration/thumbnail.png"], "datePublished": "2024-11-05T00:00:00", "dateModified": "2026-11-23T17:17:22.119914", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua75/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua75/artikel/latest-update-hugging-face-pycharm-149755.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Latest Update: Hugging Face + PyCharm?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Hugging Face."}}, {"@type": "Question", "name": "Which category does 'Latest Update: Hugging Face + PyCharm' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Latest Update: Hugging Face + PyCharm</h1>
+        <div class="meta-line">🌐 Source: <strong>Hugging Face</strong> &bull; 📅 05 Nov 2024 &bull; ⏱️ 5 min read (1021 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>Sources indicate that it’s a Tuesday morning.</li><li style='margin-bottom:6px;'>In a recent development, something is… wait!</li><li style='margin-bottom:6px;'>Recent findings suggest that I could introduce this integration by just listing features, but that’s boring and there’s documentation for that.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-149755"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-149755"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-149755"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Latest Update: Hugging Face + PyCharm" loading="lazy" src="https://huggingface.co/blog/assets/pycharm-integration/thumbnail.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-149755">Sources indicate that it’s a Tuesday morning. As a Transformers maintainer, I’m doing the same thing I do most weekday mornings: Opening PyCharm, loading up the Transformers codebase and gazing lovingly at the chat template documentation while ignoring the 50 user challenges I was pinged on that day. But this time, something feels different:.</p>
+<p>In a recent development, something is… wait! Computer! Enhance! Is that..?Those user problems are definitely not getting responses today. Let’s talk about the Hugging Face integration in PyCharm. <span style="font-size:13px;">(Related: <a href="industry-news-faster-tensorflow-models-in-hugging-face-transforme-150222.html" style="color:#2563eb; font-weight:600;">Industry News: Faster TensorFlow models in Hugging Face...</a>)</span></p>
+<p>Recent findings suggest that I could introduce this integration by just listing features, but that’s boring and there’s documentation for that. Instead, let’s walk through how we’d use it all in practice. Let’s say I’m writing a Python app, and I decide I want the app to be able to chat with users. Not just text chat, though – we want the users to be able to paste in images too, and for the app to naturally chat about them as well. <span style="font-size:13px;">(Related: <a href="few-shot-learning-in-practice-gpt-neo-and-the-accelerated-inferen-150209.html" style="color:#2563eb; font-weight:600;">Few-shot learning in practice: GPT-Neo and the 🤗 Accele...</a>)</span></p>
+<p>If you’re not super-familiar with the current state-of-the-art in machine learning, this might seem like a terrifying demand, but don’t fear. Simply right click in your code, and select “Insert HF Model”. You’ll get a dialog box:
+Chatting with both images and text is called “image-text-to-text”: the user can supply images and text, and the model outputs text. Scroll down on the left until you find it. By default, the model list will be sorted by Likes – but remember, older models often have a lot of likes built up even if they’re not really the state of the art anymore. We can check how old models are by seeing the date they were last updated, just under the model name. Let’s pick something that’s both recent and popular: microsoft/Phi-3.5-vision-instruct.</p>
+<p>In a recent development, you can select “Use Model” for some model categories to automatically paste some basic code into your notebook, but what often works better is to scroll through the Model Card on the right and grab any sample code. You can see the full model card to the right of the dialog box, exactly as it's shown on Hugging Face Hub. Let’s do that and paste it into our code!</p>
+<p>Recent findings suggest that your office cybersecurity person might complain about you copying a chunk of random text from the internet and running it without even reading all of it, but if that happens just call them a nerd and continue regardless. And behold: We now have a working model that can happily chat about images - in this case, it reads and comments on screenshots of a Microsoft slide deck. Feel free to play around with this example. Try your own chat, or your own images. Once you get it working, simply wrap this code into a class and it’s ready to go in your app. We just got state of the art open-source machine learning in ten minutes without even opening a web browser.</p>
+<p>These models can be large! If you’re getting memory errors, try using a GPU with more memory, or try reducing the 20 in the sample code. You can also remove device_map="cuda" to put the model in CPU memory instead, at the cost of speed.</p>
+<p>Next, let’s change perspective in our little scenario. Now let’s say you’re not the author of this code - you’re a coworker who has to review it. Maybe you’re the cybersecurity person from earlier, who’s still upset about the “nerd” comment. You look at this code snippet, and you have no idea what you’re seeing. Don’t panic - just hover over the model name, and the entire model card instantly appears. You can swiftly verify the origin of this model, and what its intended uses are.</p>
+<p id="sec-mid-149755">(This is also extremely helpful if you work on something else and completely forget everything about the code you wrote two weeks ago).</p>
+<p>You might notice that the model has to be downloaded the first time you run this code, but after that, it’s loaded much more quickly. The model has been stored in your local cache. Remember the mysterious little 🤗 icon from earlier? Simply click it, and you’ll get a listing of everything in your cache:.</p>
+<p>Sources indicate that this is a neat way to find the models you’re working with right now, and also to clear them out and save some disk space once you don’t need them anymore. It’s also very helpful for the two-week amnesia scenario - if you can’t remember the model you were using back then, it’s probably in here. Remember, though, that most useful, production-ready models in 2024 are going to be &gt;1GB, so your cache can fill up fast!</p>
+<p>Recent findings suggest that at Hugging Face, we tend to think of open-source AI as being a natural extension of the open-source philosophy: Open software solves problems for developers and customers, creating new abilities for them to integrate into their code, and open models do the same. There is a tendency to be blinded by complexity, and to focus too much on the implementation details because they’re all so novel and exciting, but models exist to do stuff for you. If you abstract away the details of architecture and training, they’re fundamentally functions - tools in your code that will transform a certain kind of input into a certain kind of output.</p>
+<p>Recent findings suggest that these features are thus a natural fit. Just as IDEs already pull up function signatures and docstrings for you, they can also pull up sample code and model cards for trained models. Integrations like these make it easy to reach over and import a chat or image recognition model as conveniently as you would import any other library. We think it’s obvious that this is what the future of code will look like, and we hope that you find these features useful!</p>
+<p>Download PyCharm to give the Hugging Face integration a try.[HF integration is a Pycharm Professional feature.].</p>
+<p>Get a free 3-month PyCharm subscription using the PyCharm4HF code here.</p>
+<p id="sec-end-149755">According to recent reports, make JetBrains IntelliJ Again! Very cool integration.</p>
+<p style="margin-top: 25px;">
+<a href="https://huggingface.co/blog/pycharm-integration" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="industry-news-faster-tensorflow-models-in-hugging-face-transforme-150222.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #150222. Industry News: Faster TensorFlow models in Hugging Face Transformers
+        </a>
+        
+        <a href="hugging-face-on-pytorch-xla-tpus-150221.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #150221. Hugging Face on PyTorch / XLA TPUs
+        </a>
+        
+        <a href="hugging-face-reads-feb-2021-long-range-transformers-150218.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #150218. Hugging Face Reads, Feb. 2021 - Long-range Transformers
+        </a>
+        
+        <a href="industry-news-fine-tune-wav2vec2-for-english-asr-in-hugging-face--150217.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #150217. Industry News: Fine-Tune Wav2Vec2 for English ASR in Hugging Face with 🤗 Transformers
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controlling Language Model Generation with NVIDIA's LogitsProcessorZoo</title>
+    <meta name="description" content="Generating text with language models often involves selecting the next token based on a distribution of probabilities. A straightforward approach like gree">
+    <meta name="keywords" content="model, generation, logits, specific, where, processors, outputs, such">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua75/artikel/controlling-language-model-generation-with-nvidias-logitsprocesso-149722.html">
+    
+    <meta property="og:title" content="Controlling Language Model Generation with NVIDIA's LogitsProcessorZoo">
+    <meta property="og:description" content="Generating text with language models often involves selecting the next token based on a distribution of probabilities. A straightforward approach like gree">
+    <meta property="og:image" content="https://huggingface.co/blog/assets/logits-processor-zoo/thumbnail.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua75/artikel/controlling-language-model-generation-with-nvidias-logitsprocesso-149722.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Controlling Language Model Generation with NVIDIA's LogitsProcessorZoo">
+    <meta name="twitter:description" content="Generating text with language models often involves selecting the next token based on a distribution of probabilities. A straightforward approach like gree">
+    <meta name="twitter:image" content="https://huggingface.co/blog/assets/logits-processor-zoo/thumbnail.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Controlling Language Model Generation with NVIDIA's LogitsProcessorZoo", "image": ["https://huggingface.co/blog/assets/logits-processor-zoo/thumbnail.png"], "datePublished": "2024-12-23T00:00:00", "dateModified": "2026-11-23T17:17:16.028191", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua75/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua75/artikel/controlling-language-model-generation-with-nvidias-logitsprocesso-149722.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Controlling Language Model Generation with NVIDIA's LogitsProcessorZoo?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in Hardware & Chips originally reported by Hugging Face."}}, {"@type": "Question", "name": "Which category does 'Controlling Language Model Generation with NVIDIA's LogitsPr' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the Hardware & Chips section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">Hardware & Chips</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Controlling Language Model Generation with NVIDIA's LogitsProcessorZoo</h1>
+        <div class="meta-line">🌐 Source: <strong>Hugging Face</strong> &bull; 📅 23 Dec 2024 &bull; ⏱️ 7 min read (1491 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>Generating text with language models often involves selecting the next token based on a distribution of probabilities.</li><li style='margin-bottom:6px;'>But what if we wanted to go a step further and control the text generation process itself by directly modifying the probability distribution?</li><li style='margin-bottom:6px;'>Sources indicate that enter NVIDIA's LogitsProcessorZoo — a collection of powerful, modular logits processors
+designed for specific tasks such as controlling sequence lengths, enforcing key phrases, or guiding multiple-choice answers.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-149722"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-149722"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-149722"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Controlling Language Model Generation with NVIDIA's LogitsProcessorZoo" loading="lazy" src="https://huggingface.co/blog/assets/logits-processor-zoo/thumbnail.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-149722">Generating text with language models often involves selecting the next token based on a distribution of probabilities. A straightforward approach like greedy search selects the most probable token, but this can result in generic or repetitive outputs. To add diversity and control, more advanced decoding strategies, such as beam search, nucleus sampling, and top-k sampling, are widely used. These strategies, supported by the 🤗 Transformers library,
+give us flexibility in shaping the model's outputs.</p>
+<p>But what if we wanted to go a step further and control the text generation process itself by directly modifying the probability distribution? That’s where logit processing comes into play. Hugging Face's LogitsProcessor API
+lets you customize the prediction scores of the language model head, providing granular control over model behavior. The 🤗 Transformers library not only offers a rich set of built-in logits processors but also empowers the community
+to create and share custom processors tailored to unique use cases. <span style="font-size:13px;">(Related: <a href="latest-update-how-to-train-a-newly-introduced-language-model-from-150232.html" style="color:#2563eb; font-weight:600;">Latest Update: How to train a newly introduced language...</a>)</span></p>
+<p>Sources indicate that enter NVIDIA's LogitsProcessorZoo — a collection of powerful, modular logits processors
+designed for specific tasks such as controlling sequence lengths, enforcing key phrases, or guiding multiple-choice answers. Fully compatible with Hugging Face's generate
+method, NVIDIA’s library serves as an excellent example of community-driven innovation in logits processing. <span style="font-size:13px;">(Related: <a href="how-to-generate-text-using-different-decoding-methods-for-languag-150231.html" style="color:#2563eb; font-weight:600;">How to generate text: using different decoding methods ...</a>)</span></p>
+<p>In this post, we’ll explore how NVIDIA’s LogitsProcessorZoo enhances and expands on existing capabilities, diving deep into its features and demonstrating how it can refine your AI workflows.</p>
+<p>Taken from: https://jalammar.github.io/illustrated-gpt2/.</p>
+<p>Industry observers note that logits are the raw, unnormalized scores generated by language models for each token in their vocabulary. These scores are transformed into probabilities via the softmax function, guiding the model in selecting the next token.</p>
+<p>Here's an example of how logits fit into the generation process:.</p>
+<p>Recent findings suggest that these logits represent the model's confidence for each potential next word. Using softmax, we can turn them into probabilities and decode them into the generated text:.</p>
+<p>Recent findings suggest that while this pipeline demonstrates how raw logits can be transformed into text, it's worth noting that 🤗 Transformers streamlines this process. For instance, the generate() method automatically handles these
+transformations, including applying the softmax function and sampling from the probability distribution.</p>
+<p>Recent findings suggest that however, raw logits may be undesirable for common tasks like sampling or imposing task-specific constraints. For more details on handling logits
+effectively during generation, refer to Hugging Face's generation blog post. This is where logit processing becomes indispensable to tailor the output to specific needs.</p>
+<p>Sources indicate that raw logits often fall short when controlling output behavior. For example:.</p>
+<p>Logit processing enables us to tweak the model's behavior by modifying these raw scores before generation.</p>
+<p>NVIDIA's LogitsProcessorZoo simplifies post-processing of logits with modular components tailored for specific tasks. Let's explore its features and see how to use them. To follow along, head over to
+the notebook and experiment with the logits processors.</p>
+<p>To demonstrate the processors, we'll create a simple LLMRunner class that initializes a model and tokenizer,
+exposing a generate_response method. We will then provide different processors to the generate_response method and see them in action.</p>
+<p>Control the length of generated sequences by adjusting the likelihood of the end-of-sequence (EOS) token.</p>
+<p>This processor is particularly useful in scenarios where the desired length of generated text plays a
+crucial role, such as generating concise summaries, restricting verbose outputs, or tailoring responses
+to specific use cases. For instance, it can help ensure that a chatbot provides short and meaningful
+responses while maintaining grammatical integrity by completing sentences when required.</p>
+<p>LLM response:
+Once upon a time, in a dense forest, there lived a young boy named Timmy. Timmy was on a family camping trip with his parents and little sister, Emma. They had been walking for hours, and the dense trees seemed to close in around them. As the sun began to set, Timmy realized he had wandered away from his family. At first, Timmy didn't panic. He thought about calling out for his parents and Emma, but his voice was hoarse from singing campfire songs. He looked around, but the trees seemed to stretch on forever, making it impossible to see any familiar landmarks. As the darkness grew thicker, Timmy's fear began to creep in.</p>
+<p id="sec-mid-149722">It has been revealed that LLM response:
+Once upon a time, in a dense and vibrant forest, there lived a young boy named Max. Max was an adventurous and curious 8-year-old who loved exploring the outdoors. One sunny afternoon, while wandering through the forest, he stumbled upon a narrow path he had never seen before. Excited by the discovery, Max decided to follow the path and see where it would lead. The forest was teeming with life, and the sunlight filtering through the trees created a magical atmosphere. Max walked for about 20 minutes, his eyes scanning the surroundings for any signs of civilization. As the sun began to set, casting a warm orange glow over the forest, Max realized he was lost. He had no phone, no wallet, and no way to communicate with his family. Panic started to set in, and Max began to feel scared and alone. Panicked, Max started to run through the forest, his heart racing and his legs trembling. He stumbled upon a clearing and saw a faint light in the distance. As he approached, he saw a small cabin in the center of the clearing. Smoke was rising from the chimney, and Max could hear the sound of someone singing a gentle tune. ...</p>
+<p>In the examples above, we have used the GenLengthLogitsProcessor to both shorten and lengthen the 
+response generated by the model.</p>
+<p>Boost or diminish tokens from the prompt to encourage similar outputs.</p>
+<p>This is particularly valuable in tasks requiring context retention, such as answering questions based
+on a passage, generating summaries with specific details, or producing consistent outputs in dialogue systems. For example, in the given code snippet where a user review is analyzed, this processor ensures the
+model generates a response closely tied to the review's content, such as emphasizing opinions about
+the product's price.</p>
+<p>LLM response:
+Based on the user review, the user's opinion about the product's price is: the user is very satisfied, but the price is expensive, but the product is stylish, soft, and colorful, which is the price the user is willing to pay.</p>
+<p>Notice how the generation cites the input prompt.</p>
+<p>Force the model to include a specific phrase before ending its output.</p>
+<p>This processor is especially useful in structured content generation scenarios where consistency or
+adherence to a specific format is crucial. It is ideal for tasks like generating citations,
+formal reports, or outputs requiring specific phrasing to maintain a professional or organized presentation.</p>
+<p>In a recent development, LLM response:
+    According to the information retrieved from the Wikipedia article, Bulbasaur is a fictional Pokémon species in the Pokémon franchise. It is a Grass and Poison-type Pokémon, and it has been featured in various forms of media, including:
+    - As a starter Pokémon in the first generation of Pokémon games, including Pokémon Red and Blue. - As a main character in the Pokémon anime, where it is one of Ash Ketchum's first Pokémon. - As a character in the Pokémon manga, where it is owned by protagonist Red. - As a character in various other Pokémon media, such as spin-off games and related merchandise. Bulbasaur is also a central character in the Pokémon franchise, often appearing alongside other Pokémon and being a key part of the Pokémon world. References: 
+    - https://en.wikipedia.org/wiki/Bulbasaur.</p>
+<p>LLM response:
+Bulbasaur is a fictional Pokémon species in the Pokémon franchise. It is a Grass and Poison-type Pokémon, characterized by its distinctive appearance. Thanks for trying our RAG application! If you have more questions about Bulbasaur, feel free to ask.</p>
+<p>With each generation we were able to add the phrase string right before the end of the generation.</p>
+<p>Guide the model to answer multiple-choice questions by selecting one of the given options.</p>
+<p>This processor is particularly useful in tasks requiring strict adherence to a structured answer format,
+such as quizzes, surveys, or decision-making support systems.</p>
+<p>Here our model does not generate anything other than the choice. This is an immensely helpful attribute while
+working with agents or using models for multiple choice questions.</p>
+<p>It has been revealed that whether you are generating concise summaries, crafting chatbot responses, or solving structured tasks like multiple-choice questions, logit processors provide the flexibility to control outputs effectively. This makes them invaluable for scenarios where precision, adherence to constraints, or task-specific behavior is critical.</p>
+<p>If you're interested in exploring more about how to control generation with logit processors, here are some resources to get started:.</p>
+<p id="sec-end-149722">It has been revealed that with NVIDIA's LogitsProcessorZoo and Hugging Face's tools, you have a robust ecosystem to take your language model applications to the next level. Experiment with these libraries, build custom solutions, and share your creations with the community to push the boundaries of what's possible with generative AI.</p>
+<p style="margin-top: 25px;">
+<a href="https://huggingface.co/blog/logits-processor-zoo" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="latest-update-how-to-train-a-newly-introduced-language-model-from-150232.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #150232. Latest Update: How to train a newly introduced language model from scratch using Transformers and Tokenizers
+        </a>
+        
+        <a href="how-to-generate-text-using-different-decoding-methods-for-languag-150231.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #150231. How to generate text: using different decoding methods for language generation with Transformers
+        </a>
+        
+        <a href="tech-report-leveraging-pre-trained-language-model-checkpoints-for-150225.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #150225. Tech Report: Leveraging Pre-trained Language Model Checkpoints for Encoder-Decoder Models
+        </a>
+        
+        <a href="introducing-the-worlds-largest-open-multilingual-language-model-b-150135.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #150135. Introducing The World's Largest Open Multilingual Language Model: BLOOM
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Report: I counted the ghost jobs in my own dataset: 22.8% of live ads are 60+ days old</title>
+    <meta name="description" content="Industry observers note that my job discovery pipeline sweeps roughly 17,000 postings a day from public ATS boards and job boards. The point of it is findi">
+    <meta name="keywords" content="market, sweep, been, posting, live, postings, date, days">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua75/artikel/tech-report-i-counted-the-ghost-jobs-in-my-own-dataset-228-of-liv-149115.html">
+    
+    <meta property="og:title" content="Tech Report: I counted the ghost jobs in my own dataset: 22.8% of live ads are 60+ days old">
+    <meta property="og:description" content="Industry observers note that my job discovery pipeline sweeps roughly 17,000 postings a day from public ATS boards and job boards. The point of it is findi">
+    <meta property="og:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fh7poduzln65wcmb1kxr5.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua75/artikel/tech-report-i-counted-the-ghost-jobs-in-my-own-dataset-228-of-liv-149115.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Tech Report: I counted the ghost jobs in my own dataset: 22.8% of live ads are 60+ days old">
+    <meta name="twitter:description" content="Industry observers note that my job discovery pipeline sweeps roughly 17,000 postings a day from public ATS boards and job boards. The point of it is findi">
+    <meta name="twitter:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fh7poduzln65wcmb1kxr5.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Tech Report: I counted the ghost jobs in my own dataset: 22.8% of live ads are 60+ days old", "image": ["https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fh7poduzln65wcmb1kxr5.png"], "datePublished": "2026-11-23T17:02:13", "dateModified": "2026-11-23T17:16:12.688843", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua75/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua75/artikel/tech-report-i-counted-the-ghost-jobs-in-my-own-dataset-228-of-liv-149115.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Tech Report: I counted the ghost jobs in my own dataset: 22.8% of live ads are 6?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Dev."}}, {"@type": "Question", "name": "Which category does 'Tech Report: I counted the ghost jobs in my own dataset: 22.' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Tech Report: I counted the ghost jobs in my own dataset: 22.8% of live ads are 60+ days old</h1>
+        <div class="meta-line">🌐 Source: <strong>Dev</strong> &bull; 📅 23 Nov 2026 &bull; ⏱️ 4 min read (760 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>Industry observers note that my job discovery pipeline sweeps roughly 17,000 postings a day from public ATS boards and job boards.</li><li style='margin-bottom:6px;'>There is a name for ads that stay up with nobody hiring: ghost postings.</li><li style='margin-bottom:6px;'>One sweep, 20,020 postings, sorted by the age of each ad's own posted date:.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-149115"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-149115"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-149115"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Tech Report: I counted the ghost jobs in my own dataset: 22.8% of live ads are 60+ days old" loading="lazy" src="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fh7poduzln65wcmb1kxr5.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-149115">Industry observers note that my job discovery pipeline sweeps roughly 17,000 postings a day from public ATS boards and job boards. The point of it is finding roles worth applying to. But once the history started accumulating, a different question became answerable: of everything marked "live" today, how many of these jobs actually exist?</p>
+<p>There is a name for ads that stay up with nobody hiring: ghost postings. Everyone in the market has an opinion about them. Opinions are cheap, and I have a dataset, so I measured mine.</p>
+<p>One sweep, 20,020 postings, sorted by the age of each ad's own posted date:.</p>
+<p>It has been revealed that so 4,574 ads, 22.8% of the live market, have been sitting there for two months or longer, and 3,134 have been up for three months or more. The undated rows are not hiding good news either: a posting with no date is usually an older format from a source that does not publish one.</p>
+<p>According to recent reports, for what it is worth, I ran the same measurement two days earlier on a smaller sweep and got 22.9%. The market grew by three thousand postings between the two runs and the number barely moved. This is a stable property of the market, not a one-day artifact. <span style="font-size:13px;">(Related: <a href="industry-news-block-sparse-matrices-for-smaller-and-faster-langua-150229.html" style="color:#2563eb; font-weight:600;">Industry News: Block Sparse Matrices for Smaller and Fa...</a>)</span></p>
+<p>It has been revealed that the tail is where it stops being subtle. The oldest ad still live in this sweep is a sales development role posted 2,782 days ago. Seven and a half years. Several more from the same era are still up too.</p>
+<p>Not every old ad is fake, and the data itself has two known quirks that I will not paper over.</p>
+<p id="sec-mid-149115">In a recent development, first, Greenhouse, the source of the majority of my rows, reports a posting's updated date rather than its first-published date. A dormant posting that nobody has touched in years shows an old date. That is a measurement quirk and a real signal at the same time: a posting that has not been touched in years is not a posting you should apply to.</p>
+<p>Sources indicate that second, some roles are genuinely hard to fill. A 90-day-old staff-engineer search at a manufacturer everyone wants to work for is a different animal from a 90-day-old "entry level customer success" ad at a company whose careers page is a form with no jobs behind it. The age alone does not tell you which is which. <span style="font-size:13px;">(Related: <a href="how-to-generate-text-using-different-decoding-methods-for-languag-150231.html" style="color:#2563eb; font-weight:600;">How to generate text: using different decoding methods ...</a>)</span></p>
+<p>Sources indicate that the organization-level view sorts it out better than the age alone. A small set of employers holds more than a hundred 90d+ postings at once. In this sweep: openai 282, Canonical 238, Leland 185, Talkiatry 138, Airwallex 131. A substantial-tech evergreen req pool explains some of that. A staffing pipeline that is always "hiring" for the same role explains more of it. And identical title+company pairs repeating dozens of times in one sweep (43 copies of one field-sales title at a single company) are their own category, which is usually "this ad is a funnel, not a job".</p>
+<p>A repost is a job that goes away and comes back. The history table now records which sweeps each URL appeared in, so the pattern is mechanical: present in one sweep, gone in the next, back after that. The current pass, over four preserved daily snapshots, found 771 repost candidates, and I want to be clear that is a lower bound built on weak evidence, because two days of sweeps were not preserved before I built the history mechanism. Once the series runs continuously, that number becomes trustworthy. The machinery exists, the series is now daily, and the next few weeks will fill it in.</p>
+<p>According to recent reports, filter by ad age before you filter by anything else. Applying to a posting in its first week puts you in a candidate pool that is actually being reviewed; applying to the 90d+ tail is mostly writing into a drawer. Junior job seekers especially: the visible market is smaller than it looks, but the real one is not fake, it is just fresh. Sort by new and the market looks like it should.</p>
+<p>And when a manufacturer's careers page highlights dozens of identical openings that have been up for months, read that as information about the employer, not about your fit.</p>
+<p id="sec-end-149115">In a recent development, the measuring code is public. The dataset is on Hugging Face as job-market-daily, the live dashboard with the freshness view is here, and ghost_report.py in job-market-dashboard recomputes every number in this post from the raw snapshots.</p>
+<p style="margin-top: 25px;">
+<a href="https://dev.to/reaver1000/i-counted-the-ghost-jobs-in-my-own-dataset-228-of-live-ads-are-60-days-old-3bh3" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="tech-report-unlocking-the-conversion-of-web-screenshots-into-html-149888.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #149888. Tech Report: Unlocking the conversion of Web Screenshots into HTML Code with the WebSight Dataset
+        </a>
+        
+        <a href="breaking-passive-ghost-radar-can-detect-airborne-threats-without--149297.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #149297. Breaking: Passive 'ghost' radar can detect airborne threats without revealing its own position
+        </a>
+        
+        <a href="tech-report-how-couples-create-their-own-unique-microcultures-148946.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #148946. Tech Report: How Couples Create Their Own Unique Microcultures
+        </a>
+        
+        <a href="tech-report-live-nintendo-switch-black-friday-deals-include-a-swi-148647.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #148647. Tech Report: LIVE: Nintendo Switch Black Friday deals include a Switch 2 discount
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

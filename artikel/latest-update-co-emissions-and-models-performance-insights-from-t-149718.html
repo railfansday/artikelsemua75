@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latest Update: CO₂ Emissions and Models Performance: Insights from the Open LLM Leaderboard</title>
+    <meta name="description" content="In a recent development, since June 2024, we have evaluated more than 3,000 models on the Open LLM Leaderboard, a worldwide ranking of open language models">
+    <meta name="keywords" content="model, fine, models, community, tunes, base, emissions, energy">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua75/artikel/latest-update-co-emissions-and-models-performance-insights-from-t-149718.html">
+    
+    <meta property="og:title" content="Latest Update: CO₂ Emissions and Models Performance: Insights from the Open LLM Leaderboard">
+    <meta property="og:description" content="In a recent development, since June 2024, we have evaluated more than 3,000 models on the Open LLM Leaderboard, a worldwide ranking of open language models">
+    <meta property="og:image" content="https://huggingface.co/blog/assets/evaluating-mmlu-leaderboard/thumbnail.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua75/artikel/latest-update-co-emissions-and-models-performance-insights-from-t-149718.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Latest Update: CO₂ Emissions and Models Performance: Insights from the Open LLM Leaderboard">
+    <meta name="twitter:description" content="In a recent development, since June 2024, we have evaluated more than 3,000 models on the Open LLM Leaderboard, a worldwide ranking of open language models">
+    <meta name="twitter:image" content="https://huggingface.co/blog/assets/evaluating-mmlu-leaderboard/thumbnail.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Latest Update: CO₂ Emissions and Models Performance: Insights from the Open LLM Leaderboard", "image": ["https://huggingface.co/blog/assets/evaluating-mmlu-leaderboard/thumbnail.png"], "datePublished": "2025-01-09T00:00:00", "dateModified": "2026-11-23T17:17:15.271877", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua75/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua75/artikel/latest-update-co-emissions-and-models-performance-insights-from-t-149718.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Latest Update: CO₂ Emissions and Models Performance: Insights from the Open LLM ?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in AI & Tech originally reported by Hugging Face."}}, {"@type": "Question", "name": "Which category does 'Latest Update: CO₂ Emissions and Models Performance: Insight' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the AI & Tech section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">AI & Tech</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Latest Update: CO₂ Emissions and Models Performance: Insights from the Open LLM Leaderboard</h1>
+        <div class="meta-line">🌐 Source: <strong>Hugging Face</strong> &bull; 📅 09 Jan 2025 &bull; ⏱️ 8 min read (1615 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>In a recent development, since June 2024, we have evaluated more than 3,000 models on the Open LLM Leaderboard, a worldwide ranking of open language models performance.</li><li style='margin-bottom:6px;'>In the last year, people have become more and more aware that using large language models (LLMs) to generate text has a significant environmental impact, beyond the already crucial impact of training.</li><li style='margin-bottom:6px;'>By integrating carbon emission estimates into the Open LLM Leaderboard, we aim to provide transparency to customers about the carbon impact of various model evaluations and hopefully encourage model creators to balance performance with environmental responsibility.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-149718"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-149718"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-149718"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Latest Update: CO₂ Emissions and Models Performance: Insights from the Open LLM Leaderboard" loading="lazy" src="https://huggingface.co/blog/assets/evaluating-mmlu-leaderboard/thumbnail.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-149718">In a recent development, since June 2024, we have evaluated more than 3,000 models on the Open LLM Leaderboard, a worldwide ranking of open language models performance. Even though we’re trying to run evaluations without wasting resources (we use the spare cycles of our cluster, in other words the GPUs which are active but waiting between jobs), this still represents quite a major amount of energy spent for model inference!</p>
+<p>In the last year, people have become more and more aware that using large language models (LLMs) to generate text has a significant environmental impact, beyond the already crucial impact of training. Recent research (see the Towards Greener LLMs article) highlights the challenges of managing resources efficiently at inference due to dynamic and diverse workloads. <span style="font-size:13px;">(Related: <a href="latest-update-how-to-train-a-newly-introduced-language-model-from-150232.html" style="color:#2563eb; font-weight:600;">Latest Update: How to train a newly introduced language...</a>)</span></p>
+<p>By integrating carbon emission estimates into the Open LLM Leaderboard, we aim to provide transparency to customers about the carbon impact of various model evaluations and hopefully encourage model creators to balance performance with environmental responsibility. <span style="font-size:13px;">(Related: <a href="tech-report-leveraging-pre-trained-language-model-checkpoints-for-150225.html" style="color:#2563eb; font-weight:600;">Tech Report: Leveraging Pre-trained Language Model Chec...</a>)</span></p>
+<p>We were curious to explore the CO₂ emissions associated with model inference and to identify any emerging trends in the data. Along the way, we saw a few predictable patterns but also discovered some surprising insights, like community fine-tunes being more carbon-efficient in general!</p>
+<p>Recent findings suggest that 💡  Note: We’ve created a Colab notebook containing all the data and findings discussed here. This notebook allows you to explore the results, run the analyses yourself, and even adapt the code to investigate further questions.</p>
+<p>Let's take a closer look at how we calculate the CO₂ emissions generated during model inference.</p>
+<p>In our case, we use a straightforward heuristic, because all evaluations are run on the same hardware using the same method (method: loading the model with Transformers and Accelerate using a combination of pipeline parallelism and data parallelism to use our 8 GPUs per node to the fullest). It involves factoring in:.</p>
+<p>A detailed explanation and formula can be found in our documentation.</p>
+<p>In a recent development, caveat: This does not mean that model X emits Y CO₂ at inference in general! Instead, what this means is that model X emitted Y CO₂ on our very specific inference setup, and you can still learn a lot from that 😀.</p>
+<p>Since we wanted to look at general trends, we only considered the most frequent model architectures, and models for which we had the parameter count.</p>
+<p>We therefore looked at 2,742 models from some recent families: Gemma/Gemma2, all generations of Llama, Mistral, Mixtral, as well as Phi/Phi3, Qwen2 and above. We also included older model families such as GPT, GPT-NeoX, and T5.</p>
+<p>Official models come from high-quality trusted model creators, such as research groups or community consortiums (EleutherAI, NousResearch), FAANG (Google, Meta, Alibaba…), startups (MistralAI, 01.AI), etc, who have taken the time and compute to create new high-quality models. They represent 341 models.</p>
+<p>As the community focuses largely on small models, it manages to reach up to 35 in average score (best scores are around 45) for models below 10B parameters, for less than 5kg CO₂!</p>
+<p>However, interestingly, the trend of CO₂ emissions to model size, even at higher values, is not the same between community releases and official releases: community fine-tunes or merges tend to be more CO₂ efficient than the official models they start from!</p>
+<p>Let’s dive deeper into this finding!</p>
+<p>According to recent reports, let’s take a close look at high-parameter and compact (&gt; 7B parameters) base models, focusing on three for each category. We will investigate the emissions for each base model itself, for other official fine-tunes, including the official instruct versions, and community fine-tunes.</p>
+<p>First, let’s look at three 70B models, comparing the average CO₂ consumption of the base, its official fine-tunes, and community fine-tunes.</p>
+<p>Overall, for Qwen2.5 and Llama3.1, the base models and community fine-tunes tend to exhibit similar CO₂ emissions, but the official fine-tunes consume twice as much energy.</p>
+<p>Curiously, for Qwen2, the base model is significantly more energy-intensive than its fine-tunes.</p>
+<p>The strong performance of community fine-tunes might be attributed to their benchmark-specific adaptations, leading to shorter outputs and reduced energy consumption.</p>
+<p>When we examine 7B+ models in the same way, we observe that there is no consistent trend.</p>
+<p>For Llama3.1 and Qwen2.5, the base models consume twice as much as the fine-tunes.</p>
+<p>For Qwen2 and Mistral v0.3, the consumption of the community fine-tunes is higher.</p>
+<p>Industry observers note that A significant disparity between the base model and community fine-tunes in Qwen2-72B raises intriguing questions about potential differences in verbosity or text quality. The base model exhibits notably higher CO₂ emissions compared to its fine-tunes, while the community fine-tunes demonstrate much lower emissions.</p>
+<p>We can compare these three models using our Comparator tool:.</p>
+<p>Qwen/Qwen2-72B-Instruct (official fine-tune).</p>
+<p>MaziyarPanahi/calme-2.1-qwen2-72b (community fine-tune).</p>
+<p>Unfortunately, CO₂ costs per task are not available, so it is unclear whether certain tasks have a disproportionately large impact. However, we know that generative tasks tend to be more costly because they require inferring over more tokens than multiple-choice tasks. With this in mind, we assessed the generative capabilities of these three models and compared their outputs on the IFEval benchmark to identify any notable differences:.</p>
+<p id="sec-mid-149718">Here's an example showing how the base model can produce responses with repetivie patterns:.</p>
+<p>In other cases, Qwen2-72B can produce a very long answer, as in the example below. Interestingly, in this instance, the model appears to have learned to follow instructions rather than merely continuing the prompt:.</p>
+<p>According to recent reports, one possible explanation is that, for IFEval, we do not use a stop token. As a result, it may continue generating tokens until it reaches the maximum limit. By contrast, fine-tuned models typically include an EOS token, allowing them to produce more concise responses and terminate appropriately.</p>
+<p>Below are some examples of IFEval arguments for the base model and the instruct models.</p>
+<p>For contrast, here's how the fine-tuned model responds to the same question:.</p>
+<p>The community fine-tuned model prioritizes concise responses, potentially reducing both computational load and emissions. You can observe this for IFEval’s doc_id=12, where the answer from calme-2.1-qwen2-72b (shown first) is shorter than the one from Qwen2-72B-Instruct. Here is the prompt:.</p>
+<p>Response from calme-2.1-qwen2-72b (1,209 characters):.</p>
+<p>Response from Qwen2-72B-Instruct (1,444 characters):.</p>
+<p>Comparing both responses illustrates how the fine-tuned calme-2.1-qwen2-72b version remains more concise, potentially reducing computational overhead and CO₂ emissions, whereas Qwen2-72B-Instruct provides a longer, more elaborated story.</p>
+<p>According to recent reports, we can find the same pattern for the Meta-Llama-3.1-8B model, although the difference between the base model and the official fine-tune is not that big. Let’s provide the same analysis.</p>
+<p>Here is the list of models to compare:.</p>
+<p>meta-llama/Meta-Llama-3.1-8B (base model).</p>
+<p>meta-llama/Meta-Llama-3.1-8B-Instruct (official fine-tune).</p>
+<p>fluently-lm/Llama-TI-8B (community fine-tune).</p>
+<p>The base model consistently produces the longest responses, often verbose and prone to repetitive patterns or unnecessary details. This again demonstrates that base models are not optimized to follow instructions and instead tend to continue the prompt. For instance, see the answer for IFEval doc_id=1, which totals 5,475 characters:.</p>
+<p>Additionally, some responses are entirely empty (IFEval doc_id=2 or doc_id=4, for example), indicating potential failures or truncation.</p>
+<p>Industry observers note that the instruct model reveals significant improvements in reducing verbosity while maintaining coherence. For example, check the Meta-Llama-3.1-8B-Instruct answer for IFEval doc_id=14 question:.</p>
+<p>According to recent reports, the community fine-tune generates responses that can be as long as the base model and occasionally truncates or repeats text. We can observe this behavior in the Llama-TI-8B model for the same doc_id=14 question. Notably, the model not only attempts to accomplish the task but also adds extra commentary above its final output:.</p>
+<p>Here is only the end of the answer (the full answer is 5,821 characters long). It demonstrates how the model goes beyond the original prompt and essentially offers a meta-commentary on the task it just performed, rather than simply providing the requested content.</p>
+<p>Industry observers note that fine-tuning large language models like Qwen2-72B and Meta-Llama-3.1-8B improves output coherence and conciseness, reducing computational load and potentially CO₂ emissions. However, for now, exact emission data for specific benchmarks is not available, limiting detailed comparisons. Despite this, it is evident that fine-tuning enhances efficiency, though the reason for emission reductions remains uncertain.</p>
+<p>Several open questions remain, for interested individuals in the community to explore!</p>
+<p>Industry observers note that we invite the community to help us investigate these questions! Your insights and research could unlock a fresh understanding of energy-efficient AI development.</p>
+<p>Industry observers note that inspiring piece @alozowski  ! I want to ask if what you guys report is the KG-CO2 per model or ration of KG-CO2:#params ?Even if it is easily inferenced info, I believe both infos are equally important to display ... or i might be missing something here ?</p>
+<p>Talking about CO2 emissions of AI models (or anything) is a waste of time and unimportant. It's sad we are wasting brain-power over that meaningless statistic. CO2 is not harmful.</p>
+<p>Industry observers note that AI models use energy, and the value of the AI model far outweighs its energy input. Far better metric is to just calculate the cost of energy input and the value of AI's output insight.</p>
+<p>@alielfilali01  Thanks! Per model, but we could display it per #params too! :)We initially did not want to assume only the number of params would play a role in the analysis.</p>
+<p>@patmcguinness  Calculating the cost of energy input vs the value of the AI output is literally what we did, using CO2 as our metric for energy consumption (we assume a linear relationship between CO2 and energy). However, we did not include all our graphs (only the most salient ones).</p>
+<p id="sec-end-149718">Since all the data is open, you could easily compute a CO2/energy per param to score graph, wdyt?</p>
+<p style="margin-top: 25px;">
+<a href="https://huggingface.co/blog/leaderboard-emissions-analysis" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="the-open-medical-llm-leaderboard-benchmarking-large-language-mode-149863.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #149863. The Open Medical-LLM Leaderboard: Benchmarking Large Language Models in Healthcare
+        </a>
+        
+        <a href="investing-in-performance-fine-tune-small-models-with-llm-insights-149741.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #149741. Investing in Performance: Fine-tune small models with LLM insights  - a CFM case study
+        </a>
+        
+        <a href="whats-going-on-with-the-open-llm-leaderboard-149994.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #149994. What's going on with the Open LLM Leaderboard?
+        </a>
+        
+        <a href="open-llm-leaderboard-drop-deep-dive-149931.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #149931. Open LLM Leaderboard: DROP deep dive
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

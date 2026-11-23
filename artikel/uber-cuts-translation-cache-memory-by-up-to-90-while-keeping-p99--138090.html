@@ -167,8 +167,8 @@ Uber Cuts Translation Cache Memory by up to 90% While Keeping P99 Latency below 
 									
 									2
 									min read.</p>
-<p>According to recent reports, uber has redesigned its Go-based translation cache to reduce its initial memory footprint by more than 90% while keeping p99 cache miss latency below one millisecond. The hybrid architecture retains translation keys and frequently accessed values in memory while storing the remaining values on disk. The system serves millions of translations per second and maintains a cache hit rate above 99.9%. <span style="font-size:13px;">(Related: <a href="industry-news-determined-woman-completes-7-marathons-in-a-year-wh-138638.html" style="color:#2563eb; font-weight:600;">Industry News: “Determined” woman completes 7 marathons...</a>)</span></p>
-<p>Industry observers note that the optimization addresses two problems identified through memory profiling across Uber's Go services. Garbage collection (GC) consumed more than 20% of CPU utilization in some services, with translations accounting for approximately 70% of allocated objects. <span style="font-size:13px;">(Related: <a href="industry-news-diffusers-welcomes-stable-diffusion-3-138635.html" style="color:#2563eb; font-weight:600;">Industry News: Diffusers welcomes Stable Diffusion 3...</a>)</span></p>
+<p>According to recent reports, uber has redesigned its Go-based translation cache to reduce its initial memory footprint by more than 90% while keeping p99 cache miss latency below one millisecond. The hybrid architecture retains translation keys and frequently accessed values in memory while storing the remaining values on disk. The system serves millions of translations per second and maintains a cache hit rate above 99.9%. <span style="font-size:13px;">(Related: <a href="latest-update-transformer-based-encoder-decoder-models-150228.html" style="color:#2563eb; font-weight:600;">Latest Update: Transformer-based Encoder-Decoder Models...</a>)</span></p>
+<p>Industry observers note that the optimization addresses two problems identified through memory profiling across Uber's Go services. Garbage collection (GC) consumed more than 20% of CPU utilization in some services, with translations accounting for approximately 70% of allocated objects. <span style="font-size:13px;">(Related: <a href="industry-news-block-sparse-matrices-for-smaller-and-faster-langua-150229.html" style="color:#2563eb; font-weight:600;">Industry News: Block Sparse Matrices for Smaller and Fa...</a>)</span></p>
 <p>At Uber's scale, even small inefficiencies in memory management can add up.</p>
 <p>Sources indicate that the first optimization replaced Go's sync.Map with a conventional map[string]string protected by an RWMutex. The workload was predominantly read-heavy, with infrequent updates and no individual deletions. The previous implementation created multiple objects and pointers for each translation entry, increasing GC overhead. Moving to a value-based map reduced object allocations and improved CPU utilization by more than 30% in the affected service.</p>
 <p>However, reducing object allocations did not solve the overall memory consumption problem. Translation datasets could contain two to three million keys, although individual services typically accessed only a small subset. Cache refreshes introduced another issue: the service built a replacement cache in the background before atomically swapping it with the existing one. Both copies therefore occupied memory simultaneously, causing some services to run out of memory during refreshes.</p>
@@ -203,20 +203,20 @@ Uber Cuts Translation Cache Memory by up to 90% While Keeping P99 Latency below 
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
+        <a href="fetch-cuts-ml-processing-latency-by-50-using-amazon-sagemaker-hug-149962.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #149962. Fetch Cuts ML Processing Latency by 50% Using Amazon SageMaker & Hugging Face
+        </a>
+        
+        <a href="tech-report-ai-breakthrough-cuts-energy-use-by-100x-while-boostin-149650.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #149650. Tech Report: AI breakthrough cuts energy use by 100x while boosting accuracy
+        </a>
+        
         <a href="how-consumer-ai-companions-handle-context-windows-persistent-memo-138353.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #138353. How Consumer AI Companions Handle Context Windows, Persistent Memory, and Voice Latency
         </a>
         
         <a href="latest-update-sizing-gpu-memory-for-a-rag-service-kv-cache-contex-138302.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #138302. Latest Update: Sizing GPU Memory for a RAG Service: KV Cache, Context and Concurrency
-        </a>
-        
-        <a href="fetch-cuts-ml-processing-latency-by-50-using-amazon-sagemaker-hug-127046.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #127046. Fetch Cuts ML Processing Latency by 50% Using Amazon SageMaker & Hugging Face
-        </a>
-        
-        <a href="ai-breakthrough-cuts-energy-use-by-100x-while-boosting-accuracy-126631.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #126631. AI breakthrough cuts energy use by 100x while boosting accuracy
         </a>
         
     </div>

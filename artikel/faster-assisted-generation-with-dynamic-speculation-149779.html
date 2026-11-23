@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faster Assisted Generation with Dynamic Speculation</title>
+    <meta name="description" content="It has been revealed that ⭐ In this blog post, we’ll explore dynamic speculative decoding —a novel method developed by Intel labs and Hugging Face that acc">
+    <meta name="keywords" content="tokens, speculation, draft, speculative, model, lookahead, decoding, number">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua75/artikel/faster-assisted-generation-with-dynamic-speculation-149779.html">
+    
+    <meta property="og:title" content="Faster Assisted Generation with Dynamic Speculation">
+    <meta property="og:description" content="It has been revealed that ⭐ In this blog post, we’ll explore dynamic speculative decoding —a novel method developed by Intel labs and Hugging Face that acc">
+    <meta property="og:image" content="https://huggingface.co/blog/assets/optimum_intel/intel_thumbnail.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua75/artikel/faster-assisted-generation-with-dynamic-speculation-149779.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Faster Assisted Generation with Dynamic Speculation">
+    <meta name="twitter:description" content="It has been revealed that ⭐ In this blog post, we’ll explore dynamic speculative decoding —a novel method developed by Intel labs and Hugging Face that acc">
+    <meta name="twitter:image" content="https://huggingface.co/blog/assets/optimum_intel/intel_thumbnail.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Faster Assisted Generation with Dynamic Speculation", "image": ["https://huggingface.co/blog/assets/optimum_intel/intel_thumbnail.png"], "datePublished": "2024-10-08T00:00:00", "dateModified": "2026-11-23T17:17:25.998322", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua75/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua75/artikel/faster-assisted-generation-with-dynamic-speculation-149779.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Faster Assisted Generation with Dynamic Speculation?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Hugging Face."}}, {"@type": "Question", "name": "Which category does 'Faster Assisted Generation with Dynamic Speculation' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Faster Assisted Generation with Dynamic Speculation</h1>
+        <div class="meta-line">🌐 Source: <strong>Hugging Face</strong> &bull; 📅 08 Oct 2024 &bull; ⏱️ 5 min read (1084 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>It has been revealed that ⭐ In this blog post, we’ll explore dynamic speculative decoding —a novel method developed by Intel labs and Hugging Face that accelerates text generation by up to 2.7x, depending on the task.</li><li style='margin-bottom:6px;'>Speculative decoding is a popular technique to accelerate the inference of large language models, while preserving their accuracy.</li><li style='margin-bottom:6px;'>According to recent reports, transformers🤗 offers two distinct methods to determine the schedule for adjusting the number of draft (assistant) tokens during inference.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-149779"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-149779"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-149779"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Faster Assisted Generation with Dynamic Speculation" loading="lazy" src="https://huggingface.co/blog/assets/optimum_intel/intel_thumbnail.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-149779">It has been revealed that ⭐ In this blog post, we’ll explore dynamic speculative decoding —a novel method developed by Intel labs and Hugging Face that accelerates text generation by up to 2.7x, depending on the task. This method is the default operational mode for assisted generation starting from Transformers🤗 release 4.45.0 ⭐.</p>
+<p>Speculative decoding is a popular technique to accelerate the inference of large language models, while preserving their accuracy. As shown in the figure below, speculative decoding works by splitting the generative process into two stages. In the first stage, a fast, but less accurate draft model (AKA assistant) autoregressively generates a sequence of tokens. In the second stage, a large, but more accurate target model conducts parallelized verification over the generated draft tokens. This process allows the target model to produce multiple tokens in a single forward pass and thus accelerate autoregressive decoding. The success of speculative decoding largely hinges on the speculation lookahead (SL), i.e. the number of tokens produced by the draft model in each iteration. In practice, the SL is either a static value or based on heuristics, neither of which is optimal for squeezing out maximium performance during inference. <span style="font-size:13px;">(Related: <a href="latest-update-how-to-train-a-newly-introduced-language-model-from-150232.html" style="color:#2563eb; font-weight:600;">Latest Update: How to train a newly introduced language...</a>)</span></p>
+<p>Speculative decoding iteration. <span style="font-size:13px;">(Related: <a href="how-to-generate-text-using-different-decoding-methods-for-languag-150231.html" style="color:#2563eb; font-weight:600;">How to generate text: using different decoding methods ...</a>)</span></p>
+<p>According to recent reports, transformers🤗 offers two distinct methods to determine the schedule for adjusting the number of draft (assistant) tokens during inference. The straightforward method, based on Leviathan et al., uses a static value of the speculation lookahead and involves generating a constant number of candidate tokens at each speculative iteration. Alternatively, a heuristic-based approach adjusts the number of candidate tokens for the next iteration based on the acceptance rate of the current iteration. If all speculative tokens are correct, the number of candidate tokens increases; otherwise, it decreases.</p>
+<p>According to recent reports, we anticipate that an enhanced optimization strategy for managing the number of generated draft tokens could squeeze out further latency reductions. For testing this thesis we utilize an oracle that determines the optimal speculation lookahead value for each speculative iteration. The oracle employs the draft model to autoregressively generate tokens until a discrepancy arises between the predicted tokens of the draft and target models. This process is repeated for each speculative iteration, ultimately identifying the optimal (maximum) number of draft tokens accepted per iteration. The draft/target token mismatch is identified using the rejection sampling algorithm, introduced by Leviathan et al., with zero temperature. This oracle realizes the full potential of speculative decoding by generating the maximum number of valid draft tokens at each step and minimizing the number of calls to both the draft and target models.</p>
+<p>The left figure below illustrates the oracle and static speculation lookahead values across the speculative iterations of a code generation example from the MBPP dataset. A high variance in oracle speculation lookahead values (orange bars) is observed. The static speculation lookahead (blue bars), where the number of generated draft tokens is fixed to 5, performs 38 target forward passes and 192 draft forward passes, whereas the oracle speculation lookahead, performs only 27 target forward passes and 129 draft forward passes - a significant reduction. The right figure reveals the oracle and static speculation lookahead across the entire Alpaca dataset.</p>
+<p>Oracle and static speculation lookahead (SL) values on one MBPP example.</p>
+<p>Average oracle speculation lookahead for the entire Alpaca dataset.</p>
+<p>Both figures demonstrate significant variability in oracle speculation lookahead values, suggesting that a static speculation lookahead may be suboptimal.</p>
+<p>In order to get closer to the Oracle and gain extra speedup, we developed a straightforward method to dynamically adjust the speculation lookahead value at each iteration. After generating each draft token, we determine whether the draft model should continue generating the next token or switch to the target model for verification. This decision is based on the assistant model's confidence in its prediction, estimated by the softmax of the logits. If the assistant model's confidence in the current token prediction falls below a predefined threshold, referred to as the assistant_confidence_threshold, it halts the token generation process for that iteration, even if the maximum number of speculative tokens num_assistant_tokens has not been reached. Once halted, the draft tokens generated during the current iteration are sent to the target model for verification.</p>
+<p>We benchmarked the dynamic approach against the heuristic approach across a range of tasks and model pairings. The dynamic approach revealed better performance in all tests. Notably, using the dynamic approach with Llama3.2-1B as the assistant for Llama3.1-8B, we observe speedups of up to 1.52x, whereas the heuristic approach showed no significant speedups with the same setup. Another observation is that codegen-6B-mono yields slowdown using the heuristic approach, whereas the dynamic approach shows speedup.</p>
+<p>The results in the table reflect greedy decoding (temperature = 0). Similar trends were observed when using sampling (temperature &gt; 0).</p>
+<p id="sec-mid-149779">All tests were conducted on an RTX 4090.</p>
+<p>Our benchmark is publicly available allowing everyone to evaluate further improvements: https://github.com/gante/huggingface-demos/tree/main/experiments/faster_generation.</p>
+<p>Recent findings suggest that dynamic speculation has been integrated into release 4.45.0 of the Hugging Face Transformers library and now serves as the default operation mode for assisted decoding. To use assisted generation with dynamic speculation, no code changes are required—just execute the code as you normally would:.</p>
+<p>The default dynamic speculation lookahead parameters reflect optimal values but can be adjusted to improve performance for specific model pairs or datasets by using the following code:.</p>
+<p>To revert to the heuristic or constant (as in Leviathan et al.) approaches, simply set num_assistant_tokens_schedule to 'heuristic' or 'constant', respectively, set assistant_confidence_threshold=0 and num_assistant_tokens=5 as follows:.</p>
+<p>We introduced a faster strategy for assisted generation called dynamic speculative decoding, which outperforms heuristics-based methods as well as drawing a constant number of candidate tokens.</p>
+<p>According to recent reports, in an upcoming blog post, we'll show a new method for assisted generation: combine any target model with any assistant model! This will open the door for accelerating countless models on the Hugging Face Hub that do not have small enough assistant variants. For example, Phi 3, Gemma 2, CodeLlama and many more will be eligible for speculative decoding. Stay tuned!</p>
+<p>Hi,Thank you for the interesting article.</p>
+<p>I have an matter in reproducing the experiments on Llama-3.1-8B-Instruct/Llama-3.2.1B-Instruct and Qwen-2.5-7B-Instruct/Qwen-2.5-0.5B-Instruct.</p>
+<p>When reproducing the experiment with default setting on a A100 40GB GPU, I found the generation speed of Disco is slower than autoregressive decoding.</p>
+<p>Do you have any idea for this issue?</p>
+<p id="sec-end-149779">Recent findings suggest that can you share a minimal reproducer? It would help us massively to pin the exact concern you're seeing 🤗.</p>
+<p style="margin-top: 25px;">
+<a href="https://huggingface.co/blog/dynamic_speculation_lookahead" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="latest-update-faster-assisted-generation-support-for-intel-gaudi-149839.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #149839. Latest Update: Faster assisted generation support for Intel Gaudi
+        </a>
+        
+        <a href="universal-assisted-generation-faster-decoding-with-any-assistant--149758.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #149758. Universal Assisted Generation: Faster Decoding with Any Assistant Model
+        </a>
+        
+        <a href="faster-text-generation-with-tensorflow-and-xla-150129.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #150129. Faster Text Generation with TensorFlow and XLA
+        </a>
+        
+        <a href="assisted-generation-a-newly-introduced-direction-toward-low-laten-150023.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #150023. Assisted Generation: a newly introduced direction toward low-latency text generation
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Industry News: Visualize and understand GPU memory in PyTorch</title>
+    <meta name="description" content="You must be familiar with this message 🤬:. While it's easy to see that GPU memory is full, understanding why and how to fix it can be more challenging. In ">
+    <meta name="keywords" content="memory, model, optimizer, text, times, parameters, activations, gradients">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua75/artikel/industry-news-visualize-and-understand-gpu-memory-in-pytorch-149720.html">
+    
+    <meta property="og:title" content="Industry News: Visualize and understand GPU memory in PyTorch">
+    <meta property="og:description" content="You must be familiar with this message 🤬:. While it's easy to see that GPU memory is full, understanding why and how to fix it can be more challenging. In ">
+    <meta property="og:image" content="https://huggingface.co/blog/assets/train_memory/thumbnail.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua75/artikel/industry-news-visualize-and-understand-gpu-memory-in-pytorch-149720.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Industry News: Visualize and understand GPU memory in PyTorch">
+    <meta name="twitter:description" content="You must be familiar with this message 🤬:. While it's easy to see that GPU memory is full, understanding why and how to fix it can be more challenging. In ">
+    <meta name="twitter:image" content="https://huggingface.co/blog/assets/train_memory/thumbnail.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Industry News: Visualize and understand GPU memory in PyTorch", "image": ["https://huggingface.co/blog/assets/train_memory/thumbnail.png"], "datePublished": "2024-12-24T00:00:00", "dateModified": "2026-11-23T17:17:15.814625", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua75/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua75/artikel/industry-news-visualize-and-understand-gpu-memory-in-pytorch-149720.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Industry News: Visualize and understand GPU memory in PyTorch?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in Hardware & Chips originally reported by Hugging Face."}}, {"@type": "Question", "name": "Which category does 'Industry News: Visualize and understand GPU memory in PyTorc' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the Hardware & Chips section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">Hardware & Chips</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Industry News: Visualize and understand GPU memory in PyTorch</h1>
+        <div class="meta-line">🌐 Source: <strong>Hugging Face</strong> &bull; 📅 24 Dec 2024 &bull; ⏱️ 9 min read (1779 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>While it's easy to see that GPU memory is full, understanding why and how to fix it can be more challenging.</li><li style='margin-bottom:6px;'>PyTorch provides a handy tool for visualizing GPU memory usage:.</li><li style='margin-bottom:6px;'>It has been revealed that running this code generates a profile.pkl file that contains a history of GPU memory usage during execution.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-149720"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-149720"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-149720"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Industry News: Visualize and understand GPU memory in PyTorch" loading="lazy" src="https://huggingface.co/blog/assets/train_memory/thumbnail.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-149720">You must be familiar with this message 🤬:.</p>
+<p>While it's easy to see that GPU memory is full, understanding why and how to fix it can be more challenging. In this tutorial, we'll go step by step on how to visualize and understand GPU memory usage in PyTorch during training. We’ll also see how to estimate memory requirements and optimize GPU memory usage. <span style="font-size:13px;">(Related: <a href="hugging-face-on-pytorch-xla-tpus-150221.html" style="color:#2563eb; font-weight:600;">Hugging Face on PyTorch / XLA TPUs...</a>)</span></p>
+<p>PyTorch provides a handy tool for visualizing GPU memory usage:. <span style="font-size:13px;">(Related: <a href="tech-report-accelerating-pytorch-distributed-fine-tuning-with-int-150193.html" style="color:#2563eb; font-weight:600;">Tech Report: Accelerating PyTorch distributed fine-tuni...</a>)</span></p>
+<p>It has been revealed that running this code generates a profile.pkl file that contains a history of GPU memory usage during execution. You can visualize this history at: https://pytorch.org/memory_viz.</p>
+<p>By dragging and dropping your profile.pkl file, you will see a graph like this:.</p>
+<p>Let's break down this graph into key parts:.</p>
+<p>Model Creation: Memory increases by 2 GB, corresponding to the model's size:.</p>
+<p>10,000×50,000 weights+50,000 biases in float32 (4 bytes)  ⟹  (5×108)×4 bytes=2 GB. 10{,}000 \times 50{,}000 \text{ weights} + 50{,}000 \text{ biases in } \texttt{float32 }\text{(4 bytes)} \implies (5 \times 10^8) \times 4 \, \text{bytes} = 2 \, \text{GB}. 10,000×50,000 weights+50,000 biases in float32 (4 bytes)⟹(5×108)×4bytes=2GB.</p>
+<p>This memory (in blue) persists throughout execution.</p>
+<p>Input Tensor Creation (1st Loop): Memory increases by 200 MB matching the input tensor size:.</p>
+<p>In a recent development, 5,000×10,000 elements in float32 (4 bytes)  ⟹  (5×107)×4 bytes=0.2 GB. 5{,}000 \times 10{,}000 \text{ elements in } \texttt{float32 }\text{(4 bytes)} \implies (5 \times 10^7) \times 4 \, \text{bytes} = 0.2 \, \text{GB}.5,000×10,000 elements in float32 (4 bytes)⟹(5×107)×4bytes=0.2GB.</p>
+<p>Forward Pass (1st Loop): Memory increases by 1 GB for the output tensor:.</p>
+<p>It has been revealed that 5,000×50,000 elements in float32 (4 bytes)  ⟹  (25×107)×4 bytes=1 GB. 5{,}000 \times 50{,}000 \text{ elements in } \texttt{float32 }\text{(4 bytes)} \implies (25 \times 10^7) \times 4 \, \text{bytes} = 1 \, \text{GB}.5,000×50,000 elements in float32 (4 bytes)⟹(25×107)×4bytes=1GB.</p>
+<p>According to recent reports, input Tensor Creation (2nd Loop): Memory increases by 200 MB for a latest input tensor. At this point, you might expect the input tensor from step 2 to be freed. Still, it isn't: the model retains its activation, so even if the tensor is no longer assigned to the variable inputs, it remains referenced by the model's forward pass computation. The model retains its activations because these tensors are required for the backpropagation process in neural networks. Try with torch.no_grad() to see the difference.</p>
+<p>Forward Pass (2nd Loop): Memory increases by 1 GB for the new output tensor, calculated as in step 3.</p>
+<p>Release 1st Loop Activation: After the second loop’s forward pass, the input tensor from the first loop (step 2) can be freed. The model's activations, which hold the first input tensor, are overwritten by the second loop's input. Once the second loop completes, the first tensor is no longer referenced and its memory can be released.</p>
+<p>Recent findings suggest that update output: The output tensor from step 3 is reassigned to the variable output. The previous tensor is no longer referenced and is deleted, freeing its memory.</p>
+<p>Input Tensor Creation (3rd Loop): Same as step 4.</p>
+<p>Forward Pass (3rd Loop): Same as step 5.</p>
+<p>Release 2nd Loop Activation: The input tensor from step 4 is freed.</p>
+<p>Update output Again: The output tensor from step 5 is reassigned to the variable output, freeing the previous tensor.</p>
+<p>End of Code Execution: All memory is released.</p>
+<p>Sources indicate that the previous example was simplified. In real scenarios, we often train complex models rather than a single linear layer. Additionally, the earlier example did not include the training process. Here, we will examine how GPU memory behaves during a complete training loop for a real large language model (LLM).</p>
+<p>💡 Tip: When profiling, limit the number of steps. Every GPU memory event is recorded, and the file can become very large. For example, the above code generates an 8 MB file.</p>
+<p>Here’s the memory profile for this example:.</p>
+<p>Recent findings suggest that this graph is more complex than the previous example, but we can still break it down step by step. Notice the three spikes, each corresponding to an iteration of the training loop. Let’s simplify the graph to make it easier to interpret:.</p>
+<p>Industry observers note that model Initialization (model = AutoModelForCausalLM.from_pretrained("Qwen/Qwen2.5-1.5B").to("cuda")):The first step involves loading the model onto the GPU. The model parameters (in blue) occupy memory and remain there until the training ends.</p>
+<p>According to recent reports, forward Pass (model(inputs)):During the forward pass, the activations (intermediate outputs of each layer) are computed and stored in memory for backpropagation. These activations, represented in orange, grow layer by layer until the final layer. The loss is calculated at the peak of the orange zone.</p>
+<p id="sec-mid-149720">Backward Pass (loss.backward()):The gradients (in yellow) are computed and stored during this phase. Simultaneously, the activations are discarded as they are no longer needed, causing the orange zone to shrink. The yellow zone represents memory usage for gradient calculations.</p>
+<p>Recent findings suggest that optimizer Step (optimizer.step()):Gradients are used to enhancement the model’s parameters. Initially, the optimizer itself is initialized (green zone). This initialization is only done once. After that, the optimizer uses the gradients to update the model’s parameters. To update the parameters, the optimizer temporarily stores intermediate values (red zone). After the update, both the gradients (yellow) and the intermediate optimizer values (red) are discarded, freeing memory.</p>
+<p>It has been revealed that at this point, one training iteration is complete. The process repeats for the remaining iterations, producing the three memory spikes visible in the graph.</p>
+<p>Training profiles like this typically follow a consistent pattern, which makes them useful for estimating GPU memory requirements for a given model and training loop.</p>
+<p>From the above section, estimating GPU memory requirements seems simple. The total memory needed should correspond to the highest peak in the memory profile, which occurs during the forward pass. In that case, the memory requirement is (blue + green + orange):
+ Model Parameters+Optimizer State+Activations \text{Model Parameters} + \text{Optimizer State} + \text{Activations} Model Parameters+Optimizer State+Activations.</p>
+<p>Is it that simple? Actually, there is a trap. The profile can look different depending on the training setup. For example, reducing the batch size from 16 to 2 changes the picture:.</p>
+<p>In a recent development, now, the highest peaks occur during the optimizer step rather than the forward pass. In this case, the memory requirement becomes (blue + green + yellow + red):
+ Model Parameters+Optimizer State+Gradients+Optimizer Intermediates \text{Model Parameters} + \text{Optimizer State} + \text{Gradients} + \text{Optimizer Intermediates} Model Parameters+Optimizer State+Gradients+Optimizer Intermediates.</p>
+<p>Sources indicate that to generalize the memory estimation, we need to account for all possible peaks, regardless of whether they occur during the forward pass or optimizer step. Model Parameters+Optimizer State+max⁡(Gradients+Optimizer Intermediates,Activations) \text{Model Parameters} + \text{Optimizer State} + \max(\text{Gradients} + {\text{Optimizer Intermediates}, \text{Activations}}) Model Parameters+Optimizer State+max(Gradients+Optimizer Intermediates,Activations).</p>
+<p>Now that we have the equation, let's see how to estimate each component.</p>
+<p>The model parameters are the easiest to estimate. Model Memory=N×P \text{Model Memory} = N \times P Model Memory=N×P.</p>
+<p>For example, a model with 1.5 billion parameters and a precision of 4 bytes requires:.</p>
+<p>In the above example, the model size is:
+ Model Memory=1.5×109×4 bytes=6 GB \text{Model Memory} = 1.5 \times 10^9 \times 4 \, \text{bytes} = 6 \, \text{GB} Model Memory=1.5×109×4bytes=6GB.</p>
+<p>The memory required for the optimizer state depends on the optimizer type and the model parameters. For instance, the AdamW optimizer stores two moments (first and second) per parameter. This makes the optimizer state size:
+ Optimizer State Size=2×N×P \text{Optimizer State Size} = 2 \times N \times P Optimizer State Size=2×N×P.</p>
+<p>The memory required for activations is harder to estimate because it includes all the intermediate values computed during the forward pass. To calculate activation memory, we can use a forward hook to measure the size of outputs:.</p>
+<p>It has been revealed that for the Qwen2.5-1.5B model, this gives 5,065,216 activations per input token. To estimate the total activation memory for an input tensor, use:
+ Activation Memory=A×B×L×P \text{Activation Memory} = A \times B \times L \times P Activation Memory=A×B×L×P.</p>
+<p>In a recent development, however, using this method directly isn't always practical. Ideally, we would like a heuristic to estimate activation memory without running the model. Plus, we can intuitively see that larger models have more activations. This leads to the question: Is there a connection between the number of model parameters and the number of activations?</p>
+<p>Not directly, as the number of activations per token depends on the model architecture. However, LLMs tend to have similar structures. By analyzing different models, we observe a rough linear relationship between the number of parameters and the number of activations:.</p>
+<p>This linear relationship allows us to estimate activations using the heuristic:
+ A=4.6894×10−4×N+1.8494×106 A = 4.6894 \times 10^{-4} \times N + 1.8494 \times 10^{6} A=4.6894×10−4×N+1.8494×106.</p>
+<p>Though this is an approximation, it provides a practical way to estimate activation memory without needing to perform complex calculations for each model.</p>
+<p>Sources indicate that gradients are easier to estimate. The memory required for gradients is the same as the model parameters:
+ Gradients Memory=N×P \text{Gradients Memory} = N \times P Gradients Memory=N×P.</p>
+<p>It has been revealed that when updating the model parameters, the optimizer stores intermediate values. The memory required for these values is the same as the model parameters:
+ Optimizer Intermediates Memory=N×P \text{Optimizer Intermediates Memory} = N \times P Optimizer Intermediates Memory=N×P.</p>
+<p>To summarize, the total memory required to train a model is:
+ Total Memory=Model Memory+Optimizer State+max⁡(Gradients,Optimizer Intermediates,Activations) \text{Total Memory} = \text{Model Memory} + \text{Optimizer State} + \max(\text{Gradients}, \text{Optimizer Intermediates}, \text{Activations}) Total Memory=Model Memory+Optimizer State+max(Gradients,Optimizer Intermediates,Activations).</p>
+<p>To make this calculation easier, I created a small tool for you:.</p>
+<p>In a recent development, your initial motivation to understand memory usage was probably driven by the fact that one day, you ran out of memory. Did this blog give you a direct solution to fix that? Probably not. However, now that you have a better understanding of how memory usage works and how to profile it, you're better equipped to find ways to reduce it.</p>
+<p>Recent findings suggest that for a specific list of tips on optimizing memory usage in TRL, you can check the Reducing Memory Usage section of the documentation. These tips, though, are not limited to TRL and can be applied to any PyTorch-based training process.</p>
+<p>Thanks to Kashif Rasul for his valuable feedback and suggestions on this blog post.</p>
+<p>In a recent development, what is the difference betwenn optimizer state and intermediate? Does the intermediate mean the momentum m and variance of  the gradients v? But I think they are part of optimizer states.</p>
+<p id="sec-end-149720">Okay, I found it myself. Please check the answer to ensure I understand it.optimizer state is for momentum, variance, they store all the information for updating parameters.while there are also some intermediate during the computation. whenever updated, they would be destroyed.</p>
+<p style="margin-top: 25px;">
+<a href="https://huggingface.co/blog/train_memory" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="industry-news-policy-gradient-with-pytorch-150137.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #150137. Industry News: Policy Gradient with PyTorch
+        </a>
+        
+        <a href="industry-news-nystrmformer-approximating-self-attention-in-linear-150126.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #150126. Industry News: Nyströmformer: Approximating self-attention in linear time and memory via the Nyström method
+        </a>
+        
+        <a href="industry-news-arm-will-be-pytorch-conference-join-us-149298.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #149298. Industry News: Arm will be @ PyTorch Conference, Join Us!
+        </a>
+        
+        <a href="industry-news-blocking-gut-cannabinoid-receptors-restores-memory--149036.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #149036. Industry News: Blocking Gut Cannabinoid Receptors Restores Memory in Fragile X
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

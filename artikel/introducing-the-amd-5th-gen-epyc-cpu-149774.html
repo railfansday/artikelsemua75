@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introducing the AMD 5th Gen EPYC™ CPU</title>
+    <meta name="description" content="AMD has just unveiled its 5th generation of server-grade EPYC CPU based on Zen5 architecture - also known as Turin. It provides a significant boost in perf">
+    <meta name="keywords" content="performance, epyc, turin, leverage, across, torch, zendnn, benchmarking">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua75/artikel/introducing-the-amd-5th-gen-epyc-cpu-149774.html">
+    
+    <meta property="og:title" content="Introducing the AMD 5th Gen EPYC™ CPU">
+    <meta property="og:description" content="AMD has just unveiled its 5th generation of server-grade EPYC CPU based on Zen5 architecture - also known as Turin. It provides a significant boost in perf">
+    <meta property="og:image" content="https://huggingface.co/blog/assets/optimum_amd/amd_hf_logo_fixed.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua75/artikel/introducing-the-amd-5th-gen-epyc-cpu-149774.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Introducing the AMD 5th Gen EPYC™ CPU">
+    <meta name="twitter:description" content="AMD has just unveiled its 5th generation of server-grade EPYC CPU based on Zen5 architecture - also known as Turin. It provides a significant boost in perf">
+    <meta name="twitter:image" content="https://huggingface.co/blog/assets/optimum_amd/amd_hf_logo_fixed.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Introducing the AMD 5th Gen EPYC™ CPU", "image": ["https://huggingface.co/blog/assets/optimum_amd/amd_hf_logo_fixed.png"], "datePublished": "2024-10-10T00:00:00", "dateModified": "2026-11-23T17:17:25.159345", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua75/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua75/artikel/introducing-the-amd-5th-gen-epyc-cpu-149774.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Introducing the AMD 5th Gen EPYC™ CPU?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in Hardware & Chips originally reported by Hugging Face."}}, {"@type": "Question", "name": "Which category does 'Introducing the AMD 5th Gen EPYC™ CPU' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the Hardware & Chips section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">Hardware & Chips</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Introducing the AMD 5th Gen EPYC™ CPU</h1>
+        <div class="meta-line">🌐 Source: <strong>Hugging Face</strong> &bull; 📅 10 Oct 2024 &bull; ⏱️ 3 min read (521 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>AMD has just unveiled its 5th generation of server-grade EPYC CPU based on Zen5 architecture - also known as Turin.</li><li style='margin-bottom:6px;'>From Large Language Models (LLMs) to RAG scenarios, Hugging Face users can leverage this upcoming generation of servers to enhance their performance capabilities:.</li><li style='margin-bottom:6px;'>During the last few weeks, we have been working with AMD to validate that the Hugging Face ecosystem is fully supported on this new CPU generation and delivers the expected performance across different tasks.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-149774"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-149774"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-149774"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Introducing the AMD 5th Gen EPYC™ CPU" loading="lazy" src="https://huggingface.co/blog/assets/optimum_amd/amd_hf_logo_fixed.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-149774">AMD has just unveiled its 5th generation of server-grade EPYC CPU based on Zen5 architecture - also known as Turin. It provides a significant boost in performance, especially with a higher number of core count reaching up to 192 and 384 threads.</p>
+<p>From Large Language Models (LLMs) to RAG scenarios, Hugging Face users can leverage this upcoming generation of servers to enhance their performance capabilities:. <span style="font-size:13px;">(Related: <a href="latest-update-how-to-train-a-newly-introduced-language-model-from-150232.html" style="color:#2563eb; font-weight:600;">Latest Update: How to train a newly introduced language...</a>)</span></p>
+<p>During the last few weeks, we have been working with AMD to validate that the Hugging Face ecosystem is fully supported on this new CPU generation and delivers the expected performance across different tasks. <span style="font-size:13px;">(Related: <a href="how-to-generate-text-using-different-decoding-methods-for-languag-150231.html" style="color:#2563eb; font-weight:600;">How to generate text: using different decoding methods ...</a>)</span></p>
+<p>Also, we have been cooking some exciting fresh ways to leverage torch.compile for AMD CPU through the use of AMD ZenDNN PyTorch plugin (zentorch) to speed up even more the kind of workloads we will be discussing after.</p>
+<p>While we were able to get early access to this work to test Hugging Face models and libraries and share with you performance, we expect AMD to make it soon available to the community - stay tuned!</p>
+<p>According to recent reports, in this section, we present the results from our benchmarking of the two AMD EPYC CPUs: Turin (128 cores) and Genoa (96 cores). For these benchmarks, we utilized the ZenDNN plug-in for PyTorch (zentorch), which provides inference optimizations tailored for deep learning workloads on AMD EPYC CPUs. This plug-in integrates seamlessly with the torch.compile graph compilation flow, enabling multiple passes of graph-level optimizations on the torch.fx graph to achieve further performance acceleration.</p>
+<p id="sec-mid-149774">It has been revealed that to ensure optimal performance, we used the bfloat16 data type and employed ZenDNN 5.0. We configured multi-instance setups that enable the parallel execution of multiple Meta LLaMA 3.1 8B model instances spawning across all the cores. Each model instance is allocated 32 physical cores per socket, allowing us to leverage the full processing power of the servers for efficient data handling and computational speed.</p>
+<p>We ran the benchmarks  using two different batch sizes—16 and 32—across five distinct use cases:.</p>
+<p>These configurations not only facilitate a comprehensive analysis of how each server performs under varying workloads but also simulate real-world applications of LLMs. Specifically, we plot the decode throughput (excluding the first token) for each use case, to illustrate performance differences.</p>
+<p>According to recent reports, throughput results for Meta Llama 3.1 8B, comparing AMD Turin against AMD Genoa. AMD Turin consistently outperforms the AMD Genoa CPUs, achieving approximately 2X higher throughput in most configurations.</p>
+<p>Industry observers note that as demonstrated, the AMD EPYC Turin CPU offers a significant boost in performance for AI use cases compared to its predecessor, the AMD Genoa. To enhance reproducibility and streamline the benchmarking process, we utilized optimum-benchmark, which provides a unified framework for efficient benchmarking across various setups. This enabled us to effectively benchmark using the zentorch backend for torch.compile.</p>
+<p>Furthermore, we have developed an optimized Dockerfile that will be released soon, along with the benchmarking code. This will facilitate easy deployment and reproduction of our results, ensuring that others can effectively leverage our findings.</p>
+<p id="sec-end-149774">You can find more information at AMD Zen Deep Neural Network (ZenDNN).</p>
+<p style="margin-top: 25px;">
+<a href="https://huggingface.co/blog/huggingface-amd-turin" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="hugging-face-and-amd-partner-on-accelerating-state-of-the-art-mod-150002.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #150002. Hugging Face and AMD partner on accelerating state-of-the-art models for CPU and GPU platforms
+        </a>
+        
+        <a href="introducing-accelerate-150212.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #150212. Introducing 🤗 Accelerate
+        </a>
+        
+        <a href="scaling-up-bert-inference-on-cpu-part-1-150211.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #150211. Scaling-up BERT Inference on CPU (Part 1)
+        </a>
+        
+        <a href="introducing-optimum-the-optimization-toolkit-for-transformers-at--150204.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #150204. Introducing Optimum: The Optimization Toolkit for Transformers at Scale
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

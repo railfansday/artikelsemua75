@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breaking: Diffusers welcomes Stable Diffusion 3.5 Large</title>
+    <meta name="description" content="Stable Diffusion 3.5 is the improved variant of its predecessor, Stable Diffusion 3. As of today, the models are available on the Hugging Face Hub and can ">
+    <meta name="keywords" content="diffusers, stable, diffusion, large, inference, post, training, original">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua75/artikel/breaking-diffusers-welcomes-stable-diffusion-35-large-149768.html">
+    
+    <meta property="og:title" content="Breaking: Diffusers welcomes Stable Diffusion 3.5 Large">
+    <meta property="og:description" content="Stable Diffusion 3.5 is the improved variant of its predecessor, Stable Diffusion 3. As of today, the models are available on the Hugging Face Hub and can ">
+    <meta property="og:image" content="https://huggingface.co/blog/assets/sd3-5/thumbnail.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua75/artikel/breaking-diffusers-welcomes-stable-diffusion-35-large-149768.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Breaking: Diffusers welcomes Stable Diffusion 3.5 Large">
+    <meta name="twitter:description" content="Stable Diffusion 3.5 is the improved variant of its predecessor, Stable Diffusion 3. As of today, the models are available on the Hugging Face Hub and can ">
+    <meta name="twitter:image" content="https://huggingface.co/blog/assets/sd3-5/thumbnail.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Breaking: Diffusers welcomes Stable Diffusion 3.5 Large", "image": ["https://huggingface.co/blog/assets/sd3-5/thumbnail.png"], "datePublished": "2024-10-22T00:00:00", "dateModified": "2026-11-23T17:17:24.232124", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua75/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua75/artikel/breaking-diffusers-welcomes-stable-diffusion-35-large-149768.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Breaking: Diffusers welcomes Stable Diffusion 3.5 Large?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Hugging Face."}}, {"@type": "Question", "name": "Which category does 'Breaking: Diffusers welcomes Stable Diffusion 3.5 Large' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Breaking: Diffusers welcomes Stable Diffusion 3.5 Large</h1>
+        <div class="meta-line">🌐 Source: <strong>Hugging Face</strong> &bull; 📅 22 Oct 2024 &bull; ⏱️ 2 min read (466 words, 📖 Standard)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>Stable Diffusion 3.5 is the improved variant of its predecessor, Stable Diffusion 3.</li><li style='margin-bottom:6px;'>In this post, we will focus on how to use Stable Diffusion 3.5 (SD3.5) with Diffusers, covering both inference and training.</li><li style='margin-bottom:6px;'>The transformer architecture of SD3.5 (large) is very similar to SD3 (medium), with the following changes:.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-149768"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-149768"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-149768"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Breaking: Diffusers welcomes Stable Diffusion 3.5 Large" loading="lazy" src="https://huggingface.co/blog/assets/sd3-5/thumbnail.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-149768">Stable Diffusion 3.5 is the improved variant of its predecessor, Stable Diffusion 3. As of today, the models are available on the Hugging Face Hub and can be used with 🧨 Diffusers.</p>
+<p>The release comes with two checkpoints:. <span style="font-size:13px;">(Related: <a href="tech-report-leveraging-pre-trained-language-model-checkpoints-for-150225.html" style="color:#2563eb; font-weight:600;">Tech Report: Leveraging Pre-trained Language Model Chec...</a>)</span></p>
+<p>In this post, we will focus on how to use Stable Diffusion 3.5 (SD3.5) with Diffusers, covering both inference and training. <span style="font-size:13px;">(Related: <a href="tech-report-how-we-sped-up-transformer-inference-100x-for-api-cus-150224.html" style="color:#2563eb; font-weight:600;">Tech Report: How we sped up transformer inference 100x ...</a>)</span></p>
+<p>The transformer architecture of SD3.5 (large) is very similar to SD3 (medium), with the following changes:.</p>
+<p>Industry observers note that the rest of the details in terms of the text encoders, VAE, and noise scheduler stay exactly the same as in SD3 Medium. For more on SD3, we recommend checking out the original paper.</p>
+<p>Make sure you install the latest version of diffusers:.</p>
+<p>The following snippet will download the 8B parameter version of SD3.5 in torch.bfloat16 precision. This is the format used in the original checkpoint published by Stability AI, and is the recommended way to run inference.</p>
+<p>The release also comes with a “timestep-distilled” model that eliminates classifier-free guidance and lets us generate images in fewer steps (typically in 4-8 steps).</p>
+<p>According to recent reports, all the examples shown in our SD3 blog post and the official Diffusers documentation should already work with SD3.5. In particular, both of those resources dive deep into optimizing the memory requirements to run inference. Since SD3.5 Large is significantly larger than SD3 Medium, memory optimization becomes crucial to allow inference on consumer interfaces.</p>
+<p>Diffusers natively supports working with bitsandbytes quantization, which optimizes memory even more.</p>
+<p id="sec-mid-149768">First, make sure to install all the libraries necessary:.</p>
+<p>Then load the transformer in “NF4” precision:.</p>
+<p>And now, we’re ready to run inference:.</p>
+<p>Sources indicate that you can control other knobs in the BitsAndBytesConfig. Refer to the documentation for details.</p>
+<p>Industry observers note that it is also possible to directly load a model quantized with the same nf4_config as above. This is particularly helpful for machines with low RAM. Refer to this Colab Notebook for an end-to-end example.</p>
+<p>Thanks to libraries like bitsandbytes and peft, it is possible to fine-tune large models like SD3.5 Large on consumer GPU cards having 24GBs of VRAM. It is already possible to leverage our existing SD3 training script for training LoRAs. The below training command already works:.</p>
+<p>However, to make it work with quantization, we need to tweak a couple of knobs. Below, we provide pointers on how to do that:.</p>
+<p>Refer to this example script for a fuller example.</p>
+<p>You can load the Stable Diffusion 3.5 Transformer model using the original checkpoint files published by Stability AI with the from_single_file method:.</p>
+<p id="sec-end-149768">In a recent development, acknowledgements: Daniel Frank for the background photo used in the thumbnail of this blog post. Thanks to Pedro Cuenca and Tom Aarsen for their reviews on the post draft.</p>
+<p style="margin-top: 25px;">
+<a href="https://huggingface.co/blog/sd3-5" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="industry-news-diffusers-welcomes-stable-diffusion-3-138635.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #138635. Industry News: Diffusers welcomes Stable Diffusion 3
+        </a>
+        
+        <a href="stable-diffusion-with-diffusers-150115.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #150115. Stable Diffusion with 🧨 Diffusers
+        </a>
+        
+        <a href="training-stable-diffusion-with-dreambooth-using-diffusers-150093.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #150093. Training Stable Diffusion with Dreambooth using Diffusers
+        </a>
+        
+        <a href="swift-diffusers-fast-stable-diffusion-for-mac-150052.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #150052. Swift 🧨Diffusers - Fast Stable Diffusion for Mac
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

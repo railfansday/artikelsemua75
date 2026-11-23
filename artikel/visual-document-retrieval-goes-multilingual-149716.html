@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visual Document Retrieval Goes Multilingual</title>
+    <meta name="description" content="In a recent development, TL;DR: We present vdr-2b-multi-v1, the best multilingual embedding model for visual document retrieval. We also release its Englis">
+    <meta name="keywords" content="model, retrieval, multilingual, only, dataset, visual, document, using">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua75/artikel/visual-document-retrieval-goes-multilingual-149716.html">
+    
+    <meta property="og:title" content="Visual Document Retrieval Goes Multilingual">
+    <meta property="og:description" content="In a recent development, TL;DR: We present vdr-2b-multi-v1, the best multilingual embedding model for visual document retrieval. We also release its Englis">
+    <meta property="og:image" content="https://huggingface.co/blog/assets/vdr-2b-multilingual/thumbnail.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua75/artikel/visual-document-retrieval-goes-multilingual-149716.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Visual Document Retrieval Goes Multilingual">
+    <meta name="twitter:description" content="In a recent development, TL;DR: We present vdr-2b-multi-v1, the best multilingual embedding model for visual document retrieval. We also release its Englis">
+    <meta name="twitter:image" content="https://huggingface.co/blog/assets/vdr-2b-multilingual/thumbnail.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Visual Document Retrieval Goes Multilingual", "image": ["https://huggingface.co/blog/assets/vdr-2b-multilingual/thumbnail.png"], "datePublished": "2025-01-10T00:00:00", "dateModified": "2026-11-23T17:17:15.009738", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua75/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua75/artikel/visual-document-retrieval-goes-multilingual-149716.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Visual Document Retrieval Goes Multilingual?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Hugging Face."}}, {"@type": "Question", "name": "Which category does 'Visual Document Retrieval Goes Multilingual' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Visual Document Retrieval Goes Multilingual</h1>
+        <div class="meta-line">🌐 Source: <strong>Hugging Face</strong> &bull; 📅 10 Jan 2025 &bull; ⏱️ 8 min read (1570 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>In a recent development, TL;DR: We present vdr-2b-multi-v1, the best multilingual embedding model for visual document retrieval.</li><li style='margin-bottom:6px;'>Introducing vdr-2b-multi-v1 (🤗), a multilingual embedding model designed for visual document retrieval across multiple languages and domains.</li><li style='margin-bottom:6px;'>Recent findings suggest that the vdr-2b-multi-v1 model is based on MrLight/dse-qwen2-2b-mrl-v1 and is trained on an extensive self-made dataset of multilingual query-image pairs.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-149716"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-149716"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-149716"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Visual Document Retrieval Goes Multilingual" loading="lazy" src="https://huggingface.co/blog/assets/vdr-2b-multilingual/thumbnail.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-149716">In a recent development, TL;DR: We present vdr-2b-multi-v1, the best multilingual embedding model for visual document retrieval. We also release its English-only twin vdr-2b-v1 and open-source the latest vdr-multilingual-train dataset. With 500k high-quality samples, it's the largest open-source multilingual synthetic dataset for visual document retrieval.</p>
+<p>Introducing vdr-2b-multi-v1 (🤗), a multilingual embedding model designed for visual document retrieval across multiple languages and domains. This model is designed to encode document page screenshots into dense single-vector representations, this will effectively allow to search and query visually rich multilingual documents without the need for any OCR, data extraction pipelines, chunking... <span style="font-size:13px;">(Related: <a href="latest-update-how-to-train-a-newly-introduced-language-model-from-150232.html" style="color:#2563eb; font-weight:600;">Latest Update: How to train a newly introduced language...</a>)</span></p>
+<p>Recent findings suggest that the vdr-2b-multi-v1 model is based on MrLight/dse-qwen2-2b-mrl-v1 and is trained on an extensive self-made dataset of multilingual query-image pairs. This model is built in collaboration with LlamaIndex and is the next iteration of mcdse-2b-v1. Our vdr-2b-multi-v1 extends and improves the learning and methods used to train it, resulting in a much more powerful and better model. <span style="font-size:13px;">(Related: <a href="how-to-generate-text-using-different-decoding-methods-for-languag-150231.html" style="color:#2563eb; font-weight:600;">How to generate text: using different decoding methods ...</a>)</span></p>
+<p>Trained on 🇮🇹 Italian, 🇪🇸 Spanish, 🇬🇧 English, 🇫🇷 French and 🇩🇪 German: Together they form a fresh large, open-source, multilingual training dataset of 500k high-quality samples.</p>
+<p>According to recent reports, low VRAM and Faster Inference: On synthetic Visual Document Retrieval (ViDoRe) benchmarks, our English-only model with 768 image patches performs better than the base model with 2560 image patches. This results in 3x faster inference and much lower VRAM usage.</p>
+<p>Sources indicate that cross-lingual Retrieval: Substantially better on real-world scenarios. For example, you can search for German documents with Italian queries.</p>
+<p>Matryoshka Representation Learning: You can reduce the vectors size 3x and still keep 98% of the embeddings quality. This allows for notably faster retrieval speeds while reducing storage costs.</p>
+<p>🎲 Try out vdr-2b-multi-v1 now, available on this Hugging Face Space!</p>
+<p>Generating embeddings with vdr-2b-multi-v1 is easier than ever with SentenceTransformers and LlamaIndex direct integrations. Get started with just a few lines of code:.</p>
+<p>Training good single-vector models for visual document retrieval requires high-quality data, but the current multimodal off-the-shelf datasets are very scarce and not multilingual.</p>
+<p>So, we've spent a lot of time building it from scratch. The raw dataset consists of 500k multilingual query-image samples, collected and generated from scratch using public internet PDFs. The queries associated with each image are synthetic and generated using VLMs. For comparison, our dataset has 10x more samples than the prior largest open source synthetic dataset for multimodal visual document retrieval, i.e. the scraped documents generated for the ColPali training dataset.</p>
+<p>Sources indicate that for each language, we generate a long list of search queries covering many different topics, which are then used to search for PDFs. We use the language filtering capabilities of the search engine to scrape documents that are only in the specified language. This "search by topic" technique ensures that the model has seen a lot of diverse topics and domains, and that it performs well in real life scenarios.</p>
+<p>It has been revealed that the scraping process produced ~50k multilingual documents. Contrary to the method used in the previous mcdse-2b-v1 model, pages were not extracted randomly. Instead, each page of each PDF was run through a document layout analysis model to determine whether the page contained more textual or visual elements. The result is a number that classifies the page as text-only, visual-only or mixed. This labelling step was then used to sample ~100k pages, ensuring they were evenly distributed by page type.</p>
+<p>The queries were then generated using gemini-1.5-pro and Qwen2-VL-72B. They were tasked to come up with a specific and a general question. Only the specific question is then used to train the model, but forcing the LLM to distinguish between the two often resulted in stronger specific questions for information retrieval training.</p>
+<p>It has been revealed that after generation, a further cleaning step ensures that the questions are good enough for training. This includes:.</p>
+<p>This cleaning step ensures that the queries are syntactically correct and follow some strict guidelines. But it still doesn't ensure that the queries are good enough for information retrieval.</p>
+<p>To filter out bad questions, we have embedded and indexed each broad query with the voyage-3 embedding model. For each specific question, we search the index. The query is marked as 'good' if its associated broad question appears in the top 100 results. This method removes low entropy, duplicate or too similar questions. On average, 40% of queries were removed from each language dataset.</p>
+<p>In a recent development, hard negatives were then mined using voyage-3 only on specific questions with a fixed threshold of 0.75. Experiments were also carried out using positive aware negative mining as described in nvidia/NV-Retriever-v1, but on this dataset it seems to produce too easy/distant negatives.</p>
+<p id="sec-mid-149716">The (vdr-multilingual-train 🤗) training dataset is now open-source and directly available on Hugging Face. The training dataset consists of 496,167 PDF pages, of which only 280,679 are associated with the filtered queries (using the method described above). The images that remain without a query are still used as hard negatives.</p>
+<p>The dataset is made of 5 different subsets, each for every language. Here you can explore it directly:.</p>
+<p>Alternatively, you can download languages individually by specifying the language subset in load_dataset:.</p>
+<p>The model has been evaluated on the ViDoRe benchmark and on custom-built evaluation sets that allow testing its multilingual capabilities on text-only, visual-only and mixed page screenshots. The evaluation dataset is also publicly available on Hugging Face (vdr-multilingual-test 🤗).</p>
+<p>It has been revealed that we made sure that no page in these datasets was also present in the training set to avoid any evaluation contamination. The datasets were collected and generated using the same methods as the training dataset, but with a smaller sample size. The filtering step was all done manually: each query is evaluated, curated and improved (if necessary) to ensure high data quality.</p>
+<p>All evaluations are performed by calculating NDCG@5 scores using 1536 dimensions vectors and an image resolution that can be represented with maximum 768 tokens.</p>
+<p>The multilingual model outperforms the base model in every language and every page type, on average by +2.3%. On the ViDoRe benchmark, it also performs slightly better (+0.5%). Our fine-tuned vdr-2b-multi-v1 makes big leaps in performance, especially in non-English visual-only or mixed pages. See for example the +6.33% NDCG@5 improvement for German visual-only retrieval over the base model.</p>
+<p>We also trained a version only on the English subset (vdr-2b-v1 🤗). On the full ViDoRe benchmark (evaluated with 768 image tokens), both the multilingual and English-only versions outperform the base model.</p>
+<p>The English-only vdr-2b-v1 model also matches the performance of the base model on the ViDoRe benchmark synthetic datasets, while only using 30% of the image tokens (768 vs. 2560). This effectively results in 3x faster inference and much lower VRAM usage.</p>
+<p>Sources indicate that although the model was trained on each language separately, it also improves in cross-lingual retrieval. To test this ability, the German evaluation set queries were translated into Italian using DeepL. The document page screenshots remain in the original German language.</p>
+<p>Recent findings suggest that the model is significantly better across all document types, with an average improvement of +2.3%. These retrieval capabilities are essential for real-world use cases, especially in linguistically fragmented continents such as Europe. For example, it enables language-independent searches on complex multilingual sources such as European binding decisions, instruction manuals, financial asset KIDs, pharmaceutical package leaflets and many more...</p>
+<p>This model is trained using Matryoshka Representation Learning (MRL). The loss function used during training is calibrated to track performance across all these dimensions, leading the model to frontload the most important identifying information. This effectively allows you to shrink the embedding dimensions according to your scale and budget. To learn more about MRL, this blog post by Hugging Face explains it very well.</p>
+<p>To test the model retrieval capabilities with different vector dimensions, evaluations are performed in the Italian-&gt;German cross-lingual benchmark.</p>
+<p>Sources indicate that 1024 dimension float vectors offer a very good balance between quality and size. They are ~30% smaller but still retain 99% of the retrieval performance. This is also true for the 1536 dimensions binary vectors, which have 10x fewer bytes per vector but still retain 97% of their retrieval quality. It's also interesting to see that 1536 binary vectors almost match the performance of the base model 1536 float vectors.</p>
+<p>We believe that vdr-2b-multi-v1 and vdr-2b-v1 will prove useful to many people.</p>
+<p>According to recent reports, our multilingual model is the first of its kind, it significantly improves performance in multilingual and cross-lingual scenarios, and thanks to MRL and Binary Quantization, retrieval is more efficient and faster than ever. We believe this will unlock new use-cases and opportunities, especially in linguistically fragmented continents such as Europe.</p>
+<p>Its English-only twin represents a considerable improvement over the base model, now being able to embed documents 3x faster, with much less VRAM and with the same (or better) retrieval quality.</p>
+<p>In a recent development, all this is possible thanks to the newly introduced vdr-multilingual-train dataset. With 500k high quality samples, it is the largest multilingual open source synthetic dataset for visual document retrieval.</p>
+<p id="sec-end-149716">In a recent development, future work will explore how our models perform when adapted to newly introduced and specific domains. This is still in the early stages of development and more work needs to be done before results are published, but early tests already seem to suggest impressive retrieval gains with very minimal data and computational resources.</p>
+<p style="margin-top: 25px;">
+<a href="https://huggingface.co/blog/vdr-2b-multilingual" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="docmatix-a-huge-dataset-for-document-visual-question-answering-149813.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #149813. Docmatix - a huge dataset for Document Visual Question Answering
+        </a>
+        
+        <a href="mmbert-modernbert-goes-multilingual-149359.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #149359. mmBERT: ModernBERT goes Multilingual
+        </a>
+        
+        <a href="tech-report-granite-embedding-multilingual-r2-open-apache-20-mult-138524.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #138524. Tech Report: Granite Embedding Multilingual R2: Open Apache 2.0 Multilingual Embeddings with 32K Context — Best Sub-100M Retrieval Quality
+        </a>
+        
+        <a href="retrieval-augmented-generation-with-huggingface-transformers-and--150220.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #150220. Retrieval Augmented Generation with Huggingface Transformers and Ray
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

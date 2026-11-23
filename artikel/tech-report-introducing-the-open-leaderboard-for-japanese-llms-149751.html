@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Report: Introducing the Open Leaderboard for Japanese LLMs!</title>
+    <meta name="description" content="Industry observers note that LLMs are now increasingly capable in English, but it's quite hard to know how well they perform in other national languages, w">
+    <meta name="keywords" content="japanese, dataset, open, leaderboard, llms, language, evaluation, based">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua75/artikel/tech-report-introducing-the-open-leaderboard-for-japanese-llms-149751.html">
+    
+    <meta property="og:title" content="Tech Report: Introducing the Open Leaderboard for Japanese LLMs!">
+    <meta property="og:description" content="Industry observers note that LLMs are now increasingly capable in English, but it's quite hard to know how well they perform in other national languages, w">
+    <meta property="og:image" content="https://huggingface.co/blog/assets/leaderboards-on-the-hub/thumbnail_japanese.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua75/artikel/tech-report-introducing-the-open-leaderboard-for-japanese-llms-149751.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Tech Report: Introducing the Open Leaderboard for Japanese LLMs!">
+    <meta name="twitter:description" content="Industry observers note that LLMs are now increasingly capable in English, but it's quite hard to know how well they perform in other national languages, w">
+    <meta name="twitter:image" content="https://huggingface.co/blog/assets/leaderboards-on-the-hub/thumbnail_japanese.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Tech Report: Introducing the Open Leaderboard for Japanese LLMs!", "image": ["https://huggingface.co/blog/assets/leaderboards-on-the-hub/thumbnail_japanese.png"], "datePublished": "2024-11-20T00:00:00", "dateModified": "2026-11-23T17:17:21.381864", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua75/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua75/artikel/tech-report-introducing-the-open-leaderboard-for-japanese-llms-149751.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Tech Report: Introducing the Open Leaderboard for Japanese LLMs!?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Hugging Face."}}, {"@type": "Question", "name": "Which category does 'Tech Report: Introducing the Open Leaderboard for Japanese L' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Tech Report: Introducing the Open Leaderboard for Japanese LLMs!</h1>
+        <div class="meta-line">🌐 Source: <strong>Hugging Face</strong> &bull; 📅 20 Nov 2024 &bull; ⏱️ 7 min read (1444 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>Industry observers note that LLMs are now increasingly capable in English, but it's quite hard to know how well they perform in other national languages, widely spoken but which present their own set of linguistic challenges.</li><li style='margin-bottom:6px;'>In a recent development, we'd like to announce the Open Japanese LLM Leaderboard, composed of more than 20 datasets from classical to modern NLP tasks to understand underlying mechanisms of Japanese LLMs.</li><li style='margin-bottom:6px;'>The Japanese language presents its own specific challenges.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-149751"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-149751"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-149751"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Tech Report: Introducing the Open Leaderboard for Japanese LLMs!" loading="lazy" src="https://huggingface.co/blog/assets/leaderboards-on-the-hub/thumbnail_japanese.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-149751">Industry observers note that LLMs are now increasingly capable in English, but it's quite hard to know how well they perform in other national languages, widely spoken but which present their own set of linguistic challenges. Today, we are excited to fill this gap for Japanese!</p>
+<p>In a recent development, we'd like to announce the Open Japanese LLM Leaderboard, composed of more than 20 datasets from classical to modern NLP tasks to understand underlying mechanisms of Japanese LLMs. The Open Japanese LLM Leaderboard was built by the LLM-jp, a cross-organizational project for the research and development of Japanese large language models (LLMs) in partnership with Hugging Face. <span style="font-size:13px;">(Related: <a href="latest-update-how-to-train-a-newly-introduced-language-model-from-150232.html" style="color:#2563eb; font-weight:600;">Latest Update: How to train a newly introduced language...</a>)</span></p>
+<p>The Japanese language presents its own specific challenges. Morphologically rich and in constant evolution due to historical and cultural interactions with the rest of the world, its writing system is based on a mixture of three separate sets of characters: simplified Chinese ideographic symbols kanjis (漢字), a phonetic lettering system, Hiraganas (平仮名 / ひらがな), and Katakanas (片仮名 / カタカナ) often used for foreigners words. Modern Japanese is arguably one of the hardest language to process, as it mixes up a blend of Sino-Japanese, native Japanese, Latin script (romaji /ローマ字), loanwords from the Dutch, Portuguese, French, English, German, plus Arabic and traditional Chinese numerals. In addition, the Japanese digital world brought us an evolution of emoticons written in Unicode : ), Kaomoji using Cyrillic alphabet. (っ °Д °;)っ and Greek alphabets ＿φ(°-°=). Without forgetting, of course, the classic emojis that originated from Japan with the rise in popularity of mobile phones in the 1990s. <span style="font-size:13px;">(Related: <a href="how-to-generate-text-using-different-decoding-methods-for-languag-150231.html" style="color:#2563eb; font-weight:600;">How to generate text: using different decoding methods ...</a>)</span></p>
+<p>The intricate writing system of Japanese hides an extra layer of complexity, the lack of space between words. Similar to the Chinese or Thai languages, Japanese language doesn’t have white space between linguistic units, making the detection of word boundaries extremely difficult during tokenization. Over the years, the vibrant Japanese ecosystem (from prestigious university laboratories and AI startups to the R&amp;D centers of industry giants) has incorporated the specificities of Japanese NLP to develop modern robust Japanese LLMs, but the field has been lacking a centralized and open system to compare these models.</p>
+<p>We therefore introduce the Open Japanese LLM Leaderboard, a collaboration between Hugging Face and LLM-jp, to foster transparency in research, and encourage an open-source model development philosophy. We strongly believe this initiative will serve as a platform for Japanese and international researchers to collaborate, evaluate, and enhance Japanese LLMs.</p>
+<p>The Open Japanese LLM Leaderboard evaluates Japanese LLMs using a specialized evaluation suite, llm-jp-eval, covering a range of 16 tasks from classical ones (such as Natural Language Inference, Machine Translation, Summarization, Question Answering) to more modern ones (such as Code Generation, Mathematical Reasoning or Human Examination). Tasks are released in 4-shot.</p>
+<p>It has been revealed that datasets have been compiled by the evaluation team of LLM-jp, either built from scratch with linguists, experts, and human annotators, or translated automatically to Japanese and adjusted to Japanese specificities, and for some requiring long context reasoning. For a better understanding of the leaderboard, we will detail samples from 8 datasets (in Japanese followed by the English translation in light gray). For more details about all the available tasks, please see to the “About” tab of the leaderboard, and official links on each datasets.</p>
+<p>Jamp (Controlled Japanese Temporal Inference Dataset for Evaluating Generalization Capacity of Language Models) is the Japanese temporal inference benchmark for NLI. The dataset explore English and Japanese sentence pairs of various temporal inference patterns annotated with the golden labels such as entailment, neutral, or contradiction.</p>
+<p>Industry observers note that JEMHopQA (Japanese Explainable Multi-hop Question Answering) is a Japanese multi-hop QA dataset that can evaluate internal reasoning. It is a task that takes a question as input and generates an answer and derivations.</p>
+<p>It has been revealed that jcommonsenseqa is a Japanese version of CommonsenseQA, which is a multiple-choice question answering dataset. The purpose of this dataset is to evaluate commonsense reasoning ability.</p>
+<p>According to recent reports, chABSA was developed as an Aspect-Based Sentiment Analysis dataset. ChABSA is based on financial reports of Japanese listed-companies in the 2016 fiscal year, annotated on the pair of entity, the attribute, and the sentiment. More specifically, 230 out of 2,260 companies listed in Japan (roughly 10% of all tech giant)  were annotated according to the taxonomy of the Japanese financial regulator, Financial Service Agency (FSA).</p>
+<p>The mbpp-ja dataset is a programming dataset: it is a Japanese version of Mostly Basic Python Problems dataset (MBPP) translated from English into Japanese by LLM-jp by leveraging the translation tool DeepL.</p>
+<p id="sec-mid-149751">Based on the dataset MAWPS (A Math Word Problem Repository), the Japanese mawps dataset is a mathematical evaluation dataset. This version evaluates the abilities of solving novel tasks by reasoning step-by-step, procedure otherwise known as Chain-of-Thought (CoT) reasoning, and was adjusted to converting names of people, units, and places to fit the Japanese context. The level of mathematical reasoning is rather simple: addition, subtraction, multistep arithmetic, and single or pairs of equations.</p>
+<p>Sources indicate that JMMLU is a knowledge dataset using four-choice question answers. It consists in Japanese-translated questions from a portion of MMLU dataset that evaluates knowledge on high-school level tests. Based on 57 subjects such as astronomy, chemistry, sociology, international law, etc., questions and answers were translated in Japanese, while being adjusted to unique Japanese cultural context like Japanese civics, Japanese geography, and Japanese idioms.</p>
+<p>XL-Sum is a summarisation dataset based on the research titled “XL-Sum: Large-Scale Multilingual Abstractive Summarization for 44 Languages” that leverages the Japanese translation of articles from BBC News. The dataset is separated in three parts; the title, the text (the full-length article), and the summary. Topics include global challenges, politics, technology, sports, and culture.</p>
+<p>Industry observers note that the leaderboard is inspired by the Open LLM Leaderboard. Models that are submitted are deployed automatically using HuggingFace’s Inference endpoints, evaluated through the llm-jp-eval library on the version 1.14.1, with memory-efficient inference and serving engine, vLLM on the verison v0.6.3, and computed in the backend by the premium computer platform for research in Japan, mdx.</p>
+<p>According to recent reports, according to the Japanese LLMs guide Awesome Japanese LLM (available in Japanese, English, and French), Meta's LLama open-source architecture seems to be the favourite of many Japanese AI labs. However, other architectures have also been successfully leveraged by the Japanese open-source community, such as Mistral from French Mistral, and Qwen by Chinese Alibaba. These are the architectures which led to the best scores on the Japanese LLM Leaderboard.</p>
+<p>On general language processing tasks, we observe that Japanese LLMs based on open-source architectures are closing the gap with closed source LLMs, such as the Japanese LLM llm-jp-3-13b-instruct, developed by LLM-jp and funded by university grants, reaching a performance similar to closed source models. Domain specific datasets, such as chABSA (finance), Wikipedia Annotated Corpus (linguistic annotations), code generation (mbpp-ja) and summarization (XL-Sum) remain a challenge for most LLMs. Interestingly, models originating from Japanese-based companies or labs have better scores on the specific JCommonsenseMorality dataset. It evaluates model ability to make choices according to Japanese values when against ethical dilemmas.</p>
+<p>The Open Japanese LLM Leaderboard will follow the development of the evaluation tool llm-jp-eval to reflect the constant evolution of Japanese LLMs. The following are just examples of future directions in llm-jp-eval that we would like to support, feel free to contact us to give a hand or suggest directions!</p>
+<p>Latest datasets: More Japanese evaluations
+The evaluation team of llm-jp-eval is working on this section, adding at the moment JHumanEval (Japanese version of HumanEval) and MMLU (Measuring Massive Multitask Language Understanding).</p>
+<p>Upcoming evaluation system: Chain-of-Thought evaluation
+We'd like to compare the performance of LLMs between when employing Chain-of-Thought prompts against basic prompts to have a finer understanding of model behaviors.</p>
+<p>Upcoming metric support: Out-of-Choice rate
+For some evaluation tasks that already have a clear list of labels used in the specific task, such as Natural Language Inference, we'd like to add a complementary metric, testing how often the model predicts out-of-choice tokens. As the choices are provided in the prompt, this will allow us to evaluate how well each LLM is able to follow specific instructions.</p>
+<p>Built by the research consortium LLM-jp, the Open Japanese LLM Leaderboard is proudly sponsored by the National Institute of Informatics in Tokyo, Japan in collaboration with the  high-performance computing platform, mdx program.</p>
+<p id="sec-end-149751">In a recent development, we would like to extend our gratitude to Prof. Yusuke Miyao and Namgi Han from the University of Tokyo for their scientific consultation and guidance, as well as Clémentine Fourrier and Toshihiro Hayashi of Hugging Face that has assisted with the integration and customization of their new evaluation framework and leaderboard template.</p>
+<p style="margin-top: 25px;">
+<a href="https://huggingface.co/blog/leaderboard-japanese" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="introducing-the-open-leaderboard-for-hebrew-llms-149856.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #149856. Introducing the Open Leaderboard for Hebrew LLMs!
+        </a>
+        
+        <a href="introducing-the-open-ko-llm-leaderboard-leading-the-korean-llm-ev-149898.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #149898. Introducing the Open Ko-LLM Leaderboard: Leading the Korean LLM Evaluation Ecosystem
+        </a>
+        
+        <a href="introducing-the-livecodebench-leaderboard-holistic-and-contaminat-149866.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #149866. Introducing the LiveCodeBench Leaderboard - Holistic and Contamination-Free Evaluation of Code LLMs
+        </a>
+        
+        <a href="introducing-the-open-chain-of-thought-leaderboard-149861.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #149861. Introducing the Open Chain of Thought Leaderboard
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

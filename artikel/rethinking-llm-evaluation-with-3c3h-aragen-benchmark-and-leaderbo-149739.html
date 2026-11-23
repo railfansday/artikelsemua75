@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rethinking LLM Evaluation with 3C3H: AraGen Benchmark and Leaderboard</title>
+    <meta name="description" content="According to recent reports, in the rapidly evolving landscape of large language models (LLMs), comprehensive and robust evaluation methodologies remain a ">
+    <meta name="keywords" content="evaluation, scores, model, judges, aragen, which, models, judge">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua75/artikel/rethinking-llm-evaluation-with-3c3h-aragen-benchmark-and-leaderbo-149739.html">
+    
+    <meta property="og:title" content="Rethinking LLM Evaluation with 3C3H: AraGen Benchmark and Leaderboard">
+    <meta property="og:description" content="According to recent reports, in the rapidly evolving landscape of large language models (LLMs), comprehensive and robust evaluation methodologies remain a ">
+    <meta property="og:image" content="https://huggingface.co/blog/assets/leaderboards-on-the-hub/thumbnail_3c3h_aragen.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua75/artikel/rethinking-llm-evaluation-with-3c3h-aragen-benchmark-and-leaderbo-149739.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Rethinking LLM Evaluation with 3C3H: AraGen Benchmark and Leaderboard">
+    <meta name="twitter:description" content="According to recent reports, in the rapidly evolving landscape of large language models (LLMs), comprehensive and robust evaluation methodologies remain a ">
+    <meta name="twitter:image" content="https://huggingface.co/blog/assets/leaderboards-on-the-hub/thumbnail_3c3h_aragen.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Rethinking LLM Evaluation with 3C3H: AraGen Benchmark and Leaderboard", "image": ["https://huggingface.co/blog/assets/leaderboards-on-the-hub/thumbnail_3c3h_aragen.png"], "datePublished": "2024-12-04T00:00:00", "dateModified": "2026-11-23T17:17:19.161668", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua75/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua75/artikel/rethinking-llm-evaluation-with-3c3h-aragen-benchmark-and-leaderbo-149739.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Rethinking LLM Evaluation with 3C3H: AraGen Benchmark and Leaderboard?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in AI & Tech originally reported by Hugging Face."}}, {"@type": "Question", "name": "Which category does 'Rethinking LLM Evaluation with 3C3H: AraGen Benchmark and Le' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the AI & Tech section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">AI & Tech</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Rethinking LLM Evaluation with 3C3H: AraGen Benchmark and Leaderboard</h1>
+        <div class="meta-line">🌐 Source: <strong>Hugging Face</strong> &bull; 📅 04 Dec 2024 &bull; ⏱️ 12 min read (2374 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>According to recent reports, in the rapidly evolving landscape of large language models (LLMs), comprehensive and robust evaluation methodologies remain a critical challenge, particularly for low-resource languages.</li><li style='margin-bottom:6px;'>The AraGen leaderboard makes three key contributions:.</li><li style='margin-bottom:6px;'>3C3H Measure: The 3C3H measure scores a model's response and is central to this framework.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-149739"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-149739"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-149739"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Rethinking LLM Evaluation with 3C3H: AraGen Benchmark and Leaderboard" loading="lazy" src="https://huggingface.co/blog/assets/leaderboards-on-the-hub/thumbnail_3c3h_aragen.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-149739">According to recent reports, in the rapidly evolving landscape of large language models (LLMs), comprehensive and robust evaluation methodologies remain a critical challenge, particularly for low-resource languages. In this blog, we introduce AraGen, a generative tasks benchmark and leaderboard for Arabic LLMs, based on 3C3H, a newly introduced evaluation measure for NLG which we hope will inspire work for other languages as well.</p>
+<p>The AraGen leaderboard makes three key contributions:.</p>
+<p>3C3H Measure: The 3C3H measure scores a model's response and is central to this framework. It is a holistic approach assessing model responses across multiple dimensions -Correctness, Completeness, Conciseness, Helpfulness, Honesty, and Harmlessness- based on LLM-as-judge. <span style="font-size:13px;">(Related: <a href="latest-update-how-to-train-a-newly-introduced-language-model-from-150232.html" style="color:#2563eb; font-weight:600;">Latest Update: How to train a newly introduced language...</a>)</span></p>
+<p>Dynamic Evaluations: AraGen Leaderboard implements a dynamic evaluation strategy, which includes three-month blind testing cycles, where the datasets and the evaluation code remain private before being publicly released at the end of the cycle, and replaced by a new private benchmark. <span style="font-size:13px;">(Related: <a href="industry-news-hosting-your-models-and-datasets-on-hugging-face-sp-150200.html" style="color:#2563eb; font-weight:600;">Industry News: Hosting your Models and Datasets on Hugg...</a>)</span></p>
+<p>Arabic Evaluation Dataset: AraGen Benchmark offers a meticulously constructed evaluation dataset for Arabic LLM evaluation, combining multi-turn and single-turn scenarios, which tests the model capability across multiple domains and tasks.</p>
+<p>We believe that AraGen addresses persistent challenges of data contamination with its dynamic evaluation approach, preserving the benchmark's integrity. It also serves as the first application of a scalable, language-agnostic framework for a nuanced and fair model assessment, which represents an vital effort in understanding LLM performance across diverse linguistic contexts and sets a fresh standard for comprehensive model benchmarking.</p>
+<p>It has been revealed that evaluating large language models (LLMs) is a key challenge in AI research. While existing methodologies have improved our understanding of LLM capabilities, they often fail to comprehensively address both factuality—assessing a model's core knowledge—and usability—its alignment with human (end user) expectations. Current evaluation approaches can broadly be categorized into knowledge or factuality-based benchmarks and preference-based benchmarks.</p>
+<p>Recent findings suggest that automatic benchmarks focus on evaluating foundational knowledge and factual correctness. For instance, initiatives like the Open LLM Leaderboard by Hugging Face assess the likelihood of the choices for a given prompt (question) and compare the most likely output with a golden reference choice. While effective in testing core knowledge, these benchmarks provide limited insight into how models perform in practical, user-facing contexts, leaving critical aspects of usability unaddressed.</p>
+<p>It has been revealed that in contrast, preference-based benchmarks aim to capture alignment with the user preferences. Examples include LMSYS's Chatbot Arena and AtlaAI's Judge Arena, which mostly rely on subjective assessments of outputs based on style, tone, and overall utility. However, these approaches risk prioritizing stylistic alignment over factual accuracy, potentially skewing evaluations toward stylistically preferred yet less accurate responses. Additionally, crowdsourced arenas can reflect the biases of their annotators, who may lack strong voting guidelines, further impacting the consistency and reliability of evaluations.</p>
+<p>To address these limitations, we propose a newly introduced evaluation measure that aims to combine both approaches, offering a comprehensive mechanism to evaluate language models. It assesses two key aspects of model outputs:.</p>
+<p>Sources indicate that this is done through the introduction of a new evaluation measure based on LLM-as-a-Judge approach (see here for more on this approach), which evaluates the model performance across six dimensions modeling factuality and usability. By adopting a balanced perspective, we ensure that usability does not come at the expense of factual accuracy or vice versa.</p>
+<p>The AraGen Leaderboard ranks both open and proprietary models, evaluated on the AraGen Benchmark using the newly introduced 3C3H measure, which we introduce below. 3C3H provides a comprehensive framework for assessing both the factual accuracy and usability of large language models. Arabic was chosen as the first application of this framework, aligning with the mission of Inception to democratize AI for Arabic and the Global South in general, while addressing the lack of robust generative benchmarks for these languages and regions, and we hope to see extensions of this work in many other languages.</p>
+<p>The leaderboard is dynamic, with evaluation datasets remaining private (blind testing) for three months to ensure fair and unbiased assessments. After this period, the dataset and the corresponding evaluation code will be publicly released, coinciding with the introduction of a newly introduced dataset for the next evaluation cycle, which will itself remain private for three months. This iterative process ensures that evaluations stay current and models are consistently tested on fresh, unseen data.</p>
+<p>We believe that this dynamic approach is both beneficial and robust, as it mitigates data leakage, encourages ongoing model improvement, and maintains the relevance of the benchmark in the rapidly evolving landscape of LLM development.</p>
+<p>The AraGen evaluation pipeline aims to ensure robust, reproducible, and scalable assessments. The process includes the following steps:.</p>
+<p>Our main contribution, the 3C3H measure, evaluates model performance across six dimensions, using an LLM-judge.</p>
+<p>The evaluation process includes the following elements:.</p>
+<p>Industry observers note that binary scores (Correctness and Completeness) are computed first. If a response is Incorrect (0), all other dimensions are automatically set to zero to avoid rewarding flawed outputs.</p>
+<p>According to recent reports, scaled scores (e.g., Conciseness, Helpfulness, ...). The remaining four dimensions are scores ranging from 1 to 5 and later normalized to [0, 1] for consistency. For example, a score of 3 for Honesty would be normalized to 3−14=0.5 \frac{3 - 1}{4} = 0.5 43−1​=0.5.</p>
+<p>Given the individual scores for each dimension, the 3C3H measure is computed as follows:.</p>
+<p>3C3H=16n∑i=1nc1i(1+c2i+c3i−14+h1i−14+h2i−14+h3i−14)
+3C3H = \frac{1}{6n} \sum_{i=1}^{n} c_{1i} \left(1 + c_{2i} + \frac{c_{3i} - 1}{4} + \frac{h_{1i} - 1}{4} + \frac{h_{2i} - 1}{4} + \frac{h_{3i} - 1}{4}\right) 
+3C3H=6n1​i=1∑n​c1i​(1+c2i​+4c3i​−1​+4h1i​−1​+4h2i​−1​+4h3i​−1​).</p>
+<p>Where n n n is the number of dataset samples, c1i c_{1i} c1i​ the correctness score of sample i i i, c2i c_{2i} c2i​ the completeness score of sample i i i, and c3i c_{3i} c3i​, h1i h_{1i} h1i​, h2i h_{2i} h2i​, h3i h_{3i} h3i​ the Conciseness, Helpfulness, Honesty, and Harmlessness scores respectively of sample i i i.</p>
+<p>Recent findings suggest that to ensure a reliable and fair evaluation process, the AraGen Leaderboard incorporates a dynamic evaluation strategy designed to address data contamination risks while prioritizing transparency, reproducibility, and continuous relevance. This is ensured as follows:.</p>
+<p>Blind Test Sets:Each test set remains private for a 3-month evaluation period. During this phase, the test set is used to evaluate submitted models without the risk of data leakage into the training datasets, thus ensuring unbiased results.</p>
+<p>Periodic Updates:After three months, the blind test set is replaced by a latest set of human-verified question-answer pairs. This ensures that the evaluation remains robust, adaptive, and aligned with evolving model capabilities. The new test sets are designed to maintain consistency in.</p>
+<p>Open-Sourcing for Reproducibility:Following the blind-test evaluation period, the benchmark dataset will be publicly released alongside the code used for evaluation. Which allows.</p>
+<p>The AraGen Benchmark includes 279 custom, mainly human-verified questions designed to rigorously test model capabilities across four diverse tasks:.</p>
+<p>Figure 1: Percentage Distribution of Tasks.</p>
+<p>Figure 2: Category Distribution for Question Answering (QA).</p>
+<p>Figure 3: Category Distribution for Reasoning.</p>
+<p>For the "Orthographic and Grammatical Analysis" task, the data is evenly distributed between two sub-categories: "Arabic grammar" and "Arabic dictation grammar," each constituting 50% of the examples. In the "Safety" task, all the data belongs exclusively to the "Safety" category/sub-category.</p>
+<p>The dataset examples are structured into three interaction types:.</p>
+<p id="sec-mid-149739">In scoring models' performance involving follow-up interactions, the score for the first response in the conversation is weighted more heavily due to its higher potential to steer the conversation. Incorrect initial answers can lead to cascading errors.</p>
+<p>For example, even if the first response is incorrect while the second response is correct (unexpected, given the design of our questions and also the way these systems usually work), the average score for the interaction would be 0×2+1×13=0.333 \frac{0 \times 2 + 1 \times 1}{3} = 0.333 30×2+1×1​=0.333, reflecting the criticality of the initial answer.</p>
+<p>Selecting the optimal judge for the AraGen Leaderboard is a critical step to ensure reliable, unbiased, and consistent evaluations. This section details the experiments conducted to evaluate potential judges, including single models and a jury system, and justifies the final choice based on rigorous empirical analysis.</p>
+<p>The following judge candidates were evaluated:.</p>
+<p>We also explored adopting a Jury, which aggregates evaluations from multiple LLM judges, to examine whether collective scoring improves reliability.</p>
+<p>Note that at the time we were running our experiments, Claude-3.5-haiku was not available through the Anthropic API yet.</p>
+<p>To evaluate and select the best judge, we assessed candidates across four dimensions:.</p>
+<p>We measured the agreement of the judges' evaluations (scores) with respect to each other using Cohen’s Kappa (κ) Coefficient. The results are visualized in the heatmap below:.</p>
+<p>Figure 4: Cohen's Kappa Heatmap Representing the Agreement between the Judges on 3C3H Score.</p>
+<p>To assess the consistency of the scores, we calculated the standard deviation of the scores across three evaluation runs for each judge over the same models' answers. Lower standard deviation indicates greater stability.</p>
+<p>According to recent reports, as reported in this study and several other studies as well, usually some biases get introduced when a Large Language Model acts as both the evaluator and the evaluatee. To analyze self-bias, we compared how judges scored their own responses versus others. The table below summarizes the results:.</p>
+<p>[^1]: Inception's internal deployment of a bnb 8bit quantization of "meta-llama/Llama-3.1-405B-Instruct".</p>
+<p>Industry observers note that the rows correspond to the models that are being evaluated, and the columns show the scores assigned by the different judges, including the model's self-assigned score. For example:.</p>
+<p>GPT-4o scores itself as 0.8025, its highest score across all models, suggesting a notable self-bias.</p>
+<p>This trend of models assigning their own responses higher scores is consistent across all judges, except Claude-3.5-sonnet, which scores its responses slightly lower compared to others.</p>
+<p>GPT-4o-mini and by extension GPT-4o as well, demonstrate the highest self-bias, as their self-scores exceed those assigned by other judges.</p>
+<p>Claude-3.5-sonnet appears less self-biased, with its self-score aligning closely with scores given by other judges.</p>
+<p>Meta-Llama 3.1-405B-Instruct reveals moderate alignment between its self-score and external scores, suggesting balanced scoring.</p>
+<p>By observing the discrepancies in self-scoring relative to external scoring, we quantify the degree of self-bias, which can influence the reliability of a model as a judge.</p>
+<p>Recent findings suggest that to assess the reliability of the judges in adhering to evaluation guidelines, we conducted hallucination analysis. This experiment focused on determining whether the judges provided accurate, guideline-compliant comments and avoided generating hallucinated or nonsensical feedback regardless of agreement with human annotators. The analysis was performed on two judges:.</p>
+<p>We randomly selected 10% of the responses from each evaluated model in our pool. Human annotators were tasked with reviewing the judges' comments to determine:.</p>
+<p>The results indicated a high level of agreement between the judges' comments and human evaluations, which aligns with expectations given the simplicity of the task. The task required judges to assess the factual correctness and the alignment with straightforward guidelines, minimizing the likelihood of hallucination.</p>
+<p>However, an unexpected discrepancy is observed with Claude-3.5-sonnet, which highlighted a slightly lower agreement rate (96.3%) compared to GPT-4o-mini (100.0%). Upon further investigation, we identified that the discrepancy was due to 529 &amp; 500 errors codes encountered by Claude-3.5-sonnet for a subset of the examples. These errors resulted in empty judge comment fields, which annotators marked as disagreements.</p>
+<p>When analyzing only the valid responses from Claude-3.5-sonnet (i.e., excluding those affected by errors), the agreement rate increased to 100.0%, matching that of GPT-4o-mini. This confirms our hypothesis that the task design was sufficiently constrained to leave (almost) no room for hallucination, ensuring high reliability across both judges.</p>
+<p>The Jury aggregates scores from multiple judges following a "vote then average" strategy, theoretically leveraging the "wisdom of the crowd." However, this approach is constrained by.</p>
+<p>It has been revealed that potential Improvements: The Jury concept could be more effective if it included smaller, fine-tuned models trained on diverse datasets reflecting different perspectives and cultures. Another potential approach we intend to explore is the variation of system prompts to describe the same task but with linguistic, cultural and perspective variations. This would introduce greater variability in judgement and mitigate the uniformity of biases observed in proprietary, English-first, general-purpose models.</p>
+<p>All the experiments above favor the selection of Claude-3.5-sonnet as the primary judge for the AraGen Leaderboard, due to its.</p>
+<p>Note that the Cohen Kappa coefficient is relatively low to base a decision on. However, aligning with a single human judge is inherently difficult due to different human biases. Despite this, we consider it a meaningful signal of potential alignment with a larger and more diverse pool of human judges. We initiative to conduct further experiments in this regard in the upcoming releases (March and June).</p>
+<p>Industry observers note that GPT-4o-mini, despite its relative alignment with human evaluations, we decided to deprioritize it due to higher score variability which contradicts the goal of reproducibility of results we are aiming for. The Jury system, although a potentially better method, was excluded in this version because of scalability challenges, inflated scores, and lack of significant difference with single-judge rankings.</p>
+<p>According to the experiments we conducted so far, Claude-3.5-sonnet represents the most reliable choice for this version of AraGen, balancing consistency and fairness.</p>
+<p>It has been revealed that we believe that the AraGen Leaderboard represents an important step in LLM evaluation, combining rigorous factual and alignment-based assessments through the 3C3H evaluation measure. Designed to address challenges such as data leakage, reproducibility, and scalability, AraGen offers a robust framework, which we believe would be useful for many other languages.</p>
+<p>According to recent reports, looking ahead, we initiative to expand the AraGen leaderboard in the next three months by introducing fresh tasks, while semi-automating dataset creation to enhance scalability without compromising quality through human verification. Additionally, we are exploring more complex questions and tasks to continually challenge and refine model performance, ensuring that the leaderboard remains dynamic and adaptive. Finally, we aim to extend this framework to other languages that are under-resourced or under-represented in this space. We are committed to the success of these initiatives and invite collaboration from the community.</p>
+<p id="sec-end-149739">How much does a model's 3C3H score move between benchmark refreshes, and did you check how consistent the LLM judge is across the six dimensions? I've been trying to get my own eval numbers to hold up with confidence intervals, and the judge is the part I'd worry about most.</p>
+<p style="margin-top: 25px;">
+<a href="https://huggingface.co/blog/leaderboard-3c3h-aragen" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="introducing-the-open-ko-llm-leaderboard-leading-the-korean-llm-ev-149898.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #149898. Introducing the Open Ko-LLM Leaderboard: Leading the Korean LLM Evaluation Ecosystem
+        </a>
+        
+        <a href="whats-going-on-with-the-open-llm-leaderboard-149994.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #149994. What's going on with the Open LLM Leaderboard?
+        </a>
+        
+        <a href="open-llm-leaderboard-drop-deep-dive-149931.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #149931. Open LLM Leaderboard: DROP deep dive
+        </a>
+        
+        <a href="an-introduction-to-ai-secure-llm-safety-leaderboard-149911.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #149911. An Introduction to AI Secure LLM Safety Leaderboard
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

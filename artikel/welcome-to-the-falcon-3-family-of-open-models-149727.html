@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to the Falcon 3 Family of Open Models!</title>
+    <meta name="description" content="We introduce Falcon3, a family of decoder-only large language models under 10 billion parameters, developed by Technology Innovation Institute (TII) in Abu">
+    <meta name="keywords" content="models, family, base, performances, performance, these, evaluation, falcon">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua75/artikel/welcome-to-the-falcon-3-family-of-open-models-149727.html">
+    
+    <meta property="og:title" content="Welcome to the Falcon 3 Family of Open Models!">
+    <meta property="og:description" content="We introduce Falcon3, a family of decoder-only large language models under 10 billion parameters, developed by Technology Innovation Institute (TII) in Abu">
+    <meta property="og:image" content="https://huggingface.co/blog/assets/falcon3/thumbnail.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua75/artikel/welcome-to-the-falcon-3-family-of-open-models-149727.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Welcome to the Falcon 3 Family of Open Models!">
+    <meta name="twitter:description" content="We introduce Falcon3, a family of decoder-only large language models under 10 billion parameters, developed by Technology Innovation Institute (TII) in Abu">
+    <meta name="twitter:image" content="https://huggingface.co/blog/assets/falcon3/thumbnail.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Welcome to the Falcon 3 Family of Open Models!", "image": ["https://huggingface.co/blog/assets/falcon3/thumbnail.png"], "datePublished": "2024-12-17T00:00:00", "dateModified": "2026-11-23T17:17:17.090782", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua75/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua75/artikel/welcome-to-the-falcon-3-family-of-open-models-149727.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Welcome to the Falcon 3 Family of Open Models!?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Hugging Face."}}, {"@type": "Question", "name": "Which category does 'Welcome to the Falcon 3 Family of Open Models!' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Welcome to the Falcon 3 Family of Open Models!</h1>
+        <div class="meta-line">🌐 Source: <strong>Hugging Face</strong> &bull; 📅 17 Dec 2024 &bull; ⏱️ 3 min read (542 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>We introduce Falcon3, a family of decoder-only large language models under 10 billion parameters, developed by
+Technology Innovation Institute (TII) in Abu Dhabi.</li><li style='margin-bottom:6px;'>Falcon3 represents a natural evolution from previous releases, emphasizing expanding the models' science, math, and code capabilities.</li><li style='margin-bottom:6px;'>In developing these models, we incorporated several key innovations aimed at improving the models' performances while reducing training costs:.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-149727"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-149727"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-149727"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Welcome to the Falcon 3 Family of Open Models!" loading="lazy" src="https://huggingface.co/blog/assets/falcon3/thumbnail.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-149727">We introduce Falcon3, a family of decoder-only large language models under 10 billion parameters, developed by
+Technology Innovation Institute (TII) in Abu Dhabi. By pushing the
+boundaries of performance and training efficiency, this release reflects our ongoing commitment to advancing open
+and accessible large foundation models.</p>
+<p>Falcon3 represents a natural evolution from previous releases, emphasizing expanding the models' science, math, and code capabilities. <span style="font-size:13px;">(Related: <a href="industry-news-block-sparse-matrices-for-smaller-and-faster-langua-150229.html" style="color:#2563eb; font-weight:600;">Industry News: Block Sparse Matrices for Smaller and Fa...</a>)</span></p>
+<p>This iteration includes five base models:. <span style="font-size:13px;">(Related: <a href="latest-update-transformer-based-encoder-decoder-models-150228.html" style="color:#2563eb; font-weight:600;">Latest Update: Transformer-based Encoder-Decoder Models...</a>)</span></p>
+<p>In developing these models, we incorporated several key innovations aimed at improving the models' performances while reducing training costs:.</p>
+<p>Falcon3 featured the limits within the small and medium scales of large language models by demonstrating high performance on common benchmarks:.</p>
+<p>Recent findings suggest that we evaluated models with our internal evaluation pipeline (based on lm-evaluation-harness) and we report raw scores. Our evaluations highlight key areas where the Falcon3 family of models excel, reflecting the emphasis on enhancing performance in scientific domains, reasoning, and general knowledge capabilities:.</p>
+<p id="sec-mid-149727">Sources indicate that detailed specifications of the Falcon3 family of models are summarized in the following table. The architecture of Falcon3-7B-Base
+is characterized by a head dimension of 256 which yields high throughput when using FlashAttention-3 as it is optimized for this dimension. These decoder-only models span 18 to 40 layers for the transformer-based ones, and 64 layers for the mamba one, all  models share the SwiGLU activation function, with vocabulary size of 131K tokens (65Kfor Mamba-7B). The Falcon3-7B-Base is trained on the largest amount of data ensuring comprehensive coverage of concepts and knowledge, the other variants require way less data.</p>
+<p>The table below highlights the performances of Falcon3-7B-Base and Falcon3-10B-Base on key benchmarks showing competitive performances in general, math, reasoning, and common sense understanding domains. Feel free to take a look at models' cards where we provide additional evaluation results (e.g. MT-Bench, Alpaca, etc).</p>
+<p>The instruct models also demonstrate competitive and super performances with equivalent and small-size models as highlighted in the tables below.</p>
+<p>Industry observers note that falcon3-1B-Instruct and Falcon3-3B-Instruct achieve robust performance across the evaluated benchmarks. Specifically, Falcon3-1B attains competitive results in IFEval (54.4), MUSR (40.7), and SciQ (86.8), while Falcon3-3B exhibits further gains—particularly in MMLU-PRO (29.7) and MATH (19.9)—demonstrating clear scaling effects. Although they do not surpass all competing models on every metric, Falcon models show strong performances in reasoning and common-sense understanding relative to both Qwen and Llama. In our internal evaluation pipeline:.</p>
+<p>Sources indicate that in line with our mission to foster AI accessibility and collaboration, all models in the Falcon3 family are released under the Falcon LLM license. We hope the AI community finds these models valuable for research, application development, and further experimentation. Falcon3 is not a culmination but a continuation of our efforts to create more capable, efficient, specialized foundation models. In January 2025, we will further release other models of the Falcon3 family featuring enhanced multi-modal capabilities including image, video, and audio support, as well as a full technical report covering our methodologies. We welcome feedback and collaboration from the community as we continue to refine and advance these technologies.</p>
+<p>We warmly thank the following people for their smooth support and integration within the ecosystem.</p>
+<p id="sec-end-149727">If the Falcon3 family of models were helpful to your work, feel free to give us a cite.</p>
+<p style="margin-top: 25px;">
+<a href="https://huggingface.co/blog/falcon3" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="falcon-h1-a-family-of-hybrid-head-language-models-redefining-effi-149583.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #149583. Falcon-H1: A Family of Hybrid-Head Language Models Redefining Efficiency and Performance
+        </a>
+        
+        <a href="latest-update-welcome-gpt-oss-the-new-open-source-model-family-fr-149438.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #149438. Latest Update: Welcome GPT OSS, the new open-source model family from OpenAI!
+        </a>
+        
+        <a href="making-a-web-app-generator-with-open-ml-models-149990.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #149990. Making a web app generator with open ML models
+        </a>
+        
+        <a href="the-hallucinations-leaderboard-an-open-effort-to-measure-hallucin-149910.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #149910. The Hallucinations Leaderboard, an Open Effort to Measure Hallucinations in Large Language Models
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

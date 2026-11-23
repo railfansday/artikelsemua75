@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bitcoin Core Patches Node-Stall Bug Found by Block’s AI Scanner</title>
+    <meta name="description" content="Bitcoin Core developers have disclosed and patched a medium-severity bug that let an attacker temporarily freeze a node’s processing of blocks and transact">
+    <meta name="keywords" content="bitcoin, core, node, loupe, advisory, could, scanner, first">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua75/artikel/bitcoin-core-patches-node-stall-bug-found-by-blocks-ai-scanner-144336.html">
+    
+    <meta property="og:title" content="Bitcoin Core Patches Node-Stall Bug Found by Block’s AI Scanner">
+    <meta property="og:description" content="Bitcoin Core developers have disclosed and patched a medium-severity bug that let an attacker temporarily freeze a node’s processing of blocks and transact">
+    <meta property="og:image" content="https://bitcoinmagazine.com/wp-content/uploads/2026/11/Bitcoin-Core-Patches-Node-Stall-Bug-Found-by-Blocks-AI-Scanner.jpg">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua75/artikel/bitcoin-core-patches-node-stall-bug-found-by-blocks-ai-scanner-144336.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Bitcoin Core Patches Node-Stall Bug Found by Block’s AI Scanner">
+    <meta name="twitter:description" content="Bitcoin Core developers have disclosed and patched a medium-severity bug that let an attacker temporarily freeze a node’s processing of blocks and transact">
+    <meta name="twitter:image" content="https://bitcoinmagazine.com/wp-content/uploads/2026/11/Bitcoin-Core-Patches-Node-Stall-Bug-Found-by-Blocks-AI-Scanner.jpg">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Bitcoin Core Patches Node-Stall Bug Found by Block’s AI Scanner", "image": ["https://bitcoinmagazine.com/wp-content/uploads/2026/11/Bitcoin-Core-Patches-Node-Stall-Bug-Found-by-Blocks-AI-Scanner.jpg"], "datePublished": "2026-11-23T09:45:00-05:00", "dateModified": "2026-11-23T17:10:35.180679", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua75/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua75/artikel/bitcoin-core-patches-node-stall-bug-found-by-blocks-ai-scanner-144336.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Bitcoin Core Patches Node-Stall Bug Found by Block’s AI Scanner?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in AI & Tech originally reported by Bitcoinmagazine."}}, {"@type": "Question", "name": "Which category does 'Bitcoin Core Patches Node-Stall Bug Found by Block’s AI Scan' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the AI & Tech section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">AI & Tech</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Bitcoin Core Patches Node-Stall Bug Found by Block’s AI Scanner</h1>
+        <div class="meta-line">🌐 Source: <strong>Bitcoinmagazine</strong> &bull; 📅 23 Nov 2026 &bull; ⏱️ 3 min read (626 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>Bitcoin Core developers have disclosed and patched a medium-severity bug that let an attacker temporarily freeze a node’s processing of blocks and transactions, a flaw first flagged by an AI scanner built by Block’s Spiral.</li><li style='margin-bottom:6px;'>The vulnerability, tracked as CVE-2026-117348, is fixed in Bitcoin Core versions 30.5, 31.3 and 32.1.</li><li style='margin-bottom:6px;'>Affected versions run from 29.0 through 29.5, 30.0 through 30.4 and 31.0 through 31.2.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-144336"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-144336"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-144336"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Bitcoin Core Patches Node-Stall Bug Found by Block’s AI Scanner" loading="lazy" src="https://bitcoinmagazine.com/wp-content/uploads/2026/11/Bitcoin-Core-Patches-Node-Stall-Bug-Found-by-Blocks-AI-Scanner.jpg" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-144336">Bitcoin Core developers have disclosed and patched a medium-severity bug that let an attacker temporarily freeze a node’s processing of blocks and transactions, a flaw first flagged by an AI scanner built by Block’s Spiral.</p>
+<p>The vulnerability, tracked as CVE-2026-117348, is fixed in Bitcoin Core versions 30.5, 31.3 and 32.1. The 30.5 and 31.3 releases shipped Friday alongside the public advisory, while 32.1 has carried the fix since Oct. 27.</p>
+<p>Affected versions run from 29.0 through 29.5, 30.0 through 30.4 and 31.0 through 31.2. The 29.x series has reached end of life and will not get a fix, so operators on that branch need to move to a newer release.</p>
+<p>Bitcoin Core keeps “orphan” transactions, whose parent transactions it has not yet seen, and asks peers that announce them for the missing pieces. Since version 29.0, the software builds a list of an orphan’s parents and checks each one against its mempool and filters before deciding what to request.</p>
+<p>A single inv message can carry up to 50,000 entries, and the software did not skip duplicates. An attacker could send a node an orphan with thousands of missing parents, then send messages repeating that transaction’s ID 50,000 times.</p>
+<p>It has been revealed that “Each such message stalls the node for over a dozen seconds, during which it processes no messages from other peers, including blocks,” the advisory noted. Sending more messages could stretch the disruption out.</p>
+<p>The fix makes the node process each transaction declared in an inv message only once. The advisory describes a temporary denial-of-service problem and does not describe any way to steal bitcoin or permanently damage a node. It also does not say whether the bug was ever exploited.</p>
+<p id="sec-mid-144336">According to recent reports, for a business running an affected node, the stalls could still matter. An exchange could be slow to credit deposits, and a miner could keep working on an outdated view of the chain while its node is stuck.</p>
+<p>The advisory credits an automated LLM scan run through Elias Rohrer’s Project Loupe at Spiral, Block’s open-source bitcoin development arm. Bitcoin Core developer Gregory Sanders validated the finding and brought it to the project’s security team. <span style="font-size:13px;">(Related: <a href="industry-news-block-sparse-matrices-for-smaller-and-faster-langua-150229.html" style="color:#2563eb; font-weight:600;">Industry News: Block Sparse Matrices for Smaller and Fa...</a>)</span></p>
+<p>Loupe is a free scanner that runs AI agents over open-source bitcoin code and only reports findings backed by a working test case. Bitcoin Core, BDK, LDK, rust-bitcoin, Cashu, Blockstream Jade, bitcoinj and SRI signed up for its first round of scans. Rohrer mentioned on a recent podcast that Spiral started the project around March and began continuous scanning in May, with Bitcoin Core in the first batch.</p>
+<p>It has been revealed that loupe reported the glitch on July 8. A developer known as Stutxo independently reported it on Aug. 4, the same day Sanders opened a pull request with the fix, which was merged two days later. The fix was backported to the 30.x and 31.x branches on Nov. 17.</p>
+<p>Bitcoin Core rated the bug “easily discoverable.” Under a policy the project adopted in October, flaws in that category get fixes backported to every maintained version and a public advisory as soon as patched releases ship, rather than a months-long embargo. <span style="font-size:13px;">(Related: <a href="deploy-hugging-face-models-easily-with-amazon-sagemaker-150207.html" style="color:#2563eb; font-weight:600;">Deploy Hugging Face models easily with Amazon SageMaker...</a>)</span></p>
+<p>Security work across bitcoin software has been busy this fall, from a Linux kernel flaw that prompted a Lightning fix to a upcoming security analysis of a post-quantum signature proposal. Rohrer has said Loupe produces a high volume of reports, which some projects found noisy, and that the team is working to cut false positives.</p>
+<p id="sec-end-144336">In a recent development, this is not Loupe’s first Bitcoin Core finding. Developers on an Optech podcast on Nov. 3 discussed three earlier Core security advisories that the scanner had found. Other researchers reported some of the same issues, but only after Loupe did.</p>
+<p style="margin-top: 25px;">
+<a href="https://bitcoinmagazine.com/news/bitcoin-core-patches-ai-found-node-bug" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="solo-bitcoin-miner-beats-the-odds-to-win-191000-block-reward-144294.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #144294. Solo bitcoin miner beats the odds to win $191,000 block reward
+        </a>
+        
+        <a href="will-bitcoins-massive-rebound-hold-more-tampered-ledgers-found-ho-144277.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #144277. Will Bitcoin’s massive rebound hold? More tampered Ledgers found: Hodler’s Digest
+        </a>
+        
+        <a href="industry-news-block-sparse-matrices-for-smaller-and-faster-langua-150229.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #150229. Industry News: Block Sparse Matrices for Smaller and Faster Language Models
+        </a>
+        
+        <a href="understanding-bigbirds-block-sparse-attention-150214.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #150214. Understanding BigBird's Block Sparse Attention
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

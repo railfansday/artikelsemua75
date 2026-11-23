@@ -150,14 +150,14 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-137936">According to recent reports, this is a write-up of how a set of static calculator pages computes the liquidation price of an isolated-margin USDT perpetual position for three exchanges (OKX, Bybit and MEXC), and how one function now produces both the numbers baked into the HTML at build time and the numbers the page script shows after a user types. The formulas are short. The bugs came from copying them.</p>
-<p>Every exchange documents roughly the same idea: a position is liquidated when its remaining margin falls to the maintenance margin. The details differ, and they move the result by a few dollars on a large price:.</p>
+<p>Every exchange documents roughly the same idea: a position is liquidated when its remaining margin falls to the maintenance margin. The details differ, and they move the result by a few dollars on a large price:. <span style="font-size:13px;">(Related: <a href="large-language-models-a-new-moores-law-150196.html" style="color:#2563eb; font-weight:600;">Large Language Models: A New Moore's Law?...</a>)</span></p>
 <p>With entry price E, quantity q (notional / entry), leverage L, maintenance margin rate mmr, taker fee taker and extra margin extra, the long and short cases are:.</p>
 <p>For a 10,000 USDT position at 74,000 with 10x leverage, a 0.5% maintenance rate and each venue's regular taker rate (0.05%, 0.055%, 0.04%), this gives:.</p>
 <p>The spread is small, which is exactly why it went unnoticed.</p>
 <p>Recent findings suggest that the site grew one page at a time. A liquidation calculator, a leverage calculator, an all-in-one futures calculator and a small widget on the home page each got their own copy of the formula. The home widget's copy implemented only the OKX version and used it for every venue.</p>
-<p>Recent findings suggest that the result: the home page showed 66,971.69 for a Bybit long (the OKX formula with Bybit's 0.055% taker fee), while the dedicated calculator showed 66,934.67 for the same inputs. Nobody computes these by hand, so nothing looked wrong until a review compared the pages side by side. <span style="font-size:13px;">(Related: <a href="industry-news-determined-woman-completes-7-marathons-in-a-year-wh-138638.html" style="color:#2563eb; font-weight:600;">Industry News: “Determined” woman completes 7 marathons...</a>)</span></p>
+<p>Recent findings suggest that the result: the home page showed 66,971.69 for a Bybit long (the OKX formula with Bybit's 0.055% taker fee), while the dedicated calculator showed 66,934.67 for the same inputs. Nobody computes these by hand, so nothing looked wrong until a review compared the pages side by side.</p>
 <p id="sec-mid-137936">A second problem sat next to it: the widget's HTML contained numbers written in by hand for the first render. Before the script ran, every domain demonstrated figures calculated for one venue, including domains that do not cover that venue at all.</p>
-<p>The home widget now has a single function that returns display strings. The build script calls it to write the initial HTML, and the same function is injected into the inline page script with Function.prototype.toString():. <span style="font-size:13px;">(Related: <a href="how-to-build-a-healthcare-robot-from-simulation-to-deployment-wit-138632.html" style="color:#2563eb; font-weight:600;">How to Build a Healthcare Robot from Simulation to Depl...</a>)</span></p>
+<p>The home widget now has a single function that returns display strings. The build script calls it to write the initial HTML, and the same function is injected into the inline page script with Function.prototype.toString():.</p>
 <p>With no extra margin, the general formulas reduce to these forms (q cancels out), so the widget and the full calculators agree to the cent. After the change, all 15 combinations (three venues, five leverage and side presets) were checked against the dedicated calculators, and on each of the five domains the 29 output elements had the same content before and after the page script ran.</p>
 <p>toString() has rules that are easy to break:.</p>
 <p>Sources indicate that not every page uses the serialized function yet. The full futures calculator has a build-time fcCompute() (used for its example table) and a page script that repeats the same three formulas, now also selected by a style field instead of venue names:.</p>
@@ -187,20 +187,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="latest-update-you-dont-need-a-weight-room-to-build-cycling-powery-137015.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #137015. Latest Update: You Don’t Need a Weight Room to Build Cycling Power—You Just Need This One Compact Piece of Equipment
+        <a href="breaking-build-a-hardware-diagnostic-log-with-vanilla-javascript-149647.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #149647. Breaking: Build a Hardware Diagnostic Log with Vanilla JavaScript
         </a>
         
-        <a href="three-cats-one-rabies-outbreak-what-happens-next-136005.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #136005. Three Cats, One Rabies Outbreak: What Happens Next?
+        <a href="how-to-build-an-accessible-gold-value-calculator-in-vanilla-javas-149556.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #149556. How to Build an Accessible Gold Value Calculator in Vanilla JavaScript
         </a>
         
-        <a href="from-innovation-to-impact-three-ways-school-districts-can-build-a-135425.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #135425. From innovation to impact: Three ways school districts can build a sustainable AI framework
+        <a href="you-dont-need-a-weight-room-to-build-cycling-poweryou-just-need-t-148448.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #148448. You Don’t Need a Weight Room to Build Cycling Power—You Just Need This One Compact Piece of Equipment
         </a>
         
-        <a href="one-house-three-owners-the-ballooning-cost-of-the-american-dream-130645.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #130645. One House, Three Owners: The Ballooning Cost of the American Dream
+        <a href="three-cats-one-rabies-outbreak-what-happens-next-147482.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #147482. Three Cats, One Rabies Outbreak: What Happens Next?
         </a>
         
     </div>

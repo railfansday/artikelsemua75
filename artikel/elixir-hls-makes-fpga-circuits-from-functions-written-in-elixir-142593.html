@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elixir HLS makes FPGA circuits from functions written in Elixir</title>
+    <meta name="description" content="Elixir HLS makes FPGA circuits from functions written in Elixir: high-level synthesis (HLS). FPGA circuits are usually written in a hardware description la">
+    <meta name="keywords" content="elixir, function, circuit, fpga, circuits, functions, which, defhls">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua75/artikel/elixir-hls-makes-fpga-circuits-from-functions-written-in-elixir-142593.html">
+    
+    <meta property="og:title" content="Elixir HLS makes FPGA circuits from functions written in Elixir">
+    <meta property="og:description" content="Elixir HLS makes FPGA circuits from functions written in Elixir: high-level synthesis (HLS). FPGA circuits are usually written in a hardware description la">
+    <meta property="og:image" content="https://opengraph.githubassets.com/9763a9371b9ad89a4350dab2be62204c524d842cf4a3734130ab45505bce0e27/elixir-hls/elixir-hls">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua75/artikel/elixir-hls-makes-fpga-circuits-from-functions-written-in-elixir-142593.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Elixir HLS makes FPGA circuits from functions written in Elixir">
+    <meta name="twitter:description" content="Elixir HLS makes FPGA circuits from functions written in Elixir: high-level synthesis (HLS). FPGA circuits are usually written in a hardware description la">
+    <meta name="twitter:image" content="https://opengraph.githubassets.com/9763a9371b9ad89a4350dab2be62204c524d842cf4a3734130ab45505bce0e27/elixir-hls/elixir-hls">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Elixir HLS makes FPGA circuits from functions written in Elixir", "image": ["https://opengraph.githubassets.com/9763a9371b9ad89a4350dab2be62204c524d842cf4a3734130ab45505bce0e27/elixir-hls/elixir-hls"], "datePublished": "2026-11-21T00:47:57", "dateModified": "2026-11-23T17:09:09.261223", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua75/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua75/artikel/elixir-hls-makes-fpga-circuits-from-functions-written-in-elixir-142593.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Elixir HLS makes FPGA circuits from functions written in Elixir?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Github."}}, {"@type": "Question", "name": "Which category does 'Elixir HLS makes FPGA circuits from functions written in Eli' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Elixir HLS makes FPGA circuits from functions written in Elixir</h1>
+        <div class="meta-line">🌐 Source: <strong>Github</strong> &bull; 📅 21 Nov 2026 &bull; ⏱️ 3 min read (529 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>Elixir HLS makes FPGA circuits from functions written in Elixir: high-level synthesis (HLS).</li><li style='margin-bottom:6px;'>FPGA circuits are usually written in a hardware description language such as Verilog or
+VHDL, register by register: which value goes into which register at which clock.</li><li style='margin-bottom:6px;'>In a recent development, in Elixir HLS that language is Elixir.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-142593"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-142593"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-142593"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Elixir HLS makes FPGA circuits from functions written in Elixir" loading="lazy" src="https://opengraph.githubassets.com/9763a9371b9ad89a4350dab2be62204c524d842cf4a3734130ab45505bce0e27/elixir-hls/elixir-hls" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-142593">Elixir HLS makes FPGA circuits from functions written in Elixir: high-level synthesis (HLS).</p>
+<p>FPGA circuits are usually written in a hardware description language such as Verilog or
+VHDL, register by register: which value goes into which register at which clock. This is
+called RTL (register transfer level). High-level synthesis generates that RTL from code in a
+software language: the author indicates what to compute, and the tool decides the clocks and the
+registers. <span style="font-size:13px;">(Related: <a href="latest-update-how-to-train-a-newly-introduced-language-model-from-150232.html" style="color:#2563eb; font-weight:600;">Latest Update: How to train a newly introduced language...</a>)</span></p>
+<p>In a recent development, in Elixir HLS that language is Elixir. A function defined with defhls stays an ordinary
+Elixir function that runs on the CPU, and also becomes an FPGA circuit. Each circuit is
+simulated against its Elixir function and used only if the results match, so the Elixir
+function is the circuit's specification. Why it is built this way: vision. <span style="font-size:13px;">(Related: <a href="how-to-generate-text-using-different-decoding-methods-for-languag-150231.html" style="color:#2563eb; font-weight:600;">How to generate text: using different decoding methods ...</a>)</span></p>
+<p>Industry observers note that elixir HLS 0.1.0 is its first release, an early one: it synthesizes integer functions, with state, tables, memories and fixed loops,
+and instances joining them with streams, levels and events, in the FPGA or on the CPU; its first target is the
+Sipeed Tang Primer 25K with AtomVM, and its working example the FM radio
+(atomvm-fm-radio), whose whole demodulator runs in the FPGA. Not there
+yet, among others: division, floats, recursion, and of Elixir's streams what needs the whole collection.</p>
+<p>Sources indicate that stream_kernel takes a 32-bit value, compares its low and high 16 bits as signed numbers and
+computes its result depending on which is larger. Given an integer, it computes on the CPU,
+as an Elixir function. How the same function runs as a circuit in the FPGA:
+On a board.</p>
+<p>According to recent reports, A type such as u32 (unsigned, 32 bits) is the circuit's bit width. A circuit spends wiring
+and logic on every bit, so narrower widths make it smaller and faster. On the CPU the values
+are cut to the same widths, so the CPU and the circuit compute the same results.</p>
+<p id="sec-mid-142593">mix ehls.compile turns each defhls function of the files into a SystemVerilog circuit and
+then simulates every circuit against its function; it stops at a circuit that does not
+match.</p>
+<p>In a recent development, what can be written with defhls (a function, which runs both on the CPU and as a circuit) and definstance (an
+instance: functions placed as circuits), beside Elixir. ✗: not in Elixir HLS. Details:
+How Elixir HLS works, EHLS.defhls/2, EHLS.Pipeline, EHLS.Stream.</p>
+<p>Shared state and events (definstance).</p>
+<p>definstance places functions as circuits (or, without an FPGA, as processes on the CPU), and gives an application new
+things to call:.</p>
+<p>A defhls function runs in the FPGA where a definstance places it. The simplest instance takes a value and gives a
+value, called like a function from the CPU; an instance can also take a stream, values one after another, and run on
+its own, with the data flowing from devices through the kernels without the CPU.</p>
+<p>What comes next (what needs no board, the steps on a board): Getting started.</p>
+<p id="sec-end-142593">mix docs builds these documents and the modules' documentation (the modules above, the backends and the mix tasks) as
+HTML in doc/, as on HexDocs.</p>
+<p style="margin-top: 25px;">
+<a href="https://github.com/elixir-hls/elixir-hls" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="from-gpt2-to-stable-diffusion-hugging-face-arrives-to-the-elixir--150079.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #150079. From GPT2 to Stable Diffusion: Hugging Face arrives to the Elixir community
+        </a>
+        
+        <a href="what-makes-a-dialog-agent-useful-150066.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #150066. What Makes a Dialog Agent Useful?
+        </a>
+        
+        <a href="what-makes-you-yourself-posidonia-australis-pando-and-the-paradox-149064.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #149064. What Makes You Yourself: Posidonia Australis, Pando, and the Paradox of Personhood
+        </a>
+        
+        <a href="this-mysterious-mushroom-makes-people-see-hundreds-of-tiny-humans-148968.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #148968. This mysterious mushroom makes people see hundreds of tiny humans
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

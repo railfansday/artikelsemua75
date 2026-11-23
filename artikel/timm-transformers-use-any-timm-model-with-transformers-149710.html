@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timm ❤️ Transformers: Use any timm model with transformers</title>
+    <meta name="description" content="Get lightning-fast inference, quick quantization, torch.compile boosts, and effortless fine-tuning for any timm model—all within the friendly 🤗 transformer">
+    <meta name="keywords" content="timm, model, fine, transformers, models, using, integration, inference">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua75/artikel/timm-transformers-use-any-timm-model-with-transformers-149710.html">
+    
+    <meta property="og:title" content="Timm ❤️ Transformers: Use any timm model with transformers">
+    <meta property="og:description" content="Get lightning-fast inference, quick quantization, torch.compile boosts, and effortless fine-tuning for any timm model—all within the friendly 🤗 transformer">
+    <meta property="og:image" content="https://huggingface.co/blog/assets/timm-transformers/thumbnail.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua75/artikel/timm-transformers-use-any-timm-model-with-transformers-149710.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Timm ❤️ Transformers: Use any timm model with transformers">
+    <meta name="twitter:description" content="Get lightning-fast inference, quick quantization, torch.compile boosts, and effortless fine-tuning for any timm model—all within the friendly 🤗 transformer">
+    <meta name="twitter:image" content="https://huggingface.co/blog/assets/timm-transformers/thumbnail.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Timm ❤️ Transformers: Use any timm model with transformers", "image": ["https://huggingface.co/blog/assets/timm-transformers/thumbnail.png"], "datePublished": "2025-01-16T00:00:00", "dateModified": "2026-11-23T17:17:13.511917", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua75/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua75/artikel/timm-transformers-use-any-timm-model-with-transformers-149710.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Timm ❤️ Transformers: Use any timm model with transformers?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Hugging Face."}}, {"@type": "Question", "name": "Which category does 'Timm ❤️ Transformers: Use any timm model with transformers' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Timm ❤️ Transformers: Use any timm model with transformers</h1>
+        <div class="meta-line">🌐 Source: <strong>Hugging Face</strong> &bull; 📅 16 Jan 2025 &bull; ⏱️ 7 min read (1423 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>Get lightning-fast inference, quick quantization, torch.compile boosts, and effortless fine-tuning
+for any timm model—all within the friendly 🤗 transformers ecosystem.</li><li style='margin-bottom:6px;'>Enter TimmWrapper—a simple,
+yet powerful tool that unlocks this potential.</li><li style='margin-bottom:6px;'>To follow along with this blog post, install the latest version of transformers and timm by running:.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-149710"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-149710"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-149710"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Timm ❤️ Transformers: Use any timm model with transformers" loading="lazy" src="https://huggingface.co/blog/assets/timm-transformers/thumbnail.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-149710">Get lightning-fast inference, quick quantization, torch.compile boosts, and effortless fine-tuning
+for any timm model—all within the friendly 🤗 transformers ecosystem.</p>
+<p>Enter TimmWrapper—a simple,
+yet powerful tool that unlocks this potential. <span style="font-size:13px;">(Related: <a href="simple-considerations-for-simple-people-building-fancy-neural-net-150219.html" style="color:#2563eb; font-weight:600;">Simple considerations for simple people building fancy ...</a>)</span></p>
+<p>To follow along with this blog post, install the latest version of transformers and timm by running:. <span style="font-size:13px;">(Related: <a href="latest-update-how-to-train-a-newly-introduced-language-model-from-150232.html" style="color:#2563eb; font-weight:600;">Latest Update: How to train a newly introduced language...</a>)</span></p>
+<p>Check out the full repository for all code examples and notebooks:
+🔗 TimmWrapper Examples.</p>
+<p>The PyTorch Image Models (timm) library
+offers a rich collection of state-of-the-art computer vision models,
+along with useful layers, utilities, optimizers, and data augmentations. With more than 32K GitHub stars and more than 200K daily downloads at the time of writing,
+it's a go-to resource for image classification and feature extraction for object detection,
+segmentation, image search, and other downstream tasks.</p>
+<p>With pre-trained models covering a wide range of architectures, timm simplifies the workflow for
+computer vision practitioners.</p>
+<p>While 🤗 transformers supports several vision models, timm offers an even broader collection,
+including many mobile-friendly and efficient models not available in transformers.</p>
+<p>The timm integration bridges this gap, bringing the best of both worlds:.</p>
+<p>Industry observers note that one of the standout features of the timm integration is that it allows you to leverage the 🤗 pipeline API. The pipeline API abstracts away a lot of complexity, making it easy to load a pre-trained model,
+perform inference, and view results with a few lines of code.</p>
+<p>According to recent reports, let's see how to use a transformers pipeline with the MobileNetV4. This architecture does not have a native transformers implementation, but can be easily used from timm:.</p>
+<p>Sources indicate that want to quickly create an interactive web app for image classification? Gradio makes it simple
+to build a user-friendly interface with minimal code. Let's combine Gradio with the pipeline API
+to classify food images using a fine-tuned timm ViT model (we will cover fine tuning in a later section).</p>
+<p>Here’s how you can set up a quick demo with a timm model:.</p>
+<p>It has been revealed that here’s a live example hosted on Hugging Face Spaces. You can test it directly in your browser!</p>
+<p>The 🤗 transformers library provides Auto Classes to abstract away the complexity of loading
+models and processors. With the TimmWrapper, you can use AutoModelForImageClassification
+and AutoImageProcessor to load any timm model effortlessly.</p>
+<p>Recent findings suggest that quantization is a powerful technique to reduce model size and speed up inference,
+especially for deployment on resource-constrained devices. With the timm integration,
+you can quantize any timm model on the fly with just a few lines of code using
+BitsAndBytesConfig from bitsandbytes.</p>
+<p>Here’s how simple it is to quantize a timm model:.</p>
+<p>Quantized models perform almost identically to full-precision models during inference:.</p>
+<p>Fine-tuning a timm model with the Trainer API from 🤗 transformers is straightforward and highly flexible. You can fine-tune your model on custom datasets using the Trainer class, which handles the training loop,
+logging, and evaluation. Additionally, you can fine-tune using LoRA (Low-Rank Adaptation) to train efficiently with fewer parameters.</p>
+<p>This section gives a quick overview of both standard fine-tuning and LoRA fine-tuning, with links to the complete code.</p>
+<p>The Trainer API makes it easy to set up training with minimal code. Here's an outline of what a fine-tuning setup looks like:.</p>
+<p>What's remarkable about this approach is that it mirrors the exact workflow used for native transformers models,
+maintaining consistency across different model types.</p>
+<p>Industry observers note that this means you can use the familiar Trainer API to fine-tune not just Transformers models, but
+also any timm model—bringing powerful models from the timm library into the Hugging Face
+ecosystem with minimal adjustments. This significantly broadens the scope of models you can fine-tune
+using the same trusted tools and workflows.</p>
+<p>Model Example:Fine-tuned ViT on Food-101: vit_base_patch16_224.augreg2_in21k_ft_in1k.ft_food101.</p>
+<p id="sec-mid-149710">LoRA (Low-Rank Adaptation) allows you to fine-tune large models efficiently by training only a
+few additional parameters, rather than the full set of model weights. This makes fine-tuning faster,
+and allows the use of consumer hardware. You can fine-tune a timm model using
+LoRA with the PEFT library.</p>
+<p>Trainable Parameters with LoRA:.</p>
+<p>Model Example:LoRA Fine-Tuned ViT on Food-101: vit_base_patch16_224.augreg2_in21k_ft_in1k.lora_ft_food101.</p>
+<p>LoRA is just one example of efficient adapter-based fine-tuning methods you can apply to timm models. The integration of timm with the 🤗 ecosystem opens up a wide variety of parameter-efficient fine-tuning (PEFT) techniques,
+allowing you to choose the method that best fits your use case.</p>
+<p>Once the model is LoRA fine-tuned, we only push the adapter weights to the Hugging Face Hub. This section helps
+you to download the adapter weights, merge the adapter weights with the base model, and then perform inference.</p>
+<p>It has been revealed that one of Ross' (creator of timm) favourite features is that this integration maintains
+full 'round-trip' compatibility. Namely, using the wrapper one can fine-tune a timm model on a newly introduced dataset using transformer's Trainer, publish the resulting model to the Hugging Face hub, and then load the fine-tuned model in timm again using timm.create_model('hf-hub:my_org/my_fine_tuned_model', pretrained=True).</p>
+<p>Let us see how we can load our fine tuned model ariG23498/vit_base_patch16_224.augreg2_in21k_ft_in1k.ft_food101 with timm.</p>
+<p>It has been revealed that with torch.compile in PyTorch 2.0, you can achieve faster inference by compiling your model
+with just one line of code. The timm integration is fully compatible with torch.compile. Here's a quick benchmark to compare inference time with and without torch.compile using the TimmWrapper.</p>
+<p>timm's integration with transformers opens fresh doors for leveraging state-of-the-art vision models
+with minimal effort. Whether you're looking to fine-tune, quantize, or simply run inference, this
+integration provides a unified API to streamline your workflow.</p>
+<p>Start exploring today and unlock newly introduced possibilities in computer vision!</p>
+<p>Recent findings suggest that we want to give a huge shout-out to the folks who made this integration happen in
+Transformers PR #34564. In no particular order, a big thanks to Pavel Iakubovskii, Ross Wightman, Lysandre Debut,
+Pablo Montalvo, Arthur Zucker, and Amy Roberts for all your incredible work. Your combined efforts took
+this feature from an idea to something everyone can now enjoy!</p>
+<p>This is amazing! Congrats @rwightman  @lysandre  @ArthurZ  @Molbap  @amyeroberts  @ariG23498  &amp; @qubvel-hf  🔥.</p>
+<p>Very excited for this, thank you! We were just about to switch to timm and this makes it even easier!</p>
+<p>Maybe a simple naive question, I'm trying to put together a demo training script that loads the base model from:TimmWrapperForImageClassification.from_pretrained("timm/mobilenetv4_conv_medium.e500_r256_in1k").to("cuda").</p>
+<p>but then trains on the food101 dataset, just to illustrate training on a fresh custom dataset. Training works fine, but inference return animal names as labels.</p>
+<p>According to recent reports, should I be setting:  label2id, num_labels,    id2label, params  when I load the finetuned model? It seems to store the data somewhere during training, but trainingarguments don't allow me to set TypeError: TrainingArguments.__init__() got an unexpected keyword argument 'label2id'.</p>
+<p>@davidrs  hmm, possible there's an matter with the label handling, there was a change made to the integration near release to keep the labels compatible with timm use (keep label_names field instead of id2label/label2id), there's actually a mix of the two cases and many of @ariG23498  fine-tunes have the id2label, though I was told at release time it should be producing label_names...</p>
+<p>Recent findings suggest that do you have a public model I could look at? You're using the example image classification script in Transformers (https://github.com/huggingface/transformers/tree/main/examples/pytorch/image-classification) or using Trainer directly yourself in a custom script/notebook as in the example above?</p>
+<p>My bad, I missed the top blog link with more complete code examples, maybe that would help me https://github.com/ariG23498/timm-wrapper-examples/blob/main/%2304_sft.ipynb.</p>
+<p>Trainer directly in custom script, I made a Colab notebook that illustrates what I'm currently trying, in the prediction test at the end the labels are not food:https://colab.research.google.com/drive/14jTpetYR61B6EVoJ6o8_B8gi6-SiizCA?usp=sharing.</p>
+<p>@davidrs  this part in the example to reset classifier / labels with the target dataset is crucial.</p>
+<p>If you don't do that I believe it gets pushed with the original labels, an imagenet-1k (1000) class classifier, etc. Though I guess the lowest 'n' classes that are in the fresh dataset would be fine-tuned with the target (if it's less, it'd crash if the new dataset has more classes).</p>
+<p>FWIW, I just found a bug in the pipeline, it's applying sigmoid instead of softmax by default due to a bug (https://github.com/huggingface/transformers/pull/35848), so add function_to_apply='softmax' if you want softmax probs... this is not specific to the timm integration and looks like it's been there a while. I did confirm that if you set the labels as above the fine-tuned timm model will predict with the correct labels and should push to hub with those as well...</p>
+<p id="sec-end-149710">How to integrate with Optimum and load the onnx version of the model.</p>
+<p style="margin-top: 25px;">
+<a href="https://huggingface.co/blog/timm-transformers" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="latest-update-how-to-train-a-newly-introduced-language-model-from-150232.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #150232. Latest Update: How to train a newly introduced language model from scratch using Transformers and Tokenizers
+        </a>
+        
+        <a href="breaking-perceiver-io-a-scalable-fully-attentional-model-that-wor-150188.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #150188. Breaking: Perceiver IO: a scalable, fully-attentional model that works on any modality
+        </a>
+        
+        <a href="training-a-language-model-with-transformers-using-tensorflow-and--150028.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #150028. Training a language model with 🤗 Transformers using TensorFlow and TPUs
+        </a>
+        
+        <a href="universal-assisted-generation-faster-decoding-with-any-assistant--149758.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #149758. Universal Assisted Generation: Faster Decoding with Any Assistant Model
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

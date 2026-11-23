@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Report: Rearchitecting Hugging Face Uploads and Downloads</title>
+    <meta name="description" content="Recent findings suggest that as part of Hugging Face's Xet team’s work to improve Hugging Face Hub’s storage backend, we analyzed a 24 hour window of Huggi">
+    <meta name="keywords" content="upload, files, uploads, data, file, while, hugging, face">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua75/artikel/tech-report-rearchitecting-hugging-face-uploads-and-downloads-149743.html">
+    
+    <meta property="og:title" content="Tech Report: Rearchitecting Hugging Face Uploads and Downloads">
+    <meta property="og:description" content="Recent findings suggest that as part of Hugging Face's Xet team’s work to improve Hugging Face Hub’s storage backend, we analyzed a 24 hour window of Huggi">
+    <meta property="og:image" content="https://huggingface.co/blog/assets/rearchitecting-uploads-and-downloads/thumbnail.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua75/artikel/tech-report-rearchitecting-hugging-face-uploads-and-downloads-149743.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Tech Report: Rearchitecting Hugging Face Uploads and Downloads">
+    <meta name="twitter:description" content="Recent findings suggest that as part of Hugging Face's Xet team’s work to improve Hugging Face Hub’s storage backend, we analyzed a 24 hour window of Huggi">
+    <meta name="twitter:image" content="https://huggingface.co/blog/assets/rearchitecting-uploads-and-downloads/thumbnail.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Tech Report: Rearchitecting Hugging Face Uploads and Downloads", "image": ["https://huggingface.co/blog/assets/rearchitecting-uploads-and-downloads/thumbnail.png"], "datePublished": "2024-11-26T00:00:00", "dateModified": "2026-11-23T17:17:19.861347", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua75/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua75/artikel/tech-report-rearchitecting-hugging-face-uploads-and-downloads-149743.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Tech Report: Rearchitecting Hugging Face Uploads and Downloads?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Hugging Face."}}, {"@type": "Question", "name": "Which category does 'Tech Report: Rearchitecting Hugging Face Uploads and Downloa' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Tech Report: Rearchitecting Hugging Face Uploads and Downloads</h1>
+        <div class="meta-line">🌐 Source: <strong>Hugging Face</strong> &bull; 📅 26 Nov 2024 &bull; ⏱️ 6 min read (1246 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>Recent findings suggest that as part of Hugging Face's Xet team’s work to improve Hugging Face Hub’s storage backend, we analyzed a 24 hour window of Hugging Face upload requests to better understand access patterns.</li><li style='margin-bottom:6px;'>The map below visualizes this activity, with countries colored by bytes uploaded per hour.</li><li style='margin-bottom:6px;'>According to recent reports, currently, uploads are stored in an S3 bucket in us-east-1 and optimized using S3 Transfer Acceleration.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-149743"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-149743"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-149743"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Tech Report: Rearchitecting Hugging Face Uploads and Downloads" loading="lazy" src="https://huggingface.co/blog/assets/rearchitecting-uploads-and-downloads/thumbnail.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-149743">Recent findings suggest that as part of Hugging Face's Xet team’s work to improve Hugging Face Hub’s storage backend, we analyzed a 24 hour window of Hugging Face upload requests to better understand access patterns. On October 11th, 2024, we saw:.</p>
+<p>The map below visualizes this activity, with countries colored by bytes uploaded per hour.</p>
+<p>According to recent reports, currently, uploads are stored in an S3 bucket in us-east-1 and optimized using S3 Transfer Acceleration. Downloads are cached and served using AWS Cloudfront as a CDN. Cloudfront’s 400+ convenient edge locations provide global coverage and low-latency data transfers. However, like most CDNs, it is optimized for web content and has a file size limit of 50GB. <span style="font-size:13px;">(Related: <a href="latest-update-how-to-train-a-newly-introduced-language-model-from-150232.html" style="color:#2563eb; font-weight:600;">Latest Update: How to train a newly introduced language...</a>)</span></p>
+<p>While this size restriction is reasonable for typical internet file transfers, the ever-growing size of files in model and dataset repositories presents a challenge. For instance, the weights of meta-llama/Meta-Llama-3-70B total 131GB and are split across 30 files to meet the Hub’s recommendation of chunking weights into 20 GB segments. Additionally, to enable advanced deduplication or compression techniques for both uploads and downloads requires a reimagining of how we handle file transfers. <span style="font-size:13px;">(Related: <a href="tech-report-leveraging-pre-trained-language-model-checkpoints-for-150225.html" style="color:#2563eb; font-weight:600;">Tech Report: Leveraging Pre-trained Language Model Chec...</a>)</span></p>
+<p>To push Hugging Face infrastructure beyond its current limits, we are redesigning the Hub’s upload and download architecture. We proposal to insert a content-addressed store (CAS) as the first stop for content distribution. This enables us to implement a custom protocol built on a guiding philosophy of dumb reads and smart writes. Unlike Git LFS, which treats files as opaque blobs, our approach analyzes files at the byte level, uncovering opportunities to improve transfer speeds for the massive files found in model and dataset repositories.</p>
+<p>The read path prioritizes simplicity and speed to ensure high throughput with minimal latency. Requests for a file are routed to a CAS server, which provides reconstruction information. The data itself remains backed by an S3 bucket in us-east-1, with AWS CloudFront continuing to serve as the CDN for downloads.</p>
+<p>The write path is more complex to optimize upload speeds and provide additional security guarantees. Like reads, upload requests are routed to a CAS server, but instead of querying at the file level we operate on chunks. As matches are found, the CAS server instructs the client (e.g., huggingface_hub) to transfer only the necessary (new) chunks. The chunks are validated by CAS before uploading them to S3.</p>
+<p>There are many implementation details to address such as network constraints and storage overhead which we’ll cover in future posts. For now, let's look at how reads presently look. The first diagram below show the read and write path as they currently look today:.</p>
+<p>Meanwhile, in the newly introduced design, reads will take the following path:.</p>
+<p>and finally here is the updated write path:.</p>
+<p>By managing files at the byte level, we can adapt optimizations to suit different file formats. For instance, we have explored improving the dedupeability of Parquet files, and are now investigating compressing tensor files (e.g., Safetensors) which have the potential to trim 10-25% off upload speeds. As upcoming formats emerge, we are uniquely positioned to develop further enhancements that improve the development experience on the Hub.</p>
+<p>This protocol also introduces significant improvements for enterprise customers and power owners. Inserting a control plane for file transfers provides added guarantees to ensure malicious or invalid data cannot be uploaded. Operationally, uploads are no longer a black box. Enhanced telemetry provides audit trails and detailed logging, enabling the Hub infrastructure team to identify and resolve problems promptly and efficiently.</p>
+<p>It has been revealed that to support this custom protocol, we need to determine the optimal geographic distribution for the CAS service. AWS Lambda@Edge was initially considered for its extensive global coverage to help minimize the round-trip time. However, its reliance on Cloudfront triggers made it incompatible with our updated upload path. Instead, we opted to deploy CAS nodes in a select few of AWS’s 34 regions.</p>
+<p id="sec-mid-149743">Recent findings suggest that taking a closer look at our 24-hour window of S3 PUT requests, we identified global traffic patterns that reveal the distribution of data uploads to the Hub. As expected, the majority of activity comes from North America and Europe, with continuous, high-volume uploads throughout the day. The data also highlights a strong and growing presence in Asia. By focusing on these core regions, we can place our CAS points of presence to balance storage and network resources while minimizing latency.</p>
+<p>In a recent development, while AWS offers 34 regions, our goal is to keep infrastructure costs reasonable while maintaining a high user experience. Out of the 88 countries represented in this snapshot, the Pareto chart above demonstrates that the top 7 countries account for 80% of uploaded bytes, while the top 20 countries contribute 95% of the total upload volume and requests.</p>
+<p>The United States emerges as the primary source of upload traffic, necessitating a PoP in this region. In Europe, most activity is concentrated in central and western countries (e.g., Luxembourg, the United Kingdom, and Germany) though there is some additional activity to account for in Africa (specifically Algeria, Egypt, and South Africa). Asia’s upload traffic is primarily driven by Singapore, Hong Kong, Japan, and South Korea.</p>
+<p>If we use a simple heuristic to distribute traffic, we can divide our CAS coverage into three major regions:.</p>
+<p>This ends up being quite effective. The US and Europe account for 78.4% of uploaded bytes, while Asia accounts for 21.6%.</p>
+<p>This regional breakdown results in a well-balanced load across our three CAS PoPs, with additional capacity for growth in ap-southeast-1 and flexibility to scale up in us-east-1 and eu-west-3 as needed.</p>
+<p>Based on expected traffic, we plan to allocate resources as follows:.</p>
+<p>It has been revealed that even though we’re increasing the first hop distance for some users, the overall impact to bandwidth across the Hub will be limited. Our estimates predict that while the cumulative bandwidth for all uploads will decrease from 48.5 Mbps to 42.5 Mbps (a 12% reduction), the performance hit will be more than offset by other system optimizations.</p>
+<p>Industry observers note that we are presently working toward moving our infrastructure into production by the end of 2024, where we will start with a single CAS in us-east-1. From there, we’ll start duplicating internal repositories to our newly introduced storage system to benchmark transfer performance, and then replicate our CAS to the additional PoPs mentioned above for more benchmarking. Based on those results, we will continue to optimize our approach to ensure that everything works smoothly when our storage backend is fully in place next year.</p>
+<p>It has been revealed that as we continue this analysis, latest opportunities for deeper insights are emerging. Hugging Face hosts one of the largest collections of data from the open-source machine learning community, providing a unique vantage point to explore the modalities and trends driving AI development around the world.</p>
+<p>For example, future analyses could classify models uploaded to the Hub by use case (such as NLP, computer vision, robotics, or large language models) and examine geographic trends in ML activity. This data not only informs our infrastructure decisions but also provides a lens into the evolving landscape of machine learning.</p>
+<p>We invite you to explore our current findings in more detail! Visit our interactive Space to see the upload distribution for your region, and follow our team to hear more about what we’re building.</p>
+<p>You can now join the waitlist to get access to all the improvements we talk about here!</p>
+<p id="sec-end-149743">https://huggingface.co/join/xet.</p>
+<p style="margin-top: 25px;">
+<a href="https://huggingface.co/blog/rearchitecting-uploads-and-downloads" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="tech-report-case-study-millisecond-latency-using-hugging-face-inf-150183.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #150183. Tech Report: Case Study: Millisecond Latency using Hugging Face Infinity and modern CPUs
+        </a>
+        
+        <a href="tech-report-introducing-decision-transformers-on-hugging-face-150170.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #150170. Tech Report: Introducing Decision Transformers on Hugging Face 🤗
+        </a>
+        
+        <a href="tech-report-getting-started-with-hugging-face-inference-endpoints-150099.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #150099. Tech Report: Getting Started with Hugging Face Inference Endpoints
+        </a>
+        
+        <a href="tech-report-image-similarity-with-hugging-face-datasets-and-trans-150070.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #150070. Tech Report: Image Similarity with Hugging Face Datasets and Transformers
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

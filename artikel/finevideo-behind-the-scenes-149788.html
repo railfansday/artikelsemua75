@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FineVideo: behind the scenes</title>
+    <meta name="description" content="According to recent reports, open video datasets are scarce and therefore slowing down the development of open-source video AI. For this reason we built Fi">
+    <meta name="keywords" content="videos, video, content, gemini, finevideo, code, youtube, metadata">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua75/artikel/finevideo-behind-the-scenes-149788.html">
+    
+    <meta property="og:title" content="FineVideo: behind the scenes">
+    <meta property="og:description" content="According to recent reports, open video datasets are scarce and therefore slowing down the development of open-source video AI. For this reason we built Fi">
+    <meta property="og:image" content="https://huggingface.co/blog/assets/186_fine_video/thumbnail.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua75/artikel/finevideo-behind-the-scenes-149788.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="FineVideo: behind the scenes">
+    <meta name="twitter:description" content="According to recent reports, open video datasets are scarce and therefore slowing down the development of open-source video AI. For this reason we built Fi">
+    <meta name="twitter:image" content="https://huggingface.co/blog/assets/186_fine_video/thumbnail.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "FineVideo: behind the scenes", "image": ["https://huggingface.co/blog/assets/186_fine_video/thumbnail.png"], "datePublished": "2024-09-23T00:00:00", "dateModified": "2026-11-23T17:17:27.697169", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua75/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua75/artikel/finevideo-behind-the-scenes-149788.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding FineVideo: behind the scenes?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Hugging Face."}}, {"@type": "Question", "name": "Which category does 'FineVideo: behind the scenes' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>FineVideo: behind the scenes</h1>
+        <div class="meta-line">🌐 Source: <strong>Hugging Face</strong> &bull; 📅 23 Sep 2024 &bull; ⏱️ 10 min read (1953 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>According to recent reports, open video datasets are scarce and therefore slowing down the development of open-source video AI.</li><li style='margin-bottom:6px;'>FineVideo contains a highly diverse collection of videos and metadata which makes it a good ingredient to train models to understand video content, train diffusion models to generate videos from a text description or train computer vision models using its structured data as input.</li><li style='margin-bottom:6px;'>It has been revealed that wait, you haven’t seen FineVideo yet?</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-149788"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-149788"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-149788"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="FineVideo: behind the scenes" loading="lazy" src="https://huggingface.co/blog/assets/186_fine_video/thumbnail.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-149788">According to recent reports, open video datasets are scarce and therefore slowing down the development of open-source video AI. For this reason we built FineVideo, a dataset with 43k videos that span 3.4k hours and are annotated with rich descriptions, narrative details, scene splits, and QA pairs.</p>
+<p>FineVideo contains a highly diverse collection of videos and metadata which makes it a good ingredient to train models to understand video content, train diffusion models to generate videos from a text description or train computer vision models using its structured data as input. <span style="font-size:13px;">(Related: <a href="latest-update-how-to-train-a-newly-introduced-language-model-from-150232.html" style="color:#2563eb; font-weight:600;">Latest Update: How to train a newly introduced language...</a>)</span></p>
+<p>It has been revealed that wait, you haven’t seen FineVideo yet? take a look at it through the dataset explorer page.</p>
+<p>In this blog post, we share the technical details and code involved in developing FineVideo: a journey that starts with 1.9M videos in YouTube-Commons and ends with 44K videos with all details annotated. <span style="font-size:13px;">(Related: <a href="my-journey-to-a-serverless-transformers-pipeline-on-google-cloud-150216.html" style="color:#2563eb; font-weight:600;">My Journey to a serverless transformers pipeline on Goo...</a>)</span></p>
+<p>A good way to start is taking a look at the different steps of our journey. Those steps involve content filtering, annotation and output structuring.</p>
+<p>In the following sections we discuss each of the steps and provide references to relevant parts of the code. If you prefer to navigate the code directly, take a look at our FineVideo repository on Github.</p>
+<p>First, let’s have a look how we got an initial list of YouTube videos and how we apply some first filters.</p>
+<p>Recent findings suggest that our journey starts in YouTube-Commons: a collection of audio transcripts of videos shared on YouTube under a CC-By license. Such project was created and is right now maintained by PleIAs as part of their corpus collection projects.</p>
+<p>YouTube Commons contain videos and transcripts in a diverse set of languages, our initial task is about narrowing down the content of YouTube Commons to the same language.</p>
+<p>We filter YouTube-Commons for videos in English and at the same time we gather relevant metadata. From this initial filtering, we collect 1.9M videos, their closed captions and metadata.</p>
+<p>Below some details on the filters and metadata fields that we keep:.</p>
+<p>Code for content filtering and metadata gathering available here [link].</p>
+<p>Once we had a target video list with 1.9M videos, we managed to successfully download 1.8M videos (some of the videos where removed by the channel owners and some changed their permissions).</p>
+<p>We explored two different approaches for distributed downloading.</p>
+<p>video2dataset is an open-source project [link] that focuses on distributed video download, transformation and packaging in different dataset formats. The project natively supports Slurm Workload Manager and therefore we could run it in our CPU cluster.</p>
+<p>Sources indicate that as all our cluster instances face internet with the same public IP, we contributed to the project the possibility to specify a proxy to facilitate video downloads. While the feature is not yet merged, you can patch video2dataset with our PR [link] to use the proxy capabilities.</p>
+<p>We used Google Cloud and AWS to run a custom-made docker container that downloads videos and metadata with ytdlp and pushes the results to S3.</p>
+<p>The files to build the Docker container can be found here [code].</p>
+<p>While Video2Dataset was functional with a proxy and allowed us to do additional processing steps, the requests / second we could do to the proxy became a bottleneck. This made us pivot towards cloud batch jobs.</p>
+<p>Recent findings suggest that in our search for the best videos, we narrowed down our selection to content where there is both visual action and people speaking at a mid-fast pace. We achieve this with word density filtering and visual dynamism filtering.</p>
+<p>We took the density of words in the video as a proxy of audio dynamism. The definition of word density being:.</p>
+<p>Word density = Number of words in closed captions / Total video length in seconds.</p>
+<p>By sampling and visually evaluating the quality of the content at different density thresholds, we decided to remove all videos with a word density lower than 0.5 words/second.</p>
+<p>The code to filter by word density and explore examples can be found here [link].</p>
+<p>We repurposed FFMPEG’s Freezedetect filter to  judge the dynamism of the video. While this filter is designed to identify frozen sections of a video (multiple equal frames placed one after the other), we could also identify chunks with low movement by exaggerating the noise parameter to a very high value.</p>
+<p>Industry observers note that rather than running freezedetect across the full video, we analyzed the video by temporal segments and we voted if the video was static based on the amount of segments categorized as static. Through manual evaluation we set a threshold to discard the video if 40% of the segments analyzed have low movement.</p>
+<p>Some types of content discarded after this filtering:.</p>
+<p>The DockerFile and code to classify video by its dynamism can be found here [link].</p>
+<p>Sources indicate that from the 1.8M videos analyzed, after this step we keep 600K dynamic videos. At this stage, we dig deeper into the content of the videos, which will be key to ensure diversity in the dataset.</p>
+<p>In a recent development, in order to achieve the most diverse content selection, we categorized the 600K filtered assets using the closed captioning and YouTube metadata. As a way to gain control on the categorization, we created a taxonomy and guided the annotation process to adhere to the taxonomy.</p>
+<p id="sec-mid-149788">Industry observers note that we bootstrapped the custom built taxonomy using GPT4-o and an information scientist reviewed and adjusted it. The taxonomy contains 126 fine categories aggregated in multiple levels. This multi-level approach allow people of FineVideo to slice the dataset to fit their particular use-case.</p>
+<p>The taxonomy is also available in JSON [link].</p>
+<p>With an initial version of the taxonomy we started content annotation and by looking at the results of content annotation, with the help of an information scientist, we adjusted the taxonomy accordingly.</p>
+<p>We categorized the videos using Llama 3.1 70B served through Text Generation Inference TGI [code].</p>
+<p>Sources indicate that the prompt required multiple iterations to ensure the answer is strictly a category in our taxonomy. During our prompt evaluation we learned that by removing the existing YouTube tags and categories from the prompt, the quality of our results increased drastically: YouTube metadata was biasing the text generated by Llama 3.1 towards one of the categories provided by YouTube.</p>
+<p>Sources indicate that using LLMs to categorize content stresses the need to adjust taxonomies from months / years to hours. Furthermore, in some cases, we created categories specifically to discard sensitive videos such as the ones falling under Firearms &amp; Weapons and Substance Use &amp; Drugs.</p>
+<p>At this point of the process, we have three sources of video level metadata:.</p>
+<p>Recent findings suggest that in order to contribute in the field of video understanding, we decided to go deeper into timecode-level metadata, for example activities, objects, narrative and editing aspects. While human annotation was something we considered as part of active learning setup where one or more models propose annotations and the human does a QA step, as we will discuss in the next sections, we found in Gemini a good solution especially when we constrained the input video length and the output format.</p>
+<p>We dig deeper into Gemini 1.5 Pro iterating our prompt and testing it with different content length.</p>
+<p>Given its limitation to 1M tokens, which is approximately equivalent to ~1hour of video, we were forced to drop videos longer than 1 hour. An idea to overcome this situation was to accelerate videos longer than one hour and that way fit in Gemini’s context.</p>
+<p>While it seemed to work at high level, when we started looking at the details we realized that only the first minutes of the video were accurately annotated.</p>
+<p>Finding that quality drops on long videos made us wonder: is this an problem impacting the rest of our videos? by sampling videos of different lengths and inspecting the video coverage of the annotations, we found a reduction in quality for videos longer than 10+ minutes.</p>
+<p>Aligned with our goal to bring high quality data back to the community, we dropped videos longer than 10+ minutes.</p>
+<p>In a recent development, given that each hour of video costs more than $5 to annotate with Gemini, we can’t annotate all the videos that we have after filtering. Therefore, we wanted to make sure that we have a good coverage over all topics and we search a good compromise of content diversity for late-pre-training / fine-tuning task and budget. We set this size constraint to 4K hours of video.</p>
+<p>In order to go from 600K videos to 4K hours of content we prepared an algorithm that balances content categories, user engagement, and channel representation to achieve the targeted duration.</p>
+<p>The code can be found in the repository [link].</p>
+<p>One of our goals with FineVideo is to provide structured data as a way to empower our community: if you are working on MultiModal LLMs, you can slice the data and decide which categories fit your pre-training or fine-tuning mix. If you are more into computer vision, you can directly use the dataset to train classifiers based on the numerical categories included in FineVideo such as the dynamism score, scene boundaries or audio/video correlation score.</p>
+<p>Sources indicate that gemini 1.5 Pro allows JSON based outputs by providing a schema. We explored this feature and we promptly realized two concerns:.</p>
+<p>What we observed completely matched what other researchers experienced: adding concrete schema constraints can decrease performance. (Let Me Speak Freely? A Study on the Impact of Format Restrictions on Performance of Large Language Models).</p>
+<p>Our solution relied on generating free text with Gemini 1.5 and add a second processing step to align the results of Gemini with our schema.</p>
+<p>The Gemini prompt that we used is the following:.</p>
+<p>It has been revealed that once the result was processed by Gemini, we parsed it with Instructor: a library built on top of Pydantic to achieve structured outputs given a schema. See table with example below.</p>
+<p>Instructor allowed us to experiment with different models to convert the free text from Gemini into the schema that we defined in Pydantic. We tried Gemini and GPT4o and we sticked with GPT4o given the higher success rate.</p>
+<p>CharacterList:
+Man Slim build, brown eyes, shaved sides, black hoodie with colorful logo, black pants. Scenes
+Scene 1
+Start 0:00 End 0:55
+Characters: [Man]
+Activities:
+Introduces bus
+Describes peaceful location with cows
+Props: Bus, cows, deck. Mood:Excited, adventure. Narrative Progression:
+Introduction to bus. Tour begins outside, highlighting nature and relaxation. Dynamism Score 0.7 
+Audio-Visual Correlation 1.</p>
+<p>The full code to annotate video can be found here [link].</p>
+<p>With the videos annotated and the data properly aligned to our schema, we look at the temporal domain of the data and we ensure its alignment with the video: Gemini 1.5 reads video at 1 frame per second and quite frequently videos have 25 - 29 frames per second. In our Fine Alignment we make sure scene boundaries provided by Gemini 1.5 match the correct frames in the video.</p>
+<p>It has been revealed that we also use this temporal alignment to discard cases were Gemini stopped providing useful data and a part of the video is wrongly annotated. Notice that thanks to dropping all content longer than 10+ minutes earlier in the pipeline, the number of videos with bad quality data was negligible (lower than 0.5%).</p>
+<p>Link to video alignment code here [link].</p>
+<p>We are right now preparing the training of a multi-modal LLM trained with FineVideo, we proposal to share the model weights and training recipe with the community as soon as it is completed.</p>
+<p id="sec-end-149788">We are also open to other extensions of FineVideo, speak up and tell us what you would like to see!</p>
+<p style="margin-top: 25px;">
+<a href="https://huggingface.co/blog/fine-video" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="industry-news-behind-the-scenes-of-the-inaugural-bon-apptit-live-146012.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #146012. Industry News: Behind the Scenes of the Inaugural Bon Appétit LIVE
+        </a>
+        
+        <a href="where-was-the-hunger-games-sunrise-on-the-reaping-filmed-behind-t-145593.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #145593. Where Was 'The Hunger Games: Sunrise on the Reaping' Filmed? Behind the Scenes in Spain and Germany
+        </a>
+        
+        <a href="the-technology-behind-bloom-training-150133.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #150133. The Technology Behind BLOOM Training
+        </a>
+        
+        <a href="large-scale-near-deduplication-behind-bigcode-150018.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #150018. Large-scale Near-deduplication Behind BigCode
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

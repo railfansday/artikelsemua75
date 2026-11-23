@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transformers.js v3: WebGPU Support, New Models & Tasks, and More…</title>
+    <meta name="description" content="After more than a year of development, we're excited to announce the release of 🤗 Transformers.js v3! You can get started by installing Transformers.js v3 ">
+    <meta name="keywords" content="webgpu, transformers, example, models, demo, release, which, some">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua75/artikel/transformersjs-v3-webgpu-support-new-models-tasks-and-more-149767.html">
+    
+    <meta property="og:title" content="Transformers.js v3: WebGPU Support, New Models & Tasks, and More…">
+    <meta property="og:description" content="After more than a year of development, we're excited to announce the release of 🤗 Transformers.js v3! You can get started by installing Transformers.js v3 ">
+    <meta property="og:image" content="https://huggingface.co/blog/assets/transformersjs-v3/thumbnail.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua75/artikel/transformersjs-v3-webgpu-support-new-models-tasks-and-more-149767.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Transformers.js v3: WebGPU Support, New Models & Tasks, and More…">
+    <meta name="twitter:description" content="After more than a year of development, we're excited to announce the release of 🤗 Transformers.js v3! You can get started by installing Transformers.js v3 ">
+    <meta name="twitter:image" content="https://huggingface.co/blog/assets/transformersjs-v3/thumbnail.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Transformers.js v3: WebGPU Support, New Models & Tasks, and More…", "image": ["https://huggingface.co/blog/assets/transformersjs-v3/thumbnail.png"], "datePublished": "2024-10-22T00:00:00", "dateModified": "2026-11-23T17:17:23.962248", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua75/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua75/artikel/transformersjs-v3-webgpu-support-new-models-tasks-and-more-149767.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Transformers.js v3: WebGPU Support, New Models & Tasks, and More…?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Hugging Face."}}, {"@type": "Question", "name": "Which category does 'Transformers.js v3: WebGPU Support, New Models & Tasks, and ' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Transformers.js v3: WebGPU Support, New Models & Tasks, and More…</h1>
+        <div class="meta-line">🌐 Source: <strong>Hugging Face</strong> &bull; 📅 22 Oct 2024 &bull; ⏱️ 3 min read (642 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>After more than a year of development, we're excited to announce the release of 🤗 Transformers.js v3!</li><li style='margin-bottom:6px;'>You can get started by installing Transformers.js v3 from NPM using:.</li><li style='margin-bottom:6px;'>Recent findings suggest that webGPU is a new web standard for accelerated graphics and compute.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-149767"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-149767"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-149767"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Transformers.js v3: WebGPU Support, New Models &amp; Tasks, and More…" loading="lazy" src="https://huggingface.co/blog/assets/transformersjs-v3/thumbnail.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-149767">After more than a year of development, we're excited to announce the release of 🤗 Transformers.js v3!</p>
+<p>You can get started by installing Transformers.js v3 from NPM using:. <span style="font-size:13px;">(Related: <a href="latest-update-how-to-train-a-newly-introduced-language-model-from-150232.html" style="color:#2563eb; font-weight:600;">Latest Update: How to train a newly introduced language...</a>)</span></p>
+<p>Then, importing the library with.</p>
+<p>For more information, check out the documentation.</p>
+<p>Recent findings suggest that webGPU is a new web standard for accelerated graphics and compute. The API enables web developers to use the underlying system's GPU to carry out high-performance computations directly in the browser. WebGPU is the successor to WebGL and provides significantly better performance, because it allows for more direct interaction with modern GPUs. Lastly, it supports general-purpose GPU computations, which makes it just perfect for machine learning! <span style="font-size:13px;">(Related: <a href="tech-report-porting-fairseq-wmt19-translation-system-to-transform-150226.html" style="color:#2563eb; font-weight:600;">Tech Report: Porting fairseq wmt19 translation system t...</a>)</span></p>
+<p>As of October 2024, global WebGPU support is around 70% (according to caniuse.com), meaning some users may not be able to use the API.</p>
+<p>If the following demos do not work in your browser, you may need to enable it using a feature flag:.</p>
+<p>Thanks to our collaboration with ONNX Runtime Web, enabling WebGPU acceleration is as simple as setting device: 'webgpu' when loading a model. Let's see some examples!</p>
+<p>Example: Compute text embeddings on WebGPU (demo).</p>
+<p>Example: Perform automatic speech recognition with OpenAI whisper on WebGPU (demo).</p>
+<p>Example: Perform image classification with MobileNetV4 on WebGPU (demo).</p>
+<p>Sources indicate that before Transformers.js v3, we used the quantized option to specify whether to use a quantized (q8) or full-precision (fp32) variant of the model by setting quantized to true or false, respectively. Now, we've added the ability to select from a much larger list with the dtype parameter.</p>
+<p>The list of available quantizations depends on the model, but some common ones are: full-precision ("fp32"), half-precision ("fp16"), 8-bit ("q8", "int8", "uint8"), and 4-bit ("q4", "bnb4", "q4f16").</p>
+<p id="sec-mid-149767">(e.g., mixedbread-ai/mxbai-embed-xsmall-v1).</p>
+<p>Example: Run Qwen2.5-0.5B-Instruct in 4-bit quantization (demo).</p>
+<p>According to recent reports, some encoder-decoder models, like Whisper or Florence-2, are extremely sensitive to quantization settings: especially of the encoder. For this reason, we added the ability to select per-module dtypes, which can be done by providing a mapping from module name to dtype.</p>
+<p>Example: Run Florence-2 on WebGPU (demo).</p>
+<p>Recent findings suggest that this release increases the total number of supported architectures to 120 (see full list), spanning a wide range of input modalities and tasks. Notable newly introduced names include: Phi-3, Gemma &amp; Gemma 2, LLaVa, Moondream, Florence-2, MusicGen, Sapiens, Depth Pro, PyAnnote, and RT-DETR.</p>
+<p>It has been revealed that as part of the release, we've published 25 upcoming example projects and templates, primarily focused on showcasing WebGPU support! This includes demos like Phi-3.5 WebGPU and Whisper WebGPU, as shown below.</p>
+<p>We're in the process of moving all our example projects and demos to https://github.com/huggingface/transformers.js-examples, so stay tuned for updates on this!</p>
+<p>As of today's release, the community has converted over 1200 models to be compatible with Transformers.js! You can find the full list of available models here.</p>
+<p>If you'd like to convert your own models or fine-tunes, you can use our conversion script as follows:.</p>
+<p>After uploading the generated files to the Hugging Face Hub, remember to add the transformers.js tag so others can easily find and use your model!</p>
+<p>Transformers.js v3 is now compatible with the three most popular server-side JavaScript runtimes:.</p>
+<p>Finally, we're delighted to announce that Transformers.js will now be published under the official Hugging Face organization on NPM as @huggingface/transformers (instead of
+@xenova/transformers, which was used for v1 and v2).</p>
+<p>We've also moved the repository to the official Hugging Face organization on GitHub (https://github.com/huggingface/transformers.js), which will be our newly introduced home — come say hi! We look forward to hearing your feedback, responding to your complications, and reviewing your PRs!</p>
+<p id="sec-end-149767">It has been revealed that this is a significant milestone and we're extremely grateful to the community for helping us achieve this long-term goal! None of this would be possible without all of you… thank you! 🤗.</p>
+<p style="margin-top: 25px;">
+<a href="https://huggingface.co/blog/transformersjs-v3" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="industry-news-faster-tensorflow-models-in-hugging-face-transforme-150222.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #150222. Industry News: Faster TensorFlow models in Hugging Face Transformers
+        </a>
+        
+        <a href="train-and-fine-tune-sentence-transformers-models-150123.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #150123. Train and Fine-Tune Sentence Transformers Models
+        </a>
+        
+        <a href="industry-news-train-400x-faster-static-embedding-models-with-sent-149713.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #149713. Industry News: Train 400x faster Static Embedding Models with Sentence Transformers
+        </a>
+        
+        <a href="breaking-training-and-finetuning-reranker-models-with-sentence-tr-149645.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #149645. Breaking: Training and Finetuning Reranker Models with Sentence Transformers
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

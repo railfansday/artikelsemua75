@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introducing multi-backends (TRT-LLM, vLLM) support for Text Generation Inference</title>
+    <meta name="description" content="Recent findings suggest that since its initial release in 2022, Text-Generation-Inference (TGI) has provided Hugging Face and the AI Community with a perfo">
+    <meta name="keywords" content="backends, performance, backend, rust, inference, recent, models, hardware">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua75/artikel/introducing-multi-backends-trt-llm-vllm-support-for-text-generati-149712.html">
+    
+    <meta property="og:title" content="Introducing multi-backends (TRT-LLM, vLLM) support for Text Generation Inference">
+    <meta property="og:description" content="Recent findings suggest that since its initial release in 2022, Text-Generation-Inference (TGI) has provided Hugging Face and the AI Community with a perfo">
+    <meta property="og:image" content="https://huggingface.co/blog/assets/tgi-multi-backend/thumbnail.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua75/artikel/introducing-multi-backends-trt-llm-vllm-support-for-text-generati-149712.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Introducing multi-backends (TRT-LLM, vLLM) support for Text Generation Inference">
+    <meta name="twitter:description" content="Recent findings suggest that since its initial release in 2022, Text-Generation-Inference (TGI) has provided Hugging Face and the AI Community with a perfo">
+    <meta name="twitter:image" content="https://huggingface.co/blog/assets/tgi-multi-backend/thumbnail.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Introducing multi-backends (TRT-LLM, vLLM) support for Text Generation Inference", "image": ["https://huggingface.co/blog/assets/tgi-multi-backend/thumbnail.png"], "datePublished": "2025-01-16T00:00:00", "dateModified": "2026-11-23T17:17:13.848538", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua75/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua75/artikel/introducing-multi-backends-trt-llm-vllm-support-for-text-generati-149712.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Introducing multi-backends (TRT-LLM, vLLM) support for Text Generation Inference?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in AI & Tech originally reported by Hugging Face."}}, {"@type": "Question", "name": "Which category does 'Introducing multi-backends (TRT-LLM, vLLM) support for Text ' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the AI & Tech section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">AI & Tech</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Introducing multi-backends (TRT-LLM, vLLM) support for Text Generation Inference</h1>
+        <div class="meta-line">🌐 Source: <strong>Hugging Face</strong> &bull; 📅 16 Jan 2025 &bull; ⏱️ 3 min read (574 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>Recent findings suggest that since its initial release in 2022, Text-Generation-Inference (TGI) has provided Hugging Face and the AI Community with a performance-focused solution to easily deploy large-language models (LLMs).</li><li style='margin-bottom:6px;'>To address this, we are excited to introduce the concept of TGI Backends.</li><li style='margin-bottom:6px;'>The Hugging Face team is excited to contribute to and collaborate with the teams that build vLLM, llama.cpp, TensorRT-LLM, and the teams at AWS, Google, NVIDIA, AMD and Intel to offer a robust and consistent user experience for TGI owners whichever backend and hardware they want to use.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-149712"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-149712"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-149712"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Introducing multi-backends (TRT-LLM, vLLM) support for Text Generation Inference" loading="lazy" src="https://huggingface.co/blog/assets/tgi-multi-backend/thumbnail.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-149712">Recent findings suggest that since its initial release in 2022, Text-Generation-Inference (TGI) has provided Hugging Face and the AI Community with a performance-focused solution to easily deploy large-language models (LLMs). TGI initially offered an almost no-code solution to load models from the Hugging Face Hub and deploy them in production on NVIDIA GPUs. Over time, support expanded to include AMD Instinct GPUs, Intel GPUs, AWS Trainium/Inferentia, Google TPU, and Intel Gaudi.Over the years, multiple inferencing solutions have emerged, including vLLM, SGLang, llama.cpp, TensorRT-LLM, etc., splitting up the overall ecosystem. Different models, hardware, and use cases may require a specific backend to achieve optimal performance. However, configuring each backend correctly, managing licenses, and integrating them into existing infrastructure can be challenging for owners.</p>
+<p>To address this, we are excited to introduce the concept of TGI Backends. This fresh architecture gives the flexibility to integrate with any of the solutions above through TGI as a single unified frontend layer. This change makes it easier for the community to get the best performance for their production workloads, switching backends according to their modeling, hardware, and performance requirements. <span style="font-size:13px;">(Related: <a href="the-reformer-pushing-the-limits-of-language-modeling-150230.html" style="color:#2563eb; font-weight:600;">The Reformer - Pushing the limits of language modeling...</a>)</span></p>
+<p>The Hugging Face team is excited to contribute to and collaborate with the teams that build vLLM, llama.cpp, TensorRT-LLM, and the teams at AWS, Google, NVIDIA, AMD and Intel to offer a robust and consistent user experience for TGI owners whichever backend and hardware they want to use. <span style="font-size:13px;">(Related: <a href="industry-news-faster-tensorflow-models-in-hugging-face-transforme-150222.html" style="color:#2563eb; font-weight:600;">Industry News: Faster TensorFlow models in Hugging Face...</a>)</span></p>
+<p>TGI is made of multiple components, primarily written in Rust and Python. Rust powers the HTTP and scheduling layers, and Python remains the go-to for modeling.</p>
+<p>Long story short: Rust allows us to improve the overall robustness of the serving layer with static analysis and compiler-based memory safety enforcement: it brings the ability to scale to multiple cores with the same safety guarantees more easily. Leveraging Rust’s strong type system for the HTTP layer and scheduler makes it possible to avoid memory issues while maximizing the concurrency, bypassing Global Interpreter Lock (GIL) in Python-based environments.</p>
+<p>Speaking about Rust… Surprise, that's the TGI starting point to integrate a upcoming backend - 🤗.</p>
+<p>Earlier this year, the TGI team worked on exposing the foundational knobs to disentangle how the actual HTTP server and the scheduler were coupled together. This work introduced the newly introduced Rust trait Backend to interface current inference engine and the one to come.</p>
+<p id="sec-mid-149712">Having this new Backend interface (or trait in Rusty terms) paves the way for modularity and makes it possible to actually route the incoming requests towards different modeling and execution engines.</p>
+<p>According to recent reports, the fresh multi-backend capabilities of TGI open up many impactful roadmap opportunities. As we look ahead to 2025 we are excited to share some of the TGI developments we are most excited about:.</p>
+<p>In a recent development, we are confident TGI Backends will help simplify the deployments of LLMs, bringing versatility and performance to all TGI people. You'll soon be able to use TGI Backends directly within Inference Endpoints. Customers will be able to easily deploy models with TGI Backends on various hardware with top-tier performance and reliability out of the box.</p>
+<p>Stay tuned for the next blog post where we'll dig into technical details and performance benchmarks of upcoming backends!</p>
+<p>Amazing work, looking forward to the releases!</p>
+<p>Sources indicate that this is so cool! Thank you for all the hard work.</p>
+<p id="sec-end-149712">Recent findings suggest that that's amazing! It's going to be an awesome 2025 for TGI! 🤗.</p>
+<p style="margin-top: 25px;">
+<a href="https://huggingface.co/blog/tgi-multi-backend" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="introducing-the-hugging-face-llm-inference-container-for-amazon-s-150010.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #150010. Introducing the Hugging Face LLM Inference Container for Amazon SageMaker
+        </a>
+        
+        <a href="open-source-text-generation-llm-ecosystem-at-hugging-face-149986.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #149986. Open-Source Text Generation & LLM Ecosystem at Hugging Face
+        </a>
+        
+        <a href="hugging-face-text-generation-inference-available-for-aws-inferent-149906.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #149906. Hugging Face Text Generation Inference available for AWS Inferentia2
+        </a>
+        
+        <a href="benchmarking-text-generation-inference-149841.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #149841. Benchmarking Text Generation Inference
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>
