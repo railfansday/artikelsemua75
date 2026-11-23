@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What we learned operating auth for 1k APIs</title>
+    <meta name="description" content="In a recent development, in May 2025, we merged a PR at Nango that had a critical bug: an if condition that never fired prevented refreshed credentials fro">
+    <meta name="keywords" content="refresh, token, tokens, recent, access, apis, oauth, auth">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua75/artikel/what-we-learned-operating-auth-for-1k-apis-131200.html">
+    
+    <meta property="og:title" content="What we learned operating auth for 1k APIs">
+    <meta property="og:description" content="In a recent development, in May 2025, we merged a PR at Nango that had a critical bug: an if condition that never fired prevented refreshed credentials fro">
+    <meta property="og:image" content="https://cdn.sanity.io/images/7yse5usn/production/3c399a96bf3e292ee10595e55c6598da8b0be60f-1674x940.jpg">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua75/artikel/what-we-learned-operating-auth-for-1k-apis-131200.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="What we learned operating auth for 1k APIs">
+    <meta name="twitter:description" content="In a recent development, in May 2025, we merged a PR at Nango that had a critical bug: an if condition that never fired prevented refreshed credentials fro">
+    <meta name="twitter:image" content="https://cdn.sanity.io/images/7yse5usn/production/3c399a96bf3e292ee10595e55c6598da8b0be60f-1674x940.jpg">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "What we learned operating auth for 1k APIs", "image": ["https://cdn.sanity.io/images/7yse5usn/production/3c399a96bf3e292ee10595e55c6598da8b0be60f-1674x940.jpg"], "datePublished": "2026-11-23T01:01:11", "dateModified": "2026-11-23T05:13:28.378871", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua75/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua75/artikel/what-we-learned-operating-auth-for-1k-apis-131200.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding What we learned operating auth for 1k APIs?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Nango."}}, {"@type": "Question", "name": "Which category does 'What we learned operating auth for 1k APIs' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>What we learned operating auth for 1k APIs</h1>
+        <div class="meta-line">🌐 Source: <strong>Nango</strong> &bull; 📅 23 Nov 2026 &bull; ⏱️ 5 min read (1004 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>In a recent development, in May 2025, we merged a PR at Nango that had a critical bug: an if condition that never fired prevented refreshed credentials from being saved to the database.</li><li style='margin-bottom:6px;'>In those two hours, our scheduled jobs had refreshed and discarded access and refresh tokens for hundreds of connections.</li><li style='margin-bottom:6px;'>Then we learned how many providers rotate refresh tokens.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-131200"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-131200"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-131200"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="What we learned operating auth for 1k APIs" loading="lazy" src="https://cdn.sanity.io/images/7yse5usn/production/3c399a96bf3e292ee10595e55c6598da8b0be60f-1674x940.jpg" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-131200">In a recent development, in May 2025, we merged a PR at Nango that had a critical bug: an if condition that never fired prevented refreshed credentials from being saved to the database. We caught the bug and reverted it in just under two hours.</p>
+<p>In those two hours, our scheduled jobs had refreshed and discarded access and refresh tokens for hundreds of connections. For most APIs, that was recoverable: the old refresh token still worked, so the next scheduled refresh repaired the connection.</p>
+<p>Then we learned how many providers rotate refresh tokens.</p>
+<p>Many providers, including Airtable and Atlassian, invalidate the old refresh token the moment a replacement is issued. Salesforce and Slack can do the same when rotation is enabled for the OAuth app. <span style="font-size:13px;">(Related: <a href="latest-update-one-year-since-the-deepseek-moment-138617.html" style="color:#2563eb; font-weight:600;">Latest Update: One Year Since the “DeepSeek Moment”...</a>)</span></p>
+<p>It has been revealed that there was no way to get those tokens back. For every affected connection, our customers had to ask their owners to go through the consent screen again. <span style="font-size:13px;">(Related: <a href="chipotle-is-giving-customers-free-burritos-with-thanksgiving-eve--138609.html" style="color:#2563eb; font-weight:600;">Chipotle is giving customers free burritos with Thanksg...</a>)</span></p>
+<p>OAuth is a standard, but OAuth providers are not interchangeable. Each APIâs auth behaves a little differently, and some of those differences are undocumented and only surface in production.</p>
+<p>According to recent reports, for context, Nango is an open-source project that lets web applications and agents integrate with third-party APIs. Our customers embed it in their products. Their users connect third-party accounts, and Nango keeps those connections working.</p>
+<p>Since then, weâve grown from supporting about 400 APIs to 1,000+ APIs. The incident changed how we operate auth, but it was only the first of several lessons.</p>
+<p>Recent findings suggest that refresh token rotation is a security win, but a bug in the rotation path can permanently destroy a connection and force the user to reauthorize. Thatâs what made our incident so expensive.</p>
+<p>Sources indicate that we now treat refresh tokens like money, not cache. The new token gets persisted before anything else can fail. The persistence path has its own regression tests, and any platform-level refresh anomalies immediately page the on-call team.</p>
+<p>In a recent development, take Airtable: a refresh request with a stale token or the wrong client credentials can return a 400 or 401, but Airtable doesnât stop there. It revokes the userâs entire authorization for your app, and the only way back is for the user to reconnect. Sending the same refresh request twice can also cause revocation. Airtable documents a short grace period for duplicate refreshes, but retrying the stale token after that period revokes the authorization.</p>
+<p>Airtable also invalidates the old access token the instant a refresh succeeds, so a long-running job still using an old token can fail mid-run.</p>
+<p>Xero handles it better: if a refresh fails or the response never arrives, you can retry with the previous refresh token for up to 30 minutes.</p>
+<p>Issues like these pushed us to serialize refreshes per connection behind a distributed lock.</p>
+<p>According to recent reports, *This is only the success path. Failure paths donât fit in one diagram.</p>
+<p>Sources indicate that even refreshing early can be wrong. For example, Exact Onlineâs access tokens last for 10 minutes, and its token endpoint rejects any refresh attempt made more than 30 seconds before expiry. Our ârefresh 15 minutes earlyâ rule meant every refresh fell outside that window and was rejected. We had to add support for per-provider expiration buffers.</p>
+<p id="sec-mid-131200">The official OAuth 2.0 spec (RFC 6749) makes expires_in optional for access tokens. For us, this has been a recurring source of silent breakage.</p>
+<p>Zendesk, for example, rolled out expiring access tokens for OAuth clients, including existing ones. Its token response includes expires_in only if you request it. Without that parameter, the access token still expires under the default policy, but the response doesnât say when. We discovered this only after the rotating refresh token lapsed and connections started dying.</p>
+<p>In a recent development, salesforceâs token response includes no expiry. The documented way to check it is a separate introspection endpoint, which we call before deciding whether to refresh an access token.</p>
+<p>But in June 2024, the introspection endpoint started intermittently returning unsupported_token_type for some tokens. When introspection failed, we refreshed anyway. The replacement access token could be introspected normally, though we never learned why the original token failed.</p>
+<p>We now refresh stale credentials on a cron, so tokens get exercised before inactivity kills them.</p>
+<p>Recent findings suggest that youâd expect an auth failure to return a 401. It often doesnât:.</p>
+<p>We ended up building per-provider heuristics: at the time of this analysis, 276 of the roughly 935 providers in our registry declared an authenticated endpoint that Nango can call to check whether credentials still work.</p>
+<p>16% of commits to our provider config are fixes. Thereâs no reliable feed for provider auth changes; we often learn about them from a failed flow or a customer report.</p>
+<p>Recent findings suggest that figma unveiled by email that credentials had to move from the request body to a Basic Authorization header and that the OAuth host was changing. We shipped the upgrade, but anyone who missed the email might not discover the change until refreshes begin failing.</p>
+<p>Shopify changed how offline tokens are issued, so apps began receiving expiring tokens where they previously didnât. We shipped a config change to preserve the old behavior.</p>
+<p>Recent findings suggest that supporting a newly introduced API assumes two things: you can get credentials to test with, and you can find accurate docs for how its auth works. At our scale, both assumptions fail often enough that going around the provider is routine:.</p>
+<p>API clients would fail less often if providers did these ten things:.</p>
+<p>Our provider registry is public in a single YAML file if you want to inspect the details.</p>
+<p>How to diagnose and fix Microsoft OAuth refresh token invalid_grant errors.</p>
+<p>Unified APIs won't address all your needs as you scale.</p>
+<p>Compare CRM connector platforms for customer-facing AI agents, including live CRM actions, synced context, event triggers, and support for custom objects.</p>
+<p id="sec-end-131200">Ship the integrations your customers need â with 1,400+ APIs and infrastructure built for scale.</p>
+<p style="margin-top: 25px;">
+<a href="https://nango.dev/blog/lessons-from-operating-api-auth-for-900-apis/" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="building-email-integrations-apis-webhooks-automation-and-delivera-138404.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #138404. Building Email Integrations: APIs, Webhooks, Automation, and Deliverability
+        </a>
+        
+        <a href="what-we-learned-by-reproducing-2200-papers-from-icml-138292.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #138292. What We Learned by Reproducing 2,200 papers from ICML
+        </a>
+        
+        <a href="when-your-bodys-operating-system-glitches-137764.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #137764. When Your Body’s Operating System Glitches
+        </a>
+        
+        <a href="industry-news-6-things-i-learned-while-hosting-the-design-drop-po-137427.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #137427. Industry News: 6 Things I Learned While Hosting ‘The Design Drop’ Podcast
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

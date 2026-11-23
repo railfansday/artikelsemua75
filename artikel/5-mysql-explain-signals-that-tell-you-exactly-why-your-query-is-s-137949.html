@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5 MySQL EXPLAIN Signals That Tell You Exactly Why Your Query Is Slow</title>
+    <meta name="description" content="It has been revealed that most slow MySQL queries announce themselves if you know where to look. You do not need a monitoring dashboard or a database consu">
+    <meta name="keywords" content="index, mysql, query, rows, slow, explain, where, column">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua75/artikel/5-mysql-explain-signals-that-tell-you-exactly-why-your-query-is-s-137949.html">
+    
+    <meta property="og:title" content="5 MySQL EXPLAIN Signals That Tell You Exactly Why Your Query Is Slow">
+    <meta property="og:description" content="It has been revealed that most slow MySQL queries announce themselves if you know where to look. You do not need a monitoring dashboard or a database consu">
+    <meta property="og:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Flek9cyuiiy4bu0p430ey.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua75/artikel/5-mysql-explain-signals-that-tell-you-exactly-why-your-query-is-s-137949.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="5 MySQL EXPLAIN Signals That Tell You Exactly Why Your Query Is Slow">
+    <meta name="twitter:description" content="It has been revealed that most slow MySQL queries announce themselves if you know where to look. You do not need a monitoring dashboard or a database consu">
+    <meta name="twitter:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Flek9cyuiiy4bu0p430ey.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "5 MySQL EXPLAIN Signals That Tell You Exactly Why Your Query Is Slow", "image": ["https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Flek9cyuiiy4bu0p430ey.png"], "datePublished": "2026-11-23T05:09:42", "dateModified": "2026-11-23T05:19:29.014965", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua75/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua75/artikel/5-mysql-explain-signals-that-tell-you-exactly-why-your-query-is-s-137949.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding 5 MySQL EXPLAIN Signals That Tell You Exactly Why Your Query Is Slow?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Dev."}}, {"@type": "Question", "name": "Which category does '5 MySQL EXPLAIN Signals That Tell You Exactly Why Your Query' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>5 MySQL EXPLAIN Signals That Tell You Exactly Why Your Query Is Slow</h1>
+        <div class="meta-line">🌐 Source: <strong>Dev</strong> &bull; 📅 23 Nov 2026 &bull; ⏱️ 3 min read (521 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>It has been revealed that most slow MySQL queries announce themselves if you know where to look.</li><li style='margin-bottom:6px;'>MySQL read every row of the table no matter what your WHERE said.</li><li style='margin-bottom:6px;'>According to recent reports, different from signal 1 in one notable way: sometimes possible_keys lists an index and key is still NULL.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-137949"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-137949"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-137949"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="5 MySQL EXPLAIN Signals That Tell You Exactly Why Your Query Is Slow" loading="lazy" src="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Flek9cyuiiy4bu0p430ey.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-137949">It has been revealed that most slow MySQL queries announce themselves if you know where to look. You do not need a monitoring dashboard or a database consultant — you need EXPLAIN, and five signals in its output that each point at a different fix.</p>
+<p>This is the loudest signal. MySQL read every row of the table no matter what your WHERE said. On a lookup table with 50 rows, nobody cares. On a table with 500,000 rows, this is your whole problem. The fix is almost always an index on the column in the WHERE clause. Run the query again after adding it and watch type move to ref.</p>
+<p>According to recent reports, different from signal 1 in one notable way: sometimes possible_keys lists an index and key is still NULL. That means the index exists and MySQL refused it. The usual reason is the query itself — a function wrapped around the indexed column, like DATE(created_at) = '2026-11-20', or a comparison against a value of the wrong type. Rewrite the condition so the index can serve it: a date range instead of DATE(), matching types on both sides. <span style="font-size:13px;">(Related: <a href="breaking-nvidia-cosmos-reason-2-brings-advanced-reasoning-to-phys-138622.html" style="color:#2563eb; font-weight:600;">Breaking: NVIDIA Cosmos Reason 2 Brings Advanced Reason...</a>)</span></p>
+<p>The index found the rows, but they came back in the wrong order, so MySQL sorted them itself — in memory if it fits, on disk if it does not. The cure is a composite index that covers the filter and the sort in one order: equality columns first, then the sort column. An index on (user_id, created_at) serves WHERE user_id = 1234 ORDER BY created_at DESC with no sort at all — MySQL reads the index backwards and stops after your LIMIT.</p>
+<p id="sec-mid-137949">Industry observers note that rows is an estimate, not a count, but the ratio tells the story. If MySQL expects to examine 498,000 rows to hand you back 20, the plan is wrong even if the query eventually finishes. Compare rows with the actual result size. A ratio in the thousands means a missing index or a condition the optimizer cannot use. When the estimate itself looks suspicious, EXPLAIN ANALYZE (MySQL 8.0.18+) runs the query and reports the real numbers. <span style="font-size:13px;">(Related: <a href="industry-news-determined-woman-completes-7-marathons-in-a-year-wh-138638.html" style="color:#2563eb; font-weight:600;">Industry News: “Determined” woman completes 7 marathons...</a>)</span></p>
+<p>Recent findings suggest that this one does not show up as a single bad column — it highlights up as a query that is fast on page 1 and slow on page 1,000. LIMIT 20 OFFSET 20000 still reads and discards 20,000 rows. The fix is keyset pagination: remember the last id you showed and ask for the next rows after it with WHERE id &gt; 20000 ORDER BY id LIMIT 20. The index does the work, and page 1,000 costs the same as page 1.</p>
+<p>None of these signals needs a rewrite of your application. The habit is small: when a query is slow, run EXPLAIN before you change anything, read these five signals, and make the smallest change that moves one of them. I wrote up the full walkthrough — finding the slow queries in the slow query log, reading every column, and verifying each fix — here:.</p>
+<p>https://rajadevsolutions.online/blog/how-to-fix-slow-mysql-queries-with-explain.</p>
+<p id="sec-end-137949">Industry observers note that fix the proposal first. The query is usually innocent.</p>
+<p style="margin-top: 25px;">
+<a href="https://dev.to/rajadevsolutions/5-mysql-explain-signals-that-tell-you-exactly-why-your-query-is-slow-180a" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="diagnosing-slow-sql-server-queries-a-practical-guide-to-query-sto-137925.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #137925. Diagnosing Slow SQL Server Queries: A Practical Guide to Query Store and Execution Plans
+        </a>
+        
+        <a href="tech-report-what-weve-been-playing-its-slow-its-awkward-its-weird-138491.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #138491. Tech Report: What we've been playing - "It's slow, it's awkward, it's weird, and it's hard"
+        </a>
+        
+        <a href="breaking-trump-wants-to-ban-us-companies-from-building-overseas-d-138393.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #138393. Breaking: Trump wants to ban US companies from building overseas data centers as bans slow development
+        </a>
+        
+        <a href="this-fresh-type-of-depression-may-explain-why-antidepressants-hel-137967.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #137967. This ‘Fresh’ Type of Depression May Explain Why Antidepressants Help Some People Less (M)
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

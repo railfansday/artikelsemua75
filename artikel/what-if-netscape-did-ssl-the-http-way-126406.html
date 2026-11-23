@@ -151,9 +151,9 @@
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-126406">When you visit a secure website today, your browser connects to port 443 and immediately starts speaking TLS. Only once the encryption is up and running does it get around to speaking HTTP. That’s two protocols stacked on top of each other, and the one at the bottom doesn’t know or care about anything the one on top has learned over the decades.</p>
 <p>According to recent reports, this is why so many good ideas from HTTP had to be reinvented, years later, inside TLS. The most notorious is SNI, which is a Host header with extra steps.</p>
-<p>In a recent development, it didn’t have to be this way. Let’s take a trip into a parallel universe where Netscape didn’t take the easy way out.</p>
-<p>Sources indicate that when Netscape released SSL in 1995, it came with a upcoming URL scheme (https://) and a new port number (443). Plenty of people grumbled. The web already had a protocol and a port, so why invent new ones? Why not secure the conversation you’re already having? <span style="font-size:13px;">(Related: <a href="simple-considerations-for-simple-people-building-fancy-neural-net-127306.html" style="color:#2563eb; font-weight:600;">Simple considerations for simple people building fancy ...</a>)</span></p>
-<p>Industry observers note that to be fair to Netscape, in 1995 there wasn’t really a “proper” way to do that. HTTP/1.0 had no mechanism for handing a connection over to another protocol. The Upgrade header didn’t arrive until HTTP/1.1 in 1997, and the Host header, which made it possible to run many websites on one IP address, came with it. Netscape couldn’t have used either of them because neither existed yet. <span style="font-size:13px;">(Related: <a href="industry-news-hyperparameter-search-with-transformers-and-ray-tun-127314.html" style="color:#2563eb; font-weight:600;">Industry News: Hyperparameter Search with Transformers ...</a>)</span></p>
+<p>In a recent development, it didn’t have to be this way. Let’s take a trip into a parallel universe where Netscape didn’t take the easy way out. <span style="font-size:13px;">(Related: <a href="breaking-ai-for-game-development-creating-a-farming-game-in-5-day-138640.html" style="color:#2563eb; font-weight:600;">Breaking: AI for Game Development: Creating a Farming G...</a>)</span></p>
+<p>Sources indicate that when Netscape released SSL in 1995, it came with a upcoming URL scheme (https://) and a new port number (443). Plenty of people grumbled. The web already had a protocol and a port, so why invent new ones? Why not secure the conversation you’re already having?</p>
+<p>Industry observers note that to be fair to Netscape, in 1995 there wasn’t really a “proper” way to do that. HTTP/1.0 had no mechanism for handing a connection over to another protocol. The Upgrade header didn’t arrive until HTTP/1.1 in 1997, and the Host header, which made it possible to run many websites on one IP address, came with it. Netscape couldn’t have used either of them because neither existed yet. <span style="font-size:13px;">(Related: <a href="industry-news-determined-woman-completes-7-marathons-in-a-year-wh-138638.html" style="color:#2563eb; font-weight:600;">Industry News: “Determined” woman completes 7 marathons...</a>)</span></p>
 <p>But this is my parallel universe, so let’s say HTTP grew those headers a couple of years early and Netscape decided to wait for them.</p>
 <p>It has been revealed that in our universe, a TLS connection begins with a ClientHello and the server replies with its certificate. In the parallel universe, that first exchange is just plain HTTP in the clear.</p>
 <p>The browser wants to buy something from shop.example.com. It connects to port 80, the same as always, and asks for the server’s certificate.</p>
@@ -234,20 +234,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="introducing-the-private-hub-a-latest-way-to-build-with-machine-le-127211.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #127211. Introducing the Private Hub: A Latest Way to Build With Machine Learning
+        <a href="your-ssl-certificates-can-now-last-200-days-at-most-the-real-risk-138543.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #138543. Your SSL certificates can now last 200 days at most: The real risk isn’t renewal
         </a>
         
-        <a href="codeagents-structure-a-better-way-to-execute-actions-126696.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #126696. CodeAgents + Structure: A Better Way to Execute Actions
+        <a href="breaking-designing-the-hf-cli-as-an-agent-optimized-way-to-work-w-138483.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #138483. Breaking: Designing the hf CLI as an agent-optimized way to work with the Hub
         </a>
         
-        <a href="scientists-discovered-the-brain-doesnt-make-decisions-the-way-we--126583.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #126583. Scientists discovered the brain doesn't make decisions the way we thought
+        <a href="tech-report-proton-pass-is-up-to-60-off-for-black-fridayand-it-do-138400.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #138400. Tech Report: Proton Pass is up to 60% off for Black Friday—and it does way more than just store your passwords
         </a>
         
-        <a href="cve-2026-123007-unauthenticated-rce-via-integer-underflow-in-ngin-126329.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #126329. [CVE-2026-123007] Unauthenticated RCE via Integer Underflow in NGINX's HTTP/2 Flow Control
+        <a href="germ-network-infects-android-but-in-a-good-way-138239.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #138239. Germ Network infects Android, but in a good way
         </a>
         
     </div>

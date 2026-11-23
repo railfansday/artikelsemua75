@@ -141,8 +141,8 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p>When using the out-of-the-box Gemini Enterprise web application, identity and access management happen behind the scenes. Employees sign in through Google Identity or Workforce Identity Federation (such as Microsoft Entra ID or Okta), search results automatically respect per-user access controls (ACLs), and third-party login prompts for Federated Connectors or custom agents appear automatically in the chat UI.</p>
-<p>In practice, however, many enterprises build their own Customer UI to embed Gemini Enterprise into an internal portal, intranet, or line-of-business application. To do this, Customer BE calls the Gemini Enterprise StreamAssist API. <span style="font-size:13px;">(Related: <a href="few-shot-learning-in-practice-gpt-neo-and-the-accelerated-inferen-127296.html" style="color:#2563eb; font-weight:600;">Few-shot learning in practice: GPT-Neo and the 🤗 Accele...</a>)</span></p>
-<p>The moment an application builds a custom UI and calls the StreamAssist API directly, the three authentication flows that the built-in web app handled automatically become the responsibility of Customer UI and Customer BE:.</p>
+<p>In practice, however, many enterprises build their own Customer UI to embed Gemini Enterprise into an internal portal, intranet, or line-of-business application. To do this, Customer BE calls the Gemini Enterprise StreamAssist API. <span style="font-size:13px;">(Related: <a href="how-to-build-a-healthcare-robot-from-simulation-to-deployment-wit-138632.html" style="color:#2563eb; font-weight:600;">How to Build a Healthcare Robot from Simulation to Depl...</a>)</span></p>
+<p>The moment an application builds a custom UI and calls the StreamAssist API directly, the three authentication flows that the built-in web app handled automatically become the responsibility of Customer UI and Customer BE:. <span style="font-size:13px;">(Related: <a href="latest-update-one-year-since-the-deepseek-moment-138617.html" style="color:#2563eb; font-weight:600;">Latest Update: One Year Since the “DeepSeek Moment”...</a>)</span></p>
 <p>This guide walks through the architecture, component flows, and runnable code for all three layers (Figure 1):.</p>
 <p style="margin-top: 25px;">
 <a href="https://developers.googleblog.com/how-to-handle-user-connector-and-agent-auth-in-gemini-enterprise-with-a-custom-ui/" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
@@ -167,20 +167,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
+        <a href="industry-news-beyond-llms-why-scalable-enterprise-ai-adoption-dep-138499.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #138499. Industry News: Beyond LLMs: Why Scalable Enterprise AI Adoption Depends on Agent Logic
+        </a>
+        
+        <a href="google-gives-gemini-control-of-mac-apps-but-its-newly-introduced--132908.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #132908. Google Gives Gemini Control of Mac Apps, But Its Newly introduced AI Agent Comes With Risks
+        </a>
+        
         <a href="how-to-securely-connect-internal-cloud-run-mcp-servers-to-gemini--126419.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #126419. How to securely connect internal Cloud Run MCP servers to Gemini Enterprise
         </a>
         
-        <a href="google-gives-gemini-control-of-mac-apps-but-its-new-ai-agent-come-121523.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #121523. Google Gives Gemini Control of Mac Apps, But Its New AI Agent Comes With Risks
-        </a>
-        
-        <a href="industry-news-beyond-llms-why-scalable-enterprise-ai-adoption-dep-115545.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #115545. Industry News: Beyond LLMs: Why Scalable Enterprise AI Adoption Depends on Agent Logic
-        </a>
-        
-        <a href="tech-report-fine-tune-a-semantic-segmentation-model-with-a-custom-127259.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #127259. Tech Report: Fine-Tune a Semantic Segmentation Model with a Custom Dataset
+        <a href="tiny-agents-an-mcp-powered-agent-in-50-lines-of-code-138633.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #138633. Tiny Agents: an MCP-powered agent in 50 lines of code
         </a>
         
     </div>

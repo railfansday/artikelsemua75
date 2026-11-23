@@ -167,8 +167,8 @@ Google Announces Agent Compute Engine for Secure AI Agent Execution.</p>
 									
 									2
 									min read.</p>
-<p>Google recently announced Agent Compute Engine, a managed service that runs AI agents in isolated microVMs, with checkpointing capabilities to suspend and resume execution environments. The design keeps credentials, API keys, and OAuth refresh tokens outside the agent sandbox, using an external Agent Gateway to authenticate requests and inject the required secrets. <span style="font-size:13px;">(Related: <a href="how-to-train-a-new-language-model-from-scratch-using-transformers-127319.html" style="color:#2563eb; font-weight:600;">How to train a new language model from scratch using Tr...</a>)</span></p>
-<p>Google designed Agent Compute Engine to address three requirements at global scale: keeping sandboxes free of exploitable credentials, even when agents make mistakes; minimizing the cost and latency of resuming idle agents; and preserving persistent workspaces across sessions and operating system updates. The infrastructure team writes:. <span style="font-size:13px;">(Related: <a href="porting-fairseq-wmt19-translation-system-to-transformers-127313.html" style="color:#2563eb; font-weight:600;">Porting fairseq wmt19 translation system to transformer...</a>)</span></p>
+<p>Google recently announced Agent Compute Engine, a managed service that runs AI agents in isolated microVMs, with checkpointing capabilities to suspend and resume execution environments. The design keeps credentials, API keys, and OAuth refresh tokens outside the agent sandbox, using an external Agent Gateway to authenticate requests and inject the required secrets. <span style="font-size:13px;">(Related: <a href="welcome-gemma-googles-new-open-llm-138637.html" style="color:#2563eb; font-weight:600;">Welcome Gemma - Google’s new open LLM...</a>)</span></p>
+<p>Google designed Agent Compute Engine to address three requirements at global scale: keeping sandboxes free of exploitable credentials, even when agents make mistakes; minimizing the cost and latency of resuming idle agents; and preserving persistent workspaces across sessions and operating system updates. The infrastructure team writes:. <span style="font-size:13px;">(Related: <a href="university-launches-5m-smart-system-that-checks-who-is-actually-l-138634.html" style="color:#2563eb; font-weight:600;">University launches $5m smart system that checks who is...</a>)</span></p>
 <p>Agent Compute Engine achieves this by using copy-on-write memory sharing to run multiple agents on a single operating system template, and pausing idle microVMs via fast checkpoint and restore.</p>
 <p>In the deep dive "Inside Agent Compute Engine," Ramanathan Venkatapathy and Rohit Jnagal, distinguished engineers at Google, describe the service’s architecture, covering microVM isolation, credential management, agent identity, storage, and scheduling at scale. They explain the strict separation between the agent harness and sandbox:.</p>
 <p>The orchestration harness (the brain) runs completely outside the execution sandbox (the hands), helping ensure that untrusted guest environments only execute explicit commands dispatched by the harness and stream output back. This boundary establishes a deterministic audit trail correlating every harness-initiated tool call with expected compute activity inside the sandbox.</p>
@@ -205,20 +205,20 @@ Google Announces Agent Compute Engine for Secure AI Agent Execution.</p>
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="google-donates-agent-substrate-and-gvisor-to-the-cncf-to-secure-a-115329.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #115329. Google Donates Agent Substrate and gVisor to the CNCF to Secure AI Agents at Scale
+        <a href="industry-news-google-donates-agent-substrate-and-gvisor-to-the-cn-138106.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #138106. Industry News: Google Donates Agent Substrate and gVisor to the CNCF to Secure AI Agents at Scale
         </a>
         
-        <a href="google-gives-gemini-control-of-mac-apps-but-its-new-ai-agent-come-121523.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #121523. Google Gives Gemini Control of Mac Apps, But Its New AI Agent Comes With Risks
+        <a href="google-gives-gemini-control-of-mac-apps-but-its-newly-introduced--132908.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #132908. Google Gives Gemini Control of Mac Apps, But Its Newly introduced AI Agent Comes With Risks
         </a>
         
-        <a href="you-can-use-googles-spark-ai-agent-renamed-tasks-for-free-now-wit-119584.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #119584. You can use Google’s Spark AI agent, renamed Tasks, for free now – with limits
+        <a href="you-can-use-googles-spark-ai-agent-renamed-tasks-for-free-now-wit-131007.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #131007. You can use Google’s Spark AI agent, renamed Tasks, for free now – with limits
         </a>
         
-        <a href="my-journey-to-a-serverless-transformers-pipeline-on-google-cloud-127303.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #127303. My Journey to a serverless transformers pipeline on Google Cloud
+        <a href="welcome-gemma-googles-new-open-llm-138637.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #138637. Welcome Gemma - Google’s new open LLM
         </a>
         
     </div>

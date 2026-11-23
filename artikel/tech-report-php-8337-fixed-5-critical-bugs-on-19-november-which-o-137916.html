@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Report: PHP 8.3.37 Fixed 5 Critical Bugs on 19 November. Which Ones Reach a Laravel App?</title>
+    <meta name="description" content="Originally published at hafiz.dev. On 19 November PHP shipped 8.5.13, 8.4.28, 8.3.37 and 8.2.36, alongside the first stable 8.6.0. The 8.3.37 changelog lis">
+    <meta name="keywords" content="laravel, session, server, recent, upload, progress, native, advisory">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua75/artikel/tech-report-php-8337-fixed-5-critical-bugs-on-19-november-which-o-137916.html">
+    
+    <meta property="og:title" content="Tech Report: PHP 8.3.37 Fixed 5 Critical Bugs on 19 November. Which Ones Reach a Laravel App?">
+    <meta property="og:description" content="Originally published at hafiz.dev. On 19 November PHP shipped 8.5.13, 8.4.28, 8.3.37 and 8.2.36, alongside the first stable 8.6.0. The 8.3.37 changelog lis">
+    <meta property="og:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto/https%3A%2F%2Fhafiz.dev%2Fstorage%2Fblog-images%2Fphp-8-3-37-critical-fixes-laravel.webp">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua75/artikel/tech-report-php-8337-fixed-5-critical-bugs-on-19-november-which-o-137916.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Tech Report: PHP 8.3.37 Fixed 5 Critical Bugs on 19 November. Which Ones Reach a Laravel App?">
+    <meta name="twitter:description" content="Originally published at hafiz.dev. On 19 November PHP shipped 8.5.13, 8.4.28, 8.3.37 and 8.2.36, alongside the first stable 8.6.0. The 8.3.37 changelog lis">
+    <meta name="twitter:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto/https%3A%2F%2Fhafiz.dev%2Fstorage%2Fblog-images%2Fphp-8-3-37-critical-fixes-laravel.webp">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Tech Report: PHP 8.3.37 Fixed 5 Critical Bugs on 19 November. Which Ones Reach a Laravel App?", "image": ["https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto/https%3A%2F%2Fhafiz.dev%2Fstorage%2Fblog-images%2Fphp-8-3-37-critical-fixes-laravel.webp"], "datePublished": "2026-11-23T05:15:11", "dateModified": "2026-11-23T05:19:27.272278", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua75/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua75/artikel/tech-report-php-8337-fixed-5-critical-bugs-on-19-november-which-o-137916.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Tech Report: PHP 8.3.37 Fixed 5 Critical Bugs on 19 November. Which Ones Reach a?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Dev."}}, {"@type": "Question", "name": "Which category does 'Tech Report: PHP 8.3.37 Fixed 5 Critical Bugs on 19 November' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Tech Report: PHP 8.3.37 Fixed 5 Critical Bugs on 19 November. Which Ones Reach a Laravel App?</h1>
+        <div class="meta-line">🌐 Source: <strong>Dev</strong> &bull; 📅 23 Nov 2026 &bull; ⏱️ 8 min read (1647 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>On 19 November PHP shipped 8.5.13, 8.4.28, 8.3.37 and 8.2.36, alongside the first stable 8.6.0.</li><li style='margin-bottom:6px;'>It has been revealed that I patched it.</li><li style='margin-bottom:6px;'>In a recent development, the answer surprised me a little.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-137916"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-137916"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-137916"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Tech Report: PHP 8.3.37 Fixed 5 Critical Bugs on 19 November. Which Ones Reach a Laravel App?" loading="lazy" src="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto/https%3A%2F%2Fhafiz.dev%2Fstorage%2Fblog-images%2Fphp-8-3-37-critical-fixes-laravel.webp" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-137916">Originally published at hafiz.dev.</p>
+<p>On 19 November PHP shipped 8.5.13, 8.4.28, 8.3.37 and 8.2.36, alongside the first stable 8.6.0. The 8.3.37 changelog lists 13 security fixes. Five of them are rated critical, every one at 9.2 on CVSS v4. My production server, a single Ubuntu box with several sites behind nginx and PHP-FPM, was still on 8.3.36 the next morning. <span style="font-size:13px;">(Related: <a href="industry-news-diffusers-welcomes-stable-diffusion-3-138635.html" style="color:#2563eb; font-weight:600;">Industry News: Diffusers welcomes Stable Diffusion 3...</a>)</span></p>
+<p>It has been revealed that I patched it. But first I read every critical advisory and asked one question of each. What would an attacker need from a Laravel app for this to work?</p>
+<p>In a recent development, the answer surprised me a little. Most of them need something a stock Laravel app never does. And the ones that could still matter depend on what else shares the server, not on Laravel. One setting even changed during the upgrade, although nobody touched php.ini. <span style="font-size:13px;">(Related: <a href="breaking-ai-for-game-development-creating-a-farming-game-in-5-day-138640.html" style="color:#2563eb; font-weight:600;">Breaking: AI for Game Development: Creating a Farming G...</a>)</span></p>
+<p>The release announcement is short. It says this is a security release and encourages all 8.3 customers to upgrade. The detail lives in the changelog and the php-src security advisories. Three of the five critical fixes are in ext-session, PHP's own session extension. One is in ext-date and one is in PHP-FPM.</p>
+<p>In a recent development, so for each fix, the question becomes concrete. Does the bug need PHP's native session machinery, a specific php.ini, or a specific web server setup?</p>
+<p>In a recent development, the other eight fixes in the 8.3 branch cover SOAP, Phar signatures, the FPM status page, PHP-CGI and the HTTP stream wrappers. Four of them are rated high. Worth patching, but none of them is the reason to patch today.</p>
+<p>It has been revealed that the serializer mismatch is the one with the scariest headline, so I started there. PHP's session upload progress feature tracks a running upload by writing progress data into the visitor's session. The PHP manual says plainly when that happens. "The upload progress information is written to the session before any scripts are executed.".</p>
+<p>Recent findings suggest that that's only half the attack, though. The advisory needs a second step, something that reads the same stored session with a different serializer and then deserializes it with a gadget chain available. In a Laravel app nothing reads /var/lib/php/sessions. Laravel's file driver writes to storage/framework/sessions through its own handler.</p>
+<p>Recent findings suggest that so what reads native sessions on a typical Laravel server? Usually nothing. On my box the native session directory was empty:.</p>
+<p>But a server that also hosts a WordPress site, an old admin panel or a phpMyAdmin install is a different story. Those use native sessions. The partially overwritten session files bug needs the same thing, native file sessions with attacker influence over the data.</p>
+<p>Sources indicate that the interrupted shutdown use-after-free is the subtle one. It's an incomplete fix for one of October's advisories (CVE-2026-109619), and it claims outright that disabling upload progress does nothing for it. It needs a native session whose cleanup hits a fatal error. Then the next request on the same FPM worker touches freed memory, and that request doesn't need to belong to the same user or the same site. My server runs every site in one FPM pool called www. So if any of those sites used native sessions, a Laravel site sharing the worker would inherit the problem. The advisory says it could lead to code execution, although that hasn't been demonstrated yet. But "shared worker" is exactly the kind of detail I'd rather not argue about.</p>
+<p>Sources indicate that PHP reads php://input lazily. If a code path opens the stream and stops early (the advisory's example is a malformed multipart body that makes PHP's parser stop at a predictable position), the rest of the body stays unread on the connection.</p>
+<p>In a recent development, on a normal nginx setup that's harmless. nginx closes the FastCGI connection after each request, and the leftover bytes go with it. With persistent connections they don't. The leftover bytes get parsed as the next FastCGI request, and an attacker can forge its parameters, including PHP_ADMIN_VALUE settings like auto_prepend_file.</p>
+<p>View the interactive component on hafiz.dev.</p>
+<p>So the check is one grep. Is anything keeping FastCGI connections open?</p>
+<p>Industry observers note that no output on my server. fastcgi_keep_conn defaults to off, so every site there closes the connection after each request. The advisory also names Apache's mod_proxy_fcgi with enablereuse=on, HAProxy FastCGI backends and LSAPI. If you run any of those, this is the fix to apply first.</p>
+<p>Sources indicate that the Laravel side helps a little too. Symfony's Request::getContent() reads php://input to the end with file_get_contents(), unless you explicitly ask for a stream resource. But the advisory warns that reading the whole body may not be a reliable mitigation on its own. So the front end setting is the one I'd check.</p>
+<p id="sec-mid-137916">According to recent reports, the server uses Ondřej Surý's PPA, so the fix arrived as 16 php8.3 packages. I wanted three things. A way back, no surprise config changes, and proof afterwards that every PHP process was on the new binary.</p>
+<p>The dry run showed 16 upgrades, nothing new installed and nothing removed.</p>
+<p>The tail of the output had something I didn't ask for:.</p>
+<p>Industry observers note that ubuntu's needrestart saw that supervisor's children were running the old PHP binary and restarted supervisor on its own. That restarts every queue worker on the box. It's the right outcome (a worker on the old binary is still unpatched), but it happens mid-upgrade, whether or not a job is running. Laravel workers finish the current job when they get SIGTERM, as long as supervisor's stopwaitsecs is longer than your slowest job. I wrote about that in what happens to a running job when the worker stops. Check that setting before you patch, not after.</p>
+<p>According to recent reports, A process still on a replaced binary highlights up there with (deleted) after the path. Then I extracted the backup and ran diff -rq against /etc/php/8.3. Identical. Every site returned 200 before and after.</p>
+<p>One more detail from the verification. In October, after the previous session advisory, I'd added a one-line override for FPM:.</p>
+<p>In a recent development, the CLI has no such file. Its php.ini has the line commented out (;session.upload_progress.enabled = On), so the CLI uses PHP's compiled default. Before the upgrade, php -i on the CLI reported On. The upgrade kept php.ini byte for byte, as the diff confirmed.</p>
+<p>View the interactive component on hafiz.dev.</p>
+<p>In a recent development, the compiled default flipped. The serializer mismatch advisory says the fix disables session upload progress by default, and the binary agrees. The configuration page of the PHP manual still says it defaults to 1 at the time of writing, so don't trust the manual for this one. Trust php -i. I'm keeping the explicit Off for FPM anyway. A default can flip back on a rebuild, a different PPA or a different branch, and an explicit line in conf.d survives all of them.</p>
+<p>Nothing on my server uses upload progress, and in a Laravel app you probably don't either. Upload progress bars in the browser come from XHR's upload progress events, which need nothing from PHP. (I covered the Laravel side of massive uploads in handling large file uploads without crashing your server.).</p>
+<p>No. Laravel's session layer is its own Store class with its own drivers, and the framework never calls session_start(). That's why most of the ext-session fixes in this release don't reach Laravel code directly. The exception is upload progress, which PHP handles before any script runs.</p>
+<p>Yes, unless something on the server uses it, and Laravel apps rarely do. The fixed releases already default it to off, but an explicit session.upload_progress.enabled = Off in your FPM conf.d keeps it off whatever the default does later.</p>
+<p>In a recent development, yes. A long-running queue:work process keeps the old PHP binary in memory until it restarts. On Ubuntu, needrestart may restart supervisor for you during the upgrade, as it did for me. Elsewhere, restart them yourself, and make sure stopwaitsecs lets running jobs finish.</p>
+<p>Securing Laravel's notice before the release remarked Laravel would contact Forge, Cloud and Vapor owners with the steps. On Forge you still own the server, so check the PHP version yourself with php -v and php-fpm8.3 -v (or your version's binary) instead of assuming.</p>
+<p>None of this is a reason to wait. "My Laravel app doesn't reach it" is true for a clean server, and very few servers stay clean. A second site in the same FPM pool, a forgotten phpMyAdmin, someone enabling fastcgi_keep_conn for a benchmark next year. Each of those quietly turns a "no" in that table into a "yes".</p>
+<p>Recent findings suggest that what the analysis does tell you is where to look while you patch. Three checks cover most of it:.</p>
+<p>Sources indicate that the first finds persistent FastCGI connections. The second indicates the upload progress setting, where native sessions live, and whether startup warnings go to a file (the timezone bug needs that). The third tells you whether anything on the box uses native sessions at all.</p>
+<p>It has been revealed that my own answers were no keep-alive, upload progress off, and an empty session directory. error_log is unset, so startup warnings go to FPM's own log, which the timezone advisory says doesn't meet its condition. So the box wasn't exposed to the demonstrated attacks, and it's patched now regardless. The rest of that server's setup is in how I hardened my VPS with SSH keys, Cloudflare and Tailscale. For the dependency side of fast security fixes, see Composer 2.11's cooldown, which holds back security releases too.</p>
+<p id="sec-end-137916">What I'm changing next is the one-pool-for-everything setup. With a separate FPM pool per site, a native session in one app can't leave freed memory for a request from another, and the interrupted shutdown bug would never have been a question.</p>
+<p style="margin-top: 25px;">
+<a href="https://dev.to/hafiz619/php-8337-fixed-5-critical-bugs-on-19-november-which-ones-reach-a-laravel-app-31d7" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="tech-report-four-php-security-releases-including-fixes-for-critic-138136.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #138136. Tech Report: Four PHP security releases including fixes for critical vulnerabilities
+        </a>
+        
+        <a href="tech-report-this-week-on-toms-hardware-premium-21-november-2026-138399.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #138399. Tech Report: This week on Tom's Hardware Premium: 21 November 2026
+        </a>
+        
+        <a href="ai-found-more-critical-bugs-in-another-widely-used-technology-run-138354.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #138354. AI found more critical bugs in another widely used technology running 225M websites
+        </a>
+        
+        <a href="another-critical-php-security-release-has-dropped-138343.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #138343. Another critical PHP security release has dropped
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

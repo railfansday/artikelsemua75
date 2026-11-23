@@ -150,8 +150,8 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-126407">We boosted load_dataset('dataset', streaming=True), streaming datasets without downloading them with one line of code!</p>
-<p>Sources indicate that start training on multi-TB datasets immediately, without complex setups, downloading, no "disk out of space", or 429 “stop requesting!” errors.It's super fast! Outrunning our local SSDs when training on 64xH100 with 256 workers downloading data. We've improved streaming to have 100x fewer requests, → 10× faster data resolution → 2x sample/sec, → 0 worker crashes at 256 concurrent workers. <span style="font-size:13px;">(Related: <a href="block-sparse-matrices-for-smaller-and-faster-language-models-127316.html" style="color:#2563eb; font-weight:600;">Block Sparse Matrices for Smaller and Faster Language M...</a>)</span></p>
-<p>Loading data, especially at the terabyte scale, is a major pain in any machine learning workflow. We suffered this while training SmolLM3, at one point we had to wait 3 hours before each run to download enough data. <span style="font-size:13px;">(Related: <a href="tech-report-distributed-training-train-bartt5-for-summarization-u-127300.html" style="color:#2563eb; font-weight:600;">Tech Report: Distributed Training: Train BART/T5 for Su...</a>)</span></p>
+<p>Sources indicate that start training on multi-TB datasets immediately, without complex setups, downloading, no "disk out of space", or 429 “stop requesting!” errors.It's super fast! Outrunning our local SSDs when training on 64xH100 with 256 workers downloading data. We've improved streaming to have 100x fewer requests, → 10× faster data resolution → 2x sample/sec, → 0 worker crashes at 256 concurrent workers. <span style="font-size:13px;">(Related: <a href="gta-6-players-report-game-breaking-crashes-on-ps5-and-xbox-138619.html" style="color:#2563eb; font-weight:600;">GTA 6 players report game-breaking crashes on PS5 and X...</a>)</span></p>
+<p>Loading data, especially at the terabyte scale, is a major pain in any machine learning workflow. We suffered this while training SmolLM3, at one point we had to wait 3 hours before each run to download enough data. <span style="font-size:13px;">(Related: <a href="director-of-machine-learning-insights-138645.html" style="color:#2563eb; font-weight:600;">Director of Machine Learning Insights...</a>)</span></p>
 <p>In a recent development, streaming has always been possible in the datasets library, but large scale training with massive datasets remained a challenge. That changes today 🔥. We spent a few months improving the backend, focusing on streaming datasets to make it faster and more efficient.</p>
 <p>First things first: our changes are backwards compatible. You can still stream any dataset from the Hub with the same simple streaming=True flag. It's as easy as ever. 🚀.</p>
 <p>Thousands of AI developers around the world use datasets daily; they should just get improved performance with zero extra work.</p>
@@ -204,20 +204,20 @@ To improve throughput during streaming itself, we've introduced two new features
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="hosting-your-models-and-datasets-on-hugging-face-spaces-using-str-127287.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #127287. Hosting your Models and Datasets on Hugging Face Spaces using Streamlit
+        <a href="olmoearth-v11-a-more-efficient-family-of-earth-observation-models-138516.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #138516. OlmoEarth v1.1: A more efficient family of Earth observation models
         </a>
         
-        <a href="breaking-introducing-the-data-measurements-tool-an-interactive-to-127279.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #127279. Breaking: Introducing the Data Measurements Tool: an Interactive Tool for Looking at Datasets
+        <a href="black-friday-streaming-deals-start-going-live-paramount-for-299-a-138426.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #138426. Black Friday streaming deals start going live: Paramount+ for $2.99, Apple TV+ for $6.99, more
         </a>
         
-        <a href="image-search-with-datasets-127261.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #127261. Image search with 🤗 datasets
+        <a href="neomme-an-efficient-multimodal-native-and-multilingual-encoder-138218.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #138218. NeoMME: an efficient Multimodal-native and Multilingual Encoder
         </a>
         
-        <a href="efficient-table-pre-training-without-real-data-an-introduction-to-127235.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #127235. Efficient Table Pre-training without Real Data: An Introduction to TAPEX
+        <a href="distributed-llm-training-across-metros-streaming-diloco-in-maxtex-138188.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #138188. Distributed LLM Training Across Metros: Streaming DiLoCo in MaxText
         </a>
         
     </div>

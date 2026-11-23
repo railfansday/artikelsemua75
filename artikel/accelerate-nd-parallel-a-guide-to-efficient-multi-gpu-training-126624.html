@@ -150,8 +150,8 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-126624">Recent findings suggest that training large models across multiple GPUs can be challenging due to the complexities of different parallelism strategies. In Accelerate, together with Axolotl, we have integrated a quick and easy way to use any combination of parallelism strategies in your training script!</p>
-<p>Here is how to add it to your training script:. <span style="font-size:13px;">(Related: <a href="tech-report-distributed-training-train-bartt5-for-summarization-u-127300.html" style="color:#2563eb; font-weight:600;">Tech Report: Distributed Training: Train BART/T5 for Su...</a>)</span></p>
-<p>We've also included a more comprehensive end-to-end training script in the Accelerate repo which demonstrates how to setup your dataloader, optimizer, and training loop, and how to save your model after training. <span style="font-size:13px;">(Related: <a href="how-to-train-a-new-language-model-from-scratch-using-transformers-127319.html" style="color:#2563eb; font-weight:600;">How to train a new language model from scratch using Tr...</a>)</span></p>
+<p>Here is how to add it to your training script:. <span style="font-size:13px;">(Related: <a href="breaking-unlocking-agentic-rl-training-for-gpt-oss-a-practical-re-138614.html" style="color:#2563eb; font-weight:600;">Breaking: Unlocking Agentic RL Training for GPT-OSS: A ...</a>)</span></p>
+<p>We've also included a more comprehensive end-to-end training script in the Accelerate repo which demonstrates how to setup your dataloader, optimizer, and training loop, and how to save your model after training. <span style="font-size:13px;">(Related: <a href="training-design-for-text-to-image-models-lessons-from-ablations-138608.html" style="color:#2563eb; font-weight:600;">Training Design for Text-to-Image Models: Lessons from ...</a>)</span></p>
 <p>According to recent reports, to further streamline fine-tuning models at scale and compose parallelism strategies with a variety of fine-tuning techniques, we've also integrated this technique into Axolotl. To help you get started right away we've tested some example configs which you can modify to suit your needs - try one out with:.</p>
 <p>You can also check out the Axolotl ND-Parallelism docs for more details - adding ND parallel techniques to your existing configs is as simple as adding one or more of the following fields to your Axolotl config file:.</p>
 <p>Recent findings suggest that we've made it easy to configure the degrees of different parallelism strategies and how they are combined through the ParallelismConfig class in Accelerate, or through config fields in Axolotl, but how do we know which configuration will work best for our use case? As we scale to training models with tens or even hundreds of billions of parameters, the primary challenge comes from understanding the different parallelism strategies and how they interact to minimise communication overhead across devices. In this post, we'll walk through how the different parallelism strategies work, and when and how you might want to compose them.</p>
@@ -246,16 +246,16 @@ Attention(Q,K,V)1​Attention(Q,K,V)2​Attention(Q,K,V)n​​=softmax(Q1​KT)
             📰 #127247. Accelerate Large Model Training using PyTorch Fully Sharded Data Parallel
         </a>
         
+        <a href="latest-update-training-and-finetuning-multi-vector-embedding-mode-138245.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #138245. Latest Update: Training and Finetuning Multi-Vector Embedding Models with Sentence Transformers
+        </a>
+        
+        <a href="tech-report-token-pooling-aware-training-for-multi-vector-embeddi-137995.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #137995. Tech Report: Token Pooling-Aware Training for Multi-Vector Embedding Models
+        </a>
+        
         <a href="habana-labs-and-hugging-face-partner-to-accelerate-transformer-mo-127254.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #127254. Habana Labs and Hugging Face Partner to Accelerate Transformer Model Training
-        </a>
-        
-        <a href="efficient-table-pre-training-without-real-data-an-introduction-to-127235.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #127235. Efficient Table Pre-training without Real Data: An Introduction to TAPEX
-        </a>
-        
-        <a href="accelerate-large-model-training-using-deepspeed-127225.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #127225. Accelerate Large Model Training using DeepSpeed
         </a>
         
     </div>

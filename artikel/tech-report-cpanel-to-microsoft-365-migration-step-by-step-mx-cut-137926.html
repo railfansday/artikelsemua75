@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Report: cPanel to Microsoft 365 Migration: Step-by-Step, MX Cutover Included</title>
+    <meta name="description" content="According to recent reports, to migrate a cPanel domain to Microsoft 365, you create licensed mailboxes, copy each cPanel mailbox with an IMAP migration ba">
+    <meta name="keywords" content="microsoft, cpanel, domain, mail, connector, migration, rule, recipient">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua75/artikel/tech-report-cpanel-to-microsoft-365-migration-step-by-step-mx-cut-137926.html">
+    
+    <meta property="og:title" content="Tech Report: cPanel to Microsoft 365 Migration: Step-by-Step, MX Cutover Included">
+    <meta property="og:description" content="According to recent reports, to migrate a cPanel domain to Microsoft 365, you create licensed mailboxes, copy each cPanel mailbox with an IMAP migration ba">
+    <meta property="og:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fwww.epifive.com%2Fblog%2Fcpanel-to-microsoft-365-migration-step-by-step%2Fopengraph-image">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua75/artikel/tech-report-cpanel-to-microsoft-365-migration-step-by-step-mx-cut-137926.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Tech Report: cPanel to Microsoft 365 Migration: Step-by-Step, MX Cutover Included">
+    <meta name="twitter:description" content="According to recent reports, to migrate a cPanel domain to Microsoft 365, you create licensed mailboxes, copy each cPanel mailbox with an IMAP migration ba">
+    <meta name="twitter:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fwww.epifive.com%2Fblog%2Fcpanel-to-microsoft-365-migration-step-by-step%2Fopengraph-image">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Tech Report: cPanel to Microsoft 365 Migration: Step-by-Step, MX Cutover Included", "image": ["https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fwww.epifive.com%2Fblog%2Fcpanel-to-microsoft-365-migration-step-by-step%2Fopengraph-image"], "datePublished": "2026-11-23T05:14:39", "dateModified": "2026-11-23T05:19:27.873738", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua75/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua75/artikel/tech-report-cpanel-to-microsoft-365-migration-step-by-step-mx-cut-137926.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Tech Report: cPanel to Microsoft 365 Migration: Step-by-Step, MX Cutover Include?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in AI & Tech originally reported by Dev."}}, {"@type": "Question", "name": "Which category does 'Tech Report: cPanel to Microsoft 365 Migration: Step-by-Step' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the AI & Tech section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">AI & Tech</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Tech Report: cPanel to Microsoft 365 Migration: Step-by-Step, MX Cutover Included</h1>
+        <div class="meta-line">🌐 Source: <strong>Dev</strong> &bull; 📅 23 Nov 2026 &bull; ⏱️ 10 min read (1923 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>According to recent reports, to migrate a cPanel domain to Microsoft 365, you create licensed mailboxes, copy each cPanel mailbox with an IMAP migration batch, and then point the domain's MX record at Microsoft 365.</li><li style='margin-bottom:6px;'>It has been revealed that updated 22 Nov 2026: the split-delivery steps were corrected after a hands-on test.</li><li style='margin-bottom:6px;'>Industry observers note that this guide is for administrators of a small or mid-sized organization whose email lives on cPanel hosting and who are moving to Exchange Online.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-137926"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-137926"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-137926"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Tech Report: cPanel to Microsoft 365 Migration: Step-by-Step, MX Cutover Included" loading="lazy" src="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fwww.epifive.com%2Fblog%2Fcpanel-to-microsoft-365-migration-step-by-step%2Fopengraph-image" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-137926">According to recent reports, to migrate a cPanel domain to Microsoft 365, you create licensed mailboxes, copy each cPanel mailbox with an IMAP migration batch, and then point the domain's MX record at Microsoft 365. If everyone cannot move on the same day, you set up split delivery first so that mail for the domain reaches whichever system holds the mailbox. Only mail moves; contacts, calendars and tasks do not, and the MX record stays untouched until the last step is tested.</p>
+<p>It has been revealed that updated 22 Nov 2026: the split-delivery steps were corrected after a hands-on test. The first version used a mail flow rule ("recipient is Outside the organization" and recipient domain is the shared domain) with a rule-scoped Partner connector; on a live tenant that rule never matched, and mail to cPanel-only addresses bounced with 554 5.4.14 Hop count exceeded - possible mail loop. The guide now uses an On-premises connector used only when email is sent to the domain, which delivered to the cPanel server in the same test. If you built the earlier version, see "Convert a rule-based setup" below.</p>
+<p>Industry observers note that this guide is for administrators of a small or mid-sized organization whose email lives on cPanel hosting and who are moving to Exchange Online. It covers one domain, either moved in a single weekend or in phases. By the end you will have:. <span style="font-size:13px;">(Related: <a href="industry-news-determined-woman-completes-7-marathons-in-a-year-wh-138638.html" style="color:#2563eb; font-weight:600;">Industry News: “Determined” woman completes 7 marathons...</a>)</span></p>
+<p>It has been revealed that the generic mechanics of an IMAP batch (CSV columns, endpoint options, throttling) are in the IMAP to Exchange Online migration guide; this article does not repeat them line by line. It adds the cPanel-specific plan, the phased route, the cutover order and the cleanup. The email migration cutover checklist is a good companion for the DNS day.</p>
+<p>Placeholders used throughout: example.com is your domain, admin@example.com is the Microsoft 365 admin, yourtenant.onmicrosoft.com is the tenant's default domain, mail.example.com is the cPanel mail host, and 203.0.113.10 is the IP address the cPanel server sends mail from (on shared hosting this can differ from the address of mail.example.com). <span style="font-size:13px;">(Related: <a href="school-sends-out-minibus-to-catch-absent-pupils-playing-gta-6-138630.html" style="color:#2563eb; font-weight:600;">School sends out minibus to catch absent pupils playing...</a>)</span></p>
+<p>Recent findings suggest that if you can do one cutover, do it: it has fewer moving parts. The phased route in the section "Phased moves with split delivery" is the same migration plus a routing layer.</p>
+<p>Before touching Microsoft 365, write down what exists on the cPanel side.</p>
+<p>In a recent development, leave the MX record pointing at cPanel. Do not add the Microsoft 365 MX, SPF or autodiscover records yet.</p>
+<p>In a recent development, in cPanel, open the mail client settings for any mailbox (under Email &gt; Email Accounts). Use the incoming server name shown for the secure SSL/TLS settings and IMAP port 993. The migration endpoint in the next step needs exactly that name, for example mail.example.com.</p>
+<p>The CSV needs EmailAddress, UserName and Password. Attributes cannot contain spaces. You have three ways to get working credentials:.</p>
+<p>The CSV is a list of working passwords. Store it somewhere restricted and delete it, and the temporary cPanel passwords, when the migration is done. If the file has non-ASCII characters, save it as UTF-8.</p>
+<p>In a recent development, connect to Exchange Online PowerShell, test the source, then create the endpoint and batch. Use a small test batch of two or three mailboxes first.</p>
+<p>Recent findings suggest that the same steps exist in the Exchange admin center under Migration: Endpoints &gt; Add &gt; IMAP, then Add migration batch &gt; Migrate to Exchange Online &gt; IMAP migration, selecting your endpoint and importing the CSV on Add user mailboxes. Check the real folder names in a mail client before you exclude any, because they differ between hosts.</p>
+<p>Sources indicate that microsoft's migration user status documentation describes these states: Queued (batch running, user not started, typically because all endpoint connections are busy), Synced (initial sync done; for IMAP it can also mean an incremental sync succeeded), Failed (provisioning or the initial sync failed), and Completed. In the Exchange admin center, select the batch under Migration and use View details in the details pane for the per-user report, where Stop migration and Resume migration appear depending on the user's status.</p>
+<p>According to recent reports, the per-user report is a plain list of events. Microsoft does not document each line, so treat this as practical interpretation, not a specification:.</p>
+<p>Worry about a Failed status with an Error text (usually a wrong or changed password, or a blocked connection), repeated connection errors in the report (network or the host's connection limits), and a non-zero SkippedItemCount (items over 35 MB or beyond the item limit). Add -IncludeSkippedItems to see which items were skipped. The stuck migration batch article covers slow batches.</p>
+<p>In a recent development, split delivery lets one domain live on two systems. Mail enters through Microsoft 365 (the MX record points there), and a recipient that exists in Exchange Online is delivered there; any other recipient in that domain is relayed to cPanel. Microsoft's mail flow guidance recommends pointing MX at Microsoft 365 for the most accurate spam filtering when mailboxes are in two places.</p>
+<p id="sec-mid-137926">The three steps, in the order to do them:.</p>
+<p>Do all three and test before you change MX. The Microsoft 365 split delivery guide covers other second hosts (Google Workspace, Zoho), the reverse direction and a longer troubleshooting table.</p>
+<p>Recent findings suggest that microsoft defines Authoritative as delivering to listed recipients and rejecting unknown ones. Internal relay delivers to known recipients in Microsoft 365 and relays unknown ones to your own server, and requires a connector to that server. In the Exchange admin center go to Mail flow &gt; Accepted domains, select example.com, and under This accepted domain is choose Internal relay, then Save. In PowerShell:.</p>
+<p>Industry observers note that in Mail flow &gt; Connectors, select + Add a connector and set Connection from to Office 365 and Connection to to Your organization's email server. That makes an On-premises connector, which Microsoft describes as one that "services domains that are used by your on-premises organization"; Partner organization is for domains external to your organization, which example.com is not. Then:.</p>
+<p>Recent findings suggest that -RecipientDomains example.com makes the connector apply only to mail for your domain, -UseMXRecord $false sends it to the smart host instead of following MX (which would point back to Microsoft 365 after the cutover), and -IsTransportRuleScoped $false means no rule is involved. -TlsSettings EncryptionOnly encrypts the channel without certificate authentication; CertificateValidation and DomainValidation (with -TlsDomain) are stricter and are better if the cPanel server has a valid certificate for its name.</p>
+<p>Why this works: a recipient with a mailbox, or any other recipient object, in Microsoft 365 is delivered inside the tenant and never reaches the connector. Only a recipient that Microsoft 365 cannot resolve goes out, and because the address is in example.com, it matches the connector's recipient domain. Microsoft's connector page notes the service first picks "a connector that exactly matches the recipient domain.".</p>
+<p>If you already built the rule version (a rule-scoped connector plus a rule that redirects to it), delete the rule first, then change the connector:.</p>
+<p>Two things came up in the hands-on test. Changing the connector's scope while a rule still referenced it, even a disabled rule, failed with Error executing request. One or more transport rules are still referencing the specified connector.; deleting the rule fixed it. And the Exchange admin center did not offer a way to change an existing connector from Partner organization to Your organization's email server, so use Set-OutboundConnector -ConnectorType OnPremises or create a new connector.</p>
+<p>Sources indicate that A rule with The recipient is located &gt; Outside the organization plus recipient domain is example.com looks like the obvious way to catch cPanel people, but Microsoft's definitions rule it out. The mail flow rule conditions page notes a recipient is inside the organization if "The recipient's email address is in an accepted domain that's configured as an authoritative domain or in an internal relay domain, and the message was sent or received over an authenticated connection", and outside only if the address "isn't in an accepted domain" or is in an external relay domain. An Internal relay domain is an accepted domain, so the rule never matches. In the hands-on test the mail then followed the MX record, which pointed back at Microsoft 365, and bounced with 554 5.4.14 Hop count exceeded - possible mail loop; every hop in the bounce was an outlook.com server and nothing reached cPanel, even after 30 minutes. The domain-scoped connector avoids the problem because it matches on the recipient domain.</p>
+<p>Send from a Microsoft 365 user to a cPanel-only user: it must arrive in cPanel webmail, and the message trace (see Message trace in Exchange Online) must show it leaving through the To cPanel connector. Check the trace, not just arrival: while MX still points at cPanel, mail can arrive by ordinary MX routing even when no connector matched. Then send from cPanel to a moved user and confirm it arrives in Microsoft 365 through the forwarder. The Exchange Online connectors guide explains the connector objects used here.</p>
+<p>Do this once the batch has synced and, if phased, the test above passed.</p>
+<p>On shared hosting, the IP address the server sends mail from can differ from the address mail.example.com resolves to, so do not copy the IP from DNS. In cPanel open Email &gt; Email Deliverability, click Manage for the domain, and read the IP in the Suggested "SPF" (TXT) Record; cPanel states it automatically includes the server's main IPv4 or IPv6 addresses there. If that address is 203.0.113.10, the record is:.</p>
+<p>ip4: authorizes the cPanel server, the include authorizes Microsoft 365, and ~all soft-fails everything else. Microsoft allows only one SPF record per domain and notes multiple records cause permerror, so edit the existing record instead of adding a second one (cPanel may already have published one). Receivers also stop at 10 DNS lookups: counted the way Microsoft documents it, ip4: and all cost nothing, each include: costs one plus whatever is nested inside it, and a or mx cost one each. This record uses one direct lookup. Once nothing else sends mail, tighten to v=spf1 include:spf.protection.outlook.com -all, Microsoft's recommended form.</p>
+<p>It has been revealed that after the MX change, send from an outside account such as Gmail to a moved user and to a cPanel-only user. Both must arrive, the message trace should show the cPanel message leaving through the To cPanel connector, and the outside sender should not get a BoxTrapper challenge. The SPF, DKIM and DMARC setup guide covers the policy side.</p>
+<p>During coexistence both systems send mail as your domain, so both need to authenticate. For Microsoft 365, publish the two CNAME records Microsoft documents, with hostnames selector1._domainkey and selector2._domainkey, pointing to the values from your tenant:.</p>
+<p>If the cPanel server already signs mail, its key sits under its own selector name, so check the existing DNS TXT records before you add records. Start DMARC at a monitoring policy and review reports before you tighten it, as Microsoft advises for complex mail sources.</p>
+<p>Recent findings suggest that for clients, latest Outlook profiles use autodiscover. Remove old IMAP accounts from phones and Outlook, add the Microsoft 365 account, and let it download mail. Consumers also need their contacts and calendars moved by hand, since the IMAP migration does not carry them.</p>
+<p id="sec-end-137926">Industry observers note that this guide was researched and drafted with AI assistance and checked against the vendor documentation listed in its References. Read the maintained version and related guides on EpiFive.</p>
+<p style="margin-top: 25px;">
+<a href="https://dev.to/epifive/cpanel-to-microsoft-365-migration-step-by-step-mx-cutover-included-2caj" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="tech-report-google-explains-how-to-avoid-cdn-migration-seo-proble-135507.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #135507. Tech Report: Google Explains How To Avoid CDN Migration SEO Problems via @sejournal, @martinibuster
+        </a>
+        
+        <a href="tech-report-base-switches-off-flashblocks-as-denim-goes-live-the--133304.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #133304. Tech Report: Base Switches Off Flashblocks as Denim Goes Live: The Migration Risks Behind 200ms Blocks
+        </a>
+        
+        <a href="tech-moves-microsoft-names-2-leaders-loses-1-doordash-vp-departs--133299.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #133299. Tech Moves: Microsoft names 2 leaders, loses 1; DoorDash VP departs; BluePill, Glacis get execs
+        </a>
+        
+        <a href="latest-update-how-the-surge-in-ai-discovered-bugs-is-straining-mi-133246.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #133246. Latest Update: How the surge in AI-discovered bugs is straining Microsoft security and threatening tech stability
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

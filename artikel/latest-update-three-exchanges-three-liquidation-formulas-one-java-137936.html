@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latest Update: Three exchanges, three liquidation formulas, one JavaScript function for the build and the browser</title>
+    <meta name="description" content="According to recent reports, this is a write-up of how a set of static calculator pages computes the liquidation price of an isolated-margin USDT perpetual">
+    <meta name="keywords" content="page, venue, same, function, calculator, margin, script, every">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua75/artikel/latest-update-three-exchanges-three-liquidation-formulas-one-java-137936.html">
+    
+    <meta property="og:title" content="Latest Update: Three exchanges, three liquidation formulas, one JavaScript function for the build and the browser">
+    <meta property="og:description" content="According to recent reports, this is a write-up of how a set of static calculator pages computes the liquidation price of an isolated-margin USDT perpetual">
+    <meta property="og:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fekl9yldik9xvm3zp4n1b.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua75/artikel/latest-update-three-exchanges-three-liquidation-formulas-one-java-137936.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Latest Update: Three exchanges, three liquidation formulas, one JavaScript function for the build and the browser">
+    <meta name="twitter:description" content="According to recent reports, this is a write-up of how a set of static calculator pages computes the liquidation price of an isolated-margin USDT perpetual">
+    <meta name="twitter:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fekl9yldik9xvm3zp4n1b.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Latest Update: Three exchanges, three liquidation formulas, one JavaScript function for the build and the brow", "image": ["https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fekl9yldik9xvm3zp4n1b.png"], "datePublished": "2026-11-23T05:13:56", "dateModified": "2026-11-23T05:19:28.325706", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua75/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua75/artikel/latest-update-three-exchanges-three-liquidation-formulas-one-java-137936.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Latest Update: Three exchanges, three liquidation formulas, one JavaScript funct?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Dev."}}, {"@type": "Question", "name": "Which category does 'Latest Update: Three exchanges, three liquidation formulas, ' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Latest Update: Three exchanges, three liquidation formulas, one JavaScript function for the build and the browser</h1>
+        <div class="meta-line">🌐 Source: <strong>Dev</strong> &bull; 📅 23 Nov 2026 &bull; ⏱️ 3 min read (636 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>According to recent reports, this is a write-up of how a set of static calculator pages computes the liquidation price of an isolated-margin USDT perpetual position for three exchanges (OKX, Bybit and MEXC), and how one function now produces both the numbers baked into the HTML at build time and the numbers the page script shows after a user types.</li><li style='margin-bottom:6px;'>Every exchange documents roughly the same idea: a position is liquidated when its remaining margin falls to the maintenance margin.</li><li style='margin-bottom:6px;'>With entry price E, quantity q (notional / entry), leverage L, maintenance margin rate mmr, taker fee taker and extra margin extra, the long and short cases are:.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-137936"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-137936"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-137936"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Latest Update: Three exchanges, three liquidation formulas, one JavaScript function for the build and the browser" loading="lazy" src="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fekl9yldik9xvm3zp4n1b.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-137936">According to recent reports, this is a write-up of how a set of static calculator pages computes the liquidation price of an isolated-margin USDT perpetual position for three exchanges (OKX, Bybit and MEXC), and how one function now produces both the numbers baked into the HTML at build time and the numbers the page script shows after a user types. The formulas are short. The bugs came from copying them.</p>
+<p>Every exchange documents roughly the same idea: a position is liquidated when its remaining margin falls to the maintenance margin. The details differ, and they move the result by a few dollars on a large price:.</p>
+<p>With entry price E, quantity q (notional / entry), leverage L, maintenance margin rate mmr, taker fee taker and extra margin extra, the long and short cases are:.</p>
+<p>For a 10,000 USDT position at 74,000 with 10x leverage, a 0.5% maintenance rate and each venue's regular taker rate (0.05%, 0.055%, 0.04%), this gives:.</p>
+<p>The spread is small, which is exactly why it went unnoticed.</p>
+<p>Recent findings suggest that the site grew one page at a time. A liquidation calculator, a leverage calculator, an all-in-one futures calculator and a small widget on the home page each got their own copy of the formula. The home widget's copy implemented only the OKX version and used it for every venue.</p>
+<p>Recent findings suggest that the result: the home page showed 66,971.69 for a Bybit long (the OKX formula with Bybit's 0.055% taker fee), while the dedicated calculator showed 66,934.67 for the same inputs. Nobody computes these by hand, so nothing looked wrong until a review compared the pages side by side. <span style="font-size:13px;">(Related: <a href="industry-news-determined-woman-completes-7-marathons-in-a-year-wh-138638.html" style="color:#2563eb; font-weight:600;">Industry News: “Determined” woman completes 7 marathons...</a>)</span></p>
+<p id="sec-mid-137936">A second problem sat next to it: the widget's HTML contained numbers written in by hand for the first render. Before the script ran, every domain demonstrated figures calculated for one venue, including domains that do not cover that venue at all.</p>
+<p>The home widget now has a single function that returns display strings. The build script calls it to write the initial HTML, and the same function is injected into the inline page script with Function.prototype.toString():. <span style="font-size:13px;">(Related: <a href="how-to-build-a-healthcare-robot-from-simulation-to-deployment-wit-138632.html" style="color:#2563eb; font-weight:600;">How to Build a Healthcare Robot from Simulation to Depl...</a>)</span></p>
+<p>With no extra margin, the general formulas reduce to these forms (q cancels out), so the widget and the full calculators agree to the cent. After the change, all 15 combinations (three venues, five leverage and side presets) were checked against the dedicated calculators, and on each of the five domains the 29 output elements had the same content before and after the page script ran.</p>
+<p>toString() has rules that are easy to break:.</p>
+<p>Sources indicate that not every page uses the serialized function yet. The full futures calculator has a build-time fcCompute() (used for its example table) and a page script that repeats the same three formulas, now also selected by a style field instead of venue names:.</p>
+<p>Those copies are kept in step by a comment in each file and by a reference value: 100,000 entry, 10x, 0.5% maintenance and 0.05% taker must give 90,497.74 on every page that uses the fee-in-denominator style. Moving the remaining pages to the serialized-function pattern is the obvious next step.</p>
+<p>Sources indicate that A copy can also drift by venue rather than by math. One localized page computed a cross-versus-isolated comparison with the fee-in-denominator formula and cited that venue's help page, while every other calculator on the same domain used the linear formula of the venue that domain actually covers. The two pages disagreed on the same trade. The fix was the same idea: pick the formula from the domain's venue data, never from a hard-coded default.</p>
+<p id="sec-end-137936">According to recent reports, this post was written by an AI assistant (Claude) from the project's source code and deployment notes, and published without manual editing. The code and the figures are from the running project.</p>
+<p style="margin-top: 25px;">
+<a href="https://dev.to/coinpopbit/three-exchanges-three-liquidation-formulas-one-javascript-function-for-the-build-and-the-browser-59j9" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="latest-update-you-dont-need-a-weight-room-to-build-cycling-powery-137015.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #137015. Latest Update: You Don’t Need a Weight Room to Build Cycling Power—You Just Need This One Compact Piece of Equipment
+        </a>
+        
+        <a href="three-cats-one-rabies-outbreak-what-happens-next-136005.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #136005. Three Cats, One Rabies Outbreak: What Happens Next?
+        </a>
+        
+        <a href="from-innovation-to-impact-three-ways-school-districts-can-build-a-135425.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #135425. From innovation to impact: Three ways school districts can build a sustainable AI framework
+        </a>
+        
+        <a href="one-house-three-owners-the-ballooning-cost-of-the-american-dream-130645.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #130645. One House, Three Owners: The Ballooning Cost of the American Dream
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

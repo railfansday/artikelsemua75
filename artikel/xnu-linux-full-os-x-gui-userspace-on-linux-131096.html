@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XNU Linux: Full OS X GUI Userspace on Linux</title>
+    <meta name="description" content="Run macOS userspace on Linux by loading the macOS kernel into it. In a recent development, xnulinux builds XNU, the open-source kernel of macOS, from Apple">
+    <meta name="keywords" content="linux, macos, kernel, hosted, apple, runs, module, system">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua75/artikel/xnu-linux-full-os-x-gui-userspace-on-linux-131096.html">
+    
+    <meta property="og:title" content="XNU Linux: Full OS X GUI Userspace on Linux">
+    <meta property="og:description" content="Run macOS userspace on Linux by loading the macOS kernel into it. In a recent development, xnulinux builds XNU, the open-source kernel of macOS, from Apple">
+    <meta property="og:image" content="https://opengraph.githubassets.com/17052ea494b9085abdb157286d780852ce4c54091bae1a593887619cb97b2d00/AFK-surf/xnulinux">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua75/artikel/xnu-linux-full-os-x-gui-userspace-on-linux-131096.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="XNU Linux: Full OS X GUI Userspace on Linux">
+    <meta name="twitter:description" content="Run macOS userspace on Linux by loading the macOS kernel into it. In a recent development, xnulinux builds XNU, the open-source kernel of macOS, from Apple">
+    <meta name="twitter:image" content="https://opengraph.githubassets.com/17052ea494b9085abdb157286d780852ce4c54091bae1a593887619cb97b2d00/AFK-surf/xnulinux">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "XNU Linux: Full OS X GUI Userspace on Linux", "image": ["https://opengraph.githubassets.com/17052ea494b9085abdb157286d780852ce4c54091bae1a593887619cb97b2d00/AFK-surf/xnulinux"], "datePublished": "2026-11-23T03:49:24", "dateModified": "2026-11-23T05:13:22.571893", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua75/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua75/artikel/xnu-linux-full-os-x-gui-userspace-on-linux-131096.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding XNU Linux: Full OS X GUI Userspace on Linux?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Github."}}, {"@type": "Question", "name": "Which category does 'XNU Linux: Full OS X GUI Userspace on Linux' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>XNU Linux: Full OS X GUI Userspace on Linux</h1>
+        <div class="meta-line">🌐 Source: <strong>Github</strong> &bull; 📅 23 Nov 2026 &bull; ⏱️ 2 min read (423 words, 📖 Standard)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>Run macOS userspace on Linux by loading the macOS kernel into it.</li><li style='margin-bottom:6px;'>In a recent development, xnulinux builds XNU, the open-source kernel of macOS, from Apple's published sources and runs it as a loadable kernel
+module (xnu.ko) inside an unmodified arm64 Linux kernel.</li><li style='margin-bottom:6px;'>With a stock Ubuntu kernel, insmod xnu.ko boots a macOS 27 system disk made by Apple's own installer to the
+desktop: loginwindow, WindowServer, Dock, Finder, Safari and Chrome.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-131096"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-131096"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-131096"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="XNU Linux: Full OS X GUI Userspace on Linux" loading="lazy" src="https://opengraph.githubassets.com/17052ea494b9085abdb157286d780852ce4c54091bae1a593887619cb97b2d00/AFK-surf/xnulinux" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-131096">Run macOS userspace on Linux by loading the macOS kernel into it.</p>
+<p>In a recent development, xnulinux builds XNU, the open-source kernel of macOS, from Apple's published sources and runs it as a loadable kernel
+module (xnu.ko) inside an unmodified arm64 Linux kernel. The hosted XNU drives the CPU and MMU directly, so macOS
+processes run natively next to Linux processes on the same CPUs, with no hypervisor between them. Linux lends XNU its
+memory, timers, files, network and GPU through a small interface module (fki.ko). <span style="font-size:13px;">(Related: <a href="breaking-ai-for-game-development-creating-a-farming-game-in-5-day-138640.html" style="color:#2563eb; font-weight:600;">Breaking: AI for Game Development: Creating a Farming G...</a>)</span></p>
+<p>With a stock Ubuntu kernel, insmod xnu.ko boots a macOS 27 system disk made by Apple's own installer to the
+desktop: loginwindow, WindowServer, Dock, Finder, Safari and Chrome. <span style="font-size:13px;">(Related: <a href="university-launches-5m-smart-system-that-checks-who-is-actually-l-138634.html" style="color:#2563eb; font-weight:600;">University launches $5m smart system that checks who is...</a>)</span></p>
+<p>One system, two userspaces. Left: a Terminal in the hosted macOS 27.2.1 (sw_vers, the Darwin kernel, launchd,
+WindowServer, Dock and Finder running). Right: from that macOS, an SSH session into the Linux it runs inside (Ubuntu,
+Linux 7.0, the xnu and fki modules loaded, and the insmod xnu.ko process the macOS kernel runs in). Straight from the hosted framebuffer, 1280×800.</p>
+<p>The hosted desktop at the end of a 30-minute stress run, rendered on the CPU (no GPU bridge).</p>
+<p id="sec-mid-131096">Safari in the hosted macOS: Wikipedia's article on XNU, kernel.org and the Linux repository on GitHub, over the
+hosted system's network link through Linux, with the GPU bridge on (GPU=auto).</p>
+<p>Working, on an Apple Silicon Mac running an arm64 Linux VM (krunkit) with 1 to 6 hosted CPUs:.</p>
+<p>According to recent reports, what is still a stopgap is listed in docs/production.md. Notably: the OS cryptex is merged into
+the system volume, AMFI is patched and SIP relaxed, and memory access is slower than a native VM (4K pages vs 16K).</p>
+<p>Recent findings suggest that the Linux side and the XNU side are kept apart by license and meet only at FKI. Every source file carries an
+SPDX-License-Identifier; the license texts are in LICENSES/.</p>
+<p>xnu.ko is on the XNU side of the line: it runs XNU's code in its own address space, so it is APSL-2.0 like XNU, and
+Linux reports it as a non-GPL module (MODULE_LICENSE("Proprietary"), which taints the kernel as ZFS does). It must not
+include Linux headers beyond the module ABI, call Linux functions other than fki_*, or carry Linux code. Upstream code
+(XNU, macOS-DroidVM's toolchain, Mesa, metal2vulkan, the Vulkan loader, LLVM) is fetched at pinned revisions and patched at
+build time; it is never committed.</p>
+<p id="sec-end-131096">macOS, Metal and XNU are trademarks of Apple Inc. This project is not affiliated with or endorsed by Apple.</p>
+<p style="margin-top: 25px;">
+<a href="https://github.com/AFK-surf/xnulinux" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="breaking-asus-rog-strix-scope-ii-96-gaming-keyboard-crashes-to-al-138481.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #138481. Breaking: Asus ROG Strix Scope II 96 gaming keyboard crashes to all-time low in early Black Friday offer — grab 39% off a premium board packed full of features
+        </a>
+        
+        <a href="netgear-black-friday-deals-save-you-up-to-33-on-full-home-wifi-co-138462.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #138462. Netgear Black Friday deals save you up to 33% on full home WiFi coverage — upgrade your gaming router, mesh WiFi setup, or wireless extenders
+        </a>
+        
+        <a href="build-low-latency-multilingual-voice-agents-open-weights-full-dep-138300.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #138300. Build Low-Latency Multilingual Voice Agents: Open Weights & Full Deployment Control with NVIDIA Magpie TTS
+        </a>
+        
+        <a href="west-virginia-online-casinos-set-october-record-in-bet365s-second-138299.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #138299. West Virginia online casinos set October record in bet365’s second full month
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

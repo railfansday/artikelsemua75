@@ -150,12 +150,12 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-126339">Recent findings suggest that most APIs start with offset-based pagination. It feels natural: GET /items?page=500&amp;limit=20 is easy to understand, easy to build, and works seamlessly when your database tables contain a few thousand records.</p>
-<p>However, once your database table grows to hundreds of thousands or millions of rows, offset pagination quietly degrades performance and causes subtle data anomalies that frustrate end customers. <span style="font-size:13px;">(Related: <a href="industry-news-how-we-sped-up-transformer-inference-100x-for-api-c-127311.html" style="color:#2563eb; font-weight:600;">Industry News: How we sped up transformer inference 100...</a>)</span></p>
-<p>Here is why offset pagination fails at scale and how cursor-based pagination fixes it. <span style="font-size:13px;">(Related: <a href="tech-report-transformer-based-encoder-decoder-models-127315.html" style="color:#2563eb; font-weight:600;">Tech Report: Transformer-based Encoder-Decoder Models...</a>)</span></p>
+<p>However, once your database table grows to hundreds of thousands or millions of rows, offset pagination quietly degrades performance and causes subtle data anomalies that frustrate end customers. <span style="font-size:13px;">(Related: <a href="chipotle-is-giving-customers-free-burritos-with-thanksgiving-eve--138609.html" style="color:#2563eb; font-weight:600;">Chipotle is giving customers free burritos with Thanksg...</a>)</span></p>
+<p>Here is why offset pagination fails at scale and how cursor-based pagination fixes it.</p>
 <p>To understand why offset pagination slows down, look at what the database engine does under the hood when executing an OFFSET query.</p>
 <p>It has been revealed that when you request OFFSET 100000, the database does not magically jump to row 100,001. It must scan and sort 100,020 rows in memory or disk, throw away the first 100,000 rows, and return only the remaining 20 rows.</p>
 <p>As the offset increases, query execution time increases linearly ($O(N)$ time complexity). What took 2 milliseconds on page 1 can take several seconds on page 5,000, consuming massive CPU and RAM resources.</p>
-<p>In a recent development, performance is only half the matter. Offset pagination also suffers from window shifting during concurrent writes.</p>
+<p>In a recent development, performance is only half the matter. Offset pagination also suffers from window shifting during concurrent writes. <span style="font-size:13px;">(Related: <a href="breaking-ai-for-game-development-creating-a-farming-game-in-5-day-138640.html" style="color:#2563eb; font-weight:600;">Breaking: AI for Game Development: Creating a Farming G...</a>)</span></p>
 <p>Imagine a user is viewing Page 1 (items 1 through 20). While they are reading, 5 fresh records are inserted into the database. When the user navigates to Page 2 (OFFSET 20), the database fetches rows 21 through 40 based on the current state.</p>
 <p>Because 5 newly introduced items were inserted at the top:.</p>
 <p id="sec-mid-126339">According to recent reports, if records are deleted instead, items get silently skipped, and the user never sees them. In high-frequency write systems like audit logs, social feeds, or IoT streams, this makes pagination unreliable.</p>
@@ -191,20 +191,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="industry-news-how-we-sped-up-transformer-inference-100x-for-api-c-127311.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #127311. Industry News: How we sped up transformer inference 100x for 🤗 API customers
+        <a href="obsessed-fan-breaks-into-youtubers-home-demanding-marriage-dies-a-138604.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #138604. Obsessed fan breaks into YouTuber’s home demanding marriage, dies after family beats him
         </a>
         
-        <a href="few-shot-learning-in-practice-gpt-neo-and-the-accelerated-inferen-127296.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #127296. Few-shot learning in practice: GPT-Neo and the 🤗 Accelerated Inference API
+        <a href="ishowspeed-breaks-down-in-tears-after-finishing-gta-6-in-52-hours-138569.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #138569. IShowSpeed breaks down in tears after finishing GTA 6 in 52 hours without sleeping
         </a>
         
-        <a href="introducing-optimum-the-optimization-toolkit-for-transformers-at--127291.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #127291. Introducing Optimum: The Optimization Toolkit for Transformers at Scale
+        <a href="tech-report-experimenting-with-the-proposed-cross-origin-storage--138436.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #138436. Tech Report: Experimenting with the proposed Cross-Origin Storage API in Transformers.js
         </a>
         
-        <a href="a-gentle-introduction-to-8-bit-matrix-multiplication-for-transfor-127205.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #127205. A Gentle Introduction to 8-bit Matrix Multiplication for transformers at scale using transformers, accelerate and bitsandbytes
+        <a href="tech-report-making-knowledge-distillation-cheap-enough-to-run-at--138306.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #138306. Tech Report: Making Knowledge Distillation Cheap Enough to Run at Scale
         </a>
         
     </div>

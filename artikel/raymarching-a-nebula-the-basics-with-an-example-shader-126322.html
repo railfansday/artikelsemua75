@@ -150,12 +150,12 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-126322">In an earlier devlog, we explained how we optimised the nebula of Vesper Protocol. Several readers asked us to start from the beginning. So here are the basics of volumetric raymarching, step by step, with a complete GLSL shader you can paste into Shadertoy.</p>
-<p>A typical game engine draws triangles: it projects their vertices onto the screen and colours the pixels they cover. That works very well for a spaceship or a wall. But a nebula has no surface: it is a cloud of gas, more or less dense, that light partly passes through. <span style="font-size:13px;">(Related: <a href="my-journey-to-a-serverless-transformers-pipeline-on-google-cloud-127303.html" style="color:#2563eb; font-weight:600;">My Journey to a serverless transformers pipeline on Goo...</a>)</span></p>
+<p>A typical game engine draws triangles: it projects their vertices onto the screen and colours the pixels they cover. That works very well for a spaceship or a wall. But a nebula has no surface: it is a cloud of gas, more or less dense, that light partly passes through.</p>
 <p>Sources indicate that raymarching flips the problem around. For each pixel, we cast a ray from the camera and walk along it in small steps. At each step we ask: "how dense is the gas here?" We accumulate what we see until we leave the volume or the gas becomes opaque.</p>
-<p>Recent findings suggest that everything happens in a fragment shader, the program the graphics card runs for every pixel. On Shadertoy, this program is called mainImage and receives the pixel position.</p>
+<p>Recent findings suggest that everything happens in a fragment shader, the program the graphics card runs for every pixel. On Shadertoy, this program is called mainImage and receives the pixel position. <span style="font-size:13px;">(Related: <a href="animal-control-called-to-rescue-alligator-that-turned-out-to-be-a-138616.html" style="color:#2563eb; font-weight:600;">Animal control called to rescue alligator that turned o...</a>)</span></p>
 <p>According to recent reports, A ray is an origin (the camera, ro) and a direction (rd). We start by centring the pixel coordinates and correcting for the screen's aspect ratio:.</p>
 <p>The point at distance t along the ray is simply ro + rd * t. Increasing the focal length narrows the field of view, like zooming in.</p>
-<p>Industry observers note that we need a function density(p) that returns the amount of gas at point p. To get natural swirls, we use value noise: pseudo-random numbers placed on a 3D grid and smoothly interpolated. By adding several layers of ever finer noise (octaves), we get fBm (fractional Brownian motion), the basis of almost every procedural cloud. <span style="font-size:13px;">(Related: <a href="industry-news-hyperparameter-search-with-transformers-and-ray-tun-127314.html" style="color:#2563eb; font-weight:600;">Industry News: Hyperparameter Search with Transformers ...</a>)</span></p>
+<p>Industry observers note that we need a function density(p) that returns the amount of gas at point p. To get natural swirls, we use value noise: pseudo-random numbers placed on a 3D grid and smoothly interpolated. By adding several layers of ever finer noise (octaves), we get fBm (fractional Brownian motion), the basis of almost every procedural cloud. <span style="font-size:13px;">(Related: <a href="industry-news-determined-woman-completes-7-marathons-in-a-year-wh-138638.html" style="color:#2563eb; font-weight:600;">Industry News: “Determined” woman completes 7 marathons...</a>)</span></p>
 <p>To break up the overly regular look, we distort the coordinates with a first fBm before computing a second one (domain warping): the swirls stretch like gas. We then confine this noise inside a soft sphere, otherwise it would fill all of space, and subtract a threshold to carve holes between the clouds.</p>
 <p id="sec-mid-126322">Recent findings suggest that when light passes through a gas, part of it is absorbed. The Beer–Lambert law says that the fraction that gets through, the transmittance, decreases exponentially with the density crossed:.</p>
 <p>Recent findings suggest that our nebula is also emissive: gas heated by the star glows. At each step, we add the light emitted there to the pixel colour, attenuated by all the gas already crossed (the current transmittance). This is front-to-back compositing:.</p>
@@ -189,20 +189,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="a-guide-to-setting-up-your-own-hugging-face-leaderboard-an-end-to-127003.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #127003. A guide to setting up your own Hugging Face leaderboard: an end-to-end example with Vectara's hallucination leaderboard
+        <a href="google-play-wants-android-apps-to-nail-foldable-basics-by-april-2-138482.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #138482. Google Play wants Android apps to nail foldable basics by April 2027
         </a>
         
-        <a href="the-example-we-advertise-is-the-answer-we-owe-126301.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #126301. The example we advertise is the answer we owe
+        <a href="tech-report-neurosymbolic-agents-explained-with-a-z3-example-in-p-138086.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #138086. Tech Report: Neurosymbolic Agents Explained, With a Z3 Example in Python
         </a>
         
-        <a href="breaking-nate-bargatze-is-sort-of-leading-by-example-124763.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #124763. Breaking: Nate Bargatze Is (Sort Of) Leading By Example
+        <a href="in-the-face-of-crisis-psychologists-urge-a-return-to-the-basics-137658.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #137658. In the Face of Crisis, Psychologists Urge a Return to the Basics
         </a>
         
-        <a href="a-better-airport-outfit-starts-with-the-basics-121413.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #121413. A Better Airport Outfit Starts With the Basics
+        <a href="nate-bargatze-is-sort-of-leading-by-example-136141.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #136141. Nate Bargatze Is (Sort Of) Leading By Example
         </a>
         
     </div>

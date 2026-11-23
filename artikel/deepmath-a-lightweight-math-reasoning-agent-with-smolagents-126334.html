@@ -150,9 +150,9 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-126334">DeepMath is an aligned math reasoning agent built on Qwen3-4B Thinking and fine-tuned with GRPO (Group Relative Policy Optimization). Instead of verbose text, the model emits tiny Python snippets for intermediate steps, runs them in a secure sandbox, and folds the results back into its reasoning, reducing errors and output length. The agent is implemented using the smolagents library.</p>
-<p>We evaluate DeepMath on four math datasets: MATH500, AIME, HMMT, and HLE, and show that:. <span style="font-size:13px;">(Related: <a href="hosting-your-models-and-datasets-on-hugging-face-spaces-using-str-127287.html" style="color:#2563eb; font-weight:600;">Hosting your Models and Datasets on Hugging Face Spaces...</a>)</span></p>
-<p>🤖 The math agent alone reduces output lengths by up to 66%, while often improving accuracy.</p>
-<p>⚡ GRPO training improves the agent performance even further, in almost all benchmarks. <span style="font-size:13px;">(Related: <a href="tech-report-distributed-training-train-bartt5-for-summarization-u-127300.html" style="color:#2563eb; font-weight:600;">Tech Report: Distributed Training: Train BART/T5 for Su...</a>)</span></p>
+<p>We evaluate DeepMath on four math datasets: MATH500, AIME, HMMT, and HLE, and show that:.</p>
+<p>🤖 The math agent alone reduces output lengths by up to 66%, while often improving accuracy. <span style="font-size:13px;">(Related: <a href="industry-news-determined-woman-completes-7-marathons-in-a-year-wh-138638.html" style="color:#2563eb; font-weight:600;">Industry News: “Determined” woman completes 7 marathons...</a>)</span></p>
+<p>⚡ GRPO training improves the agent performance even further, in almost all benchmarks. <span style="font-size:13px;">(Related: <a href="tiny-agents-an-mcp-powered-agent-in-50-lines-of-code-138633.html" style="color:#2563eb; font-weight:600;">Tiny Agents: an MCP-powered agent in 50 lines of code...</a>)</span></p>
 <p>👉 Code and evaluation scripts: https://github.com/IntelLabs/DeepMath 👉 Model: https://huggingface.co/Intel/deepmath-v1.</p>
 <p>Large language models (LLMs) have advanced reasoning capabilities, but mathematical problem-solving remains challenging; chain-of-thought traces can be lengthy and prone to arithmetic mistakes. Recent works[^1][^2] demonstrate that small models can reach strong performance, and other studies[^3] investigate tool use to improve reliability. What those papers generally do not emphasize is reducing trace verbosity or explicitly training models to prefer short, computation-oriented traces executed in a constrained, auditable environment.</p>
 <p>Offload deterministic computation to a safe executor.</p>
@@ -213,20 +213,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
+        <a href="webai-releases-twil-8b-a-5-gib-open-weight-reasoning-model-with-a-133314.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #133314. webAI Releases TwIL-8B: A 5 GiB Open-Weight Reasoning Model With a 98.2 MATH-500 Score
+        </a>
+        
         <a href="dabstep-data-agent-benchmark-for-multi-step-reasoning-126779.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #126779. DABStep: Data Agent Benchmark for Multi-step Reasoning
         </a>
         
-        <a href="webai-releases-twil-8b-a-5-gib-open-weight-reasoning-model-with-a-121865.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #121865. webAI Releases TwIL-8B: A 5 GiB Open-Weight Reasoning Model With a 98.2 MATH-500 Score
+        <a href="tiny-agents-an-mcp-powered-agent-in-50-lines-of-code-138633.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #138633. Tiny Agents: an MCP-powered agent in 50 lines of code
         </a>
         
-        <a href="what-makes-a-dialog-agent-useful-127151.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #127151. What Makes a Dialog Agent Useful?
-        </a>
-        
-        <a href="industry-news-nphardeval-leaderboard-unveiling-the-reasoning-abil-126988.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #126988. Industry News: NPHardEval Leaderboard: Unveiling the Reasoning Abilities of Large Language Models through Complexity Classes and Dynamic Updates
+        <a href="breaking-nvidia-cosmos-reason-2-brings-advanced-reasoning-to-phys-138622.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #138622. Breaking: NVIDIA Cosmos Reason 2 Brings Advanced Reasoning To Physical AI
         </a>
         
     </div>

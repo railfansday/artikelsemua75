@@ -1,86 +1,86 @@
 {
-  "generatedAt": "2026-11-22T23:36:27.984580",
-  "totalArticles": 12464,
+  "generatedAt": "2026-11-23T05:59:08.756882",
+  "totalArticles": 12327,
   "categoryBreakdown": {
-    "General": 10180,
-    "AI & Tech": 1009,
-    "Hardware & Chips": 156,
-    "Business & Policy": 558,
-    "Gadgets": 324,
-    "EV & Auto": 237
+    "General": 10059,
+    "Hardware & Chips": 154,
+    "AI & Tech": 999,
+    "Business & Policy": 560,
+    "Gadgets": 320,
+    "EV & Auto": 235
   },
   "topSources": {
-    "Hugging Face": 915,
-    "Co": 809,
+    "Hugging Face": 912,
+    "Co": 803,
     "Sciencedaily": 211,
     "Eschoolnews": 200,
-    "Cbssports": 170,
+    "Cbssports": 169,
     "Electrek": 149,
-    "Yahoo": 143,
-    "Dw": 140,
     "Dailymail": 139,
+    "Dw": 139,
+    "Yahoo": 138,
     "Realworkfromanywhere": 120
   },
   "latestHeadlines": [
     {
-      "id": 127319,
-      "title": "How to train a new language model from scratch using Transformers and Tokenizers",
-      "url": "https://railfansday.github.io/artikelsemua75/artikel/how-to-train-a-new-language-model-from-scratch-using-transformers-127319.html",
+      "id": 138646,
+      "title": "Fine-Tune XLSR-Wav2Vec2 for low-resource ASR with 🤗 Transformers",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/fine-tune-xlsr-wav2vec2-for-low-resource-asr-with-transformers-138646.html",
       "category": "General"
     },
     {
-      "id": 127318,
-      "title": "How to generate text: using different decoding methods for language generation with Transformers",
-      "url": "https://railfansday.github.io/artikelsemua75/artikel/how-to-generate-text-using-different-decoding-methods-for-languag-127318.html",
+      "id": 138645,
+      "title": "Director of Machine Learning Insights",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/director-of-machine-learning-insights-138645.html",
       "category": "General"
     },
     {
-      "id": 127317,
-      "title": "The Reformer - Pushing the limits of language modeling",
-      "url": "https://railfansday.github.io/artikelsemua75/artikel/the-reformer-pushing-the-limits-of-language-modeling-127317.html",
+      "id": 138644,
+      "title": "Tech Report: Director of Machine Learning Insights [Part 2: SaaS Edition]",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/tech-report-director-of-machine-learning-insights-part-2-saas-edi-138644.html",
       "category": "General"
     },
     {
-      "id": 127316,
-      "title": "Block Sparse Matrices for Smaller and Faster Language Models",
-      "url": "https://railfansday.github.io/artikelsemua75/artikel/block-sparse-matrices-for-smaller-and-faster-language-models-127316.html",
+      "id": 138643,
+      "title": "An Introduction to Q-Learning Part 1",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/an-introduction-to-q-learning-part-1-138643.html",
       "category": "General"
     },
     {
-      "id": 127315,
-      "title": "Tech Report: Transformer-based Encoder-Decoder Models",
-      "url": "https://railfansday.github.io/artikelsemua75/artikel/tech-report-transformer-based-encoder-decoder-models-127315.html",
+      "id": 138642,
+      "title": "Accelerating PyTorch Transformers with Intel Sapphire Rapids - part 1",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/accelerating-pytorch-transformers-with-intel-sapphire-rapids-part-138642.html",
+      "category": "Hardware & Chips"
+    },
+    {
+      "id": 138641,
+      "title": "Umamusume horse girls are taking over a Denver Broncos NFL game",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/umamusume-horse-girls-are-taking-over-a-denver-broncos-nfl-game-138641.html",
       "category": "General"
     },
     {
-      "id": 127314,
-      "title": "Industry News: Hyperparameter Search with Transformers and Ray Tune",
-      "url": "https://railfansday.github.io/artikelsemua75/artikel/industry-news-hyperparameter-search-with-transformers-and-ray-tun-127314.html",
+      "id": 138640,
+      "title": "Breaking: AI for Game Development: Creating a Farming Game in 5 Days. Part 1",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/breaking-ai-for-game-development-creating-a-farming-game-in-5-day-138640.html",
+      "category": "AI & Tech"
+    },
+    {
+      "id": 138639,
+      "title": "3D Asset Generation: AI for Game Development #3",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/3d-asset-generation-ai-for-game-development-3-138639.html",
+      "category": "AI & Tech"
+    },
+    {
+      "id": 138638,
+      "title": "Industry News: “Determined” woman completes 7 marathons in a year while pregnant",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/industry-news-determined-woman-completes-7-marathons-in-a-year-wh-138638.html",
       "category": "General"
     },
     {
-      "id": 127313,
-      "title": "Porting fairseq wmt19 translation system to transformers",
-      "url": "https://railfansday.github.io/artikelsemua75/artikel/porting-fairseq-wmt19-translation-system-to-transformers-127313.html",
-      "category": "General"
-    },
-    {
-      "id": 127312,
-      "title": "Leveraging Pre-trained Language Model Checkpoints for Encoder-Decoder Models",
-      "url": "https://railfansday.github.io/artikelsemua75/artikel/leveraging-pre-trained-language-model-checkpoints-for-encoder-dec-127312.html",
-      "category": "General"
-    },
-    {
-      "id": 127311,
-      "title": "Industry News: How we sped up transformer inference 100x for 🤗 API customers",
-      "url": "https://railfansday.github.io/artikelsemua75/artikel/industry-news-how-we-sped-up-transformer-inference-100x-for-api-c-127311.html",
-      "category": "General"
-    },
-    {
-      "id": 127310,
-      "title": "Fit More and Train Faster With ZeRO via DeepSpeed and FairScale",
-      "url": "https://railfansday.github.io/artikelsemua75/artikel/fit-more-and-train-faster-with-zero-via-deepspeed-and-fairscale-127310.html",
-      "category": "General"
+      "id": 138637,
+      "title": "Welcome Gemma - Google’s new open LLM",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/welcome-gemma-googles-new-open-llm-138637.html",
+      "category": "AI & Tech"
     }
   ]
 }
