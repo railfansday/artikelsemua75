@@ -156,13 +156,13 @@
 <p>Also, make some of the famous logos coming to life.</p>
 <p>With ControlNet, the sky is the limit 🌠.</p>
 <p>In this blog post, we first introduce the StableDiffusionControlNetPipeline and then show how it can be applied for various control conditionings. Let’s get controlling!</p>
-<p>Industry observers note that controlNet was introduced in Adding Conditional Control to Text-to-Image Diffusion Models by Lvmin Zhang and Maneesh Agrawala. It introduces a framework that allows for supporting various spatial contexts that can serve as additional conditionings to Diffusion models such as Stable Diffusion. The diffusers implementation is adapted from the original source code. <span style="font-size:13px;">(Related: <a href="how-to-train-a-newly-introduced-language-model-from-scratch-using-173066.html" style="color:#2563eb; font-weight:600;">How to train a newly introduced language model from scr...</a>)</span></p>
-<p>Training ControlNet is comprised of the following steps:. <span style="font-size:13px;">(Related: <a href="breaking-distributed-training-train-bartt5-for-summarization-usin-173047.html" style="color:#2563eb; font-weight:600;">Breaking: Distributed Training: Train BART/T5 for Summa...</a>)</span></p>
+<p>Industry observers note that controlNet was introduced in Adding Conditional Control to Text-to-Image Diffusion Models by Lvmin Zhang and Maneesh Agrawala. It introduces a framework that allows for supporting various spatial contexts that can serve as additional conditionings to Diffusion models such as Stable Diffusion. The diffusers implementation is adapted from the original source code. <span style="font-size:13px;">(Related: <a href="industry-news-average-retirement-savings-by-age-are-you-on-track-184559.html" style="color:#2563eb; font-weight:600;">Industry News: Average Retirement Savings by Age: Are Y...</a>)</span></p>
+<p>Training ControlNet is comprised of the following steps:.</p>
 <p>Pictorially, training a ControlNet looks like so:.</p>
 <p>The diagram is taken from here.</p>
 <p>A sample from the training set for ControlNet-like training looks like this (additional conditioning is via edge maps):.</p>
 <p>Similarly, if we were to condition ControlNet with semantic segmentation maps, a training sample would be like so:.</p>
-<p>Industry observers note that every fresh type of conditioning requires training a new copy of ControlNet weights. The paper proposed 8 different conditioning models that are all supported in Diffusers!</p>
+<p>Industry observers note that every fresh type of conditioning requires training a new copy of ControlNet weights. The paper proposed 8 different conditioning models that are all supported in Diffusers! <span style="font-size:13px;">(Related: <a href="what-i-do-every-time-i-get-an-irs-notice-184553.html" style="color:#2563eb; font-weight:600;">What I do every time I get an IRS notice...</a>)</span></p>
 <p>For inference, both the pre-trained diffusion models weights as well as the trained ControlNet weights are needed. For example, using Stable Diffusion v1-5 
 with a ControlNet checkpoint require roughly 700 million more parameters compared to just using the original Stable Diffusion model, which makes ControlNet a bit more memory-expensive for inference.</p>
 <p>In a recent development, because the pre-trained diffusion models are locked during training, one only needs to switch out the ControlNet parameters when using a different conditioning. This makes it fairly simple 
@@ -239,16 +239,16 @@ that each component is only loaded into GPU when it's needed so that we can sign
             📰 #172873. Train your ControlNet with diffusers
         </a>
         
-        <a href="stable-diffusion-with-diffusers-172948.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #172948. Stable Diffusion with 🧨 Diffusers
+        <a href="diffusers-welcomes-stable-diffusion-3-184333.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #184333. Diffusers welcomes Stable Diffusion 3
         </a>
         
-        <a href="industry-news-whats-new-in-diffusers-172943.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #172943. Industry News: What's new in Diffusers? 🎨
+        <a href="diffusers-welcomes-flux-2-184297.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #184297. Diffusers welcomes FLUX-2
         </a>
         
-        <a href="training-stable-diffusion-with-dreambooth-using-diffusers-172925.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #172925. Training Stable Diffusion with Dreambooth using Diffusers
+        <a href="introducing-modular-diffusers-composable-building-blocks-for-diff-184238.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #184238. Introducing Modular Diffusers - Composable Building Blocks for Diffusion Pipelines
         </a>
         
     </div>

@@ -150,16 +150,16 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-172933">It has been revealed that 🤗 Hugging Face Diffusers supports Flax since version 0.5.1! This allows for super fast inference on Google TPUs, such as those available in Colab, Kaggle or Google Cloud Platform.</p>
-<p>According to recent reports, this post shows how to run inference using JAX / Flax. If you want more details about how Stable Diffusion works or want to run it in GPU, please refer to this Colab notebook. <span style="font-size:13px;">(Related: <a href="how-to-train-a-newly-introduced-language-model-from-scratch-using-173066.html" style="color:#2563eb; font-weight:600;">How to train a newly introduced language model from scr...</a>)</span></p>
+<p>According to recent reports, this post shows how to run inference using JAX / Flax. If you want more details about how Stable Diffusion works or want to run it in GPU, please refer to this Colab notebook.</p>
 <p>If you want to follow along, click the button above to open this post as a Colab notebook.</p>
-<p>It has been revealed that first, make sure you are using a TPU backend. If you are running this notebook in Colab, select Runtime in the menu above, then select the option "Change runtime type" and then select TPU under the Hardware accelerator setting. <span style="font-size:13px;">(Related: <a href="latest-update-how-to-generate-text-using-different-decoding-metho-173065.html" style="color:#2563eb; font-weight:600;">Latest Update: How to generate text: using different de...</a>)</span></p>
-<p>Note that JAX is not exclusive to TPUs, but it shines on that hardware because each TPU server has 8 TPU accelerators working in parallel.</p>
+<p>It has been revealed that first, make sure you are using a TPU backend. If you are running this notebook in Colab, select Runtime in the menu above, then select the option "Change runtime type" and then select TPU under the Hardware accelerator setting.</p>
+<p>Note that JAX is not exclusive to TPUs, but it shines on that hardware because each TPU server has 8 TPU accelerators working in parallel. <span style="font-size:13px;">(Related: <a href="how-to-start-a-side-business-while-working-full-time-184555.html" style="color:#2563eb; font-weight:600;">How to Start a Side Business While Working Full-Time...</a>)</span></p>
 <p>Make sure diffusers is installed.</p>
 <p>Then we import all the dependencies.</p>
 <p>Before using the model, you need to accept the model license in order to download and use the weights.</p>
 <p>The license is designed to mitigate the potential harmful effects of such a powerful machine learning system. We request users to read the license entirely and carefully. Here we offer a summary:.</p>
 <p>Flax weights are available in Hugging Face Hub as part of the Stable Diffusion repo. The Stable Diffusion model is distributed under the CreateML OpenRail-M license. It's an open license that claims no rights on the outputs you generate and prohibits you from deliberately producing illegal or harmful content. The model card provides more details, so take a moment to read them and consider carefully whether you accept the license. If you do, you need to be a registered user in the Hub and use an access token for the code to work. You have two options to provide your access token:.</p>
-<p>Industry observers note that the following cell will present a login interface unless you've already authenticated before in this computer. You'll need to paste your access token.</p>
+<p>Industry observers note that the following cell will present a login interface unless you've already authenticated before in this computer. You'll need to paste your access token. <span style="font-size:13px;">(Related: <a href="industry-news-average-retirement-savings-by-age-are-you-on-track-184559.html" style="color:#2563eb; font-weight:600;">Industry News: Average Retirement Savings by Age: Are Y...</a>)</span></p>
 <p>Sources indicate that TPU devices support bfloat16, an efficient half-float type. We'll use it for our tests, but you can also use float32 to use full precision instead.</p>
 <p>Industry observers note that flax is a functional framework, so models are stateless and parameters are stored outside them. Loading the pre-trained Flax pipeline will return both the pipeline itself and the model weights (or parameters). We are using a bf16 version of the weights, which leads to type warnings that you can safely ignore.</p>
 <p>Sources indicate that since TPUs usually have 8 devices working in parallel, we'll replicate our prompt as many times as devices we have. Then we'll perform inference on the 8 devices at once, each responsible for generating one image. Thus, we'll get 8 images in the same amount of time it takes for one chip to generate a single one.</p>
@@ -219,8 +219,8 @@
             📰 #172767. Industry News: 🧨 Accelerating Stable Diffusion XL Inference with JAX on Cloud TPU v5e
         </a>
         
-        <a href="stable-diffusion-with-diffusers-172948.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #172948. Stable Diffusion with 🧨 Diffusers
+        <a href="diffusers-welcomes-stable-diffusion-3-184333.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #184333. Diffusers welcomes Stable Diffusion 3
         </a>
         
     </div>

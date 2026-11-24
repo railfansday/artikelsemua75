@@ -150,11 +150,11 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-172292">Gemma 3n was revealed as a preview during Google I/O. The on-device community got really excited, because this is a model designed from the ground up to run locally on your hardware. On top of that, it’s natively multimodal, supporting image, text, audio, and video inputs 🤯.</p>
-<p>Recent findings suggest that today, Gemma 3n is finally available on the most used open source libraries. This includes transformers &amp; timm, MLX, llama.cpp (text inputs), transformers.js, ollama, Google AI Edge, and others. <span style="font-size:13px;">(Related: <a href="how-to-train-a-newly-introduced-language-model-from-scratch-using-173066.html" style="color:#2563eb; font-weight:600;">How to train a newly introduced language model from scr...</a>)</span></p>
-<p>This post quickly goes through practical snippets to demonstrate how to use the model with these libraries, and how easy it is to fine-tune it for other domains. <span style="font-size:13px;">(Related: <a href="leveraging-pre-trained-language-model-checkpoints-for-encoder-dec-173059.html" style="color:#2563eb; font-weight:600;">Leveraging Pre-trained Language Model Checkpoints for E...</a>)</span></p>
+<p>Recent findings suggest that today, Gemma 3n is finally available on the most used open source libraries. This includes transformers &amp; timm, MLX, llama.cpp (text inputs), transformers.js, ollama, Google AI Edge, and others.</p>
+<p>This post quickly goes through practical snippets to demonstrate how to use the model with these libraries, and how easy it is to fine-tune it for other domains.</p>
 <p>Here is the Gemma 3n Release Collection.</p>
-<p>Recent findings suggest that two model sizes have been released today, with two variants (base and instruct) each. The model names follow a non-standard nomenclature: they are called gemma-3n-E2B and gemma-3n-E4B. The E preceding the parameter count stands for Effective. Their actual parameter counts are 5B and 8B, respectively, but thanks to improvements in memory efficiency, they manage to only need 2B and 4B in VRAM (GPU memory).</p>
-<p>These models, therefore, behave like 2B and 4B in terms of hardware support, but they punch over 2B/4B in terms of quality. The E2B model can run in as little as 2GB of GPU RAM, while E4B can run with just 3GB of GPU RAM.</p>
+<p>Recent findings suggest that two model sizes have been released today, with two variants (base and instruct) each. The model names follow a non-standard nomenclature: they are called gemma-3n-E2B and gemma-3n-E4B. The E preceding the parameter count stands for Effective. Their actual parameter counts are 5B and 8B, respectively, but thanks to improvements in memory efficiency, they manage to only need 2B and 4B in VRAM (GPU memory). <span style="font-size:13px;">(Related: <a href="restaurant-owners-left-in-tears-after-discovering-their-family-bu-184522.html" style="color:#2563eb; font-weight:600;">Restaurant owners left in tears after discovering their...</a>)</span></p>
+<p>These models, therefore, behave like 2B and 4B in terms of hardware support, but they punch over 2B/4B in terms of quality. The E2B model can run in as little as 2GB of GPU RAM, while E4B can run with just 3GB of GPU RAM. <span style="font-size:13px;">(Related: <a href="how-to-start-a-side-business-while-working-full-time-184555.html" style="color:#2563eb; font-weight:600;">How to Start a Side Business While Working Full-Time...</a>)</span></p>
 <p>In addition to the language decoder, Gemma 3n uses an audio encoder and a vision encoder. We highlight their main features below, and describe how they have been added to transformers and timm, as they are the reference for other implementations.</p>
 <p>The easiest way to vibe check the model is with the dedicated Hugging Face Space for the model. You can try out different prompts, with different modalities, here.</p>
 <p>Install the latest version of timm (for the vision encoder) and transformers to run inference, or if you want to fine tune it.</p>
@@ -203,20 +203,20 @@ to the community!</p>
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
+        <a href="architectural-choices-in-chinas-open-source-ai-ecosystem-building-184262.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #184262. Architectural Choices in China's Open-Source AI Ecosystem: Building Beyond DeepSeek
+        </a>
+        
+        <a href="industry-news-the-future-of-the-global-open-source-ai-ecosystem-f-184256.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #184256. Industry News: The Future of the Global Open-Source AI Ecosystem: From DeepSeek to AI+
+        </a>
+        
+        <a href="tech-report-the-best-things-in-open-source-are-built-together-184082.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #184082. Tech Report: The best things in open source are built together
+        </a>
+        
         <a href="open-source-text-generation-llm-ecosystem-at-hugging-face-172815.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #172815. Open-Source Text Generation & LLM Ecosystem at Hugging Face
-        </a>
-        
-        <a href="tech-report-synthetic-data-save-money-time-and-carbon-with-open-s-172714.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #172714. Tech Report: Synthetic data: save money, time and carbon with open source
-        </a>
-        
-        <a href="tech-report-introducing-the-open-ko-llm-leaderboard-leading-the-k-172712.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #172712. Tech Report: Introducing the Open Ko-LLM Leaderboard: Leading the Korean LLM Evaluation Ecosystem
-        </a>
-        
-        <a href="tech-report-graduate-software-engineer-open-source-and-linux-cano-169610.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #169610. Tech Report: Graduate Software Engineer, Open Source and Linux, Canonical Ubuntu at Canonical
         </a>
         
     </div>

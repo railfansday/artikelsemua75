@@ -150,15 +150,15 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-172351">Today we're sharing research that bridges two powerful paradigms in AI agent design: the expressiveness of code-based actions and the reliability of structured generation. Our findings show that forcing CodeAgents to generate both thoughts and code in a structured JSON format can significantly outperform traditional approaches across multiple benchmarks.</p>
-<p>Sources indicate that figure 1: Accuracy comparison of three approaches: Structured CodeAgent (blue), CodeAgent (orange), and ToolCallingAgent (gray) on SmolBench (GAIA, MATH, SimpleQA, and Frames). Error bars represent 95% Confidence Intervals.</p>
+<p>Sources indicate that figure 1: Accuracy comparison of three approaches: Structured CodeAgent (blue), CodeAgent (orange), and ToolCallingAgent (gray) on SmolBench (GAIA, MATH, SimpleQA, and Frames). Error bars represent 95% Confidence Intervals. <span style="font-size:13px;">(Related: <a href="breaking-living-trust-vs-will-complete-comparison-guide-184537.html" style="color:#2563eb; font-weight:600;">Breaking: Living Trust vs Will: Complete Comparison Gui...</a>)</span></p>
 <p>AI agents need to take actions in the world - whether that's calling APIs, processing data, or reasoning through complex problems. How agents express these actions has evolved through several paradigms:.</p>
-<p>Traditional JSON Agent: Agents generate structured JSON to call tools. <span style="font-size:13px;">(Related: <a href="latest-update-how-to-generate-text-using-different-decoding-metho-173065.html" style="color:#2563eb; font-weight:600;">Latest Update: How to generate text: using different de...</a>)</span></p>
+<p>Traditional JSON Agent: Agents generate structured JSON to call tools.</p>
 <p>These agents operate by selecting from a list of predefined tools and generating JSON-formatted calls. This method for calling tools has been popularized by OpenAI's function calling API, and has since then been the most widely used method to call tools.</p>
 <p>It is reliable, but limited by:.</p>
-<p>Code Agents: Agents make use of their innate coding ability and write executable Python code directly.</p>
+<p>Code Agents: Agents make use of their innate coding ability and write executable Python code directly. <span style="font-size:13px;">(Related: <a href="restaurant-owners-left-in-tears-after-discovering-their-family-bu-184522.html" style="color:#2563eb; font-weight:600;">Restaurant owners left in tears after discovering their...</a>)</span></p>
 <p>This shift, first presented as CodeAct in the paper “Executable Code Actions Elicit Better LLM Agents” gave AI agents the flexibility to write arbitrary executable Python code in addition to tool-calling.</p>
 <p>The key insight here is that tools are called directly from within the code, making variables and state management much more reliable. Agents can call tools within loops, functions, and conditional statements - essentially generating a dynamic graph of tool execution in each action!</p>
-<p>However, parsing code from markdown can be error-prone which leads us to a proposition: why not use structured generation to generate code actions? <span style="font-size:13px;">(Related: <a href="latest-update-retrieval-augmented-generation-with-huggingface-tra-173054.html" style="color:#2563eb; font-weight:600;">Latest Update: Retrieval Augmented Generation with Hugg...</a>)</span></p>
+<p>However, parsing code from markdown can be error-prone which leads us to a proposition: why not use structured generation to generate code actions?</p>
 <p>With Structured outputs, you can force the LLM to generate explicit thoughts and code as a JSON blob:.</p>
 <p>The key difference is that the generation is enforced: basically, now instead of just being prompted to output thoughts, then code, the usage of structured outputs forces it to respect the structure.</p>
 <p>This approach adds the reliability of structured generation to the flexibility of code execution, thus getting the best of both worlds.</p>
@@ -210,20 +210,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="tech-report-ai-is-accelerating-software-development-but-businesse-167674.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #167674. Tech Report: AI Is Accelerating Software Development — But Businesses Need a Better Way to Measure the Quality of What They Ship
+        <a href="ai-is-accelerating-software-development-but-businesses-need-a-bet-179155.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #179155. AI Is Accelerating Software Development — But Businesses Need a Better Way to Measure the Quality of What They Ship
         </a>
         
-        <a href="introducing-the-private-hub-a-new-way-to-build-with-machine-learn-172958.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #172958. Introducing the Private Hub: A New Way to Build With Machine Learning
+        <a href="tech-report-influencer-in-tears-as-burglars-steal-absolutely-ever-184518.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #184518. Tech Report: Influencer in tears as burglars steal “absolutely everything” days after winning 4-way boxing match
         </a>
         
-        <a href="smaller-is-better-q8-chat-an-efficient-generative-ai-experience-o-172850.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #172850. Smaller is better: Q8-Chat, an efficient generative AI experience on Xeon
+        <a href="proton-pass-is-up-to-60-off-for-black-fridayand-it-does-way-more--184473.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #184473. Proton Pass is up to 60% off for Black Friday—and it does way more than just store your passwords
         </a>
         
-        <a href="industry-news-data-is-better-together-enabling-communities-to-col-172702.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #172702. Industry News: Data is better together: Enabling communities to collectively build better datasets together using Argilla and Hugging Face Spaces
+        <a href="designing-the-hf-cli-as-an-agent-optimized-way-to-work-with-the-h-184152.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #184152. Designing the hf CLI as an agent-optimized way to work with the Hub
         </a>
         
     </div>

@@ -150,18 +150,18 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-172294">Industry observers note that hugging Face transformers library is the standard for working with state-of-the-art models — from experimenting with cutting-edge research to fine-tuning on custom data. Its simplicity, flexibility, and expansive model zoo make it a powerful tool for rapid development.</p>
-<p>According to recent reports, but once you're ready to move from notebooks to production, inference performance becomes mission-critical. That’s where SGLang comes in. <span style="font-size:13px;">(Related: <a href="how-we-sped-up-transformer-inference-100x-for-api-customers-173058.html" style="color:#2563eb; font-weight:600;">How we sped up transformer inference 100x for 🤗 API cus...</a>)</span></p>
-<p>Recent findings suggest that designed for high-throughput, low-latency inference, SGLang now offers seamless integration with transformers as a backend. This means you can pair the flexibility of transformers with the raw performance of SGLang. <span style="font-size:13px;">(Related: <a href="how-to-train-a-newly-introduced-language-model-from-scratch-using-173066.html" style="color:#2563eb; font-weight:600;">How to train a newly introduced language model from scr...</a>)</span></p>
+<p>According to recent reports, but once you're ready to move from notebooks to production, inference performance becomes mission-critical. That’s where SGLang comes in.</p>
+<p>Recent findings suggest that designed for high-throughput, low-latency inference, SGLang now offers seamless integration with transformers as a backend. This means you can pair the flexibility of transformers with the raw performance of SGLang.</p>
 <p>Let’s dive into what this integration enables and how you can use it.</p>
 <p>SGLang now supports Hugging Face transformers as a backend, letting you run any transformers-compatible model with high-performance inference out of the box.</p>
 <p>No native support needed — SGLang automatically falls back to Transformers when needed, or you can set impl="transformers" explicitly.</p>
 <p>Let’s walk through a simple text generation example with meta-llama/Llama-3.2-1B-Instruct to compare both approaches.</p>
 <p>transformers library is great for experimentation, small-scale tasks and training, but it's not optimized for high-volume or low-latency scenarios.</p>
-<p>Industry observers note that SGLang takes a different track, prioritizing efficiency with features like RadixAttention (a memory-efficient attention mechanism). Inference with SGLang is noticeably faster and more resource-efficient, especially under load. Here’s the same task in SGlang using an offline engine:.</p>
+<p>Industry observers note that SGLang takes a different track, prioritizing efficiency with features like RadixAttention (a memory-efficient attention mechanism). Inference with SGLang is noticeably faster and more resource-efficient, especially under load. Here’s the same task in SGlang using an offline engine:. <span style="font-size:13px;">(Related: <a href="industry-news-average-retirement-savings-by-age-are-you-on-track-184559.html" style="color:#2563eb; font-weight:600;">Industry News: Average Retirement Savings by Age: Are Y...</a>)</span></p>
 <p id="sec-mid-172294">Or you can spin a server and send requests:.</p>
 <p>Note that SGLang also offers an OpenAI-compatible API, making it a drop-in replacement for external services.</p>
 <p>Recent findings suggest that with the upcoming transformers backend integration, SGLang can now automatically fall back to using transformers models it doesn’t natively support. This means in practice:.</p>
-<p>This unlocks faster inference and optimized deployment (e.g enabling RadixAttention) without sacrificing the simplicity and versatility of transformers ecosystem.</p>
+<p>This unlocks faster inference and optimized deployment (e.g enabling RadixAttention) without sacrificing the simplicity and versatility of transformers ecosystem. <span style="font-size:13px;">(Related: <a href="how-to-budget-for-a-wedding-without-going-broke-184560.html" style="color:#2563eb; font-weight:600;">How to Budget for a Wedding Without Going Broke...</a>)</span></p>
 <p>Industry observers note that note that specifying the impl parameter is optional. If the model is not natively supported by SGLang, it switches to transformers implementation on its own.</p>
 <p>Any model on the Hugging Face Hub that works with transformers using trust_remote_code=True and properly implements attention is compatible with SGLang. You can find the exact requirements in the official documentation. If your custom model meets these criteria, all you need to do is set trust_remote_code=True when loading it.</p>
 <p>In a recent development, kyutai Team’s Helium isn’t yet natively supported by SGLang. This is where transformers backend shines, enabling optimized inference without waiting for native support.</p>
@@ -191,20 +191,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="industry-news-accelerate-bert-inference-with-hugging-face-transfo-173007.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #173007. Industry News: Accelerate BERT inference with Hugging Face Transformers and AWS Inferentia
+        <a href="industry-news-transformers-model-integration-contracts-183838.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #183838. Industry News: Transformers Model Integration Contracts
         </a>
         
-        <a href="industry-news-introducing-bertopic-integration-with-the-hugging-f-172842.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #172842. Industry News: Introducing BERTopic Integration with the Hugging Face Hub
+        <a href="paddleocr-35-running-ocr-and-document-parsing-tasks-with-a-transf-184182.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #184182. PaddleOCR 3.5: Running OCR and Document Parsing Tasks with a Transformers Backend
         </a>
         
-        <a href="industry-news-the-transformers-library-standardizing-model-defini-172378.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #172378. Industry News: The Transformers Library: standardizing model definitions
+        <a href="native-speed-vllm-transformers-modeling-backend-184090.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #184090. Native-speed vLLM transformers modeling backend
         </a>
         
-        <a href="industry-news-multimodal-embedding-reranker-models-with-sentence--172021.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #172021. Industry News: Multimodal Embedding & Reranker Models with Sentence Transformers
+        <a href="industry-news-sdg-group-pioneers-snowflake-native-hl7-fhir-server-179304.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #179304. Industry News: SDG Group Pioneers Snowflake-Native HL7® FHIR® Server Integration for Healthcare Provider
         </a>
         
     </div>

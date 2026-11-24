@@ -150,8 +150,8 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-172925">In a recent development, dreambooth is a technique to teach new concepts to Stable Diffusion using a specialized form of fine-tuning. Some people have been using it with a few of their photos to place themselves in fantastic situations, while others are using it to incorporate new styles. 🧨 Diffusers provides a Dreambooth training script. It doesn't take long to train, but it's hard to select the right set of hyperparameters and it's easy to overfit.</p>
-<p>It has been revealed that we conducted a lot of experiments to analyze the effect of different settings in Dreambooth. This post presents our findings and some tips to improve your results when fine-tuning Stable Diffusion with Dreambooth. <span style="font-size:13px;">(Related: <a href="latest-update-how-to-generate-text-using-different-decoding-metho-173065.html" style="color:#2563eb; font-weight:600;">Latest Update: How to generate text: using different de...</a>)</span></p>
-<p>It has been revealed that before we start, please be aware that this method should never be used for malicious purposes, to generate harm in any way, or to impersonate people without their knowledge. Models trained with it are still bound by the CreativeML Open RAIL-M license that governs distribution of Stable Diffusion models. <span style="font-size:13px;">(Related: <a href="breaking-block-sparse-matrices-for-smaller-and-faster-language-mo-173063.html" style="color:#2563eb; font-weight:600;">Breaking: Block Sparse Matrices for Smaller and Faster ...</a>)</span></p>
+<p>It has been revealed that we conducted a lot of experiments to analyze the effect of different settings in Dreambooth. This post presents our findings and some tips to improve your results when fine-tuning Stable Diffusion with Dreambooth.</p>
+<p>It has been revealed that before we start, please be aware that this method should never be used for malicious purposes, to generate harm in any way, or to impersonate people without their knowledge. Models trained with it are still bound by the CreativeML Open RAIL-M license that governs distribution of Stable Diffusion models. <span style="font-size:13px;">(Related: <a href="how-to-budget-for-a-wedding-without-going-broke-184560.html" style="color:#2563eb; font-weight:600;">How to Budget for a Wedding Without Going Broke...</a>)</span></p>
 <p>Note: a previous version of this post was published as a W&amp;B report.</p>
 <p>Dreambooth overfits very quickly. To get good results, tune the learning rate and the number of training steps in a way that makes sense for your dataset. In our experiments (detailed below), we fine-tuned on four different datasets with high and low learning rates. In all cases, we got better results with a low learning rate.</p>
 <p>All our experiments were conducted using the train_dreambooth.py script with the AdamW optimizer on 2x 40GB A100s. We used the same seed and kept all hyperparameters equal across runs, except LR, number of training steps and the use of prior preservation.</p>
@@ -160,7 +160,7 @@
 <p>Note that you can use 8-bit Adam, fp16 training or gradient accumulation to reduce memory requirements and run similar experiments on GPUs with 16 GB of memory.</p>
 <p>High Learning Rate (5e-6). Note that the color artifacts are noise remnants – running more inference steps could help resolve some of those details.</p>
 <p>Recent findings suggest that high Learning Rate (5e-6). Note that the color artifacts are noise remnants – running more inference steps could help resolve some of those details.</p>
-<p>We tried to incorporate the Kramer character from Seinfeld into Stable Diffusion. As previously mentioned, we trained for more steps with a smaller batch size. Even so, the results were not stellar. For the sake of brevity, we have omitted these sample images and defer the reader to the next sections, where face training became the focus of our efforts.</p>
+<p>We tried to incorporate the Kramer character from Seinfeld into Stable Diffusion. As previously mentioned, we trained for more steps with a smaller batch size. Even so, the results were not stellar. For the sake of brevity, we have omitted these sample images and defer the reader to the next sections, where face training became the focus of our efforts. <span style="font-size:13px;">(Related: <a href="gta-6s-mandy-actress-responds-to-the-internet-going-crazy-over-he-184521.html" style="color:#2563eb; font-weight:600;">GTA 6’s Mandy actress responds to the internet going cr...</a>)</span></p>
 <p>To get good results training Stable Diffusion with Dreambooth, it's notable to tune the learning rate and training steps for your dataset.</p>
 <p>Faces are harder to train. In our experiments, a learning rate of 2e-6 with 400 training steps works well for objects but faces required 1e-6 (or 2e-6) with ~1200 steps.</p>
 <p>Image quality degrades a lot if the model overfits, and this happens if:.</p>
@@ -203,6 +203,10 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
+        <a href="diffusers-welcomes-stable-diffusion-3-184333.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #184333. Diffusers welcomes Stable Diffusion 3
+        </a>
+        
         <a href="stable-diffusion-with-diffusers-172948.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #172948. Stable Diffusion with 🧨 Diffusers
         </a>
@@ -213,10 +217,6 @@
         
         <a href="using-lora-for-efficient-stable-diffusion-fine-tuning-172897.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #172897. Using LoRA for Efficient Stable Diffusion Fine-Tuning
-        </a>
-        
-        <a href="industry-news-swift-diffusers-fast-stable-diffusion-for-mac-172884.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #172884. Industry News: Swift 🧨Diffusers - Fast Stable Diffusion for Mac
         </a>
         
     </div>

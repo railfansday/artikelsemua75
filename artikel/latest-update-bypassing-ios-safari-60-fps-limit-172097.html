@@ -150,9 +150,9 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-172097">Rida F'kih · November 20, 2026 · 10 min read.</p>
-<p>Devon Govett of React Aria posted “Scrolling is All You Need: Building a Swipeable Sheet” back in October, and in it he talked about his team developing a sheet component that cleverly leverages the physics and smooth interactions provided by native browsers to provide the illusion of a native interaction. <span style="font-size:13px;">(Related: <a href="industry-news-simple-considerations-for-simple-people-building-fa-173053.html" style="color:#2563eb; font-weight:600;">Industry News: Simple considerations for simple people ...</a>)</span></p>
-<p>More recently, Jordan Walke, creator of React, posted a video of an experiment on X showing a convincing native-like mobile interaction using DOM &amp; CSS. It re-established a long-lived itch that I’ve had, and prompted this response from me. It’s something I could never justify building, however. Anything I built using this method would be pegged to 60 FPS. <span style="font-size:13px;">(Related: <a href="how-to-train-a-newly-introduced-language-model-from-scratch-using-173066.html" style="color:#2563eb; font-weight:600;">How to train a newly introduced language model from scr...</a>)</span></p>
-<p>What the video Jordan Walke posted doesn’t show is that, unless you flip the “Prefer Page Rendering Updates near 60fps” flag buried deep within the Safari developer settings on iOS, WebKit limits requestAnimationFrame to just 60 Hz on a 120 Hz screen, and on a regular page, touch and pointer events are held to that same rate. This is what makes even the best mobile websites feel irritating to use.</p>
+<p>Devon Govett of React Aria posted “Scrolling is All You Need: Building a Swipeable Sheet” back in October, and in it he talked about his team developing a sheet component that cleverly leverages the physics and smooth interactions provided by native browsers to provide the illusion of a native interaction.</p>
+<p>More recently, Jordan Walke, creator of React, posted a video of an experiment on X showing a convincing native-like mobile interaction using DOM &amp; CSS. It re-established a long-lived itch that I’ve had, and prompted this response from me. It’s something I could never justify building, however. Anything I built using this method would be pegged to 60 FPS. <span style="font-size:13px;">(Related: <a href="latest-update-clash-royale-recruits-creator-of-ai-cheating-tool-t-184525.html" style="color:#2563eb; font-weight:600;">Latest Update: Clash Royale recruits creator of AI chea...</a>)</span></p>
+<p>What the video Jordan Walke posted doesn’t show is that, unless you flip the “Prefer Page Rendering Updates near 60fps” flag buried deep within the Safari developer settings on iOS, WebKit limits requestAnimationFrame to just 60 Hz on a 120 Hz screen, and on a regular page, touch and pointer events are held to that same rate. This is what makes even the best mobile websites feel irritating to use. <span style="font-size:13px;">(Related: <a href="gta-6-developer-pays-touching-tribute-to-late-mother-by-immortali-184527.html" style="color:#2563eb; font-weight:600;">GTA 6 developer pays touching tribute to late mother by...</a>)</span></p>
 <p>How can I make this experience suck less without resorting to flags? Let’s call back to the React Aria piece. The reason it feels so nice is that scrolling is the responsibility of the compositor. It runs in its own thread. It moves, clips and fades without a JavaScript round-trip.</p>
 <p>Finger to digitizer, digitizer to compositor, compositor to GPU. This will become the basis of our interaction.</p>
 <p>In a recent development, behold, two grids. They both move a square when you drag. The one on the left uses JavaScript events and sets the transform attribute in CSS, while the one on the right simply places a square in a scrollable area.</p>
@@ -225,20 +225,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="porting-the-ndk-endless-tunnel-to-ios-a-masterclass-in-cross-plat-172746.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #172746. Porting the NDK “Endless Tunnel” to iOS: A Masterclass in Cross-Platform C++
+        <a href="tech-report-five-guardrails-that-limit-the-damage-an-ai-agent-can-183971.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #183971. Tech Report: Five Guardrails That Limit the Damage an AI Agent Can Do
         </a>
         
-        <a href="a-hidden-limit-of-space-and-time-could-unlock-electronics-100000--172300.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #172300. A hidden limit of space and time could unlock electronics 100,000 times faster
+        <a href="latest-update-how-linkedin-built-a-view-agnostic-analytics-system-183887.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #183887. Latest Update: How LinkedIn Built a View-Agnostic Analytics System for Modern iOS UI Architectures
         </a>
         
-        <a href="willow-ios-20-172001.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #172001. Willow iOS 2.0
+        <a href="breaking-180b-parameters-32gb-of-ram-pushing-moe-inference-to-the-183791.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #183791. Breaking: 180B Parameters, 32GB of RAM: Pushing MoE Inference to the Limit with Transformers
         </a>
         
-        <a href="breaking-struggling-to-afford-groceries-check-snaps-income-limit--171009.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #171009. Breaking: Struggling to Afford Groceries? Check SNAP’s Income Limit Before You Rule Yourself Out
+        <a href="willow-ios-20-183709.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #183709. Willow iOS 2.0
         </a>
         
     </div>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latest Update: A streaming pipeline turned a data lake bill into an API bill</title>
+    <meta name="description" content="Originally published on the Cloud ex Machina engineering blog. It has been revealed that A data lake bucket held less than a terabyte and cost about $5 a d">
+    <meta name="keywords" content="pipeline, cost, change, bucket, recent, checkpoint, data, pipelines">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua75/artikel/latest-update-a-streaming-pipeline-turned-a-data-lake-bill-into-a-183769.html">
+    
+    <meta property="og:title" content="Latest Update: A streaming pipeline turned a data lake bill into an API bill">
+    <meta property="og:description" content="Originally published on the Cloud ex Machina engineering blog. It has been revealed that A data lake bucket held less than a terabyte and cost about $5 a d">
+    <meta property="og:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fblog.cloudexmachina.io%2Fimg%2Fblog%2Ffinops-trenches%2Fpipeline-requests.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua75/artikel/latest-update-a-streaming-pipeline-turned-a-data-lake-bill-into-a-183769.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Latest Update: A streaming pipeline turned a data lake bill into an API bill">
+    <meta name="twitter:description" content="Originally published on the Cloud ex Machina engineering blog. It has been revealed that A data lake bucket held less than a terabyte and cost about $5 a d">
+    <meta name="twitter:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fblog.cloudexmachina.io%2Fimg%2Fblog%2Ffinops-trenches%2Fpipeline-requests.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Latest Update: A streaming pipeline turned a data lake bill into an API bill", "image": ["https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fblog.cloudexmachina.io%2Fimg%2Fblog%2Ffinops-trenches%2Fpipeline-requests.png"], "datePublished": "2026-11-24T17:00:02", "dateModified": "2026-11-24T17:01:26.070214", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua75/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua75/artikel/latest-update-a-streaming-pipeline-turned-a-data-lake-bill-into-a-183769.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Latest Update: A streaming pipeline turned a data lake bill into an API bill?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Dev."}}, {"@type": "Question", "name": "Which category does 'Latest Update: A streaming pipeline turned a data lake bill ' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Latest Update: A streaming pipeline turned a data lake bill into an API bill</h1>
+        <div class="meta-line">🌐 Source: <strong>Dev</strong> &bull; 📅 24 Nov 2026 &bull; ⏱️ 5 min read (977 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>Originally published on the Cloud ex Machina engineering blog.</li><li style='margin-bottom:6px;'>It has been revealed that A data lake bucket held less than a terabyte and cost about $5 a day.</li><li style='margin-bottom:6px;'>The two pipelines are Lakeflow Declarative Pipelines on Databricks, formerly Delta Live Tables, running in continuous mode, so they "process new data as it arrives" and never stop.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-183769"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-183769"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-183769"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Latest Update: A streaming pipeline turned a data lake bill into an API bill" loading="lazy" src="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fblog.cloudexmachina.io%2Fimg%2Fblog%2Ffinops-trenches%2Fpipeline-requests.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-183769">Originally published on the Cloud ex Machina engineering blog.</p>
+<p>It has been revealed that A data lake bucket held less than a terabyte and cost about $5 a day. On the day two new Databricks streaming pipelines went live, its cost rose to almost $19 a day, and S3 request costs made up 97% of it. The pipelines worked as written, the tables stayed fresh, and every dashboard stayed green. Two configuration defaults drove the extra cost, and the signal sat on the cloud bill, far from the pipeline code and its tests. A few lines of configuration fixed it, for about $5,000 a year. This post opens Feedback loops from the FinOps trenches, our series on runtime signals that point back at the code that caused them. <span style="font-size:13px;">(Related: <a href="what-i-do-every-time-i-get-an-irs-notice-184553.html" style="color:#2563eb; font-weight:600;">What I do every time I get an IRS notice...</a>)</span></p>
+<p>The two pipelines are Lakeflow Declarative Pipelines on Databricks, formerly Delta Live Tables, running in continuous mode, so they "process new data as it arrives" and never stop. Their source changes rarely. Every 35 to 70 seconds, each pipeline checked for new data, found none, and wrote down that it had found none. One of the two tables had never received a row. <span style="font-size:13px;">(Related: <a href="restaurant-owners-left-in-tears-after-discovering-their-family-bu-184522.html" style="color:#2563eb; font-weight:600;">Restaurant owners left in tears after discovering their...</a>)</span></p>
+<p>Each of those notes costs requests. A streaming job records its progress in a streaming checkpoint, and it splits its state into one folder per shuffle partition. Spark's spark.sql.shuffle.partitions defaults to 200, and the checkpoint we looked at had 201 state folders. Each empty micro-batch listed and wrote files across all of them.</p>
+<p>In the 32 days after go-live, the bucket averaged:.</p>
+<p>Recent findings suggest that S3 bills lists and writes at the same $0.005 per thousand, more than twelve times the price of a read. The bucket's own bill shows it: 76.2 million list requests cost $380.98 in one month, while storage stayed under $1 a day.</p>
+<p>According to recent reports, the bucket also has versioning turned on. When the job cleaned up an old checkpoint file, S3 kept the file as a noncurrent version and added a delete marker. The bucket gained 60 million objects in a month, mostly checkpoint leftovers that nobody would ever read.</p>
+<p>Industry observers note that continuous mode is a sensible choice when you want fresh tables, and 200 partitions is what Spark gives you unless you ask for another number. The people who built the pipelines made reasonable choices with the information they had. That information came from the code and its tests, and the cost of these two choices only appears at runtime, in the production environment, at production cadence, after days of empty batches.</p>
+<p>According to recent reports, nothing in their daily view carried that signal. Tests and staging runs last minutes. The pipeline's own metrics highlighted fast, successful batches. The cloud bill groups the charge as "S3 requests" for a bucket that many jobs share, a line that no single team owns, and it reaches finance as a monthly total weeks after the change that caused it.</p>
+<p>That gap is the subject of our earlier post on AI-generated code and cloud cost: whoever writes the change never sees what it costs to run.</p>
+<p>The pipelines moved to triggered mode on a schedule that matches how often their data changes, with a handful of shuffle partitions instead of 200. The checkpoint fixes the partition count, so a latest count needs a fresh checkpoint, which costs nothing for a table with no rows. A lifecycle rule now expires noncurrent versions after a few days.</p>
+<p id="sec-mid-183769">Recent findings suggest that A cloud team would usually find the lifecycle rule first, and on its own it saves about $4 a month. Almost all of the $5,000 a year sits in the pipeline configuration, which a data engineer owns. A cost tool that stops at the bucket settings misses it.</p>
+<p>According to recent reports, the number we keep coming back to is the ratio: a few lines of configuration for about $5,000 a year, more than $1,000 a year per line changed. Few code reviews look at a change with that cost in mind. And the signal pointed straight back at the change that caused it:.</p>
+<p>A dated step. Requests jumped on the day the pipelines went live and stayed up.</p>
+<p>An exact location. The newly introduced writes sat under two checkpoint folders, each named after its pipeline.</p>
+<p>According to recent reports, an owner. The pipeline's code and its infrastructure have an owner we could name.</p>
+<p>In a recent development, A check. The next week's request count says whether the change worked.</p>
+<p>A daily check on the bucket's request count flags this step within days of go-live, while the fix is still a fresh change in the pipeline's configuration.</p>
+<p>Sources indicate that A software factory is a set of agents that write a change, test it and ship it, and today they optimise for passing tests. Give them this signal after each deploy, as plainly as a failing test, and "the pipeline costs four times more since your last change" becomes something they can act on and verify.</p>
+<p>Recent findings suggest that this is the cost feedback loop Cloud ex Machina runs. It reads the bill and the runtime data every day, ties a cost step to the change and the pipeline behind it, puts a dollar figure on it, and measures the next bills after the fix. With or without a factory, it delivers these findings as application-layer FinOps recommendations, each with its saving and the team that owns the code.</p>
+<p>How often does its source change? If the answer is hours, continuous mode buys freshness nobody uses.</p>
+<p>According to recent reports, how many shuffle partitions does it use, and who picked that number? If nobody did, it's 200.</p>
+<p id="sec-end-183769">It has been revealed that is its checkpoint in a versioned bucket? Then every cleanup leaves a latest object to pay for, until a lifecycle rule removes it.</p>
+<p style="margin-top: 25px;">
+<a href="https://dev.to/cloudexmachina/a-streaming-pipeline-turned-a-data-lake-bill-into-an-api-bill-42o4" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="a-routine-invasive-species-survey-in-lake-ontario-turned-up-somet-182330.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #182330. A Routine Invasive-Species Survey in Lake Ontario Turned Up Something Much Stranger
+        </a>
+        
+        <a href="googles-branded-api-data-cdn-advice-ask-maps-calls-seo-pulse-via--181217.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #181217. Google’s Branded API Data, CDN Advice & Ask Maps Calls – SEO Pulse via @sejournal, @MattGSouthern
+        </a>
+        
+        <a href="latest-update-how-to-get-a-youtube-api-key-and-use-the-data-api-2-172666.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #172666. Latest Update: How to Get a YouTube API Key and Use the Data API (2026)
+        </a>
+        
+        <a href="latest-update-efficient-multimodal-data-pipeline-172280.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #172280. Latest Update: Efficient MultiModal Data Pipeline
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

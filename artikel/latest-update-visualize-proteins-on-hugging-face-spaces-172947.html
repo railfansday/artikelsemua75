@@ -150,8 +150,8 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-172947">In this post we will look at how we can visualize proteins on Hugging Face Spaces.</p>
-<p>While the method described below still works, you'll likely want to save some time and use the Molecule3D Gradio Custom Component. This component will allow users to modify the protein visualization on the fly and you can more easily set the default visualization. Simply install it using:. <span style="font-size:13px;">(Related: <a href="how-to-train-a-newly-introduced-language-model-from-scratch-using-173066.html" style="color:#2563eb; font-weight:600;">How to train a newly introduced language model from scr...</a>)</span></p>
-<p>Proteins have a huge impact on our life - from medicines to washing powder. Machine learning on proteins is a rapidly growing field to help us design fresh and interesting proteins. Proteins are complex 3D objects generally composed of a series of building blocks called amino acids that are arranged in 3D space to give the protein its function. For machine learning purposes a protein can for example be represented as coordinates, as graph or as 1D sequence of letters for use in a protein language model. <span style="font-size:13px;">(Related: <a href="latest-update-how-to-generate-text-using-different-decoding-metho-173065.html" style="color:#2563eb; font-weight:600;">Latest Update: How to generate text: using different de...</a>)</span></p>
+<p>While the method described below still works, you'll likely want to save some time and use the Molecule3D Gradio Custom Component. This component will allow users to modify the protein visualization on the fly and you can more easily set the default visualization. Simply install it using:. <span style="font-size:13px;">(Related: <a href="how-to-start-a-side-business-while-working-full-time-184555.html" style="color:#2563eb; font-weight:600;">How to Start a Side Business While Working Full-Time...</a>)</span></p>
+<p>Proteins have a huge impact on our life - from medicines to washing powder. Machine learning on proteins is a rapidly growing field to help us design fresh and interesting proteins. Proteins are complex 3D objects generally composed of a series of building blocks called amino acids that are arranged in 3D space to give the protein its function. For machine learning purposes a protein can for example be represented as coordinates, as graph or as 1D sequence of letters for use in a protein language model.</p>
 <p>A famous ML model for proteins is AlphaFold2 which predicts the structure of a protein sequence using a multiple sequence alignment of similar proteins and a structure module.</p>
 <p>Since AlphaFold2 made its debut many more such models have come out such as OmegaFold, OpenFold etc. (see this list or this list for more).</p>
 <p>According to recent reports, the structure of a protein is an integral part to our understanding of what a protein does. Nowadays, there are a few tools available to visualize proteins directly in the browser such as mol* or 3dmol.js. In this post, you will learn how to integrate structure visualization into your Hugging Face Space using 3Dmol.js and the HTML block.</p>
@@ -162,7 +162,7 @@
 <p>Our get_pdb function is also simple:.</p>
 <p id="sec-mid-172947">In a recent development, now, how to visualize the protein since Gradio does not have 3Dmol directly available as a block? We use an iframe for this.</p>
 <p>Our molecule function which returns the iframe conceptually looks like this:.</p>
-<p>This is a bit clunky to setup but is necessary because of the security rules in modern browsers.</p>
+<p>This is a bit clunky to setup but is necessary because of the security rules in modern browsers. <span style="font-size:13px;">(Related: <a href="gift-tax-rules-how-much-can-you-give-tax-free-184556.html" style="color:#2563eb; font-weight:600;">Gift Tax Rules: How Much Can You Give Tax-Free?...</a>)</span></p>
 <p>3Dmol.js setup is pretty easy and the documentation provides a few examples.</p>
 <p>The head of our returned document needs to load 3Dmol.js (which in turn also loads JQuery).</p>
 <p>The styles for .mol-container can be used to modify the size of the molecule viewer.</p>
@@ -195,6 +195,10 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
+        <a href="how-an-agent-built-a-3d-paris-gallery-by-chaining-two-hugging-fac-184142.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #184142. How an Agent Built a 3D Paris Gallery by Chaining Two Hugging Face Spaces
+        </a>
+        
         <a href="industry-news-hosting-your-models-and-datasets-on-hugging-face-sp-173034.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #173034. Industry News: Hosting your Models and Datasets on Hugging Face Spaces using Streamlit
         </a>
@@ -205,10 +209,6 @@
         
         <a href="run-comfyui-workflows-for-free-with-gradio-on-hugging-face-spaces-172736.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #172736. Run ComfyUI workflows for free with Gradio on Hugging Face Spaces
-        </a>
-        
-        <a href="industry-news-data-is-better-together-enabling-communities-to-col-172702.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #172702. Industry News: Data is better together: Enabling communities to collectively build better datasets together using Argilla and Hugging Face Spaces
         </a>
         
     </div>

@@ -1,85 +1,85 @@
 {
-  "generatedAt": "2026-11-24T13:58:28.092857",
-  "totalArticles": 12424,
+  "generatedAt": "2026-11-24T17:39:13.611257",
+  "totalArticles": 12494,
   "categoryBreakdown": {
-    "General": 10012,
-    "AI & Tech": 1001,
-    "Hardware & Chips": 293,
-    "Business & Policy": 566,
-    "Gadgets": 331,
-    "EV & Auto": 221
+    "General": 10096,
+    "AI & Tech": 990,
+    "Hardware & Chips": 285,
+    "Gadgets": 335,
+    "EV & Auto": 232,
+    "Business & Policy": 556
   },
   "topSources": {
-    "Hugging Face": 916,
-    "Co": 819,
-    "Sciencedaily": 213,
+    "Hugging Face": 912,
+    "Co": 839,
+    "Sciencedaily": 211,
     "Eschoolnews": 200,
-    "Cbssports": 169,
+    "Cbssports": 170,
     "Electrek": 149,
-    "Yahoo": 148,
+    "Yahoo": 145,
     "Dw": 142,
-    "Dailymail": 135,
-    "Realworkfromanywhere": 126
+    "Dailymail": 137,
+    "Realworkfromanywhere": 127
   },
   "latestHeadlines": [
     {
-      "id": 173066,
-      "title": "How to train a newly introduced language model from scratch using Transformers and Tokenizers",
-      "url": "https://railfansday.github.io/artikelsemua75/artikel/how-to-train-a-newly-introduced-language-model-from-scratch-using-173066.html",
+      "id": 184560,
+      "title": "How to Budget for a Wedding Without Going Broke",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/how-to-budget-for-a-wedding-without-going-broke-184560.html",
       "category": "General"
     },
     {
-      "id": 173065,
-      "title": "Latest Update: How to generate text: using different decoding methods for language generation with Transformers",
-      "url": "https://railfansday.github.io/artikelsemua75/artikel/latest-update-how-to-generate-text-using-different-decoding-metho-173065.html",
+      "id": 184559,
+      "title": "Industry News: Average Retirement Savings by Age: Are You on Track?",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/industry-news-average-retirement-savings-by-age-are-you-on-track-184559.html",
       "category": "General"
     },
     {
-      "id": 173064,
-      "title": "The Reformer - Pushing the limits of language modeling",
-      "url": "https://railfansday.github.io/artikelsemua75/artikel/the-reformer-pushing-the-limits-of-language-modeling-173064.html",
+      "id": 184558,
+      "title": "Latest Update: Dividends Aren&#039;t What You Think They Are",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/latest-update-dividends-aren039t-what-you-think-they-are-184558.html",
       "category": "General"
     },
     {
-      "id": 173063,
-      "title": "Breaking: Block Sparse Matrices for Smaller and Faster Language Models",
-      "url": "https://railfansday.github.io/artikelsemua75/artikel/breaking-block-sparse-matrices-for-smaller-and-faster-language-mo-173063.html",
+      "id": 184557,
+      "title": "Breaking: How Many Millionaires Are in the US? Stats and Facts",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/breaking-how-many-millionaires-are-in-the-us-stats-and-facts-184557.html",
       "category": "General"
     },
     {
-      "id": 173062,
-      "title": "Transformer-based Encoder-Decoder Models",
-      "url": "https://railfansday.github.io/artikelsemua75/artikel/transformer-based-encoder-decoder-models-173062.html",
+      "id": 184556,
+      "title": "Gift Tax Rules: How Much Can You Give Tax-Free?",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/gift-tax-rules-how-much-can-you-give-tax-free-184556.html",
       "category": "General"
     },
     {
-      "id": 173061,
-      "title": "Hyperparameter Search with Transformers and Ray Tune",
-      "url": "https://railfansday.github.io/artikelsemua75/artikel/hyperparameter-search-with-transformers-and-ray-tune-173061.html",
+      "id": 184555,
+      "title": "How to Start a Side Business While Working Full-Time",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/how-to-start-a-side-business-while-working-full-time-184555.html",
       "category": "General"
     },
     {
-      "id": 173060,
-      "title": "Breaking: Porting fairseq wmt19 translation system to transformers",
-      "url": "https://railfansday.github.io/artikelsemua75/artikel/breaking-porting-fairseq-wmt19-translation-system-to-transformers-173060.html",
+      "id": 184554,
+      "title": "Compound Interest Calculator: See Your Money Grow",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/compound-interest-calculator-see-your-money-grow-184554.html",
       "category": "General"
     },
     {
-      "id": 173059,
-      "title": "Leveraging Pre-trained Language Model Checkpoints for Encoder-Decoder Models",
-      "url": "https://railfansday.github.io/artikelsemua75/artikel/leveraging-pre-trained-language-model-checkpoints-for-encoder-dec-173059.html",
+      "id": 184553,
+      "title": "What I do every time I get an IRS notice",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/what-i-do-every-time-i-get-an-irs-notice-184553.html",
       "category": "General"
     },
     {
-      "id": 173058,
-      "title": "How we sped up transformer inference 100x for 🤗 API customers",
-      "url": "https://railfansday.github.io/artikelsemua75/artikel/how-we-sped-up-transformer-inference-100x-for-api-customers-173058.html",
+      "id": 184552,
+      "title": "Primary vs Contingent Beneficiary: What&#039;s the Difference?",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/primary-vs-contingent-beneficiary-what039s-the-difference-184552.html",
       "category": "General"
     },
     {
-      "id": 173057,
-      "title": "Latest Update: Fit More and Train Faster With ZeRO via DeepSpeed and FairScale",
-      "url": "https://railfansday.github.io/artikelsemua75/artikel/latest-update-fit-more-and-train-faster-with-zero-via-deepspeed-a-173057.html",
+      "id": 184551,
+      "title": "What Is Considered Upper Middle Class? Income and Net Worth",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/what-is-considered-upper-middle-class-income-and-net-worth-184551.html",
       "category": "General"
     }
   ]

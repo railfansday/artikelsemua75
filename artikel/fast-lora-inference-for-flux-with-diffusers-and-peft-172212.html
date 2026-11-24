@@ -150,14 +150,14 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-172212">Sources indicate that loRA adapters provide a great deal of customization for models of all shapes and sizes. When it comes to image generation, they can empower the models with different styles, different characters, and much more. Sometimes, they can also be leveraged to reduce inference latency. Hence, their importance is paramount, particularly when it comes to customizing and fine-tuning models.</p>
-<p>In this post, we take the Flux.1-Dev model for text-to-image generation because of its widespread popularity and adoption, and how to optimize its inference speed when using LoRAs (~2.3x). It has over 30k adapters trained with it (as reported on the Hugging Face Hub platform). Therefore, its importance to the community is significant. <span style="font-size:13px;">(Related: <a href="how-to-train-a-newly-introduced-language-model-from-scratch-using-173066.html" style="color:#2563eb; font-weight:600;">How to train a newly introduced language model from scr...</a>)</span></p>
-<p>Note that even though we demonstrate speedups with Flux, our belief is that our recipe is generic enough to be applied to other models as well. <span style="font-size:13px;">(Related: <a href="breaking-block-sparse-matrices-for-smaller-and-faster-language-mo-173063.html" style="color:#2563eb; font-weight:600;">Breaking: Block Sparse Matrices for Smaller and Faster ...</a>)</span></p>
+<p>In this post, we take the Flux.1-Dev model for text-to-image generation because of its widespread popularity and adoption, and how to optimize its inference speed when using LoRAs (~2.3x). It has over 30k adapters trained with it (as reported on the Hugging Face Hub platform). Therefore, its importance to the community is significant.</p>
+<p>Note that even though we demonstrate speedups with Flux, our belief is that our recipe is generic enough to be applied to other models as well.</p>
 <p>If you cannot wait to get started with the code, please check out the accompanying code repository.</p>
 <p>When serving LoRAs, it is common to hotswap (swap in and swap out different LoRAs) them. A LoRA changes the base model architecture. Additionally, LoRAs can be different from one another – each one of them could have varying ranks and different layers they target for adaptation. To account for these dynamic properties of LoRAs, we must take necessary steps to ensure the optimizations we apply are robust.</p>
 <p>For example, we can apply torch.compile on a model loaded with a particular LoRA to obtain speedups on inference latency. However, the moment we swap out the LoRA with a different one (with a potentially different configuration), we will run into recompilation complications, causing slowdowns in inference.</p>
-<p>Industry observers note that one can also fuse the LoRA parameters into the base model parameters, run compilation, and unfuse the LoRA parameters when loading new ones. However, this approach will again encounter the problem of recompilation whenever inference is run, due to potential architecture-level changes.</p>
+<p>Industry observers note that one can also fuse the LoRA parameters into the base model parameters, run compilation, and unfuse the LoRA parameters when loading new ones. However, this approach will again encounter the problem of recompilation whenever inference is run, due to potential architecture-level changes. <span style="font-size:13px;">(Related: <a href="industry-news-average-retirement-savings-by-age-are-you-on-track-184559.html" style="color:#2563eb; font-weight:600;">Industry News: Average Retirement Savings by Age: Are Y...</a>)</span></p>
 <p>Our optimization recipe takes into account the above-mentioned situations to be as realistic as possible. Below are the key components of our optimization recipe:.</p>
-<p>Sources indicate that note that amongst the above-mentioned, FP8 quantization is lossy but often provides the most formidable speed-memory trade-off. Even though we tested the recipe primarily using NVIDIA GPUs, it should work on AMD GPUs, too.</p>
+<p>Sources indicate that note that amongst the above-mentioned, FP8 quantization is lossy but often provides the most formidable speed-memory trade-off. Even though we tested the recipe primarily using NVIDIA GPUs, it should work on AMD GPUs, too. <span style="font-size:13px;">(Related: <a href="should-i-quit-my-job-a-decision-framework-184548.html" style="color:#2563eb; font-weight:600;">Should I Quit My Job? A Decision Framework...</a>)</span></p>
 <p>Industry observers note that in our previous blog posts (post 1 and post 2), we have already discussed the benefits of using the first three components of our optimization recipe. Applying them one by one is just a few lines of code:.</p>
 <p>The FA3 processor comes from here.</p>
 <p>The problems start surfacing when we try to swap in and swap out LoRAs into a compiled diffusion transformer (pipe.transformer) without triggering recompilation.</p>
@@ -207,20 +207,20 @@ LoRA-based use cases, benefitting from speedy inference.</p>
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
+        <a href="diffusers-welcomes-flux-2-184297.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #184297. Diffusers welcomes FLUX-2
+        </a>
+        
+        <a href="bringing-nunchaku-4-bit-diffusion-inference-to-diffusers-184066.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #184066. Bringing Nunchaku 4-bit Diffusion Inference to Diffusers
+        </a>
+        
+        <a href="welcome-flux3-image-klein-in-diffusers-183916.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #183916. Welcome FLUX.3 Image Klein in Diffusers
+        </a>
+        
         <a href="latest-update-incredibly-fast-bloom-inference-with-deepspeed-and--172942.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #172942. Latest Update: Incredibly Fast BLOOM Inference with DeepSpeed and Accelerate
-        </a>
-        
-        <a href="industry-news-swift-diffusers-fast-stable-diffusion-for-mac-172884.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #172884. Industry News: Swift 🧨Diffusers - Fast Stable Diffusion for Mac
-        </a>
-        
-        <a href="fast-inference-on-large-language-models-bloomz-on-habana-gaudi2-a-172870.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #172870. Fast Inference on Large Language Models: BLOOMZ on Habana Gaudi2 Accelerator
-        </a>
-        
-        <a href="industry-news-goodbye-cold-boot-how-we-made-lora-inference-300-fa-172750.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #172750. Industry News: Goodbye cold boot - how we made LoRA Inference 300% faster
         </a>
         
     </div>

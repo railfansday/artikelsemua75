@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Run GLM-5.4 Locally (No Weights Yet, and It'll Be Slower Than GLM-5.3)</title>
+    <meta name="description" content="You can't run GLM-5.4 locally today. Z.ai shipped it on November 23, 2026 as its first loop transformer coding model, and the weights aren't public yet. Th">
+    <meta name="keywords" content="model, weights, loop, memory, token, recent, layer, same">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua75/artikel/how-to-run-glm-54-locally-no-weights-yet-and-itll-be-slower-than--183766.html">
+    
+    <meta property="og:title" content="How to Run GLM-5.4 Locally (No Weights Yet, and It'll Be Slower Than GLM-5.3)">
+    <meta property="og:description" content="You can't run GLM-5.4 locally today. Z.ai shipped it on November 23, 2026 as its first loop transformer coding model, and the weights aren't public yet. Th">
+    <meta property="og:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fimages.pexels.com%2Fphotos%2F4682189%2Fpexels-photo-4682189.jpeg%3Fauto%3Dcompress%26cs%3Dtinysrgb%26fit%3Dcrop%26h%3D627%26w%3D1200">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua75/artikel/how-to-run-glm-54-locally-no-weights-yet-and-itll-be-slower-than--183766.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="How to Run GLM-5.4 Locally (No Weights Yet, and It'll Be Slower Than GLM-5.3)">
+    <meta name="twitter:description" content="You can't run GLM-5.4 locally today. Z.ai shipped it on November 23, 2026 as its first loop transformer coding model, and the weights aren't public yet. Th">
+    <meta name="twitter:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fimages.pexels.com%2Fphotos%2F4682189%2Fpexels-photo-4682189.jpeg%3Fauto%3Dcompress%26cs%3Dtinysrgb%26fit%3Dcrop%26h%3D627%26w%3D1200">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "How to Run GLM-5.4 Locally (No Weights Yet, and It'll Be Slower Than GLM-5.3)", "image": ["https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fimages.pexels.com%2Fphotos%2F4682189%2Fpexels-photo-4682189.jpeg%3Fauto%3Dcompress%26cs%3Dtinysrgb%26fit%3Dcrop%26h%3D627%26w%3D1200"], "datePublished": "2026-11-24T17:00:03", "dateModified": "2026-11-24T17:01:25.944797", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua75/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua75/artikel/how-to-run-glm-54-locally-no-weights-yet-and-itll-be-slower-than--183766.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding How to Run GLM-5.4 Locally (No Weights Yet, and It'll Be Slower Than GLM-5.3)?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Dev."}}, {"@type": "Question", "name": "Which category does 'How to Run GLM-5.4 Locally (No Weights Yet, and It'll Be Slo' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>How to Run GLM-5.4 Locally (No Weights Yet, and It'll Be Slower Than GLM-5.3)</h1>
+        <div class="meta-line">🌐 Source: <strong>Dev</strong> &bull; 📅 24 Nov 2026 &bull; ⏱️ 5 min read (1007 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>You can't run GLM-5.4 locally today.</li><li style='margin-bottom:6px;'>It has been revealed that the line from the announcement that got quoted on HN is "We initiative to open-source the model weights responsibly after completing necessary safety hardening." No date is given.</li><li style='margin-bottom:6px;'>Sources indicate that A normal transformer runs every layer once per token.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-183766"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-183766"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-183766"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="How to Run GLM-5.4 Locally (No Weights Yet, and It'll Be Slower Than GLM-5.3)" loading="lazy" src="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fimages.pexels.com%2Fphotos%2F4682189%2Fpexels-photo-4682189.jpeg%3Fauto%3Dcompress%26cs%3Dtinysrgb%26fit%3Dcrop%26h%3D627%26w%3D1200" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-183766">You can't run GLM-5.4 locally today. Z.ai shipped it on November 23, 2026 as its first loop transformer coding model, and the weights aren't public yet. There's no Hugging Face repo, no model card and no license file. The zai-org org page still stops at GLM-5.3.</p>
+<p>It has been revealed that the line from the announcement that got quoted on HN is "We initiative to open-source the model weights responsibly after completing necessary safety hardening." No date is given. When the weights do land, the loop changes your hardware math in a way most "how much VRAM do I need" posts will get wrong. Below I work out a memory budget from GLM-5.3's numbers and check how far llama.cpp, vLLM, MLX and Ollama are from loading it. <span style="font-size:13px;">(Related: <a href="how-to-budget-for-a-wedding-without-going-broke-184560.html" style="color:#2563eb; font-weight:600;">How to Budget for a Wedding Without Going Broke...</a>)</span></p>
+<p>Sources indicate that A normal transformer runs every layer once per token. GLM-5.4 takes a block of 28 layers from the GLM-5 base and runs that block twice per token, using the same weights both times. WCCFtech, TestingCatalog and DataCamp all describe it the same way. <span style="font-size:13px;">(Related: <a href="what-i-do-every-time-i-get-an-irs-notice-184553.html" style="color:#2563eb; font-weight:600;">What I do every time I get an IRS notice...</a>)</span></p>
+<p>Recent findings suggest that it wasn't trained looped from scratch. Z.ai took the already-pretrained GLM-5 base and converted the middle layers into a loop through continued training. GLM-5's config.json has "num_hidden_layers": 78. That's why one HN commenter summed it up as "emulating a 106 layer model in a 78 layer model.".</p>
+<p>According to DataCamp's write-up of the blog, there are two extra pieces that matter for anyone who will implement this in a runtime:.</p>
+<p>In this release the loop count is two, every token, every time. It doesn't loop until convergence, and it doesn't vary by token difficulty. Several HN commenters had to correct each other on that. Z.ai states it will keep scaling loop depth alongside model size, so later versions may differ.</p>
+<p>That last row is the one I have a problem with.</p>
+<p>In a recent development, Z.ai published no benchmark scores for GLM-5.4 itself, coding or otherwise. The only numbers come from a 30B iso-parameter ablation. With "about 10% more" training compute, the looped version beat the plain one, with the biggest gains on math, science reasoning and long context, and 10-14% shorter outputs on GPQA-Diamond and MMLU-Pro. The headline claim is that the ~750B model reaches intelligence comparable to 2T-3T parameter models. According to TestingCatalog, a Z.ai team member stated 5.4 scores will come later.</p>
+<p>For comparison, GLM-5.3's model card lists Terminal Bench 2.1 at 88.2, DeepSWE (v1.1) at 66.9 and NL2Repo at 58.0. That's the bar 5.4 has to clear, and Z.ai chose not to show whether it does.</p>
+<p>The only third-party number I found is AICodeKing's KingBench 4, via DataCamp: 7th overall and 1st among open models. It took 431 minutes against Gemini 4 Neon's 109, burned about 1.04M tokens against roughly 70,000, and had a 1.56% tool-call failure rate (11th of 17). DataCamp notes it's one reviewer's own harness, and people on X have already questioned which reasoning effort was used. So it's good, but it thinks a lot. Z.ai itself admits to "marathon thinking" loops.</p>
+<p>Early HN reports match that: "decent improvement on 5.3 but nothing earth shattering," "only marginally" better on one person's codebase, and one note that "it switches to Chinese at some point.".</p>
+<p id="sec-mid-183766">Sources indicate that my read: shipping a new architecture on a subscription plan, with no benchmark table and no weights, is a launch built for two news cycles. Maybe the numbers are fine. But "trust us, it matches a 3T model" from a 30B ablation is not evidence.</p>
+<p>Because the looped layers share weights, memory scales with physical parameters while compute scales with layer passes, so the two need separate estimates.</p>
+<p>Recent findings suggest that memory: the file size should land very close to GLM-5.3's. Treat these as estimates until a GGUF exists. Unsloth's GLM-5.3 guide lists the closest numbers available:.</p>
+<p>For datacenter hardware, vLLM's recipe indicates the FP8 GLM-5.3 checkpoint "fits on a single 8xH200 / 8xH20 node", and that reaching the full 1M context takes 8xB200 with FP8 KV cache. Add a little for GLM-5.4: the loop gates, a vision encoder, and a sliding-window KV for the second pass.</p>
+<p>Compute: every token now goes through roughly 106 layer passes instead of 78. That works out to about 36% more work per token from the layer count alone, even though the parameter count hasn't moved. Z.ai credits fused kernels with cutting the extra memory reads and writes the loop adds. On your hardware, expect it to be slower than GLM-5.3 at the same quant.</p>
+<p>Recent findings suggest that HN argued about whether looping helps the memory-bandwidth wall. The clearest answer came from user ac29: "Looping saves you memory capacity needs, not memory throughput needs." At batch size 1 on a Mac, you're still streaming the same expert weights, just more times.</p>
+<p>Recent findings suggest that none, because there's nothing to load. Where each one stands:.</p>
+<p>If you want GLM-5.4 now, it's on the GLM Coding Initiative, ZCode and Z.ai Chat. It's not on the regular API or OpenRouter yet. In Claude Code the model ID is glm-5.4[1m]. In OpenCode it's "model": "zai-coding-plan/glm-5.4".</p>
+<p>If you want local, run GLM-5.3 with Unsloth's commands. They should carry over almost unchanged once 5.4 quants exist:.</p>
+<p>To know when the weights drop, poll the HF API instead of refreshing Twitter:.</p>
+<p>Recent findings suggest that Z.ai has kept this promise before: GLM-5 and GLM-5.3 both ended up on Hugging Face, and as one HN commenter put it, "they usually take a few weeks to release the weights". The license has drifted, though. GLM-5 was MIT and GLM-5.3 ships under a custom glm-5.3 license, so read whatever 5.4 comes with before you build on it.</p>
+<p id="sec-end-183766">In a recent development, A fixed two-pass loop on a ~750B MoE means more thinking per token at the same memory. Would you take slower tokens for that, or is a fast 27B Qwen still the better deal on your box? And what would GLM-5.4 have to beat, on which benchmark, for you to switch from Qwen?</p>
+<p style="margin-top: 25px;">
+<a href="https://dev.to/alanwest/how-to-run-glm-54-locally-no-weights-yet-and-itll-be-slower-than-glm-53-4mi" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="tech-report-how-fast-do-you-actually-lose-strength-slower-than-yo-182926.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #182926. Tech Report: How Fast Do You Actually Lose Strength? Slower Than You Think
+        </a>
+        
+        <a href="these-10-brooks-running-shoes-will-help-you-run-your-best-miles-y-182851.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #182851. These 10 Brooks Running Shoes Will Help You Run Your Best Miles Yet
+        </a>
+        
+        <a href="the-fed-just-warned-that-ai-could-trigger-a-bank-run-faster-than--180168.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #180168. The Fed Just Warned That AI Could Trigger a Bank Run Faster Than Any Human Could Possibly Stop It
+        </a>
+        
+        <a href="slay-the-spire-2s-biggest-beta-patch-yet-adds-its-first-newly-int-177885.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #177885. Slay the Spire 2's "biggest" beta patch yet adds its first newly introduced early access and foolish character, two game modes, and more tweaks than you can shake a stick at
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

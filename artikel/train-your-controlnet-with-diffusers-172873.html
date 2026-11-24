@@ -150,11 +150,11 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-172873">ControlNet is a neural network structure that allows fine-grained control of diffusion models by adding extra conditions. The technique debuted with the paper Adding Conditional Control to Text-to-Image Diffusion Models, and promptly took over the open-source diffusion community author's release of 8 different conditions to control Stable Diffusion v1-5, including pose estimations, depth maps, canny edges, sketches, and more.</p>
-<p>In this blog post we will go over each step in detail on how we trained the Uncanny Faces model - a model on face poses based on 3D synthetic faces (the uncanny faces was an unintended consequence actually, stay tuned to see how it came through). <span style="font-size:13px;">(Related: <a href="how-to-train-a-newly-introduced-language-model-from-scratch-using-173066.html" style="color:#2563eb; font-weight:600;">How to train a newly introduced language model from scr...</a>)</span></p>
-<p>Training your own ControlNet requires 3 steps:. <span style="font-size:13px;">(Related: <a href="breaking-distributed-training-train-bartt5-for-summarization-usin-173047.html" style="color:#2563eb; font-weight:600;">Breaking: Distributed Training: Train BART/T5 for Summa...</a>)</span></p>
-<p>Recent findings suggest that planning your condition: ControlNet is flexible enough to tame Stable Diffusion towards many tasks. The pre-trained models showcase a wide-range of conditions, and the community has built others, such as conditioning on pixelated color palettes.</p>
+<p>In this blog post we will go over each step in detail on how we trained the Uncanny Faces model - a model on face poses based on 3D synthetic faces (the uncanny faces was an unintended consequence actually, stay tuned to see how it came through).</p>
+<p>Training your own ControlNet requires 3 steps:.</p>
+<p>Recent findings suggest that planning your condition: ControlNet is flexible enough to tame Stable Diffusion towards many tasks. The pre-trained models showcase a wide-range of conditions, and the community has built others, such as conditioning on pixelated color palettes. <span style="font-size:13px;">(Related: <a href="estate-planning-for-early-retirement-the-fire-guide-184545.html" style="color:#2563eb; font-weight:600;">Estate Planning for Early Retirement: The FIRE Guide...</a>)</span></p>
 <p>Building your dataset: Once a condition is decided, it is time to build your dataset. For that, you can either construct a dataset from scratch, or use a sub-set of an existing dataset. You need three columns on your dataset to train the model: a ground truth image, a conditioning_image and a prompt.</p>
-<p>Training the model: Once your dataset is ready, it is time to train the model. This is the easiest part thanks to the diffusers training script. You'll need a GPU with at least 8GB of VRAM.</p>
+<p>Training the model: Once your dataset is ready, it is time to train the model. This is the easiest part thanks to the diffusers training script. You'll need a GPU with at least 8GB of VRAM. <span style="font-size:13px;">(Related: <a href="industry-news-hyatt-category-1-hotels-the-easiest-points-win-184544.html" style="color:#2563eb; font-weight:600;">Industry News: Hyatt Category 1 Hotels — The Easiest Po...</a>)</span></p>
 <p>To blueprint your condition, it is useful to think of two questions:.</p>
 <p>In a recent development, for our example, we thought about using a facial landmarks conditioning. Our reasoning was: 1. the general landmarks conditioned ControlNet works well. 2. Facial landmarks are a widespread enough technique, and there are multiple models that calculate facial landmarks on regular pictures 3. Could be fun to tame Stable Diffusion to follow a certain facial landmark or imitate your own facial expression.</p>
 <p>Recent findings suggest that okay! So we decided to do a facial landmarks Stable Diffusion conditioning. So, to prepare the dataset we need:.</p>
@@ -204,16 +204,16 @@
             📰 #172880. ControlNet in 🧨 Diffusers
         </a>
         
-        <a href="how-to-train-a-newly-introduced-language-model-from-scratch-using-173066.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #173066. How to train a newly introduced language model from scratch using Transformers and Tokenizers
+        <a href="breaking-gta-6-players-are-devasted-by-train-nerf-after-spending--184512.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #184512. Breaking: GTA 6 players are devasted by train ‘nerf’ after spending years trying to stop it in GTA 5
         </a>
         
-        <a href="latest-update-fit-more-and-train-faster-with-zero-via-deepspeed-a-173057.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #173057. Latest Update: Fit More and Train Faster With ZeRO via DeepSpeed and FairScale
+        <a href="diffusers-welcomes-stable-diffusion-3-184333.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #184333. Diffusers welcomes Stable Diffusion 3
         </a>
         
-        <a href="breaking-distributed-training-train-bartt5-for-summarization-usin-173047.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #173047. Breaking: Distributed Training: Train BART/T5 for Summarization using 🤗 Transformers and Amazon SageMaker
+        <a href="diffusers-welcomes-flux-2-184297.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #184297. Diffusers welcomes FLUX-2
         </a>
         
     </div>

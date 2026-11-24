@@ -152,10 +152,10 @@
 <p id="sec-start-172209">Stay up to date with AI tools, model releases, and developer workflows that matter.</p>
 <p>Sources indicate that weekly. Free. One click to leave.</p>
 <p>It has been revealed that 7 Day Free Trial. Cancel Anytime.</p>
-<p>When one person chats with a local model, it barely matters which server you run. On one RTX 3090 with the same model file, Ollama, LM Studio and llama.cpp wrote text within about 10 percent of each other, because all three run llama.cpp underneath. That changes when your app sends several requests at once. With four requests, the best setup produced more than three times as much text as the worst, and the cause was a default setting, not the engine. With 32 requests, vLLM produced 2.5 times as much text as the best llama.cpp setup I tested. <span style="font-size:13px;">(Related: <a href="how-to-train-a-newly-introduced-language-model-from-scratch-using-173066.html" style="color:#2563eb; font-weight:600;">How to train a newly introduced language model from scr...</a>)</span></p>
+<p>When one person chats with a local model, it barely matters which server you run. On one RTX 3090 with the same model file, Ollama, LM Studio and llama.cpp wrote text within about 10 percent of each other, because all three run llama.cpp underneath. That changes when your app sends several requests at once. With four requests, the best setup produced more than three times as much text as the worst, and the cause was a default setting, not the engine. With 32 requests, vLLM produced 2.5 times as much text as the best llama.cpp setup I tested.</p>
 <p>This article puts those numbers side by side and indicates which setting to change for your app.</p>
-<p>Industry observers note that I ran every test on one machine. The full write-ups, with every command and the raw results, are on homebrewserver.club. <span style="font-size:13px;">(Related: <a href="industry-news-simple-considerations-for-simple-people-building-fa-173053.html" style="color:#2563eb; font-weight:600;">Industry News: Simple considerations for simple people ...</a>)</span></p>
-<p>Every server got the same requests:.</p>
+<p>Industry observers note that I ran every test on one machine. The full write-ups, with every command and the raw results, are on homebrewserver.club. <span style="font-size:13px;">(Related: <a href="industry-news-average-retirement-savings-by-age-are-you-on-track-184559.html" style="color:#2563eb; font-weight:600;">Industry News: Average Retirement Savings by Age: Are Y...</a>)</span></p>
+<p>Every server got the same requests:. <span style="font-size:13px;">(Related: <a href="what-i-do-every-time-i-get-an-irs-notice-184553.html" style="color:#2563eb; font-weight:600;">What I do every time I get an IRS notice...</a>)</span></p>
 <p>Sources indicate that ollama, LM Studio and llama.cpp loaded the exact same GGUF files, checked by SHA-256. vLLM cannot run GGUF files well, so it loaded a 4-bit AWQ file of the same model (9.1 GB). Answer quality was not compared.</p>
 <p>Sources indicate that the tests ran between 8 and 16 November 2026, and speeds on this machine varied by a few percent from one day to the next. Treat a gap under about 5% as a tie. All of this is one consumer GPU and one model family, so read the numbers as a guide to how the servers behave, not as a ranking for your hardware.</p>
 <p>This is the short prompt with a 512-token answer.</p>
@@ -218,20 +218,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="ggml-and-llamacpp-join-hf-to-ensure-the-long-term-progress-of-loc-161478.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #161478. GGML and llama.cpp join HF to ensure the long-term progress of Local AI
+        <a href="ggml-and-llamacpp-join-hf-to-ensure-the-long-term-progress-of-loc-184241.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #184241. GGML and llama.cpp join HF to ensure the long-term progress of Local AI
         </a>
         
-        <a href="breaking-llamacpp-v100-a-stronger-foundation-for-the-local-ai-eco-160937.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #160937. Breaking: llama.cpp v1.0.0 : A stronger foundation for the local AI ecosystem
+        <a href="llamacpp-v100-a-stronger-foundation-for-the-local-ai-ecosystem-183798.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #183798. llama.cpp v1.0.0 : A stronger foundation for the local AI ecosystem
         </a>
         
-        <a href="welcome-llama-3-metas-new-open-llm-172672.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #172672. Welcome Llama 3 - Meta's new open LLM
+        <a href="running-an-ai-agent-on-a-local-llm-what-i-measured-on-one-gpu-184483.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #184483. Running an AI Agent on a Local LLM: What I Measured on One GPU
         </a>
         
-        <a href="breaking-introducing-multi-backends-trt-llm-vllm-support-for-text-172518.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #172518. Breaking: Introducing multi-backends (TRT-LLM, vLLM) support for Text Generation Inference
+        <a href="industry-news-new-in-llamacpp-model-management-184288.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #184288. Industry News: New in llama.cpp: Model Management
         </a>
         
     </div>

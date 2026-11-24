@@ -152,8 +152,8 @@
 <p id="sec-start-172956">Industry observers note that this guide is outdated. It covers the SentenceTransformer.fit API from Sentence Transformers versions before v3.0, which has since been superseded. The current training API uses the SentenceTransformerTrainer and is covered in these up-to-date guides:.</p>
 <p>Sources indicate that please read one of the guides above instead. The content below is kept only for historical reference.</p>
 <p>Check out this tutorial with the Notebook Companion:.</p>
-<p>Sources indicate that training or fine-tuning a Sentence Transformers model highly depends on the available data and the target task. The key is twofold:. <span style="font-size:13px;">(Related: <a href="how-to-train-a-newly-introduced-language-model-from-scratch-using-173066.html" style="color:#2563eb; font-weight:600;">How to train a newly introduced language model from scr...</a>)</span></p>
-<p>It has been revealed that in a Sentence Transformer model, you map a variable-length text (or image pixels) to a fixed-size embedding representing that input's meaning. To get started with embeddings, check out our previous tutorial. This post focuses on text. <span style="font-size:13px;">(Related: <a href="transformer-based-encoder-decoder-models-173062.html" style="color:#2563eb; font-weight:600;">Transformer-based Encoder-Decoder Models...</a>)</span></p>
+<p>Sources indicate that training or fine-tuning a Sentence Transformers model highly depends on the available data and the target task. The key is twofold:.</p>
+<p>It has been revealed that in a Sentence Transformer model, you map a variable-length text (or image pixels) to a fixed-size embedding representing that input's meaning. To get started with embeddings, check out our previous tutorial. This post focuses on text.</p>
 <p>This is how the Sentence Transformers models work:.</p>
 <p>This figure summarizes the process:.</p>
 <p>Remember to install the Sentence Transformers library with pip install -U sentence-transformers. In code, this two-step process is simple:.</p>
@@ -162,14 +162,14 @@
 <p>It has been revealed that in this section we are creating a Sentence Transformers model from scratch. If you want to fine-tune an existing Sentence Transformers model, you can skip the steps above and import it from the Hugging Face Hub. You can find most of the Sentence Transformers models in the "Sentence Similarity" task. Here we load the "sentence-transformers/all-MiniLM-L6-v2" model:.</p>
 <p>Now for the most critical part: the dataset format.</p>
 <p>Recent findings suggest that to train a Sentence Transformers model, you need to inform it somehow that two sentences have a certain degree of similarity. Therefore, each example in the data requires a label or structure that allows the model to understand whether two sentences are similar or different.</p>
-<p>Industry observers note that unfortunately, there is no single way to prepare your data to train a Sentence Transformers model. It largely depends on your goals and the structure of your data. If you don't have an explicit label, which is the most likely scenario, you can derive it from the design of the documents where you obtained the sentences. For example, two sentences in the same report should be more comparable than two sentences in different reports. Neighboring sentences might be more comparable than non-neighboring sentences.</p>
+<p>Industry observers note that unfortunately, there is no single way to prepare your data to train a Sentence Transformers model. It largely depends on your goals and the structure of your data. If you don't have an explicit label, which is the most likely scenario, you can derive it from the design of the documents where you obtained the sentences. For example, two sentences in the same report should be more comparable than two sentences in different reports. Neighboring sentences might be more comparable than non-neighboring sentences. <span style="font-size:13px;">(Related: <a href="industry-news-average-retirement-savings-by-age-are-you-on-track-184559.html" style="color:#2563eb; font-weight:600;">Industry News: Average Retirement Savings by Age: Are Y...</a>)</span></p>
 <p>Furthermore, the structure of your data will influence which loss function you can use. This will be discussed in the next section.</p>
 <p>Remember the Notebook Companion for this post has all the code already implemented.</p>
 <p>Most dataset configurations will take one of four forms (below you will see examples of each case):.</p>
 <p>As an example, in this tutorial you will train a Sentence Transformer using a dataset in the fourth case. You will then fine-tune it using the second case dataset configuration (please refer to the Notebook Companion for this blog).</p>
 <p>Note that Sentence Transformers models can be trained with human labeling (cases 1 and 3) or with labels automatically deduced from text formatting (mainly case 2; although case 4 does not require labels, it is more difficult to find data in a triplet unless you process it as the MegaBatchMarginLoss function does).</p>
 <p>In a recent development, there are datasets on the Hugging Face Hub for each of the above cases. Additionally, the datasets in the Hub have a Dataset Preview functionality that allows you to view the structure of datasets before downloading them. Here are sample data sets for each of these cases:.</p>
-<p>Industry observers note that case 1: The same setup as for Natural Language Inference can be used if you have (or fabricate) a label indicating the degree of similarity between two sentences; for example {0,1,2} where 0 is contradiction and 2 is entailment. Review the structure of the SNLI dataset.</p>
+<p>Industry observers note that case 1: The same setup as for Natural Language Inference can be used if you have (or fabricate) a label indicating the degree of similarity between two sentences; for example {0,1,2} where 0 is contradiction and 2 is entailment. Review the structure of the SNLI dataset. <span style="font-size:13px;">(Related: <a href="industry-news-i-asked-about-dirty-dishes-you-delivered-184547.html" style="color:#2563eb; font-weight:600;">Industry News: I Asked About Dirty Dishes. You Delivere...</a>)</span></p>
 <p>Case 2: The Sentence Compression dataset has examples made up of positive pairs. If your dataset has more than two positive sentences per example, for example quintets as in the COCO Captions or the Flickr30k Captions datasets, you can format the examples as to have different combinations of positive pairs.</p>
 <p>According to recent reports, case 3: The TREC dataset has integer labels indicating the class of each sentence. Each example in the Yahoo Answers Topics dataset contains three sentences and a label indicating its topic; thus, each example can be divided into three.</p>
 <p>Case 4: The Quora Triplets dataset has triplets (anchor, positive, negative) without labels.</p>
@@ -226,16 +226,16 @@
             📰 #172519. Train 400x faster Static Embedding Models with Sentence Transformers
         </a>
         
-        <a href="fine-tune-wav2vec2-for-english-asr-in-hugging-face-with-transform-173051.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #173051. Fine-Tune Wav2Vec2 for English ASR in Hugging Face with 🤗 Transformers
+        <a href="fine-tune-xlsr-wav2vec2-for-low-resource-asr-with-transformers-184348.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #184348. Fine-Tune XLSR-Wav2Vec2 for low-resource ASR with 🤗 Transformers
         </a>
         
-        <a href="breaking-fine-tune-vit-for-image-classification-with-transformers-173011.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #173011. Breaking: Fine-Tune ViT for Image Classification with 🤗 Transformers
+        <a href="training-and-finetuning-multimodal-embedding-reranker-models-with-184204.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #184204. Training and Finetuning Multimodal Embedding & Reranker Models with Sentence Transformers
         </a>
         
-        <a href="tech-report-fine-tune-whisper-for-multilingual-asr-with-transform-172926.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #172926. Tech Report: Fine-Tune Whisper For Multilingual ASR with 🤗 Transformers
+        <a href="multi-vector-late-interaction-embedding-models-with-sentence-tran-184033.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #184033. Multi-Vector (Late Interaction) Embedding Models with Sentence Transformers
         </a>
         
     </div>

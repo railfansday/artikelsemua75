@@ -150,8 +150,8 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-172332">Recent findings suggest that we have implemented KV Caching from scratch in our nanoVLM repository (a small codebase to train your own Vision Language Model with pure PyTorch). This gave us a 38% speedup in generation. In this blog post we cover KV Caching and all our experiences while implementing it. The lessons learnt are general and can be applied to all autoregressive language model generations. Implementing from scratch on a small codebase is a great learning experience, come along for the ride!</p>
-<p>It has been revealed that autoregressive language models generate text by sampling one token at a time. During inference, the model processes a given input sequence, predicts the next token, appends it to the sequence, and repeats this process until some stopping criterion:. <span style="font-size:13px;">(Related: <a href="how-to-train-a-newly-introduced-language-model-from-scratch-using-173066.html" style="color:#2563eb; font-weight:600;">How to train a newly introduced language model from scr...</a>)</span></p>
-<p>This step-by-step generation is inherently sequential:. <span style="font-size:13px;">(Related: <a href="latest-update-how-to-generate-text-using-different-decoding-metho-173065.html" style="color:#2563eb; font-weight:600;">Latest Update: How to generate text: using different de...</a>)</span></p>
+<p>It has been revealed that autoregressive language models generate text by sampling one token at a time. During inference, the model processes a given input sequence, predicts the next token, appends it to the sequence, and repeats this process until some stopping criterion:.</p>
+<p>This step-by-step generation is inherently sequential:.</p>
 <p>In a recent development, this repetition also leads to computational redundancy. In this post, we explore KV Caching, an optimisation technique that mitigates this inefficiency.</p>
 <p>It has been revealed that before diving into caching, let’s revisit how attention operates in transformer models. A Transformer language model consists of stacked layers, each composed of:.</p>
 <p>To understand where KV Caching helps, we focus on the self-attention mechanism, specifically within a single attention head.</p>
@@ -166,11 +166,11 @@ Attention(X;Q,K,V)=softmax(dk​​QK⊤⋅M​)V.</p>
 <p>Most of the attention computation is repeated needlessly. This gets more expensive as sequences grow.</p>
 <p>To eliminate this inefficiency, we use KV Caching:.</p>
 <p>This changes generation from full-sequence re-computation to a lightweight, incremental update.</p>
-<p>✅ In practice, this cache is a per-layer dictionary with keys "key" and "value", each of shape (batch_size, num_heads, seq_len_cached, head_dim).</p>
+<p>✅ In practice, this cache is a per-layer dictionary with keys "key" and "value", each of shape (batch_size, num_heads, seq_len_cached, head_dim). <span style="font-size:13px;">(Related: <a href="breaking-future-value-calculator-how-to-project-your-investments-184538.html" style="color:#2563eb; font-weight:600;">Breaking: Future Value Calculator: How to Project Your ...</a>)</span></p>
 <p>This is the foundation of how modern LLMs can generate long outputs efficiently.</p>
 <p>According to recent reports, now that we understand the theory behind KV Caching, let’s see how it’s implemented in practice inside our nanoVLM repository. This is an ideal testbed, as it's a super concise and self-contained codebase.</p>
 <p>KV caching is enabled across three key components in our model:.</p>
-<p>In the LanguageModelGroupedAttention class, we modify the forward function to accept and update a cache of keys and values (block_kv_cache).</p>
+<p>In the LanguageModelGroupedAttention class, we modify the forward function to accept and update a cache of keys and values (block_kv_cache). <span style="font-size:13px;">(Related: <a href="what-is-considered-upper-middle-class-income-and-net-worth-184551.html" style="color:#2563eb; font-weight:600;">What Is Considered Upper Middle Class? Income and Net W...</a>)</span></p>
 <p id="sec-mid-172332">According to recent reports, previously, the model recomputed K K K and V V V at every generation step. Now we only compute Knew K_{\text{new}} Knew​, Vnew V_{\text{new}} Vnew​ for the current token, and append them to the cached values.</p>
 <p>In the LanguageModel class, we introduce layer-wise cache tracking. The start_pos argument helps the model compute correct rotary positional encodings for newly generated tokens.</p>
 <p>The biggest architectural change is in the generate() method of the VisionLanguageModel.</p>
@@ -215,20 +215,20 @@ Attention(X;Q,K,V)=softmax(dk​​QK⊤⋅M​)V.</p>
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
+        <a href="latest-update-sizing-gpu-memory-for-a-rag-service-kv-cache-contex-184275.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #184275. Latest Update: Sizing GPU Memory for a RAG Service: KV Cache, Context and Concurrency
+        </a>
+        
+        <a href="what-a-90-prompt-cache-hit-rate-hides-about-attention-work-183956.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #183956. What a 90% Prompt Cache Hit Rate Hides About Attention Work
+        </a>
+        
+        <a href="20-foot-great-white-attacks-california-surfer-and-obliterates-boa-182377.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #182377. 20-Foot Great White Attacks California Surfer and Obliterates Board While He Escapes ‘Without a Scratch’ (Photos)
+        </a>
+        
         <a href="how-to-train-a-newly-introduced-language-model-from-scratch-using-173066.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #173066. How to train a newly introduced language model from scratch using Transformers and Tokenizers
-        </a>
-        
-        <a href="tech-report-training-codeparrot-from-scratch-173023.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #173023. Tech Report: Training CodeParrot 🦜 from Scratch
-        </a>
-        
-        <a href="unlocking-longer-generation-with-key-value-cache-quantization-172656.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #172656. Unlocking Longer Generation with Key-Value Cache Quantization
-        </a>
-        
-        <a href="nanovlm-the-simplest-repository-to-train-your-vlm-in-pure-pytorch-172371.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #172371. nanoVLM: The simplest repository to train your VLM in pure PyTorch
         </a>
         
     </div>

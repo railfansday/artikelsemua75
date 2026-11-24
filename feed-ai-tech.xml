@@ -4,101 +4,97 @@
     <title>Portal Berita - AI & Tech</title>
     <link>https://railfansday.github.io/artikelsemua75/</link>
     <description>Curated news feed for AI & Tech.</description>
-    <lastBuildDate>Tue, 24 Nov 2026 13:58:17 -0000</lastBuildDate>
+    <lastBuildDate>Tue, 24 Nov 2026 17:39:02 -0000</lastBuildDate>
     
             <item>
-                <title>Breaking: My Journey to a serverless transformers pipeline on Google Cloud</title>
-                <link>https://railfansday.github.io/artikelsemua75/artikel/breaking-my-journey-to-a-serverless-transformers-pipeline-on-goog-173050.html</link>
-                <guid>https://railfansday.github.io/artikelsemua75/artikel/breaking-my-journey-to-a-serverless-transformers-pipeline-on-goog-173050.html</guid>
-                <description>Content not available. → Read original article...</description>
+                <title>Breaking: Binding of Isaac fans review bomb DLC after discovering GTA 6 mode songs are AI</title>
+                <link>https://railfansday.github.io/artikelsemua75/artikel/breaking-binding-of-isaac-fans-review-bomb-dlc-after-discovering--184530.html</link>
+                <guid>https://railfansday.github.io/artikelsemua75/artikel/breaking-binding-of-isaac-fans-review-bomb-dlc-after-discovering--184530.html</guid>
+                <description>Players have found that music in The Binding of Isaac: Repentance+’s fresh GTA 6-themed secret run was made with Suno, as the free DLC sits at Overwhelmingly Negative recent reviews on Steam. Creator Edmund McMillen has since noted he had no idea the music was AI-generated, with ...</description>
             </item>
             <item>
-                <title>Announcing the 🤗 AI Research Residency Program</title>
-                <link>https://railfansday.github.io/artikelsemua75/artikel/announcing-the-ai-research-residency-program-173005.html</link>
-                <guid>https://railfansday.github.io/artikelsemua75/artikel/announcing-the-ai-research-residency-program-173005.html</guid>
-                <description>Content not available. → Read original article...</description>
+                <title>Latest Update: Clash Royale recruits creator of AI cheating tool to help catch cheaters</title>
+                <link>https://railfansday.github.io/artikelsemua75/artikel/latest-update-clash-royale-recruits-creator-of-ai-cheating-tool-t-184525.html</link>
+                <guid>https://railfansday.github.io/artikelsemua75/artikel/latest-update-clash-royale-recruits-creator-of-ai-cheating-tool-t-184525.html</guid>
+                <description>Clash Royale developer Supercell has recruited the creator of an advanced AI cheating tool to help crack down on cheating in the game. AI cheating has become a growing controversy in Clash Royale, with increasingly sophisticated bots reportedly capable of outperforming skilled hu...</description>
             </item>
             <item>
-                <title>Comments on U.S. National AI Research Resource Interim Report</title>
-                <link>https://railfansday.github.io/artikelsemua75/artikel/comments-on-us-national-ai-research-resource-interim-report-172960.html</link>
-                <guid>https://railfansday.github.io/artikelsemua75/artikel/comments-on-us-national-ai-research-resource-interim-report-172960.html</guid>
-                <description>In late June 2022, Hugging Face submitted a response to the White House Office of Science and Technology Policy and National Science Foundation’s Request for Information on a roadmap for implementing the National Artificial Intelligence Research Resource (NAIRR) Task Force’s inte...</description>
+                <title>AI fire detection system sprays food booth’s fake flames in bizarre viral video</title>
+                <link>https://railfansday.github.io/artikelsemua75/artikel/ai-fire-detection-system-sprays-food-booths-fake-flames-in-bizarr-184520.html</link>
+                <guid>https://railfansday.github.io/artikelsemua75/artikel/ai-fire-detection-system-sprays-food-booths-fake-flames-in-bizarr-184520.html</guid>
+                <description>An automated fire detection system at a ski resort in China has gone viral after repeatedly spraying water at a food booth’s sign, leaving viewers convinced it mistook pictures of flames for a real fire. Footage of the bizarre incident shows a ceiling-mounted water cannon blastin...</description>
             </item>
             <item>
-                <title>Deploying 🤗 ViT on Vertex AI</title>
-                <link>https://railfansday.github.io/artikelsemua75/artikel/deploying-vit-on-vertex-ai-172950.html</link>
-                <guid>https://railfansday.github.io/artikelsemua75/artikel/deploying-vit-on-vertex-ai-172950.html</guid>
-                <description>Recent findings suggest that in the previous posts, we demonstrated how to deploy a Vision Transformers
-(ViT) model
-from 🤗 Transformers locally and
-on a Kubernetes cluster. This post will
-show you how to deploy the same model on the Vertex AI platform. You’ll achieve the same sca...</description>
+                <title>Tech Report: Introducing Azure Catalyst agentic modernization and new AI infrastructure innovations</title>
+                <link>https://railfansday.github.io/artikelsemua75/artikel/tech-report-introducing-azure-catalyst-agentic-modernization-and--184507.html</link>
+                <guid>https://railfansday.github.io/artikelsemua75/artikel/tech-report-introducing-azure-catalyst-agentic-modernization-and--184507.html</guid>
+                <description>It has been revealed that at Microsoft Ignite 2026, we’ll showcase what’s possible when models, silicon, and cloud infrastructure converge into a single, co-engineered system. By tuning the entire stack, and introducing new capabilities across isolated execution, networking, cont...</description>
             </item>
             <item>
-                <title>Industry News: OpenRAIL: Towards open and responsible AI licensing frameworks</title>
-                <link>https://railfansday.github.io/artikelsemua75/artikel/industry-news-openrail-towards-open-and-responsible-ai-licensing--172946.html</link>
-                <guid>https://railfansday.github.io/artikelsemua75/artikel/industry-news-openrail-towards-open-and-responsible-ai-licensing--172946.html</guid>
-                <description>In a recent development, open &amp; Responsible AI licenses ("OpenRAIL") are AI-specific licenses enabling open access, use and distribution of AI artifacts while requiring a responsible use of the latter. OpenRAIL licenses could be for open and responsible ML what current open softw...</description>
+                <title>How Much Latency Does a Self-Hosted LLM Gateway Add? Langfuse vs LiteLLM vs AcruxCore</title>
+                <link>https://railfansday.github.io/artikelsemua75/artikel/how-much-latency-does-a-self-hosted-llm-gateway-add-langfuse-vs-l-184503.html</link>
+                <guid>https://railfansday.github.io/artikelsemua75/artikel/how-much-latency-does-a-self-hosted-llm-gateway-add-langfuse-vs-l-184503.html</guid>
+                <description>Stay up to date with AI tools, model releases, and developer workflows that matter. Weekly. Free. One click to leave. Sources indicate that 7 Day Free Trial. Cancel Anytime. In a recent development, A self-hosted LLM gateway sits between your app and the model provider, so every ...</description>
             </item>
             <item>
-                <title>Accelerating Document AI</title>
-                <link>https://railfansday.github.io/artikelsemua75/artikel/accelerating-document-ai-172919.html</link>
-                <guid>https://railfansday.github.io/artikelsemua75/artikel/accelerating-document-ai-172919.html</guid>
-                <description>Recent findings suggest that enterprises are full of documents containing knowledge that isn't accessible by digital workflows. These documents can vary from letters, invoices, forms, reports, to receipts. With the improvements in text, vision, and multimodal AI, it's now possibl...</description>
+                <title>Best Black Friday deals now live: Google Pixel, Samsung, Amazon Echo, TVs, Anker, much more</title>
+                <link>https://railfansday.github.io/artikelsemua75/artikel/best-black-friday-deals-now-live-google-pixel-samsung-amazon-echo-184494.html</link>
+                <guid>https://railfansday.github.io/artikelsemua75/artikel/best-black-friday-deals-now-live-google-pixel-samsung-amazon-echo-184494.html</guid>
+                <description>The official 2026 Amazon Black Friday sale is now live with millions of price drops now up for grabs across just about every product category you can think of. That also means we have the official Google Black Friday deals up for grabs with up to $400 off on Pixel 11, Pixel 11 Pr...</description>
             </item>
             <item>
-                <title>AI for Game Development: Creating a Farming Game in 5 Days. Part 2</title>
-                <link>https://railfansday.github.io/artikelsemua75/artikel/ai-for-game-development-creating-a-farming-game-in-5-days-part-2-172903.html</link>
-                <guid>https://railfansday.github.io/artikelsemua75/artikel/ai-for-game-development-creating-a-farming-game-in-5-days-part-2-172903.html</guid>
-                <description>Welcome to AI for Game Development! In this series, we'll be using AI tools to create a fully functional farming game in just 5 days. By the end of this series, you will have learned how you can incorporate a variety of AI tools into your game development workflow. I will show yo...</description>
+                <title>Google Store Black Friday 2026: Refurb Pixel discounts, Fitbit Edge trade-in, more</title>
+                <link>https://railfansday.github.io/artikelsemua75/artikel/google-store-black-friday-2026-refurb-pixel-discounts-fitbit-edge-184486.html</link>
+                <guid>https://railfansday.github.io/artikelsemua75/artikel/google-store-black-friday-2026-refurb-pixel-discounts-fitbit-edge-184486.html</guid>
+                <description>In a recent development, black Friday 2026 deals on Pixel devices are now live on the US Google Store. The phone deals are available until December 5 at 11:59 p.m. PT, while watch discounts end December 1. Google is taking $200 off the Pixel 11, which is unchanged from the last s...</description>
             </item>
             <item>
-                <title>2D Asset Generation: AI for Game Development #4</title>
-                <link>https://railfansday.github.io/artikelsemua75/artikel/2d-asset-generation-ai-for-game-development-4-172896.html</link>
-                <guid>https://railfansday.github.io/artikelsemua75/artikel/2d-asset-generation-ai-for-game-development-4-172896.html</guid>
-                <description>In a recent development, welcome to AI for Game Development! In this series, we'll be using AI tools to create a fully functional farming game in just 5 days. By the end of this series, you will have learned how you can incorporate a variety of AI tools into your game development...</description>
+                <title>Google Fi app redesign brings floating toolbar &amp; Ask Fi</title>
+                <link>https://railfansday.github.io/artikelsemua75/artikel/google-fi-app-redesign-brings-floating-toolbar-ask-fi-184484.html</link>
+                <guid>https://railfansday.github.io/artikelsemua75/artikel/google-fi-app-redesign-brings-floating-toolbar-ask-fi-184484.html</guid>
+                <description>Google Fi Wireless is the latest first-party app to adopt a floating toolbar as part of a small navigation redesign. Previously, the companion app still used a tall Material 3 bottom bar. With the network switching upgrade announced last week, Google Fi now has a floating navigat...</description>
             </item>
             <item>
-                <title>Introducing ⚔️ AI vs. AI ⚔️ a deep reinforcement learning multi-agents competition system</title>
-                <link>https://railfansday.github.io/artikelsemua75/artikel/introducing-ai-vs-ai-a-deep-reinforcement-learning-multi-agents-c-172892.html</link>
-                <guid>https://railfansday.github.io/artikelsemua75/artikel/introducing-ai-vs-ai-a-deep-reinforcement-learning-multi-agents-c-172892.html</guid>
-                <description>We’re excited to introduce a latest tool we created: ⚔️ AI vs. AI ⚔️, a deep reinforcement learning multi-agents competition system. Sources indicate that this tool, hosted on Spaces, allows us to create multi-agent competitions. It is composed of three elements:. Sources indicat...</description>
+                <title>Running an AI Agent on a Local LLM: What I Measured on One GPU</title>
+                <link>https://railfansday.github.io/artikelsemua75/artikel/running-an-ai-agent-on-a-local-llm-what-i-measured-on-one-gpu-184483.html</link>
+                <guid>https://railfansday.github.io/artikelsemua75/artikel/running-an-ai-agent-on-a-local-llm-what-i-measured-on-one-gpu-184483.html</guid>
+                <description>Stay up to date with AI tools, model releases, and developer workflows that matter. Recent findings suggest that weekly. Free. One click to leave. In a recent development, 7 Day Free Trial. Cancel Anytime. Recent findings suggest that running an AI agent on your own GPU sounds si...</description>
             </item>
             <item>
-                <title>Generating Stories: AI for Game Development #5</title>
-                <link>https://railfansday.github.io/artikelsemua75/artikel/generating-stories-ai-for-game-development-5-172891.html</link>
-                <guid>https://railfansday.github.io/artikelsemua75/artikel/generating-stories-ai-for-game-development-5-172891.html</guid>
-                <description>In a recent development, welcome to AI for Game Development! In this series, we'll be using AI tools to create a fully functional farming game in just 5 days. By the end of this series, you will have learned how you can incorporate a variety of AI tools into your game development...</description>
+                <title>Roborock’s Black Friday deals save over $1650 on select robot vacuums</title>
+                <link>https://railfansday.github.io/artikelsemua75/artikel/roborocks-black-friday-deals-save-over-1650-on-select-robot-vacuu-184477.html</link>
+                <guid>https://railfansday.github.io/artikelsemua75/artikel/roborocks-black-friday-deals-save-over-1650-on-select-robot-vacuu-184477.html</guid>
+                <description>Roborock has introduced its Black Friday 2026 deals with some killer discounts including up to half off select models, and over $1650 off its flagship offering. Starting on November 19 and through the end of this month, you can score deals on select Roborock products including so...</description>
             </item>
             <item>
-                <title>Hugging Face and AWS partner to make AI more accessible</title>
-                <link>https://railfansday.github.io/artikelsemua75/artikel/hugging-face-and-aws-partner-to-make-ai-more-accessible-172886.html</link>
-                <guid>https://railfansday.github.io/artikelsemua75/artikel/hugging-face-and-aws-partner-to-make-ai-more-accessible-172886.html</guid>
-                <description>It’s time to make AI open and accessible to all. That’s the goal of this expanded long-term strategic partnership between Hugging Face and Amazon Web Services (AWS). Together, the two leaders aim to accelerate the availability of next-generation machine learning models by making ...</description>
+                <title>Latest Update: Stacey McCormick is updating Aerie’s commitment to authenticity for the AI age</title>
+                <link>https://railfansday.github.io/artikelsemua75/artikel/latest-update-stacey-mccormick-is-updating-aeries-commitment-to-a-184476.html</link>
+                <guid>https://railfansday.github.io/artikelsemua75/artikel/latest-update-stacey-mccormick-is-updating-aeries-commitment-to-a-184476.html</guid>
+                <description>Sources indicate that AI is supercharging a long-term problem—the fashion industry’s tenuous relationship with real bodies. As it gets increasingly difficult to tell whether the images you’re seeing are real or not, brands such as Gucci, Valentino, and Rainbow have all faced cons...</description>
             </item>
             <item>
-                <title>Fetch Consolidates AI Tools and Saves 30% Development Time with Hugging Face on AWS</title>
-                <link>https://railfansday.github.io/artikelsemua75/artikel/fetch-consolidates-ai-tools-and-saves-30-development-time-with-hu-172885.html</link>
-                <guid>https://railfansday.github.io/artikelsemua75/artikel/fetch-consolidates-ai-tools-and-saves-30-development-time-with-hu-172885.html</guid>
-                <description>If you need support in using Hugging Face and AWS, please get in touch with us here - our team will contact you to discuss your requirements! According to recent reports, fetch, a consumer rewards tech giant, developed about 15 different AI tools to help it receive, route, read, ...</description>
+                <title>AI features could be turned off with a simple toggle, Canva proves</title>
+                <link>https://railfansday.github.io/artikelsemua75/artikel/ai-features-could-be-turned-off-with-a-simple-toggle-canva-proves-184475.html</link>
+                <guid>https://railfansday.github.io/artikelsemua75/artikel/ai-features-could-be-turned-off-with-a-simple-toggle-canva-proves-184475.html</guid>
+                <description>Sources indicate that AI has taken over everything in the past few years, with AI features bombarding virtually every app or service available. If you’ve ever wanted to just turn off AI features, Canva proves that it could be a simple toggle, if companies actually wanted to give ...</description>
             </item>
             <item>
-                <title>Snorkel AI x Hugging Face: unlock foundation models for enterprises</title>
-                <link>https://railfansday.github.io/artikelsemua75/artikel/snorkel-ai-x-hugging-face-unlock-foundation-models-for-enterprise-172867.html</link>
-                <guid>https://railfansday.github.io/artikelsemua75/artikel/snorkel-ai-x-hugging-face-unlock-foundation-models-for-enterprise-172867.html</guid>
-                <description>This article is a cross-post from an originally published post on April 6, 2023 in Snorkel's blog, by Friea Berg . As OpenAI releases GPT-4 and Google debuts Bard in beta, enterprises around the world are excited to leverage the power of foundation models. As that excitement buil...</description>
+                <title>Anthropic stock has already fallen below its IPO price: Will the AI trade fizzle again today?</title>
+                <link>https://railfansday.github.io/artikelsemua75/artikel/anthropic-stock-has-already-fallen-below-its-ipo-price-will-the-a-184456.html</link>
+                <guid>https://railfansday.github.io/artikelsemua75/artikel/anthropic-stock-has-already-fallen-below-its-ipo-price-will-the-a-184456.html</guid>
+                <description>It has been revealed that it took less than a week for shares of Anthropic PBC (Nasdaq: ANT) to dip below their IPO price. The AI manufacturer’s stock fell as low as $81.40 in premarket trading on Tuesday, November 24. The offering price in its high-profile stock listing last wee...</description>
             </item>
             <item>
-                <title>Creating Privacy Preserving AI with Substra</title>
-                <link>https://railfansday.github.io/artikelsemua75/artikel/creating-privacy-preserving-ai-with-substra-172866.html</link>
-                <guid>https://railfansday.github.io/artikelsemua75/artikel/creating-privacy-preserving-ai-with-substra-172866.html</guid>
-                <description>With the recent rise of generative techniques, machine learning is at an incredibly exciting point in its history. The models powering this rise require even more data to produce impactful results, and thus it’s becoming increasingly important to explore upcoming methods of ethic...</description>
+                <title>Latest Update: Google homepage rolling out AI-focused redesign that includes your Gemini chats [Video]</title>
+                <link>https://railfansday.github.io/artikelsemua75/artikel/latest-update-google-homepage-rolling-out-ai-focused-redesign-tha-184450.html</link>
+                <guid>https://railfansday.github.io/artikelsemua75/artikel/latest-update-google-homepage-rolling-out-ai-focused-redesign-tha-184450.html</guid>
+                <description>The Google Search homepage is embracing Gemini in a big way, with a new sidebar redesign that puts your chat history just a click away. It has been revealed that google’s AI ambitions have been anything but subtle in their integration with Search, but Gemini and Search have had s...</description>
             </item>
             <item>
-                <title>Introducing HuggingFace blog for Chinese speakers: Fostering Collaboration with the Chinese AI community</title>
-                <link>https://railfansday.github.io/artikelsemua75/artikel/introducing-huggingface-blog-for-chinese-speakers-fostering-colla-172862.html</link>
-                <guid>https://railfansday.github.io/artikelsemua75/artikel/introducing-huggingface-blog-for-chinese-speakers-fostering-colla-172862.html</guid>
-                <description>We are delighted to introduce Hugging Face’s fresh blog for Chinese speakers: hf.co/blog/zh! A committed group of volunteers has made this possible by translating our invaluable resources, including blog posts and comprehensive courses on transformers, diffusion, and reinforcemen...</description>
+                <title>Google’s 3D emoji has wild Android spec requirements: 10GB of free space, 6GB RAM</title>
+                <link>https://railfansday.github.io/artikelsemua75/artikel/googles-3d-emoji-has-wild-android-spec-requirements-10gb-of-free--184449.html</link>
+                <guid>https://railfansday.github.io/artikelsemua75/artikel/googles-3d-emoji-has-wild-android-spec-requirements-10gb-of-free--184449.html</guid>
+                <description>Google introduced 3D emoji on Pixel this year, and has just detailed the minimum specifications required to get them on your Android phone. In a recent development, upgrade: Google replied on Reddit to “clear up some confusion” about the Help Center page. The listed storage and R...</description>
             </item>
 </channel>
 </rss>

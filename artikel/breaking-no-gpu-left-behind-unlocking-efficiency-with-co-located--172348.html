@@ -150,9 +150,9 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-172348">TRL supports training LLMs using GRPO, an online learning algorithm recently introduced in the DeepSeekMath paper. In GRPO, the model learns from its own outputs: it generates responses during training, receives feedback, and uses that feedback to improve itself over time.</p>
-<p>This makes generation a critical step in the training loop — and also a major bottleneck. To speed up generation, TRL integrates with vLLM. This combination lets you train powerful models more efficiently in GRPO setup. However, there’s a catch. <span style="font-size:13px;">(Related: <a href="how-to-train-a-newly-introduced-language-model-from-scratch-using-173066.html" style="color:#2563eb; font-weight:600;">How to train a newly introduced language model from scr...</a>)</span></p>
-<p>Sources indicate that before TRL v0.18.0, vLLM was only supported in server mode, running as a separate process on different GPUs from the training job. It communicated with the training script over HTTP, which made the setup modular and easy to use — but also introduced GPU inefficiencies. <span style="font-size:13px;">(Related: <a href="latest-update-how-to-generate-text-using-different-decoding-metho-173065.html" style="color:#2563eb; font-weight:600;">Latest Update: How to generate text: using different de...</a>)</span></p>
-<p>This “ping-pong” between training and generation causes:.</p>
+<p>This makes generation a critical step in the training loop — and also a major bottleneck. To speed up generation, TRL integrates with vLLM. This combination lets you train powerful models more efficiently in GRPO setup. However, there’s a catch. <span style="font-size:13px;">(Related: <a href="latest-update-clash-royale-recruits-creator-of-ai-cheating-tool-t-184525.html" style="color:#2563eb; font-weight:600;">Latest Update: Clash Royale recruits creator of AI chea...</a>)</span></p>
+<p>Sources indicate that before TRL v0.18.0, vLLM was only supported in server mode, running as a separate process on different GPUs from the training job. It communicated with the training script over HTTP, which made the setup modular and easy to use — but also introduced GPU inefficiencies.</p>
+<p>This “ping-pong” between training and generation causes:. <span style="font-size:13px;">(Related: <a href="hawaiian-interisland-awards-hop-between-islands-184536.html" style="color:#2563eb; font-weight:600;">Hawaiian Interisland Awards — Hop Between Islands...</a>)</span></p>
 <p>In online learning methods like GRPO — where generation happens constantly — this inefficiency becomes even more painful. You spend more on hardware, but don't get the performance you'd expect.</p>
 <p>So, the key question becomes: Can we share the same GPUs for both training and generation, instead of separating them?</p>
 <p>Recent findings suggest that the main glitch was that training and inference ran on separate GPUs, leading to idle time and underutilization. The natural solution? Run both on the same GPUs. Instead of having vLLM operate as a standalone server in its own process and devices, what if vLLM could run alongside the training code, within the same distributed process group? This would let us launch a single distributed job where training and inference share the same devices, switching between tasks efficiently without wasting resources.</p>
@@ -271,20 +271,20 @@ Allocates gradients in a single memory block, improving memory access and reduci
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="in-a-west-texas-rock-shelter-archaeologists-found-a-hunting-kit-t-168683.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #168683. In a West Texas rock shelter, archaeologists found a hunting kit that was left behind 6,500 years
+        <a href="in-a-west-texas-rock-shelter-archaeologists-found-a-hunting-kit-t-180202.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #180202. In a West Texas rock shelter, archaeologists found a hunting kit that was left behind 6,500 years
         </a>
         
-        <a href="the-technology-behind-bloom-training-172966.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #172966. The Technology Behind BLOOM Training
+        <a href="restaurant-owners-left-in-tears-after-discovering-their-family-bu-184522.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #184522. Restaurant owners left in tears after discovering their family business in GTA 6
         </a>
         
-        <a href="fine-tuning-20b-llms-with-rlhf-on-a-24gb-consumer-gpu-172877.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #172877. Fine-tuning 20B LLMs with RLHF on a 24GB consumer GPU
+        <a href="running-an-ai-agent-on-a-local-llm-what-i-measured-on-one-gpu-184483.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #184483. Running an AI Agent on a Local LLM: What I Measured on One GPU
         </a>
         
-        <a href="latest-update-run-a-chatgpt-like-chatbot-on-a-single-gpu-with-roc-172852.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #172852. Latest Update: Run a Chatgpt-like Chatbot on a Single GPU with ROCm
+        <a href="best-black-friday-gaming-gpu-deals-2026-184362.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #184362. Best Black Friday gaming GPU deals 2026
         </a>
         
     </div>

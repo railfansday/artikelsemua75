@@ -150,8 +150,8 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-172930">Recent findings suggest that this tutorial assumes you have a basic understanding of PyTorch and how to train a simple model. It will showcase training on multiple GPUs through a process called Distributed Data Parallelism (DDP) through three different levels of increasing abstraction:.</p>
-<p>Take some very basic PyTorch training code below, which sets up and trains a model on MNIST based on the official MNIST example. <span style="font-size:13px;">(Related: <a href="how-to-train-a-newly-introduced-language-model-from-scratch-using-173066.html" style="color:#2563eb; font-weight:600;">How to train a newly introduced language model from scr...</a>)</span></p>
-<p>We define the training device (cuda):. <span style="font-size:13px;">(Related: <a href="breaking-distributed-training-train-bartt5-for-summarization-usin-173047.html" style="color:#2563eb; font-weight:600;">Breaking: Distributed Training: Train BART/T5 for Summa...</a>)</span></p>
+<p>Take some very basic PyTorch training code below, which sets up and trains a model on MNIST based on the official MNIST example.</p>
+<p>We define the training device (cuda):.</p>
 <p>Build some PyTorch DataLoaders:.</p>
 <p>Move the model to the CUDA device:.</p>
 <p>Before finally creating a simplistic training and evaluation loop that performs one full iteration over the dataset and calculates the test accuracy:.</p>
@@ -159,8 +159,8 @@
 <p>Recent findings suggest that however, how would you then get this script to run on say two GPUs or on multiple machines if these resources are available, which could improve training speed through distributed training? Just doing python myscript.py will only ever run the script using a single GPU. This is where torch.distributed comes into play.</p>
 <p>As the name implies, torch.distributed is meant to work on distributed setups. This can include multi-node, where you have a number of machines each with a single GPU, or multi-gpu where a single system has multiple GPUs, or some combination of both.</p>
 <p>To convert our above code to work within a distributed setup, a few setup configurations must first be defined, detailed in the Getting Started with DDP Tutorial.</p>
-<p>Industry observers note that first a setup and a cleanup function must be declared. This will open up a processing group that all of the compute processes can communicate through.</p>
-<p>Recent findings suggest that note: for this section of the tutorial it should be assumed these are sent in python script files. Later on a launcher using Accelerate will be discussed that removes this necessity.</p>
+<p>Industry observers note that first a setup and a cleanup function must be declared. This will open up a processing group that all of the compute processes can communicate through. <span style="font-size:13px;">(Related: <a href="industry-news-average-retirement-savings-by-age-are-you-on-track-184559.html" style="color:#2563eb; font-weight:600;">Industry News: Average Retirement Savings by Age: Are Y...</a>)</span></p>
+<p>Recent findings suggest that note: for this section of the tutorial it should be assumed these are sent in python script files. Later on a launcher using Accelerate will be discussed that removes this necessity. <span style="font-size:13px;">(Related: <a href="is-buy-now-pay-later-bnpl-worth-it-the-hidden-costs-184550.html" style="color:#2563eb; font-weight:600;">Is Buy Now Pay Later (BNPL) Worth It? The Hidden Costs...</a>)</span></p>
 <p>The last piece of the puzzle is how do I send my data and model to another GPU?</p>
 <p>It has been revealed that this is where the DistributedDataParallel module comes into play. It will copy your model onto each GPU, and when loss.backward() is called the backpropagation is performed and the resulting gradients across all these copies of the model will be averaged/reduced. This ensures each device has the same weights post the optimizer step.</p>
 <p>Below is an example of our training setup, refactored as a function, with this capability:.</p>
@@ -216,16 +216,16 @@
             📰 #172994. Accelerate Large Model Training using PyTorch Fully Sharded Data Parallel
         </a>
         
+        <a href="distributed-llm-training-across-metros-streaming-diloco-in-maxtex-184135.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #184135. Distributed LLM Training Across Metros: Streaming DiLoCo in MaxText
+        </a>
+        
         <a href="breaking-distributed-training-train-bartt5-for-summarization-usin-173047.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #173047. Breaking: Distributed Training: Train BART/T5 for Summarization using 🤗 Transformers and Amazon SageMaker
         </a>
         
         <a href="accelerating-pytorch-distributed-fine-tuning-with-intel-technolog-173027.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #173027. Accelerating PyTorch distributed fine-tuning with Intel technologies
-        </a>
-        
-        <a href="habana-labs-and-hugging-face-partner-to-accelerate-transformer-mo-173001.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #173001. Habana Labs and Hugging Face Partner to Accelerate Transformer Model Training
         </a>
         
     </div>

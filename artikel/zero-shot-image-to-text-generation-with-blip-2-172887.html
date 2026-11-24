@@ -159,15 +159,15 @@ applications. Some of the image-to-text tasks that visual language models can ta
 retrieval, and visual question answering. Image captioning can aid the visually impaired, create useful product descriptions, 
 identify inappropriate content beyond text, and more. Image-text retrieval can be applied in multimodal search, as well 
 as in applications such as autonomous driving. Visual question-answering can aid in education, enable multimodal chatbots, 
-and assist in various domain-specific information retrieval applications. <span style="font-size:13px;">(Related: <a href="how-to-train-a-newly-introduced-language-model-from-scratch-using-173066.html" style="color:#2563eb; font-weight:600;">How to train a newly introduced language model from scr...</a>)</span></p>
+and assist in various domain-specific information retrieval applications.</p>
 <p>Modern computer vision and natural language models have become more capable; however, they have also significantly 
 grown in size compared to their predecessors. While pre-training a single-modality model is resource-consuming and expensive, 
 the cost of end-to-end vision-and-language pre-training has become increasingly prohibitive. BLIP-2 tackles this challenge by introducing a newly introduced visual-language pre-training paradigm that can potentially leverage 
 any combination of pre-trained vision encoder and LLM without having to pre-train the whole architecture end to end. This enables achieving state-of-the-art results on multiple visual-language tasks while significantly reducing the number 
-of trainable parameters and pre-training costs. Moreover, this approach paves the way for a multimodal ChatGPT-like model. <span style="font-size:13px;">(Related: <a href="latest-update-how-to-generate-text-using-different-decoding-metho-173065.html" style="color:#2563eb; font-weight:600;">Latest Update: How to generate text: using different de...</a>)</span></p>
+of trainable parameters and pre-training costs. Moreover, this approach paves the way for a multimodal ChatGPT-like model. <span style="font-size:13px;">(Related: <a href="how-to-budget-for-a-wedding-without-going-broke-184560.html" style="color:#2563eb; font-weight:600;">How to Budget for a Wedding Without Going Broke...</a>)</span></p>
 <p>It has been revealed that BLIP-2 bridges the modality gap between vision and language models by adding a lightweight Querying Transformer (Q-Former) 
 between an off-the-shelf frozen pre-trained image encoder and a frozen large language model. Q-Former is the only 
-trainable part of BLIP-2; both the image encoder and language model remain frozen.</p>
+trainable part of BLIP-2; both the image encoder and language model remain frozen. <span style="font-size:13px;">(Related: <a href="hawaiian-interisland-awards-hop-between-islands-184536.html" style="color:#2563eb; font-weight:600;">Hawaiian Interisland Awards — Hop Between Islands...</a>)</span></p>
 <p>Q-Former is a transformer model that consists of two submodules that share the same self-attention layers:.</p>
 <p>The image transformer extracts a fixed number of output features from the image encoder, independent of input image resolution, 
 and receives learnable query embeddings as input. The queries can additionally interact with the text through the same self-attention layers.</p>
@@ -241,8 +241,8 @@ to Omar Sanseviero for reviewing this blog post.</p>
             📰 #172537. Latest Update: Open Preference Dataset for Text-to-Image Generation by the 🤗 Community
         </a>
         
-        <a href="latest-update-how-to-generate-text-using-different-decoding-metho-173065.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #173065. Latest Update: How to generate text: using different decoding methods for language generation with Transformers
+        <a href="training-design-for-text-to-image-models-lessons-from-ablations-184257.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #184257. Training Design for Text-to-Image Models: Lessons from Ablations
         </a>
         
     </div>
