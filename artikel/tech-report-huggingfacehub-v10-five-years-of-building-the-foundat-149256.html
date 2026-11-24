@@ -151,8 +151,8 @@
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-149256">TL;DR: After five years of development, huggingface_hub has reached v1.0 - a milestone that marks the library's maturity as the Python package powering 200,000 dependent libraries and providing core functionality for accessing over 2 million public models, 0.5 million public datasets, and 1 million public Spaces. This release introduces breaking changes designed to support the next decade of open machine learning, driven by a global community of almost 300 contributors and millions of consumers.</p>
 <p>🚀 We highly recommend upgrading to v1.0 to benefit from major performance improvements and fresh capabilities.</p>
-<p>In a recent development, major changes in this release include the migration to httpx as the backend library, a completely redesigned hf CLI (which replaces the deprecated huggingface-cli) featuring a Typer-based interface with a significantly expanded feature set, and full adoption of hf_xet for file transfers, replacing the legacy hf_transfer. You can find the full release notes here. <span style="font-size:13px;">(Related: <a href="latest-update-transformer-based-encoder-decoder-models-150228.html" style="color:#2563eb; font-weight:600;">Latest Update: Transformer-based Encoder-Decoder Models...</a>)</span></p>
-<p>We’ve worked hard to ensure that huggingface_hub v1.0.0 remains backward compatible. In practice, most ML libraries should work seamlessly with both v0.x and v1.x versions. The main exception is transformers, which explicitly requires huggingface_hub v0.x in its v4 releases and v1.x in its upcoming v5 release. For a detailed compatibility overview across libraries, refer to the table in this issue. <span style="font-size:13px;">(Related: <a href="latest-update-how-to-train-a-newly-introduced-language-model-from-150232.html" style="color:#2563eb; font-weight:600;">Latest Update: How to train a newly introduced language...</a>)</span></p>
+<p>In a recent development, major changes in this release include the migration to httpx as the backend library, a completely redesigned hf CLI (which replaces the deprecated huggingface-cli) featuring a Typer-based interface with a significantly expanded feature set, and full adoption of hf_xet for file transfers, replacing the legacy hf_transfer. You can find the full release notes here. <span style="font-size:13px;">(Related: <a href="breaking-ai-for-game-development-creating-a-farming-game-in-5-day-161616.html" style="color:#2563eb; font-weight:600;">Breaking: AI for Game Development: Creating a Farming G...</a>)</span></p>
+<p>We’ve worked hard to ensure that huggingface_hub v1.0.0 remains backward compatible. In practice, most ML libraries should work seamlessly with both v0.x and v1.x versions. The main exception is transformers, which explicitly requires huggingface_hub v0.x in its v4 releases and v1.x in its upcoming v5 release. For a detailed compatibility overview across libraries, refer to the table in this issue. <span style="font-size:13px;">(Related: <a href="fine-tune-xlsr-wav2vec2-for-low-resource-asr-with-transformers-161625.html" style="color:#2563eb; font-weight:600;">Fine-Tune XLSR-Wav2Vec2 for low-resource ASR with 🤗 Tra...</a>)</span></p>
 <p>Every major library has a story. For huggingface_hub, it began with a simple idea: what if sharing machine learning models could be as easy as sharing code on GitHub?</p>
 <p>In a recent development, in the early days of the Hugging Face Hub, researchers and practitioners faced a common frustration. Training a state-of-the-art model required significant compute resources and expertise. Once trained, these models often lived in isolation, stored on local machines and shared via (broken) Google Drive links. The AI community was duplicating work, wasting resources, and missing opportunities for collaboration.</p>
 <p>The Hugging Face Hub emerged as the answer to this challenge. Initially, it was primarily used to share checkpoints compatible with the transformers library. All the Python code for interacting with the Hub lived within this library, making it inaccessible for other libraries to reuse.</p>
@@ -212,6 +212,10 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
+        <a href="tech-report-target-shares-rise-7-as-retailer-posts-best-sales-gro-150649.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #150649. Tech Report: Target shares rise 7% as retailer posts best sales growth in five years, hikes guidance
+        </a>
+        
         <a href="we-raised-100-million-for-open-collaborative-machine-learning-150158.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #150158. We Raised $100 Million for Open & Collaborative Machine Learning 🚀
         </a>
@@ -220,12 +224,8 @@
             📰 #150153. Tech Report: Machine Learning Experts - Sasha Luccioni
         </a>
         
-        <a href="tech-report-director-of-machine-learning-insights-part-2-saas-edi-138644.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #138644. Tech Report: Director of Machine Learning Insights [Part 2: SaaS Edition]
-        </a>
-        
-        <a href="the-age-of-machine-learning-as-code-has-arrived-150198.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #150198. The Age of Machine Learning As Code Has Arrived
+        <a href="director-of-machine-learning-insights-161624.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161624. Director of Machine Learning Insights
         </a>
         
     </div>

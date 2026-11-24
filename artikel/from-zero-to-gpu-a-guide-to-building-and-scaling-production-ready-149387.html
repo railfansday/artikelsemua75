@@ -150,9 +150,9 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-149387">We have revamped the Kernels project since the publication of this post. Check out the updates here.</p>
-<p>Recent findings suggest that custom CUDA kernels give your models a serious performance edge, but building them for the real world can feel daunting. How do you move beyond a simple GPU function to create a robust, scalable system without getting bogged down by endless build times and dependency nightmares? <span style="font-size:13px;">(Related: <a href="industry-news-block-sparse-matrices-for-smaller-and-faster-langua-150229.html" style="color:#2563eb; font-weight:600;">Industry News: Block Sparse Matrices for Smaller and Fa...</a>)</span></p>
-<p>It has been revealed that we created the kernel-builder library for this purpose. You can develop a custom kernel locally, and then build it for multiple architectures and make it available for the world to use.</p>
-<p>In this guide we'll show you how to build a complete, modern CUDA kernel from the ground up. Then, we’ll tackle the tough production and deployment challenges, drawing on real-world engineering strategies to show you how to build systems that are not just fast, but also efficient and maintainable. <span style="font-size:13px;">(Related: <a href="scaling-up-bert-like-model-inference-on-modern-cpu-part-2-150194.html" style="color:#2563eb; font-weight:600;">Scaling up BERT-like model Inference on modern CPU  - P...</a>)</span></p>
+<p>Recent findings suggest that custom CUDA kernels give your models a serious performance edge, but building them for the real world can feel daunting. How do you move beyond a simple GPU function to create a robust, scalable system without getting bogged down by endless build times and dependency nightmares? <span style="font-size:13px;">(Related: <a href="tech-report-taco-bell-adds-make-it-flamin-hot-option-for-scorchin-161641.html" style="color:#2563eb; font-weight:600;">Tech Report: Taco Bell adds ‘Make It Flamin’ Hot’ optio...</a>)</span></p>
+<p>It has been revealed that we created the kernel-builder library for this purpose. You can develop a custom kernel locally, and then build it for multiple architectures and make it available for the world to use. <span style="font-size:13px;">(Related: <a href="build-a-racetrack-codes-november-2026-161635.html" style="color:#2563eb; font-weight:600;">Build A Racetrack codes (November 2026)...</a>)</span></p>
+<p>In this guide we'll show you how to build a complete, modern CUDA kernel from the ground up. Then, we’ll tackle the tough production and deployment challenges, drawing on real-world engineering strategies to show you how to build systems that are not just fast, but also efficient and maintainable.</p>
 <p>When you're done, other developers will be able to use your kernels directly from the hub like this:.</p>
 <p>Rather watch a video? Check out the YouTube video that accompanies this guide.</p>
 <p>Let's build a practical kernel that converts an image from RGB to grayscale. This example uses PyTorch's modern C++ API to register our function as a first-class, native operator.</p>
@@ -239,20 +239,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
+        <a href="latest-update-we-got-claude-to-build-cuda-kernels-and-teach-open--161510.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161510. Latest Update: We Got Claude to Build CUDA Kernels and teach open models!
+        </a>
+        
+        <a href="tech-report-building-ai-for-kids-a-developers-guide-to-age-approp-158347.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #158347. Tech Report: Building AI for kids: A developer’s guide to age-appropriate safety architecture
+        </a>
+        
         <a href="rocket-money-x-hugging-face-scaling-volatile-ml-models-in-product-149952.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #149952. Rocket Money x Hugging Face: Scaling Volatile ML Models in Production​
         </a>
         
         <a href="industry-news-building-a-human-review-pipeline-for-ai-search-a-pr-149776.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #149776. Industry News: Building a Human Review Pipeline for AI Search: A Practical Developer’s Guide
-        </a>
-        
-        <a href="accelerate-nd-parallel-a-guide-to-efficient-multi-gpu-training-149421.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #149421. Accelerate ND-Parallel: A guide to Efficient Multi-GPU Training
-        </a>
-        
-        <a href="building-ai-for-kids-a-developers-guide-to-age-appropriate-safety-146860.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #146860. Building AI for kids: A developer’s guide to age-appropriate safety architecture
         </a>
         
     </div>

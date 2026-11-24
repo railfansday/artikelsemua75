@@ -150,12 +150,12 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-149674">Sources indicate that today Google releases a new and better family of multilingual vision-language encoders, SigLIP 2. The authors have extended the training objective of SigLIP (sigmoid loss) with additional objectives for improved semantic understanding, localization, and dense features.</p>
-<p>SigLIP 2 models outperform the older SigLIP ones at all model scales in core capabilities, including zero-shot classification, image-text retrieval, and transfer performance when extracting visual representations for Vision-Language Models (VLMs). <span style="font-size:13px;">(Related: <a href="latest-update-how-to-train-a-newly-introduced-language-model-from-150232.html" style="color:#2563eb; font-weight:600;">Latest Update: How to train a newly introduced language...</a>)</span></p>
+<p>SigLIP 2 models outperform the older SigLIP ones at all model scales in core capabilities, including zero-shot classification, image-text retrieval, and transfer performance when extracting visual representations for Vision-Language Models (VLMs).</p>
 <p>A cherry on top is the dynamic resolution (naflex) variant. This is useful for downstream tasks sensitive to aspect ratio and resolution.</p>
-<p>Here is a list of all the models released:. <span style="font-size:13px;">(Related: <a href="industry-news-block-sparse-matrices-for-smaller-and-faster-langua-150229.html" style="color:#2563eb; font-weight:600;">Industry News: Block Sparse Matrices for Smaller and Fa...</a>)</span></p>
+<p>Here is a list of all the models released:.</p>
 <p>Vision encoders are simple - they take an image, encode it into a representation, and that representation is used for downstream tasks like classification, object detection, image segmentation, and more vision tasks. Researchers are always in pursuit of visual representations that are dense, locality-aware, and semantically rich.</p>
-<p>CLIP and ALIGN are the first examples of image encoders and text encoders aligned together through joint training. This approach opened latest ways to train vision models. SigLIP took it further, replacing CLIP's contrastive loss with sigmoid loss for even better encoders.</p>
-<p>The takeaway? With smarter training objectives, we keep building vision encoders that are more structured, fine-grained, and powerful. SigLIP 2 is just that, a bunch of really interesting and smart training objectives applied on top of that of SigLIP's to provide better and stronger vision language encoders.</p>
+<p>CLIP and ALIGN are the first examples of image encoders and text encoders aligned together through joint training. This approach opened latest ways to train vision models. SigLIP took it further, replacing CLIP's contrastive loss with sigmoid loss for even better encoders. <span style="font-size:13px;">(Related: <a href="show-dont-certify-how-to-prepare-for-your-first-data-analyst-job-161608.html" style="color:#2563eb; font-weight:600;">Show, Don't Certify: How to Prepare for Your First Data...</a>)</span></p>
+<p>The takeaway? With smarter training objectives, we keep building vision encoders that are more structured, fine-grained, and powerful. SigLIP 2 is just that, a bunch of really interesting and smart training objectives applied on top of that of SigLIP's to provide better and stronger vision language encoders. <span style="font-size:13px;">(Related: <a href="building-for-an-open-future-our-latest-partnership-with-google-cl-161603.html" style="color:#2563eb; font-weight:600;">Building for an Open Future - our latest partnership wi...</a>)</span></p>
 <p>Sources indicate that we will try something new with this blog post. Rather than stating what is new and where to find it, we will go through a little exercise together. We start off with SigLIP and then brainstorm a series of questions (prefixed with 🤔) and answers (a new heading) to gradually cover all the updates in SigLIP 2. Sounds good?</p>
 <p>Sources indicate that we will begin our journey with the vision encoder where the patch size is 16, and the image resolution is
 256. We have four variants to start our training:.</p>
@@ -239,16 +239,16 @@ pip install git+https://github.com/huggingface/transformers@v4.49.0-SigLIP-2.</p
             📰 #149602. Vision Language Models (Better, faster, stronger)
         </a>
         
+        <a href="neomme-an-efficient-multimodal-native-and-multilingual-encoder-161153.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161153. NeoMME: an efficient Multimodal-native and Multilingual Encoder
+        </a>
+        
         <a href="tech-report-leveraging-pre-trained-language-model-checkpoints-for-150225.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #150225. Tech Report: Leveraging Pre-trained Language Model Checkpoints for Encoder-Decoder Models
         </a>
         
         <a href="introducing-the-worlds-largest-open-multilingual-language-model-b-150135.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #150135. Introducing The World's Largest Open Multilingual Language Model: BLOOM
-        </a>
-        
-        <a href="a-dive-into-vision-language-models-150062.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #150062. A Dive into Vision-Language Models
         </a>
         
     </div>

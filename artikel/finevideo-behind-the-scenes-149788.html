@@ -150,12 +150,12 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-149788">According to recent reports, open video datasets are scarce and therefore slowing down the development of open-source video AI. For this reason we built FineVideo, a dataset with 43k videos that span 3.4k hours and are annotated with rich descriptions, narrative details, scene splits, and QA pairs.</p>
-<p>FineVideo contains a highly diverse collection of videos and metadata which makes it a good ingredient to train models to understand video content, train diffusion models to generate videos from a text description or train computer vision models using its structured data as input. <span style="font-size:13px;">(Related: <a href="latest-update-how-to-train-a-newly-introduced-language-model-from-150232.html" style="color:#2563eb; font-weight:600;">Latest Update: How to train a newly introduced language...</a>)</span></p>
+<p>FineVideo contains a highly diverse collection of videos and metadata which makes it a good ingredient to train models to understand video content, train diffusion models to generate videos from a text description or train computer vision models using its structured data as input. <span style="font-size:13px;">(Related: <a href="diffusers-welcomes-stable-diffusion-3-161609.html" style="color:#2563eb; font-weight:600;">Diffusers welcomes Stable Diffusion 3...</a>)</span></p>
 <p>It has been revealed that wait, you haven’t seen FineVideo yet? take a look at it through the dataset explorer page.</p>
-<p>In this blog post, we share the technical details and code involved in developing FineVideo: a journey that starts with 1.9M videos in YouTube-Commons and ends with 44K videos with all details annotated. <span style="font-size:13px;">(Related: <a href="my-journey-to-a-serverless-transformers-pipeline-on-google-cloud-150216.html" style="color:#2563eb; font-weight:600;">My Journey to a serverless transformers pipeline on Goo...</a>)</span></p>
+<p>In this blog post, we share the technical details and code involved in developing FineVideo: a journey that starts with 1.9M videos in YouTube-Commons and ends with 44K videos with all details annotated.</p>
 <p>A good way to start is taking a look at the different steps of our journey. Those steps involve content filtering, annotation and output structuring.</p>
 <p>In the following sections we discuss each of the steps and provide references to relevant parts of the code. If you prefer to navigate the code directly, take a look at our FineVideo repository on Github.</p>
-<p>First, let’s have a look how we got an initial list of YouTube videos and how we apply some first filters.</p>
+<p>First, let’s have a look how we got an initial list of YouTube videos and how we apply some first filters. <span style="font-size:13px;">(Related: <a href="show-dont-certify-how-to-prepare-for-your-first-data-analyst-job-161608.html" style="color:#2563eb; font-weight:600;">Show, Don't Certify: How to Prepare for Your First Data...</a>)</span></p>
 <p>Recent findings suggest that our journey starts in YouTube-Commons: a collection of audio transcripts of videos shared on YouTube under a CC-By license. Such project was created and is right now maintained by PleIAs as part of their corpus collection projects.</p>
 <p>YouTube Commons contain videos and transcripts in a diverse set of languages, our initial task is about narrowing down the content of YouTube Commons to the same language.</p>
 <p>We filter YouTube-Commons for videos in English and at the same time we gather relevant metadata. From this initial filtering, we collect 1.9M videos, their closed captions and metadata.</p>
@@ -242,20 +242,20 @@ Audio-Visual Correlation 1.</p>
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="industry-news-behind-the-scenes-of-the-inaugural-bon-apptit-live-146012.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #146012. Industry News: Behind the Scenes of the Inaugural Bon Appétit LIVE
+        <a href="where-was-the-hunger-games-sunrise-on-the-reaping-filmed-behind-t-157139.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #157139. Where Was 'The Hunger Games: Sunrise on the Reaping' Filmed? Behind the Scenes in Spain and Germany
         </a>
         
-        <a href="where-was-the-hunger-games-sunrise-on-the-reaping-filmed-behind-t-145593.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #145593. Where Was 'The Hunger Games: Sunrise on the Reaping' Filmed? Behind the Scenes in Spain and Germany
+        <a href="breaking-ransomware-attacks-increase-behind-ai-but-payments-decli-161013.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161013. Breaking: Ransomware Attacks Increase Behind AI, but Payments Decline
         </a>
         
-        <a href="the-technology-behind-bloom-training-150133.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #150133. The Technology Behind BLOOM Training
+        <a href="the-hackernoon-newsletter-the-truth-behind-those-100x-faster-ai-c-160994.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #160994. The HackerNoon Newsletter: The Truth Behind Those 100x Faster AI Chip Headlines (11/23/2026)
         </a>
         
-        <a href="large-scale-near-deduplication-behind-bigcode-150018.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #150018. Large-scale Near-deduplication Behind BigCode
+        <a href="the-financial-incentives-behind-subscription-models-and-the-decli-160970.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #160970. The Financial Incentives Behind Subscription Models and the Decline of Digital Ownership
         </a>
         
     </div>

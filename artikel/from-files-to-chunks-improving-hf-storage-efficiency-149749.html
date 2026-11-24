@@ -150,12 +150,12 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-149749">Hugging Face stores over 30 PB of models, datasets, and spaces in Git LFS repositories. Because Git stores and versions at the file level, any change to a file requires re-uploading the full asset – expensive operations when average Parquet and CSV files on the Hub range between 200-300 MB, average Safetensor files around 1 GB, and GGUF files can exceed 8 GB. Imagine modifying just a single line of metadata in a GGUF file and waiting for the multi-gigabyte file to upload; in addition to user time and transfer costs, Git LFS also then needs to save full versions of both files, bloating storage costs.</p>
-<p>The plot below illustrates the growth of LFS storage in model, dataset, and space repositories on the Hub between March 2022 and September 2024:. <span style="font-size:13px;">(Related: <a href="latest-update-how-to-train-a-newly-introduced-language-model-from-150232.html" style="color:#2563eb; font-weight:600;">Latest Update: How to train a newly introduced language...</a>)</span></p>
-<p>Hugging Face's Xet team is taking a different approach to storage by storing files as chunks. By only transferring modified chunks, we can dramatically improve both storage efficiency and iteration speed while ensuring reliable access to evolving datasets and models. Here’s how it works. <span style="font-size:13px;">(Related: <a href="how-to-generate-text-using-different-decoding-methods-for-languag-150231.html" style="color:#2563eb; font-weight:600;">How to generate text: using different decoding methods ...</a>)</span></p>
-<p>Recent findings suggest that the method that we use to chunk files is called content-defined chunking (CDC). Instead of treating a file as an indivisible unit, CDC breaks files down into variable-sized chunks, using the data to define boundaries. To compute the chunks, we apply a rolling hash algorithm that scans the file’s byte sequence.</p>
+<p>The plot below illustrates the growth of LFS storage in model, dataset, and space repositories on the Hub between March 2022 and September 2024:.</p>
+<p>Hugging Face's Xet team is taking a different approach to storage by storing files as chunks. By only transferring modified chunks, we can dramatically improve both storage efficiency and iteration speed while ensuring reliable access to evolving datasets and models. Here’s how it works.</p>
+<p>Recent findings suggest that the method that we use to chunk files is called content-defined chunking (CDC). Instead of treating a file as an indivisible unit, CDC breaks files down into variable-sized chunks, using the data to define boundaries. To compute the chunks, we apply a rolling hash algorithm that scans the file’s byte sequence. <span style="font-size:13px;">(Related: <a href="ishowspeed-breaks-down-in-tears-after-finishing-gta-6-in-52-hours-161633.html" style="color:#2563eb; font-weight:600;">IShowSpeed breaks down in tears after finishing GTA 6 i...</a>)</span></p>
 <p>Consider a file with the contents:.</p>
 <p>We’re using text for illustration, but this could be any sequence of bytes.</p>
-<p>A rolling hash algorithm computes a hash over a sliding window of data. In this case, with a window of length 4 the hash would be computed first over tran, then rans, then ansf and so on until the end of the file.</p>
+<p>A rolling hash algorithm computes a hash over a sliding window of data. In this case, with a window of length 4 the hash would be computed first over tran, then rans, then ansf and so on until the end of the file. <span style="font-size:13px;">(Related: <a href="show-dont-certify-how-to-prepare-for-your-first-data-analyst-job-161608.html" style="color:#2563eb; font-weight:600;">Show, Don't Certify: How to Prepare for Your First Data...</a>)</span></p>
 <p>Chunk boundaries are determined when a hash satisfies a predefined condition, such as:.</p>
 <p>If the sequence mers produces a hash that meets this condition, the file will be split into three chunks:.</p>
 <p>The content of these chunks is hashed to create mapping between chunk hash and bytes and will eventually be stored in a content-addressed store (CAS). Since all three chunks are identical, we only store one chunk in the CAS for built-in deduplication. 🪄.</p>
@@ -199,16 +199,16 @@
             📰 #149798. Latest Update: Improving Hugging Face Training Efficiency Through Packing with Flash Attention 2
         </a>
         
-        <a href="making-automatic-speech-recognition-work-on-large-files-with-wav2-150180.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #150180. Making automatic speech recognition work on large files with Wav2Vec2 in 🤗 Transformers
+        <a href="breaking-quit-worrying-about-storage-and-get-a-ugreen-nas-for-up--161492.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161492. Breaking: Quit worrying about storage and get a UGREEN NAS for up to $160 off right now
         </a>
         
-        <a href="introducing-storage-regions-on-the-hf-hub-149936.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #149936. Introducing Storage Regions on the HF Hub
+        <a href="stock-up-on-storage-with-4tb-t-force-g50-ssd-at-just-010-per-gb-161458.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161458. Stock up on storage with 4TB T-Force G50 SSD at just $0.10 per GB
         </a>
         
-        <a href="latest-update-improving-prompt-consistency-with-structured-genera-149859.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #149859. Latest Update: Improving Prompt Consistency with Structured Generations
+        <a href="introducing-storage-buckets-on-the-hugging-face-hub-161452.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161452. Introducing Storage Buckets on the Hugging Face Hub
         </a>
         
     </div>

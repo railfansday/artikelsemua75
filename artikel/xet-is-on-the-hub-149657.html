@@ -150,8 +150,8 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-149657">Click here to read about joining the Xet waitlist (or head over to join immediately).</p>
-<p>Over the past few weeks, Hugging Face’s Xet Team took a major step forward by migrating the first Model and Dataset repositories off LFS and to Xet storage. <span style="font-size:13px;">(Related: <a href="latest-update-how-to-train-a-newly-introduced-language-model-from-150232.html" style="color:#2563eb; font-weight:600;">Latest Update: How to train a newly introduced language...</a>)</span></p>
-<p>Industry observers note that this marks one of many steps to fulfill Hugging Face’s vision for the Hub by empowering AI builders to build, iterate, and collaborate more effectively on massive models and datasets. If you're interested in deeper dives on the technology itself, check out the following posts:. <span style="font-size:13px;">(Related: <a href="industry-news-block-sparse-matrices-for-smaller-and-faster-langua-150229.html" style="color:#2563eb; font-weight:600;">Industry News: Block Sparse Matrices for Smaller and Fa...</a>)</span></p>
+<p>Over the past few weeks, Hugging Face’s Xet Team took a major step forward by migrating the first Model and Dataset repositories off LFS and to Xet storage. <span style="font-size:13px;">(Related: <a href="show-dont-certify-how-to-prepare-for-your-first-data-analyst-job-161608.html" style="color:#2563eb; font-weight:600;">Show, Don't Certify: How to Prepare for Your First Data...</a>)</span></p>
+<p>Industry observers note that this marks one of many steps to fulfill Hugging Face’s vision for the Hub by empowering AI builders to build, iterate, and collaborate more effectively on massive models and datasets. If you're interested in deeper dives on the technology itself, check out the following posts:. <span style="font-size:13px;">(Related: <a href="industry-news-minecraft-mommy-goes-viral-on-tiktok-for-giving-goo-161638.html" style="color:#2563eb; font-weight:600;">Industry News: ‘Minecraft Mommy’ goes viral on TikTok f...</a>)</span></p>
 <p>According to recent reports, but this post isn't about the core technology. It's a behind-the-scenes view of getting Xet on the Hub; taking you through our proof-of-concept to the first migration of repositories.</p>
 <p>In a recent development, the migration shifted ~6% of the Hub’s download traffic onto Xet infrastructure, validating several integral components and testing integrations with the myriad of ways repositories are accessed (e.g., via local development environments, different libraries, CI systems, cloud platforms, etc.). With nearly two million developers working on over two million public repositories, it’s real-world usage that’s the ultimate proving ground. Engineering a complex system like Xet storage is a balancing act. You proposal for scale, performance, and reliability, but once bytes start moving, challenges emerge. The trick is knowing when to move from design and theory to practice.</p>
 <p>Recent findings suggest that LFS, the storage system behind repositories today, stores large files in a separate object storage outside of the repository. LFS deduplicates at the file level. Even tiny edits create a new revision to upload in full; painful for the multi-gigabyte files found in many Hub repositories.</p>
@@ -207,16 +207,16 @@
             📰 #149509. Migrating the Hub from Git LFS to Xet
         </a>
         
-        <a href="sentence-transformers-in-the-hugging-face-hub-150208.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #150208. Sentence Transformers in the Hugging Face Hub
+        <a href="introducing-storage-buckets-on-the-hugging-face-hub-161452.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161452. Introducing Storage Buckets on the Hugging Face Hub
         </a>
         
-        <a href="industry-news-welcome-spacy-to-the-hugging-face-hub-150206.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #150206. Industry News: Welcome spaCy to the Hugging Face Hub
+        <a href="shipping-a-trillion-parameters-with-a-hub-bucket-delta-weight-syn-161362.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161362. Shipping a Trillion Parameters With a Hub Bucket: Delta Weight Sync in TRL
         </a>
         
-        <a href="welcome-stable-baselines3-to-the-hugging-face-hub-150182.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #150182. Welcome Stable-baselines3 to the Hugging Face Hub 🤗
+        <a href="tech-report-designing-the-hf-cli-as-an-agent-optimized-way-to-wor-161346.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161346. Tech Report: Designing the hf CLI as an agent-optimized way to work with the Hub
         </a>
         
     </div>

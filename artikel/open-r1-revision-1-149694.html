@@ -150,11 +150,11 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-149694">It’s been two weeks since the release of DeepSeek R1 and just a week since we started the open-r1 project to replicate the missing pieces, namely the training pipeline and the synthetic data. This post summarizes:.</p>
-<p>It should serve both as an update on the project and as a collection of interesting resources around DeepSeek-R1.</p>
-<p>Recent findings suggest that let’s start by looking at the progress we made on Open-R1. We started Open-R1 just one week ago and people across the teams as well as the community came together to work on it and we have some progress to report. <span style="font-size:13px;">(Related: <a href="simple-considerations-for-simple-people-building-fancy-neural-net-150219.html" style="color:#2563eb; font-weight:600;">Simple considerations for simple people building fancy ...</a>)</span></p>
-<p>Sources indicate that the first step in reproduction is to verify that we can match the evaluation scores. We are able to reproduce Deepseek's reported results on the MATH-500 Benchmark:.</p>
+<p>It should serve both as an update on the project and as a collection of interesting resources around DeepSeek-R1. <span style="font-size:13px;">(Related: <a href="coffee-shop-owner-refused-to-serve-tiktok-reviewer-after-two-bad--161628.html" style="color:#2563eb; font-weight:600;">Coffee shop owner refused to serve TikTok reviewer afte...</a>)</span></p>
+<p>Recent findings suggest that let’s start by looking at the progress we made on Open-R1. We started Open-R1 just one week ago and people across the teams as well as the community came together to work on it and we have some progress to report.</p>
+<p>Sources indicate that the first step in reproduction is to verify that we can match the evaluation scores. We are able to reproduce Deepseek's reported results on the MATH-500 Benchmark:. <span style="font-size:13px;">(Related: <a href="show-dont-certify-how-to-prepare-for-your-first-data-analyst-job-161608.html" style="color:#2563eb; font-weight:600;">Show, Don't Certify: How to Prepare for Your First Data...</a>)</span></p>
 <p>You can find the instructions to run these evaluations in the open-r1 repository.</p>
-<p>It has been revealed that one observation we have made is the enormous size of the generations from the DeepSeek models, which makes even evaluating the model challenging. Here we show DeepSeek-R1 response lengths in the OpenThoughts dataset:. <span style="font-size:13px;">(Related: <a href="latest-update-how-to-train-a-newly-introduced-language-model-from-150232.html" style="color:#2563eb; font-weight:600;">Latest Update: How to train a newly introduced language...</a>)</span></p>
+<p>It has been revealed that one observation we have made is the enormous size of the generations from the DeepSeek models, which makes even evaluating the model challenging. Here we show DeepSeek-R1 response lengths in the OpenThoughts dataset:.</p>
 <p>It has been revealed that distribution of R1’s responses reveals that they are on average very long with the average response being 6,000 tokens long and some responses containing more than 20,000 tokens. Worth noting that the average page contains ~500 words and one token is on average slightly less than a word, which means the many reponses are over 10 pages long. (src: https://x.com/gui_penedo/status/1884953463051649052).</p>
 <p>The length of responses will make GPRO training challenging, as we will have to generate long completions which will require a significant proportion of GPU memory to store the activations / gradients for the optimization step.</p>
 <p>In order to share our progress publicly, we have created an open-r1 evaluation leaderboard, so the community can follow our reproduction efforts (space is here):.</p>
@@ -213,20 +213,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="we-raised-100-million-for-open-collaborative-machine-learning-150158.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #150158. We Raised $100 Million for Open & Collaborative Machine Learning 🚀
+        <a href="tech-report-welcome-gemma-googles-new-open-llm-161613.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161613. Tech Report: Welcome Gemma - Google’s new open LLM
         </a>
         
-        <a href="student-ambassador-programs-call-for-applications-is-open-150156.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #150156. Student Ambassador Program’s call for applications is open!
+        <a href="breaking-introducing-the-open-arabic-llm-leaderboard-161611.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161611. Breaking: Introducing the Open Arabic LLM Leaderboard
         </a>
         
-        <a href="introducing-the-worlds-largest-open-multilingual-language-model-b-150135.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #150135. Introducing The World's Largest Open Multilingual Language Model: BLOOM
+        <a href="building-for-an-open-future-our-latest-partnership-with-google-cl-161603.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161603. Building for an Open Future - our latest partnership with Google Cloud
         </a>
         
-        <a href="openrail-towards-open-and-responsible-ai-licensing-frameworks-150113.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #150113. OpenRAIL: Towards open and responsible AI licensing frameworks
+        <a href="join-the-amd-open-robotics-hackathon-161601.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161601. Join the AMD Open Robotics Hackathon
         </a>
         
     </div>

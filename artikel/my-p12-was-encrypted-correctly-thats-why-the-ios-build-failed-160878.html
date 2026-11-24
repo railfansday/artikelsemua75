@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My .p12 Was Encrypted Correctly. That's Why the iOS Build Failed.</title>
+    <meta name="description" content="The build failed with one line and nothing else:. No stack trace, no line number, no file. It came out of the credential import step on the macOS build mac">
+    <meta name="keywords" content="build, certificate, file, which, same, three, apple, credentials">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua75/artikel/my-p12-was-encrypted-correctly-thats-why-the-ios-build-failed-160878.html">
+    
+    <meta property="og:title" content="My .p12 Was Encrypted Correctly. That's Why the iOS Build Failed.">
+    <meta property="og:description" content="The build failed with one line and nothing else:. No stack trace, no line number, no file. It came out of the credential import step on the macOS build mac">
+    <meta property="og:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fn4lte5uz6e6dfz10rl6k.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua75/artikel/my-p12-was-encrypted-correctly-thats-why-the-ios-build-failed-160878.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="My .p12 Was Encrypted Correctly. That's Why the iOS Build Failed.">
+    <meta name="twitter:description" content="The build failed with one line and nothing else:. No stack trace, no line number, no file. It came out of the credential import step on the macOS build mac">
+    <meta name="twitter:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fn4lte5uz6e6dfz10rl6k.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "My .p12 Was Encrypted Correctly. That's Why the iOS Build Failed.", "image": ["https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fn4lte5uz6e6dfz10rl6k.png"], "datePublished": "2026-11-24T02:19:54", "dateModified": "2026-11-24T02:31:24.683296", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua75/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua75/artikel/my-p12-was-encrypted-correctly-thats-why-the-ios-build-failed-160878.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding My .p12 Was Encrypted Correctly. That's Why the iOS Build Failed.?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Dev."}}, {"@type": "Question", "name": "Which category does 'My .p12 Was Encrypted Correctly. That's Why the iOS Build Fa' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>My .p12 Was Encrypted Correctly. That's Why the iOS Build Failed.</h1>
+        <div class="meta-line">🌐 Source: <strong>Dev</strong> &bull; 📅 24 Nov 2026 &bull; ⏱️ 6 min read (1235 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>No stack trace, no line number, no file.</li><li style='margin-bottom:6px;'>I had spent the previous three weeks treating that file as a constant.</li><li style='margin-bottom:6px;'>A .p12 is a container: one or more X.509 certificates, the private key matching the leaf certificate, and a MAC — a checksum computed over the contents using a key derived from the password.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-160878"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-160878"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-160878"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="My .p12 Was Encrypted Correctly. That's Why the iOS Build Failed." loading="lazy" src="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fn4lte5uz6e6dfz10rl6k.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-160878">The build failed with one line and nothing else:.</p>
+<p>No stack trace, no line number, no file. It came out of the credential import step on the macOS build machine, which meant the failure was not in my app. It was in the 4,457-byte file I was handing the toolchain to prove who I am. <span style="font-size:13px;">(Related: <a href="build-a-racetrack-codes-november-2026-161635.html" style="color:#2563eb; font-weight:600;">Build A Racetrack codes (November 2026)...</a>)</span></p>
+<p>I had spent the previous three weeks treating that file as a constant. It was the one thing I was sure about. The app code changed daily; the certificate was issued by Apple and downloaded from a portal that does not make mistakes. So when the build broke, I looked everywhere except at the certificate — at the provisioning profile, at the bundle identifier, at the credentials.json schema, at the Node version, at the EAS CLI version. All of those were wrong at various points, and fixing them did not fix the build. <span style="font-size:13px;">(Related: <a href="how-to-build-a-healthcare-robot-from-simulation-to-deployment-wit-161605.html" style="color:#2563eb; font-weight:600;">How to Build a Healthcare Robot from Simulation to Depl...</a>)</span></p>
+<p>The certificate was the bug. Specifically, it was too modern.</p>
+<p>A .p12 is a container: one or more X.509 certificates, the private key matching the leaf certificate, and a MAC — a checksum computed over the contents using a key derived from the password. When a tool imports it, it does two things in order. First it derives a key from your password and verifies the MAC, which tells it the file was not corrupted or tampered with. Then it decrypts the private key.</p>
+<p>The MAC step is where mine died. And the reason is embarrassingly simple: OpenSSL 3, which is what openssl pkcs12 -export runs on any current machine, defaults to writing PKCS#12 files with modern parameters — AES-256-CBC for the encrypted content, SHA-256 for the MAC, PBKDF2 for key derivation. That is the correct choice in 2026. It is also a format the macOS Security framework refuses to verify when you import a .p12 non-interactively.</p>
+<p>Sources indicate that I did not figure this out by reading Apple's source. I figured it out by measuring the files that did work. Three .p12 files in my repo, all of which had built successfully at some point:.</p>
+<p>Every working file: SHA-1 MAC, 2,048 iterations, 3DES. Every file that failed: SHA-256 MAC, AES-256. The difference between a green build and a cryptic import error was a default value in a tool I never invoked directly.</p>
+<p>-legacy restores the old cipher set. Same key, same certificate, same password, same profile. The build went green on the first attempt after that, which is the most annoying kind of fix: nothing about the application changed, so nothing about the application was ever going to reveal it.</p>
+<p>Two weeks later the build failed again, and this time the error was different but pointed at the same file:.</p>
+<p>This one is not about encryption at all. A .p12 can contain more than the leaf certificate — normally it also carries the intermediate CA that signed it, so the importer can build a chain to a trusted root. Mine carried two certificates. I checked the validity of both instead of just the one I cared about:.</p>
+<p id="sec-mid-160878">Recent findings suggest that the leaf was fine. The intermediate was Apple Worldwide Developer Relations Certification Authority, issued in 2013, expired 2023-02-07. A certificate chain with a dead link in the middle is not a chain, so codesign reported the leaf as invalid for signing — which is technically true and practically useless as a message.</p>
+<p>It has been revealed that the healthy files in the same repo carried the G3 intermediate: valid from 2020-02-19 to 2030-02-20. Same subject line, different generation of the certificate, completely different outcome. There is no way to tell them apart without printing the dates.</p>
+<p>The certificate I generated to fix all of this was issued at Sep 30 04:06:58 2026 GMT, serial 1A96FAF0F0AF373932470C5302B4207C. Within weeks, builds using it started failing with a serial number I recognised from that very output, because Apple had revoked it.</p>
+<p>In a recent development, that is the part that should have been obvious from the beginning. When I moved to local credentials, I did not just move a file. I took ownership of a lifecycle. A certificate has an problem date, an expiry date, a chain, a revocation status, and a private key that must be exported in a specific format. EAS's remote credential management does all of that for you and rotates certificates automatically. I opted out of it because the Apple ID behind the account has two-factor authentication, and a headless build pipeline cannot answer a 2FA prompt. So every credential became a manual artefact that only gets looked at when a build fails.</p>
+<p>According to recent reports, automatic certificate rotation. Remote credentials mean Apple-side renewal happens without me. Local credentials mean the expiry date is a date I have to remember. I traded a platform responsibility for a personal one, and then got surprised when it became a personal problem. The honest accounting: local credentials bought me unattended builds on a machine that is already authenticated; the price is that every certificate event is now an incident.</p>
+<p>Industry observers note that reproducible builds. These builds run on one Mac, from a working directory with local state, not from a clean CI checkout. The upside is that I can build without uploading source to a third-party builder. The downside is that "works on my machine" is now a literal description of the release process, and a .p12 sitting in a directory is part of the build inputs.</p>
+<p>Build time, deliberately. For a while I used prebuilt React Native binaries, which cut a local build to about 20 minutes. They download from Maven Central, and on a network where that host is unreliable the download fails silently — the build only collapses later, at the archive step, with an error that has nothing to do with the real cause. I turned prebuilt binaries off and compile RN from source: 30 to 45 minutes per build, every build, in exchange for a failure mode that happens at the beginning and names itself. I would make that trade again, but it means a certificate mistake costs 45 minutes per attempt, not 20.</p>
+<p>Before any build, one command that prints the three things that actually break:.</p>
+<p>Sources indicate that if the first line is not sha1 and the second is not pbeWithSHA1And3-KeyTripleDES-CBC, the build will fail at import, and no amount of application debugging will help. If any certificate in the output has an expiry in the past, or a notBefore older than a few years on an intermediate, the chain is broken. If the serial does not match the certificate currently listed as active in the developer portal, it has been revoked and the build will fail for a reason that looks like a code signing problem.</p>
+<p>That is about four seconds of output, and it would have saved three weeks spread across three different apps.</p>
+<p id="sec-end-160878">When a tool rejects a file that is cryptographically valid, how far do you go before you stop trusting the tool and start trusting the file? I only found this because I happened to have three older .p12 files lying around to compare against — if I had deleted them, I would probably still be regenerating certificates and guessing. Do you keep a known-good artefact around specifically to diff against when something breaks, or is that a habit that only starts to make sense after you've been burned once?</p>
+<p style="margin-top: 25px;">
+<a href="https://dev.to/sellermind/my-p12-was-encrypted-correctly-thats-why-the-ios-build-failed-1j5n" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="apple-releases-ios-273-public-beta-2-latest-developer-beta-2-buil-154283.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #154283. Apple releases iOS 27.3 public beta 2, latest developer beta 2 build
+        </a>
+        
+        <a href="build-a-racetrack-codes-november-2026-161635.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161635. Build A Racetrack codes (November 2026)
+        </a>
+        
+        <a href="how-to-build-a-healthcare-robot-from-simulation-to-deployment-wit-161605.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161605. How to Build a Healthcare Robot from Simulation to Deployment with NVIDIA Isaac for Healthcare
+        </a>
+        
+        <a href="easily-build-and-share-rocm-kernels-with-hugging-face-161597.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161597. Easily Build and Share ROCm Kernels with Hugging Face
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

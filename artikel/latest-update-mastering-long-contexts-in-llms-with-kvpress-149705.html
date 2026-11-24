@@ -150,10 +150,10 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-149705">TL;DR: KVPress packs the latest KV cache compression techniques, enabling memory-efficient long-context LLMs. 🚀.</p>
-<p>In a recent development, one of the key features of Large Language Models (LLMs) is their context window—the maximum number of tokens they can process in a single request. As LLMs evolve, their context windows are becoming increasingly larger. <span style="font-size:13px;">(Related: <a href="latest-update-how-to-train-a-newly-introduced-language-model-from-150232.html" style="color:#2563eb; font-weight:600;">Latest Update: How to train a newly introduced language...</a>)</span></p>
+<p>In a recent development, one of the key features of Large Language Models (LLMs) is their context window—the maximum number of tokens they can process in a single request. As LLMs evolve, their context windows are becoming increasingly larger. <span style="font-size:13px;">(Related: <a href="breaking-ai-for-game-development-creating-a-farming-game-in-5-day-161616.html" style="color:#2563eb; font-weight:600;">Breaking: AI for Game Development: Creating a Farming G...</a>)</span></p>
 <p>Larger context windows unlock incredible possibilities:.</p>
 <p>However, these extended windows come at a cost—memory taken by the long context in the KV Cache becomes hard to manage. For instance, handling 1M tokens with Llama 3-70B in float16 demands 330GB for KV Cache, rendering it infeasible for many applications.</p>
-<p>In this blog post, we'll address one solution for this problem: compressing the KV Cache for more efficient generation. To achieve this, we'll explore:. <span style="font-size:13px;">(Related: <a href="how-to-generate-text-using-different-decoding-methods-for-languag-150231.html" style="color:#2563eb; font-weight:600;">How to generate text: using different decoding methods ...</a>)</span></p>
+<p>In this blog post, we'll address one solution for this problem: compressing the KV Cache for more efficient generation. To achieve this, we'll explore:. <span style="font-size:13px;">(Related: <a href="3d-asset-generation-ai-for-game-development-3-161614.html" style="color:#2563eb; font-weight:600;">3D Asset Generation: AI for Game Development #3...</a>)</span></p>
 <p>Before getting started, explore KVPress in this Space (you'll find examples at the end if needed):.</p>
 <p>Figure 1: Key Value cache inside the attention module (Source: NVIDIA).</p>
 <p>In autoregressive models, text generation happens token by token, with each prediction relying on all preceding tokens for context. For example:.</p>
@@ -217,20 +217,20 @@ Size(KV)=2×2×80×8×128×1M=327.6GB.</p>
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="hugging-face-reads-feb-2021-long-range-transformers-150218.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #150218. Hugging Face Reads, Feb. 2021 - Long-range Transformers
+        <a href="introducing-anylanguagemodel-one-api-for-local-and-remote-llms-on-161592.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161592. Introducing AnyLanguageModel: One API for Local and Remote LLMs on Apple Platforms
         </a>
         
-        <a href="tech-report-fine-tuning-20b-llms-with-rlhf-on-a-24gb-consumer-gpu-150045.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #150045. Tech Report: Fine-tuning 20B LLMs with RLHF on a 24GB consumer GPU
+        <a href="industry-news-open-asr-leaderboard-trends-and-insights-with-newly-161590.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161590. Industry News: Open ASR Leaderboard: Trends and Insights with Newly introduced Multilingual & Long-Form Tracks
         </a>
         
-        <a href="industry-news-making-llms-even-more-accessible-with-bitsandbytes--150013.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #150013. Industry News: Making LLMs even more accessible with bitsandbytes, 4-bit quantization and QLoRA
+        <a href="alyah-toward-robust-evaluation-of-emirati-dialect-capabilities-in-161516.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161516. Alyah ⭐️: Toward Robust Evaluation of Emirati Dialect Capabilities in Arabic LLMs
         </a>
         
-        <a href="deploy-llms-with-hugging-face-inference-endpoints-149989.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #149989. Deploy LLMs with Hugging Face Inference Endpoints
+        <a href="ggml-and-llamacpp-join-hf-to-ensure-the-long-term-progress-of-loc-161478.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161478. GGML and llama.cpp join HF to ensure the long-term progress of Local AI
         </a>
         
     </div>

@@ -150,9 +150,9 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-149651">According to recent reports, everyone’s been using Claude and OpenAI as coding assistants for the last few years, but there’s less appeal if you look at the developments coming out of open source projects like Open R1. If we look at the evaluation on LiveCodeBench below, we can see that the 7B parameter variant outperforms Claude 3.7 Sonnet and GPT-4o. These models are the daily drivers of many engineers in applications like Cursor and VSCode.</p>
-<p>Industry observers note that evals are great and all, but I want to get my hands dirty and feel the commits! This blog post focuses on how you can integrate these models in your IDE now. We will set up OlympicCoder 7B, the smaller of the two OlympicCoder variants, and we’ll use a quantized variant for optimum local inference. Here’s the stack we’re going to use:. <span style="font-size:13px;">(Related: <a href="industry-news-block-sparse-matrices-for-smaller-and-faster-langua-150229.html" style="color:#2563eb; font-weight:600;">Industry News: Block Sparse Matrices for Smaller and Fa...</a>)</span></p>
-<p>It has been revealed that it’s vital to say that we chose this stack purely for simplicity. You might want to experiment with the larger model and/or different GGUF files. Or even alternative inference engines like llama.cpp. <span style="font-size:13px;">(Related: <a href="latest-update-how-to-train-a-newly-introduced-language-model-from-150232.html" style="color:#2563eb; font-weight:600;">Latest Update: How to train a newly introduced language...</a>)</span></p>
-<p>Sources indicate that LM Studio is like a control panel for AI models. It integrates with the Hugging Face hub to pull models, helps you find the right GGUF file, and exposes an API that other applications can use to interact with the model.</p>
+<p>Industry observers note that evals are great and all, but I want to get my hands dirty and feel the commits! This blog post focuses on how you can integrate these models in your IDE now. We will set up OlympicCoder 7B, the smaller of the two OlympicCoder variants, and we’ll use a quantized variant for optimum local inference. Here’s the stack we’re going to use:. <span style="font-size:13px;">(Related: <a href="industry-news-minecraft-mommy-goes-viral-on-tiktok-for-giving-goo-161638.html" style="color:#2563eb; font-weight:600;">Industry News: ‘Minecraft Mommy’ goes viral on TikTok f...</a>)</span></p>
+<p>It has been revealed that it’s vital to say that we chose this stack purely for simplicity. You might want to experiment with the larger model and/or different GGUF files. Or even alternative inference engines like llama.cpp.</p>
+<p>Sources indicate that LM Studio is like a control panel for AI models. It integrates with the Hugging Face hub to pull models, helps you find the right GGUF file, and exposes an API that other applications can use to interact with the model. <span style="font-size:13px;">(Related: <a href="la-noire-2-leak-resurfaces-after-source-gets-gta-6-ending-right-161634.html" style="color:#2563eb; font-weight:600;">LA Noire 2 leak resurfaces after source gets GTA 6 endi...</a>)</span></p>
 <p>In short, it lets you download and run them without any complicated setup.</p>
 <p>The GGUF files that we need are hosted on the hub. We can open the model from the hub in LMStudio, using the ‘Use this model’ button:.</p>
 <p>This will link to the LMStudio application and open it on your machine. You’ll just need to Choose a Quantization. I went for Q4_K_M because it will perform well on most devices. If you have more compute, you might want to try out one of the options with Q8_*.</p>
@@ -190,20 +190,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="tech-report-introducing-the-open-leaderboard-for-japanese-llms-149751.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #149751. Tech Report: Introducing the Open Leaderboard for Japanese LLMs!
+        <a href="tech-report-welcome-gemma-googles-new-open-llm-161613.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161613. Tech Report: Welcome Gemma - Google’s new open LLM
         </a>
         
-        <a href="tech-report-ai-breakthrough-cuts-energy-use-by-100x-while-boostin-149650.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #149650. Tech Report: AI breakthrough cuts energy use by 100x while boosting accuracy
+        <a href="tech-report-the-open-evaluation-standard-benchmarking-nvidia-nemo-161553.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161553. Tech Report: The Open Evaluation Standard: Benchmarking NVIDIA Nemotron 3 Nano with NeMo Evaluator
         </a>
         
-        <a href="tech-report-tricks-from-openai-gpt-oss-you-can-use-with-transform-149340.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #149340. Tech Report: Tricks from OpenAI gpt-oss YOU 🫵 can use with transformers
+        <a href="tech-report-holo31-fast-local-computer-use-agents-161351.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161351. Tech Report: Holo3.1: Fast & Local Computer Use Agents
         </a>
         
-        <a href="tech-report-huggingfacehub-v10-five-years-of-building-the-foundat-149256.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #149256. Tech Report: huggingface_hub v1.0: Five Years of Building the Foundation of Open Machine Learning
+        <a href="tech-report-cncf-score-project-improved-its-security-posture-by-j-161263.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161263. Tech Report: CNCF Score project improved its security posture by joining the Docker-Sponsored Open Source Program
         </a>
         
     </div>

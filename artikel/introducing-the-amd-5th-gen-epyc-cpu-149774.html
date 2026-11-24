@@ -150,9 +150,9 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-149774">AMD has just unveiled its 5th generation of server-grade EPYC CPU based on Zen5 architecture - also known as Turin. It provides a significant boost in performance, especially with a higher number of core count reaching up to 192 and 384 threads.</p>
-<p>From Large Language Models (LLMs) to RAG scenarios, Hugging Face users can leverage this upcoming generation of servers to enhance their performance capabilities:. <span style="font-size:13px;">(Related: <a href="latest-update-how-to-train-a-newly-introduced-language-model-from-150232.html" style="color:#2563eb; font-weight:600;">Latest Update: How to train a newly introduced language...</a>)</span></p>
-<p>During the last few weeks, we have been working with AMD to validate that the Hugging Face ecosystem is fully supported on this new CPU generation and delivers the expected performance across different tasks. <span style="font-size:13px;">(Related: <a href="how-to-generate-text-using-different-decoding-methods-for-languag-150231.html" style="color:#2563eb; font-weight:600;">How to generate text: using different decoding methods ...</a>)</span></p>
-<p>Also, we have been cooking some exciting fresh ways to leverage torch.compile for AMD CPU through the use of AMD ZenDNN PyTorch plugin (zentorch) to speed up even more the kind of workloads we will be discussing after.</p>
+<p>From Large Language Models (LLMs) to RAG scenarios, Hugging Face users can leverage this upcoming generation of servers to enhance their performance capabilities:. <span style="font-size:13px;">(Related: <a href="3d-asset-generation-ai-for-game-development-3-161614.html" style="color:#2563eb; font-weight:600;">3D Asset Generation: AI for Game Development #3...</a>)</span></p>
+<p>During the last few weeks, we have been working with AMD to validate that the Hugging Face ecosystem is fully supported on this new CPU generation and delivers the expected performance across different tasks.</p>
+<p>Also, we have been cooking some exciting fresh ways to leverage torch.compile for AMD CPU through the use of AMD ZenDNN PyTorch plugin (zentorch) to speed up even more the kind of workloads we will be discussing after. <span style="font-size:13px;">(Related: <a href="tech-report-accelerating-pytorch-transformers-with-intel-sapphire-161618.html" style="color:#2563eb; font-weight:600;">Tech Report: Accelerating PyTorch Transformers with Int...</a>)</span></p>
 <p>While we were able to get early access to this work to test Hugging Face models and libraries and share with you performance, we expect AMD to make it soon available to the community - stay tuned!</p>
 <p>According to recent reports, in this section, we present the results from our benchmarking of the two AMD EPYC CPUs: Turin (128 cores) and Genoa (96 cores). For these benchmarks, we utilized the ZenDNN plug-in for PyTorch (zentorch), which provides inference optimizations tailored for deep learning workloads on AMD EPYC CPUs. This plug-in integrates seamlessly with the torch.compile graph compilation flow, enabling multiple passes of graph-level optimizations on the torch.fx graph to achieve further performance acceleration.</p>
 <p id="sec-mid-149774">It has been revealed that to ensure optimal performance, we used the bfloat16 data type and employed ZenDNN 5.0. We configured multi-instance setups that enable the parallel execution of multiple Meta LLaMA 3.1 8B model instances spawning across all the cores. Each model instance is allocated 32 physical cores per socket, allowing us to leverage the full processing power of the servers for efficient data handling and computational speed.</p>
@@ -189,16 +189,16 @@
             📰 #150002. Hugging Face and AMD partner on accelerating state-of-the-art models for CPU and GPU platforms
         </a>
         
-        <a href="introducing-accelerate-150212.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #150212. Introducing 🤗 Accelerate
+        <a href="breaking-introducing-the-open-arabic-llm-leaderboard-161611.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161611. Breaking: Introducing the Open Arabic LLM Leaderboard
         </a>
         
-        <a href="scaling-up-bert-inference-on-cpu-part-1-150211.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #150211. Scaling-up BERT Inference on CPU (Part 1)
+        <a href="join-the-amd-open-robotics-hackathon-161601.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161601. Join the AMD Open Robotics Hackathon
         </a>
         
-        <a href="introducing-optimum-the-optimization-toolkit-for-transformers-at--150204.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #150204. Introducing Optimum: The Optimization Toolkit for Transformers at Scale
+        <a href="introducing-anylanguagemodel-one-api-for-local-and-remote-llms-on-161592.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161592. Introducing AnyLanguageModel: One API for Local and Remote LLMs on Apple Platforms
         </a>
         
     </div>

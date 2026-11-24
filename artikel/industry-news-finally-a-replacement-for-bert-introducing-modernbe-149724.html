@@ -150,10 +150,10 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-149724">This blog post introduces ModernBERT, a family of state-of-the-art encoder-only models representing improvements over older generation encoders across the board, with a 8192 sequence length, better downstream performance and much faster processing.</p>
-<p>ModernBERT is available as a slot-in replacement for any BERT-like models, with both a base (149M params) and large (395M params) model size. <span style="font-size:13px;">(Related: <a href="latest-update-how-to-train-a-newly-introduced-language-model-from-150232.html" style="color:#2563eb; font-weight:600;">Latest Update: How to train a newly introduced language...</a>)</span></p>
-<p>It has been revealed that modernBERT will be included in v4.48.0 of transformers. Until then, it requires installing transformers from main:. <span style="font-size:13px;">(Related: <a href="how-to-generate-text-using-different-decoding-methods-for-languag-150231.html" style="color:#2563eb; font-weight:600;">How to generate text: using different decoding methods ...</a>)</span></p>
+<p>ModernBERT is available as a slot-in replacement for any BERT-like models, with both a base (149M params) and large (395M params) model size.</p>
+<p>It has been revealed that modernBERT will be included in v4.48.0 of transformers. Until then, it requires installing transformers from main:. <span style="font-size:13px;">(Related: <a href="fine-tune-xlsr-wav2vec2-for-low-resource-asr-with-transformers-161625.html" style="color:#2563eb; font-weight:600;">Fine-Tune XLSR-Wav2Vec2 for low-resource ASR with 🤗 Tra...</a>)</span></p>
 <p>Since ModernBERT is a Masked Language Model (MLM), you can use the fill-mask pipeline or load it via AutoModelForMaskedLM. To use ModernBERT for downstream tasks like classification, retrieval, or QA, fine-tune it following standard BERT fine-tuning recipes.</p>
-<p>In a recent development, ⚠️ If your GPU supports it, we recommend using ModernBERT with Flash Attention 2 to reach the highest efficiency. To do so, install Flash Attention as follows, then use the model as normal:.</p>
+<p>In a recent development, ⚠️ If your GPU supports it, we recommend using ModernBERT with Flash Attention 2 to reach the highest efficiency. To do so, install Flash Attention as follows, then use the model as normal:. <span style="font-size:13px;">(Related: <a href="breaking-ai-for-game-development-creating-a-farming-game-in-5-day-161616.html" style="color:#2563eb; font-weight:600;">Breaking: AI for Game Development: Creating a Farming G...</a>)</span></p>
 <p>Note: ModernBERT does not use token type IDs, unlike some earlier BERT models. Most downstream usage is identical to standard BERT models on the Hugging Face Hub, except you can omit the token_type_ids parameter.</p>
 <p>Industry observers note that BERT was released in 2018 (millennia ago in AI-years!) and yet it’s still widely used today: in fact, it’s at the moment the second most downloaded model on the HuggingFace hub, with more than 68 million monthly downloads, only second to another encoder model fine-tuned for retrieval. That’s because its encoder-only architecture makes it ideal for the kinds of real-world problems that come up every day, like retrieval (such as for RAG), classification (such as content moderation), and entity extraction (such as for privacy and regulatory compliance).</p>
 <p>Finally, 6 years later, we have a replacement! Today, we at Answer.AI and LightOn (and friends!) are releasing ModernBERT. ModernBERT is a upcoming model series that is a Pareto improvement over BERT and its younger siblings across both speed and accuracy. This model takes dozens of advances from recent years of work on large language models (LLMs), and applies them to a BERT-style model, including updates to the architecture and the training process.</p>
@@ -262,20 +262,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="industry-news-accelerate-bert-inference-with-hugging-face-transfo-150174.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #150174. Industry News: Accelerate BERT inference with Hugging Face Transformers and AWS Inferentia
+        <a href="industry-news-introducing-swift-huggingface-the-complete-swift-cl-161562.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161562. Industry News: Introducing swift-huggingface: The Complete Swift Client for Hugging Face
         </a>
         
-        <a href="industry-news-pre-train-bert-with-hugging-face-transformers-and-h-150116.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #150116. Industry News: Pre-Train BERT with Hugging Face Transformers and Habana Gaudi
+        <a href="industry-news-introducing-waypoint-1-real-time-interactive-video--161532.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161532. Industry News: Introducing Waypoint-1: Real-time interactive video diffusion from Overworld
         </a>
         
-        <a href="industry-news-introducing-the-open-finllm-leaderboard-149782.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #149782. Industry News: Introducing the Open FinLLM Leaderboard
+        <a href="industry-news-electric-cars-are-finally-mainstream-in-gta-6-and-v-155410.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #155410. Industry News: Electric cars are finally mainstream in GTA 6, and Vice City is full of them
         </a>
         
-        <a href="industry-news-heartopia-finally-gets-a-release-date-on-everything-143815.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #143815. Industry News: Heartopia finally gets a release date... on everything but Steam
+        <a href="industry-news-heartopia-finally-gets-a-release-date-on-everything-155224.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #155224. Industry News: Heartopia finally gets a release date... on everything but Steam
         </a>
         
     </div>

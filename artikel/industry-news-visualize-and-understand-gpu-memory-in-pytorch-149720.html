@@ -150,11 +150,11 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-149720">You must be familiar with this message 🤬:.</p>
-<p>While it's easy to see that GPU memory is full, understanding why and how to fix it can be more challenging. In this tutorial, we'll go step by step on how to visualize and understand GPU memory usage in PyTorch during training. We’ll also see how to estimate memory requirements and optimize GPU memory usage. <span style="font-size:13px;">(Related: <a href="hugging-face-on-pytorch-xla-tpus-150221.html" style="color:#2563eb; font-weight:600;">Hugging Face on PyTorch / XLA TPUs...</a>)</span></p>
-<p>PyTorch provides a handy tool for visualizing GPU memory usage:. <span style="font-size:13px;">(Related: <a href="tech-report-accelerating-pytorch-distributed-fine-tuning-with-int-150193.html" style="color:#2563eb; font-weight:600;">Tech Report: Accelerating PyTorch distributed fine-tuni...</a>)</span></p>
+<p>While it's easy to see that GPU memory is full, understanding why and how to fix it can be more challenging. In this tutorial, we'll go step by step on how to visualize and understand GPU memory usage in PyTorch during training. We’ll also see how to estimate memory requirements and optimize GPU memory usage. <span style="font-size:13px;">(Related: <a href="tech-report-accelerating-pytorch-transformers-with-intel-sapphire-161618.html" style="color:#2563eb; font-weight:600;">Tech Report: Accelerating PyTorch Transformers with Int...</a>)</span></p>
+<p>PyTorch provides a handy tool for visualizing GPU memory usage:.</p>
 <p>It has been revealed that running this code generates a profile.pkl file that contains a history of GPU memory usage during execution. You can visualize this history at: https://pytorch.org/memory_viz.</p>
 <p>By dragging and dropping your profile.pkl file, you will see a graph like this:.</p>
-<p>Let's break down this graph into key parts:.</p>
+<p>Let's break down this graph into key parts:. <span style="font-size:13px;">(Related: <a href="industry-news-twitch-streamers-ps5-catches-fire-after-they-pause--161629.html" style="color:#2563eb; font-weight:600;">Industry News: Twitch streamer’s PS5 catches fire after...</a>)</span></p>
 <p>Model Creation: Memory increases by 2 GB, corresponding to the model's size:.</p>
 <p>10,000×50,000 weights+50,000 biases in float32 (4 bytes)  ⟹  (5×108)×4 bytes=2 GB. 10{,}000 \times 50{,}000 \text{ weights} + 50{,}000 \text{ biases in } \texttt{float32 }\text{(4 bytes)} \implies (5 \times 10^8) \times 4 \, \text{bytes} = 2 \, \text{GB}. 10,000×50,000 weights+50,000 biases in float32 (4 bytes)⟹(5×108)×4bytes=2GB.</p>
 <p>This memory (in blue) persists throughout execution.</p>
@@ -237,20 +237,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="industry-news-policy-gradient-with-pytorch-150137.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #150137. Industry News: Policy Gradient with PyTorch
+        <a href="sizing-gpu-memory-for-a-rag-service-kv-cache-context-and-concurre-161349.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161349. Sizing GPU Memory for a RAG Service: KV Cache, Context and Concurrency
         </a>
         
-        <a href="industry-news-nystrmformer-approximating-self-attention-in-linear-150126.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #150126. Industry News: Nyströmformer: Approximating self-attention in linear time and memory via the Nyström method
+        <a href="industry-news-jep-545-moves-zgc-memory-preparation-off-the-startu-161071.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161071. Industry News: JEP 545 Moves ZGC Memory Preparation off the Startup Path in JDK 28
         </a>
         
-        <a href="industry-news-arm-will-be-pytorch-conference-join-us-149298.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #149298. Industry News: Arm will be @ PyTorch Conference, Join Us!
+        <a href="industry-news-gpu-jesus-has-risen-jensen-huangs-nvidia-comeback-g-155823.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #155823. Industry News: GPU Jesus Has Risen: Jensen Huang’s Nvidia Comeback Gets a Meme Parade
         </a>
         
-        <a href="industry-news-blocking-gut-cannabinoid-receptors-restores-memory--149036.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #149036. Industry News: Blocking Gut Cannabinoid Receptors Restores Memory in Fragile X
+        <a href="industry-news-one-hunger-games-book-change-bothered-me-back-in-th-154665.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #154665. Industry News: One Hunger Games Book Change Bothered Me Back In The Day, But Now I Understand Why It Was Made
         </a>
         
     </div>

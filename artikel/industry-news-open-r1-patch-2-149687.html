@@ -150,8 +150,8 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-149687">We are now two weeks into the Open R1 project which aims to reconstruct the missing pieces of DeepSeek R1—specifically, the training pipeline and synthetic data.</p>
-<p>In this post, we are happy to share the construction of OpenR1-Math-220k: our first large-scale dataset for mathematical reasoning! <span style="font-size:13px;">(Related: <a href="introducing-optimum-the-optimization-toolkit-for-transformers-at--150204.html" style="color:#2563eb; font-weight:600;">Introducing Optimum: The Optimization Toolkit for Trans...</a>)</span></p>
-<p>We also take a look at some exciting developments from the community towards curating small, high-quality datasets for fine-tuning, along with insights into how to control the length of the chain-of-thought from reasoning models at both train-time and inference-time. <span style="font-size:13px;">(Related: <a href="latest-update-how-to-train-a-newly-introduced-language-model-from-150232.html" style="color:#2563eb; font-weight:600;">Latest Update: How to train a newly introduced language...</a>)</span></p>
+<p>In this post, we are happy to share the construction of OpenR1-Math-220k: our first large-scale dataset for mathematical reasoning! <span style="font-size:13px;">(Related: <a href="show-dont-certify-how-to-prepare-for-your-first-data-analyst-job-161608.html" style="color:#2563eb; font-weight:600;">Show, Don't Certify: How to Prepare for Your First Data...</a>)</span></p>
+<p>We also take a look at some exciting developments from the community towards curating small, high-quality datasets for fine-tuning, along with insights into how to control the length of the chain-of-thought from reasoning models at both train-time and inference-time. <span style="font-size:13px;">(Related: <a href="director-of-machine-learning-insights-161624.html" style="color:#2563eb; font-weight:600;">Director of Machine Learning Insights...</a>)</span></p>
 <p>Industry observers note that one of the key advantages of DeepSeek R1 is its ability to transfer advanced reasoning capabilities to smaller models through distillation. The DeepSeek team demonstrated this by generating 600k reasoning traces and fine-tuning a series of Qwen and Llama models, showing that direct distillation from R1 can achieve competitive reasoning performance without reinforcement learning. Notably, DeepSeek-R1-Distill-Qwen-7B achieved 55.5% on AIME 2024, surpassing larger models like QwQ-32B-Preview.</p>
 <p>Recent findings suggest that however, the reasoning traces used for distillation have not been released publicly, prompting the community to independently recreate similar datasets. So far, multiple open datasets have been released by the community, including OpenThoughts-114k, Bespoke-Stratos-17k, Dolphin-R1, and LIMO.</p>
 <p>🐳  Introducing OpenR1-Math-220k, a large-scale math reasoning dataset generated locally on 512 H100s, with multiple answers per problem. To create OpenR1-Math-220k, we collaborated with Numina who have developed a brand newly introduced version of their popular NuminaMath-CoT dataset.</p>
@@ -233,20 +233,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="industry-news-results-of-the-open-source-ai-game-jam-149982.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #149982. Industry News: Results of the Open Source AI Game Jam
+        <a href="industry-news-open-asr-leaderboard-trends-and-insights-with-newly-161590.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161590. Industry News: Open ASR Leaderboard: Trends and Insights with Newly introduced Multilingual & Long-Form Tracks
         </a>
         
-        <a href="industry-news-introducing-the-open-finllm-leaderboard-149782.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #149782. Industry News: Introducing the Open FinLLM Leaderboard
+        <a href="industry-news-open-thread-158855.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #158855. Industry News: Open Thread
         </a>
         
-        <a href="industry-news-open-source-developers-guide-to-the-eu-ai-act-149742.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #149742. Industry News: Open Source Developers Guide to the EU AI Act
+        <a href="industry-news-an-open-laptop-a-crowded-orange-line-train-and-a-ti-158437.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #158437. Industry News: An open laptop, a crowded Orange Line train, and a tipster
         </a>
         
-        <a href="industry-news-ex-rockstar-artist-explains-main-difference-between-149508.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #149508. Industry News: Ex-Rockstar artist explains main difference between Red Dead 2 and GTA 6 open world
+        <a href="industry-news-medicare-looks-a-bit-different-in-2027-so-dont-miss-156768.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #156768. Industry News: Medicare looks a bit different in 2027, so don't miss open enrollment
         </a>
         
     </div>

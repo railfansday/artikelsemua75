@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claude Ship Is Here: Anthropic's Agents Now Review, Fix, and Approve Your PRs — and the Policy File Decides What Merges</title>
+    <meta name="description" content="It has been revealed that the pull request used to be where coding agents stopped. You could have an agent write the feature, write the tests, and open the">
+    <meta name="keywords" content="claude, review, code, team, ship, policy, anthropic, repository">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua75/artikel/claude-ship-is-here-anthropics-agents-now-review-fix-and-approve--160880.html">
+    
+    <meta property="og:title" content="Claude Ship Is Here: Anthropic's Agents Now Review, Fix, and Approve Your PRs — and the Policy File Decides What Merges">
+    <meta property="og:description" content="It has been revealed that the pull request used to be where coding agents stopped. You could have an agent write the feature, write the tests, and open the">
+    <meta property="og:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fo81ss0v55tg8brtppwri.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua75/artikel/claude-ship-is-here-anthropics-agents-now-review-fix-and-approve--160880.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Claude Ship Is Here: Anthropic's Agents Now Review, Fix, and Approve Your PRs — and the Policy File Decides What Merges">
+    <meta name="twitter:description" content="It has been revealed that the pull request used to be where coding agents stopped. You could have an agent write the feature, write the tests, and open the">
+    <meta name="twitter:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fo81ss0v55tg8brtppwri.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Claude Ship Is Here: Anthropic's Agents Now Review, Fix, and Approve Your PRs — and the Policy File Decides Wh", "image": ["https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fo81ss0v55tg8brtppwri.png"], "datePublished": "2026-11-24T02:19:38", "dateModified": "2026-11-24T02:31:24.791994", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua75/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua75/artikel/claude-ship-is-here-anthropics-agents-now-review-fix-and-approve--160880.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Claude Ship Is Here: Anthropic's Agents Now Review, Fix, and Approve Your PRs — ?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in AI & Tech originally reported by Dev."}}, {"@type": "Question", "name": "Which category does 'Claude Ship Is Here: Anthropic's Agents Now Review, Fix, and' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the AI & Tech section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">AI & Tech</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Claude Ship Is Here: Anthropic's Agents Now Review, Fix, and Approve Your PRs — and the Policy File Decides What Merges</h1>
+        <div class="meta-line">🌐 Source: <strong>Dev</strong> &bull; 📅 24 Nov 2026 &bull; ⏱️ 7 min read (1336 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>It has been revealed that the pull request used to be where coding agents stopped.</li><li style='margin-bottom:6px;'>Anthropic just shipped something aimed squarely at that loop.</li><li style='margin-bottom:6px;'>It has been revealed that the timing is not a coincidence.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-160880"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-160880"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-160880"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Claude Ship Is Here: Anthropic's Agents Now Review, Fix, and Approve Your PRs — and the Policy File Decides What Merges" loading="lazy" src="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fo81ss0v55tg8brtppwri.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-160880">It has been revealed that the pull request used to be where coding agents stopped. You could have an agent write the feature, write the tests, and open the PR — and then you were back to the old loop: wait for review, stop what you're doing, dig back into the old code, push a fix, wait for the review to run again, then go find someone to approve it.</p>
+<p>Anthropic just shipped something aimed squarely at that loop. Claude Ship, revealed November 23 and available now in beta, takes a pull request through review, fixes, and an approval decision — with the team, not the model, deciding where it runs and which changes still need a human. <span style="font-size:13px;">(Related: <a href="build-a-racetrack-codes-november-2026-161635.html" style="color:#2563eb; font-weight:600;">Build A Racetrack codes (November 2026)...</a>)</span></p>
+<p>It has been revealed that the timing is not a coincidence. On the Claude Code team, Claude already writes most of the code. The bottleneck moved downstream, to everything that happens after the PR opens. Ship is Anthropic's answer to that bottleneck, and it's built from three pieces that each do one job.</p>
+<p>Sources indicate that claude Ship is not a single agent. It's three components working a PR in sequence:. <span style="font-size:13px;">(Related: <a href="tiny-agents-an-mcp-powered-agent-in-50-lines-of-code-161607.html" style="color:#2563eb; font-weight:600;">Tiny Agents: an MCP-powered agent in 50 lines of code...</a>)</span></p>
+<p>Code Review — already generally available — performs an in-depth review of a pull request against the codebase through multiple lenses. It collects findings, adversarially verifies them, categorizes them, and posts them to the PR. Each repository can pick a review depth: Quick, Standard, or Deep.</p>
+<p>PR Steward — in beta — works to keep a PR green. It jumps in on failing CI checks, merge conflicts, and review feedback from Code Review, other review tools, or team members. Two details matter here. First, it is designed not to approve or merge pull requests — its job is fixing, not deciding. Second, after every push it comments with what it changed and how to undo it, so nothing happens silently. Developers can steer it by commenting @claude with an instruction, or tell it to step back with @claude stop.</p>
+<p>Sources indicate that claude Approvals — also in beta — applies an approval policy the team writes as a file in the repository. If the policy allows it, Claude can approve routine changes on its own; for other scenarios it can require deeper human sign-off. Anthropic describes it as a smarter CODEOWNERS file. The decision can weigh a variety of signals, including Code Review findings or the team's own classifiers written in natural language.</p>
+<p>That last point is the one worth pausing on. A CODEOWNERS file maps paths to people. A policy file maps kinds of change to kinds of decision — and the policy itself is versioned in the repo, reviewed like code, and visible to everyone. The approval logic becomes a team artifact instead of a setting buried in a dashboard.</p>
+<p>Anthropic's own team is the first data point, and it's worth quoting carefully: on the Claude Code team, where Claude's review is one layer of a broader process, merged PRs more than doubled from June to September while the share of PRs reverted fell by more than 40%.</p>
+<p>That's a team-level result with a human review layer still in place, not a claim that the agent alone doubles throughput. But the direction is clear — faster review plus fewer reverts is the combination every team wants, and it's the combination most automation attempts fail to deliver together.</p>
+<p>The dogfooding story makes the point more concretely. A product manager on the Claude Code team can now read a piece of customer feedback, talk through ideas and tradeoffs with Claude Tag, have it open a PR, and move on while Claude Ship takes it through review, fixes, and an approval decision. Recently, a customer was confused because the Analytics API documentation implied an Admin key could pull Pro and Team usage data. The PM asked Claude Tag whether a fix was in flight, it opened one, Code Review found nothing blocking, a docs reviewer signed off, Claude Approvals passed, and the fix merged that same evening.</p>
+<p>It has been revealed that notice what happened there: the human who noticed the problem never touched the code, but a human docs reviewer still signed off. The pipeline compressed the waiting, not the judgment.</p>
+<p>It has been revealed that for individual developers, there's a upcoming /ship command in Claude Code. When a change is ready, run /ship: Claude pushes it, opens the PR, reviews the change, and works on feedback and failing checks to help get it ready to merge. What can actually merge still depends on the developer's permissions and the repository's branch rules. The command is rolling out in Claude Code and the desktop app starting November 23.</p>
+<p id="sec-mid-160880">For admins and engineering leaders, Ship can be turned on for an entire repository, and it then works across the team's pull requests automatically — no /ship invocation needed. An admin turns on Code Review and PR Steward for each repository; Claude Approvals starts when a connected repository has a policy file on its default branch, and an admin can turn it off. Admins choose the review level, when reviews run, and spend limits. It works with existing branch protection and required checks, so it slots into the pipeline rather than replacing it.</p>
+<p>Anthropic's own rollout advice is worth following: start with one repository, pick a review level and schedule, set a monthly spend limit, and run the approval policy in observe-only mode until the team trusts it. Only then configure branch protection to require Claude Approvals' green light.</p>
+<p>In a recent development, ship usage is billed on tokens, so turning it on can add to an organization's costs. The amount depends on the number and size of pull requests covered, the review level, how often reviews run, and how much work PR Steward does. Admins can set spend limits for Code Review and PR Steward.</p>
+<p>Recent findings suggest that claude Approvals has no base charge, but classifiers in a policy are billed on the tokens they use — and a policy that uses Claude's review triggers a billed Code Review, even in observe mode. Running /ship counts as regular Claude Code usage.</p>
+<p>There are also hard exclusions: Claude Ship is not available to organizations with Zero Data Retention, the HIPAA configuration, or customer-managed encryption keys. It's available on Claude Team and Enterprise plans for repositories on GitHub.</p>
+<p>Eligible Claude Enterprise organizations can claim at least $10,000 in Claude Ship credits, to use within 30 days of claiming, with claims open until January 15, 2027.</p>
+<p>The real shift here isn't that an agent reviews code — plenty of tools do that. It's that review, fixing, and approval become one continuous pipeline owned by a policy the team writes, instead of three separate queues owned by three separate humans' calendars.</p>
+<p>Three things to watch as teams adopt it:.</p>
+<p>Industry observers note that observe mode first, always. The approval policy is the new control plane. A policy that auto-approves too broadly is worse than no automation, because it fails silently. Running in observe mode until the decisions look right is the cheapest insurance available.</p>
+<p>The review is a layer, not a replacement. Anthropic's own numbers come from a team where Claude's review sits inside a broader process with human reviewers. And the product itself carries the honest caveat: it uses AI and may miss bugs, security vulnerabilities, or other challenges. Treat the findings as a strong first pass, not a verdict.</p>
+<p>Sources indicate that cost follows coverage. Token billing means the price of Ship scales with how much code flows through it. Spend limits per repository are the guardrail — set them before turning it on repo-wide, not after the first invoice.</p>
+<p>If your team already writes code with agents, the PR queue is probably your slowest step now. Claude Ship is the first serious attempt to close that gap end to end — and the policy-file design means the team, not the vendor, decides what "ready to merge" means.</p>
+<p id="sec-end-160880">Source: Anthropic, "Introducing Claude Ship", November 23, 2026.</p>
+<p style="margin-top: 25px;">
+<a href="https://dev.to/ton_thnhthy_ba110cce85/claude-ship-is-here-anthropics-agents-now-review-fix-and-approve-your-prs-and-the-policy-file-4ci7" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="industry-news-anthropic-releases-claude-ship-to-review-fix-and-ap-161067.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161067. Industry News: Anthropic Releases Claude Ship to Review, Fix and Approve PRs
+        </a>
+        
+        <a href="industry-news-anthropic-introduces-claude-ship-letting-ai-agents--150242.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #150242. Industry News: Anthropic introduces Claude Ship, letting AI agents review, fix, and approve code changes
+        </a>
+        
+        <a href="anthropic-releases-claude-ship-to-review-fix-and-approve-code-161181.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161181. Anthropic Releases Claude Ship to Review, Fix, and Approve Code
+        </a>
+        
+        <a href="industry-news-absurd-ambition-pulumi-expands-into-software-delive-156339.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #156339. Industry News: ‘Absurd ambition’: Pulumi expands into software delivery with AI agents that ship and fix code
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

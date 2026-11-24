@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Derivative Flipping</title>
+    <meta name="description" content="I want to take a look at another way of thinking about automatic differentiation. I'm not going to give an actual AD algorithm but it will show how to impl">
+    <meta name="keywords" content="expression, operator, regular, string, need, expressions, recent, differential">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua75/artikel/derivative-flipping-154114.html">
+    
+    <meta property="og:title" content="Derivative Flipping">
+    <meta property="og:description" content="I want to take a look at another way of thinking about automatic differentiation. I'm not going to give an actual AD algorithm but it will show how to impl">
+    <meta property="og:image" content="https://via.placeholder.com/350x180/2563eb/ffffff?text=Global+News+Desk">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua75/artikel/derivative-flipping-154114.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Derivative Flipping">
+    <meta name="twitter:description" content="I want to take a look at another way of thinking about automatic differentiation. I'm not going to give an actual AD algorithm but it will show how to impl">
+    <meta name="twitter:image" content="https://via.placeholder.com/350x180/2563eb/ffffff?text=Global+News+Desk">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Derivative Flipping", "image": ["https://via.placeholder.com/350x180/2563eb/ffffff?text=Global+News+Desk"], "datePublished": "2026-11-22T00:13:17", "dateModified": "2026-11-24T02:25:10.797482", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua75/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua75/artikel/derivative-flipping-154114.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Derivative Flipping?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Sigfpe."}}, {"@type": "Question", "name": "Which category does 'Derivative Flipping' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Derivative Flipping</h1>
+        <div class="meta-line">🌐 Source: <strong>Sigfpe</strong> &bull; 📅 22 Nov 2026 &bull; ⏱️ 4 min read (864 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>I want to take a look at another way of thinking about automatic differentiation.</li><li style='margin-bottom:6px;'>But first I want to talk about regular expression matching using the Brzozowski derivative.</li><li style='margin-bottom:6px;'>Let's define the angle bracket operator \(\langle\cdot,\cdot\rangle\) by \(\langle R,S\rangle=1\) if \(R\) is a regular expression matching the string \(S\) and 0 if it doesn't match.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-154114"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-154114"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-154114"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Derivative Flipping" loading="lazy" src="https://via.placeholder.com/350x180/2563eb/ffffff?text=Global+News+Desk" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-154114">I want to take a look at another way of thinking about automatic differentiation. I'm not going to give an actual AD algorithm but it will show how to implement some AD algorithms - possibly an easier way to think about some published work.</p>
+<p>But first I want to talk about regular expression matching using the Brzozowski derivative. You can skip this bit but it's what I was thinking about as I wrote the code below. <span style="font-size:13px;">(Related: <a href="show-dont-certify-how-to-prepare-for-your-first-data-analyst-job-161608.html" style="color:#2563eb; font-weight:600;">Show, Don't Certify: How to Prepare for Your First Data...</a>)</span></p>
+<p>Let's define the angle bracket operator \(\langle\cdot,\cdot\rangle\) by \(\langle R,S\rangle=1\) if \(R\) is a regular expression matching the string \(S\) and 0 if it doesn't match. I'll copy the definition from Wikipedia but modify the notation a bit.</p>
+<p>(and some auxiliary definitions on Wikipedia).</p>
+<p>If you've not seen it before that definition looks scary but it all comes down to one key property:.</p>
+<p>Sources indicate that so to find out if a regular expression matches a string \(S\) we can peel off the letters from the front of it one by one and apply the corresponding derivative operator to \(R\). We also need to do algebraic simplifications in the regexp algebra. If we end up with a regular expression that matches the empty string then the original regexp matched the original string. For more details on making this practical, see Regular-expression derivatives reexamined by Scott Owens, John Reppy, and Aaron Turon.</p>
+<p>It has been revealed that although we may expect to get all manner of intermediate expressions when we keep differentiating, there is only a finite number of truly distinct expressions we get (considering two regexps equivalent if they match identical sets of strings). They form the states of a finite state automaton for recognising the regexp's target.</p>
+<p>Recent findings suggest that let's mimic that for ordinary calculus. Given a pair of multivariate polynomials \(p\) and \(q\), define.</p>
+<p>We can go ahead and implement this in Haskell. Ultimately I'll define pair p q which is the pairing defined by the angle brackets.</p>
+<p>First I'll define expressions in a ring generated by elements of v over a:.</p>
+<p>And now we can give it the Num interface:.</p>
+<p>Recent findings suggest that I should add simplification but there's no real need when this code is purely pedagogical. And now we implement the rules that interpret p as a differential operator acting on q.</p>
+<p>This indicates \(\partial_i x_j=\delta_{ij}\):.</p>
+<p id="sec-mid-154114">I find this interesting. Multiplication on the right of a \(\langle\cdot,\cdot\rangle\) is ordinary polynomial multiplication but on the left it is composition of differential operators:. <span style="font-size:13px;">(Related: <a href="la-noire-2-leak-resurfaces-after-source-gets-gta-6-ending-right-161634.html" style="color:#2563eb; font-weight:600;">LA Noire 2 leak resurfaces after source gets GTA 6 endi...</a>)</span></p>
+<p>Industry observers note that and now we evaluate at zero. Note that this corresponds to the situation with regular expressions where you ask if the residual expression matches the empty string:.</p>
+<p>Now comes the magic bit. We have two theorems:.</p>
+<p>And more surprisingly, maybe, given that the interpretation of polynomials on the left is so different to polynomials on the right:.</p>
+<p>\(\langle \mathrm{lap},q\rangle\) is the Laplacian of \(q\) evaluated at \(x = y = 0\).</p>
+<p>Instead of applying a simple differential operator to a complicated expression, we are applying a complicated differential operator to a simple expression. No matter how complicated an expression \(p\) we apply, the intermediate results of applying it to \(q\) are always bounded in complexity. For example in this case we are only ever going to get linear combinations of.</p>
+<p>Recent findings suggest that and that's it. Anything else that pops up is just going to be a linear combination of these. Which means that if we're interested in computing the Laplacian in 2D we only ever need to track 4 coefficients. We don't need to keep track of the full Hessian. In fact we can replace the polynomial on the right of the pairing with a 4-vector and replace apply with code to act directly on that representation.</p>
+<p>Sources indicate that we have just rediscovered the method for computing Laplacians I described many years ago at Computing errors with square roots of infinitesimals. But now it's more general and we can use this for any constant differential operator. For example the biharmonic operator corresponds to the polynomial \((\sum_i x_i^2)^2\). When you compute all of the possible expressions that can arise from applying the \(\partial_i\) operator it forms a far smaller space than you might get from naively carrying along the power series up to degree 4.</p>
+<p>Recent findings suggest that after I proposed my original Laplacian method it was eventually rediscovered and turned into well-optimized code at folx. It's used in many places such as PINNs and VMC.</p>
+<p>Compare also with this paper: Collapsing Taylor Mode Automatic Differentiation.</p>
+<p>ChatGPT keeps wanting to turn this into a subject called apolar algebra (which highlights that many AD problems were solved over a century ago) but the key construction there is a quotient and quotients are hard to work with.</p>
+<p>FWIW I fully embrace our new AI overlords but I actually wrote all of this myself giving Codex the role of formatting it for blogger.com.</p>
+<p id="sec-end-154114">According to recent reports, I need to mention that the idea that you can flip the role of differentiator and differentiated expression plays a major role in quantum mechanics. And lastly, this pairing is central to umbral calculus.</p>
+<p style="margin-top: 25px;">
+<a href="http://blog.sigfpe.com/2026/11/derivative-flipping.html" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="flipping-a-house-isnt-paying-like-it-used-to-is-renting-the-bette-156378.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #156378. Flipping a House Isn’t Paying Like It Used To. Is Renting the Better Bet?
+        </a>
+        
+        <a href="shiba-inu-shib-stands-just-10-million-short-of-flipping-barry-sil-156274.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #156274. Shiba Inu (SHIB) Stands Just $10 Million Short of Flipping Barry Silbert’s Favorite AI Token
+        </a>
+        
+        <a href="democrats-win-largest-house-majority-since-1992-after-flipping-no-150395.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #150395. Democrats win largest House majority since 1992 after flipping North Carolina seat
+        </a>
+        
+        <a href="a-lifelong-brawler-is-coming-to-congress-does-he-have-a-next-act-161642.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161642. A lifelong brawler is coming to Congress. Does he have a next act?
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

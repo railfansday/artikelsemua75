@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I Found a Botnet Inside My Own House</title>
+    <meta name="description" content="Sources indicate that in the last post I talked about building a remote control app that had to grow a fourth backend just for generic, uncertified Android">
+    <meta name="keywords" content="device, android, remote, firmware, google, sources, indicate, been">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua75/artikel/i-found-a-botnet-inside-my-own-house-160898.html">
+    
+    <meta property="og:title" content="I Found a Botnet Inside My Own House">
+    <meta property="og:description" content="Sources indicate that in the last post I talked about building a remote control app that had to grow a fourth backend just for generic, uncertified Android">
+    <meta property="og:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fhi8thqvxg54lf8ht0bld.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua75/artikel/i-found-a-botnet-inside-my-own-house-160898.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="I Found a Botnet Inside My Own House">
+    <meta name="twitter:description" content="Sources indicate that in the last post I talked about building a remote control app that had to grow a fourth backend just for generic, uncertified Android">
+    <meta name="twitter:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fhi8thqvxg54lf8ht0bld.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "I Found a Botnet Inside My Own House", "image": ["https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fhi8thqvxg54lf8ht0bld.png"], "datePublished": "2026-11-24T02:13:58", "dateModified": "2026-11-24T02:31:26.047006", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua75/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua75/artikel/i-found-a-botnet-inside-my-own-house-160898.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding I Found a Botnet Inside My Own House?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Dev."}}, {"@type": "Question", "name": "Which category does 'I Found a Botnet Inside My Own House' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>I Found a Botnet Inside My Own House</h1>
+        <div class="meta-line">🌐 Source: <strong>Dev</strong> &bull; 📅 24 Nov 2026 &bull; ⏱️ 5 min read (969 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>Sources indicate that in the last post I talked about building a remote control app that had to grow a fourth backend just for generic, uncertified Android TV boxes — because one of the boxes in my own house didn't speak either of the two "real" remote protocols.</li><li style='margin-bottom:6px;'>It has been revealed that the device in question is a cheap Android TV box — the kind sold under a dozen different no-name brands, same board, same firmware, just a different sticker.</li><li style='margin-bottom:6px;'>(That remote app is the one from part 1 — code's at github.com/duvanjamid/tv-remote if you want context on what it was trying to do.).</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-160898"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-160898"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-160898"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="I Found a Botnet Inside My Own House" loading="lazy" src="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fhi8thqvxg54lf8ht0bld.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-160898">Sources indicate that in the last post I talked about building a remote control app that had to grow a fourth backend just for generic, uncertified Android TV boxes — because one of the boxes in my own house didn't speak either of the two "real" remote protocols. While poking at that box to figure out why, I went looking for what it was actually running.</p>
+<p>I was not expecting to find a botnet node.</p>
+<p>It has been revealed that the device in question is a cheap Android TV box — the kind sold under a dozen different no-name brands, same board, same firmware, just a different sticker. It had been sitting on my home network for a while, doing normal TV-box things. I plugged in over ADB to poke around, mostly out of curiosity about why my remote app couldn't talk to it the normal way.</p>
+<p>(That remote app is the one from part 1 — code's at github.com/duvanjamid/tv-remote if you want context on what it was trying to do.).</p>
+<p>First red flag, before I'd even looked at a single app: SELinux was set to permissive, not enforcing. On stock, certified Android devices, SELinux enforcing is non-negotiable — it's one of the core sandboxing guarantees the whole security model leans on. Permissive mode logs policy violations instead of blocking them. There's no legitimate reason for a consumer device to ship that way; it's what you leave on during development, not what you ship to a customer's living room. <span style="font-size:13px;">(Related: <a href="breaking-ai-for-game-development-creating-a-farming-game-in-5-day-161616.html" style="color:#2563eb; font-weight:600;">Breaking: AI for Game Development: Creating a Farming G...</a>)</span></p>
+<p>That alone was enough to make me look closer.</p>
+<p>A few things stood out immediately when I started going through installed packages and running processes:.</p>
+<p>Sources indicate that none of this was doing anything to the TV's actual function — the box played video fine the entire time. That's the point. This isn't the kind of malware that introduces itself with a ransom note; it's the kind built to be invisible to the owner indefinitely while the device does unrelated work for somebody else. <span style="font-size:13px;">(Related: <a href="coffee-shop-owner-refused-to-serve-tiktok-reviewer-after-two-bad--161628.html" style="color:#2563eb; font-weight:600;">Coffee shop owner refused to serve TikTok reviewer afte...</a>)</span></p>
+<p>Industry observers note that this pattern — Android TV boxes shipping from the factory with a pre-installed dropper, disguised as Google components, dropping a persistent root-level backdoor, and enrolling the device in an outbound-connection botnet (residential proxy / ad-fraud / click-fraud infrastructure, typically) — is documented at scale. Human Security and Google have both published research on it under the name BadBox and its successor BadBox 2.0: supply-chain malware baked into the firmware of cheap, uncertified Android TV boxes and streaming devices before they're ever sold, affecting what's been reported as millions of devices worldwide, largely sold through marketplaces with little vetting.</p>
+<p>The uncomfortable part isn't that malware exists. It's where it lives: not in a sideloaded app you can uninstall, but baked into the system partition of a device you bought in good faith, running with permissions a normal app could never get, on a permissive SELinux policy that makes "normal app" containment moot anyway.</p>
+<p>Everything above is checkable on your own device with nothing but adb and a few minutes. Swap in your own box's IP for the placeholders below, and treat every hit as "worth a closer look," not a confirmed verdict.</p>
+<p>Sources indicate that disclaimer: only run this against hardware you own. This is for auditing your own device — not someone else's without authorization. Uninstalling system packages can have side effects (broken functionality, instability); do it at your own risk.</p>
+<p id="sec-mid-160898">Accept the on-screen authorization popup on the TV the first time.</p>
+<p>Sources indicate that returns uid=0(root) with no fuss? That's root access that didn't come from you — not normal for a consumer Android box.</p>
+<p>Should say Enforcing. Permissive is the red flag from above.</p>
+<p>If the pair doesn't match Android's real version↔API-level table, build.prop was hand-edited — usually to make the box look newer/more legitimate than it is.</p>
+<p>Watch for anything prefixed com.google.android.* or com.android.* that isn't a real Google package — like com.google.android.adengine from the box in this post (full list above).</p>
+<p>Helps reconstruct the dropper chain.</p>
+<p>rem_address is hex IP:port — decoding it by hand isn't worth it; the simpler heuristic holds: dozens of simultaneous connections to different remote IPs on odd ports, with nothing you're actively doing on the TV, is itself the signal.</p>
+<p>Sources indicate that clears the dropper for your user — not the firmware it came from. Mitigation, not cure.</p>
+<p>In a recent development, once I'd identified the specific packages behaving as droppers/backdoors, I removed them. The device's free memory went from 35MB free to 220MB free after cleanup — which on its own tells you roughly how much was quietly running in the background the whole time, on a box that's supposed to just play video.</p>
+<p>That's a mitigation, not a fix. The dropper's gone, but the firmware it came from is still the firmware on the device — same root daemon framework, same permissive SELinux policy, same unknown provenance for everything else in that system image. Cleaning the apps off a BadBox-infected device is treating the symptom. The actual fix is the firmware itself, and that's a bigger job.</p>
+<p>Which is exactly what I'm doing next — and it's not done yet.</p>
+<p>It has been revealed that next up: backing up every partition on this thing before touching anything, and figuring out whether the safer move is to re-patch the existing images or replace the whole thing with a clean, official Google image. Still in progress — post 3 →.</p>
+<p id="sec-end-160898">A note on scope: packages, process behavior and the BadBox pattern above are public, documented security findings and are shared for exactly that reason. Network identifiers specific to my own setup (local IP, device names, Wi-Fi network name) have been left out or genericized — they're not relevant to the finding and there's no reason to publish them.</p>
+<p style="margin-top: 25px;">
+<a href="https://dev.to/duvanjamid/i-found-a-botnet-inside-my-own-house-2jmk" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="latest-update-if-you-dont-give-him-what-he-wants-hell-burn-your-h-153116.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #153116. Latest Update: 'If you don't give him what he wants, he'll burn your house down': Inside the 'cult' of Sir Jim Ratcliffe, as sources from his crumbling sporting empire reveal the destructive know-it-all arrogance of Man United co-owner and his henchmen
+        </a>
+        
+        <a href="grandma-who-accidentally-invited-a-stranger-to-thanksgiving-is-ge-161640.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161640. Grandma who accidentally invited a stranger to Thanksgiving is getting her own Lifetime movie
+        </a>
+        
+        <a href="breaking-inside-vakra-reasoning-tool-use-and-failure-modes-of-age-161417.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161417. Breaking: Inside VAKRA: Reasoning, Tool Use, and Failure Modes of Agents
+        </a>
+        
+        <a href="nothing-ear-note-is-yet-another-ai-recorder-but-with-earbuds-insi-161383.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161383. Nothing Ear (note) is yet another AI recorder, but with earbuds inside
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

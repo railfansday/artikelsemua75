@@ -150,10 +150,10 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-149768">Stable Diffusion 3.5 is the improved variant of its predecessor, Stable Diffusion 3. As of today, the models are available on the Hugging Face Hub and can be used with 🧨 Diffusers.</p>
-<p>The release comes with two checkpoints:. <span style="font-size:13px;">(Related: <a href="tech-report-leveraging-pre-trained-language-model-checkpoints-for-150225.html" style="color:#2563eb; font-weight:600;">Tech Report: Leveraging Pre-trained Language Model Chec...</a>)</span></p>
-<p>In this post, we will focus on how to use Stable Diffusion 3.5 (SD3.5) with Diffusers, covering both inference and training. <span style="font-size:13px;">(Related: <a href="tech-report-how-we-sped-up-transformer-inference-100x-for-api-cus-150224.html" style="color:#2563eb; font-weight:600;">Tech Report: How we sped up transformer inference 100x ...</a>)</span></p>
+<p>The release comes with two checkpoints:.</p>
+<p>In this post, we will focus on how to use Stable Diffusion 3.5 (SD3.5) with Diffusers, covering both inference and training. <span style="font-size:13px;">(Related: <a href="diffusers-welcomes-stable-diffusion-3-161609.html" style="color:#2563eb; font-weight:600;">Diffusers welcomes Stable Diffusion 3...</a>)</span></p>
 <p>The transformer architecture of SD3.5 (large) is very similar to SD3 (medium), with the following changes:.</p>
-<p>Industry observers note that the rest of the details in terms of the text encoders, VAE, and noise scheduler stay exactly the same as in SD3 Medium. For more on SD3, we recommend checking out the original paper.</p>
+<p>Industry observers note that the rest of the details in terms of the text encoders, VAE, and noise scheduler stay exactly the same as in SD3 Medium. For more on SD3, we recommend checking out the original paper. <span style="font-size:13px;">(Related: <a href="industry-news-minecraft-mommy-goes-viral-on-tiktok-for-giving-goo-161638.html" style="color:#2563eb; font-weight:600;">Industry News: ‘Minecraft Mommy’ goes viral on TikTok f...</a>)</span></p>
 <p>Make sure you install the latest version of diffusers:.</p>
 <p>The following snippet will download the 8B parameter version of SD3.5 in torch.bfloat16 precision. This is the format used in the original checkpoint published by Stability AI, and is the recommended way to run inference.</p>
 <p>The release also comes with a “timestep-distilled” model that eliminates classifier-free guidance and lets us generate images in fewer steps (typically in 4-8 steps).</p>
@@ -192,8 +192,8 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="industry-news-diffusers-welcomes-stable-diffusion-3-138635.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #138635. Industry News: Diffusers welcomes Stable Diffusion 3
+        <a href="diffusers-welcomes-stable-diffusion-3-161609.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161609. Diffusers welcomes Stable Diffusion 3
         </a>
         
         <a href="stable-diffusion-with-diffusers-150115.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">

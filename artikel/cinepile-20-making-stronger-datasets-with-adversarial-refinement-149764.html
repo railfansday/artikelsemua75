@@ -150,10 +150,10 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-149764">Sources indicate that in this blog post we share the journey of releasing CinePile 2.0, a significantly improved version of our long video QA dataset. The improvements in the new dataset rely on a new approach that we coined adversarial dataset refinement.</p>
-<p>We're excited to share both CinePile 2.0 and our adversarial refinement method implementation, which we believe can strengthen many existing datasets and directly be part of future dataset creation pipelines. <span style="font-size:13px;">(Related: <a href="industry-news-hosting-your-models-and-datasets-on-hugging-face-sp-150200.html" style="color:#2563eb; font-weight:600;">Industry News: Hosting your Models and Datasets on Hugg...</a>)</span></p>
+<p>We're excited to share both CinePile 2.0 and our adversarial refinement method implementation, which we believe can strengthen many existing datasets and directly be part of future dataset creation pipelines. <span style="font-size:13px;">(Related: <a href="building-for-an-open-future-our-latest-partnership-with-google-cl-161603.html" style="color:#2563eb; font-weight:600;">Building for an Open Future - our latest partnership wi...</a>)</span></p>
 <p>If you are mainly interested in the adversarial refinement method, you can jump directly to the Adversarial Refinement section.</p>
-<p>In May 2024, we launched CinePile, a long video QA dataset with about 300,000 training samples and 5,000 test samples. <span style="font-size:13px;">(Related: <a href="distributed-training-train-bartt5-for-summarization-using-transfo-150213.html" style="color:#2563eb; font-weight:600;">Distributed Training: Train BART/T5 for Summarization u...</a>)</span></p>
-<p>The first release stood out from other datasets in two aspects:.</p>
+<p>In May 2024, we launched CinePile, a long video QA dataset with about 300,000 training samples and 5,000 test samples.</p>
+<p>The first release stood out from other datasets in two aspects:. <span style="font-size:13px;">(Related: <a href="show-dont-certify-how-to-prepare-for-your-first-data-analyst-job-161608.html" style="color:#2563eb; font-weight:600;">Show, Don't Certify: How to Prepare for Your First Data...</a>)</span></p>
 <p>Industry observers note that part of the secret sauce behind it is that it relies on movie clips from YouTube and Q&amp;A distilled from precise audio descriptions designed for visually impaired audiences. These descriptions offer rich context beyond basic visuals (e.g., "What color is the car?"), helping us create more complex questions.</p>
 <p>It has been revealed that to automate question creation, we first built question templates by inspecting existing datasets like MovieQA and TVQA. We clustered the questions in these datasets using a textual similarity model WhereIsAI/UAE-Large-V1 and then prompted GPT-4 with 10 random examples from each cluster to generate a question template and a prototypical question for each:.</p>
 <p>It has been revealed that since templates aren't always relevant to every movie clip, we used Gemini 1.0 Pro to select the most appropriate ones for each scene. Next, we feed a language model the scene's text, selected template names (e.g., "Physical Possession"), sample questions, and a system prompt to create scene-specific questions. A well-designed prompt helps the model focus on the entire scene, generating deeper questions while avoiding superficial ones. We found that:.</p>
@@ -200,20 +200,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="industry-news-hosting-your-models-and-datasets-on-hugging-face-sp-150200.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #150200. Industry News: Hosting your Models and Datasets on Hugging Face Spaces using Streamlit
+        <a href="aprielguard-a-guardrail-for-safety-and-adversarial-robustness-in--161548.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161548. AprielGuard: A Guardrail for Safety and Adversarial Robustness in Modern LLM Systems
         </a>
         
-        <a href="introducing-the-data-measurements-tool-an-interactive-tool-for-lo-150192.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #150192. Introducing the Data Measurements Tool: an Interactive Tool for Looking at Datasets
+        <a href="will-ai-take-your-job-3-principles-for-making-yourself-harder-to--161521.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161521. Will AI take your job? 3 principles for making yourself harder to replace
         </a>
         
-        <a href="making-automatic-speech-recognition-work-on-large-files-with-wav2-150180.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #150180. Making automatic speech recognition work on large files with Wav2Vec2 in 🤗 Transformers
+        <a href="making-6-figures-you-might-still-be-using-buy-now-pay-later-accor-161508.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161508. Making 6 figures? You might still be using ‘buy now, pay later,’ according to new research
         </a>
         
-        <a href="image-search-with-datasets-150175.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #150175. Image search with 🤗 datasets
+        <a href="industry-news-making-knowledge-distillation-cheap-enough-to-run-a-161239.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161239. Industry News: Making Knowledge Distillation Cheap Enough to Run at Scale
         </a>
         
     </div>

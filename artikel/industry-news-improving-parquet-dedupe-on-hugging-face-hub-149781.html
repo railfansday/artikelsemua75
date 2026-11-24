@@ -165,13 +165,13 @@ updates. Data deduplication becomes critical for efficiency when owners want to
 update their datasets on a regular basis. Only by deduplicating can we store
 all versions as compactly as possible, without requiring everything to be uploaded
 again on every update. In an ideal case, we should be able to store every version
-of a growing dataset with only a little more space than the size of its largest version. <span style="font-size:13px;">(Related: <a href="industry-news-hosting-your-models-and-datasets-on-hugging-face-sp-150200.html" style="color:#2563eb; font-weight:600;">Industry News: Hosting your Models and Datasets on Hugg...</a>)</span></p>
+of a growing dataset with only a little more space than the size of its largest version. <span style="font-size:13px;">(Related: <a href="ishowspeed-breaks-down-in-tears-after-finishing-gta-6-in-52-hours-161633.html" style="color:#2563eb; font-weight:600;">IShowSpeed breaks down in tears after finishing GTA 6 i...</a>)</span></p>
 <p>Our default storage algorithm uses byte-level Content-Defined Chunking (CDC),
 which generally dedupes well over insertions and deletions, but the Parquet layout brings some challenges. Here we run some experiments to see how some simple modifications behave on
 Parquet files, using a 2GB Parquet file with 1,092,000 rows from the
 FineWeb
 dataset and generating visualizations using our dedupe
-estimator. <span style="font-size:13px;">(Related: <a href="latest-update-how-to-train-a-newly-introduced-language-model-from-150232.html" style="color:#2563eb; font-weight:600;">Latest Update: How to train a newly introduced language...</a>)</span></p>
+estimator.</p>
 <p>Parquet tables work by splitting the table into row groups, each with a fixed
 number of rows (for instance 1000 rows). Each column within the row group is
 then compressed and stored:.</p>
@@ -201,7 +201,7 @@ storage.</p>
 <p id="sec-mid-149781">Here we delete a row from the middle of the file (note: insertion should have
 similar behavior). As this reorganizes the entire row group layout (each
 row group is 1000 rows), we see that while we dedupe the first half of
-the file, the remaining file has completely fresh blocks.</p>
+the file, the remaining file has completely fresh blocks. <span style="font-size:13px;">(Related: <a href="show-dont-certify-how-to-prepare-for-your-first-data-analyst-job-161608.html" style="color:#2563eb; font-weight:600;">Show, Don't Certify: How to Prepare for Your First Data...</a>)</span></p>
 <p>This is mostly because the Parquet format compresses each column
 aggressively. If we turn off compression we are able to dedupe more
 aggressively:.</p>
@@ -253,6 +253,10 @@ your findings!</p>
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
+        <a href="industry-news-pay-for-hugging-face-hub-with-your-google-cloud-acc-160953.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #160953. Industry News: Pay for Hugging Face Hub with your Google Cloud Account
+        </a>
+        
         <a href="industry-news-welcome-spacy-to-the-hugging-face-hub-150206.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #150206. Industry News: Welcome spaCy to the Hugging Face Hub
         </a>
@@ -261,12 +265,8 @@ your findings!</p>
             📰 #149708. Industry News: Hugging Face and FriendliAI partner to supercharge model deployment on the Hub
         </a>
         
-        <a href="industry-news-faster-tensorflow-models-in-hugging-face-transforme-150222.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #150222. Industry News: Faster TensorFlow models in Hugging Face Transformers
-        </a>
-        
-        <a href="industry-news-fine-tune-wav2vec2-for-english-asr-in-hugging-face--150217.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #150217. Industry News: Fine-Tune Wav2Vec2 for English ASR in Hugging Face with 🤗 Transformers
+        <a href="industry-news-introducing-swift-huggingface-the-complete-swift-cl-161562.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161562. Industry News: Introducing swift-huggingface: The Complete Swift Client for Hugging Face
         </a>
         
     </div>

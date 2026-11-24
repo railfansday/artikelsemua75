@@ -150,8 +150,8 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-149505">Recent findings suggest that what would happen if you took the ModernBERT recipe and applied it to a decoder-only model? Turns out, a state-of-the-art decoder language model that beats Llama 3.2 1B and SmolLM2!</p>
-<p>Sources indicate that we introduce a fresh open-data training recipe to reproduce the encoder-only ModernBERT model (and actually beat it!). We then apply the exact same recipe to decoder-only models. For the first time, we have two state-of-the-art models trained in the same setup but with two different training objectives: masked language modeling (MLM), and causal language modeling (CLM). <span style="font-size:13px;">(Related: <a href="latest-update-how-to-train-a-newly-introduced-language-model-from-150232.html" style="color:#2563eb; font-weight:600;">Latest Update: How to train a newly introduced language...</a>)</span></p>
-<p>It has been revealed that this blog post introduces Ettin, the first suite of SoTA paired encoder-only and decoder-only models (17M-1B params) trained with identical data (2T tokens), architecture, and training recipes. Ettin enables true apples-to-apples comparisons between architectures and delivers state-of-the-art performance for open-data models in both categories. We then further explore whether it is possible to get a competitive encoder starting from the decoder and vice-versa. <span style="font-size:13px;">(Related: <a href="industry-news-block-sparse-matrices-for-smaller-and-faster-langua-150229.html" style="color:#2563eb; font-weight:600;">Industry News: Block Sparse Matrices for Smaller and Fa...</a>)</span></p>
+<p>Sources indicate that we introduce a fresh open-data training recipe to reproduce the encoder-only ModernBERT model (and actually beat it!). We then apply the exact same recipe to decoder-only models. For the first time, we have two state-of-the-art models trained in the same setup but with two different training objectives: masked language modeling (MLM), and causal language modeling (CLM). <span style="font-size:13px;">(Related: <a href="tech-report-developer-builds-a-discord-kitten-thats-actually-an-a-161639.html" style="color:#2563eb; font-weight:600;">Tech Report: Developer builds a ‘Discord kitten’ that’s...</a>)</span></p>
+<p>It has been revealed that this blog post introduces Ettin, the first suite of SoTA paired encoder-only and decoder-only models (17M-1B params) trained with identical data (2T tokens), architecture, and training recipes. Ettin enables true apples-to-apples comparisons between architectures and delivers state-of-the-art performance for open-data models in both categories. We then further explore whether it is possible to get a competitive encoder starting from the decoder and vice-versa. <span style="font-size:13px;">(Related: <a href="show-dont-certify-how-to-prepare-for-your-first-data-analyst-job-161608.html" style="color:#2563eb; font-weight:600;">Show, Don't Certify: How to Prepare for Your First Data...</a>)</span></p>
 <p>If you are interested in trying out the models, some boilerplates are available at the end of this blogpost!</p>
 <p>The LLM community has largely converged on decoder-only models like GPT, Llama, and Qwen. Their generative capabilities are impressive, but this focus is detracting attention from other categories, such as encoder-only models like BERT.</p>
 <p>Sources indicate that however, encoder BERT-like models remain the workhorses of production systems for classification, retrieval, and embedding tasks. They're faster, more memory-efficient, and often more accurate for discriminative tasks. The key difference lies in their attention patterns:.</p>
@@ -211,20 +211,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
+        <a href="introducing-the-ettin-reranker-family-161368.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161368. Introducing the Ettin Reranker Family
+        </a>
+        
+        <a href="future-of-marketing-briefing-consulting-firms-revive-their-market-158377.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #158377. Future of Marketing Briefing: Consulting firms revive their marketing ambitions in the C-suite the holdcos covet
+        </a>
+        
         <a href="welcome-mixtral-a-sota-mixture-of-experts-on-hugging-face-149925.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #149925. Welcome Mixtral - a SOTA Mixture of Experts on Hugging Face
         </a>
         
         <a href="industry-news-screensuite-the-most-comprehensive-evaluation-suite-149566.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #149566. Industry News: ScreenSuite - The most comprehensive evaluation suite for GUI Agents!
-        </a>
-        
-        <a href="sota-ocr-with-core-ml-and-dotsocr-149303.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #149303. SOTA OCR with Core ML and dots.ocr
-        </a>
-        
-        <a href="future-of-marketing-briefing-consulting-firms-revive-their-market-146665.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #146665. Future of Marketing Briefing: Consulting firms revive their marketing ambitions in the C-suite the holdcos covet
         </a>
         
     </div>

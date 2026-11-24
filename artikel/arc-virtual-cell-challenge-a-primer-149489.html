@@ -150,11 +150,11 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-149489">Arc Institute recently unveiled the Virtual Cell Challenge. Participants are required to train a model capable of predicting the effect of silencing a gene in a (partially) unseen cell type, a task they term context generalization. For ML engineers with little to no biology background, the jargon and required context can seem quite daunting. To encourage participation, we recapitulate the challenge in a form better suited to engineers from other disciplines.</p>
-<p>Goal Train a model to predict the effect on a cell of silencing a gene using CRISPR. <span style="font-size:13px;">(Related: <a href="latest-update-how-to-train-a-newly-introduced-language-model-from-150232.html" style="color:#2563eb; font-weight:600;">Latest Update: How to train a newly introduced language...</a>)</span></p>
+<p>Goal Train a model to predict the effect on a cell of silencing a gene using CRISPR.</p>
 <p>Recent findings suggest that doing things in the world of atoms is expensive, laborious and error prone. What if we could test thousands of drug candidates without ever touching a petri dish? This is the goal of the virtual cell challenge — a model (most likely a neural network) that can simulate exactly what happens
 to a cell when we change some parameter. Given that tightening your feedback loop is often the best way to speed up progress,
-a model capable of doing this accurately would have significant impact. <span style="font-size:13px;">(Related: <a href="tech-report-leveraging-pre-trained-language-model-checkpoints-for-150225.html" style="color:#2563eb; font-weight:600;">Tech Report: Leveraging Pre-trained Language Model Chec...</a>)</span></p>
-<p>According to recent reports, to train this neural network, we will need data. For the challenge, Arc has curated a dataset of ~300k single-cell RNA sequencing profiles. It may be worthwhile to revisit the Central Dogma before continuing. This essay will build off of this to provide the ~minimum biology knowledge you'll need for the challenge.</p>
+a model capable of doing this accurately would have significant impact. <span style="font-size:13px;">(Related: <a href="ishowspeed-breaks-down-in-tears-after-finishing-gta-6-in-52-hours-161633.html" style="color:#2563eb; font-weight:600;">IShowSpeed breaks down in tears after finishing GTA 6 i...</a>)</span></p>
+<p>According to recent reports, to train this neural network, we will need data. For the challenge, Arc has curated a dataset of ~300k single-cell RNA sequencing profiles. It may be worthwhile to revisit the Central Dogma before continuing. This essay will build off of this to provide the ~minimum biology knowledge you'll need for the challenge. <span style="font-size:13px;">(Related: <a href="build-a-racetrack-codes-november-2026-161635.html" style="color:#2563eb; font-weight:600;">Build A Racetrack codes (November 2026)...</a>)</span></p>
 <p>It has been revealed that the training set consists of a sparse matrix and some associated metadata. More specifically, we have 220k cells, and
 for each cell we have a transcriptome. This transcriptome is a sparse row vector, where each
 entry is the raw count of RNA molecules (transcripts) that the corresponding gene (our column) encodes for. Of the 220k cells,
@@ -280,20 +280,20 @@ very soon, so starting with their pretrained models will be as simple as:.</p>
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="tiktoks-viral-winter-arc-challenge-is-the-best-way-to-get-a-jump--144353.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #144353. TikTok’s Viral Winter Arc Challenge Is the Best Way to Get a Jump-Start on Your Fresh Year’s Goals
+        <a href="latest-update-tiktoks-viral-winter-arc-challenge-is-the-best-way--155871.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #155871. Latest Update: TikTok’s Viral Winter Arc Challenge Is the Best Way to Get a Jump-Start on Your New Year’s Goals
         </a>
         
-        <a href="how-pets-at-homes-vibrant-newly-introduced-family-solves-the-bigg-148651.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #148651. How Pets at Home's vibrant newly introduced family solves the biggest challenge of designing sub-brands
+        <a href="how-to-proof-bread-in-the-oven-common-challenge-simple-solution-160782.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #160782. How to proof bread in the oven: Common challenge, simple solution.
         </a>
         
-        <a href="tech-report-connecting-architectural-education-with-specialized-f-148541.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #148541. Tech Report: Connecting Architectural Education with Specialized Fields at SCI-Arc
+        <a href="how-pets-at-homes-vibrant-latest-family-solves-the-biggest-challe-160209.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #160209. How Pets at Home's vibrant latest family solves the biggest challenge of designing sub-brands
         </a>
         
-        <a href="after-50-years-of-running-im-facing-my-toughest-challenge-having--148396.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #148396. After 50 Years of Running, I’m Facing My Toughest Challenge: Having to Let Go of the Runner I Used to Be
+        <a href="connecting-architectural-education-with-specialized-fields-at-sci-160090.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #160090. Connecting Architectural Education with Specialized Fields at SCI-Arc
         </a>
         
     </div>

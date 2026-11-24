@@ -152,11 +152,11 @@
 <p id="sec-start-149556">Stay up to date with AI tools, model releases, and developer workflows that matter.</p>
 <p>It has been revealed that weekly. Free. One click to leave.</p>
 <p>7 Day Free Trial. Cancel Anytime.</p>
-<p>In a recent development, ask anyone selling an old chain or a broken ring what they want to know, and it's one thing: what is this worth? A small calculator can answer that in a second, but most of the ones you find online get the details wrong. They ignore troy ounces, treat 14K as 58.5% one day and 58.3% the next, or show a "value" that no buyer will ever pay.</p>
-<p>In this tutorial, we'll build a gold value calculator that gets those details right. It runs on plain HTML and JavaScript, updates as the user types, works with a screen reader, keeps its state in a shareable URL and pulls a live spot price through a small Node.js endpoint. The calculation lives in one pure function, so we can test it in a few lines.</p>
+<p>In a recent development, ask anyone selling an old chain or a broken ring what they want to know, and it's one thing: what is this worth? A small calculator can answer that in a second, but most of the ones you find online get the details wrong. They ignore troy ounces, treat 14K as 58.5% one day and 58.3% the next, or show a "value" that no buyer will ever pay. <span style="font-size:13px;">(Related: <a href="breaking-ai-for-game-development-creating-a-farming-game-in-5-day-161616.html" style="color:#2563eb; font-weight:600;">Breaking: AI for Game Development: Creating a Farming G...</a>)</span></p>
+<p>In this tutorial, we'll build a gold value calculator that gets those details right. It runs on plain HTML and JavaScript, updates as the user types, works with a screen reader, keeps its state in a shareable URL and pulls a live spot price through a small Node.js endpoint. The calculation lives in one pure function, so we can test it in a few lines. <span style="font-size:13px;">(Related: <a href="build-a-racetrack-codes-november-2026-161635.html" style="color:#2563eb; font-weight:600;">Build A Racetrack codes (November 2026)...</a>)</span></p>
 <p>Every gold calculator comes down to three inputs: how much the item weighs, how much of that weight is actually gold, and what pure gold is trading for today.</p>
 <p>It has been revealed that purity is measured in karats, out of 24. A 14K ring is 14 parts gold and 10 parts other metals, so it's 14 ÷ 24 = 58.3% gold. You'll also see 14K stamped as "585", which is the hallmark many manufacturers use for the same alloy. For a calculator, the karat fraction is the safer default:.</p>
-<p>The second detail most tutorials miss is the unit. Gold spot prices are quoted in USD per troy ounce, which is 31.1035 grams, not the 28.35-gram ounce on a kitchen scale. Jewelers also use pennyweight (dwt), which is 1.5552 grams. If your calculator multiplies grams by a per-ounce price without converting, every result is wrong by a factor of 31. <span style="font-size:13px;">(Related: <a href="introducing-optimum-the-optimization-toolkit-for-transformers-at--150204.html" style="color:#2563eb; font-weight:600;">Introducing Optimum: The Optimization Toolkit for Trans...</a>)</span></p>
+<p>The second detail most tutorials miss is the unit. Gold spot prices are quoted in USD per troy ounce, which is 31.1035 grams, not the 28.35-gram ounce on a kitchen scale. Jewelers also use pennyweight (dwt), which is 1.5552 grams. If your calculator multiplies grams by a per-ounce price without converting, every result is wrong by a factor of 31.</p>
 <p>Put together, the formula looks like this:.</p>
 <p>For example, with gold at $2,400 per troy ounce, 10 grams of 14K gold contains 5.83 grams of pure gold, which is worth $449.85 at melt.</p>
 <p>It has been revealed that that $449.85 is the value of the gold content alone. Refiners and buyers pay a percentage of it, because refining, assaying and handling cost money. Depending on the buyer, the item and the market, the payout can sit well below melt value.</p>
@@ -164,7 +164,7 @@
 <p>According to recent reports, start with real form controls and a visible  for each one. Placeholder text is not a label: it disappears as soon as the user types, and screen readers handle it inconsistently. The W3C forms tutorial covers the rules in detail.</p>
 <p>A few choices here matter more than they look:.</p>
 <p>A little CSS gives touch-friendly controls. Keeping inputs at 16px (1rem) also stops iOS Safari from zooming in when a field gets focus.</p>
-<p>Sources indicate that the biggest problem with most calculator snippets is that the math is buried inside an event handler, mixed with getElementById calls. You can't test it, and you can't reuse it on a server. Put the calculation and validation in their own module instead:. <span style="font-size:13px;">(Related: <a href="course-launch-community-event-150195.html" style="color:#2563eb; font-weight:600;">Course Launch Community Event...</a>)</span></p>
+<p>Sources indicate that the biggest problem with most calculator snippets is that the math is buried inside an event handler, mixed with getElementById calls. You can't test it, and you can't reuse it on a server. Put the calculation and validation in their own module instead:.</p>
 <p>Recent findings suggest that both functions take plain values and return plain values. They don't know a DOM exists, which means the same file can run in the browser, in Node.js and in your test runner.</p>
 <p>It has been revealed that notice that we don't round inside the calculation. Rounding happens once, at display time. Rounding in the middle of a chain of multiplications is a classic way to end up a few cents off.</p>
 <p id="sec-mid-149556">Now connect the form to the module. Listening for the input event on the form itself catches changes from every field, including the dropdowns, so there's no need to wire up each control separately.</p>
@@ -212,16 +212,16 @@
             📰 #149647. Breaking: Build a Hardware Diagnostic Log with Vanilla JavaScript
         </a>
         
+        <a href="future-value-calculator-how-to-project-your-investments-160333.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #160333. Future Value Calculator: How to Project Your Investments
+        </a>
+        
         <a href="how-to-build-an-accessible-customer-reviews-section-with-html-and-149653.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #149653. How to Build an Accessible Customer Reviews Section with HTML and CSS
         </a>
         
-        <a href="industry-news-future-value-calculator-how-to-project-your-investm-148615.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #148615. Industry News: Future Value Calculator: How to Project Your Investments
-        </a>
-        
-        <a href="latest-update-three-exchanges-three-liquidation-formulas-one-java-137936.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #137936. Latest Update: Three exchanges, three liquidation formulas, one JavaScript function for the build and the browser
+        <a href="build-a-racetrack-codes-november-2026-161635.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161635. Build A Racetrack codes (November 2026)
         </a>
         
     </div>

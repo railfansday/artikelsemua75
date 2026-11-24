@@ -150,10 +150,10 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-149773">Our friends at Unsloth shared an matter regarding gradient accumulation yesterday that is affecting the transformers Trainer. The initial report comes from @bnjmn_marie (kudos to him!).</p>
-<p>Gradient accumulation is supposed to be mathematically equivalent to full batch training; however, losses did not match between training runs where the setting was toggled on and off. <span style="font-size:13px;">(Related: <a href="distributed-training-train-bartt5-for-summarization-using-transfo-150213.html" style="color:#2563eb; font-weight:600;">Distributed Training: Train BART/T5 for Summarization u...</a>)</span></p>
-<p>Inside the modeling code of each model, transformers offers a "default" loss function that's the most typically used one for the model's task. It is determined by what the modeling class should be used for: question answering, token classification, causal LM, masked LM. <span style="font-size:13px;">(Related: <a href="latest-update-how-to-train-a-newly-introduced-language-model-from-150232.html" style="color:#2563eb; font-weight:600;">Latest Update: How to train a newly introduced language...</a>)</span></p>
+<p>Gradient accumulation is supposed to be mathematically equivalent to full batch training; however, losses did not match between training runs where the setting was toggled on and off.</p>
+<p>Inside the modeling code of each model, transformers offers a "default" loss function that's the most typically used one for the model's task. It is determined by what the modeling class should be used for: question answering, token classification, causal LM, masked LM. <span style="font-size:13px;">(Related: <a href="fine-tune-xlsr-wav2vec2-for-low-resource-asr-with-transformers-161625.html" style="color:#2563eb; font-weight:600;">Fine-Tune XLSR-Wav2Vec2 for low-resource ASR with 🤗 Tra...</a>)</span></p>
 <p>This is the default loss function and it was not meant to be customizable: it is only computed when labels and input_ids are passed as inputs to the model, so the user doesn't have to compute the loss. The default loss is useful but is limited by design: for anything different being done, we expect the labels to not be passed directly, and for users to get the logits back from the model and use them to compute the loss outside of the model.</p>
-<p>However, the transformers Trainer, as well as many Trainers, heavily leverage these methods because of the simplicity it offers: it is a double-edged sword. Providing a simple API that becomes different as the use-case differs is not a well-thought out API, and we've been caught by surprise ourselves.</p>
+<p>However, the transformers Trainer, as well as many Trainers, heavily leverage these methods because of the simplicity it offers: it is a double-edged sword. Providing a simple API that becomes different as the use-case differs is not a well-thought out API, and we've been caught by surprise ourselves. <span style="font-size:13px;">(Related: <a href="latest-update-gta-6-and-ocarina-of-time-remake-caught-in-metacrit-161631.html" style="color:#2563eb; font-weight:600;">Latest Update: GTA 6 and Ocarina of Time remake caught ...</a>)</span></p>
 <p>In a recent development, to be precise, for gradient accumulation across token-level tasks like causal LM training, the correct loss should be computed by the total loss across all batches in a gradient accumulation step divided by the total number of all non padding tokens in those batches. This is not the same as the average of the per-batch loss values. The fix is quite simple, see the following:.</p>
 <p>To address this glitch, we’re changing the way our models and training work in two ways:.</p>
 <p id="sec-mid-149773">All model that inherit from PreTrainedModel now have a loss_function property, which is determined by either:.</p>
@@ -186,20 +186,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="industry-news-policy-gradient-with-pytorch-150137.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #150137. Industry News: Policy Gradient with PyTorch
+        <a href="tech-report-newly-introduced-gradient-icons-roll-out-to-google-me-161561.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161561. Tech Report: Newly introduced gradient icons roll out to Google Messages & Contacts
         </a>
         
-        <a href="how-good-are-llms-at-fixing-their-mistakes-a-chatbot-arena-experi-149738.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #149738. How good are LLMs at fixing their mistakes? A chatbot arena experiment with Keras and TPUs
+        <a href="google-translate-gets-a-latest-gradient-icon-after-11-years-161363.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161363. Google Translate gets a latest gradient icon after 11 years
         </a>
         
-        <a href="fixing-open-llm-leaderboard-with-math-verify-149681.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #149681. Fixing Open LLM Leaderboard with Math-Verify
+        <a href="flaws-in-vmware-and-kvm-need-attention-if-you-have-time-while-fix-161221.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161221. Flaws in VMware and KVM need attention, if you have time while fixing Java, PHP, and everything else
         </a>
         
-        <a href="npr-makes-fixing-its-app-a-key-priority-in-its-new-strategic-stra-146790.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #146790. NPR makes fixing its app a key priority in its new strategic strategy
+        <a href="npr-makes-fixing-its-app-a-key-priority-in-its-latest-strategic-s-158462.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #158462. NPR makes fixing its app a key priority in its latest strategic strategy
         </a>
         
     </div>
