@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latest Update: Visualize proteins on Hugging Face Spaces</title>
+    <meta name="description" content="In this post we will look at how we can visualize proteins on Hugging Face Spaces. While the method described below still works, you'll likely want to save">
+    <meta name="keywords" content="proteins, protein, structure, visualize, gradio, space, using, function">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua75/artikel/latest-update-visualize-proteins-on-hugging-face-spaces-172947.html">
+    
+    <meta property="og:title" content="Latest Update: Visualize proteins on Hugging Face Spaces">
+    <meta property="og:description" content="In this post we will look at how we can visualize proteins on Hugging Face Spaces. While the method described below still works, you'll likely want to save">
+    <meta property="og:image" content="https://huggingface.co/blog/assets/98_spaces_3dmoljs/thumbnail.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua75/artikel/latest-update-visualize-proteins-on-hugging-face-spaces-172947.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Latest Update: Visualize proteins on Hugging Face Spaces">
+    <meta name="twitter:description" content="In this post we will look at how we can visualize proteins on Hugging Face Spaces. While the method described below still works, you'll likely want to save">
+    <meta name="twitter:image" content="https://huggingface.co/blog/assets/98_spaces_3dmoljs/thumbnail.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Latest Update: Visualize proteins on Hugging Face Spaces", "image": ["https://huggingface.co/blog/assets/98_spaces_3dmoljs/thumbnail.png"], "datePublished": "2022-08-24T00:00:00", "dateModified": "2026-11-24T12:17:58.217709", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua75/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua75/artikel/latest-update-visualize-proteins-on-hugging-face-spaces-172947.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Latest Update: Visualize proteins on Hugging Face Spaces?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Hugging Face."}}, {"@type": "Question", "name": "Which category does 'Latest Update: Visualize proteins on Hugging Face Spaces' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Latest Update: Visualize proteins on Hugging Face Spaces</h1>
+        <div class="meta-line">🌐 Source: <strong>Hugging Face</strong> &bull; 📅 24 Aug 2022 &bull; ⏱️ 3 min read (688 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>In this post we will look at how we can visualize proteins on Hugging Face Spaces.</li><li style='margin-bottom:6px;'>While the method described below still works, you'll likely want to save some time and use the Molecule3D Gradio Custom Component.</li><li style='margin-bottom:6px;'>Proteins have a huge impact on our life - from medicines to washing powder.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-172947"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-172947"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-172947"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Latest Update: Visualize proteins on Hugging Face Spaces" loading="lazy" src="https://huggingface.co/blog/assets/98_spaces_3dmoljs/thumbnail.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-172947">In this post we will look at how we can visualize proteins on Hugging Face Spaces.</p>
+<p>While the method described below still works, you'll likely want to save some time and use the Molecule3D Gradio Custom Component. This component will allow users to modify the protein visualization on the fly and you can more easily set the default visualization. Simply install it using:. <span style="font-size:13px;">(Related: <a href="how-to-train-a-newly-introduced-language-model-from-scratch-using-173066.html" style="color:#2563eb; font-weight:600;">How to train a newly introduced language model from scr...</a>)</span></p>
+<p>Proteins have a huge impact on our life - from medicines to washing powder. Machine learning on proteins is a rapidly growing field to help us design fresh and interesting proteins. Proteins are complex 3D objects generally composed of a series of building blocks called amino acids that are arranged in 3D space to give the protein its function. For machine learning purposes a protein can for example be represented as coordinates, as graph or as 1D sequence of letters for use in a protein language model. <span style="font-size:13px;">(Related: <a href="latest-update-how-to-generate-text-using-different-decoding-metho-173065.html" style="color:#2563eb; font-weight:600;">Latest Update: How to generate text: using different de...</a>)</span></p>
+<p>A famous ML model for proteins is AlphaFold2 which predicts the structure of a protein sequence using a multiple sequence alignment of similar proteins and a structure module.</p>
+<p>Since AlphaFold2 made its debut many more such models have come out such as OmegaFold, OpenFold etc. (see this list or this list for more).</p>
+<p>According to recent reports, the structure of a protein is an integral part to our understanding of what a protein does. Nowadays, there are a few tools available to visualize proteins directly in the browser such as mol* or 3dmol.js. In this post, you will learn how to integrate structure visualization into your Hugging Face Space using 3Dmol.js and the HTML block.</p>
+<p>Make sure you have the gradio Python package already installed and basic knowledge of Javascript/JQuery.</p>
+<p>Let's take a look at how to create the minimal working demo of our interface before we dive into how to setup 3Dmol.js.</p>
+<p>We will build a simple demo app that can accept either a 4-digit PDB code or a PDB file. Our app will then retrieve the pdb file from the RCSB Protein Databank and display it or use the uploaded file for display.</p>
+<p>enhancement: This is the function that does the processing of our proteins and returns an iframe with the viewer.</p>
+<p>Our get_pdb function is also simple:.</p>
+<p id="sec-mid-172947">In a recent development, now, how to visualize the protein since Gradio does not have 3Dmol directly available as a block? We use an iframe for this.</p>
+<p>Our molecule function which returns the iframe conceptually looks like this:.</p>
+<p>This is a bit clunky to setup but is necessary because of the security rules in modern browsers.</p>
+<p>3Dmol.js setup is pretty easy and the documentation provides a few examples.</p>
+<p>The head of our returned document needs to load 3Dmol.js (which in turn also loads JQuery).</p>
+<p>The styles for .mol-container can be used to modify the size of the molecule viewer.</p>
+<p>We use a template literal (denoted by backticks) to store our pdb file in the html document directly and then output it using 3dmol.js.</p>
+<p>And that's it, now you can couple your favorite protein ML model to a fun and easy to use gradio app and directly visualize predicted or redesigned structures. If you are predicting properities of a structure (e.g how likely each amino acid is to bind a ligand), 3Dmol.js also allows to use a custom colorfunc based on a property of each atom.</p>
+<p>You can check the source code of the 3Dmol.js space for the full code.</p>
+<p>Industry observers note that for a production example, you can check the ProteinMPNN space where a user can upload a backbone, the inverse folding model ProteinMPNN predicts newly introduced optimal sequences and then one can run AlphaFold2 on all predicted sequences to verify whether they adopt the initial input backbone. Successful redesigns that qualitiatively adopt the same structure as predicted by AlphaFold2 with high pLDDT score should be tested in the lab.</p>
+<p>If you encounter any complications with the integration of 3Dmol.js in Gradio/HF spaces, please open a discussion in hf.space/simonduerr/3dmol.js.</p>
+<p id="sec-end-172947">If you have problems with 3Dmol.js configuration - you need to ask the developers, please, open a 3Dmol.js Glitch instead and describe your problem.</p>
+<p style="margin-top: 25px;">
+<a href="https://huggingface.co/blog/spaces_3dmoljs" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="industry-news-hosting-your-models-and-datasets-on-hugging-face-sp-173034.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #173034. Industry News: Hosting your Models and Datasets on Hugging Face Spaces using Streamlit
+        </a>
+        
+        <a href="deploy-livebook-notebooks-as-apps-to-hugging-face-spaces-172831.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #172831. Deploy Livebook notebooks as apps to Hugging Face Spaces
+        </a>
+        
+        <a href="run-comfyui-workflows-for-free-with-gradio-on-hugging-face-spaces-172736.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #172736. Run ComfyUI workflows for free with Gradio on Hugging Face Spaces
+        </a>
+        
+        <a href="industry-news-data-is-better-together-enabling-communities-to-col-172702.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #172702. Industry News: Data is better together: Enabling communities to collectively build better datasets together using Argilla and Hugging Face Spaces
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Train your ControlNet with diffusers</title>
+    <meta name="description" content="ControlNet is a neural network structure that allows fine-grained control of diffusion models by adding extra conditions. The technique debuted with the pa">
+    <meta name="keywords" content="dataset, model, faces, face, training, controlnet, diffusion, facial">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua75/artikel/train-your-controlnet-with-diffusers-172873.html">
+    
+    <meta property="og:title" content="Train your ControlNet with diffusers">
+    <meta property="og:description" content="ControlNet is a neural network structure that allows fine-grained control of diffusion models by adding extra conditions. The technique debuted with the pa">
+    <meta property="og:image" content="https://huggingface.co/blog/assets/136_train-your-controlnet/thumbnail.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua75/artikel/train-your-controlnet-with-diffusers-172873.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Train your ControlNet with diffusers">
+    <meta name="twitter:description" content="ControlNet is a neural network structure that allows fine-grained control of diffusion models by adding extra conditions. The technique debuted with the pa">
+    <meta name="twitter:image" content="https://huggingface.co/blog/assets/136_train-your-controlnet/thumbnail.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Train your ControlNet with diffusers", "image": ["https://huggingface.co/blog/assets/136_train-your-controlnet/thumbnail.png"], "datePublished": "2023-03-24T00:00:00", "dateModified": "2026-11-24T12:17:46.337119", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua75/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua75/artikel/train-your-controlnet-with-diffusers-172873.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Train your ControlNet with diffusers?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Hugging Face."}}, {"@type": "Question", "name": "Which category does 'Train your ControlNet with diffusers' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Train your ControlNet with diffusers</h1>
+        <div class="meta-line">🌐 Source: <strong>Hugging Face</strong> &bull; 📅 24 Mar 2023 &bull; ⏱️ 5 min read (1099 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>ControlNet is a neural network structure that allows fine-grained control of diffusion models by adding extra conditions.</li><li style='margin-bottom:6px;'>In this blog post we will go over each step in detail on how we trained the Uncanny Faces model - a model on face poses based on 3D synthetic faces (the uncanny faces was an unintended consequence actually, stay tuned to see how it came through).</li><li style='margin-bottom:6px;'>Recent findings suggest that planning your condition: ControlNet is flexible enough to tame Stable Diffusion towards many tasks.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-172873"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-172873"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-172873"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Train your ControlNet with diffusers" loading="lazy" src="https://huggingface.co/blog/assets/136_train-your-controlnet/thumbnail.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-172873">ControlNet is a neural network structure that allows fine-grained control of diffusion models by adding extra conditions. The technique debuted with the paper Adding Conditional Control to Text-to-Image Diffusion Models, and promptly took over the open-source diffusion community author's release of 8 different conditions to control Stable Diffusion v1-5, including pose estimations, depth maps, canny edges, sketches, and more.</p>
+<p>In this blog post we will go over each step in detail on how we trained the Uncanny Faces model - a model on face poses based on 3D synthetic faces (the uncanny faces was an unintended consequence actually, stay tuned to see how it came through). <span style="font-size:13px;">(Related: <a href="how-to-train-a-newly-introduced-language-model-from-scratch-using-173066.html" style="color:#2563eb; font-weight:600;">How to train a newly introduced language model from scr...</a>)</span></p>
+<p>Training your own ControlNet requires 3 steps:. <span style="font-size:13px;">(Related: <a href="breaking-distributed-training-train-bartt5-for-summarization-usin-173047.html" style="color:#2563eb; font-weight:600;">Breaking: Distributed Training: Train BART/T5 for Summa...</a>)</span></p>
+<p>Recent findings suggest that planning your condition: ControlNet is flexible enough to tame Stable Diffusion towards many tasks. The pre-trained models showcase a wide-range of conditions, and the community has built others, such as conditioning on pixelated color palettes.</p>
+<p>Building your dataset: Once a condition is decided, it is time to build your dataset. For that, you can either construct a dataset from scratch, or use a sub-set of an existing dataset. You need three columns on your dataset to train the model: a ground truth image, a conditioning_image and a prompt.</p>
+<p>Training the model: Once your dataset is ready, it is time to train the model. This is the easiest part thanks to the diffusers training script. You'll need a GPU with at least 8GB of VRAM.</p>
+<p>To blueprint your condition, it is useful to think of two questions:.</p>
+<p>In a recent development, for our example, we thought about using a facial landmarks conditioning. Our reasoning was: 1. the general landmarks conditioned ControlNet works well. 2. Facial landmarks are a widespread enough technique, and there are multiple models that calculate facial landmarks on regular pictures 3. Could be fun to tame Stable Diffusion to follow a certain facial landmark or imitate your own facial expression.</p>
+<p>Recent findings suggest that okay! So we decided to do a facial landmarks Stable Diffusion conditioning. So, to prepare the dataset we need:.</p>
+<p>Industry observers note that for this project, we decided to go with the FaceSynthetics dataset by Microsoft: it is a dataset that contains 100K synthetic faces. Other face research datasets with real faces such as Celeb-A HQ, FFHQ - but we decided to go with synthetic faces for this project.</p>
+<p>The FaceSynthetics dataset sounded like a great start: it contains ground truth images of faces, and facial landmarks annotated in the iBUG 68-facial landmarks format, and a segmented image of the face.</p>
+<p>Perfect. Right? Unfortunately, not really. Remember the second question in the "planning your condition" step - that we should have models that convert regular images to the conditioning? Turns out there is no known model that can turn faces into the annotated landmark format of this dataset.</p>
+<p>So we decided to follow another path:.</p>
+<p>Here you can find the code used to convert the ground truth images from the FaceSynthetics dataset into the illustrated mask and save it as a Hugging Face Dataset.</p>
+<p id="sec-mid-172873">Industry observers note that now, with the ground truth image and the conditioning_image on the dataset, we are missing one step: a caption for each image. This step is highly recommended, but you can experiment with empty prompts and report back on your results. As we did not have captions for the FaceSynthetics dataset, we ran it through a BLIP captioning. You can check the code used for captioning all images here.</p>
+<p>With that, we arrived to our final dataset! The Face Synthetics SPIGA with captions contains a ground truth image, segmentation and a caption for the 100K images of the FaceSynthetics dataset. We are ready to train the model!</p>
+<p>With our dataset ready, it is time to train the model! Even though this was supposed to be the hardest part of the process, with the diffusers training script, it turned out to be the easiest. We used a single A100 rented for US$1.10/h on LambdaLabs.</p>
+<p>In a recent development, we trained the model for 3 epochs (this means that the batch of 100K images were shown to the model 3 times) and a batch size of 4 (each step demonstrates 4 images to the model). This turned out to be excessive and overfit (so it forgot concepts that diverge a bit of a real face, so for example "shrek" or "a cat" in the prompt would not make a shrek or a cat but rather a person, and also started to ignore styles).</p>
+<p>Recent findings suggest that with just 1 epoch (so after the model "saw" 100K images), it already converged to following the poses and not overfit. So it worked, but... as we used the face synthetics dataset, the model ended up learning uncanny 3D-looking faces, instead of realistic faces. This makes sense given that we used a synthetic face dataset as opposed to real ones, and can be used for fun/memetic purposes. Here is the uncannyfaces_25K model.</p>
+<p>In this interactive table you can play with the dial below to go over how many training steps the model went through and how it affects the training process. At around 15K steps, it already started learning the poses. And it matured around 25K steps. Here.</p>
+<p>All we had to do was, install the dependencies:.</p>
+<p>And then run the train_controlnet.py code.</p>
+<p>Let's break down some of the settings, and also let's go over some optimisation tips for going as low as 8GB of VRAM for training.</p>
+<p>Recent findings suggest that the combination of a batch size of 1 with 4 gradient accumulation steps is equivalent to using the original batch size of 4 we used in our example. In addition, we enabled gradient checkpointing and 8-bit Adam for additional memory savings.</p>
+<p>In a recent development, this experience of training a ControlNet was a lot of fun. We successfully trained a model that can follow real face poses - however it learned to make uncanny 3D faces instead of real 3D faces because this was the dataset it was trained on, which has its own charm and flare.</p>
+<p>Try out our Hugging Face Space:.</p>
+<p>As for next steps for us - in order to create realistically looking faces, while still not using a real face dataset, one idea is running the entire FaceSynthetics dataset through Stable Diffusion Image2Imaage, converting the 3D-looking faces into realistically looking ones, and then training another ControlNet.</p>
+<p id="sec-end-172873">And stay tuned, as we will have a ControlNet Training event soon! Follow Hugging Face on Twitter or join our Discord to stay up to date on that.</p>
+<p style="margin-top: 25px;">
+<a href="https://huggingface.co/blog/train-your-controlnet" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="controlnet-in-diffusers-172880.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #172880. ControlNet in 🧨 Diffusers
+        </a>
+        
+        <a href="how-to-train-a-newly-introduced-language-model-from-scratch-using-173066.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #173066. How to train a newly introduced language model from scratch using Transformers and Tokenizers
+        </a>
+        
+        <a href="latest-update-fit-more-and-train-faster-with-zero-via-deepspeed-a-173057.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #173057. Latest Update: Fit More and Train Faster With ZeRO via DeepSpeed and FairScale
+        </a>
+        
+        <a href="breaking-distributed-training-train-bartt5-for-summarization-usin-173047.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #173047. Breaking: Distributed Training: Train BART/T5 for Summarization using 🤗 Transformers and Amazon SageMaker
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

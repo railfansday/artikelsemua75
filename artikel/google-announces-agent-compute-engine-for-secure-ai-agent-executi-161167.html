@@ -167,8 +167,8 @@ Google Reveals Agent Compute Engine for Secure AI Agent Execution.</p>
 									
 									2
 									min read.</p>
-<p>Recent findings suggest that google recently announced Agent Compute Engine, a managed service that runs AI agents in isolated microVMs, with checkpointing capabilities to suspend and resume execution environments. The design keeps credentials, API keys, and OAuth refresh tokens outside the agent sandbox, using an external Agent Gateway to authenticate requests and inject the required secrets. <span style="font-size:13px;">(Related: <a href="trump-keeps-losing-in-court-heres-how-he-gets-what-he-wants-anywa-161621.html" style="color:#2563eb; font-weight:600;">Trump keeps losing in court. Here’s how he gets what he...</a>)</span></p>
-<p>It has been revealed that google designed Agent Compute Engine to address three requirements at global scale: keeping sandboxes free of exploitable credentials, even when agents make mistakes; minimizing the cost and latency of resuming idle agents; and preserving persistent workspaces across sessions and operating system updates. The infrastructure team writes:. <span style="font-size:13px;">(Related: <a href="tech-report-welcome-gemma-googles-new-open-llm-161613.html" style="color:#2563eb; font-weight:600;">Tech Report: Welcome Gemma - Google’s new open LLM...</a>)</span></p>
+<p>Recent findings suggest that google recently announced Agent Compute Engine, a managed service that runs AI agents in isolated microVMs, with checkpointing capabilities to suspend and resume execution environments. The design keeps credentials, API keys, and OAuth refresh tokens outside the agent sandbox, using an external Agent Gateway to authenticate requests and inject the required secrets. <span style="font-size:13px;">(Related: <a href="how-to-train-a-newly-introduced-language-model-from-scratch-using-173066.html" style="color:#2563eb; font-weight:600;">How to train a newly introduced language model from scr...</a>)</span></p>
+<p>It has been revealed that google designed Agent Compute Engine to address three requirements at global scale: keeping sandboxes free of exploitable credentials, even when agents make mistakes; minimizing the cost and latency of resuming idle agents; and preserving persistent workspaces across sessions and operating system updates. The infrastructure team writes:. <span style="font-size:13px;">(Related: <a href="breaking-porting-fairseq-wmt19-translation-system-to-transformers-173060.html" style="color:#2563eb; font-weight:600;">Breaking: Porting fairseq wmt19 translation system to t...</a>)</span></p>
 <p>Agent Compute Engine achieves this by using copy-on-write memory sharing to run multiple agents on a single operating system template, and pausing idle microVMs via fast checkpoint and restore.</p>
 <p>Recent findings suggest that in the deep dive "Inside Agent Compute Engine," Ramanathan Venkatapathy and Rohit Jnagal, distinguished engineers at Google, describe the service’s architecture, covering microVM isolation, credential management, agent identity, storage, and scheduling at scale. They explain the strict separation between the agent harness and sandbox:.</p>
 <p>According to recent reports, the orchestration harness (the brain) runs completely outside the execution sandbox (the hands), helping ensure that untrusted guest environments only execute explicit commands dispatched by the harness and stream output back. This boundary establishes a deterministic audit trail correlating every harness-initiated tool call with expected compute activity inside the sandbox.</p>
@@ -205,20 +205,20 @@ Google Reveals Agent Compute Engine for Secure AI Agent Execution.</p>
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
+        <a href="google-publishes-guidance-for-google-agent-crawler-via-sejournal--169683.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #169683. Google Publishes Guidance For Google-Agent Crawler via @sejournal, @martinibuster
+        </a>
+        
+        <a href="latest-update-google-gives-gemini-control-of-mac-apps-but-its-new-167536.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #167536. Latest Update: Google Gives Gemini Control of Mac Apps, But Its New AI Agent Comes With Risks
+        </a>
+        
+        <a href="industry-news-you-can-use-googles-spark-ai-agent-renamed-tasks-fo-165433.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #165433. Industry News: You can use Google’s Spark AI agent, renamed Tasks, for free now – with limits
+        </a>
+        
         <a href="google-deepmind-agent-teams-discover-lean-verified-quantum-algori-161134.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #161134. Google DeepMind Agent Teams Discover Lean-Verified Quantum Algorithms
-        </a>
-        
-        <a href="breaking-google-publishes-guidance-for-google-agent-crawler-via-s-158449.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #158449. Breaking: Google Publishes Guidance For Google-Agent Crawler via @sejournal, @martinibuster
-        </a>
-        
-        <a href="google-gives-gemini-control-of-mac-apps-but-its-new-ai-agent-come-156056.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #156056. Google Gives Gemini Control of Mac Apps, But Its New AI Agent Comes With Risks
-        </a>
-        
-        <a href="industry-news-you-can-use-googles-spark-ai-agent-renamed-tasks-fo-153991.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #153991. Industry News: You can use Google’s Spark AI agent, renamed Tasks, for free now – with limits
         </a>
         
     </div>

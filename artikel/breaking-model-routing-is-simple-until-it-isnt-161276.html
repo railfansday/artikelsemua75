@@ -150,9 +150,9 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-161276">Building a router into your agent sounds like an easy win. Send simple requests to cheaper models, reserve expensive ones for harder tasks, or route by specialty — Claude for code, Gemini for multimodal, and so on. A classifier or heuristic makes the call, costs go down, performance stays up. Done.</p>
-<p>It has been revealed that except it’s not. Most routing systems assume that model selection is a classification problem. In our experience building routing into agentic systems, what looks like a model-selection problem promptly becomes a systems optimization problem. Three dimensions made this surprisingly hard for us. <span style="font-size:13px;">(Related: <a href="building-for-an-open-future-our-latest-partnership-with-google-cl-161603.html" style="color:#2563eb; font-weight:600;">Building for an Open Future - our latest partnership wi...</a>)</span></p>
+<p>It has been revealed that except it’s not. Most routing systems assume that model selection is a classification problem. In our experience building routing into agentic systems, what looks like a model-selection problem promptly becomes a systems optimization problem. Three dimensions made this surprisingly hard for us. <span style="font-size:13px;">(Related: <a href="how-to-train-a-newly-introduced-language-model-from-scratch-using-173066.html" style="color:#2563eb; font-weight:600;">How to train a newly introduced language model from scr...</a>)</span></p>
 <p>According to recent reports, we expected GPT-4.1 to be cheaper than Claude Sonnet 4.6. It wasn’t.</p>
-<p>Industry observers note that across 417 tasks on the AppWorld Test Challenge using the same CodeAct agent, Sonnet cost $79 total ($0.19/task) while GPT-4.1 cost $155 ($0.37/task) — nearly double. On paper, this makes no sense. GPT-4.1’s token pricing is lower on both input and output, and Sonnet takes roughly three times as many reasoning steps to finish the same tasks. By sticker price alone, GPT-4.1 should win easily. <span style="font-size:13px;">(Related: <a href="industry-news-minecraft-mommy-goes-viral-on-tiktok-for-giving-goo-161638.html" style="color:#2563eb; font-weight:600;">Industry News: ‘Minecraft Mommy’ goes viral on TikTok f...</a>)</span></p>
+<p>Industry observers note that across 417 tasks on the AppWorld Test Challenge using the same CodeAct agent, Sonnet cost $79 total ($0.19/task) while GPT-4.1 cost $155 ($0.37/task) — nearly double. On paper, this makes no sense. GPT-4.1’s token pricing is lower on both input and output, and Sonnet takes roughly three times as many reasoning steps to finish the same tasks. By sticker price alone, GPT-4.1 should win easily. <span style="font-size:13px;">(Related: <a href="latest-update-how-to-generate-text-using-different-decoding-metho-173065.html" style="color:#2563eb; font-weight:600;">Latest Update: How to generate text: using different de...</a>)</span></p>
 <p>It has been revealed that the explanation? Caching — something most routing discussions ignore entirely. Agent workloads tend to reuse large chunks of context across steps. When cache hit rates are high, effective input costs drop dramatically. Sonnet’s lower cache-read pricing meant it benefited disproportionately from this pattern, enough to overcome both its higher base pricing and its longer trajectories.</p>
 <p>The takeaway: actual cost depends on the interaction between the model, the workload, and the serving infrastructure. A router that only looks at pricing sheets is optimizing against the wrong numbers.</p>
 <p>Sources indicate that A common routing strategy is to estimate how hard a task is and send harder tasks to stronger models. Intuitive, but it breaks down in two ways.</p>
@@ -195,6 +195,10 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
+        <a href="what-is-model-routing-in-ai-172272.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #172272. What is Model Routing in AI?
+        </a>
+        
         <a href="industry-news-transformers-v5-simple-model-definitions-powering-t-161571.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #161571. Industry News: Transformers v5: Simple model definitions powering the AI ecosystem
         </a>
@@ -203,12 +207,8 @@
             📰 #160890. Your AI Model Isn't Broken. The File You Downloaded Is Out of Date.
         </a>
         
-        <a href="i-kept-waking-up-at-3am-until-i-changed-this-simple-but-hidden-ip-154276.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #154276. I kept waking up at 3a.m. until I changed this simple but hidden iPhone setting — now the dark evenings aren’t ruining my sleep
-        </a>
-        
-        <a href="what-is-model-routing-in-ai-149417.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #149417. What is Model Routing in AI?
+        <a href="how-to-train-a-newly-introduced-language-model-from-scratch-using-173066.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #173066. How to train a newly introduced language model from scratch using Transformers and Tokenizers
         </a>
         
     </div>

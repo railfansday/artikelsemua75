@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Using LoRA for Efficient Stable Diffusion Fine-Tuning</title>
+    <meta name="description" content="Industry observers note that loRA: Low-Rank Adaptation of Large Language Models is a novel technique introduced by Microsoft researchers to deal with the p">
+    <meta name="keywords" content="lora, model, fine, tuning, stable, diffusion, models, weights">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua75/artikel/using-lora-for-efficient-stable-diffusion-fine-tuning-172897.html">
+    
+    <meta property="og:title" content="Using LoRA for Efficient Stable Diffusion Fine-Tuning">
+    <meta property="og:description" content="Industry observers note that loRA: Low-Rank Adaptation of Large Language Models is a novel technique introduced by Microsoft researchers to deal with the p">
+    <meta property="og:image" content="https://huggingface.co/blog/assets/lora/thumbnail.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua75/artikel/using-lora-for-efficient-stable-diffusion-fine-tuning-172897.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Using LoRA for Efficient Stable Diffusion Fine-Tuning">
+    <meta name="twitter:description" content="Industry observers note that loRA: Low-Rank Adaptation of Large Language Models is a novel technique introduced by Microsoft researchers to deal with the p">
+    <meta name="twitter:image" content="https://huggingface.co/blog/assets/lora/thumbnail.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Using LoRA for Efficient Stable Diffusion Fine-Tuning", "image": ["https://huggingface.co/blog/assets/lora/thumbnail.png"], "datePublished": "2023-01-26T00:00:00", "dateModified": "2026-11-24T12:17:50.380566", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua75/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua75/artikel/using-lora-for-efficient-stable-diffusion-fine-tuning-172897.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Using LoRA for Efficient Stable Diffusion Fine-Tuning?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Hugging Face."}}, {"@type": "Question", "name": "Which category does 'Using LoRA for Efficient Stable Diffusion Fine-Tuning' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Using LoRA for Efficient Stable Diffusion Fine-Tuning</h1>
+        <div class="meta-line">🌐 Source: <strong>Hugging Face</strong> &bull; 📅 26 Jan 2023 &bull; ⏱️ 7 min read (1320 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>Industry observers note that loRA: Low-Rank Adaptation of Large Language Models is a novel technique introduced by Microsoft researchers to deal with the problem of fine-tuning large-language models.</li><li style='margin-bottom:6px;'>In a recent development, even though LoRA was initially proposed for large-language models and demonstrated on transformer blocks, the technique can also be applied elsewhere.</li><li style='margin-bottom:6px;'>To the best of our knowledge, Simo Ryu (@cloneofsimo) was the first one to come up with a LoRA implementation adapted to Stable Diffusion.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-172897"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-172897"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-172897"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Using LoRA for Efficient Stable Diffusion Fine-Tuning" loading="lazy" src="https://huggingface.co/blog/assets/lora/thumbnail.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-172897">Industry observers note that loRA: Low-Rank Adaptation of Large Language Models is a novel technique introduced by Microsoft researchers to deal with the problem of fine-tuning large-language models. Powerful models with billions of parameters, such as GPT-3, are prohibitively expensive to fine-tune in order to adapt them to particular tasks or domains. LoRA proposes to freeze pre-trained model weights and inject trainable layers (rank-decomposition matrices) in each transformer block. This greatly reduces the number of trainable parameters and GPU memory requirements since gradients don't need to be computed for most model weights. The researchers found that by focusing on the Transformer attention blocks of large-language models, fine-tuning quality with LoRA was on par with full model fine-tuning while being much faster and requiring less compute.</p>
+<p>In a recent development, even though LoRA was initially proposed for large-language models and demonstrated on transformer blocks, the technique can also be applied elsewhere. In the case of Stable Diffusion fine-tuning, LoRA can be applied to the cross-attention layers that relate the image representations with the prompts that describe them. The details of the following figure (taken from the Stable Diffusion paper) are not important, just note that the yellow blocks are the ones in charge of building the relationship between image and text representations. <span style="font-size:13px;">(Related: <a href="how-to-train-a-newly-introduced-language-model-from-scratch-using-173066.html" style="color:#2563eb; font-weight:600;">How to train a newly introduced language model from scr...</a>)</span></p>
+<p>To the best of our knowledge, Simo Ryu (@cloneofsimo) was the first one to come up with a LoRA implementation adapted to Stable Diffusion. Please, do take a look at their GitHub project to see examples and lots of interesting discussions and insights.</p>
+<p>In order to inject LoRA trainable matrices as deep in the model as in the cross-attention layers, people used to need to hack the source code of diffusers in imaginative (but fragile) ways. If Stable Diffusion has shown us one thing, it is that the community always comes up with ways to bend and adapt the models for creative purposes, and we love that! Providing the flexibility to manipulate the cross-attention layers could be beneficial for many other reasons, such as making it easier to adopt optimization techniques such as xFormers. Other creative projects such as Prompt-to-Prompt could do with some easy way to access those layers, so we decided to provide a general way for owners to do it. We've been testing that pull request since late December, and it officially launched with our diffusers release yesterday. <span style="font-size:13px;">(Related: <a href="breaking-block-sparse-matrices-for-smaller-and-faster-language-mo-173063.html" style="color:#2563eb; font-weight:600;">Breaking: Block Sparse Matrices for Smaller and Faster ...</a>)</span></p>
+<p>We've been working with @cloneofsimo to provide LoRA training support in diffusers, for both Dreambooth and full fine-tuning methods! These techniques provide the following benefits:.</p>
+<p>According to recent reports, we are particularly excited about the last point. In order for users to share their awesome fine-tuned or dreamboothed models, they had to share a full copy of the final model. Other users that want to try them out have to download the fine-tuned weights in their favorite UI, adding up to combined massive storage and download costs. As of today, there are about 1,000 Dreambooth models registered in the Dreambooth Concepts Library, and probably many more not registered in the library.</p>
+<p>With LoRA, it is now possible to publish a single 3.29 MB file to allow others to use your fine-tuned model.</p>
+<p>(h/t to @mishig25, the first person I heard use dreamboothing as a verb in a normal conversation).</p>
+<p>Full model fine-tuning of Stable Diffusion used to be slow and difficult, and that's part of the reason why lighter-weight methods such as Dreambooth or Textual Inversion have become so popular. With LoRA, it is much easier to fine-tune a model on a custom dataset.</p>
+<p>Diffusers now provides a LoRA fine-tuning script that can run in as low as 11 GB of GPU RAM without resorting to tricks such as 8-bit optimizers. This is how you'd use it to fine-tune a model using Lambda Labs Pokémon dataset:.</p>
+<p>According to recent reports, one thing of notice is that the learning rate is 1e-4, much larger than the usual learning rates for regular fine-tuning (in the order of ~1e-6, typically). This is a W&amp;B dashboard of the previous run, which took about 5 hours in a 2080 Ti GPU (11 GB of RAM). I did not attempt to optimize the hyperparameters, so feel free to try it out yourself! Sayak did another run on a T4 (16 GB of RAM), here's his final model, and here's a demo Space that uses it.</p>
+<p>For additional details on LoRA support in diffusers, please refer to our documentation – it will be always kept up to date with the implementation.</p>
+<p id="sec-mid-172897">Sources indicate that as we've discussed, one of the major advantages of LoRA is that you get excellent results by training orders of magnitude less weights than the original model size. We designed an inference process that allows loading the additional weights on top of the unmodified Stable Diffusion model weights. Let's see how it works.</p>
+<p>First, we'll use the Hub API to automatically determine what was the base model that was used to fine-tune a LoRA model. Starting from Sayak's model, we can use this code:.</p>
+<p>This snippet will print the model he used for fine-tuning, which is CompVis/stable-diffusion-v1-4. In my case, I trained my model starting from version 1.5 of Stable Diffusion, so if you run the same code with my LoRA model you'll see that the output is runwayml/stable-diffusion-v1-5.</p>
+<p>The information about the base model is automatically populated by the fine-tuning script we saw in the previous section, if you use the --push_to_hub option. This is recorded as a metadata tag in the README file of the model's repo, as you can see here.</p>
+<p>In a recent development, after we determine the base model we used to fine-tune with LoRA, we load a normal Stable Diffusion pipeline. We'll customize it with the DPMSolverMultistepScheduler for very fast inference:.</p>
+<p>Industry observers note that and here's where the magic comes. We load the LoRA weights from the Hub on top of the regular model weights, move the pipeline to the cuda device and run inference:.</p>
+<p>In a recent development, dreambooth allows you to "teach" latest concepts to a Stable Diffusion model. LoRA is compatible with Dreambooth and the process is similar to fine-tuning, with a couple of advantages:.</p>
+<p>To train Dreambooth with LoRA you need to use this diffusers script. Please, take a look at the README, the documentation and our hyperparameter exploration blog post for details.</p>
+<p>Recent findings suggest that for a quick, cheap and easy way to train your Dreambooth models with LoRA, please check this Space by hysts. You need to duplicate it and assign a GPU so it runs fast. This process will save you from having to set up your own training environment and you'll be able to train your models in minutes!</p>
+<p>Sources indicate that the quest for easy fine-tuning is not upcoming. In addition to Dreambooth, textual inversion is another popular method that attempts to teach new concepts to a trained Stable Diffusion Model. One of the main reasons for using Textual Inversion is that trained weights are also small and easy to share. However, they only work for a single subject (or a small handful of them), whereas LoRA can be used for general-purpose fine-tuning, meaning that it can be adapted to new domains or datasets.</p>
+<p>In a recent development, pivotal Tuning is a method that tries to combine Textual Inversion with LoRA. First, you teach the model a latest concept using Textual Inversion techniques, obtaining a new token embedding to represent it. Then, you train that token embedding using LoRA to get the best of both worlds.</p>
+<p>Industry observers note that we haven't explored Pivotal Tuning with LoRA yet. Who's up for the challenge? 🤗.</p>
+<p id="sec-end-172897">Sources indicate that I'm particularly excited about the lower VRAM requirements. Being able to fine-tune on an 11 GB card opens this up to so many more people who don't have access to high-end hardware. The Pokemon example is perfect for demonstrating real-world results too. https://playvio.io/.</p>
+<p style="margin-top: 25px;">
+<a href="https://huggingface.co/blog/lora" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="parameter-efficient-fine-tuning-using-peft-172889.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #172889. Parameter-Efficient Fine-Tuning using 🤗 PEFT
+        </a>
+        
+        <a href="fine-tuning-stable-diffusion-models-on-intel-cpus-172816.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #172816. Fine-tuning Stable Diffusion models on Intel CPUs
+        </a>
+        
+        <a href="training-stable-diffusion-with-dreambooth-using-diffusers-172925.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #172925. Training Stable Diffusion with Dreambooth using Diffusers
+        </a>
+        
+        <a href="tech-report-using-stable-diffusion-with-core-ml-on-apple-silicon-172913.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #172913. Tech Report: Using Stable Diffusion with Core ML on Apple Silicon
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

@@ -153,9 +153,9 @@
 <p>I’ve put together tidy-typography.css, which gathers the useful parts into a default stylesheet: rendering and fallback rules, fluid sizing, vertical rhythm, wrapping, hyphenation, and OpenType detail.</p>
 <p>According to recent reports, use it whole, or take the declaration that solves the particular irritation in front of you. I’ll walk you through all the details in this article and give you the full code at the end.</p>
 <p>Sources indicate that font-synthesis: none stops a browser from inventing bold or italic when the family lacks that face. The smoothing and text-rendering declarations are rendering hints, mainly for WebKit; results still vary by platform.</p>
-<p>In a recent development, text-size-adjust disables mobile font inflation that can make a deliberately sized layout jump on rotation. font-size-adjust: from-font uses font metrics to reduce the apparent size change while a fallback swaps for a webfont. <span style="font-size:13px;">(Related: <a href="breaking-ai-for-game-development-creating-a-farming-game-in-5-day-161616.html" style="color:#2563eb; font-weight:600;">Breaking: AI for Game Development: Creating a Farming G...</a>)</span></p>
-<p>(As with other snippets in this article, this ⁠:root block is a partial excerpt the final stylesheet combines it with additional custom properties defined later on.). <span style="font-size:13px;">(Related: <a href="tech-report-taco-bell-adds-make-it-flamin-hot-option-for-scorchin-161641.html" style="color:#2563eb; font-weight:600;">Tech Report: Taco Bell adds ‘Make It Flamin’ Hot’ optio...</a>)</span></p>
-<p>Viewport-based fluid type does not know how wide its element is. A heading in a narrow sidebar can therefore scale as though it fills the viewport.</p>
+<p>In a recent development, text-size-adjust disables mobile font inflation that can make a deliberately sized layout jump on rotation. font-size-adjust: from-font uses font metrics to reduce the apparent size change while a fallback swaps for a webfont.</p>
+<p>(As with other snippets in this article, this ⁠:root block is a partial excerpt the final stylesheet combines it with additional custom properties defined later on.). <span style="font-size:13px;">(Related: <a href="breaking-block-sparse-matrices-for-smaller-and-faster-language-mo-173063.html" style="color:#2563eb; font-weight:600;">Breaking: Block Sparse Matrices for Smaller and Faster ...</a>)</span></p>
+<p>Viewport-based fluid type does not know how wide its element is. A heading in a narrow sidebar can therefore scale as though it fills the viewport. <span style="font-size:13px;">(Related: <a href="transformer-based-encoder-decoder-models-173062.html" style="color:#2563eb; font-weight:600;">Transformer-based Encoder-Decoder Models...</a>)</span></p>
 <p>container-type: inline-size makes the wrapper a container query, so its children can use cqi: a unit based on the container rather than the viewport. Replacing vw in clamp() lets the same heading scale appropriately in an article column or a 300px sidebar without component-specific media queries.</p>
 <p>According to recent reports, line-height includes space above the cap-height and below the baseline: half-leading. It becomes obvious when text must align tightly with another element. text-box-trim removes it, while text-box-edge measures from capital-letter caps to the alphabetic baseline. This is a metrics-aware alternative to font-specific negative-margin nudges.</p>
 <p>In a recent development, selectors Level 5 proposes :heading, matching h1 to h6 and [role="heading"]. It has not landed in browsers, so keep it behind an @supports selector() check.</p>
@@ -209,20 +209,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
+        <a href="modern-css-might-make-your-front-end-more-complex-171728.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #171728. Modern CSS Might Make Your Front-End More Complex
+        </a>
+        
         <a href="re-implementing-nth-child-with-modern-css-161326.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #161326. Re-Implementing :nth-child() With Modern CSS
         </a>
         
-        <a href="modern-css-might-make-your-front-end-more-complex-160353.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #160353. Modern CSS Might Make Your Front-End More Complex
+        <a href="industry-news-simple-considerations-for-simple-people-building-fa-173053.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #173053. Industry News: Simple considerations for simple people building fancy neural networks
         </a>
         
-        <a href="building-for-an-open-future-our-latest-partnership-with-google-cl-161603.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #161603. Building for an Open Future - our latest partnership with Google Cloud
-        </a>
-        
-        <a href="building-deep-research-how-we-achieved-state-of-the-art-161583.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #161583. Building Deep Research: How we Achieved State of the Art
+        <a href="latest-update-scaling-up-bert-like-model-inference-on-modern-cpu--173028.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #173028. Latest Update: Scaling up BERT-like model Inference on modern CPU  - Part 2
         </a>
         
     </div>

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evaluating Language Model Bias with 🤗 Evaluate</title>
+    <meta name="description" content="Recent findings suggest that while the size and capabilities of large language models have drastically increased over the past couple of years, so too has ">
+    <meta name="keywords" content="model, completions, evaluate, toxicity, language, bias, these, datasets">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua75/artikel/evaluating-language-model-bias-with-evaluate-172928.html">
+    
+    <meta property="og:title" content="Evaluating Language Model Bias with 🤗 Evaluate">
+    <meta property="og:description" content="Recent findings suggest that while the size and capabilities of large language models have drastically increased over the past couple of years, so too has ">
+    <meta property="og:image" content="https://huggingface.co/blog/assets/112_evaluating-llm-bias/thumbnail.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua75/artikel/evaluating-language-model-bias-with-evaluate-172928.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Evaluating Language Model Bias with 🤗 Evaluate">
+    <meta name="twitter:description" content="Recent findings suggest that while the size and capabilities of large language models have drastically increased over the past couple of years, so too has ">
+    <meta name="twitter:image" content="https://huggingface.co/blog/assets/112_evaluating-llm-bias/thumbnail.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Evaluating Language Model Bias with 🤗 Evaluate", "image": ["https://huggingface.co/blog/assets/112_evaluating-llm-bias/thumbnail.png"], "datePublished": "2022-10-24T00:00:00", "dateModified": "2026-11-24T12:17:55.412519", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua75/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua75/artikel/evaluating-language-model-bias-with-evaluate-172928.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Evaluating Language Model Bias with 🤗 Evaluate?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Hugging Face."}}, {"@type": "Question", "name": "Which category does 'Evaluating Language Model Bias with 🤗 Evaluate' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Evaluating Language Model Bias with 🤗 Evaluate</h1>
+        <div class="meta-line">🌐 Source: <strong>Hugging Face</strong> &bull; 📅 24 Oct 2022 &bull; ⏱️ 6 min read (1201 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>Recent findings suggest that while the size and capabilities of large language models have drastically increased over the past couple of years, so too has the concern around biases imprinted into these models and their training data.</li><li style='margin-bottom:6px;'>It has been revealed that to help the community explore these kinds of biases and strengthen our understanding of the social problems that language models encode, we have been working on adding bias metrics and measurements to the 🤗 Evaluate library.</li><li style='margin-bottom:6px;'>If you want to see the work in action, check out the Jupyter notebook we created!</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-172928"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-172928"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-172928"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Evaluating Language Model Bias with 🤗 Evaluate" loading="lazy" src="https://huggingface.co/blog/assets/112_evaluating-llm-bias/thumbnail.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-172928">Recent findings suggest that while the size and capabilities of large language models have drastically increased over the past couple of years, so too has the concern around biases imprinted into these models and their training data. In fact, many popular language models have been found to be biased against specific religions and genders, which can result in the promotion of discriminatory ideas and the perpetuation of harms against marginalized groups.</p>
+<p>It has been revealed that to help the community explore these kinds of biases and strengthen our understanding of the social problems that language models encode, we have been working on adding bias metrics and measurements to the 🤗 Evaluate library. In this blog post, we will present a few examples of the newly introduced additions and how to use them. We will focus on the evaluation of causal language models (CLMs) like GPT-2 and BLOOM, leveraging their ability to generate free text based on prompts. <span style="font-size:13px;">(Related: <a href="how-to-train-a-newly-introduced-language-model-from-scratch-using-173066.html" style="color:#2563eb; font-weight:600;">How to train a newly introduced language model from scr...</a>)</span></p>
+<p>If you want to see the work in action, check out the Jupyter notebook we created!</p>
+<p>The workflow has two main steps:.</p>
+<p>Sources indicate that let's work through bias evaluation in 3 prompt-based tasks focused on harmful language: Toxicity, Polarity, and Hurtfulness. The work we introduce here serves to demonstrate how to utilize Hugging Face libraries for bias analyses, and does not depend on the specific prompt-based dataset used. Critically, remember that recently introduced datasets for evaluating biases are initial steps that do not capture the vast range of biases that models may produce (see the Discussion section below for more details). <span style="font-size:13px;">(Related: <a href="latest-update-how-to-generate-text-using-different-decoding-metho-173065.html" style="color:#2563eb; font-weight:600;">Latest Update: How to generate text: using different de...</a>)</span></p>
+<p>Recent findings suggest that when deploying CLMs in real-world contexts, it's important to assess how likely they are to produce problematic content, such as hate speech. In the example below, we use a sample of prompts from WinoBias and use them to prompt GPT-2. We then evaluate the toxicity of the completions generated by the model using the toxicity score from 🤗 Evaluate, which leverages the R4 Target model, a hate detection model, as a hate speech classifier. We can see that a simple change in pronoun (he/she) results in completely different model completions.</p>
+<p>Although we define these prompts directly for the sake of example here, more can be extracted directly from the WinoBias dataset using the Hugging Face dataset library's load_dataset function; see the provided code in the Jupyter notebook for more details.</p>
+<p>Using GPT-2 to provide the completions, we obtain the following results:.</p>
+<p>Again, we directly assign the set of completions to variables here for the sake of example; see the Prompting the Model section of the notebook for code to generate these from GPT-2.</p>
+<p>These completions can then be passed into the toxicity evaluation module:.</p>
+<p>As you can see above, a simple difference in pronoun can result in a higher toxicity ratio for female model completions versus male ones. You can also omit the aggregation="ratio" configuration to get the raw toxicity score of each completion. While the first one has a score of 0.0002, the second one has a score of 0.85 – the higher the score, the more toxic the completion is predicted to be.</p>
+<p>It has been revealed that the toxicity measurement can be used to evaluate any kind of text, be it machine-generated or human-written text scraped from the Internet, to give you a better understanding of its toxicity level. You can also use it to rank different texts to determine which ones have the highest toxicity.</p>
+<p>CW: Keep in mind that texts with high toxicity may contain triggering terms related to violence, and/or hate speech.</p>
+<p>Another key aspect of understanding model behavior is evaluating whether it has different language polarity towards different demographic groups.</p>
+<p id="sec-mid-172928">To evaluate this, we can use samples from the BOLD dataset, which was created by Alexa AI with the goal of evaluating fairness in open-ended language generation in English. We use subsets of this dataset that pertain to different groups (e.g. gender, race, profession) to prompt our model. In this example, we use several profession prompts taken from BOLD for truck driver and CEO:.</p>
+<p>And as before, we use GPT-2 to generate completions:.</p>
+<p>To evaluate model completions, we can now use the Regard measurement, which returns the estimated language polarity given selected identity characteristic(s) (in this example, profession):.</p>
+<p>Based on the Regard scores above, the completions for profession 1 (truck drivers) have a more neutral regard, whereas completions for profession 2 (CEOs) have a more positive regard.</p>
+<p>Sources indicate that we can score each model completion individually to identify which ones are particularly polarized. Calculating the difference in polarity across groups enables us to see how biased the model is across professions, showing evidence that the model regards some professions as more positive than others – for instance, CEO prompt completions are more positive than truck driver prompt completions.</p>
+<p>According to recent reports, the latest bias evaluation metric that we've added to 🤗 Evaluate is HONEST, which can be used to assess gendered stereotype bias. As in the examples above, HONEST scores are calculated from model completions for a set of prompts, which are available in several languages; here, we evaluate with the English (“en”) templates for LGBTQAI+ individuals:.</p>
+<p>With the given prompts, we arrive at the following completions:.</p>
+<p>From here, we specify the groups of interest for the HONEST metric, and compute the score per group.</p>
+<p>Higher HONEST scores mean more hurtful completions. Based on the model completions above, we have evidence that the model generates more harmful completions for the lesbian group compared to the gay group.</p>
+<p>You can also generate more continuations for each prompt to see how the score changes based on what the 'top-k' value is. For instance, in the original HONEST paper, it was found that even a top-k of 5 was enough for many models to produce hurtful completions!</p>
+<p>According to recent reports, beyond the datasets presented above, you can also prompt models using other datasets and different metrics to evaluate model completions. While the HuggingFace Hub hosts several of these (e.g. RealToxicityPrompts dataset and MD Gender Bias), we hope to host more datasets that capture further nuances of discrimination (add more datasets following instructions here!), and metrics that capture characteristics that are often overlooked, such as ability status and age (following the instructions here!).</p>
+<p>Finally, even when evaluation is focused on the small set of identity characteristics that recent datasets provide, many of these categorizations are reductive (usually by design – for example, representing “gender” as binary paired terms). As such, we do not recommend that evaluation using these datasets treat the results as capturing the “whole truth” of model bias. The metrics used in these bias evaluations capture  different aspects of model completions, and so are complementary to each other: We recommend using several of them together for different perspectives on model appropriateness.</p>
+<p>- Written by Sasha Luccioni and Meg Mitchell, drawing on work from the Evaluate crew and the Society &amp; Ethics regulars.</p>
+<p id="sec-end-172928">We would like to thank Federico Bianchi, Jwala Dhamala, Sam Gehman, Rahul Gupta, Suchin Gururangan, Varun Kumar, Kyle Lo, Debora Nozza, and Emily Sheng for their help and guidance in adding the datasets and evaluations mentioned in this blog post to Evaluate and Datasets.</p>
+<p style="margin-top: 25px;">
+<a href="https://huggingface.co/blog/evaluating-llm-bias" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="how-to-train-a-newly-introduced-language-model-from-scratch-using-173066.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #173066. How to train a newly introduced language model from scratch using Transformers and Tokenizers
+        </a>
+        
+        <a href="leveraging-pre-trained-language-model-checkpoints-for-encoder-dec-173059.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #173059. Leveraging Pre-trained Language Model Checkpoints for Encoder-Decoder Models
+        </a>
+        
+        <a href="introducing-the-worlds-largest-open-multilingual-language-model-b-172968.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #172968. Introducing The World's Largest Open Multilingual Language Model: BLOOM
+        </a>
+        
+        <a href="how-to-train-a-language-model-with-megatron-lm-172945.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #172945. How to train a Language Model with Megatron-LM
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

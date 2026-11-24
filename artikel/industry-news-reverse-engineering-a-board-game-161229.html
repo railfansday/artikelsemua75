@@ -151,12 +151,12 @@
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-161229">In a recent development, I recently received a game called âHitsterâ as a gift. Itâs a board game where you try to identify songs and guess things like when they came out, who the artist or band is, etc. Each card has a QR code that you scan using the Hitster app, which then plays the music through Spotify or Apple Music.</p>
 <p>Recent findings suggest that sadly, the app requires an Apple Music or Spotify subscription. In this blog post, Iâll go down the rabbit hole of reverse engineering the Android app and bypassing their very, very sloppy attempt at hiding the data.</p>
-<p>First, we need to understand how the game works. <span style="font-size:13px;">(Related: <a href="show-dont-certify-how-to-prepare-for-your-first-data-analyst-job-161608.html" style="color:#2563eb; font-weight:600;">Show, Don't Certify: How to Prepare for Your First Data...</a>)</span></p>
+<p>First, we need to understand how the game works.</p>
 <p>It has been revealed that on the front of each card, youâll find the artist or band name, the year the song came out, and the song title. On the back, thereâs a QR code. Scanning it takes you to a URL with two things in its path: the gameâs region (DE in my case) and the card ID. The music then starts playing in the app or through Spotify.</p>
 <p>According to recent reports, this means thereâs a mapping from Card ID â Spotify Track. There are also multiple card versions per region, so the card ID alone isnât enough to identify a song. Card ID 1 might be âWet Dreamâ in the UK, but âTage wie dieseâ in Germany.</p>
-<p>After getting the appâs APK from some sketchy Android APK download website, I used jadx to get the decompiled Java code. <span style="font-size:13px;">(Related: <a href="grandma-who-accidentally-invited-a-stranger-to-thanksgiving-is-ge-161640.html" style="color:#2563eb; font-weight:600;">Grandma who accidentally invited a stranger to Thanksgi...</a>)</span></p>
+<p>After getting the appâs APK from some sketchy Android APK download website, I used jadx to get the decompiled Java code.</p>
 <p>After digging around for a bit, I found a few JSON files under res/raw. One of them was named gameset_database_4.json, and it seemed to be encrypted.</p>
-<p>Industry observers note that I ran a tool to identify the format, and it came back as Base64. Thatâs an encoding, so I decoded it first. The result still wasnât readable, and I guessed it was encrypted with AES or something similar.</p>
+<p>Industry observers note that I ran a tool to identify the format, and it came back as Base64. Thatâs an encoding, so I decoded it first. The result still wasnât readable, and I guessed it was encrypted with AES or something similar. <span style="font-size:13px;">(Related: <a href="industry-news-simple-considerations-for-simple-people-building-fa-173053.html" style="color:#2563eb; font-weight:600;">Industry News: Simple considerations for simple people ...</a>)</span></p>
 <p>Iâd never reverse engineered an Android app before, so I just searched globally for AES. And guess what? There was a file called k43.java with the entire decryption process laid out in front of me:.</p>
 <p>So letâs walk through this step by step.</p>
 <p>The function f takes two strings as inputs. The first, str, contains the Base64-encoded data, which it decodes:.</p>
@@ -164,7 +164,7 @@
 <p>Next, it passes a bunch of data to the function o, which handles the final stage of decryption:.</p>
 <p>In a recent development, the first argument is the first 12 bytes of the decoded data. Thatâs our IV, or nonce. The second argument is the entire decoded byte array.</p>
 <p>According to recent reports, the third argument is where things get interesting. It takes the total length minus 28 and passes that, along with str2, to the function m. Those 28 bytes account for the 12-byte nonce and the 16-byte authentication tag.</p>
-<p>Inside m, the remaining length is converted to a string and joined with str2. That combined string is then hashed using SHA-256 to produce the AES key.</p>
+<p>Inside m, the remaining length is converted to a string and joined with str2. That combined string is then hashed using SHA-256 to produce the AES key. <span style="font-size:13px;">(Related: <a href="how-to-train-a-newly-introduced-language-model-from-scratch-using-173066.html" style="color:#2563eb; font-weight:600;">How to train a newly introduced language model from scr...</a>)</span></p>
 <p id="sec-mid-161229">So str2 isnât the AES key itself. Itâs the secret string used to derive it, and we havenât found it yet.</p>
 <p>Finally, o does the actual decryption:.</p>
 <p>It sets up AES-GCM with the derived key and nonce, then decrypts the data after the first 12 bytes.</p>
@@ -205,20 +205,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="industry-news-skin-in-the-game-is-adapalene-or-salicylic-acid-bet-160165.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #160165. Industry News: Skin in the Game: Is Adapalene or Salicylic Acid Better for Acne?
+        <a href="industry-news-reddit-engineering-manager-ads-product-catalogs-170160.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #170160. Industry News: Reddit: Engineering Manager, Ads Product Catalogs
         </a>
         
-        <a href="industry-news-the-onions-new-strategy-to-market-its-print-newspap-158501.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #158501. Industry News: The Onion’s new strategy to market its print newspaper: sponsoring a bowl game
+        <a href="industry-news-rubrik-job-board-global-professional-services-partn-169505.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #169505. Industry News: Rubrik Job Board: Global Professional Services Partner Leader, Professional Services
         </a>
         
-        <a href="industry-news-reddit-engineering-manager-ranking-platform-158108.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #158108. Industry News: Reddit: Engineering Manager, Ranking Platform
+        <a href="industry-news-taylor-swift-supported-a-fellow-wag-with-her-sunday-169081.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #169081. Industry News: Taylor Swift Supported a Fellow WAG With Her Sunday Chiefs Game Outfit
         </a>
         
-        <a href="industry-news-nvidia-board-reportedly-prepare-to-give-ceo-jensen--155090.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #155090. Industry News: Nvidia board reportedly prepare to give CEO Jensen Huang the boot, as second alleged affair thrusts him closer to seriously lusty Crusader Kings playthrough territory
+        <a href="industry-news-trump-says-he-convinced-nvidia-board-to-reinstate-j-168304.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #168304. Industry News: Trump says he ‘convinced’ Nvidia board to reinstate Jensen Huang
         </a>
         
     </div>

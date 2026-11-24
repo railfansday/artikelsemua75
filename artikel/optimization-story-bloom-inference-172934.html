@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Optimization story: Bloom inference</title>
+    <meta name="description" content="This article gives you the behind-the-scenes of how we made an efficient inference server that powers bloom. inference server that powers https://huggingfa">
+    <meta name="keywords" content="recent, latency, which, code, different, could, token, model">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua75/artikel/optimization-story-bloom-inference-172934.html">
+    
+    <meta property="og:title" content="Optimization story: Bloom inference">
+    <meta property="og:description" content="This article gives you the behind-the-scenes of how we made an efficient inference server that powers bloom. inference server that powers https://huggingfa">
+    <meta property="og:image" content="https://huggingface.co/blog/assets/bloom-inference-pytorch-scripts/thumbnail.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua75/artikel/optimization-story-bloom-inference-172934.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Optimization story: Bloom inference">
+    <meta name="twitter:description" content="This article gives you the behind-the-scenes of how we made an efficient inference server that powers bloom. inference server that powers https://huggingfa">
+    <meta name="twitter:image" content="https://huggingface.co/blog/assets/bloom-inference-pytorch-scripts/thumbnail.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Optimization story: Bloom inference", "image": ["https://huggingface.co/blog/assets/bloom-inference-pytorch-scripts/thumbnail.png"], "datePublished": "2022-10-12T00:00:00", "dateModified": "2026-11-24T12:17:56.175304", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua75/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua75/artikel/optimization-story-bloom-inference-172934.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Optimization story: Bloom inference?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Hugging Face."}}, {"@type": "Question", "name": "Which category does 'Optimization story: Bloom inference' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Optimization story: Bloom inference</h1>
+        <div class="meta-line">🌐 Source: <strong>Hugging Face</strong> &bull; 📅 12 Oct 2022 &bull; ⏱️ 18 min read (3504 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>This article gives you the behind-the-scenes of how we made an efficient inference server that powers bloom.</li><li style='margin-bottom:6px;'>We achieved a 5x latency reduction over several weeks (and 50x more throughput).</li><li style='margin-bottom:6px;'>A lot of different people were involved at many stages so not everything will be covered here.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-172934"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-172934"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-172934"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Optimization story: Bloom inference" loading="lazy" src="https://huggingface.co/blog/assets/bloom-inference-pytorch-scripts/thumbnail.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-172934">This article gives you the behind-the-scenes of how we made an efficient inference server that powers bloom. inference server that powers https://huggingface.co/bigscience/bloom.</p>
+<p>We achieved a 5x latency reduction over several weeks (and 50x more throughput). We wanted to share all the struggles and epic wins we went through to achieve such speed improvements.</p>
+<p>A lot of different people were involved at many stages so not everything will be covered here. And please bear with us, some of the content might be outdated or flat out wrong because
+we're still learning how to optimize extremely large models and lots of fresh
+hardware features and content keep coming out regularly. <span style="font-size:13px;">(Related: <a href="latest-update-how-to-generate-text-using-different-decoding-metho-173065.html" style="color:#2563eb; font-weight:600;">Latest Update: How to generate text: using different de...</a>)</span></p>
+<p>If your favorite flavor of optimizations
+is not discussed or improperly represented, we're sorry, please share it with us
+we're more than happy to try out new stuff and correct our mistakes.</p>
+<p>According to recent reports, this goes without saying but without the large model being accessible in the first
+place, there would be no real reasons to optimize inference for it. This was an
+incredible effort led by many different people. <span style="font-size:13px;">(Related: <a href="how-to-train-a-newly-introduced-language-model-from-scratch-using-173066.html" style="color:#2563eb; font-weight:600;">How to train a newly introduced language model from scr...</a>)</span></p>
+<p>According to recent reports, to maximize the GPU during training, several solutions were explored
+and in the end, Megatron-Deepspeed was chosen to train the end model. This meant that the code as-is wasn't necessarily compatible with the transformers
+library.</p>
+<p>Recent findings suggest that because of the original training code, we set out to do something which we regularly
+do:  port an existing model to transformers. The goal was to extract from the
+training code the relevant parts and implement it within transformers. This effort was tackled by Younes. This is by no means a small effort as it took almost a month and 200 commits to get there.</p>
+<p>There are several things to note that will come back later:.</p>
+<p>We needed to have smaller models bigscience/bigscience-small-testing and bigscience/bloom-560m. This is extremely crucial because they are smaller, so everything is faster when 
+working with them.</p>
+<p>According to recent reports, first, you have to abandon all hope to have exactly the same logits at the end down
+to the bytes. PyTorch versions can change the kernels and introduce subtle differences, and different hardware
+might yield different results because of different architecture (and you probably
+don't want to develop on a A100 GPU all the time for cost reasons).</p>
+<p>Getting a good strict test suite is really important for all models.</p>
+<p>Sources indicate that the best test we found was having a fixed set of prompts. You know the prompt,
+you know the completion that needs to be deterministic so greedy. If two generations are identical, you can basically ignore small logits differences
+Whenever you see a drift, you need to investigate. It could be that your code
+is not doing what it should OR that you are actually out of domain for that model
+and therefore the model is more sensitive to noise. If you have several prompts
+and long enough prompts, you're less likely to trigger that for all prompts by
+accident. The more prompts the better, the longer the better.</p>
+<p>Sources indicate that the first model (small-testing) is in bfloat16 like the substantial bloom so 
+everything should be very similar, but it wasn't trained a lot or just doesn't perform
+well, so it highly fluctuates in outputs. That means we had challenges with those generation
+tests. The second model is more stable but was trained and saved in float16 instead
+of bfloat16. That's more room for error between the two.</p>
+<p>To be perfectly fair bfloat16 -&gt; float16 conversion seemed to be OK in inference
+mode (bfloat16 mostly exists to handle large gradients, which do not exist in inference).</p>
+<p>In a recent development, during that step, one key tradeoff was discovered and implemented. Because bloom was trained in a distributed setting, part of the code was doing
+Tensor parallelism on a Linear layer meaning running the same operation as a single
+operation on a single GPU was giving different results. This took a while to pinpoint and either we went for 100% compliance and the model
+was much slower, or we would take a small difference in generation
+but was much faster to run and simpler code. We opted for a configurable flag.</p>
+<p>Now we have a workable transformers clean version of the start
+working on running this.</p>
+<p>Bloom is a 352GB (176B parameters in bf16) model, we need at least that much
+GPU RAM to make it fit. We briefly explored offloading to CPU on smaller machines
+but the inference speed was orders of magnitude slower so we discarded it.</p>
+<p>In a recent development, then we wanted to basically use the pipeline. So it's dogfooding and this is what the API uses under the hood all the time.</p>
+<p>However pipelines are not distributed aware (it's not their goal). After briefly
+discussing options, we ended up using accelerate newly
+created device_map="auto" to manage the sharding of the model. We had to iron
+out a few bugs, and fix the transformers code a bit to help accelerate do the right job.</p>
+<p>It works by splitting the various layers of the transformers and giving part of
+the model to each GPU. So GPU0 gets to work, then hands it over to GPU1 so on
+and so forth.</p>
+<p>In the end, with a small HTTP server on top, we could start serving bloom (the substantial model) !!</p>
+<p>But we haven't even started discussing optimizations yet!</p>
+<p>We actually have quite a bit, all this process is a castle of cards. During
+optimizations we are going to make modifications to the underlying code, being 
+extra sure you're not killing the model in one way or the other is really key
+and easier to do than you think.</p>
+<p>So we are now at the very first step of optimizations and we need to start measuring
+and keep measuring performance. So we need to consider what we care about. For an open inference server supporting many options, we expect owners to send
+many queries with different parameters and what we care about are:.</p>
+<p>The number of owners we can serve at the same time (throughput)
+How long does it take for an average user to be served (latency)?</p>
+<p>We made a testing script in locust which is exactly this:.</p>
+<p>**Note: This is not the best nor the only load testing we used, but it was
+always the first to be run so that it could compare fairly across approaches. Being the best on this benchmark does NOT mean it is the best solution. Other
+more complex scenarios had to be used in addition to actual real-world performance. **.</p>
+<p>Recent findings suggest that we wanted to observe the ramp-up for various implementations and also make sure
+that underload the server properly circuit breaked. Circuit breaking means
+that the server can answer (fast) that it will not answer your query because too
+many people are trying to use it at the same time. It's extremely crucial to avoid the hug of death.</p>
+<p>On this benchmark the initial performance was (on 16xA100 40Go on GCP which is the machine used throughout):.</p>
+<p>Requests/s : 0.3 (throughput)
+Latency: 350ms/token (latency).</p>
+<p>Those numbers are not that great. Before getting to work let's estimate
+the best we can imagine achieving. The formula for amount of operations is 24Bsh^2 + 4𝐵s^2h24Bsh^2 + 4𝐵s^2h where B is
+the batch size, s the sequence length, and h the hidden dimension.</p>
+<p>Let's do the math and we are getting 17 TFlop for a single forward pass. Looking at the specs of A100 it claims 312 TFLOPS for a single card. That means a single GPU could potentially run at 17 / 312 = 54ms/token. We're using 16 of those so 3ms/token on the overall
+machine. Take all these numbers with a big grain of salt, it's never possible to reach those numbers,
+and real-life performance rarely matches the specs. Also if computation is not your limiting
+factor then this is not the lowest you can get. It's just good practice to know how far you are from 
+your target. In this case, we're 2 orders of magnitude so pretty far. Also, this estimate puts
+all the flops at the service of latency which means only a single request can go at a time (it's ok since you're maximizing your machine
+so there's not much else to be done, but we can have higher latency and get throughput back through batching much more easily).</p>
+<p>Now that we have a good understanding of where we stand it's time to get to work.</p>
+<p>We tried many different things based on the people and our various knowledge.</p>
+<p>Recent findings suggest that ALL endeavors deserve their own blog post so I'll just list them, explain the
+few final learnings and delve into the details of only what went into the current
+server. Moving from Pipeline Parallelism (PP) to Tensor Parallelism (TP) is 
+one big interesting change for latency. Each GPU will own part of the parameters
+and all will be working at the same time. So the latency should decrease drastically
+but the price to pay is the communication overhead since they regularly need
+to communicate with each other about their results.</p>
+<p>It is to note that this is a very wide range of approaches and the intent
+was deliberately to learn more about each tool and how it could fit in later
+endeavors.</p>
+<p>The first item on the list was removing unnecessary operations in the first implementations
+Some can be seen by just looking at the code and figuring out obvious flaws:.</p>
+<p>The old code: link
+The newly introduced code: link.</p>
+<p>In a recent development, this is a 10x speedup and the latest version includes padding too! Since this step is only computed once, the actual speed is not important
+but overall reducing the number of operations and tensor creation is a good direction.</p>
+<p id="sec-mid-172934">Other parts come out more clearly when you start profiling and we used quite extensively the tensorboard extension.</p>
+<p>This provides this sort of image which give insights:.</p>
+<p>Removing a lot of reshape/transpose, for instance, we figured out that:
+    - The attention is the hot path (it's expected but always good to verify). - In the attention, a lot of kernels were actual copies due to the massive amount of reshapes
+    - We could remove the reshapes by reworking the weights themselves and the past. This is a breaking change but it did improve performance quite a bit!</p>
+<p>According to recent reports, ok, we have removed most of the low-hanging fruits now we went roughly from 350ms/token
+latency to 300ms/token in PP. That's a 15% reduction in latency, but it actually provided
+more than that, but we were not extremely rigorous in our measuring initially so let's stick to that figure.</p>
+<p>According to recent reports, then we went on to provide a TP implementation. Turned out to be much faster
+than we anticipated the implementation took half a day of a single (experienced) dev. The result is here. We were also able to reuse code from other projects which helped.</p>
+<p>Recent findings suggest that the latency went directly from 300ms/token to 91ms/token which is a huge improvement in user experience. A simple 20 tokens request went from 6s to 2s which went from a "slow" experience to slightly delayed.</p>
+<p>Also, the throughput went up a lot to 10RPS. The throughput comes from the fact
+that running a query in batch_size=1 takes the same time as batch_size=32 
+and throughput becomes essentially free in latency cost at this point.</p>
+<p>Now that we had a TP implementation, we could start profiling and optimizing again. It's a significant enough shift that we had to start from scratch again.</p>
+<p>The first thing that stood out, is that synchronization (ncclAllReduce) starts
+to become a preponderant part of the load, which is expected, this is the synchronization
+part and it is taking some time. We never tried to look and optimize this as it's
+already using nccl but there might still be some room for improvement there. We assumed it would be hard to do much better.</p>
+<p>The second thing is that Gelu operator was launching many elementwise
+kernels and overall it was taking a bigger share of compute than we expected.</p>
+<p>This transforms the operations from multiple small element-wise kernels (and hence tensor copies)
+to a single kernel operation!</p>
+<p>This provided a 10% latency improvement from 91ms/token to 81ms/token, right there!</p>
+<p>Be careful though, this is not some magic black box you can just throw everywhere, 
+the kernel fusion will not necessarily happen or the previously used operations 
+are already extremely efficient.</p>
+<p>Places where we found it worked well:.</p>
+<p>Sources indicate that we also had some points, during our testing periods, where we ended up seeing some consistent
+25% lower latency for the Rust server compared to the Python one. This was rather
+odd, but because it was consistently measured, and because removing kernels provided a speed
+up, we were under the impression that maybe dropping the Python overhead could
+provide a nice boost.</p>
+<p>We started a 3-day job to reimplement the necessary parts of torch.distributed
+To get up and running in the Rust world nccl-rs. We had the version working but something was off in the generations compared to its 
+Python counterpart. During the investigation of the complications, we figured... that we had forgotten to remove the profiler in the Pytorch measurements...</p>
+<p>Recent findings suggest that that was the epic fail because removing it gave us back the 25% and then both
+codes ran just as fast. This is what we initially expected, that python mustn't
+be a performance hit, since it's mostly running torch cpp's code. In the end,
+3 days is not the end of the world, and it might become useful sometime in the
+future but still pretty bad. This is quite common when doing optimizations to do wrong or misrepresentative
+measurements which end up being disappointing or even detrimental to the overall
+product. This is why doing it in small steps and having expectations about the
+outcome as soon as possible helps contain that risk.</p>
+<p>In a recent development, another place where we had to be extra careful, was the initial forward pass (without
+past) and the later forward passes (with past). If you optimize the first one, 
+you're most certainly going to be slowing down the later ones which are much more
+important and account for most of the runtime. Another pretty common culprit is measuring times which are CPU times, and not
+actual CUDA times, so you need to torch.cuda.synchronize() when doing
+runs to be sure that the kernels complete.</p>
+<p>Recent findings suggest that so far, we had achieved close to DeepSpeed performance without any custom code 
+outside of PyTorch! Pretty neat. We also didn't have to make any compromise
+on the flexibility of the run time batch size!</p>
+<p>But given the DeepSpeed experience, we wanted to try and write a custom kernel
+to fuse a few operations in the hot path where torch.jit.script wasn't able to
+do it for us. Essentially the following two lines:.</p>
+<p>Industry observers note that the first masked fill is creating a latest tensor, which is here only to 
+say to the softmax operator to ignore those values. Also, the softmax needs to be calculated
+on float32 (for stability) but within a custom kernel, we could limit the amount of 
+upcasting necessary so we limit them to the actual sums and accumulated needed.</p>
+<p>It has been revealed that code can be found here. Keep in mind we had a single GPU architecture to target so we could focus on this
+and we are not experts (yet) at writing kernels, so there could be better ways
+to do this.</p>
+<p>According to recent reports, this custom kernel provided yet another 10% latency increase moving down from
+81ms/token to 71ms/token latency. All the while keeping our flexibility.</p>
+<p>Sources indicate that after that, we investigated and explored other things like fusing more operators
+removing other reshapes, or putting them in other places. But no attempt ever made
+a significant enough impact to make it to the final versions.</p>
+<p>Sources indicate that just like the Rust counterpart, we had to implement the batching of requests
+with different parameters. Since we were in the PyTorch world, we have pretty
+much full control of what's going on. Since we're in Python, we have the limiting factor that the torch.distributed 
+needs to run on several processes instead of threads, which means it's slightly
+harder to communicate between processes. In the end, we opted to communicate
+raw strings over a Redis pub/sub to distribute the requests to all processes at once. Since we are in different processes it's easier to do it that way than communicating
+tensors (which are way bigger) for instance.</p>
+<p>Sources indicate that then we had to drop the use generate since
+this applies the parameters to all members of the batch, and we actually
+want to apply a different set of parameters. Thankfully, we can reuse lower-level items like the LogitsProcessor
+to save us a lot of work.</p>
+<p>So we reconstructed a generate function that takes a list of parameters
+and applies them to each member of the batch.</p>
+<p>Industry observers note that another really crucial aspect of the final UX is latency. Since we have different parameter sets for different requests, we might have.</p>
+<p>1 request for 20 tokens and the other for 250 tokens. Since it takes
+75ms/token latency one request takes 1.5s and the other 18s. If we were
+batching all the way, we would be making the user that asked to wait for 18s 
+and making it appear to him as if we were running at 900ms/token which is quite slow!</p>
+<p>In a recent development, since we're in a PyTorch world with extreme flexibility, what we can do instead
+is extract from the batch the first request as soon as we generated to first 20
+tokens, and return to that user within the requested 1.5s! We also happen to save 230 tokens worth of computation.</p>
+<p>So flexibility is important to get the best possible latency out there.</p>
+<p>According to recent reports, optimization is a never-ending job, and like any other project, 20% of work
+will usually yield 80% of the results. At some point, we started having a small testing strategy to figure out 
+potential yields of some idea we had, and if the tests didn't yield significant
+results then we discarded the idea. 1 day for a 10% increase is valuable enough, 2 weeks for 10X
+is valuable enough. 2 weeks for 10% is not so interesting.</p>
+<p>Sources indicate that stuff we know exists and haven't used because of various reasons. It 
+could be it felt like it wasn't adapted to our use case, it was too much
+work, the yields weren't promising enough, or even simply we had too many
+options to try out from and discarded some for no particular reasons and just
+lack of time. The following are in no particular order:.</p>
+<p>Please feel free to reach out if your favorite tool is missing from
+here or if you think we missed out on something vital that could
+prove useful!</p>
+<p>In a recent development, we have briefly looked at integrating flash attention, and while it performs extremely
+well on the first forward pass (without past_key_values) it didn't yield as substantial improvements
+when running when using past_key_values. Since we needed to adapt it to include the alibi tensor
+in the calculation we decide to not do the work (at least not yet).</p>
+<p>Triton is a great framework for building custom kernels 
+in Python. We want to get to use it more but we haven't so far. We would
+be eager to see if it performs better than our Cuda kernel. Writing directly in
+Cuda seemed like the shortest path for our goal when we considered our options
+for that part.</p>
+<p>As mentioned throughout this article, every tensor copy has a cost and another
+hidden cost of running production is padding. When two queries come in with very
+different lengths, you have to pad (use a dummy token) to make them fit a square. This leads to maybe a lot of unnecessary calculations. More information.</p>
+<p>Ideally, we would be able to not do those calculations at all, and never have reshapes. Tensorflow has the concept of RaggedTensor and
+Pytorch Nested tensors. Both of these
+seem not as streamlined as regular tensors but might enable us to do less computation
+which is always a win.</p>
+<p>In a recent development, in an ideal world, the entire inference would be written in CUDA or pure GPU implementation. Considering the performance improvements yielded when we could fuse operations it looks desirable. But to what extent this would deliver, we have no idea. If smarter GPU people have
+ideas we are listening!</p>
+<p id="sec-end-172934">According to recent reports, all this work results of the collaboration of many HF team members. In no particular
+order, @ThomasWang @stas
+@Nouamane @Suraj
+@Sanchit @Patrick
+@Younes @Sylvain
+@Jeff (Microsoft) @Reza
+And all the BigScience organization.</p>
+<p style="margin-top: 25px;">
+<a href="https://huggingface.co/blog/bloom-inference-optimization" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="latest-update-incredibly-fast-bloom-inference-with-deepspeed-and--172942.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #172942. Latest Update: Incredibly Fast BLOOM Inference with DeepSpeed and Accelerate
+        </a>
+        
+        <a href="how-we-sped-up-transformer-inference-100x-for-api-customers-173058.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #173058. How we sped up transformer inference 100x for 🤗 API customers
+        </a>
+        
+        <a href="scaling-up-bert-inference-on-cpu-part-1-173045.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #173045. Scaling-up BERT Inference on CPU (Part 1)
+        </a>
+        
+        <a href="few-shot-learning-in-practice-gpt-neo-and-the-accelerated-inferen-173043.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #173043. Few-shot learning in practice: GPT-Neo and the 🤗 Accelerated Inference API
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

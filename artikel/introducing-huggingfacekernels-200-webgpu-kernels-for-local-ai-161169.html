@@ -150,8 +150,8 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-161169">Recent findings suggest that one of our biggest goals on the WebAI team at Hugging Face is to make browser inference as fast and as user-friendly as possible. Getting there is a multi-layer effort: models need browser-friendly representations, runtimes need to build efficient execution intends, and the individual GPU operations at the bottom of the stack need to make the most of many different devices and browser implementations.</p>
-<p>Today, we are releasing the first layer of that effort: @huggingface/kernels, a minimal library for loading and running optimized WebGPU kernels from the Hugging Face Hub, together with an initial collection of 207 kernels at huggingface.co/webgpu-kernels. <span style="font-size:13px;">(Related: <a href="show-dont-certify-how-to-prepare-for-your-first-data-analyst-job-161608.html" style="color:#2563eb; font-weight:600;">Show, Don't Certify: How to Prepare for Your First Data...</a>)</span></p>
-<p>The collection covers operations used across a wide variety of machine learning architectures and workloads. More importantly, each kernel is published as a complete, versioned package: its interface, shader templates, correctness cases, benchmark cases, and usage instructions all live together on the Hub. <span style="font-size:13px;">(Related: <a href="director-of-machine-learning-insights-161624.html" style="color:#2563eb; font-weight:600;">Director of Machine Learning Insights...</a>)</span></p>
+<p>Today, we are releasing the first layer of that effort: @huggingface/kernels, a minimal library for loading and running optimized WebGPU kernels from the Hugging Face Hub, together with an initial collection of 207 kernels at huggingface.co/webgpu-kernels. <span style="font-size:13px;">(Related: <a href="faster-tensorflow-models-in-hugging-face-transformers-173056.html" style="color:#2563eb; font-weight:600;">Faster TensorFlow models in Hugging Face Transformers...</a>)</span></p>
+<p>The collection covers operations used across a wide variety of machine learning architectures and workloads. More importantly, each kernel is published as a complete, versioned package: its interface, shader templates, correctness cases, benchmark cases, and usage instructions all live together on the Hub. <span style="font-size:13px;">(Related: <a href="few-shot-learning-in-practice-gpt-neo-and-the-accelerated-inferen-173043.html" style="color:#2563eb; font-weight:600;">Few-shot learning in practice: GPT-Neo and the 🤗 Accele...</a>)</span></p>
 <p>Recent findings suggest that we are also launching Fleet, an in-browser GPU benchmarking and testing suite that runs and scores the kernels on your hardware. Beyond the results for your own machine, Fleet gives the community a way to contribute performance and correctness evidence from devices we could never cover in a conventional test lab. With your consent, every run adds private evidence that can help us find failures (incorrect results, pathologically slow cases, etc.), improve kernel variants, and make better optimization decisions across real-world hardware.</p>
 <p>According to recent reports, A model running in the browser eventually becomes a sequence of GPU operations: matrix multiplications, normalizations, convolutions, attention primitives, quantization operations, data-layout transformations, and many more. WebGPU makes these operations available across modern browsers through a portable API, while WGSL provides a common language for the shaders that execute them.</p>
 <p>It has been revealed that portability, however, does not automatically mean performance. Two shaders can implement the same operation and produce the same output while behaving completely differently across different accelerators. Workgroup sizes, memory access patterns, vectorization, data types, and fusion strategies can all affect performance. The best choice can also change with the input shape, device, browser, and available WebGPU features.</p>
@@ -208,6 +208,10 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
+        <a href="introducing-huggingface-blog-for-chinese-speakers-fostering-colla-172862.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #172862. Introducing HuggingFace blog for Chinese speakers: Fostering Collaboration with the Chinese AI community
+        </a>
+        
         <a href="introducing-anylanguagemodel-one-api-for-local-and-remote-llms-on-161592.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #161592. Introducing AnyLanguageModel: One API for Local and Remote LLMs on Apple Platforms
         </a>
@@ -216,12 +220,8 @@
             📰 #161562. Industry News: Introducing swift-huggingface: The Complete Swift Client for Hugging Face
         </a>
         
-        <a href="introducing-huggingface-blog-for-chinese-speakers-fostering-colla-150031.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #150031. Introducing HuggingFace blog for Chinese speakers: Fostering Collaboration with the Chinese AI community
-        </a>
-        
-        <a href="breaking-introducing-the-open-arabic-llm-leaderboard-161611.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #161611. Breaking: Introducing the Open Arabic LLM Leaderboard
+        <a href="latest-update-retrieval-augmented-generation-with-huggingface-tra-173054.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #173054. Latest Update: Retrieval Augmented Generation with Huggingface Transformers and Ray
         </a>
         
     </div>

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introducing ⚔️ AI vs. AI ⚔️ a deep reinforcement learning multi-agents competition system</title>
+    <meta name="description" content="We’re excited to introduce a latest tool we created: ⚔️ AI vs. AI ⚔️, a deep reinforcement learning multi-agents competition system. Sources indicate that ">
+    <meta name="keywords" content="multi, agent, agents, rating, tool, against, models, deep">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua75/artikel/introducing-ai-vs-ai-a-deep-reinforcement-learning-multi-agents-c-172892.html">
+    
+    <meta property="og:title" content="Introducing ⚔️ AI vs. AI ⚔️ a deep reinforcement learning multi-agents competition system">
+    <meta property="og:description" content="We’re excited to introduce a latest tool we created: ⚔️ AI vs. AI ⚔️, a deep reinforcement learning multi-agents competition system. Sources indicate that ">
+    <meta property="og:image" content="https://huggingface.co/blog/assets/128_aivsai/thumbnail.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua75/artikel/introducing-ai-vs-ai-a-deep-reinforcement-learning-multi-agents-c-172892.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Introducing ⚔️ AI vs. AI ⚔️ a deep reinforcement learning multi-agents competition system">
+    <meta name="twitter:description" content="We’re excited to introduce a latest tool we created: ⚔️ AI vs. AI ⚔️, a deep reinforcement learning multi-agents competition system. Sources indicate that ">
+    <meta name="twitter:image" content="https://huggingface.co/blog/assets/128_aivsai/thumbnail.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Introducing ⚔️ AI vs. AI ⚔️ a deep reinforcement learning multi-agents competition system", "image": ["https://huggingface.co/blog/assets/128_aivsai/thumbnail.png"], "datePublished": "2023-02-07T00:00:00", "dateModified": "2026-11-24T12:17:49.557313", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua75/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua75/artikel/introducing-ai-vs-ai-a-deep-reinforcement-learning-multi-agents-c-172892.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Introducing ⚔️ AI vs. AI ⚔️ a deep reinforcement learning multi-agents competiti?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in AI & Tech originally reported by Hugging Face."}}, {"@type": "Question", "name": "Which category does 'Introducing ⚔️ AI vs. AI ⚔️ a deep reinforcement learning mu' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the AI & Tech section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">AI & Tech</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Introducing ⚔️ AI vs. AI ⚔️ a deep reinforcement learning multi-agents competition system</h1>
+        <div class="meta-line">🌐 Source: <strong>Hugging Face</strong> &bull; 📅 07 Feb 2023 &bull; ⏱️ 5 min read (1096 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>We’re excited to introduce a latest tool we created: ⚔️ AI vs.</li><li style='margin-bottom:6px;'>Sources indicate that this tool, hosted on Spaces, allows us to create multi-agent competitions.</li><li style='margin-bottom:6px;'>Sources indicate that then, when a user pushes a trained model to the Hub, it gets evaluated and ranked against others.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-172892"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-172892"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-172892"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Introducing ⚔️ AI vs. AI ⚔️ a deep reinforcement learning multi-agents competition system" loading="lazy" src="https://huggingface.co/blog/assets/128_aivsai/thumbnail.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-172892">We’re excited to introduce a latest tool we created: ⚔️ AI vs. AI ⚔️, a deep reinforcement learning multi-agents competition system.</p>
+<p>Sources indicate that this tool, hosted on Spaces, allows us to create multi-agent competitions. It is composed of three elements:. <span style="font-size:13px;">(Related: <a href="tech-report-showcase-your-projects-in-spaces-using-gradio-173035.html" style="color:#2563eb; font-weight:600;">Tech Report: Showcase Your Projects in Spaces using Gra...</a>)</span></p>
+<p>Sources indicate that then, when a user pushes a trained model to the Hub, it gets evaluated and ranked against others. Thanks to that, we can evaluate your agents against other’s agents in a multi-agent setting. <span style="font-size:13px;">(Related: <a href="how-to-train-a-newly-introduced-language-model-from-scratch-using-173066.html" style="color:#2563eb; font-weight:600;">How to train a newly introduced language model from scr...</a>)</span></p>
+<p>In addition to being a useful tool for hosting multi-agent competitions, we think this tool can also be a robust evaluation technique in multi-agent settings. By playing against a lot of policies, your agents are evaluated against a wide range of behaviors. This should give you a good idea of the quality of your policy.</p>
+<p>Let’s see how it works with our first competition host: SoccerTwos Challenge.</p>
+<p>AI vs. AI is an open-source tool developed at Hugging Face to rank the strength of reinforcement learning models in a multi-agent setting.</p>
+<p>The idea is to get a relative measure of skill rather than an objective one by making the models play against each other continuously and use the matches results to assess their performance compared to all the other models and consequently get a view of the quality of their policy without requiring classic metrics.</p>
+<p>The more agents are submitted for a given task or environment, the more representative the rating becomes.</p>
+<p>To generate a rating based on match results in a competitive environment, we decided to base the rankings on the ELO rating system.</p>
+<p>The core concept is that after a match ends, the rating of both players are updated based on the result and the ratings they had before the game. When a user with a high rating beats one with a low ranking, they won't get many points. Likewise, the loser would not lose many points in this case.</p>
+<p>Conversely, if a low-rated player wins in an upset against a high-rated player, it will cause a more significant effect on both of their ratings.</p>
+<p>Sources indicate that in our context, we kept the system as simple as possible by not adding any alteration to the quantities gained or lost based on the starting ratings of the player. As such, gain and loss will always be the perfect opposite (+10 / -10, for instance), and the average ELO rating will stay constant at the starting rating. The choice of a 1200 ELO rating start is entirely arbitrary.</p>
+<p>If you want to learn more about ELO and see some calculation example, we wrote an explanation in our Deep Reinforcement Learning Course here.</p>
+<p>Using this rating, it is possible to generate matches between models with comparable strengths automatically. There are several ways you can go about creating a matchmaking system, but here we decided to keep it fairly simple while guaranteeing a minimum amount of diversity in the matchups and also keeping most matches with fairly close opposing ratings.</p>
+<p>Here's how works the algorithm:.</p>
+<p>To run this matchmaking process continuously, we use free Hugging Face Spaces hardware with a Scheduler to keep running the matchmaking process as a background task.</p>
+<p>The Spaces is also used to fetch the ELO ratings of each model that have already been played and, from it display a leaderboard from which everyone can check the progress of the models.</p>
+<p id="sec-mid-172892">The process generally uses several Hugging Face Datasets to provide data persistence (here, matches history and model ratings).</p>
+<p>Since the process also saves the matches' history, it is possible to see precisely the results of any given model. This can, for instance, allow you to check why your model struggles with another one, most notably using another demo Space to visualize matches like this one.</p>
+<p>For now, this experiment is running with the MLAgent environment SoccerTwos for the Hugging Face Deep RL Course, however, the process and implementation, in general, are very much environment agnostic and could be used to evaluate for free a wide range of adversarial multi-agent settings.</p>
+<p>Sources indicate that of course, it is crucial to remind again that this evaluation is a relative rating between the strengths of the submitted agents, and the ratings by themselves have no objective meaning contrary to other metrics. It only represents how good or bad a model performs compared to the other models in the pool. Still, given a large and varied enough pool of models (and enough matches played), this evaluation becomes a very solid way to represent the general performance of a model.</p>
+<p>This challenge is Unit 7 of our free Deep Reinforcement Learning Course. It started on February 1st and will end on April 30th.</p>
+<p>According to recent reports, if you’re interested, you don’t need to participate in the course to be able to participate in the competition. You can start here 👉 https://huggingface.co/deep-rl-course/unit7/introduction.</p>
+<p>In this Unit, readers learned the basics of multi-agent reinforcement learning (MARL)by training a 2vs2 soccer team. ⚽.</p>
+<p>The environment used was made by the Unity ML-Agents team. The goal is simple: your team needs to score a goal. To do that, they need to beat the opponent's team and collaborate with their teammate.</p>
+<p>In addition to the leaderboard, we created a Space demo where people can choose two teams and visualize them playing 👉https://huggingface.co/spaces/unity/SoccerTwos.</p>
+<p>This experimentation is going well since we already have 48 models on the leaderboard.</p>
+<p>We also created a discord channel called ai-vs-ai-competition so that people can exchange with others and share advice.</p>
+<p>In a recent development, since the tool we developed is environment agnostic, we want to host more challenges in the future with PettingZoo and other multi-agent environments. If you have some environments or challenges you want to do, don’t hesitate to reach out to us.</p>
+<p>In the future, we will host multiple multi-agent competitions with this tool and environments we created, such as SnowballFight.</p>
+<p>In addition to being a useful tool for hosting multi-agent competitions, we think that this tool can also be a robust evaluation technique in multi-agent settings: by playing against a lot of policies, your agents are evaluated against a wide range of behaviors, and you’ll get a good idea of the quality of your policy.</p>
+<p>The best way to keep in touch is to join our discord server to exchange with us and with the community.</p>
+<p>Citation: If you found this useful for your academic work, please consider citing our work, in text:.</p>
+<p id="sec-end-172892">Industry observers note that cochet, Simonini, "Introducing AI vs. AI a deep reinforcement learning multi-agents competition system", Hugging Face Blog, 2023.</p>
+<p style="margin-top: 25px;">
+<a href="https://huggingface.co/blog/aivsai" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="an-introduction-to-deep-reinforcement-learning-172993.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #172993. An Introduction to Deep Reinforcement Learning
+        </a>
+        
+        <a href="multi-turn-agentic-reinforcement-learning-with-tunix-and-gemma-4--161216.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #161216. Multi-Turn Agentic Reinforcement Learning with Tunix and Gemma 4 on Google TPUs
+        </a>
+        
+        <a href="deep-learning-over-the-internet-training-language-models-collabor-173039.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #173039. Deep Learning over the Internet: Training Language Models Collaboratively
+        </a>
+        
+        <a href="introducing-snowball-fight-our-first-ml-agents-environment-173024.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #173024. Introducing Snowball Fight ☃️, our first ML-Agents environment
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

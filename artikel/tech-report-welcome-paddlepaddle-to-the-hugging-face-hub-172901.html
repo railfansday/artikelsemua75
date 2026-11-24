@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Report: Welcome PaddlePaddle to the Hugging Face Hub</title>
+    <meta name="description" content="We are happy to share an open source collaboration between Hugging Face and PaddlePaddle on a shared mission to advance and democratize AI through open sou">
+    <meta name="keywords" content="paddlepaddle, model, models, open, share, source, deep, learning">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua75/artikel/tech-report-welcome-paddlepaddle-to-the-hugging-face-hub-172901.html">
+    
+    <meta property="og:title" content="Tech Report: Welcome PaddlePaddle to the Hugging Face Hub">
+    <meta property="og:description" content="We are happy to share an open source collaboration between Hugging Face and PaddlePaddle on a shared mission to advance and democratize AI through open sou">
+    <meta property="og:image" content="https://huggingface.co/blog/assets/126_paddlepaddle/thumbnail.jpg">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua75/artikel/tech-report-welcome-paddlepaddle-to-the-hugging-face-hub-172901.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Tech Report: Welcome PaddlePaddle to the Hugging Face Hub">
+    <meta name="twitter:description" content="We are happy to share an open source collaboration between Hugging Face and PaddlePaddle on a shared mission to advance and democratize AI through open sou">
+    <meta name="twitter:image" content="https://huggingface.co/blog/assets/126_paddlepaddle/thumbnail.jpg">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Tech Report: Welcome PaddlePaddle to the Hugging Face Hub", "image": ["https://huggingface.co/blog/assets/126_paddlepaddle/thumbnail.jpg"], "datePublished": "2023-01-17T00:00:00", "dateModified": "2026-11-24T12:17:50.934621", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua75/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua75/artikel/tech-report-welcome-paddlepaddle-to-the-hugging-face-hub-172901.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Tech Report: Welcome PaddlePaddle to the Hugging Face Hub?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Hugging Face."}}, {"@type": "Question", "name": "Which category does 'Tech Report: Welcome PaddlePaddle to the Hugging Face Hub' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Tech Report: Welcome PaddlePaddle to the Hugging Face Hub</h1>
+        <div class="meta-line">🌐 Source: <strong>Hugging Face</strong> &bull; 📅 17 Jan 2023 &bull; ⏱️ 2 min read (455 words, 📖 Standard)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>We are happy to share an open source collaboration between Hugging Face and PaddlePaddle on a shared mission to advance and democratize AI through open source!</li><li style='margin-bottom:6px;'>Industry observers note that first open sourced by Baidu in 2016, PaddlePaddle enables developers of all skill levels to adopt and implement Deep Learning at scale.</li><li style='margin-bottom:6px;'>With PaddleNLP leading the way, PaddlePaddle will gradually integrate its libraries with the Hugging Face Hub.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-172901"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-172901"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-172901"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Tech Report: Welcome PaddlePaddle to the Hugging Face Hub" loading="lazy" src="https://huggingface.co/blog/assets/126_paddlepaddle/thumbnail.jpg" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-172901">We are happy to share an open source collaboration between Hugging Face and PaddlePaddle on a shared mission to advance and democratize AI through open source!</p>
+<p>Industry observers note that first open sourced by Baidu in 2016, PaddlePaddle enables developers of all skill levels to adopt and implement Deep Learning at scale. As of Q4 2022, PaddlePaddle is being used by more than 5.35 million developers and 200,000 enterprises, ranking first in terms of market share among Deep Learning platforms in China. PaddlePaddle features popular open source repositories such as the Paddle Deep Learning Framework, model libraries across different modalities (e.g. PaddleOCR, PaddleDetection, PaddleNLP, PaddleSpeech), PaddleSlim for model compression, FastDeploy for model deployment and many more. <span style="font-size:13px;">(Related: <a href="how-to-train-a-newly-introduced-language-model-from-scratch-using-173066.html" style="color:#2563eb; font-weight:600;">How to train a newly introduced language model from scr...</a>)</span></p>
+<p>With PaddleNLP leading the way, PaddlePaddle will gradually integrate its libraries with the Hugging Face Hub. You will soon be able to play with the full suite of awesome pre-trained PaddlePaddle models across text, image, audio, video and multi-modalities on the Hub! <span style="font-size:13px;">(Related: <a href="breaking-block-sparse-matrices-for-smaller-and-faster-language-mo-173063.html" style="color:#2563eb; font-weight:600;">Breaking: Block Sparse Matrices for Smaller and Faster ...</a>)</span></p>
+<p>You can find all PaddlePaddle models on the Model Hub by filtering with the PaddlePaddle library tag.</p>
+<p>There are already over 75 PaddlePaddle models on the Hub. As an example, you can find our multi-task Information Extraction model series UIE, State-of-the-Art Chinese Language Model ERNIE 3.0 model series, novel document pre-training model Ernie-Layout with layout knowledge enhancement in the whole workflow and so on.</p>
+<p id="sec-mid-172901">You are also welcome to check out the PaddlePaddle org on the HuggingFace Hub. In additional to the above-mentioned models, you can also explore our Spaces, including our text-to-image Ernie-ViLG, cross-modal Information Extraction engine UIE-X and awesome multilingual OCR toolkit PaddleOCR.</p>
+<p>PaddlePaddle models are available through the Inference API, which you can access through HTTP with cURL, Python’s requests library, or your preferred method for making network requests.</p>
+<p>Models that support a task are equipped with an interactive widget that allows you to play with the model directly in the browser.</p>
+<p>If you want to see how to load a specific model, you can click Use in paddlenlp (or other PaddlePaddle libraries in the future) and you will be given a working snippet that to load it!</p>
+<p>Depending on the PaddlePaddle library, you may be able to share your models by pushing to the Hub. For example, you can share PaddleNLP models by using the save_to_hf_hub method.</p>
+<p id="sec-end-172901">It has been revealed that paddlePaddle is an open source Deep Learning platform that originated from industrial practice and has been open-sourcing innovative and industry-grade projects since 2016. We are excited to join the Hub to share our work with the HuggingFace community and you can expect more fun and State-of-the-Art projects from us soon! To stay up to date with the latest news, you can follow us on Twitter at @PaddlePaddle.</p>
+<p style="margin-top: 25px;">
+<a href="https://huggingface.co/blog/paddlepaddle" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="industry-news-welcome-spacy-to-the-hugging-face-hub-173040.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #173040. Industry News: Welcome spaCy to the Hugging Face Hub
+        </a>
+        
+        <a href="breaking-welcome-stable-baselines3-to-the-hugging-face-hub-173016.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #173016. Breaking: Welcome Stable-baselines3 to the Hugging Face Hub 🤗
+        </a>
+        
+        <a href="latest-update-welcome-fastai-to-the-hugging-face-hub-172992.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #172992. Latest Update: Welcome fastai to the Hugging Face Hub
+        </a>
+        
+        <a href="welcome-fasttext-to-the-hugging-face-hub-172837.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #172837. Welcome fastText to the Hugging Face Hub
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

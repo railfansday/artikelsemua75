@@ -150,11 +150,11 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-160890">I checked 1,788 copies of six popular models on Hugging Face. Many carry an old chat layout that can crash some apps or hide the AI's tools. Here's how to check yours.</p>
-<p>In a recent development, A note on how I made this: AI tools helped me run these tests and draft this article. The ideas are my own. <span style="font-size:13px;">(Related: <a href="breaking-ai-for-game-development-creating-a-farming-game-in-5-day-161616.html" style="color:#2563eb; font-weight:600;">Breaking: AI for Game Development: Creating a Farming G...</a>)</span></p>
-<p>If you run AI models on your own computer, you've probably downloaded one from Hugging Face. Search for a popular model like Qwen3-8B and you'll find hundreds of copies, uploaded by different people. Same name, same size. It's natural to assume they're the same thing.</p>
-<p>They aren't. Each download is a single file that holds two things: the model itself, and a small piece of code that decides how your conversation gets written out for the model to read.</p>
+<p>In a recent development, A note on how I made this: AI tools helped me run these tests and draft this article. The ideas are my own.</p>
+<p>If you run AI models on your own computer, you've probably downloaded one from Hugging Face. Search for a popular model like Qwen3-8B and you'll find hundreds of copies, uploaded by different people. Same name, same size. It's natural to assume they're the same thing. <span style="font-size:13px;">(Related: <a href="how-to-train-a-newly-introduced-language-model-from-scratch-using-173066.html" style="color:#2563eb; font-weight:600;">How to train a newly introduced language model from scr...</a>)</span></p>
+<p>They aren't. Each download is a single file that holds two things: the model itself, and a small piece of code that decides how your conversation gets written out for the model to read. <span style="font-size:13px;">(Related: <a href="leveraging-pre-trained-language-model-checkpoints-for-encoder-dec-173059.html" style="color:#2563eb; font-weight:600;">Leveraging Pre-trained Language Model Checkpoints for E...</a>)</span></p>
 <p>Picture a restaurant. The model is the chef. Your app (Ollama, LM Studio, or your own code) is the waiter. The waiter writes every order on a ticket, and the chef can only read tickets in one exact layout. That ticket layout comes printed inside the model file. Engineers call it the chat template.</p>
-<p>In a recent development, model makers sometimes improve the ticket layout after release, for example by adding a box for special requests. Copies uploaded before the change keep the old layout forever. <span style="font-size:13px;">(Related: <a href="3d-asset-generation-ai-for-game-development-3-161614.html" style="color:#2563eb; font-weight:600;">3D Asset Generation: AI for Game Development #3...</a>)</span></p>
+<p>In a recent development, model makers sometimes improve the ticket layout after release, for example by adding a box for special requests. Copies uploaded before the change keep the old layout forever.</p>
 <p>Recent findings suggest that here's what that looks like in practice. Ask Mistral 7B "What's the weather in Adelaide?" and give it a weather tool. With the current layout, the model reads this (simplified):.</p>
 <p>With the old layout, which is in the most downloaded copies, it reads this:.</p>
 <p>According to recent reports, the tool is simply gone. No error, no warning. The chef never hears about the special request.</p>
@@ -236,20 +236,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
+        <a href="your-wordpress-sitemap-isnt-broken-chrome-158-has-dropped-xslt-vi-169756.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #169756. Your WordPress Sitemap Isn’t Broken – Chrome 158 Has Dropped XSLT via @sejournal, @TaylorDanRW
+        </a>
+        
+        <a href="todays-classroom-isnt-brokenbut-it-wasnt-built-for-todays-top-stu-169572.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #169572. Today’s classroom isn’t broken–but it wasn’t built for today’s top students
+        </a>
+        
+        <a href="germanys-economic-model-is-broken-and-no-one-has-a-strategy-b-168177.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #168177. Germany's Economic Model Is Broken, and No One Has a Strategy B
+        </a>
+        
         <a href="breaking-model-routing-is-simple-until-it-isnt-161276.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #161276. Breaking: Model Routing Is Simple. Until It Isn’t.
-        </a>
-        
-        <a href="your-wordpress-sitemap-isnt-broken-chrome-158-has-dropped-xslt-vi-158521.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #158521. Your WordPress Sitemap Isn’t Broken – Chrome 158 Has Dropped XSLT via @sejournal, @TaylorDanRW
-        </a>
-        
-        <a href="todays-classroom-isnt-brokenbut-it-wasnt-built-for-todays-top-stu-158150.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #158150. Today’s classroom isn’t broken–but it wasn’t built for today’s top students
-        </a>
-        
-        <a href="germanys-economic-model-is-broken-and-no-one-has-a-blueprint-b-156743.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #156743. Germany's Economic Model Is Broken, and No One Has a Blueprint B
         </a>
         
     </div>

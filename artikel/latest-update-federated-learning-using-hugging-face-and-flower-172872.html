@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latest Update: Federated Learning using Hugging Face and Flower</title>
+    <meta name="description" content="This tutorial will show how to leverage Hugging Face to federate the training of language models over multiple clients using Flower. More specifically, we ">
+    <meta name="keywords" content="using, flower, model, clients, function, client, very, server">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua75/artikel/latest-update-federated-learning-using-hugging-face-and-flower-172872.html">
+    
+    <meta property="og:title" content="Latest Update: Federated Learning using Hugging Face and Flower">
+    <meta property="og:description" content="This tutorial will show how to leverage Hugging Face to federate the training of language models over multiple clients using Flower. More specifically, we ">
+    <meta property="og:image" content="https://huggingface.co/blog/assets/fl-with-flower/thumbnail.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua75/artikel/latest-update-federated-learning-using-hugging-face-and-flower-172872.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Latest Update: Federated Learning using Hugging Face and Flower">
+    <meta name="twitter:description" content="This tutorial will show how to leverage Hugging Face to federate the training of language models over multiple clients using Flower. More specifically, we ">
+    <meta name="twitter:image" content="https://huggingface.co/blog/assets/fl-with-flower/thumbnail.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Latest Update: Federated Learning using Hugging Face and Flower", "image": ["https://huggingface.co/blog/assets/fl-with-flower/thumbnail.png"], "datePublished": "2023-03-27T00:00:00", "dateModified": "2026-11-24T12:17:46.120781", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua75/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua75/artikel/latest-update-federated-learning-using-hugging-face-and-flower-172872.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Latest Update: Federated Learning using Hugging Face and Flower?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Hugging Face."}}, {"@type": "Question", "name": "Which category does 'Latest Update: Federated Learning using Hugging Face and Flo' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Latest Update: Federated Learning using Hugging Face and Flower</h1>
+        <div class="meta-line">🌐 Source: <strong>Hugging Face</strong> &bull; 📅 27 Mar 2023 &bull; ⏱️ 3 min read (567 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>This tutorial will show how to leverage Hugging Face to federate the training of language models over multiple clients using Flower.</li><li style='margin-bottom:6px;'>A notebook is also available here but instead of running on multiple separate clients it utilizes the simulation functionality of Flower (using flwr['simulation']) in order to emulate a federated setting inside Google Colab (this also means that instead of calling start_server we will call start_simulation, and that a few other modifications are needed).</li><li style='margin-bottom:6px;'>To follow along this tutorial you will need to install the following packages: datasets, evaluate, flwr, torch, and transformers.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-172872"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-172872"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-172872"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Latest Update: Federated Learning using Hugging Face and Flower" loading="lazy" src="https://huggingface.co/blog/assets/fl-with-flower/thumbnail.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-172872">This tutorial will show how to leverage Hugging Face to federate the training of language models over multiple clients using Flower. More specifically, we will fine-tune a pre-trained Transformer model (distilBERT) for sequence classification over a dataset of IMDB ratings. The end goal is to detect if a movie rating is positive or negative.</p>
+<p>A notebook is also available here but instead of running on multiple separate clients it utilizes the simulation functionality of Flower (using flwr['simulation']) in order to emulate a federated setting inside Google Colab (this also means that instead of calling start_server we will call start_simulation, and that a few other modifications are needed). <span style="font-size:13px;">(Related: <a href="how-to-train-a-newly-introduced-language-model-from-scratch-using-173066.html" style="color:#2563eb; font-weight:600;">How to train a newly introduced language model from scr...</a>)</span></p>
+<p>To follow along this tutorial you will need to install the following packages: datasets, evaluate, flwr, torch, and transformers. This can be done using pip:. <span style="font-size:13px;">(Related: <a href="latest-update-how-to-generate-text-using-different-decoding-metho-173065.html" style="color:#2563eb; font-weight:600;">Latest Update: How to generate text: using different de...</a>)</span></p>
+<p>It has been revealed that to fetch the IMDB dataset, we will use Hugging Face's datasets library. We then need to tokenize the data and create PyTorch dataloaders, this is all done in the load_data function:.</p>
+<p>Once we have a way of creating our trainloader and testloader, we can take care of the training and testing. This is very similar to any PyTorch training or testing loop:.</p>
+<p>To create the model itself, we will just load the pre-trained distillBERT model using Hugging Face’s AutoModelForSequenceClassification :.</p>
+<p>Sources indicate that the idea behind Federated Learning is to train a model between multiple clients and a server without having to share any data. This is done by letting each client train the model locally on its data and send its parameters back to the server, which then aggregates all the clients’ parameters together using a predefined strategy. This process is made very simple by using the Flower framework. If you want a more complete overview, be sure to check out this guide: What is Federated Learning?</p>
+<p id="sec-mid-172872">To federate our example to multiple clients, we first need to write our Flower client class (inheriting from flwr.client.NumPyClient). This is very easy, as our model is a standard PyTorch model:.</p>
+<p>Sources indicate that the get_parameters function lets the server get the client's parameters. Inversely, the set_parameters function allows the server to send its parameters to the client. Finally, the fit function trains the model locally for the client, and the evaluate function tests the model locally and returns the relevant metrics.</p>
+<p>We can now start client instances using:.</p>
+<p>According to recent reports, now that we have a way to instantiate clients, we need to create our server in order to aggregate the results. Using Flower, this can be done very easily by first choosing a strategy (here, we are using FedAvg, which will define the global weights as the average of all the clients' weights at each round) and then using the flwr.server.start_server function:.</p>
+<p>The weighted_average function is there to provide a way to aggregate the metrics distributed amongst the clients (basically this allows us to display a nice average accuracy and loss for every round).</p>
+<p>If you want to check out everything put together, you should check out the code example we wrote for the Flower repo: https://github.com/adap/flower/tree/main/examples/quickstart-huggingface.</p>
+<p>Of course, this is a very basic example, and a lot can be added or modified, it was just to showcase how simply we could federate a Hugging Face workflow using Flower.</p>
+<p id="sec-end-172872">Note that in this example we used PyTorch, but we could have very well used TensorFlow.</p>
+<p style="margin-top: 25px;">
+<a href="https://huggingface.co/blog/fl-with-flower" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="huggy-lingo-using-machine-learning-to-improve-language-metadata-o-172802.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #172802. Huggy Lingo: Using Machine Learning to Improve Language Metadata on the Hugging Face Hub
+        </a>
+        
+        <a href="using-mixing-hugging-face-models-with-gradio-20-173044.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #173044. Using & Mixing Hugging Face Models with Gradio 2.0
+        </a>
+        
+        <a href="industry-news-hosting-your-models-and-datasets-on-hugging-face-sp-173034.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #173034. Industry News: Hosting your Models and Datasets on Hugging Face Spaces using Streamlit
+        </a>
+        
+        <a href="deploy-gpt-j-6b-for-inference-using-hugging-face-transformers-and-173019.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #173019. Deploy GPT-J 6B for inference using  Hugging Face Transformers and Amazon SageMaker
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

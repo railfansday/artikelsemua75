@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to train a Language Model with Megatron-LM</title>
+    <meta name="description" content="It has been revealed that training large language models in Pytorch requires more than a simple training loop. It is usually distributed across multiple de">
+    <meta name="keywords" content="training, model, megatron, data, also, transformers, gpus, need">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua75/artikel/how-to-train-a-language-model-with-megatron-lm-172945.html">
+    
+    <meta property="og:title" content="How to train a Language Model with Megatron-LM">
+    <meta property="og:description" content="It has been revealed that training large language models in Pytorch requires more than a simple training loop. It is usually distributed across multiple de">
+    <meta property="og:image" content="https://huggingface.co/blog/assets/100_megatron_training/thumbnail.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua75/artikel/how-to-train-a-language-model-with-megatron-lm-172945.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="How to train a Language Model with Megatron-LM">
+    <meta name="twitter:description" content="It has been revealed that training large language models in Pytorch requires more than a simple training loop. It is usually distributed across multiple de">
+    <meta name="twitter:image" content="https://huggingface.co/blog/assets/100_megatron_training/thumbnail.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "How to train a Language Model with Megatron-LM", "image": ["https://huggingface.co/blog/assets/100_megatron_training/thumbnail.png"], "datePublished": "2022-09-07T00:00:00", "dateModified": "2026-11-24T12:17:57.926072", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua75/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua75/artikel/how-to-train-a-language-model-with-megatron-lm-172945.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding How to train a Language Model with Megatron-LM?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Hugging Face."}}, {"@type": "Question", "name": "Which category does 'How to train a Language Model with Megatron-LM' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>How to train a Language Model with Megatron-LM</h1>
+        <div class="meta-line">🌐 Source: <strong>Hugging Face</strong> &bull; 📅 07 Sep 2022 &bull; ⏱️ 7 min read (1314 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>It has been revealed that training large language models in Pytorch requires more than a simple training loop.</li><li style='margin-bottom:6px;'>In a recent development, another popular tool among researchers to pre-train large transformer models is Megatron-LM, a powerful framework developed by the Applied Deep Learning Research team at NVIDIA.</li><li style='margin-bottom:6px;'>We will try to break down the different steps for training a GPT2 model in this framework, this includes:.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-172945"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-172945"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-172945"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="How to train a Language Model with Megatron-LM" loading="lazy" src="https://huggingface.co/blog/assets/100_megatron_training/thumbnail.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-172945">It has been revealed that training large language models in Pytorch requires more than a simple training loop. It is usually distributed across multiple devices, with many optimization techniques for a stable and efficient training. Hugging Face 🤗 Accelerate library was created to support distributed training across GPUs and TPUs with very easy integration into the training loops. 🤗 Transformers also support distributed training through the Trainer API, which provides feature-complete training in PyTorch, without even needing to implement a training loop.</p>
+<p>In a recent development, another popular tool among researchers to pre-train large transformer models is Megatron-LM, a powerful framework developed by the Applied Deep Learning Research team at NVIDIA. Unlike accelerate and the Trainer, using Megatron-LM is not straightforward and can be a little overwhelming for beginners. But it is highly optimized for the training on GPUs and can give some speedups. In this blogpost,  you will learn how to train a language model on NVIDIA GPUs in Megatron-LM, and use it with transformers. <span style="font-size:13px;">(Related: <a href="how-to-train-a-newly-introduced-language-model-from-scratch-using-173066.html" style="color:#2563eb; font-weight:600;">How to train a newly introduced language model from scr...</a>)</span></p>
+<p>We will try to break down the different steps for training a GPT2 model in this framework, this includes:. <span style="font-size:13px;">(Related: <a href="latest-update-how-to-generate-text-using-different-decoding-metho-173065.html" style="color:#2563eb; font-weight:600;">Latest Update: How to generate text: using different de...</a>)</span></p>
+<p>Before getting into the training details, let’s first understand what makes this framework more efficient than others. This section is inspired by this great blog about BLOOM training with Megatron-DeepSpeed, please refer to it for more details as this blog is intended to give a gentle introduction to Megatron-LM.</p>
+<p>Megatron-LM comes with an efficient DataLoader where the data is tokenized and shuffled before the training. It also splits the data into numbered sequences with indexes that are stored such that they need to be computed only once. To build the index, the number of epochs is computed based on the training parameters and an ordering is created and then shuffled. This is unlike most cases where we iterate through the entire dataset until it is exhausted and then repeat for the second epoch. This smoothes the learning curve and saves time during the training.</p>
+<p>It has been revealed that when a computation is run on the GPU, the necessary data is fetched from memory, then the computation is run and the result is saved back into memory. In simple terms, the idea of fused kernels is that similar operations, usually performed separately by Pytorch, are combined into a single hardware operation. So they reduce the number of memory movements done in multiple discrete computations by merging them into one. The figure below illustrates the idea of Kernel Fusion. It is inspired from this paper, which discusses the concept in detail.</p>
+<p>When f, g and h are fused in one kernel, the intermediary results x’ and y’ of f and g are stored in the GPU registers and immediately used by h. But without fusion,  x’ and y’ would need to be copied to the memory and then loaded by h. Therefore, Kernel Fusion gives a significant speed up to the computations. Megatron-LM also uses a Fused implementation of AdamW from Apex which is faster than the Pytorch implementation.</p>
+<p>While one can customize the DataLoader like Megatron-LM and use Apex’s Fused optimizer with transformers, it is not a beginner friendly undertaking to build custom Fused CUDA Kernels.</p>
+<p>Now that you are familiar with the framework and what makes it advantageous, let’s get into the training details!</p>
+<p>Industry observers note that the easiest way to setup the environment is to pull an NVIDIA PyTorch Container that comes with all the required installations from NGC. See documentation for more details. If you don't want to use this container you will need to install the latest pytorch, cuda, nccl, and NVIDIA APEX releases and the nltk library.</p>
+<p>So after having installed Docker, you can run the container with the following command (xx.xx denotes your Docker version), and then clone Megatron-LM repository inside it:.</p>
+<p>Sources indicate that you also need to add the vocabulary file vocab.json and merges table merges.txt of your tokenizer inside Megatron-LM folder of your container. These files can be found in the model’s repository with the weights, see this repository for GPT2. You can also train your own tokenizer using transformers. You can checkout the CodeParrot project for a practical example. Now if you want to copy this data from outside the container you can use the following commands:.</p>
+<p>In the rest of this tutorial we will be using CodeParrot model and data as an example.</p>
+<p id="sec-mid-172945">The training data requires some preprocessing. First, you need to convert it into a loose json format, with one json containing a text sample per line. If you're using 🤗 Datasets, here is an example on how to do that (always inside Megatron-LM folder):.</p>
+<p>The data is then tokenized, shuffled and processed into a binary format for training using the following command:.</p>
+<p>It has been revealed that the workers and chunk_size options refer to the number of workers used in the preprocessing and the chunk size of data assigned to each one. dataset-impl refers to the implementation mode of the indexed datasets from ['lazy', 'cached', 'mmap']. This outputs two files codeparrot_content_document.idx and codeparrot_content_document.bin which are used in the training.</p>
+<p>You can configure the model architecture and training parameters as shown below, or put it in a bash script that you will run. This command runs the pretraining on 8 GPUs for a 110M parameter CodeParrot model. Note that the data is partitioned by default into a 969:30:1 ratio for training/validation/test sets.</p>
+<p>With this setting, the training takes roughly 12 hours.</p>
+<p>Industry observers note that this setup uses Data Parallelism, but it is also possible to use Model Parallelism for very large models that don't fit in one GPU. The first option consists of Tensor Parallelism that splits the execution of a single transformer module over multiple GPUs, you will need to change tensor-model-parallel-size parameter to the desired number of GPUs. The second option is Pipeline Parallelism where the transformer modules are split into equally sized stages. The parameter pipeline-model-parallel-size determines the number of stages to split the model into. For more details please refer to this blog.</p>
+<p>After training we want to use the model in transformers e.g. for evaluation or to deploy it to production. You can convert it to a transformers model following this tutorial. For instance, after the training is finished you can copy the weights of the last iteration 150k and convert the model_optim_rng.pt file to a pytorch_model.bin file that is supported by transformers with the following commands:.</p>
+<p>Be careful, you will need to replace the generated vocabulary file and merges table after the conversion, with the original ones we introduced earlier if you blueprint to load the tokenizer from there.</p>
+<p>Don't forget to push your model to the hub and share it with the community, it only takes three lines of code 🤗:.</p>
+<p>You can also easily use it to generate text:.</p>
+<p>Sources indicate that tranfsormers also handle substantial model inference efficiently. In case you trained a very large model (e.g. using Model Parallelism), you can easily use it for inference with the following command:.</p>
+<p>This will use accelerate library behind the scenes to automatically dispatch the model weights across the devices you have available (GPUs, CPU RAM).</p>
+<p>Sources indicate that disclaimer: We have shown that anyone can use Megatron-LM to train language models. The question is when to use it. This framework obviously adds some time overhead because of the extra preprocessing and conversion steps. So it is notable that you decide which framework is more appropriate for your case and model size. We recommend trying it for pre-training models or extended fine-tuning, but probably not for shorter fine-tuning of medium-sized models. The Trainer API and accelerate library are also very handy for model training, they are device-agnostic and give significant flexibility to the users.</p>
+<p id="sec-end-172945">Congratulations 🎉 now you know how to train a GPT2 model in Megatron-LM and make it supported by transformers!</p>
+<p style="margin-top: 25px;">
+<a href="https://huggingface.co/blog/megatron-training" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="how-to-train-a-newly-introduced-language-model-from-scratch-using-173066.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #173066. How to train a newly introduced language model from scratch using Transformers and Tokenizers
+        </a>
+        
+        <a href="leveraging-pre-trained-language-model-checkpoints-for-encoder-dec-173059.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #173059. Leveraging Pre-trained Language Model Checkpoints for Encoder-Decoder Models
+        </a>
+        
+        <a href="train-a-sentence-embedding-model-with-1b-training-pairs-173031.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #173031. Train a Sentence Embedding Model with 1B Training Pairs
+        </a>
+        
+        <a href="introducing-the-worlds-largest-open-multilingual-language-model-b-172968.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #172968. Introducing The World's Largest Open Multilingual Language Model: BLOOM
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

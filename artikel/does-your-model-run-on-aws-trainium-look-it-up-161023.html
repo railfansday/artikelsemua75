@@ -150,10 +150,10 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-161023">It has been revealed that in a previous post, we introduced TorchNeuron, the native PyTorch backend for AWS Trainium (the torch-neuronx package). With it, Transformers runs its own modeling code on Trainium, as it does on any other device, so any Transformers model on the Hub may run. Which ones actually do?</p>
-<p>The torch-neuronx model support Space answers that question for the most popular models on the Hub. It tells you whether a model runs unmodified on Trainium, and gives you the script to run it yourself.</p>
-<p>The Space opens on the Selected view: our own selection of models picked among the top models on the Hub by downloads and by trending score. Each row gives the result, the number of Trainium cores the model is sharded over, the wall time of the run (compilation included) and the peak device memory.</p>
-<p>To look up a given model, switch to the Trending or Downloads view and type part of its name. These views follow the Hub's own rankings, one task at a time, whether a model was tested or not. When a model was left out on purpose, the Space tells you why (most of the time it was not prioritized, sometimes it is truly incompatible). You can also pick the versions of the Neuron compiler (neuronx-cc) and of Transformers to look at. <span style="font-size:13px;">(Related: <a href="fine-tune-xlsr-wav2vec2-for-low-resource-asr-with-transformers-161625.html" style="color:#2563eb; font-weight:600;">Fine-Tune XLSR-Wav2Vec2 for low-resource ASR with 🤗 Tra...</a>)</span></p>
-<p>Sources indicate that at the time of writing, only Transformers models are tested, and our selection is limited to text-generation and image-text-to-text models. We blueprint to expand to diffusers, sentence transformers, and other transformers tasks. <span style="font-size:13px;">(Related: <a href="tech-report-accelerating-pytorch-transformers-with-intel-sapphire-161618.html" style="color:#2563eb; font-weight:600;">Tech Report: Accelerating PyTorch Transformers with Int...</a>)</span></p>
+<p>The torch-neuronx model support Space answers that question for the most popular models on the Hub. It tells you whether a model runs unmodified on Trainium, and gives you the script to run it yourself. <span style="font-size:13px;">(Related: <a href="how-to-train-a-newly-introduced-language-model-from-scratch-using-173066.html" style="color:#2563eb; font-weight:600;">How to train a newly introduced language model from scr...</a>)</span></p>
+<p>The Space opens on the Selected view: our own selection of models picked among the top models on the Hub by downloads and by trending score. Each row gives the result, the number of Trainium cores the model is sharded over, the wall time of the run (compilation included) and the peak device memory. <span style="font-size:13px;">(Related: <a href="breaking-block-sparse-matrices-for-smaller-and-faster-language-mo-173063.html" style="color:#2563eb; font-weight:600;">Breaking: Block Sparse Matrices for Smaller and Faster ...</a>)</span></p>
+<p>To look up a given model, switch to the Trending or Downloads view and type part of its name. These views follow the Hub's own rankings, one task at a time, whether a model was tested or not. When a model was left out on purpose, the Space tells you why (most of the time it was not prioritized, sometimes it is truly incompatible). You can also pick the versions of the Neuron compiler (neuronx-cc) and of Transformers to look at.</p>
+<p>Sources indicate that at the time of writing, only Transformers models are tested, and our selection is limited to text-generation and image-text-to-text models. We blueprint to expand to diffusers, sentence transformers, and other transformers tasks.</p>
 <p>Select a model to see how to run it. The Space lists the Neuron stack the model was tested on, the packages to install on top of it, and the run.py script that ran. The script follows the recipe of the TorchNeuron announcement: it loads the model with from_pretrained, sharded when it needs to be, then generates with a static cache and torch.compile(backend="neuron").</p>
 <p>On a Trainium2 (trn2) instance with that stack, for example in the AWS Neuron Deep Learning Container, install the packages, then run:.</p>
 <p id="sec-mid-161023">No need for torchrun: the script launches its own torch.distributed ranks when the model is sharded.</p>
@@ -187,20 +187,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
+        <a href="why-does-my-side-hurt-when-i-run-causes-and-prevention-tips-171449.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #171449. Why Does My Side Hurt When I Run? Causes and Prevention Tips
+        </a>
+        
+        <a href="what-does-trail-magic-look-like-around-the-world-these-5-stories--170697.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #170697. What Does Trail Magic Look Like Around the World? These 5 Stories Show Us
+        </a>
+        
+        <a href="hull-city-must-look-for-strange-result-against-in-form-brighton-t-164263.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #164263. Hull City must look for 'strange' result against in-form Brighton to end winless run
+        </a>
+        
         <a href="building-blocks-for-foundation-model-training-and-inference-on-aw-161378.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #161378. Building Blocks for Foundation Model Training and Inference on AWS
-        </a>
-        
-        <a href="aws-weekly-roundup-amazon-polly-generative-engine-torchneuron-for-161241.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #161241. AWS Weekly Roundup: Amazon Polly Generative engine, TorchNeuron for Trainium, and more (October 26, 2026)
-        </a>
-        
-        <a href="aws-lambda-now-runs-gpu-inference-with-48-concurrent-invocations--161175.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #161175. AWS Lambda Now Runs GPU Inference with 48 Concurrent Invocations Sharing One Model per GPU
-        </a>
-        
-        <a href="torchneuron-running-hf-models-on-aws-trainium-is-easier-than-ever-161056.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #161056. TorchNeuron: running HF models on AWS Trainium is easier than ever
         </a>
         
     </div>

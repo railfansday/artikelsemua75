@@ -161,13 +161,13 @@ a step that looks like this:.</p>
 <p>Apart from the use of a multi-line flow-style string for the json: key, nothing particularly
 stands out about this step.</p>
 <p>Except: it isn't valid YAML! YAML claims this about flow-style nodes that are nested inside
-of a block-style parent collection (read: map or array):.</p>
-<p>In a recent development, flow nodes must be indented by at least one more space than the parent block collection. Note that flow nodes may begin on a following line. <span style="font-size:13px;">(Related: <a href="breaking-ai-for-game-development-creating-a-farming-game-in-5-day-161616.html" style="color:#2563eb; font-weight:600;">Breaking: AI for Game Development: Creating a Farming G...</a>)</span></p>
+of a block-style parent collection (read: map or array):. <span style="font-size:13px;">(Related: <a href="breaking-block-sparse-matrices-for-smaller-and-faster-language-mo-173063.html" style="color:#2563eb; font-weight:600;">Breaking: Block Sparse Matrices for Smaller and Faster ...</a>)</span></p>
+<p>In a recent development, flow nodes must be indented by at least one more space than the parent block collection. Note that flow nodes may begin on a following line. <span style="font-size:13px;">(Related: <a href="understanding-bigbirds-block-sparse-attention-173048.html" style="color:#2563eb; font-weight:600;">Understanding BigBird's Block Sparse Attention...</a>)</span></p>
 <p id="sec-mid-161074">That means the correct syntax is instead:.</p>
 <p>The difference is barely visible:.</p>
 <p>In a recent development, YAML is a major and complicated spec, so it didn't even occur to me that this was
 invalid. Instead, I opened tree-sitter-yaml#36 to "fix" it. I've now
-opened tree-sitter-yaml#51 to revert that misbegotten fix. <span style="font-size:13px;">(Related: <a href="3d-asset-generation-ai-for-game-development-3-161614.html" style="color:#2563eb; font-weight:600;">3D Asset Generation: AI for Game Development #3...</a>)</span></p>
+opened tree-sitter-yaml#51 to revert that misbegotten fix.</p>
 <p>On GitHub's side, I'm not sure if they have a clean path towards spec
 conformance here. Much of the code behind Actions is proprietary,
 but it seems likely that the underlying parser on their end is YamlDotNet.</p>
@@ -200,20 +200,20 @@ string, despite it applying to both forms.</p>
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="python-devs-document-de-fanging-dangerous-triggers-in-github-acti-149285.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #149285. Python Devs Document 'De-fanging Dangerous Triggers In GitHub Actions'
+        <a href="breaking-introducing-smolagents-simple-agents-that-write-actions--172524.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #172524. Breaking: Introducing smolagents: simple agents that write actions in code.
         </a>
         
-        <a href="migrating-your-github-ci-to-hugging-face-jobs-161340.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #161340. Migrating Your GitHub CI to Hugging Face Jobs
+        <a href="codeagents-structure-a-better-way-to-execute-actions-172351.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #172351. CodeAgents + Structure: A Better Way to Execute Actions
         </a>
         
-        <a href="accessibility-statements-now-have-a-home-on-github-161200.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #161200. Accessibility statements now have a home on GitHub
+        <a href="no-pseudonymity-for-man-suing-trumprubiomusk-over-ukraine-related-170228.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #170228. No Pseudonymity for Man Suing Trump+Rubio+Musk over Ukraine-Related Actions
         </a>
         
-        <a href="industry-news-inside-githubs-new-git-storage-architecture-161199.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #161199. Industry News: Inside GitHub’s new Git storage architecture
+        <a href="industry-news-justice-department-announces-actions-to-disrupt-nor-170026.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #170026. Industry News: Justice Department Announces Actions to Disrupt North Korea’s Massive Theft of Cryptocurrency
         </a>
         
     </div>

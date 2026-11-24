@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Report: Using Stable Diffusion with Core ML on Apple Silicon</title>
+    <meta name="description" content="Thanks to Apple engineers, you can now run Stable Diffusion on Apple Silicon using Core ML! This Apple repo provides conversion scripts and inference code ">
+    <meta name="keywords" content="stable, diffusion, apple, model, inference, core, using, models">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua75/artikel/tech-report-using-stable-diffusion-with-core-ml-on-apple-silicon-172913.html">
+    
+    <meta property="og:title" content="Tech Report: Using Stable Diffusion with Core ML on Apple Silicon">
+    <meta property="og:description" content="Thanks to Apple engineers, you can now run Stable Diffusion on Apple Silicon using Core ML! This Apple repo provides conversion scripts and inference code ">
+    <meta property="og:image" content="https://huggingface.co/blog/assets/diffusers_coreml/thumbnail.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua75/artikel/tech-report-using-stable-diffusion-with-core-ml-on-apple-silicon-172913.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Tech Report: Using Stable Diffusion with Core ML on Apple Silicon">
+    <meta name="twitter:description" content="Thanks to Apple engineers, you can now run Stable Diffusion on Apple Silicon using Core ML! This Apple repo provides conversion scripts and inference code ">
+    <meta name="twitter:image" content="https://huggingface.co/blog/assets/diffusers_coreml/thumbnail.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Tech Report: Using Stable Diffusion with Core ML on Apple Silicon", "image": ["https://huggingface.co/blog/assets/diffusers_coreml/thumbnail.png"], "datePublished": "2022-12-01T00:00:00", "dateModified": "2026-11-24T12:17:52.854384", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua75/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua75/artikel/tech-report-using-stable-diffusion-with-core-ml-on-apple-silicon-172913.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Tech Report: Using Stable Diffusion with Core ML on Apple Silicon?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in Gadgets originally reported by Hugging Face."}}, {"@type": "Question", "name": "Which category does 'Tech Report: Using Stable Diffusion with Core ML on Apple Si' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the Gadgets section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">Gadgets</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Tech Report: Using Stable Diffusion with Core ML on Apple Silicon</h1>
+        <div class="meta-line">🌐 Source: <strong>Hugging Face</strong> &bull; 📅 01 Dec 2022 &bull; ⏱️ 4 min read (798 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>Thanks to Apple engineers, you can now run Stable Diffusion on Apple Silicon using Core ML!</li><li style='margin-bottom:6px;'>This Apple repo provides conversion scripts and inference code based on 🧨 Diffusers, and we love it!</li><li style='margin-bottom:6px;'>Enhancement: some weeks after this post was written we created a native Swift app that you can use to run Stable Diffusion effortlessly on your own hardware.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-172913"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-172913"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-172913"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Tech Report: Using Stable Diffusion with Core ML on Apple Silicon" loading="lazy" src="https://huggingface.co/blog/assets/diffusers_coreml/thumbnail.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-172913">Thanks to Apple engineers, you can now run Stable Diffusion on Apple Silicon using Core ML!</p>
+<p>This Apple repo provides conversion scripts and inference code based on 🧨 Diffusers, and we love it! To make it as easy as possible for you, we converted the weights ourselves and put the Core ML versions of the models in the Hugging Face Hub. <span style="font-size:13px;">(Related: <a href="breaking-block-sparse-matrices-for-smaller-and-faster-language-mo-173063.html" style="color:#2563eb; font-weight:600;">Breaking: Block Sparse Matrices for Smaller and Faster ...</a>)</span></p>
+<p>Enhancement: some weeks after this post was written we created a native Swift app that you can use to run Stable Diffusion effortlessly on your own hardware. We released an app in the Mac App Store as well as the source code to allow other projects to use it. <span style="font-size:13px;">(Related: <a href="tech-report-showcase-your-projects-in-spaces-using-gradio-173035.html" style="color:#2563eb; font-weight:600;">Tech Report: Showcase Your Projects in Spaces using Gra...</a>)</span></p>
+<p>The rest of this post guides you on how to use the converted weights in your own code or convert additional weights yourself.</p>
+<p>The official Stable Diffusion checkpoints are already converted and ready for use:.</p>
+<p>In a recent development, core ML supports all the compute units available in your device: CPU, GPU and Apple's Neural Engine (NE). It's also possible for Core ML to run different portions of the model in different devices to maximize performance.</p>
+<p>There are several variants of each model that may yield different performance depending on the hardware you use. We recommend you try them out and stick with the one that works best in your system. Read on for details.</p>
+<p>There are several variants per model:.</p>
+<p>At the time of this writing, we got best results on my MacBook Pro (M1 Max, 32 GPU cores, 64 GB) using the following combination:.</p>
+<p>With these, it took 18s to generate one image with the Core ML version of Stable Diffusion v1.4 🤯.</p>
+<p>It has been revealed that several improvements to Core ML were introduced in macOS Ventura 13.1, and they are required by Apple's implementation. You may get black images –and much slower times– if you use previous versions of macOS.</p>
+<p>Each model repo is organized in a tree structure that provides these different variants:.</p>
+<p>You can download and use the variant you need as shown below.</p>
+<p>To run inference in Python, you have to use one of the versions stored in the packages folders, because the compiled ones are only compatible with Swift. You may choose whether you want to use the original or split_einsum attention styles.</p>
+<p>This is how you'd download the original attention variant from the Hub:.</p>
+<p id="sec-mid-172913">The code above will place the downloaded model snapshot inside a directory called models.</p>
+<p>Once you have downloaded a snapshot of the model, the easiest way to run inference would be to use Apple's Python script.</p>
+<p>should point to the checkpoint you downloaded in the step above, and --compute-unit indicates the hardware you want to allow for inference. It must be one of the following options: ALL, CPU_AND_GPU, CPU_ONLY, CPU_AND_NE. You may also provide an optional output path, and a seed for reproducibility.</p>
+<p>Sources indicate that the inference script assumes the original version of the Stable Diffusion model, stored in the Hub as CompVis/stable-diffusion-v1-4. If you use another model, you have to specify its Hub id in the inference command-line, using the --model-version option. This works both for models already supported, and for custom models you trained or fine-tuned yourself.</p>
+<p>For Stable Diffusion 1.5 (Hub id: runwayml/stable-diffusion-v1-5):.</p>
+<p>For Stable Diffusion 2 base (Hub id: stabilityai/stable-diffusion-2-base):.</p>
+<p>Running inference in Swift is slightly faster than in Python, because the models are already compiled in the mlmodelc format. This will be noticeable on app startup when the model is loaded, but shouldn’t be noticeable if you run several generations afterwards.</p>
+<p>To run inference in Swift on your Mac, you need one of the compiled checkpoint versions. We recommend you download them locally using Python code similar to the one we highlighted above, but using one of the compiled variants:.</p>
+<p>To run inference, please clone Apple's repo:.</p>
+<p>And then use Apple's command-line tool using Swift Package Manager's facilities:.</p>
+<p>According to recent reports, you have to specify in --resource-path one of the checkpoints downloaded in the previous step, so please make sure it contains compiled Core ML bundles with the extension .mlmodelc. The --compute-units has to be one of these values: all, cpuOnly, cpuAndGPU, cpuAndNeuralEngine.</p>
+<p>For more details, please refer to the instructions in Apple's repo.</p>
+<p>According to recent reports, if you have created your own models compatible with Stable Diffusion (for example, if you used Dreambooth, Textual Inversion or fine-tuning), then you have to convert the models yourself. Fortunately, Apple provides a conversion script that allows you to do so.</p>
+<p>For this task, we recommend you follow these instructions.</p>
+<p>Industry observers note that we are really excited about the opportunities this brings and can't wait to see what the community can create from here. Some potential ideas are:.</p>
+<p id="sec-end-172913">Looking forward to seeing what you create!</p>
+<p style="margin-top: 25px;">
+<a href="https://huggingface.co/blog/diffusers-coreml" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="tech-report-stable-diffusion-in-jax-flax-172933.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #172933. Tech Report: 🧨 Stable Diffusion  in JAX / Flax !
+        </a>
+        
+        <a href="training-stable-diffusion-with-dreambooth-using-diffusers-172925.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #172925. Training Stable Diffusion with Dreambooth using Diffusers
+        </a>
+        
+        <a href="using-lora-for-efficient-stable-diffusion-fine-tuning-172897.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #172897. Using LoRA for Efficient Stable Diffusion Fine-Tuning
+        </a>
+        
+        <a href="tech-report-accelerating-stable-diffusion-inference-on-intel-cpus-172871.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #172871. Tech Report: Accelerating Stable Diffusion Inference on Intel CPUs
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

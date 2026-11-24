@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>From PyTorch DDP to Accelerate to Trainer, mastery of distributed training with ease</title>
+    <meta name="description" content="Recent findings suggest that this tutorial assumes you have a basic understanding of PyTorch and how to train a simple model. It will showcase training on ">
+    <meta name="keywords" content="training, distributed, code, accelerate, through, single, pytorch, model">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua75/artikel/from-pytorch-ddp-to-accelerate-to-trainer-mastery-of-distributed--172930.html">
+    
+    <meta property="og:title" content="From PyTorch DDP to Accelerate to Trainer, mastery of distributed training with ease">
+    <meta property="og:description" content="Recent findings suggest that this tutorial assumes you have a basic understanding of PyTorch and how to train a simple model. It will showcase training on ">
+    <meta property="og:image" content="https://huggingface.co/blog/assets/111_pytorch_ddp_accelerate_transformers/thumbnail.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua75/artikel/from-pytorch-ddp-to-accelerate-to-trainer-mastery-of-distributed--172930.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="From PyTorch DDP to Accelerate to Trainer, mastery of distributed training with ease">
+    <meta name="twitter:description" content="Recent findings suggest that this tutorial assumes you have a basic understanding of PyTorch and how to train a simple model. It will showcase training on ">
+    <meta name="twitter:image" content="https://huggingface.co/blog/assets/111_pytorch_ddp_accelerate_transformers/thumbnail.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "From PyTorch DDP to Accelerate to Trainer, mastery of distributed training with ease", "image": ["https://huggingface.co/blog/assets/111_pytorch_ddp_accelerate_transformers/thumbnail.png"], "datePublished": "2022-10-21T00:00:00", "dateModified": "2026-11-24T12:17:55.557645", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua75/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua75/artikel/from-pytorch-ddp-to-accelerate-to-trainer-mastery-of-distributed--172930.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding From PyTorch DDP to Accelerate to Trainer, mastery of distributed training with ?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Hugging Face."}}, {"@type": "Question", "name": "Which category does 'From PyTorch DDP to Accelerate to Trainer, mastery of distri' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>From PyTorch DDP to Accelerate to Trainer, mastery of distributed training with ease</h1>
+        <div class="meta-line">🌐 Source: <strong>Hugging Face</strong> &bull; 📅 21 Oct 2022 &bull; ⏱️ 6 min read (1120 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>Recent findings suggest that this tutorial assumes you have a basic understanding of PyTorch and how to train a simple model.</li><li style='margin-bottom:6px;'>Take some very basic PyTorch training code below, which sets up and trains a model on MNIST based on the official MNIST example.</li><li style='margin-bottom:6px;'>Before finally creating a simplistic training and evaluation loop that performs one full iteration over the dataset and calculates the test accuracy:.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-172930"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-172930"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-172930"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="From PyTorch DDP to Accelerate to Trainer, mastery of distributed training with ease" loading="lazy" src="https://huggingface.co/blog/assets/111_pytorch_ddp_accelerate_transformers/thumbnail.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-172930">Recent findings suggest that this tutorial assumes you have a basic understanding of PyTorch and how to train a simple model. It will showcase training on multiple GPUs through a process called Distributed Data Parallelism (DDP) through three different levels of increasing abstraction:.</p>
+<p>Take some very basic PyTorch training code below, which sets up and trains a model on MNIST based on the official MNIST example. <span style="font-size:13px;">(Related: <a href="how-to-train-a-newly-introduced-language-model-from-scratch-using-173066.html" style="color:#2563eb; font-weight:600;">How to train a newly introduced language model from scr...</a>)</span></p>
+<p>We define the training device (cuda):. <span style="font-size:13px;">(Related: <a href="breaking-distributed-training-train-bartt5-for-summarization-usin-173047.html" style="color:#2563eb; font-weight:600;">Breaking: Distributed Training: Train BART/T5 for Summa...</a>)</span></p>
+<p>Build some PyTorch DataLoaders:.</p>
+<p>Move the model to the CUDA device:.</p>
+<p>Before finally creating a simplistic training and evaluation loop that performs one full iteration over the dataset and calculates the test accuracy:.</p>
+<p>Typically from here, one could either throw all of this into a python script or run it on a Jupyter Notebook.</p>
+<p>Recent findings suggest that however, how would you then get this script to run on say two GPUs or on multiple machines if these resources are available, which could improve training speed through distributed training? Just doing python myscript.py will only ever run the script using a single GPU. This is where torch.distributed comes into play.</p>
+<p>As the name implies, torch.distributed is meant to work on distributed setups. This can include multi-node, where you have a number of machines each with a single GPU, or multi-gpu where a single system has multiple GPUs, or some combination of both.</p>
+<p>To convert our above code to work within a distributed setup, a few setup configurations must first be defined, detailed in the Getting Started with DDP Tutorial.</p>
+<p>Industry observers note that first a setup and a cleanup function must be declared. This will open up a processing group that all of the compute processes can communicate through.</p>
+<p>Recent findings suggest that note: for this section of the tutorial it should be assumed these are sent in python script files. Later on a launcher using Accelerate will be discussed that removes this necessity.</p>
+<p>The last piece of the puzzle is how do I send my data and model to another GPU?</p>
+<p>It has been revealed that this is where the DistributedDataParallel module comes into play. It will copy your model onto each GPU, and when loss.backward() is called the backpropagation is performed and the resulting gradients across all these copies of the model will be averaged/reduced. This ensures each device has the same weights post the optimizer step.</p>
+<p>Below is an example of our training setup, refactored as a function, with this capability:.</p>
+<p>Note: Here rank is the overall rank of the current GPU compared to all the other GPUs available, meaning they have a rank of 0 -&gt; n-1.</p>
+<p>The optimizer needs to be declared based on the model on the specific device (so ddp_model and not model) for all of the gradients to properly be calculated.</p>
+<p>According to recent reports, lastly, to run the script PyTorch has a convenient torchrun command line module that can help. Just pass in the number of nodes it should use as well as the script to run and you are set:.</p>
+<p>The above will run the training script on two GPUs that live on a single machine and this is the barebones for performing only distributed training with PyTorch.</p>
+<p>Now let's talk about Accelerate, a library aimed to make this process more seameless and also help with a few best practices.</p>
+<p id="sec-mid-172930">Accelerate is a library designed to allow you to perform what we just did above, without needing to modify your code greatly. On top of this, the data pipeline innate to Accelerate can also improve performance to your code as well.</p>
+<p>First, let's wrap all of the above code we just performed into a single function, to help us visualize the difference:.</p>
+<p>Next let's talk about how Accelerate can help. There's a few concerns with the above code:.</p>
+<p>Recent findings suggest that accelerate helps this through the Accelerator class. Through it, the code remains much the same except for three lines of code when comparing a single node to multinode, as shown below:.</p>
+<p>It has been revealed that with this your PyTorch training loop is now setup to be ran on any distributed setup thanks to the Accelerator object. This code can then still be rolled out through the torchrun CLI or through Accelerate's own CLI interface, accelerate launch.</p>
+<p>As a result its now trivialized to perform distributed training with Accelerate and keeping as much of the barebones PyTorch code the same as possible.</p>
+<p>Earlier it was mentioned that Accelerate also makes the DataLoaders more efficient. This is through custom Samplers that can send parts of the batches automatically to different devices during training allowing for a single copy of the data to be known at one time, rather than four at once into memory depending on the configuration. Along with this, there is only a single full copy of the original dataset in memory total. Subsets of this dataset are split between all of the nodes that are utilized for training, allowing for much larger datasets to be trained on a single instance without an explosion in memory utilized.</p>
+<p>Industry observers note that earlier it was mentioned you can start distributed code directly out of your Jupyter Notebook. This comes from Accelerate's notebook_launcher utility, which allows for starting multi-gpu training based on code inside of a Jupyter Notebook.</p>
+<p>To use it is as trivial as importing the launcher:.</p>
+<p>According to recent reports, and passing the training function we declared earlier, any arguments to be passed, and the number of processes to use (such as 8 on a TPU, or 2 for two GPUs). Both of the above training functions can be ran, but do note that after you start a single launch, the instance needs to be restarted before spawning another.</p>
+<p>Finally, we arrive at the highest level of API -- the Hugging Face Trainer.</p>
+<p>This wraps as much training as possible while still being able to train on distributed systems without the user needing to do anything at all.</p>
+<p>First we need to import the Trainer:.</p>
+<p>Industry observers note that then we define some TrainingArguments to control all the usual hyper-parameters. The trainer also works through dictionaries, so a custom collate function needs to be made.</p>
+<p>Finally, we subclass the trainer and write our own compute_loss.</p>
+<p>Afterwards, this code will also work on a distributed setup without any training code needing to be written whatsoever!</p>
+<p>Similarly to the above examples with the notebook_launcher, this can be done again here by throwing it all into a training function:.</p>
+<p>To learn more about PyTorch Distributed Data Parallelism, check out the documentation here.</p>
+<p>To learn more about 🤗 Accelerate, check out the documentation here.</p>
+<p id="sec-end-172930">To learn more about 🤗 Transformers, check out the documentation here.</p>
+<p style="margin-top: 25px;">
+<a href="https://huggingface.co/blog/pytorch-ddp-accelerate-transformers" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="accelerate-large-model-training-using-pytorch-fully-sharded-data--172994.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #172994. Accelerate Large Model Training using PyTorch Fully Sharded Data Parallel
+        </a>
+        
+        <a href="breaking-distributed-training-train-bartt5-for-summarization-usin-173047.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #173047. Breaking: Distributed Training: Train BART/T5 for Summarization using 🤗 Transformers and Amazon SageMaker
+        </a>
+        
+        <a href="accelerating-pytorch-distributed-fine-tuning-with-intel-technolog-173027.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #173027. Accelerating PyTorch distributed fine-tuning with Intel technologies
+        </a>
+        
+        <a href="habana-labs-and-hugging-face-partner-to-accelerate-transformer-mo-173001.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #173001. Habana Labs and Hugging Face Partner to Accelerate Transformer Model Training
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

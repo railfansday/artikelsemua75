@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latest Update: Incredibly Fast BLOOM Inference with DeepSpeed and Accelerate</title>
+    <meta name="description" content="This article indicates how to get an incredibly fast per token throughput when generating with the 176B parameter BLOOM model. Industry observers note that">
+    <meta name="keywords" content="inference, gpus, throughput, deepspeed, time, memory, bloom, accelerate">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua75/artikel/latest-update-incredibly-fast-bloom-inference-with-deepspeed-and--172942.html">
+    
+    <meta property="og:title" content="Latest Update: Incredibly Fast BLOOM Inference with DeepSpeed and Accelerate">
+    <meta property="og:description" content="This article indicates how to get an incredibly fast per token throughput when generating with the 176B parameter BLOOM model. Industry observers note that">
+    <meta property="og:image" content="https://huggingface.co/blog/assets/bloom-inference-pytorch-scripts/thumbnail.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua75/artikel/latest-update-incredibly-fast-bloom-inference-with-deepspeed-and--172942.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Latest Update: Incredibly Fast BLOOM Inference with DeepSpeed and Accelerate">
+    <meta name="twitter:description" content="This article indicates how to get an incredibly fast per token throughput when generating with the 176B parameter BLOOM model. Industry observers note that">
+    <meta name="twitter:image" content="https://huggingface.co/blog/assets/bloom-inference-pytorch-scripts/thumbnail.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Latest Update: Incredibly Fast BLOOM Inference with DeepSpeed and Accelerate", "image": ["https://huggingface.co/blog/assets/bloom-inference-pytorch-scripts/thumbnail.png"], "datePublished": "2022-09-16T00:00:00", "dateModified": "2026-11-24T12:17:57.468728", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua75/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua75/artikel/latest-update-incredibly-fast-bloom-inference-with-deepspeed-and--172942.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Latest Update: Incredibly Fast BLOOM Inference with DeepSpeed and Accelerate?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Hugging Face."}}, {"@type": "Question", "name": "Which category does 'Latest Update: Incredibly Fast BLOOM Inference with DeepSpee' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Latest Update: Incredibly Fast BLOOM Inference with DeepSpeed and Accelerate</h1>
+        <div class="meta-line">🌐 Source: <strong>Hugging Face</strong> &bull; 📅 16 Sep 2022 &bull; ⏱️ 8 min read (1651 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>This article indicates how to get an incredibly fast per token throughput when generating with the 176B parameter BLOOM model.</li><li style='margin-bottom:6px;'>Industry observers note that as the model needs 352GB in bf16 (bfloat16) weights (176*2), the most efficient set-up is 8x80GB A100 GPUs.</li><li style='margin-bottom:6px;'>Using a single node will typically deliver a fastest throughput since most of the time intra-node GPU linking hardware is faster than inter-node one, but it's not always the case.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-172942"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-172942"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-172942"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Latest Update: Incredibly Fast BLOOM Inference with DeepSpeed and Accelerate" loading="lazy" src="https://huggingface.co/blog/assets/bloom-inference-pytorch-scripts/thumbnail.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-172942">This article indicates how to get an incredibly fast per token throughput when generating with the 176B parameter BLOOM model.</p>
+<p>Industry observers note that as the model needs 352GB in bf16 (bfloat16) weights (176*2), the most efficient set-up is 8x80GB A100 GPUs. Also 2x8x40GB A100s or 2x8x48GB A6000 can be used. The main reason for using these GPUs is that at the time of this writing they provide the largest GPU memory, but other GPUs can be used as well. For example, 24x32GB V100s can be used. <span style="font-size:13px;">(Related: <a href="how-to-train-a-newly-introduced-language-model-from-scratch-using-173066.html" style="color:#2563eb; font-weight:600;">How to train a newly introduced language model from scr...</a>)</span></p>
+<p>Using a single node will typically deliver a fastest throughput since most of the time intra-node GPU linking hardware is faster than inter-node one, but it's not always the case. <span style="font-size:13px;">(Related: <a href="latest-update-how-to-generate-text-using-different-decoding-metho-173065.html" style="color:#2563eb; font-weight:600;">Latest Update: How to generate text: using different de...</a>)</span></p>
+<p>If you don't have that much hardware, it's still possible to run BLOOM inference on smaller GPUs, by using CPU or NVMe offload, but of course, the generation time will be much slower.</p>
+<p>In a recent development, we are also going to cover the 8bit quantized solutions, which require half the GPU memory at the cost of slightly slower throughput. We will discuss BitsAndBytes and Deepspeed-Inference libraries there.</p>
+<p>Without any further delay let's show some numbers.</p>
+<p>For the sake of consistency, unless stated differently, the benchmarks in this article were all done on the same 8x80GB A100 node w/ 512GB of CPU memory on Jean Zay HPC. The JeanZay HPC users enjoy a very fast IO of about 3GB/s read speed (GPFS). This is important for checkpoint loading time. A slow disc will result in slow loading time. Especially since we are concurrently doing IO in multiple processes.</p>
+<p>All benchmarks are doing greedy generation of 100 token outputs:.</p>
+<p>The input prompt is comprised of just a few tokens. The previous token caching is on as well, as it'd be quite slow to recalculate them all the time.</p>
+<p>According to recent reports, first, let's have a quick look at how long did it take to get ready to generate - i.e. how long did it take to load and prepare the model:.</p>
+<p>Deepspeed-Inference comes with pre-sharded weight repositories and there the loading takes about 1 minuted. Accelerate's loading time is excellent as well - at just about 2 minutes. The other solutions are much slower here.</p>
+<p>The loading time may or may not be of importance, since once loaded you can continually generate tokens again and again without an additional loading overhead.</p>
+<p>Recent findings suggest that next the most crucial benchmark of token generation throughput. The throughput metric here is a simple - how long did it take to generate 100 new tokens divided by 100 and the batch size (i.e. divided by the total number of generated tokens).</p>
+<p>Here is the throughput in msecs on 8x80GB GPUs:.</p>
+<p>where OOM == Out of Memory condition where the batch size was too big to fit into GPU memory.</p>
+<p>In a recent development, getting an under 1 msec throughput with Deepspeed-Inference's Tensor Parallelism (TP) and custom fused CUDA kernels! That's absolutely amazing! Though using this solution for other models that it hasn't been tried on may require some developer time to make it work.</p>
+<p>Accelerate is super fast as well. It uses a very simple approach of naive Pipeline Parallelism (PP) and because it's very simple it should work out of the box with any model.</p>
+<p>Since Deepspeed-ZeRO can process multiple generate streams in parallel its throughput can be further divided by 8 or 16, depending on whether 8 or 16 GPUs were used during the generate call. And, of course, it means that it can process a batch size of 64 in the case of 8x80 A100 (the table above) and thus the throughput is about 4msec - so all 3 solutions are very close to each other.</p>
+<p>Let's revisit again how these numbers were calculated. To generate 100 new tokens for a batch size of 128 took 8832 msecs in real time when using Deepspeed-Inference in fp16 mode. So now to calculate the throughput we did: walltime/(batch_size*new_tokens) or 8832/(128*100) = 0.69.</p>
+<p>Now let's look at the power of quantized int8-based models provided by Deepspeed-Inference and BitsAndBytes, as it requires only half the original GPU memory of inference in bfloat16 or float16.</p>
+<p>Throughput in msecs 4x80GB A100:.</p>
+<p>To reproduce the benchmark results simply add --benchmark to any of these 3 scripts discussed below.</p>
+<p>First checkout the demo repository:.</p>
+<p>In this article we are going to use 3 scripts located under bloom-inference-scripts/.</p>
+<p>The framework-specific solutions are presented in an alphabetical order:.</p>
+<p>Accelerate handles massive models for inference in the following way:.</p>
+<p>It then ensures the model runs properly with hooks that transfer the inputs and outputs on the right device and that the model weights offloaded on the CPU (or even the disk) are loaded on a GPU just before the forward pass, before being offloaded again once the forward pass is finished.</p>
+<p>In a situation where there are multiple GPUs with enough space to accommodate the whole model, it switches control from one GPU to the next until all layers have run. Only one GPU works at any given time, which sounds very inefficient but it does produce decent throughput despite the idling of the GPUs.</p>
+<p id="sec-mid-172942">Industry observers note that it is also very flexible since the same code can run on any given setup. Accelerate will use all available GPUs first, then offload on the CPU until the RAM is full, and finally on the disk. Offloading to CPU or disk will make things slower. As an example, owners have reported running BLOOM with no code changes on just 2 A100s with a throughput of 15s per token as compared to 10 msecs on 8x80 A100s.</p>
+<p>You can learn more about this solution in Accelerate documentation.</p>
+<p>To activate the 8bit quantized solution from BitsAndBytes first install bitsandbytes:.</p>
+<p>and then add --dtype int8 to the previous command line:.</p>
+<p>if you have more than 4 GPUs you can tell it to use only 4 with:.</p>
+<p>Industry observers note that the highest batch size we were able to run without OOM was 40 in this case. If you look inside the script we had to tweak the memory allocation map to free the first GPU to handle only activations and the previous tokens' cache.</p>
+<p>DeepSpeed-Inference uses Tensor-Parallelism and efficient fused CUDA kernels to deliver a super-fast &lt;1msec per token inference on a large batch size of 128.</p>
+<p>It has been revealed that 1a. if you want to run the original bloom checkpoint, which once loaded will run at the same throughput as the previous solution, but the loading will take 10-20min:.</p>
+<p>2a. The 8bit quantized version requires you to have only half the GPU memory of the normal half precision version:.</p>
+<p>Here we used microsoft/bloom-deepspeed-inference-int8 and also told the script to run in int8.</p>
+<p>And of course, just 4x80GB A100 GPUs is now sufficient:.</p>
+<p>The highest batch size we were able to run without OOM was 128 in this case.</p>
+<p>You can see two factors at play leading to better performance here.</p>
+<p>The throughput here was improved by using Tensor Parallelism (TP) instead of the Pipeline Parallelism (PP) of Accelerate. Because Accelerate is meant to be very generic it is also unfortunately hard to maximize the GPU usage. All computations are done first on GPU 0, then on GPU 1, etc. until GPU 8, which means 7 GPUs are idle all the time. DeepSpeed-Inference on the other hand uses TP, meaning it will send tensors to all GPUs, compute part of the generation on each GPU and then all GPUs communicate to each other the results, then move on to the next layer. That means all GPUs are active at once but they need to communicate much more.</p>
+<p>Industry observers note that deepSpeed-Inference also uses custom CUDA kernels to avoid allocating too much memory and doing tensor copying to and from GPUs. The effect of this is lesser memory requirements and fewer kernel starts which improves the throughput and allows for bigger batch sizes leading to higher overall throughput.</p>
+<p>If you are interested in more examples you can take a look at Accelerate GPT-J inference with DeepSpeed-Inference on GPUs or Accelerate BERT inference with DeepSpeed-Inference on GPUs.</p>
+<p>Deepspeed ZeRO uses a magical sharding approach which can take almost any model and scale it across a few or hundreds of GPUs and the do training or inference on it.</p>
+<p>Sources indicate that note that the script presently runs the same inputs on all GPUs, but you can run a different stream on each GPU, and get n_gpu times faster throughput. You can't do that with Deepspeed-Inference.</p>
+<p>Please remember that with ZeRO the user can generate multiple unique streams at the same time - and thus the overall performance should be throughput in secs/token divided by number of participating GPUs - so 8x to 16x faster depending on whether 8 or 16 GPUs were used!</p>
+<p>You can also try the offloading solutions with just one smallish GPU, which will take a long time to run, but if you don't have 8 huge GPUs this is as good as it gets.</p>
+<p>make sure to adjust /path/to/nvme_offload to somewhere you have ~400GB of free memory on a fast NVMe drive.</p>
+<p>At transformers-bloom-inference you will find more very efficient solutions, including server solutions.</p>
+<p>Mayank Mishra took all the demo scripts discussed in this blog post and turned them into a webserver package, which you can download from here.</p>
+<p>Nicolas Patry has developed a super-efficient Rust-based webserver solution.</p>
+<p>Thomas Wang is developing a very fast custom CUDA kernel BLOOM model.</p>
+<p>The JAX team @HuggingFace has developed a JAX-based solution.</p>
+<p>As this blog post is likely to become outdated if you read this months after it was published please
+use transformers-bloom-inference to find the most up-to-date solutions.</p>
+<p id="sec-end-172942">Huge thanks to the following kind folks who asked good questions and helped improve the readability of the article:
+Olatunji Ruwase and Philipp Schmid.</p>
+<p style="margin-top: 25px;">
+<a href="https://huggingface.co/blog/bloom-inference-pytorch-scripts" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="industry-news-accelerate-bert-inference-with-hugging-face-transfo-173007.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #173007. Industry News: Accelerate BERT inference with Hugging Face Transformers and AWS Inferentia
+        </a>
+        
+        <a href="accelerate-large-model-training-using-deepspeed-172972.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #172972. Accelerate Large Model Training using DeepSpeed
+        </a>
+        
+        <a href="optimization-story-bloom-inference-172934.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #172934. Optimization story: Bloom inference
+        </a>
+        
+        <a href="fast-inference-on-large-language-models-bloomz-on-habana-gaudi2-a-172870.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #172870. Fast Inference on Large Language Models: BLOOMZ on Habana Gaudi2 Accelerator
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

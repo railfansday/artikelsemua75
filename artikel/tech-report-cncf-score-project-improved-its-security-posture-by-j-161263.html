@@ -150,8 +150,8 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-161263">Industry observers note that score, a CNCF Sandbox project, recently joined the Docker-Sponsored Open Source (DSOS) Program to strengthen the security of its container images and release pipeline. In this post, the Score maintainers share what we adopted (Docker Hub, Docker Scout, Docker Hardened Images, the Docker GitHub Builder, and OIDC connections), the results we measured, and how other open source projects, within the CNCF and beyond, can apply the same practices by default.</p>
-<p>Recent findings suggest that in September 2025, the CNCF unveiled a partnership with Docker to expand infrastructure support for project maintainers through the Docker-Sponsored Open Source (DSOS) Program. The partnership gives CNCF projects access to Docker’s security scanning tools, container registry, and best-practice resources at no cost. <span style="font-size:13px;">(Related: <a href="la-noire-2-leak-resurfaces-after-source-gets-gta-6-ending-right-161634.html" style="color:#2563eb; font-weight:600;">LA Noire 2 leak resurfaces after source gets GTA 6 endi...</a>)</span></p>
-<p>This aligned closely with the discussions held at the Maintainer Summit NA 2025 in Atlanta, which centered on increasing collaboration across CNCF projects and demonstrating security best practices.</p>
+<p>Recent findings suggest that in September 2025, the CNCF unveiled a partnership with Docker to expand infrastructure support for project maintainers through the Docker-Sponsored Open Source (DSOS) Program. The partnership gives CNCF projects access to Docker’s security scanning tools, container registry, and best-practice resources at no cost. <span style="font-size:13px;">(Related: <a href="the-partnership-amazon-sagemaker-and-hugging-face-173049.html" style="color:#2563eb; font-weight:600;">The Partnership: Amazon SageMaker and Hugging Face...</a>)</span></p>
+<p>This aligned closely with the discussions held at the Maintainer Summit NA 2025 in Atlanta, which centered on increasing collaboration across CNCF projects and demonstrating security best practices. <span style="font-size:13px;">(Related: <a href="tech-report-showcase-your-projects-in-spaces-using-gradio-173035.html" style="color:#2563eb; font-weight:600;">Tech Report: Showcase Your Projects in Spaces using Gra...</a>)</span></p>
 <p>The Docker-Sponsored Open Source (DSOS) Program supports non-commercial open source projects with Docker tooling and infrastructure.</p>
 <p>Before: Score publishes different container images: the CLIs of score-compose, score-k8s, score-helm and score-radius; and the sample-score-app used for demos and testing. We previously published them in the GitHub Container Registry here.</p>
 <p>After: Through the DSOS Program, we now publish these images on Docker Hub, which increases their visibility and gives the community a verified, trusted source.</p>
@@ -164,7 +164,7 @@
 <p>The comment details the comparison between the two images (before versus after): size, packages updated, added or removed, CVEs introduced and resolved, and compliance with our policies in place (run as non-root, no critical CVEs, no packages with AGPL v3 licences).</p>
 <p>The analysis goes beyond the images themselves: it also covers the Go libraries and binaries they contain.</p>
 <p>The Docker Scout console also provides a single view of CVEs, packages, base images, and policies across all of our container images, which makes it easy to see what is used where, and in which version.</p>
-<p>When Docker made Hardened Images freely available under Apache 2.0, we saw an opportunity to simplify our security posture while staying compatible with our existing Dockerfiles and workflows, even though we were already using multi-stage builds and distroless base images. <span style="font-size:13px;">(Related: <a href="tech-report-developer-builds-a-discord-kitten-thats-actually-an-a-161639.html" style="color:#2563eb; font-weight:600;">Tech Report: Developer builds a ‘Discord kitten’ that’s...</a>)</span></p>
+<p>When Docker made Hardened Images freely available under Apache 2.0, we saw an opportunity to simplify our security posture while staying compatible with our existing Dockerfiles and workflows, even though we were already using multi-stage builds and distroless base images.</p>
 <p>It has been revealed that docker Hardened Images are minimal, security-focused container base images designed to reduce inherited risk in downstream projects. They are built and maintained with security and transparency as defaults, and offer:.</p>
 <p>The migration was straightforward.</p>
 <p>In a recent development, take the score-radius CLI, which used a golang:alpine and a distroless images and now uses dhi.io/golang and dhi.io/static images. The changes required in the Dockerfile were minimal:.</p>
@@ -214,20 +214,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="tech-report-webai-releases-twil-8b-a-5-gib-open-weight-reasoning--156209.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #156209. Tech Report: webAI Releases TwIL-8B: A 5 GiB Open-Weight Reasoning Model With a 98.2 MATH-500 Score
+        <a href="tech-report-synthetic-data-save-money-time-and-carbon-with-open-s-172714.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #172714. Tech Report: Synthetic data: save money, time and carbon with open source
         </a>
         
-        <a href="tech-report-shirudo-openai-and-ciscos-open-source-runtime-for-shi-154195.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #154195. Tech Report: Shirudo: OpenAI and Cisco's open-source runtime for shielding unpatched Linux
+        <a href="tech-report-gemma-3n-fully-available-in-the-open-source-ecosystem-172292.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #172292. Tech Report: Gemma 3n fully available in the open-source ecosystem!
         </a>
         
-        <a href="tech-report-welcome-gemma-googles-new-open-llm-161613.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #161613. Tech Report: Welcome Gemma - Google’s new open LLM
+        <a href="tech-report-graduate-software-engineer-open-source-and-linux-cano-169610.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #169610. Tech Report: Graduate Software Engineer, Open Source and Linux, Canonical Ubuntu at Canonical
         </a>
         
-        <a href="we-got-claude-to-fine-tune-an-open-source-llm-161570.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #161570. We Got Claude to Fine-Tune an Open Source LLM
+        <a href="tech-report-italy-supports-saudi-arabia-joining-fighter-jet-progr-168161.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #168161. Tech Report: Italy Supports Saudi Arabia Joining Fighter-Jet Program, PM Meloni Says
         </a>
         
     </div>

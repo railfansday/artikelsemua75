@@ -150,9 +150,9 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-160878">The build failed with one line and nothing else:.</p>
-<p>No stack trace, no line number, no file. It came out of the credential import step on the macOS build machine, which meant the failure was not in my app. It was in the 4,457-byte file I was handing the toolchain to prove who I am. <span style="font-size:13px;">(Related: <a href="build-a-racetrack-codes-november-2026-161635.html" style="color:#2563eb; font-weight:600;">Build A Racetrack codes (November 2026)...</a>)</span></p>
-<p>I had spent the previous three weeks treating that file as a constant. It was the one thing I was sure about. The app code changed daily; the certificate was issued by Apple and downloaded from a portal that does not make mistakes. So when the build broke, I looked everywhere except at the certificate — at the provisioning profile, at the bundle identifier, at the credentials.json schema, at the Node version, at the EAS CLI version. All of those were wrong at various points, and fixing them did not fix the build. <span style="font-size:13px;">(Related: <a href="how-to-build-a-healthcare-robot-from-simulation-to-deployment-wit-161605.html" style="color:#2563eb; font-weight:600;">How to Build a Healthcare Robot from Simulation to Depl...</a>)</span></p>
-<p>The certificate was the bug. Specifically, it was too modern.</p>
+<p>No stack trace, no line number, no file. It came out of the credential import step on the macOS build machine, which meant the failure was not in my app. It was in the 4,457-byte file I was handing the toolchain to prove who I am. <span style="font-size:13px;">(Related: <a href="breaking-the-age-of-machine-learning-as-code-has-arrived-173032.html" style="color:#2563eb; font-weight:600;">Breaking: The Age of Machine Learning As Code Has Arriv...</a>)</span></p>
+<p>I had spent the previous three weeks treating that file as a constant. It was the one thing I was sure about. The app code changed daily; the certificate was issued by Apple and downloaded from a portal that does not make mistakes. So when the build broke, I looked everywhere except at the certificate — at the provisioning profile, at the bundle identifier, at the credentials.json schema, at the Node version, at the EAS CLI version. All of those were wrong at various points, and fixing them did not fix the build.</p>
+<p>The certificate was the bug. Specifically, it was too modern. <span style="font-size:13px;">(Related: <a href="latest-update-scaling-up-bert-like-model-inference-on-modern-cpu--173028.html" style="color:#2563eb; font-weight:600;">Latest Update: Scaling up BERT-like model Inference on ...</a>)</span></p>
 <p>A .p12 is a container: one or more X.509 certificates, the private key matching the leaf certificate, and a MAC — a checksum computed over the contents using a key derived from the password. When a tool imports it, it does two things in order. First it derives a key from your password and verifies the MAC, which tells it the file was not corrupted or tampered with. Then it decrypts the private key.</p>
 <p>The MAC step is where mine died. And the reason is embarrassingly simple: OpenSSL 3, which is what openssl pkcs12 -export runs on any current machine, defaults to writing PKCS#12 files with modern parameters — AES-256-CBC for the encrypted content, SHA-256 for the MAC, PBKDF2 for key derivation. That is the correct choice in 2026. It is also a format the macOS Security framework refuses to verify when you import a .p12 non-interactively.</p>
 <p>Sources indicate that I did not figure this out by reading Apple's source. I figured it out by measuring the files that did work. Three .p12 files in my repo, all of which had built successfully at some point:.</p>
@@ -194,20 +194,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="apple-releases-ios-273-public-beta-2-latest-developer-beta-2-buil-154283.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #154283. Apple releases iOS 27.3 public beta 2, latest developer beta 2 build
+        <a href="apple-releases-ios-273-public-beta-2-newly-introduced-developer-b-165600.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #165600. Apple releases iOS 27.3 public beta 2, newly introduced developer beta 2 build
         </a>
         
-        <a href="build-a-racetrack-codes-november-2026-161635.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #161635. Build A Racetrack codes (November 2026)
+        <a href="introducing-the-private-hub-a-new-way-to-build-with-machine-learn-172958.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #172958. Introducing the Private Hub: A New Way to Build With Machine Learning
         </a>
         
-        <a href="how-to-build-a-healthcare-robot-from-simulation-to-deployment-wit-161605.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #161605. How to Build a Healthcare Robot from Simulation to Deployment with NVIDIA Isaac for Healthcare
+        <a href="sentiment-analysis-on-encrypted-data-with-homomorphic-encryption-172922.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #172922. Sentiment Analysis on Encrypted Data with Homomorphic Encryption
         </a>
         
-        <a href="easily-build-and-share-rocm-kernels-with-hugging-face-161597.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #161597. Easily Build and Share ROCm Kernels with Hugging Face
+        <a href="towards-encrypted-large-language-models-with-fhe-172804.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #172804. Towards Encrypted Large Language Models with FHE
         </a>
         
     </div>

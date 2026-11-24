@@ -150,9 +150,9 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-161264">It has been revealed that large diffusion transformers can create stunning images (or even videos, audio snippets, and now text), but loading a modern text-to-image model in BF16 precision often requires 20-30 GB of VRAM, which puts these models out of reach of most consumer GPUs. Quantization is a powerful solution to this problem, and Diffusers already integrates several quantization backends such as bitsandbytes, GGUF, torchao, and Quanto, which we covered in Exploring Quantization Backends in Diffusers.</p>
-<p>Industry observers note that most of these backends are weight-only. This means that they store the weights in low precision and dequantize them back to high precision at compute time. This reduces memory usage significantly, but it usually does not make inference faster, and can even add a small latency overhead. <span style="font-size:13px;">(Related: <a href="industry-news-minecraft-mommy-goes-viral-on-tiktok-for-giving-goo-161638.html" style="color:#2563eb; font-weight:600;">Industry News: ‘Minecraft Mommy’ goes viral on TikTok f...</a>)</span></p>
-<p>SVDQuant, the quantization method behind the popular Nunchaku inference engine, takes a different approach. It runs the main transformer layers with 4-bit weights and activations (W4A4), reducing memory while also speeding up the denoising loop. The details are covered below, but until now, using these checkpoints required a separate inference library.</p>
-<p>With current Diffusers, loading a Nunchaku checkpoint is as simple as calling from_pretrained(), with no local CUDA compilation required thanks to the kernels package. In addition, the companion diffuse-compressor toolkit lets you quantize newly introduced architectures yourself and publish them as regular Diffusers repositories. <span style="font-size:13px;">(Related: <a href="diffusers-welcomes-stable-diffusion-3-161609.html" style="color:#2563eb; font-weight:600;">Diffusers welcomes Stable Diffusion 3...</a>)</span></p>
+<p>Industry observers note that most of these backends are weight-only. This means that they store the weights in low precision and dequantize them back to high precision at compute time. This reduces memory usage significantly, but it usually does not make inference faster, and can even add a small latency overhead. <span style="font-size:13px;">(Related: <a href="breaking-block-sparse-matrices-for-smaller-and-faster-language-mo-173063.html" style="color:#2563eb; font-weight:600;">Breaking: Block Sparse Matrices for Smaller and Faster ...</a>)</span></p>
+<p>SVDQuant, the quantization method behind the popular Nunchaku inference engine, takes a different approach. It runs the main transformer layers with 4-bit weights and activations (W4A4), reducing memory while also speeding up the denoising loop. The details are covered below, but until now, using these checkpoints required a separate inference library. <span style="font-size:13px;">(Related: <a href="how-to-train-a-newly-introduced-language-model-from-scratch-using-173066.html" style="color:#2563eb; font-weight:600;">How to train a newly introduced language model from scr...</a>)</span></p>
+<p>With current Diffusers, loading a Nunchaku checkpoint is as simple as calling from_pretrained(), with no local CUDA compilation required thanks to the kernels package. In addition, the companion diffuse-compressor toolkit lets you quantize newly introduced architectures yourself and publish them as regular Diffusers repositories.</p>
 <p>First, install the requirements. You need a recent version of Diffusers and the Hugging Face kernels package:.</p>
 <p>Then load a pre-quantized pipeline like any other Diffusers model:.</p>
 <p>No custom pipeline class or separate inference engine is needed, and there is nothing to compile locally. The NVFP4 kernels are downloaded from the Hub through the Nunchaku Lite kernels page the first time they are used. This checkpoint pairs a Nunchaku NVFP4 transformer with a bitsandbytes NF4 text encoder, and generates a 1024x1024 image in about 1.7 seconds on an RTX 5090 with a peak memory usage of about 12 GB, compared with about 24 GB for the BF16 pipeline. You can find more details about the Nunchaku Lite checkpoint format in the official Diffusers documentation.</p>
@@ -216,20 +216,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
+        <a href="tech-report-accelerating-stable-diffusion-inference-on-intel-cpus-172871.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #172871. Tech Report: Accelerating Stable Diffusion Inference on Intel CPUs
+        </a>
+        
         <a href="tech-report-introducing-modular-diffusers-composable-building-blo-161471.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #161471. Tech Report: Introducing Modular Diffusers - Composable Building Blocks for Diffusion Pipelines
         </a>
         
-        <a href="diffusers-welcomes-stable-diffusion-3-161609.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #161609. Diffusers welcomes Stable Diffusion 3
+        <a href="stable-diffusion-with-diffusers-172948.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #172948. Stable Diffusion with 🧨 Diffusers
         </a>
         
-        <a href="tech-report-180b-parameters-32gb-of-ram-pushing-moe-inference-to--160913.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #160913. Tech Report: 180B Parameters, 32GB of RAM: Pushing MoE Inference to the Limit with Transformers
-        </a>
-        
-        <a href="tech-report-diablo-4s-next-expansion-is-bringing-two-upcoming-cla-155252.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #155252. Tech Report: Diablo 4's next expansion is bringing two upcoming classes to the game, one of which you can play right now
+        <a href="tech-report-stable-diffusion-in-jax-flax-172933.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #172933. Tech Report: 🧨 Stable Diffusion  in JAX / Flax !
         </a>
         
     </div>

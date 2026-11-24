@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universal Image Segmentation with Mask2Former and OneFormer</title>
+    <meta name="description" content="This guide introduces Mask2Former and OneFormer, 2 state-of-the-art neural networks for image segmentation. The models are now available in 🤗 transformers,">
+    <meta name="keywords" content="segmentation, image, model, instance, semantic, panoptic, oneformer, which">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua75/artikel/universal-image-segmentation-with-mask2former-and-oneformer-172900.html">
+    
+    <meta property="og:title" content="Universal Image Segmentation with Mask2Former and OneFormer">
+    <meta property="og:description" content="This guide introduces Mask2Former and OneFormer, 2 state-of-the-art neural networks for image segmentation. The models are now available in 🤗 transformers,">
+    <meta property="og:image" content="https://huggingface.co/blog/assets/127_mask2former/thumbnail.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua75/artikel/universal-image-segmentation-with-mask2former-and-oneformer-172900.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Universal Image Segmentation with Mask2Former and OneFormer">
+    <meta name="twitter:description" content="This guide introduces Mask2Former and OneFormer, 2 state-of-the-art neural networks for image segmentation. The models are now available in 🤗 transformers,">
+    <meta name="twitter:image" content="https://huggingface.co/blog/assets/127_mask2former/thumbnail.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Universal Image Segmentation with Mask2Former and OneFormer", "image": ["https://huggingface.co/blog/assets/127_mask2former/thumbnail.png"], "datePublished": "2023-01-19T00:00:00", "dateModified": "2026-11-24T12:17:50.796091", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua75/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua75/artikel/universal-image-segmentation-with-mask2former-and-oneformer-172900.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Universal Image Segmentation with Mask2Former and OneFormer?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Hugging Face."}}, {"@type": "Question", "name": "Which category does 'Universal Image Segmentation with Mask2Former and OneFormer' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Universal Image Segmentation with Mask2Former and OneFormer</h1>
+        <div class="meta-line">🌐 Source: <strong>Hugging Face</strong> &bull; 📅 19 Jan 2023 &bull; ⏱️ 5 min read (1098 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>This guide introduces Mask2Former and OneFormer, 2 state-of-the-art neural networks for image segmentation.</li><li style='margin-bottom:6px;'>Image segmentation is the task of identifying different "segments" in an image, like people or cars.</li><li style='margin-bottom:6px;'>Image segmentation can largely be split into 3 subtasks - instance, semantic and panoptic segmentation - with numerous methods and model architectures to perform each subtask.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-172900"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-172900"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-172900"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Universal Image Segmentation with Mask2Former and OneFormer" loading="lazy" src="https://huggingface.co/blog/assets/127_mask2former/thumbnail.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-172900">This guide introduces Mask2Former and OneFormer, 2 state-of-the-art neural networks for image segmentation. The models are now available in 🤗 transformers, an open-source library that offers easy-to-use implementations of state-of-the-art models. Along the way, you'll learn about the difference between the various forms of image segmentation.</p>
+<p>Image segmentation is the task of identifying different "segments" in an image, like people or cars. More technically, image segmentation is the task of grouping pixels with different semantics. Refer to the Hugging Face task page for a brief introduction. <span style="font-size:13px;">(Related: <a href="latest-update-how-to-generate-text-using-different-decoding-metho-173065.html" style="color:#2563eb; font-weight:600;">Latest Update: How to generate text: using different de...</a>)</span></p>
+<p>Image segmentation can largely be split into 3 subtasks - instance, semantic and panoptic segmentation - with numerous methods and model architectures to perform each subtask. <span style="font-size:13px;">(Related: <a href="how-to-train-a-newly-introduced-language-model-from-scratch-using-173066.html" style="color:#2563eb; font-weight:600;">How to train a newly introduced language model from scr...</a>)</span></p>
+<p>The figure below illustrates the difference between the 3 subtasks (taken from this blog post).</p>
+<p>Industry observers note that over the last years, researchers have come up with several architectures that were typically very tailored to either instance, semantic or panoptic segmentation. Instance and panoptic segmentation were typically solved by outputting a set of binary masks + corresponding labels per object instance (very similar to object detection, except that one outputs a binary mask instead of a bounding box per instance). This is oftentimes called "binary mask classification". Semantic segmentation on the other hand was typically solved by making models output a single "segmentation map" with one label per pixel. Hence, semantic segmentation was treated as a "per-pixel classification" problem. Popular semantic segmentation models which adopt this paradigm are SegFormer, on which we wrote an extensive blog post, and UPerNet.</p>
+<p>According to recent reports, luckily, since around 2020, people started to come up with models that can solve all 3 tasks (instance, semantic and panoptic segmentation) with a unified architecture, using the same paradigm. This started with DETR, which was the first model that solved panoptic segmentation using a "binary mask classification" paradigm, by treating "things" and "stuff" classes in a unified way. The key innovation was to have a Transformer decoder come up with a set of binary masks + classes in a parallel way. This was then improved in the MaskFormer paper, which showed that the "binary mask classification" paradigm also works really well for semantic segmentation.</p>
+<p>In a recent development, mask2Former extends this to instance segmentation by further improving the neural network architecture. Hence, we've evolved from separate architectures to what researchers now refer to as "universal image segmentation" architectures, capable of solving any image segmentation task. Interestingly, these universal models all adopt the "mask classification" paradigm, discarding the "per-pixel classification" paradigm entirely. A figure illustrating Mask2Former's architecture is depicted below (taken from the original paper).</p>
+<p>In short, an image is first sent through a backbone (which, in the paper could be either ResNet or Swin Transformer) to get a list of low-resolution feature maps. Next, these feature maps are enhanced using a pixel decoder module to get high-resolution features. Finally, a Transformer decoder takes in a set of queries and transforms them into a set of binary mask and class predictions, conditioned on the pixel decoder's features.</p>
+<p>In a recent development, note that Mask2Former still needs to be trained on each task separately to obtain state-of-the-art results. This has been improved by the OneFormer model, which obtains state-of-the-art performance on all 3 tasks by only training on a panoptic version of the dataset (!), by adding a text encoder to condition the model on either "instance", "semantic" or "panoptic" inputs. This model is also as of today available in 🤗 transformers. It's even more accurate than Mask2Former, but comes with greater latency due to the additional text encoder. See the figure below for an overview of OneFormer. It leverages either Swin Transformer or the newly introduced DiNAT model as backbone.</p>
+<p>Recent findings suggest that usage of Mask2Former and OneFormer is pretty straightforward, and very similar to their predecessor MaskFormer. Let's instantiate a Mask2Former model from the hub trained on the COCO panoptic dataset, along with its processor. Note that the authors released no less than 30 checkpoints trained on various datasets.</p>
+<p id="sec-mid-172900">Next, let's load the familiar cats image from the COCO dataset, on which we'll perform inference.</p>
+<p>We prepare the image for the model using the image processor, and forward it through the model.</p>
+<p>It has been revealed that the model outputs a set of binary masks and corresponding class logits. The raw outputs of Mask2Former can be easily postprocessed using the image processor to get the final instance, semantic or panoptic segmentation predictions:.</p>
+<p>It has been revealed that in panoptic segmentation, the final prediction contains 2 things: a segmentation map of shape (height, width) where each value encodes the instance ID of a given pixel, as well as a corresponding segments_info. The  segments_info contains more information about the individual segments of the map (such as their class / category ID). Note that Mask2Former outputs binary mask proposals of shape (96, 96) for efficiency and the target_sizes argument is used to resize the final mask to the original image size.</p>
+<p>Here, we can see that the model is capable of detecting the individual cats and remotes in the image. Semantic segmentation on the other hand would just create a single mask for the "cat" category.</p>
+<p>To perform inference with OneFormer, which has an identical API except that it also takes an additional text prompt as input, we refer to the demo notebook.</p>
+<p>Sources indicate that for fine-tuning Mask2Former/OneFormer on a custom dataset for either instance, semantic and panoptic segmentation, check out our demo notebooks. MaskFormer, Mask2Former and OneFormer share a similar API so upgrading from MaskFormer is easy and requires minimal changes.</p>
+<p>In a recent development, the demo notebooks make use of MaskFormerForInstanceSegmentation to load the model whereas you'll have to switch to using either Mask2FormerForUniversalSegmentation or OneFormerForUniversalSegmentation. In case of image processing for Mask2Former, you'll also have to switch to using Mask2FormerImageProcessor. You can also load the image processor using the AutoImageProcessor class which automatically takes care of loading the correct processor corresponding to your model. OneFormer on the other hand requires a OneFormerProcessor, which prepares the images, along with a text input, for the model.</p>
+<p>Sources indicate that that's it! You now know about the difference between instance, semantic and panoptic segmentation, as well as how to use "universal architectures" such as Mask2Former and OneFormer using the 🤗 transformers library.</p>
+<p>Industry observers note that we hope you enjoyed this post and learned something. Feel free to let us know whether you are satisfied with the results when fine-tuning Mask2Former or OneFormer.</p>
+<p id="sec-end-172900">If you liked this topic and want to learn more, we recommend the following resources:.</p>
+<p style="margin-top: 25px;">
+<a href="https://huggingface.co/blog/mask2former" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="industry-news-zero-shot-image-segmentation-with-clipseg-172905.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #172905. Industry News: Zero-shot image segmentation with CLIPSeg
+        </a>
+        
+        <a href="breaking-fine-tune-vit-for-image-classification-with-transformers-173011.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #173011. Breaking: Fine-Tune ViT for Image Classification with 🤗 Transformers
+        </a>
+        
+        <a href="image-search-with-datasets-173008.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #173008. Image search with 🤗 datasets
+        </a>
+        
+        <a href="fine-tune-a-semantic-segmentation-model-with-a-custom-dataset-173006.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #173006. Fine-Tune a Semantic Segmentation Model with a Custom Dataset
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

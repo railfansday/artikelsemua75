@@ -167,14 +167,14 @@ Netflix at QConSF 2026: Retrofitting the SDLC for AI Coding Agents.</p>
 									
 									3
 									min read.</p>
-<p>At QCon San Francisco 2026, Mark Khuzam, senior software engineer at Netflix, described how the organization's Commerce team retrofitted its software development lifecycle so that AI coding agents and engineers could ship together safely. <span style="font-size:13px;">(Related: <a href="breaking-ai-for-game-development-creating-a-farming-game-in-5-day-161616.html" style="color:#2563eb; font-weight:600;">Breaking: AI for Game Development: Creating a Farming G...</a>)</span></p>
-<p>Khuzam argued that most of the work was not about agents at all, but about documentation, consistency and review. <span style="font-size:13px;">(Related: <a href="latest-update-gta-6-and-ocarina-of-time-remake-caught-in-metacrit-161631.html" style="color:#2563eb; font-weight:600;">Latest Update: GTA 6 and Ocarina of Time remake caught ...</a>)</span></p>
+<p>At QCon San Francisco 2026, Mark Khuzam, senior software engineer at Netflix, described how the organization's Commerce team retrofitted its software development lifecycle so that AI coding agents and engineers could ship together safely.</p>
+<p>Khuzam argued that most of the work was not about agents at all, but about documentation, consistency and review.</p>
 <p>Much of Commerce runs as server-driven UI, an approach Netflix has discussed at QCon before. A single screen-composition service behind the API gateway builds screens for iOS, Android, web and TV.</p>
-<p>Khuzam opened with a mock firm email announcing that every engineer now had Claude Code and asking how much faster everyone was shipping. The problem the team ran into next was summed up in one line.</p>
+<p>Khuzam opened with a mock firm email announcing that every engineer now had Claude Code and asking how much faster everyone was shipping. The problem the team ran into next was summed up in one line. <span style="font-size:13px;">(Related: <a href="breaking-block-sparse-matrices-for-smaller-and-faster-language-mo-173063.html" style="color:#2563eb; font-weight:600;">Breaking: Block Sparse Matrices for Smaller and Faster ...</a>)</span></p>
 <p>According to recent reports, the team's first attempt was having an agent migrate tests, and it took four tries. The team started with "migrate this file," then added instructions, then the APIs to use, then how to mock data.</p>
 <p>Sources indicate that the docs were also hard to find, since the agent's context window ran out before it found the right page. And they were inconsistent, because tests were not written the same way across the codebase.</p>
 <p>It has been revealed that developers rated the internal framework at a Net Promoter Score of -3. Moving from one test to a whole feature, from screen to data to route to test, meant teaching the agent how the team builds.</p>
-<p>Khuzam described the fix as context engineering, "getting what engineers know into what agents see." The team wrote 45 architecture decision records, each "written for people and for agents.".</p>
+<p>Khuzam described the fix as context engineering, "getting what engineers know into what agents see." The team wrote 45 architecture decision records, each "written for people and for agents.". <span style="font-size:13px;">(Related: <a href="industry-news-simple-considerations-for-simple-people-building-fa-173053.html" style="color:#2563eb; font-weight:600;">Industry News: Simple considerations for simple people ...</a>)</span></p>
 <p>It has been revealed that each record covers the context, the decision, a pattern and an anti-pattern, and AI usage notes on what an agent should do. It also links to related docs and code, and the records now ship inside almost every repository.</p>
 <p>To keep those records and more than 300 other documents findable, the team borrowed from how search engines read a site. An AGENTS.md file, the project instructions file that coding agents read before anything else, plays the part of robots.txt.</p>
 <p id="sec-mid-161095">The second half of the talk followed code after an agent writes it. Khuzam noted that the CI pipeline is still deterministic, running builds, tests, screenshot diffing, merge queues and canaries.</p>
@@ -213,6 +213,10 @@ Netflix at QConSF 2026: Retrofitting the SDLC for AI Coding Agents.</p>
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
+        <a href="openai-scales-git-for-coding-agents-with-pando-172090.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #172090. OpenAI Scales Git for Coding Agents with Pando
+        </a>
+        
         <a href="give-your-coding-agents-a-memory-you-own-161161.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #161161. Give Your Coding Agents a Memory You Own
         </a>
@@ -223,10 +227,6 @@ Netflix at QConSF 2026: Retrofitting the SDLC for AI Coding Agents.</p>
         
         <a href="how-to-run-claude-code-and-other-coding-agents-in-the-cloud-247-161078.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #161078. How to Run Claude Code and Other Coding Agents in the Cloud 24/7
-        </a>
-        
-        <a href="ai-coding-agents-leak-thousands-of-secrets-to-github-161054.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #161054. AI Coding Agents Leak Thousands of Secrets to GitHub
         </a>
         
     </div>

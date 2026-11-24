@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Industry News: Zero-shot image segmentation with CLIPSeg</title>
+    <meta name="description" content="Industry observers note that this guide shows how you can use CLIPSeg, a zero-shot image segmentation model, using 🤗 transformers. CLIPSeg creates rough se">
+    <meta name="keywords" content="image, segmentation, model, clip, clipseg, segment, want, also">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua75/artikel/industry-news-zero-shot-image-segmentation-with-clipseg-172905.html">
+    
+    <meta property="og:title" content="Industry News: Zero-shot image segmentation with CLIPSeg">
+    <meta property="og:description" content="Industry observers note that this guide shows how you can use CLIPSeg, a zero-shot image segmentation model, using 🤗 transformers. CLIPSeg creates rough se">
+    <meta property="og:image" content="https://huggingface.co/blog/assets/123_clipseg-zero-shot/thumb.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua75/artikel/industry-news-zero-shot-image-segmentation-with-clipseg-172905.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Industry News: Zero-shot image segmentation with CLIPSeg">
+    <meta name="twitter:description" content="Industry observers note that this guide shows how you can use CLIPSeg, a zero-shot image segmentation model, using 🤗 transformers. CLIPSeg creates rough se">
+    <meta name="twitter:image" content="https://huggingface.co/blog/assets/123_clipseg-zero-shot/thumb.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Industry News: Zero-shot image segmentation with CLIPSeg", "image": ["https://huggingface.co/blog/assets/123_clipseg-zero-shot/thumb.png"], "datePublished": "2022-12-21T00:00:00", "dateModified": "2026-11-24T12:17:51.489661", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua75/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua75/artikel/industry-news-zero-shot-image-segmentation-with-clipseg-172905.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Industry News: Zero-shot image segmentation with CLIPSeg?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Hugging Face."}}, {"@type": "Question", "name": "Which category does 'Industry News: Zero-shot image segmentation with CLIPSeg' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Industry News: Zero-shot image segmentation with CLIPSeg</h1>
+        <div class="meta-line">🌐 Source: <strong>Hugging Face</strong> &bull; 📅 21 Dec 2022 &bull; ⏱️ 9 min read (1774 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>Industry observers note that this guide shows how you can use CLIPSeg, a zero-shot image segmentation model, using 🤗 transformers.</li><li style='margin-bottom:6px;'>Industry observers note that image segmentation is a well-known task within the field of computer vision.</li><li style='margin-bottom:6px;'>One limitation of most image segmentation models is that they only work with a fixed list of categories.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-172905"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-172905"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-172905"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Industry News: Zero-shot image segmentation with CLIPSeg" loading="lazy" src="https://huggingface.co/blog/assets/123_clipseg-zero-shot/thumb.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-172905">Industry observers note that this guide shows how you can use CLIPSeg, a zero-shot image segmentation model, using 🤗 transformers. CLIPSeg creates rough segmentation masks that can be used for robot perception, image inpainting, and many other tasks. If you need more precise segmentation masks, we’ll show how you can refine the results of CLIPSeg on Segments.ai.</p>
+<p>Industry observers note that image segmentation is a well-known task within the field of computer vision. It allows a computer to not only know what is in an image (classification), where objects are in the image (detection), but also what the outlines of those objects are. Knowing the outlines of objects is essential in fields such as robotics and autonomous driving. For example, a robot has to know the shape of an object to grab it correctly. Segmentation can also be combined with image inpainting to allow customers to describe which part of the image they want to replace. <span style="font-size:13px;">(Related: <a href="how-we-sped-up-transformer-inference-100x-for-api-customers-173058.html" style="color:#2563eb; font-weight:600;">How we sped up transformer inference 100x for 🤗 API cus...</a>)</span></p>
+<p>One limitation of most image segmentation models is that they only work with a fixed list of categories. For example, you cannot simply use a segmentation model trained on oranges to segment apples. To teach the segmentation model an additional category, you have to label data of the latest category and train a new model, which can be costly and time-consuming. But what if there was a model that can already segment almost any kind of object, without any further training? That’s exactly what CLIPSeg, a zero-shot segmentation model, achieves. <span style="font-size:13px;">(Related: <a href="how-to-train-a-newly-introduced-language-model-from-scratch-using-173066.html" style="color:#2563eb; font-weight:600;">How to train a newly introduced language model from scr...</a>)</span></p>
+<p>At the moment, CLIPSeg still has its limitations. For example, the model uses images of 352 x 352 pixels, so the output is quite low-resolution. This means we cannot expect pixel-perfect results when we work with images from modern cameras. If we want more precise segmentations, we can fine-tune a state-of-the-art segmentation model, as shown in our previous blog post. In that case, we can still use CLIPSeg to generate some rough labels, and then refine them in a labeling tool such as Segments.ai. Before we describe how to do that, let’s first take a look at how CLIPSeg works.</p>
+<p>CLIP, which stands for Contrastive Language–Image Pre-training, is a model developed by OpenAI in 2021. You can give CLIP an image or a piece of text, and CLIP will output an abstract representation of your input. This abstract representation, also called an embedding, is really just a vector (a list of numbers). You can think of this vector as a point in high-dimensional space. CLIP is trained so that the representations of similar pictures and texts are similar as well. This means that if we input an image and a text description that fits that image, the representations of the image and the text will be similar (i.e., the high-dimensional points will be close together).</p>
+<p>At first, this might not seem very useful, but it is actually very powerful. As an example, let’s take a quick look at how CLIP can be used to classify images without ever having been trained on that task. To classify an image, we input the image and the different categories we want to choose from to CLIP (e.g. we input an image and the words “apple”, “orange”, …). CLIP then gives us back an embedding of the image and of each category. Now, we simply have to check which category embedding is closest to the embedding of the image, et voilà! Feels like magic, doesn’t it?</p>
+<p>What’s more, CLIP is not only useful for classification, but it can also be used for image search (can you see how this is similar to classification?), text-to-image models (DALL-E 2 is powered by CLIP), object detection (OWL-ViT), and most importantly for us: image segmentation. Now you see why CLIP was truly a breakthrough in machine learning.</p>
+<p>It has been revealed that the reason why CLIP works so well is that the model was trained on a huge dataset of images with text captions. The dataset contained a whopping 400 million image-text pairs taken from the internet. These images contain a wide variety of objects and concepts, and CLIP is great at creating a representation for each of them.</p>
+<p>Sources indicate that CLIPSeg is a model that uses CLIP representations to create image segmentation masks. It was published by Timo Lüddecke and Alexander Ecker. They achieved zero-shot image segmentation by training a Transformer-based decoder on top of the CLIP model, which is kept frozen. The decoder takes in the CLIP representation of an image, and the CLIP representation of the thing you want to segment. Using these two inputs, the CLIPSeg decoder creates a binary segmentation mask. To be more precise, the decoder doesn’t only use the final CLIP representation of the image we want to segment, but it also uses the outputs of some of the layers of CLIP.</p>
+<p>In a recent development, the decoder is trained on the PhraseCut dataset, which contains over 340,000 phrases with corresponding image segmentation masks. The authors also experimented with various augmentations to expand the size of the dataset. The goal here is not only to be able to segment the categories that are present in the dataset, but also to segment unseen categories. Experiments indeed show that the decoder can generalize to unseen categories.</p>
+<p>It has been revealed that one interesting feature of CLIPSeg is that both the query (the image we want to segment) and the prompt (the thing we want to segment in the image) are input as CLIP embeddings. The CLIP embedding for the prompt can either come from a piece of text (the category name), or from another image. This means you can segment oranges in a photo by giving CLIPSeg an example image of an orange.</p>
+<p>According to recent reports, this technique, which is called "visual prompting", is really helpful when the thing you want to segment is hard to describe. For example, if you want to segment a logo in a picture of a t-shirt, it's not easy to describe the shape of the logo, but CLIPSeg allows you to simply use the image of the logo as the prompt.</p>
+<p>Sources indicate that the CLIPSeg paper contains some tips on improving the effectiveness of visual prompting. They find that cropping the query image (so that it only contains the object you want to segment) helps a lot. Blurring and darkening the background of the query image also helps a little bit. In the next section, we'll show how you can try out visual prompting yourself using 🤗 transformers.</p>
+<p>Sources indicate that using Hugging Face Transformers, you can easily download and run a
+pre-trained CLIPSeg model on your images. Let's start by installing
+transformers.</p>
+<p>To download the model, simply instantiate it.</p>
+<p>Now we can load an image to try out the segmentation. We'll choose a
+picture of a delicious breakfast taken by Calum
+Lewis.</p>
+<p>Let's start by defining some text categories we want to segment.</p>
+<p>Now that we have our inputs, we can process them and input them to the
+model.</p>
+<p id="sec-mid-172905">Finally, let's visualize the output.</p>
+<p>Recent findings suggest that as mentioned before, we can also use images as the input prompts (i.e. in place of the category names). This can be especially useful if it's
+not easy to describe the thing you want to segment. For this example,
+we'll use a picture of a coffee cup taken by Daniel
+Hooper.</p>
+<p>We can now process the input image and prompt image and input them to
+the model.</p>
+<p>Then, we can visualize the results as before.</p>
+<p>In a recent development, let's try one last time by using the visual prompting tips described in
+the paper, i.e. cropping the image and darkening the background.</p>
+<p>It has been revealed that in this case, the result is pretty much the same. This is probably
+because the coffee cup was already separated well from the background in
+the original image.</p>
+<p>As you can see, the results from CLIPSeg are a little fuzzy and very
+low-res. If we want to obtain better results, you can fine-tune a
+state-of-the-art segmentation model, as explained in our previous
+blogpost. To finetune
+the model, we'll need labeled data. In this section, we'll show you
+how you can use CLIPSeg to create some rough segmentation masks and then
+refine them on
+Segments.ai,
+a labeling platform with smart labeling tools for image segmentation.</p>
+<p>According to recent reports, first, create an account at
+https://segments.ai/join
+and install the Segments Python SDK. Then you can initialize the
+Segments.ai Python client using an API key. This key can be found on
+the account page.</p>
+<p>Recent findings suggest that next, let's load an image from a dataset using the Segments client. We'll use the a2d2 self-driving
+dataset. You can also create your
+own dataset by following these
+instructions.</p>
+<p>We also need to get the category names from the dataset attributes.</p>
+<p>Now we can use CLIPSeg on the image as before. This time, we'll also
+scale up the outputs so that they match the input image's size.</p>
+<p>And we can visualize the results again.</p>
+<p>In a recent development, now we have to combine the predictions to a single segmented image. We'll simply do this by taking the category with the greatest sigmoid
+value for each patch. We'll also make sure that all the values under a
+certain threshold do not count.</p>
+<p>Let's quickly visualize the result.</p>
+<p>In a recent development, lastly, we can upload the prediction to Segments.ai. To do that, we'll
+first convert the bitmap to a png file, then we'll upload this file to
+the Segments, and finally we'll add the label to the sample.</p>
+<p>Industry observers note that if you take a look at the uploaded prediction on
+Segments.ai,
+you can see that it's not perfect. However, you can manually correct
+the biggest mistakes, and then you can use the corrected dataset to
+train a better model than CLIPSeg.</p>
+<p>CLIPSeg is a zero-shot segmentation model that works with both text and image prompts. The model adds a decoder to CLIP and can segment almost anything. However, the output segmentation masks are still very low-res for now, so you’ll probably still want to fine-tune a different segmentation model if accuracy is notable.</p>
+<p>It has been revealed that note that there's more research on zero-shot segmentation at the moment being conducted, so you can expect more models to be added in the near future. One example is GroupViT, which is already available in 🤗 Transformers. To stay up to date with the latest news in segmentation research, you can follow us on Twitter: @TobiasCornille, @NielsRogge, and @huggingface.</p>
+<p id="sec-end-172905">If you’re interested in learning how to fine-tune a state-of-the-art segmentation model, check out our previous blog post: https://huggingface.co/blog/fine-tune-segformer.</p>
+<p style="margin-top: 25px;">
+<a href="https://huggingface.co/blog/clipseg-zero-shot" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="zero-shot-image-to-text-generation-with-blip-2-172887.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #172887. Zero-shot image-to-text generation with BLIP-2
+        </a>
+        
+        <a href="universal-image-segmentation-with-mask2former-and-oneformer-172900.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #172900. Universal Image Segmentation with Mask2Former and OneFormer
+        </a>
+        
+        <a href="industry-news-ethics-and-society-newsletter-4-bias-in-text-to-ima-172823.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #172823. Industry News: Ethics and Society Newsletter #4: Bias in Text-to-Image Models
+        </a>
+        
+        <a href="pollen-vision-unified-interface-for-zero-shot-vision-models-in-ro-172689.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #172689. Pollen-Vision: Unified interface for Zero-Shot vision models in robotics
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

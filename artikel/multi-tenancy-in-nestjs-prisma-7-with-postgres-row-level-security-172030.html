@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-tenancy in NestJS + Prisma 7 with Postgres Row Level Security, done right</title>
+    <meta name="description" content="Most multi-tenant SaaS backends isolate customers like this:. It works until the day someone forgets the where. A fresh endpoint, a raw query for a report,">
+    <meta name="keywords" content="tenant, every, table, owner, nestjs, tests, connection, postgres">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua75/artikel/multi-tenancy-in-nestjs-prisma-7-with-postgres-row-level-security-172030.html">
+    
+    <meta property="og:title" content="Multi-tenancy in NestJS + Prisma 7 with Postgres Row Level Security, done right">
+    <meta property="og:description" content="Most multi-tenant SaaS backends isolate customers like this:. It works until the day someone forgets the where. A fresh endpoint, a raw query for a report,">
+    <meta property="og:image" content="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/3otvb2z646ytpt1hl2rv.jpg">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua75/artikel/multi-tenancy-in-nestjs-prisma-7-with-postgres-row-level-security-172030.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Multi-tenancy in NestJS + Prisma 7 with Postgres Row Level Security, done right">
+    <meta name="twitter:description" content="Most multi-tenant SaaS backends isolate customers like this:. It works until the day someone forgets the where. A fresh endpoint, a raw query for a report,">
+    <meta name="twitter:image" content="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/3otvb2z646ytpt1hl2rv.jpg">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Multi-tenancy in NestJS + Prisma 7 with Postgres Row Level Security, done right", "image": ["https://dev-to-uploads.s3.amazonaws.com/uploads/articles/3otvb2z646ytpt1hl2rv.jpg"], "datePublished": "2026-11-24T12:13:18", "dateModified": "2026-11-24T12:16:48.441167", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua75/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua75/artikel/multi-tenancy-in-nestjs-prisma-7-with-postgres-row-level-security-172030.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Multi-tenancy in NestJS + Prisma 7 with Postgres Row Level Security, done right?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Dev."}}, {"@type": "Question", "name": "Which category does 'Multi-tenancy in NestJS + Prisma 7 with Postgres Row Level S' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Multi-tenancy in NestJS + Prisma 7 with Postgres Row Level Security, done right</h1>
+        <div class="meta-line">🌐 Source: <strong>Dev</strong> &bull; 📅 24 Nov 2026 &bull; ⏱️ 3 min read (648 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>Most multi-tenant SaaS backends isolate customers like this:.</li><li style='margin-bottom:6px;'>It works until the day someone forgets the where.</li><li style='margin-bottom:6px;'>Industry observers note that postgreSQL has a better place for this rule: Row Level Security (RLS).</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-172030"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-172030"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-172030"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Multi-tenancy in NestJS + Prisma 7 with Postgres Row Level Security, done right" loading="lazy" src="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/3otvb2z646ytpt1hl2rv.jpg" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-172030">Most multi-tenant SaaS backends isolate customers like this:.</p>
+<p>It works until the day someone forgets the where. A fresh endpoint, a raw query for a report, a background job, a
+tired developer, an AI assistant that "simplified" the query. One missing filter and customer A sees customer B's
+data. Code review won't catch every one, and tests usually check the happy path.</p>
+<p>Industry observers note that postgreSQL has a better place for this rule: Row Level Security (RLS). The database itself filters every row, for
+every query, including the ones you forgot about. <span style="font-size:13px;">(Related: <a href="industry-news-simple-considerations-for-simple-people-building-fa-173053.html" style="color:#2563eb; font-weight:600;">Industry News: Simple considerations for simple people ...</a>)</span></p>
+<p>Recent findings suggest that but RLS has sharp edges. Done half-way, it gives you a false sense of safety. This post walks through the four things
+you need to get right, with NestJS and Prisma 7, and the tests that prove it.</p>
+<p>In a recent development, here is the trap many tutorials skip: RLS does not apply to the table owner or to superusers. And in many projects,
+the app connects with the same user that ran the migrations, which is the owner. <span style="font-size:13px;">(Related: <a href="tech-report-showcase-your-projects-in-spaces-using-gradio-173035.html" style="color:#2563eb; font-weight:600;">Tech Report: Showcase Your Projects in Spaces using Gra...</a>)</span></p>
+<p>So the policy exists, the tests pass on your machine, and it filters nothing.</p>
+<p>The app uses APP_DATABASE_URL (as app_user). Migrations use DATABASE_URL (the owner). And the app checks this at
+boot, so a wrong env var fails loudly instead of silently turning isolation off:.</p>
+<p>You tell Postgres the current tenant with set_config. The third argument matters a lot:.</p>
+<p>In a recent development, true = local to the transaction. At COMMIT or ROLLBACK the setting is gone. With false (session level), the
+setting stays on the pooled connection, and the next request that gets that connection runs as the previous tenant. That is a data leak that only demonstrates up under load.</p>
+<p>Now service code has no tenant filter at all:.</p>
+<p id="sec-mid-172030">Industry observers note that withCurrentTenant reads the tenant from an AsyncLocalStorage set once per request, so it survives every await
+and concurrent requests never mix. Outside a tenant context it throws, instead of quietly returning nothing.</p>
+<p>There is a chicken-and-egg problem. To authenticate an API key you must read api_keys. But api_keys is under RLS,
+and you don't know the tenant yet, so you see no keys.</p>
+<p>The two common "fixes" are both bad: query with the owner connection (now your app holds an RLS-bypassing
+connection), or trust an X-Tenant-Id header (now the client picks its tenant).</p>
+<p>The app can call one function that takes a hash and returns one tenant id. It cannot read any key. A global NestJS
+guard calls it, sets req.tenantId, and an interceptor runs the handler inside that tenant's context.</p>
+<p>According to recent reports, (Gotcha on managed Postgres like Neon or Supabase, where you are not a superuser: ALTER FUNCTION ... OWNER TO needs
+the new owner to have CREATE on the schema. Grant it just for that statement and revoke it right after.).</p>
+<p>RLS you don't test is RLS you don't have. For every tenant-owned table, through the app's real connection:.</p>
+<p>Plus revision, delete, moving a row to another tenant, raw SQL, and 20 concurrent transactions of two tenants.</p>
+<p>And one more test that I think every RLS project needs: a privilege audit. It lists every table in the schema
+with the exact grants the runtime role should have, and checks that every table with a tenant_id column has
+ENABLE + FORCE + a policy with both USING and WITH CHECK. If someone adds a table and forgets RLS, CI goes red.</p>
+<p>To check the tests themselves, I turned RLS off on one table: 15 tests failed. That is the point.</p>
+<p>I packaged all of this into a free, MIT-licensed NestJS starter: Prisma 7, API-key auth, a CRUD example, a tenant CLI,
+Docker, CI, and the full test suite: https://github.com/anasFaleh/nestjs-rls-saas-starter.</p>
+<p id="sec-end-172030">If you run multi-tenant Postgres in production, I'd like to hear how you handle it, especially background jobs and
+reporting queries.</p>
+<p style="margin-top: 25px;">
+<a href="https://dev.to/anas_faleh/multi-tenancy-in-nestjs-prisma-7-with-postgres-row-level-security-done-right-36e0" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="industry-news-nightdives-thief-remaster-will-make-the-most-infamo-166126.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #166126. Industry News: Nightdive's Thief remaster will make the most "infamous" Thief Gold level a little less maddening, by "just kind of pointing the player in the right direction"
+        </a>
+        
+        <a href="generating-human-level-text-with-contrastive-search-in-transforme-172923.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #172923. Generating Human-level Text with Contrastive Search in Transformers 🤗
+        </a>
+        
+        <a href="introducing-ai-vs-ai-a-deep-reinforcement-learning-multi-agents-c-172892.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #172892. Introducing ⚔️ AI vs. AI ⚔️ a deep reinforcement learning multi-agents competition system
+        </a>
+        
+        <a href="hugging-face-partners-with-wiz-research-to-improve-ai-security-172684.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #172684. Hugging Face partners with Wiz Research to Improve AI Security
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

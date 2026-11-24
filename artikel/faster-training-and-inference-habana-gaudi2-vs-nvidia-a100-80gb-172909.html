@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faster Training and Inference: Habana Gaudi®2 vs Nvidia A100 80GB</title>
+    <meta name="description" content="Recent findings suggest that in this article, you will learn how to use Habana® Gaudi®2 to accelerate model training and inference, and train bigger models">
+    <meta name="keywords" content="gaudi, habana, first, training, batch, runs, size, were">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua75/artikel/faster-training-and-inference-habana-gaudi2-vs-nvidia-a100-80gb-172909.html">
+    
+    <meta property="og:title" content="Faster Training and Inference: Habana Gaudi®2 vs Nvidia A100 80GB">
+    <meta property="og:description" content="Recent findings suggest that in this article, you will learn how to use Habana® Gaudi®2 to accelerate model training and inference, and train bigger models">
+    <meta property="og:image" content="https://huggingface.co/blog/assets/habana-gaudi-2-benchmark/thumbnail.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua75/artikel/faster-training-and-inference-habana-gaudi2-vs-nvidia-a100-80gb-172909.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Faster Training and Inference: Habana Gaudi®2 vs Nvidia A100 80GB">
+    <meta name="twitter:description" content="Recent findings suggest that in this article, you will learn how to use Habana® Gaudi®2 to accelerate model training and inference, and train bigger models">
+    <meta name="twitter:image" content="https://huggingface.co/blog/assets/habana-gaudi-2-benchmark/thumbnail.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Faster Training and Inference: Habana Gaudi®2 vs Nvidia A100 80GB", "image": ["https://huggingface.co/blog/assets/habana-gaudi-2-benchmark/thumbnail.png"], "datePublished": "2022-12-14T00:00:00", "dateModified": "2026-11-24T12:17:52.148040", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua75/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua75/artikel/faster-training-and-inference-habana-gaudi2-vs-nvidia-a100-80gb-172909.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Faster Training and Inference: Habana Gaudi®2 vs Nvidia A100 80GB?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in Hardware & Chips originally reported by Hugging Face."}}, {"@type": "Question", "name": "Which category does 'Faster Training and Inference: Habana Gaudi®2 vs Nvidia A100' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the Hardware & Chips section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">Hardware & Chips</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Faster Training and Inference: Habana Gaudi®2 vs Nvidia A100 80GB</h1>
+        <div class="meta-line">🌐 Source: <strong>Hugging Face</strong> &bull; 📅 14 Dec 2022 &bull; ⏱️ 7 min read (1395 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>Recent findings suggest that in this article, you will learn how to use Habana® Gaudi®2 to accelerate model training and inference, and train bigger models with 🤗 Optimum Habana.</li><li style='margin-bottom:6px;'>Sources indicate that gaudi2 is the second generation AI hardware accelerator designed by Habana Labs.</li><li style='margin-bottom:6px;'>In a recent development, one of the easy, cost-efficient ways that Intel and Habana have made Gaudi2 available is on the Intel Developer Cloud.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-172909"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-172909"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-172909"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Faster Training and Inference: Habana Gaudi®2 vs Nvidia A100 80GB" loading="lazy" src="https://huggingface.co/blog/assets/habana-gaudi-2-benchmark/thumbnail.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-172909">Recent findings suggest that in this article, you will learn how to use Habana® Gaudi®2 to accelerate model training and inference, and train bigger models with 🤗 Optimum Habana. Then, we present several benchmarks including BERT pre-training, Stable Diffusion inference and T5-3B fine-tuning, to assess the performance differences between first generation Gaudi, Gaudi2 and Nvidia A100 80GB. Spoiler alert - Gaudi2 is about twice faster than Nvidia A100 80GB for both training and inference!</p>
+<p>Sources indicate that gaudi2 is the second generation AI hardware accelerator designed by Habana Labs. A single server contains 8 accelerator devices with 96GB of memory each (versus 32GB on first generation Gaudi and 80GB on A100 80GB). The Habana SDK, SynapseAI, is common to both first-gen Gaudi and Gaudi2. That means that 🤗 Optimum Habana, which offers a very user-friendly interface between the 🤗 Transformers and 🤗 Diffusers libraries and SynapseAI, works the exact same way on Gaudi2 as on first-gen Gaudi! So if you already have ready-to-use training or inference workflows for first-gen Gaudi, we encourage you to try them on Gaudi2, as they will work without any single change. <span style="font-size:13px;">(Related: <a href="how-to-train-a-newly-introduced-language-model-from-scratch-using-173066.html" style="color:#2563eb; font-weight:600;">How to train a newly introduced language model from scr...</a>)</span></p>
+<p>In a recent development, one of the easy, cost-efficient ways that Intel and Habana have made Gaudi2 available is on the Intel Developer Cloud. To start using Gaudi2 there, you should follow the following steps:. <span style="font-size:13px;">(Related: <a href="latest-update-how-to-generate-text-using-different-decoding-metho-173065.html" style="color:#2563eb; font-weight:600;">Latest Update: How to generate text: using different de...</a>)</span></p>
+<p>Go to the Intel Developer Cloud landing page and sign in to your account or register if you do not have one.</p>
+<p>Go to the Intel Developer Cloud management console.</p>
+<p>Select Habana Gaudi2 Deep Learning Server featuring eight Gaudi2 HL-225H mezzanine cards and latest Intel® Xeon® Processors and click on Launch Instance in the lower right corner as shown below.</p>
+<p>You can then request an instance:.</p>
+<p>Industry observers note that once your request is validated, re-do step 3 and click on Add OpenSSH Publickey to add a payment method (credit card or promotion code) and a SSH public key that you can generate with ssh-keygen -t rsa -b 4096 -f ~/.ssh/id_rsa. You may be redirected to step 3 each time you add a payment method or a SSH public key.</p>
+<p>Re-do step 3 and then click on Launch Instance. You will have to accept the proposed general conditions to actually launch the instance.</p>
+<p>Go to the Intel Developer Cloud management console and click on the tab called View Instances.</p>
+<p>You can copy the SSH command to access your Gaudi2 instance remotely!</p>
+<p>If you terminate the instance and want to use Gaudi2 again, you will have to re-do the whole process.</p>
+<p>You can find more information about this process here.</p>
+<p>Several benchmarks were performed to assess the abilities of first-gen Gaudi, Gaudi2 and A100 80GB for both training and inference, and for models of various sizes.</p>
+<p>Sources indicate that A few months ago, Philipp Schmid, technical lead at Hugging Face, presented how to pre-train BERT on Gaudi with 🤗 Optimum Habana. 65k training steps were performed with a batch size of 32 samples per device (so 8*32=256 in total) for a total training time of 8 hours and 53 minutes (you can see the TensorBoard logs of this run here).</p>
+<p>It has been revealed that we re-ran the same script with the same hyperparameters on Gaudi2 and got a total training time of 2 hours and 55 minutes (see the logs here). That makes a x3.04 speedup on Gaudi2 without changing anything.</p>
+<p id="sec-mid-172909">Sources indicate that since Gaudi2 has roughly 3 times more memory per device compared to first-gen Gaudi, it is possible to leverage this greater capacity to have bigger batches. This will give HPUs more work to do and will also enable developers to try a range of hyperparameter values that was not reachable with first-gen Gaudi. With a batch size of 64 samples per device (512 in total), we got with 20k steps a similar loss convergence to the 65k steps of the previous runs. That makes a total training time of 1 hour and 33 minutes (see the logs here). The throughput is x1.16 higher with this configuration, while this new batch size strongly accelerates convergence. Overall, with Gaudi2, the total training time is reduced by a 5.75 factor and the throughput is x3.53 higher compared to first-gen Gaudi.</p>
+<p>Gaudi2 also offers a speedup over A100: 1580.2 samples/s versus 981.6 for a batch size of 32 and 1835.8 samples/s versus 1082.6 for a batch size of 64, which is consistent with the x1.8 speedup announced by Habana on the phase 1 of BERT pre-training with a batch size of 64.</p>
+<p>The following table displays the throughputs we got for first-gen Gaudi, Gaudi2 and Nvidia A100 80GB GPUs:.</p>
+<p>BS is the batch size per device. The Gaudi runs were performed in mixed precision (bf16/fp32) and the A100 runs in fp16. All runs were distributed runs on 8 devices.</p>
+<p>One of the main new features of 🤗 Optimum Habana release 1.3 is the support for Stable Diffusion. It is now very easy to generate images from text on Gaudi. Unlike with 🤗 Diffusers on GPUs, images are generated by batches. Due to model compilation times, the first two batches will be slower than the following iterations. In this benchmark, these first two iterations were discarded to compute the throughputs for both first-gen Gaudi and Gaudi2.</p>
+<p>Recent findings suggest that this script was run for a batch size of 8 samples. It uses the Habana/stable-diffusion Gaudi configuration.</p>
+<p>The results we got, which are consistent with the numbers published by Habana here, are displayed in the table below. Gaudi2 showcases latencies that are x3.51 faster than first-gen Gaudi (3.25s versus 0.925s) and x2.84 faster than Nvidia A100 (2.63s versus 0.925s). It can also support bigger batch sizes.</p>
+<p>Enhancement: the figures above were updated as SynapseAI 1.10 and Optimum Habana 1.6 bring an additional speedup on first-gen Gaudi and Gaudi2.</p>
+<p>BS is the batch size. The Gaudi runs were performed in bfloat16 precision and the A100 runs in fp16 precision (more information here). All runs were single-device runs.</p>
+<p>With 96 GB of memory per device, Gaudi2 enables running much bigger models. For instance, we managed to fine-tune T5-3B (containing 3 billion parameters) with gradient checkpointing being the only applied memory optimization. This is not possible on first-gen Gaudi. Here are the logs of this run where the model was fine-tuned on the CNN DailyMail dataset for text summarization using this script.</p>
+<p>In a recent development, the results we achieved are presented in the table below. Gaudi2 is x2.44 faster than A100 80GB. We observe that we cannot fit a batch size larger than 1 on Gaudi2 here. This is due to the memory space taken by the graph where operations are accumulated during the first iteration of the run. Habana is working on optimizing the memory footprint in future releases of SynapseAI. We are looking forward to expanding this benchmark using newer versions of Habana's SDK and also using DeepSpeed to see if the same trend holds.</p>
+<p>BS is the batch size per device. Gaudi2 and A100 runs were performed in fp32 with gradient checkpointing enabled. All runs were distributed runs on 8 devices.</p>
+<p>According to recent reports, in this article, we discuss our first experience with Gaudi2. The transition from first generation Gaudi to Gaudi2 is completely seamless since SynapseAI, Habana's SDK, is fully compatible with both. This means that new optimizations proposed by future releases will benefit both of them.</p>
+<p>You have seen that Habana Gaudi2 significantly improves performance over first generation Gaudi and delivers about twice the throughput speed as Nvidia A100 80GB for both training and inference.</p>
+<p>Recent findings suggest that you also know now how to setup a Gaudi2 instance through the Intel Developer Zone. Check out the examples you can easily run on it with 🤗 Optimum Habana.</p>
+<p>Industry observers note that if you are interested in accelerating your Machine Learning training and inference workflows using the latest AI hardware accelerators and software libraries, check out our Expert Acceleration Program. To learn more about Habana solutions, read about our partnership here and contact them. To learn more about Hugging Face efforts to make AI hardware accelerators easy to use, check out our Hardware Partner Program.</p>
+<p id="sec-end-172909">Recent findings suggest that thanks for reading! If you have any questions, feel free to contact me, either through Github or on the forum. You can also connect with me on LinkedIn.</p>
+<p style="margin-top: 25px;">
+<a href="https://huggingface.co/blog/habana-gaudi-2-benchmark" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="habana-labs-and-hugging-face-partner-to-accelerate-transformer-mo-173001.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #173001. Habana Labs and Hugging Face Partner to Accelerate Transformer Model Training
+        </a>
+        
+        <a href="getting-started-with-transformers-on-habana-gaudi-172996.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #172996. Getting Started with Transformers on Habana Gaudi
+        </a>
+        
+        <a href="pre-train-bert-with-hugging-face-transformers-and-habana-gaudi-172949.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #172949. Pre-Train BERT with Hugging Face Transformers and Habana Gaudi
+        </a>
+        
+        <a href="optimumonnx-runtime-easier-faster-training-for-your-hugging-face--172899.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #172899. Optimum+ONNX Runtime - Easier, Faster training for your Hugging Face models
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

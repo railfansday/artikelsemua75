@@ -1,85 +1,85 @@
 {
-  "generatedAt": "2026-11-24T02:59:30.552245",
-  "totalArticles": 12410,
+  "generatedAt": "2026-11-24T13:58:28.092857",
+  "totalArticles": 12424,
   "categoryBreakdown": {
-    "General": 10017,
-    "AI & Tech": 1004,
-    "Hardware & Chips": 296,
-    "Business & Policy": 545,
-    "Gadgets": 319,
-    "EV & Auto": 229
+    "General": 10012,
+    "AI & Tech": 1001,
+    "Hardware & Chips": 293,
+    "Business & Policy": 566,
+    "Gadgets": 331,
+    "EV & Auto": 221
   },
   "topSources": {
-    "Hugging Face": 914,
-    "Co": 833,
-    "Sciencedaily": 210,
+    "Hugging Face": 916,
+    "Co": 819,
+    "Sciencedaily": 213,
     "Eschoolnews": 200,
     "Cbssports": 169,
     "Electrek": 149,
-    "Yahoo": 145,
-    "Dw": 140,
+    "Yahoo": 148,
+    "Dw": 142,
     "Dailymail": 135,
-    "Realworkfromanywhere": 118
+    "Realworkfromanywhere": 126
   },
   "latestHeadlines": [
     {
-      "id": 161642,
-      "title": "A lifelong brawler is coming to Congress. Does he have a next act?",
-      "url": "https://railfansday.github.io/artikelsemua75/artikel/a-lifelong-brawler-is-coming-to-congress-does-he-have-a-next-act-161642.html",
+      "id": 173066,
+      "title": "How to train a newly introduced language model from scratch using Transformers and Tokenizers",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/how-to-train-a-newly-introduced-language-model-from-scratch-using-173066.html",
       "category": "General"
     },
     {
-      "id": 161641,
-      "title": "Tech Report: Taco Bell adds ‘Make It Flamin’ Hot’ option for scorching custom orders",
-      "url": "https://railfansday.github.io/artikelsemua75/artikel/tech-report-taco-bell-adds-make-it-flamin-hot-option-for-scorchin-161641.html",
+      "id": 173065,
+      "title": "Latest Update: How to generate text: using different decoding methods for language generation with Transformers",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/latest-update-how-to-generate-text-using-different-decoding-metho-173065.html",
       "category": "General"
     },
     {
-      "id": 161640,
-      "title": "Grandma who accidentally invited a stranger to Thanksgiving is getting her own Lifetime movie",
-      "url": "https://railfansday.github.io/artikelsemua75/artikel/grandma-who-accidentally-invited-a-stranger-to-thanksgiving-is-ge-161640.html",
+      "id": 173064,
+      "title": "The Reformer - Pushing the limits of language modeling",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/the-reformer-pushing-the-limits-of-language-modeling-173064.html",
       "category": "General"
     },
     {
-      "id": 161639,
-      "title": "Tech Report: Developer builds a ‘Discord kitten’ that’s actually an AI girlfriend",
-      "url": "https://railfansday.github.io/artikelsemua75/artikel/tech-report-developer-builds-a-discord-kitten-thats-actually-an-a-161639.html",
-      "category": "AI & Tech"
-    },
-    {
-      "id": 161638,
-      "title": "Industry News: ‘Minecraft Mommy’ goes viral on TikTok for giving good boys gaming tips",
-      "url": "https://railfansday.github.io/artikelsemua75/artikel/industry-news-minecraft-mommy-goes-viral-on-tiktok-for-giving-goo-161638.html",
-      "category": "Hardware & Chips"
-    },
-    {
-      "id": 161637,
-      "title": "Jimmy John’s reveals Christmas Vacation meal with exclusive Cousin Eddie collectibles",
-      "url": "https://railfansday.github.io/artikelsemua75/artikel/jimmy-johns-reveals-christmas-vacation-meal-with-exclusive-cousin-161637.html",
+      "id": 173063,
+      "title": "Breaking: Block Sparse Matrices for Smaller and Faster Language Models",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/breaking-block-sparse-matrices-for-smaller-and-faster-language-mo-173063.html",
       "category": "General"
     },
     {
-      "id": 161636,
-      "title": "Taco Bell is bringing back the Steakhouse Boss Burrito after fans win its return",
-      "url": "https://railfansday.github.io/artikelsemua75/artikel/taco-bell-is-bringing-back-the-steakhouse-boss-burrito-after-fans-161636.html",
+      "id": 173062,
+      "title": "Transformer-based Encoder-Decoder Models",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/transformer-based-encoder-decoder-models-173062.html",
       "category": "General"
     },
     {
-      "id": 161635,
-      "title": "Build A Racetrack codes (November 2026)",
-      "url": "https://railfansday.github.io/artikelsemua75/artikel/build-a-racetrack-codes-november-2026-161635.html",
+      "id": 173061,
+      "title": "Hyperparameter Search with Transformers and Ray Tune",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/hyperparameter-search-with-transformers-and-ray-tune-173061.html",
       "category": "General"
     },
     {
-      "id": 161634,
-      "title": "LA Noire 2 leak resurfaces after source gets GTA 6 ending right",
-      "url": "https://railfansday.github.io/artikelsemua75/artikel/la-noire-2-leak-resurfaces-after-source-gets-gta-6-ending-right-161634.html",
+      "id": 173060,
+      "title": "Breaking: Porting fairseq wmt19 translation system to transformers",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/breaking-porting-fairseq-wmt19-translation-system-to-transformers-173060.html",
       "category": "General"
     },
     {
-      "id": 161633,
-      "title": "IShowSpeed breaks down in tears after finishing GTA 6 in 52 hours without sleeping",
-      "url": "https://railfansday.github.io/artikelsemua75/artikel/ishowspeed-breaks-down-in-tears-after-finishing-gta-6-in-52-hours-161633.html",
+      "id": 173059,
+      "title": "Leveraging Pre-trained Language Model Checkpoints for Encoder-Decoder Models",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/leveraging-pre-trained-language-model-checkpoints-for-encoder-dec-173059.html",
+      "category": "General"
+    },
+    {
+      "id": 173058,
+      "title": "How we sped up transformer inference 100x for 🤗 API customers",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/how-we-sped-up-transformer-inference-100x-for-api-customers-173058.html",
+      "category": "General"
+    },
+    {
+      "id": 173057,
+      "title": "Latest Update: Fit More and Train Faster With ZeRO via DeepSpeed and FairScale",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/latest-update-fit-more-and-train-faster-with-zero-via-deepspeed-a-173057.html",
       "category": "General"
     }
   ]

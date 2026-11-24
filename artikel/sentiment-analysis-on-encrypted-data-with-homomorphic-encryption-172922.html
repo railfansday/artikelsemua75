@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentiment Analysis on Encrypted Data with Homomorphic Encryption</title>
+    <meta name="description" content="In a recent development, it is well-known that a sentiment analysis model determines whether a text is positive, negative, or neutral. However, this proces">
+    <meta name="keywords" content="text, model, representation, transformer, sentiment, hidden, analysis, data">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua75/artikel/sentiment-analysis-on-encrypted-data-with-homomorphic-encryption-172922.html">
+    
+    <meta property="og:title" content="Sentiment Analysis on Encrypted Data with Homomorphic Encryption">
+    <meta property="og:description" content="In a recent development, it is well-known that a sentiment analysis model determines whether a text is positive, negative, or neutral. However, this proces">
+    <meta property="og:image" content="https://huggingface.co/blog/assets/sentiment-analysis-fhe/thumbnail.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua75/artikel/sentiment-analysis-on-encrypted-data-with-homomorphic-encryption-172922.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Sentiment Analysis on Encrypted Data with Homomorphic Encryption">
+    <meta name="twitter:description" content="In a recent development, it is well-known that a sentiment analysis model determines whether a text is positive, negative, or neutral. However, this proces">
+    <meta name="twitter:image" content="https://huggingface.co/blog/assets/sentiment-analysis-fhe/thumbnail.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Sentiment Analysis on Encrypted Data with Homomorphic Encryption", "image": ["https://huggingface.co/blog/assets/sentiment-analysis-fhe/thumbnail.png"], "datePublished": "2022-11-17T00:00:00", "dateModified": "2026-11-24T12:17:54.232638", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua75/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua75/artikel/sentiment-analysis-on-encrypted-data-with-homomorphic-encryption-172922.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Sentiment Analysis on Encrypted Data with Homomorphic Encryption?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Hugging Face."}}, {"@type": "Question", "name": "Which category does 'Sentiment Analysis on Encrypted Data with Homomorphic Encryp' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Sentiment Analysis on Encrypted Data with Homomorphic Encryption</h1>
+        <div class="meta-line">🌐 Source: <strong>Hugging Face</strong> &bull; 📅 17 Nov 2022 &bull; ⏱️ 5 min read (1052 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>In a recent development, it is well-known that a sentiment analysis model determines whether a text is positive, negative, or neutral.</li><li style='margin-bottom:6px;'>In a recent development, homomorphic encryption is a type of encryption that allows for computation on encrypted data without needing to decrypt it first.</li><li style='margin-bottom:6px;'>This blog post uses the Concrete-ML library, allowing data scientists to use machine learning models in fully homomorphic encryption (FHE) settings without any prior knowledge of cryptography.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-172922"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-172922"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-172922"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Sentiment Analysis on Encrypted Data with Homomorphic Encryption" loading="lazy" src="https://huggingface.co/blog/assets/sentiment-analysis-fhe/thumbnail.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-172922">In a recent development, it is well-known that a sentiment analysis model determines whether a text is positive, negative, or neutral. However, this process typically requires access to unencrypted text, which can pose privacy concerns.</p>
+<p>In a recent development, homomorphic encryption is a type of encryption that allows for computation on encrypted data without needing to decrypt it first. This makes it well-suited for applications where user's personal and potentially sensitive data is at risk (e.g. sentiment analysis of private messages).</p>
+<p>This blog post uses the Concrete-ML library, allowing data scientists to use machine learning models in fully homomorphic encryption (FHE) settings without any prior knowledge of cryptography. We provide a practical tutorial on how to use the library to build a sentiment analysis model on encrypted data. <span style="font-size:13px;">(Related: <a href="how-to-train-a-newly-introduced-language-model-from-scratch-using-173066.html" style="color:#2563eb; font-weight:600;">How to train a newly introduced language model from scr...</a>)</span></p>
+<p>Last but not least, we’ll finish with a complete demo over Hugging Face Spaces to show this functionality in action. <span style="font-size:13px;">(Related: <a href="faster-tensorflow-models-in-hugging-face-transformers-173056.html" style="color:#2563eb; font-weight:600;">Faster TensorFlow models in Hugging Face Transformers...</a>)</span></p>
+<p>First make sure your pip and setuptools are up to date by running:.</p>
+<p>Now we can install all the required libraries for the this blog with the following command.</p>
+<p>The dataset we use in this notebook can be found here.</p>
+<p>In a recent development, to represent the text for sentiment analysis, we chose to use a transformer hidden representation as it yields high accuracy for the final model in a very efficient way. For a comparison of this representation set against a more common procedure like the TF-IDF approach, please see this full notebook.</p>
+<p>We can start by opening the dataset and visualize some statistics.</p>
+<p>The output, then, looks like this:.</p>
+<p>Sources indicate that the ratio of positive and neutral examples is rather similar, though we have significantly more negative examples. Let’s keep this in mind to select the final evaluation metric.</p>
+<p>Sources indicate that now we can split our dataset into training and test sets. We will use a seed for this code to ensure it is perfectly reproducible.</p>
+<p>Transformers are neural networks often trained to predict the next words to appear in a text (this task is commonly called self-supervised learning). They can also be fine-tuned on some specific subtasks such that they specialize and get better results on a given problem.</p>
+<p>They are powerful tools for all kinds of Natural Language Processing tasks. In fact, we can leverage their representation for any text and feed it to a more FHE-friendly machine-learning model for classification. In this notebook, we will use XGBoost.</p>
+<p>We start by importing the requirements for transformers. Here, we use the popular library from Hugging Face to get a transformer quickly.</p>
+<p>The model we have chosen is a BERT transformer, fine-tuned on the Stanford Sentiment Treebank dataset.</p>
+<p>This should download the model, which is now ready to be used.</p>
+<p id="sec-mid-172922">Using the hidden representation for some text can be tricky at first, mainly because we could tackle this with many different approaches. Below is the approach we chose.</p>
+<p>Sources indicate that first, we tokenize the text. Tokenizing means splitting the text into tokens (a sequence of specific characters that can also be words) and replacing each with a number. Then, we send the tokenized text to the transformer model, which outputs a hidden representation (output of the self attention layers which are often used as input to the classification layers) for each word. Finally, we average the representations for each word to get a text-level representation.</p>
+<p>Recent findings suggest that the result is a matrix of shape (number of examples, hidden size). The hidden size is the number of dimensions in the hidden representation. For BERT, the hidden size is 768. The hidden representation is a vector of numbers that represents the text that can be used for many different tasks. In this case, we will use it for classification with XGBoost afterwards.</p>
+<p>This transformation of the text (text to transformer representation) would need to be executed on the client machine as the encryption is done over the transformer representation.</p>
+<p>Industry observers note that now that we have our training and test sets properly built to train a classifier, next comes the training of our FHE model. Here it will be very straightforward, using a hyper-parameter tuning tool such as GridSearch from scikit-learn.</p>
+<p>Now, let’s see how the model performs on the test set.</p>
+<p>Now let’s predict over encrypted text. The idea here is that we will encrypt the representation given by the transformer rather than the raw text itself. In Concrete-ML, you can do this very swiftly by setting the parameter execute_in_fhe=True in the predict function. This is just a developer feature (mainly used to check the running time of the FHE model). We will see how we can make this work in a deployment setting a bit further down.</p>
+<p>A check that the FHE predictions are the same as the clear predictions is also necessary.</p>
+<p>At this point, our model is fully trained and compiled, ready to be deployed. In Concrete-ML, you can use a deployment API to do this easily:.</p>
+<p>According to recent reports, these few lines are enough to export all the files needed for both the client and the server. You can check out the notebook explaining this deployment API in detail here.</p>
+<p>Sources indicate that you can also have a look at the final application on Hugging Face Space. The client app was developed with Gradio while the server runs with Uvicorn and was developed with FastAPI.</p>
+<p>We have presented a way to leverage the power of transformers where the representation is then used to:.</p>
+<p>The final model (Transformer representation + XGboost) has a final accuracy of 85%, which is above the transformer itself with 80% accuracy (please see this notebook  for the comparisons).</p>
+<p>The FHE execution time per example is 4.4 seconds on a 16 cores cpu.</p>
+<p>The files for deployment are used for a sentiment analysis app that allows a client to request sentiment analysis predictions from a server while keeping its data encrypted all along the chain of communication.</p>
+<p>Concrete-ML (Don't forget to star us on Github ⭐️💛) allows straightforward ML model building and conversion to the FHE equivalent to be able to predict over encrypted data.</p>
+<p>Hope you enjoyed this post and let us know your thoughts/feedback!</p>
+<p id="sec-end-172922">And special thanks to Abubakar Abid for his previous advice on how to build our first Hugging Face Space!</p>
+<p style="margin-top: 25px;">
+<a href="https://huggingface.co/blog/sentiment-analysis-fhe" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="getting-started-with-sentiment-analysis-using-python-173012.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #173012. Getting Started with Sentiment Analysis using Python
+        </a>
+        
+        <a href="getting-started-with-sentiment-analysis-on-twitter-172969.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #172969. Getting Started with Sentiment Analysis on Twitter
+        </a>
+        
+        <a href="latest-update-setfitabsa-few-shot-aspect-based-sentiment-analysis-172747.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #172747. Latest Update: SetFitABSA: Few-Shot Aspect Based Sentiment Analysis using SetFit
+        </a>
+        
+        <a href="latest-update-introducing-the-data-measurements-tool-an-interacti-173026.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #173026. Latest Update: Introducing the Data Measurements Tool: an Interactive Tool for Looking at Datasets
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

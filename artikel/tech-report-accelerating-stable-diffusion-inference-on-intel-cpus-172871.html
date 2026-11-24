@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Report: Accelerating Stable Diffusion Inference on Intel CPUs</title>
+    <meta name="description" content="Recently, we introduced the latest generation of Intel Xeon CPUs (code name Sapphire Rapids), its upcoming hardware features for deep learning acceleration">
+    <meta name="keywords" content="intel, code, seconds, inference, recent, latency, stable, diffusion">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua75/artikel/tech-report-accelerating-stable-diffusion-inference-on-intel-cpus-172871.html">
+    
+    <meta property="og:title" content="Tech Report: Accelerating Stable Diffusion Inference on Intel CPUs">
+    <meta property="og:description" content="Recently, we introduced the latest generation of Intel Xeon CPUs (code name Sapphire Rapids), its upcoming hardware features for deep learning acceleration">
+    <meta property="og:image" content="https://huggingface.co/blog/assets/136_stable_diffusion_inference_intel/01.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua75/artikel/tech-report-accelerating-stable-diffusion-inference-on-intel-cpus-172871.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Tech Report: Accelerating Stable Diffusion Inference on Intel CPUs">
+    <meta name="twitter:description" content="Recently, we introduced the latest generation of Intel Xeon CPUs (code name Sapphire Rapids), its upcoming hardware features for deep learning acceleration">
+    <meta name="twitter:image" content="https://huggingface.co/blog/assets/136_stable_diffusion_inference_intel/01.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Tech Report: Accelerating Stable Diffusion Inference on Intel CPUs", "image": ["https://huggingface.co/blog/assets/136_stable_diffusion_inference_intel/01.png"], "datePublished": "2023-03-28T00:00:00", "dateModified": "2026-11-24T12:17:45.989503", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua75/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua75/artikel/tech-report-accelerating-stable-diffusion-inference-on-intel-cpus-172871.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Tech Report: Accelerating Stable Diffusion Inference on Intel CPUs?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in Hardware & Chips originally reported by Hugging Face."}}, {"@type": "Question", "name": "Which category does 'Tech Report: Accelerating Stable Diffusion Inference on Inte' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the Hardware & Chips section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">Hardware & Chips</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Tech Report: Accelerating Stable Diffusion Inference on Intel CPUs</h1>
+        <div class="meta-line">🌐 Source: <strong>Hugging Face</strong> &bull; 📅 28 Mar 2023 &bull; ⏱️ 5 min read (974 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>Recently, we introduced the latest generation of Intel Xeon CPUs (code name Sapphire Rapids), its upcoming hardware features for deep learning acceleration, and how to use them to accelerate distributed fine-tuning and inference for natural language processing Transformers.</li><li style='margin-bottom:6px;'>In a recent development, in this post, we're going to show you different techniques to accelerate Stable Diffusion models on Sapphire Rapids CPUs.</li><li style='margin-bottom:6px;'>Code samples are available on Gitlab.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-172871"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-172871"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-172871"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Tech Report: Accelerating Stable Diffusion Inference on Intel CPUs" loading="lazy" src="https://huggingface.co/blog/assets/136_stable_diffusion_inference_intel/01.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-172871">Recently, we introduced the latest generation of Intel Xeon CPUs (code name Sapphire Rapids), its upcoming hardware features for deep learning acceleration, and how to use them to accelerate distributed fine-tuning and inference for natural language processing Transformers.</p>
+<p>In a recent development, in this post, we're going to show you different techniques to accelerate Stable Diffusion models on Sapphire Rapids CPUs. A follow-up post will do the same for distributed fine-tuning. <span style="font-size:13px;">(Related: <a href="latest-update-how-to-generate-text-using-different-decoding-metho-173065.html" style="color:#2563eb; font-weight:600;">Latest Update: How to generate text: using different de...</a>)</span></p>
+<p>Let's get started! Code samples are available on Gitlab.</p>
+<p>The Diffusers library makes it extremely simple to generate images with Stable Diffusion models. If you're not familiar with these models, here's a great illustrated introduction. <span style="font-size:13px;">(Related: <a href="breaking-block-sparse-matrices-for-smaller-and-faster-language-mo-173063.html" style="color:#2563eb; font-weight:600;">Breaking: Block Sparse Matrices for Smaller and Faster ...</a>)</span></p>
+<p>First, let's create a virtual environment with the required libraries: Transformers, Diffusers, Accelerate, and PyTorch.</p>
+<p>Then, we write a simple benchmarking function that repeatedly runs inference, and returns the average latency for a single-image generation.</p>
+<p>Now, let's build a StableDiffusionPipeline with the default float32 data type, and measure its inference latency.</p>
+<p>In a recent development, the average latency is 32.3 seconds. As demonstrated by this Intel Space, the same code runs on a previous generation Intel Xeon (code name Ice Lake) in about 45 seconds.</p>
+<p>Out of the box, we can see that Sapphire Rapids CPUs are quite faster without any code change!</p>
+<p>Recent findings suggest that optimum Intel accelerates end-to-end pipelines on Intel architectures. Its API is extremely similar to the vanilla Diffusers API, making it trivial to adapt existing code.</p>
+<p>Optimum Intel supports OpenVINO, an Intel open-source toolkit for high-performance inference.</p>
+<p>Optimum Intel and OpenVINO can be installed as follows:.</p>
+<p>Sources indicate that starting from the code above, we only need to replace StableDiffusionPipeline with OVStableDiffusionPipeline. To load a PyTorch model and convert it to the OpenVINO format on-the-fly, you can set export=True when loading your model.</p>
+<p>Recent findings suggest that openVINO automatically optimizes the model for the bfloat16 format. Thanks to this, the average latency is now 16.7 seconds, a sweet 2x speedup.</p>
+<p>The pipeline above support dynamic input shapes, with no restriction on the number of images or their resolution. With Stable Diffusion, your application is usually restricted to one (or a few) different output resolutions, such as 512x512, or 256x256. Thus, it makes a lot of sense to unlock significant acceleration by reshaping the pipeline to a fixed resolution. If you need more than one output resolution, you can simply maintain a few pipeline instances, one for each resolution.</p>
+<p>With a static shape, average latency is slashed to 4.7 seconds, an additional 3.5x speedup.</p>
+<p>Industry observers note that as you can see, OpenVINO is a simple and efficient way to accelerate Stable Diffusion inference. When combined with a Sapphire Rapids CPU, it delivers almost 10x speedup compared to vanilla inference on Ice Lake Xeons.</p>
+<p id="sec-mid-172871">Recent findings suggest that if you can't or don't want to use OpenVINO, the rest of this post will show you a series of other optimization techniques. Fasten your seatbelt!</p>
+<p>Diffuser models are large multi-gigabyte models, and image generation is a memory-intensive operation. By installing a high-performance memory allocation library, we should be able to speed up memory operations and parallelize them across the Xeon cores. Please note that this will change the default memory allocation library on your system. Of course, you can go back to the default library by uninstalling the newly introduced one.</p>
+<p>Industry observers note that jemalloc and tcmalloc are equally interesting. Here, I'm installing jemalloc as my tests give it a slight performance edge. It can also be tweaked for a particular workload, for example to maximize CPU utilization. You can refer to the tuning guide for details.</p>
+<p>Next, we install the libiomp library to optimize parallel processing. It's part of Intel OpenMP* Runtime.</p>
+<p>Finally, we install the numactl command line tool. This lets us pin our Python process to specific cores, and avoid some of the overhead related to context switching.</p>
+<p>It has been revealed that thanks to these optimizations, our original Diffusers code now predicts in 11.8 seconds. That's almost 3x faster, without any code change. These tools are certainly working great on our 32-core Xeon.</p>
+<p>Recent findings suggest that we're far from done. Let's add the Intel Extension for PyTorch to the mix.</p>
+<p>The Intel Extension for Pytorch (IPEX) extends PyTorch and takes advantage of hardware acceleration features present on Intel CPUs, such as AVX-512 Vector Neural Network Instructions (AVX512 VNNI) and Advanced Matrix Extensions (AMX).</p>
+<p>We then upgrade our code to optimize each pipeline element with IPEX (you can list them by printing the pipe object). This requires converting them to the channels-last format.</p>
+<p>We also enable the bloat16 data format to leverage the AMX tile matrix multiply unit (TMMU) accelerator present on Sapphire Rapids CPUs.</p>
+<p>According to recent reports, with this updated version, inference latency is further reduced from 11.9 seconds to 5.4 seconds. That's more than 2x acceleration thanks to IPEX and AMX.</p>
+<p>It has been revealed that can we extract a bit more performance? Yes, with schedulers!</p>
+<p>In a recent development, the Diffusers library lets us attach a scheduler to a Stable Diffusion pipeline. Schedulers try to find the best trade-off between denoising speed and denoising quality.</p>
+<p>According to the documentation: "At the time of writing this doc DPMSolverMultistepScheduler gives arguably the best speed/quality trade-off and can be run with as little as 20 steps.".</p>
+<p>Recent findings suggest that with this final version, inference latency is now down to 5.05 seconds. Compared to our initial Sapphire Rapids baseline (32.3 seconds), this is almost 6.5x faster!</p>
+<p>The ability to generate high-quality images in seconds should work well for a lot of use cases, such as customer apps, content generation for marketing and media, or synthetic data for dataset augmentation.</p>
+<p>Here are some resources to help you get started:.</p>
+<p id="sec-end-172871">If you have questions or feedback, we'd love to read them on the Hugging Face forum.</p>
+<p style="margin-top: 25px;">
+<a href="https://huggingface.co/blog/stable-diffusion-inference-intel" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="breaking-optimizing-stable-diffusion-for-intel-cpus-with-nncf-and-172843.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #172843. Breaking: Optimizing Stable Diffusion for Intel CPUs with NNCF and 🤗 Optimum
+        </a>
+        
+        <a href="fine-tuning-stable-diffusion-models-on-intel-cpus-172816.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #172816. Fine-tuning Stable Diffusion models on Intel CPUs
+        </a>
+        
+        <a href="industry-news-accelerating-stable-diffusion-xl-inference-with-jax-172767.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #172767. Industry News: 🧨 Accelerating Stable Diffusion XL Inference with JAX on Cloud TPU v5e
+        </a>
+        
+        <a href="tech-report-stable-diffusion-in-jax-flax-172933.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #172933. Tech Report: 🧨 Stable Diffusion  in JAX / Flax !
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>
