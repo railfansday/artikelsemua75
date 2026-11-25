@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon Bedrock Trusted Access API: EFS and EDC Preview</title>
+    <meta name="description" content="AWS has made trusted-access administration generally available, but Anthropic’s first two programs remain previews that change how enrolled customers’ data">
+    <meta name="keywords" content="storage, access, customer, amazon, preview, anthropic, bucket, account">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua75/artikel/amazon-bedrock-trusted-access-api-efs-and-edc-preview-195051.html">
+    
+    <meta property="og:title" content="Amazon Bedrock Trusted Access API: EFS and EDC Preview">
+    <meta property="og:description" content="AWS has made trusted-access administration generally available, but Anthropic’s first two programs remain previews that change how enrolled customers’ data">
+    <meta property="og:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto/https%3A%2F%2Fpub-ba5c43665e644241b633ec86c4967bb2.r2.dev%2Farticle-images%2F2026-11-24%2Famazon-bedrock-trusted-access-api-efs-and-edc-preview-gq5x5cbx%2Fcover%2Fcover-20261124-132252-386.webp">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua75/artikel/amazon-bedrock-trusted-access-api-efs-and-edc-preview-195051.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Amazon Bedrock Trusted Access API: EFS and EDC Preview">
+    <meta name="twitter:description" content="AWS has made trusted-access administration generally available, but Anthropic’s first two programs remain previews that change how enrolled customers’ data">
+    <meta name="twitter:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto/https%3A%2F%2Fpub-ba5c43665e644241b633ec86c4967bb2.r2.dev%2Farticle-images%2F2026-11-24%2Famazon-bedrock-trusted-access-api-efs-and-edc-preview-gq5x5cbx%2Fcover%2Fcover-20261124-132252-386.webp">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Amazon Bedrock Trusted Access API: EFS and EDC Preview", "image": ["https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto/https%3A%2F%2Fpub-ba5c43665e644241b633ec86c4967bb2.r2.dev%2Farticle-images%2F2026-11-24%2Famazon-bedrock-trusted-access-api-efs-and-edc-preview-gq5x5cbx%2Fcover%2Fcover-20261124-132252-386.webp"], "datePublished": "2026-11-25T02:15:52", "dateModified": "2026-11-25T02:21:08.692686", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua75/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua75/artikel/amazon-bedrock-trusted-access-api-efs-and-edc-preview-195051.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Amazon Bedrock Trusted Access API: EFS and EDC Preview?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Dev."}}, {"@type": "Question", "name": "Which category does 'Amazon Bedrock Trusted Access API: EFS and EDC Preview' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Amazon Bedrock Trusted Access API: EFS and EDC Preview</h1>
+        <div class="meta-line">🌐 Source: <strong>Dev</strong> &bull; 📅 25 Nov 2026 &bull; ⏱️ 7 min read (1339 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>AWS has made trusted-access administration generally available, but Anthropic’s first two programs remain previews that change how enrolled customers’ data is retained.</li><li style='margin-bottom:6px;'>AWS introduced the general availability of Amazon Bedrock’s Trusted Access API on November 23, 2026, giving teams one workflow for discovering model-provider programs, checking eligibility, requesting approval, and managing enrollment.</li><li style='margin-bottom:6px;'>It has been revealed that the first offerings, Anthropic’s Enterprise Frontier Safeguards (EFS) and Enterprise Data Controls (EDC), are public previews, not generally available services.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-195051"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-195051"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-195051"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Amazon Bedrock Trusted Access API: EFS and EDC Preview" loading="lazy" src="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto/https%3A%2F%2Fpub-ba5c43665e644241b633ec86c4967bb2.r2.dev%2Farticle-images%2F2026-11-24%2Famazon-bedrock-trusted-access-api-efs-and-edc-preview-gq5x5cbx%2Fcover%2Fcover-20261124-132252-386.webp" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-195051">AWS has made trusted-access administration generally available, but Anthropic’s first two programs remain previews that change how enrolled customers’ data is retained.</p>
+<p>AWS introduced the general availability of Amazon Bedrock’s Trusted Access API on November 23, 2026, giving teams one workflow for discovering model-provider programs, checking eligibility, requesting approval, and managing enrollment. <span style="font-size:13px;">(Related: <a href="how-to-train-a-latest-language-model-from-scratch-using-transform-196081.html" style="color:#2563eb; font-weight:600;">How to train a latest language model from scratch using...</a>)</span></p>
+<p>It has been revealed that the first offerings, Anthropic’s Enterprise Frontier Safeguards (EFS) and Enterprise Data Controls (EDC), are public previews, not generally available services. Both put flagged safety cases in the customer’s hands, but they use different storage arrangements. <span style="font-size:13px;">(Related: <a href="how-to-generate-text-using-different-decoding-methods-for-languag-196080.html" style="color:#2563eb; font-weight:600;">How to generate text: using different decoding methods ...</a>)</span></p>
+<p>It has been revealed that retention is the immediate planning issue. Joining the preview turns off zero data retention for the accounts or projects added. AWS also instructs participants to use a test account, send only test traffic, and exclude regulated data such as personally identifiable information or protected health information.</p>
+<p>Amazon Bedrock’s Trusted Access API is generally available; Anthropic EFS and EDC remain public previews requiring eligibility and an AWS account-team request.</p>
+<p>The distinction matters for deployment planning. A generally available administration API can expose programs whose own terms, implementation, and availability remain provisional. AWS warns that the EFS/EDC preview’s APIs, IAM action names, and endpoints may change before general availability.</p>
+<p>Image: Introducing the Amazon Bedrock Trusted Access API with Anthropic’s Enterprise Frontier Safeguards and Enterprise Data Controls | Amazon Web Services.</p>
+<p>According to recent reports, covered models include Anthropic’s Claude Fable and Claude Mythos, plus Claude Opus 5.5 and Claude Sonnet 5.5 used through the Cyber Verification Program (CVP). Teams following Anthropic’s tiered Claude cyber-access programs should treat trusted-access enrollment as an additional governance step, with its own approval and data-handling settings.</p>
+<p>Amazon Bedrock’s Trusted Access API separates approval from enrollment: eligibility means a provider or AWS has approved participation, while enrollment determines whether the program takes effect.</p>
+<p>The trusted-access documentation describes five computed statuses:.</p>
+<p>Sources indicate that A revoked program retains its enrollment setting. If approval is restored, that saved setting takes effect again. Administrators should account for that behavior when reviewing whether a previously suspended program could resume.</p>
+<p>Enrollment supports three scopes:.</p>
+<p>Sources indicate that requests without a named project use account and organization settings. IAM policies and service control policies (SCPs) govern who can enroll, allowing central administrators to restrict who accepts provider terms.</p>
+<p>Industry observers note that project targeting also has an application-side detail. The AWS C++ SDK 1.11.934 changelog, dated November 20, lists an optional projectIdentifier parameter for InvokeModel, InvokeModelWithResponseStream, Converse, and ConverseStream. It accepts a project ID or ARN.</p>
+<p>According to recent reports, for the EFS/EDC preview, teams still need their AWS account representatives to submit the requested scope and identifiers. The common API standardizes administration; provider approval remains a prerequisite.</p>
+<p>Anthropic’s EFS and EDC public previews differ chiefly in who controls retained storage and encryption, while both leave flagged safety-case review with the customer’s team.</p>
+<p>AWS’s EFS/EDC storage comparison sets out the operational differences:.</p>
+<p>Automated monitoring looks for patterns across requests, including deliberate misuse and agents exceeding their intended authority. Flagged activity creates a safety case for the customer to investigate and answer.</p>
+<p>Industry observers note that for EFS specifically, AWS states neither AWS nor Anthropic human reviewers access retained inputs and outputs, and those inputs and outputs are never used for training. The retained content supports automated monitoring within AWS.</p>
+<p>EFS is the more suitable option when ownership of the bucket, key, and storage audit trail is a requirement. That conclusion follows from the documented controls, but it also carries operational responsibility. EDC removes customer management of the storage infrastructure while leaving the safety-review workload intact.</p>
+<p>EFS buckets also contain two different record types: readable inputs and outputs under transcripts/, and encrypted safety-review records under prefixes including slab/. Customer ownership of the bucket does not make every stored object human-readable.</p>
+<p id="sec-mid-195051">Anthropic’s EFS/EDC public preview turns zero data retention off for the accounts or projects added, so covered content is retained in the configured destination. Other accounts keep their existing ZDR treatment.</p>
+<p>AWS describes the preview as intended for customers already enrolled in EFS ZDR. Participants therefore need to review a concrete change in handling: EFS stores retained content in their S3 bucket, while EDC uses Amazon-managed storage.</p>
+<p>The documentation also identifies aws_review as the data-retention mode used by EFS and EDC accounts. That setting’s name should not be read as a promise of AWS human review; AWS separately describes the EFS process as automated monitoring with customer-led case review.</p>
+<p>Sources indicate that the practical sequence is to approve the retention change internally, establish the storage destination, and then enroll the intended test scope. Organization-wide participation warrants particular care because its reach includes future member accounts.</p>
+<p>It has been revealed that AWS’s preview instructions explicitly exclude regulated test traffic. The GA label on the surrounding API is therefore insufficient grounds to send production PII or PHI into these previews.</p>
+<p>Anthropic’s EFS/EDC public preview uses per-Region storage configurations, with the most specific configuration taking precedence: project, then account, then organization.</p>
+<p>Teams need to distinguish three locations:.</p>
+<p>During the preview, automated review covers covered-model requests made through US and EU geographic cross-Region inference profiles and the global cross-Region inference profile.</p>
+<p>These distinctions make the bucket location only one part of a residency assessment. Security teams also need to examine inference routing and where automated review reads the retained content.</p>
+<p>In a recent development, an unconfigured Region is another risk. For EDC-eligible participants, a Region without an EFS storage configuration can fall back to Amazon-managed storage. AWS says Amazon-managed storage is unavailable to EFS-only accounts, so teams should verify eligibility and the effective regional destination instead of assuming a universal fallback.</p>
+<p>Amazon Bedrock’s EFS public preview accesses the customer’s bucket and key through the bedrock.amazonaws.com service principal, using the bucket and key policies the customer supplies.</p>
+<p>Sources indicate that AWS’s launch announcement states that covered models stop being served 24 hours after Bedrock loses access to the key or bucket. Separately, the user guide indicates failed retention writes can be retried for up to 72 hours.</p>
+<p>According to recent reports, those windows describe different behaviors. The write-retry window is not a promise of 72 hours of continued inference access.</p>
+<p>The resulting operational implication is significant: KMS and S3 policy changes can affect model availability. Access revocation, key-policy edits, and bucket-policy changes belong in the same change-control process as other inference dependencies. Revoking retention access should be treated as a potentially service-disrupting action.</p>
+<p>Anthropic’s EFS and EDC public previews carry no separate program charge, and AWS says they do not change model pricing, behavior, or rate limits.</p>
+<p>EFS customers still pay standard S3 and KMS charges. S3 transfer charges also apply when automated review reads content from a bucket in another Region. EDC’s managed storage removes the customer bucket-and-key management burden; it does not remove the need for staff to handle cases.</p>
+<p>A practical evaluation sequence is:.</p>
+<p>The useful control-plane change is that participation becomes administrable through a common API. The consequential deployment work remains in the details: approved scope, effective enrollment, regional retention, and continued access to the storage infrastructure.</p>
+<p>EFS retains covered content in an S3 bucket in the customer’s account, encrypted with the customer’s KMS key. EDC uses Amazon-managed storage and encryption. Both require the customer’s team to review flagged safety cases, but EFS additionally requires the customer to manage storage policies, lifecycle rules, and key access.</p>
+<p>Yes. Joining the EFS/EDC preview turns ZDR off for the accounts or projects added, causing covered content to be retained in customer storage or Amazon-managed storage. Other accounts retain ZDR. AWS instructs participants to use a test account and test traffic, excluding regulated information such as PII or PHI.</p>
+<p>Sources indicate that only the AWS Organizations management account or an account registered as an Amazon Bedrock delegated administrator can request organization approval, opt in, or view organization enrollment. Organization scope covers current and future member accounts. IAM policies and SCPs control who can perform enrollment actions, while program eligibility remains a separate approval requirement.</p>
+<p id="sec-end-195051">Originally published on Zeniteq.</p>
+<p style="margin-top: 25px;">
+<a href="https://dev.to/jimclydegm/amazon-bedrock-trusted-access-api-efs-and-edc-preview-39ch" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="hugging-face-models-in-amazon-bedrock-195553.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #195553. Hugging Face models in Amazon Bedrock
+        </a>
+        
+        <a href="tech-report-aws-weekly-roundup-amazon-bedrock-managed-agents-powe-184162.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #184162. Tech Report: AWS Weekly Roundup: Amazon Bedrock Managed Agents powered by OpenAI, Q3 service availability updates, Kiro workflows, and more (October 5, 2026)
+        </a>
+        
+        <a href="how-we-sped-up-transformer-inference-100x-for-api-customers-196073.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #196073. How we sped up transformer inference 100x for 🤗 API customers
+        </a>
+        
+        <a href="the-partnership-amazon-sagemaker-and-hugging-face-196064.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #196064. The Partnership: Amazon SageMaker and Hugging Face
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

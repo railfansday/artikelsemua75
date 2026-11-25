@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Specs, instruction files and the word &quot;done&quot;: 8 reads on OpenSpec, AGENTS.md, Ralph loops and agent trust</title>
+    <meta name="description" content="Most of the effort in agent-assisted coding has moved out of the prompt box and into files that sit in the repo: a spec the agent works against, an AGENTS.">
+    <meta name="keywords" content="openspec, spec, agent, agents, loop, claude, project, context">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua75/artikel/specs-instruction-files-and-the-word-done-8-reads-on-openspec-age-195027.html">
+    
+    <meta property="og:title" content="Specs, instruction files and the word &quot;done&quot;: 8 reads on OpenSpec, AGENTS.md, Ralph loops and agent trust">
+    <meta property="og:description" content="Most of the effort in agent-assisted coding has moved out of the prompt box and into files that sit in the repo: a spec the agent works against, an AGENTS.">
+    <meta property="og:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Feqnwf5qmddvpqaa6xobu.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua75/artikel/specs-instruction-files-and-the-word-done-8-reads-on-openspec-age-195027.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Specs, instruction files and the word &quot;done&quot;: 8 reads on OpenSpec, AGENTS.md, Ralph loops and agent trust">
+    <meta name="twitter:description" content="Most of the effort in agent-assisted coding has moved out of the prompt box and into files that sit in the repo: a spec the agent works against, an AGENTS.">
+    <meta name="twitter:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Feqnwf5qmddvpqaa6xobu.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Specs, instruction files and the word \"done\": 8 reads on OpenSpec, AGENTS.md, Ralph loops and agent trust", "image": ["https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Feqnwf5qmddvpqaa6xobu.png"], "datePublished": "2026-11-25T02:19:49", "dateModified": "2026-11-25T02:21:07.428399", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua75/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua75/artikel/specs-instruction-files-and-the-word-done-8-reads-on-openspec-age-195027.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Specs, instruction files and the word \"done\": 8 reads on OpenSpec, AGENTS.md, Ra?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Dev."}}, {"@type": "Question", "name": "Which category does 'Specs, instruction files and the word \"done\": 8 reads on Ope' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Specs, instruction files and the word "done": 8 reads on OpenSpec, AGENTS.md, Ralph loops and agent trust</h1>
+        <div class="meta-line">🌐 Source: <strong>Dev</strong> &bull; 📅 25 Nov 2026 &bull; ⏱️ 6 min read (1149 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>Most of the effort in agent-assisted coding has moved out of the prompt box and into files that sit in the repo: a spec the agent works against, an AGENTS.md or CLAUDE.md that tells it how the project behaves, and some definition of finished that a script can check.</li><li style='margin-bottom:6px;'>OpenSpec's idea is simple: describe a change as a proposal with requirement deltas, let the agent implement against it, then archive it back into the main specs so the next change starts from what's actually true.</li><li style='margin-bottom:6px;'>→ OpenSpec tutorial: install the CLI and run your first change · 中文版.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-195027"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-195027"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-195027"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img 8="" agent="" agents.md,="" alt="Specs, instruction files and the word " and="" done":="" loading="lazy" loops="" on="" openspec,="" ralph="" reads="" src="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Feqnwf5qmddvpqaa6xobu.png" style="max-width:100%; height:auto; border-radius:8px;" trust"=""/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-195027">Most of the effort in agent-assisted coding has moved out of the prompt box and into files that sit in the repo: a spec the agent works against, an AGENTS.md or CLAUDE.md that tells it how the project behaves, and some definition of finished that a script can check. These eight longer posts each take one piece of that. Four are about OpenSpec specifically, because it changed a lot this year. The rest cover the instruction files, the loop that runs against a spec, and what has to be true before you stop watching. Each entry has a short take and links to the English post plus a Chinese version.</p>
+<p>OpenSpec's idea is simple: describe a change as a proposal with requirement deltas, let the agent implement against it, then archive it back into the main specs so the next change starts from what's actually true. The tutorial walks one change from init to archive with pinned versions, and spends real time on the boring problems: which openspec binary your PATH is picking up, why /opsx:propose belongs in the assistant chat rather than your shell, and what the 2.0 upgrade will overwrite. It also makes a clear case for when OpenSpec is worth it (brownfield repos that keep piling up decisions) and when it isn't (throwaway prototypes). <span style="font-size:13px;">(Related: <a href="simple-considerations-for-simple-people-building-fancy-neural-net-196068.html" style="color:#2563eb; font-weight:600;">Simple considerations for simple people building fancy ...</a>)</span></p>
+<p>→ OpenSpec tutorial: install the CLI and run your first change · 中文版.</p>
+<p>Sources indicate that stores are OpenSpec's answer to a problem every team hits eventually: one capability spans three repositories, or a platform team owns requirements that product teams need to read but shouldn't edit. A Store is a separate OpenSpec repo registered on your machine, and normal commands can target it with --store . The guide sets up a shared contract used by two code repos, then digs into the parts that bite: references are read-only context, not write ownership, and picking the wrong root is the most common way an agent quietly writes to the wrong place. <span style="font-size:13px;">(Related: <a href="breaking-the-age-of-machine-learning-as-code-has-arrived-196047.html" style="color:#2563eb; font-weight:600;">Breaking: The Age of Machine Learning As Code Has Arriv...</a>)</span></p>
+<p>→ OpenSpec Stores and the multi-repo workflow · Chinese version.</p>
+<p>Six OpenSpec releases landed in under a month, and three of them need you to do something: a higher Node floor, skills moving into .agents/skills/, and a 2.1 default that installs skills globally instead of per project. This hands-on upgrades a real 1.15 project to 2.1.1 and records what the dry run indicates, where it refuses to switch to global (one edited command file is enough), and what happens to a teammate still on 1.x. The verdict is practical: upgrade, but keep skills in the repo for team projects until per-repo version pinning exists.</p>
+<p>→ OpenSpec 2.1 hands-on: commands become skills, and how to upgrade a 1.x project · 中文版.</p>
+<p>Instead of a feature grid, this comparison gives BMAD, Spec Kit, OpenSpec and PromptX the same tiny job: a normalize_name function with seven acceptance tests. The useful part is what that exposes. Decisions like "is None an error?" or "does a non-breaking space count?" belong to people, and no role name or workflow makes them for you. The recommendation follows from that: OpenSpec when behavior has to stay in maintained specs, Spec Kit when project principles need to carry through planning, PromptX when reusable role context is what's missing. The older survey material below the upgrade is still a good map of the field.</p>
+<p>→ Spec-driven development compared: BMAD, Spec Kit, OpenSpec and PromptX · 中文版.</p>
+<p id="sec-mid-195027">Recent findings suggest that if your team uses both Codex and Claude Code, the default here is sensible: one shared AGENTS.md, plus a thin CLAUDE.md that imports it. The post is precise about the loading rules, which are less obvious than they look. Newer Claude Code can read AGENTS.md directly, but a project CLAUDE.md blocks that fallback by default, so having both files doesn't mean both load. It reveals how to check what really got into context. The second half collects patterns worth stealing, like adding a rule only after a mistake repeats and treating subagents as a way to keep the main context clean rather than as role play.</p>
+<p>→ AGENTS.md vs CLAUDE.md: loading, coexistence and templates · 中文版.</p>
+<p>Recent findings suggest that the Ralph Wiggum loop is literally while :; do cat PROMPT.md | agent; done. Every pass starts with a fresh context, so there's no accumulated confusion, and memory lives in the file system, in git and in a guardrails file where each failure leaves a note for the next pass. This long essay argues that the loop and a structured spec are two layers of one stack rather than rival philosophies. Without a spec, the loop churns with no definition of success. Without the loop, one long conversation drifts into the part of the context window where the model gets worse. The argument is persuasive even if you skip the economics forecasts at the end.</p>
+<p>→ Ralph Wiggum loop vs OpenSpec for autonomous coding · Chinese.</p>
+<p>Industry observers note that lauren Tan's talk is usually quoted for her PR count. This write-up focuses on her actual claim: throughput comes from trusting what agents return unattended, not from opening more of them. Her ranking of where a correction should live is what stayed with me. From strongest to weakest: make the bad pattern impossible in the codebase, catch it with lint or CI, and only then write a rule or skill. Rules get skipped. A lint error doesn't. It's a useful corrective if your AGENTS.md has grown into a wish list.</p>
+<p>→ Trust first, then parallel: what Lauren Tan's talk argues · 中文版.</p>
+<p>Recent findings suggest that A spec is only as good as the acceptance check at the end, and this survey lists seven ways an agent's "done" turns out false: tests run only in part, green results that went stale after a later edit, subagent failures that never reach the summary, tests that still pass with the change reverted, and more. It compares the fixes people use (evidence receipts, pre-done gates, Stop hooks, side-channel records) and where each one breaks. Its view on human attention fits the rest of this list well. Spend it up front on acceptance criteria and test names, and at the end on whatever the tools flag.</p>
+<p>→ When a coding agent states done: a survey of the verification layer · 中文版.</p>
+<p>What ties these together: each one moves an expectation out of a chat message and into something that persists and can be checked. That might be a spec delta that gets archived, an instruction file you can confirm actually loaded, a guardrail note the next loop reads, a lint rule, or a receipt tied to a commit. The more of your intent lives in those places, the less depends on any single conversation going well.</p>
+<p id="sec-end-195027">For the layer around all of this, including who owns retries, durability and spec authority, see my earlier roundup: What an agent harness actually owns.</p>
+<p style="margin-top: 25px;">
+<a href="https://dev.to/redreamality_dev/specs-instruction-files-and-the-word-done-8-reads-on-openspec-agentsmd-ralph-loops-and-agent-5p4" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="tiny-agents-in-python-a-mcp-powered-agent-in-70-lines-of-code-195348.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #195348. Tiny Agents in Python: a MCP-powered agent in ~70 lines of code
+        </a>
+        
+        <a href="agent-anomaly-detection-safeguarding-agents-across-other-clouds-195210.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #195210. Agent Anomaly Detection: Safeguarding agents across other clouds
+        </a>
+        
+        <a href="from-files-to-cited-answers-in-one-api-call-managed-ingestion-and-195164.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #195164. From Files to Cited Answers in One API Call: Managed Ingestion and SearchDocuments in Agent Retrieval
+        </a>
+        
+        <a href="holiday-shoppers-let-ai-agents-find-gifts-but-dont-trust-them-wit-190651.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #190651. Holiday shoppers let AI agents find gifts — but don't trust them with their credit cards
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>
