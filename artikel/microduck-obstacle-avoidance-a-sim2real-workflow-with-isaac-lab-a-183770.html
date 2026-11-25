@@ -150,10 +150,10 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-183770">Add local obstacle avoidance to Microduck while keeping its walking policy fixed. Build varied courses with reusable SimReady assets, model ToF sensing with Newton’s raycaster, and train a controller in Isaac Lab to adjust gamepad velocity commands around obstacles. This tutorial covers simulation training, evaluation, export, and real-robot deployment.</p>
-<p>A walking policy can keep Microduck balanced, but it does not tell the robot how to steer around an obstacle in its path. In this workflow, we reuse the walking policy from our first Microduck tutorial and keep its weights fixed. This follow-up trains a separate avoidance controller using time-of-flight (ToF) sensing. You choose a direction with a gamepad; the controller adjusts the velocity command before passing it to the walking policy.</p>
-<p>NVIDIA Isaac Lab is an open-source framework for training policies across thousands of GPU-parallel simulations and it provides the robot-learning environment. Newton simulates physics and the sensor’s depth measurements. We will cover the control architecture, train on varied obstacle layouts, evaluate the resulting policies, and prepare the interface for hardware testing. <span style="font-size:13px;">(Related: <a href="should-i-quit-my-job-a-decision-framework-184548.html" style="color:#2563eb; font-weight:600;">Should I Quit My Job? A Decision Framework...</a>)</span></p>
+<p>A walking policy can keep Microduck balanced, but it does not tell the robot how to steer around an obstacle in its path. In this workflow, we reuse the walking policy from our first Microduck tutorial and keep its weights fixed. This follow-up trains a separate avoidance controller using time-of-flight (ToF) sensing. You choose a direction with a gamepad; the controller adjusts the velocity command before passing it to the walking policy. <span style="font-size:13px;">(Related: <a href="how-to-train-a-fresh-language-model-from-scratch-using-transforme-196089.html" style="color:#2563eb; font-weight:600;">How to train a fresh language model from scratch using ...</a>)</span></p>
+<p>NVIDIA Isaac Lab is an open-source framework for training policies across thousands of GPU-parallel simulations and it provides the robot-learning environment. Newton simulates physics and the sensor’s depth measurements. We will cover the control architecture, train on varied obstacle layouts, evaluate the resulting policies, and prepare the interface for hardware testing. <span style="font-size:13px;">(Related: <a href="fit-more-and-train-faster-with-zero-via-deepspeed-and-fairscale-196080.html" style="color:#2563eb; font-weight:600;">Fit More and Train Faster With ZeRO via DeepSpeed and F...</a>)</span></p>
 <p>For simulation and training, prepare:.</p>
-<p>Sources indicate that A Linux system with a compatible NVIDIA GPU and driver. See the Isaac Lab installation guide for platform requirements. <span style="font-size:13px;">(Related: <a href="estate-planning-for-early-retirement-the-fire-guide-184545.html" style="color:#2563eb; font-weight:600;">Estate Planning for Early Retirement: The FIRE Guide...</a>)</span></p>
+<p>Sources indicate that A Linux system with a compatible NVIDIA GPU and driver. See the Isaac Lab installation guide for platform requirements.</p>
 <p>Git with Git LFS, and the uv package manager.</p>
 <p>For physical-robot testing, prepare:.</p>
 <p>A configured Microduck. Load the same backlash walking-policy export used by the navigation task.</p>
@@ -225,20 +225,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="breaking-binding-of-isaac-fans-review-bomb-dlc-after-discovering--184530.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #184530. Breaking: Binding of Isaac fans review bomb DLC after discovering GTA 6 mode songs are AI
+        <a href="how-to-build-an-ai-assisted-workflow-that-does-not-leak-195594.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #195594. How to Build an AI-Assisted Workflow That Does Not Leak
         </a>
         
-        <a href="breaking-how-ai-image-to-image-and-image-to-video-tools-work-and--184401.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #184401. Breaking: How AI Image-to-Image and Image-to-Video Tools Work, and How to Build a Reliable Workflow
+        <a href="the-design-workflow-is-broken-here-is-how-vitalii-khomenko-thinks-195376.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #195376. The Design Workflow Is Broken. Here Is How Vitalii Khomenko Thinks It Should Be Fixed
         </a>
         
-        <a href="bambu-lab-p3c-review-a-more-affordable-tool-changer-184394.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #184394. Bambu Lab P3C Review: A more affordable tool changer
+        <a href="cambridge-scientists-create-a-10-chip-that-could-put-a-medical-la-195355.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #195355. Cambridge scientists create a $10 chip that could put a medical lab on your wrist
         </a>
         
-        <a href="bambu-lab-shows-off-h3c-tool-changer-first-laser-at-formnext-2026-184374.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #184374. Bambu Lab shows off H3C tool changer, first laser at Formnext 2026
+        <a href="scientists-overcome-a-hidden-obstacle-to-more-powerful-quantum-co-195352.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #195352. Scientists overcome a hidden obstacle to more powerful quantum computers
         </a>
         
     </div>

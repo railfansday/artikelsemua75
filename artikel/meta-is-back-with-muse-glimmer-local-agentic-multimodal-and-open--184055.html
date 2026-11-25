@@ -150,15 +150,15 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-184055">Industry observers note that great news from the OGs of open source LLMs! Muse Glimmer, released today, is Meta’s new multimodal model, especially designed for local agentic use cases. Distilled from Muse to 30B parameters, and released under the Apache 2.0 license, it’s ideal deploying locally for privacy, reducing costs, or just hacking around. It’s intended for privacy-aware applications such as coding, document analysis, personal assistants, Claw- or Hermes-like setups.</p>
-<p>Recent findings suggest that to celebrate, we are shipping with Meta day-0 support in transformers, llama.cpp, vLLM, Inference Endpoints, and other libraries. We built a few cool things and explain our findings in this blog.</p>
+<p>Recent findings suggest that to celebrate, we are shipping with Meta day-0 support in transformers, llama.cpp, vLLM, Inference Endpoints, and other libraries. We built a few cool things and explain our findings in this blog. <span style="font-size:13px;">(Related: <a href="how-to-train-a-fresh-language-model-from-scratch-using-transforme-196089.html" style="color:#2563eb; font-weight:600;">How to train a fresh language model from scratch using ...</a>)</span></p>
 <p>Check out the demos below for inspiration.</p>
-<p>You can find Muse Glimmer on the Hugging Face Hub.</p>
+<p>You can find Muse Glimmer on the Hugging Face Hub. <span style="font-size:13px;">(Related: <a href="latest-update-faster-tensorflow-models-in-hugging-face-transforme-196079.html" style="color:#2563eb; font-weight:600;">Latest Update: Faster TensorFlow models in Hugging Face...</a>)</span></p>
 <p>Scores are reported as published. Bold indicates the best result among the compared models; ↓ indicates lower is better.</p>
 <p>Muse Glimmer is a dense 30B parameter model consisting of:.</p>
 <p>In addition to the main VLM, there’s also a speculative decoding drafter implemented on DFlash. Usage of this module is optional, and it can provide much faster generation in exchange for some memory cost. We found this drafter to be particularly well suited to structured content generation such as coding.</p>
 <p>The language model uses the following architecture components:.</p>
 <p>Sources indicate that muse Glimmer uses one image encoder to handle both images and videos. Unlike the relatively small vision encoders used in other VLMs, this is a sizable 2B ViT-like model designed after the Perception Encoder architecture. Perception Encoder was previously introduced by Meta as a backbone for various downstream spatial and multimodal tasks.The encoder patchifies images to a shape of 2 frames x 3 channels x 14 x 14, and passes them through a linear layer for projection. An interpolated absolute position embedding from a learned position table is then added to these embeddings. These are then sent to the vision tower which consist of 50 layers and GELU MLPs. Similar to the language model, the attention pattern consists of three window attention layers followed by one full attention layer. Inside the attention layers, 2D RoPE is applied to the queries and keys.</p>
-<p>In a recent development, after transformer, pixel shuffle concatenates 2x2 groups of neighboring spatial tokens which reduces the number of image tokens 4x without discarding their channels. The merged features are then projected to the shared embedding space of the text decoder. <span style="font-size:13px;">(Related: <a href="how-to-budget-for-a-wedding-without-going-broke-184560.html" style="color:#2563eb; font-weight:600;">How to Budget for a Wedding Without Going Broke...</a>)</span></p>
+<p>In a recent development, after transformer, pixel shuffle concatenates 2x2 groups of neighboring spatial tokens which reduces the number of image tokens 4x without discarding their channels. The merged features are then projected to the shared embedding space of the text decoder.</p>
 <p>Videos go through the same encoder frame by frame, where each frame is converted into patches (of shape [batch, temporal groups, grid height, grid width, 2 frames, 3 channels, 14, 14]). The processor targets 2 frames per second and caps the clip at 96 frames sampled evenly across video. The processor creates timestamped video placeholders, interleaving text with frame e.g. “Time: 0.0s &lt;|video|&gt; x N” in which the final video embeddings are replaced before the final projection layer.</p>
 <p>Upgrade transformers to the latest version to be able to use Muse Glimmer.</p>
 <p>Muse Glimmer comes with day-0 support in transformers, both for the main model and the speculative decoding drafter. You can use AutoModelForMultimodalLM and AutoProcessor classes to load the model and the processor.</p>
@@ -171,7 +171,7 @@
 <p>Recent findings suggest that muse Glimmer can do multimodal tool calling, here’s how you can do it. In the example below, we ask the model to call the weather tool based on the city in the image.</p>
 <p>You can use Muse Glimmer to do open ended object detection in images as follows.</p>
 <p>Here is an end to end script to perform object detection GitHub Gist.</p>
-<p>Muse Glimmer comes with day-0 llama.cpp support. Meta has distributed calibrated quants in this repo, and Unsloth is releasing optimized quants as well. DFlash speculative decoding is supported as well. You can use a pre-built llama binary to start a llama server or a CLI. To install llama.cpp, run:. <span style="font-size:13px;">(Related: <a href="how-to-start-a-side-business-while-working-full-time-184555.html" style="color:#2563eb; font-weight:600;">How to Start a Side Business While Working Full-Time...</a>)</span></p>
+<p>Muse Glimmer comes with day-0 llama.cpp support. Meta has distributed calibrated quants in this repo, and Unsloth is releasing optimized quants as well. DFlash speculative decoding is supported as well. You can use a pre-built llama binary to start a llama server or a CLI. To install llama.cpp, run:.</p>
 <p>Then you can start the server as follows.</p>
 <p>Once the server has started, you can head to localhost:8080 to chat with the built-in WebUI.</p>
 <p>You can also query the server as follows.</p>
@@ -239,16 +239,16 @@
             📰 #183910. Welcome Muse Spark Open: open-weight frontier multimodal mixture-of-experts model from Meta
         </a>
         
+        <a href="breaking-bitmap-brothers-iconic-robotic-rts-game-z-is-unofficiall-188956.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #188956. Breaking: Bitmap Brothers' iconic, robotic RTS game Z is unofficially back thanks to an open source, 3D remake
+        </a>
+        
         <a href="the-open-source-community-is-backing-openenv-for-agentic-rl-184146.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #184146. The Open Source Community is backing OpenEnv for Agentic RL
         </a>
         
-        <a href="industry-news-the-297-meta-quest-3s-deal-is-finally-back-in-stock-184382.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #184382. Industry News: The $297 Meta Quest 3S deal is finally back in stock
-        </a>
-        
-        <a href="we-got-claude-to-fine-tune-an-open-source-llm-184294.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #184294. We Got Claude to Fine-Tune an Open Source LLM
+        <a href="tech-report-announcing-the-open-source-ai-game-jam-195865.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #195865. Tech Report: Announcing the Open Source AI Game Jam 🎮
         </a>
         
     </div>

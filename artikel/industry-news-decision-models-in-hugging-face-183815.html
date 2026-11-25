@@ -150,11 +150,11 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-183815">Large Language Models (LLMs) are exceptionally good at generating text. We use them to answer questions, write code, reason about problems, and so much more. But not every problem requires generating text.</p>
-<p>Consider a customer support system receiving the following message:.</p>
+<p>Consider a customer support system receiving the following message:. <span style="font-size:13px;">(Related: <a href="porting-fairseq-wmt19-translation-system-to-transformers-196083.html" style="color:#2563eb; font-weight:600;">Porting fairseq wmt19 translation system to transformer...</a>)</span></p>
 <p>"I was charged twice for my subscription. I need a refund today.".</p>
-<p>The system needs to determine which team should handle the request, how urgent it is, and whether the customer is requesting a refund. <span style="font-size:13px;">(Related: <a href="should-i-quit-my-job-a-decision-framework-184548.html" style="color:#2563eb; font-weight:600;">Should I Quit My Job? A Decision Framework...</a>)</span></p>
+<p>The system needs to determine which team should handle the request, how urgent it is, and whether the customer is requesting a refund.</p>
 <p>We could ask an LLM to return a JSON object containing these answers.</p>
-<p>But what if the model could directly evaluate the available options and return a probability distribution over them, without generating any text? <span style="font-size:13px;">(Related: <a href="how-to-budget-for-a-wedding-without-going-broke-184560.html" style="color:#2563eb; font-weight:600;">How to Budget for a Wedding Without Going Broke...</a>)</span></p>
+<p>But what if the model could directly evaluate the available options and return a probability distribution over them, without generating any text? <span style="font-size:13px;">(Related: <a href="how-to-train-a-fresh-language-model-from-scratch-using-transforme-196089.html" style="color:#2563eb; font-weight:600;">How to train a fresh language model from scratch using ...</a>)</span></p>
 <p>This is the key idea behind decision models.</p>
 <p>A decision model takes some input context (state), evaluates a question with a set of predefined possible answers (primitives), and returns a structured decision along with probabilities. Instead of asking a model to generate an answer token by token, we ask it to assign probabilities to the answers that our application already understands.</p>
 <p>Industry observers note that typeSafe AI introduced Jev, describing it as a System One model. The name draws inspiration from the distinction between fast, intuitive thinking (System 1) and slower, deliberative thinking (System 2).</p>
@@ -285,20 +285,20 @@ C=23(0.998)−1​=0.997.</p>
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="industry-news-hosting-your-models-and-datasets-on-hugging-face-sp-173034.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #173034. Industry News: Hosting your Models and Datasets on Hugging Face Spaces using Streamlit
+        <a href="industry-news-deploy-embedding-models-with-hugging-face-inference-195794.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #195794. Industry News: Deploy Embedding Models with Hugging Face Inference Endpoints
         </a>
         
-        <a href="industry-news-hugging-face-and-amd-partner-on-accelerating-state--172833.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #172833. Industry News: Hugging Face and AMD partner on accelerating state-of-the-art models for CPU and GPU platforms
+        <a href="latest-update-faster-tensorflow-models-in-hugging-face-transforme-196079.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #196079. Latest Update: Faster TensorFlow models in Hugging Face Transformers
         </a>
         
-        <a href="industry-news-rocket-money-x-hugging-face-scaling-volatile-ml-mod-172776.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #172776. Industry News: Rocket Money x Hugging Face: Scaling Volatile ML Models in Production​
+        <a href="using-mixing-hugging-face-models-with-gradio-20-196067.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #196067. Using & Mixing Hugging Face Models with Gradio 2.0
         </a>
         
-        <a href="industry-news-ovhcloud-on-hugging-face-inference-providers-184301.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #184301. Industry News: OVHcloud on Hugging Face Inference Providers 🔥
+        <a href="deploy-hugging-face-models-easily-with-amazon-sagemaker-196064.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #196064. Deploy Hugging Face models easily with Amazon SageMaker
         </a>
         
     </div>

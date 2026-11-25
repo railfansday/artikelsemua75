@@ -150,9 +150,9 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-184135">Traditionally, training state-of-the-art Large Language Models (LLMs) relies on a monolithic cluster of accelerators, where all devices are collocated and tightly coupled via high-bandwidth to constantly synchronize gradients. However, physical and cost constraints make scaling a single slice increasingly difficult.</p>
-<p>In a recent development, to scale further, we can connect multiple compute slices across geographically distributed datacenters. However, when training across multiple datacenters over wide-area networks (WAN), standard data-parallel training suffers from severe network stalls because slow WAN transfers cannot be fully overlapped with computation.</p>
-<p>According to recent reports, to address this, the Google DeepMind and Google Research teams developed DiLoCo (Distributed Low-Communication), a distributed optimization algorithm designed to make training resilient to these low-bandwidth, high-latency connections. In this blog post, we discuss the core concepts of DiLoCo, how it is implemented in MaxText (Google's open-source JAX-based LLM training framework), and the performance benefits it brings to large-scale LLM training on Google Cloud. <span style="font-size:13px;">(Related: <a href="should-i-quit-my-job-a-decision-framework-184548.html" style="color:#2563eb; font-weight:600;">Should I Quit My Job? A Decision Framework...</a>)</span></p>
-<p>DiLoCo was introduced by Google DeepMind in the paper DiLoCo: Distributed Low-Communication Training of Language Models. Instead of synchronizing gradients across all devices at every single training step (as in standard Data Parallelism), DiLoCo partitions training across M independent compute groups, referred to as learners, and allows each learner to perform many local optimization steps independently before communicating across groups. <span style="font-size:13px;">(Related: <a href="what-i-do-every-time-i-get-an-irs-notice-184553.html" style="color:#2563eb; font-weight:600;">What I do every time I get an IRS notice...</a>)</span></p>
+<p>In a recent development, to scale further, we can connect multiple compute slices across geographically distributed datacenters. However, when training across multiple datacenters over wide-area networks (WAN), standard data-parallel training suffers from severe network stalls because slow WAN transfers cannot be fully overlapped with computation. <span style="font-size:13px;">(Related: <a href="simple-considerations-for-simple-people-building-fancy-neural-net-196076.html" style="color:#2563eb; font-weight:600;">Simple considerations for simple people building fancy ...</a>)</span></p>
+<p>According to recent reports, to address this, the Google DeepMind and Google Research teams developed DiLoCo (Distributed Low-Communication), a distributed optimization algorithm designed to make training resilient to these low-bandwidth, high-latency connections. In this blog post, we discuss the core concepts of DiLoCo, how it is implemented in MaxText (Google's open-source JAX-based LLM training framework), and the performance benefits it brings to large-scale LLM training on Google Cloud. <span style="font-size:13px;">(Related: <a href="transformer-based-encoder-decoder-models-196085.html" style="color:#2563eb; font-weight:600;">Transformer-based Encoder-Decoder Models...</a>)</span></p>
+<p>DiLoCo was introduced by Google DeepMind in the paper DiLoCo: Distributed Low-Communication Training of Language Models. Instead of synchronizing gradients across all devices at every single training step (as in standard Data Parallelism), DiLoCo partitions training across M independent compute groups, referred to as learners, and allows each learner to perform many local optimization steps independently before communicating across groups.</p>
 <p>Despite communicating significantly less frequently (by a factor of H, e.g., 1-2 orders of magnitude less) than standard synchronous training, DiLoCo has been shown to achieve comparable convergence and model quality.</p>
 <p id="sec-mid-184135">Industry observers note that the Vanilla DiLoCo described above reduces total communication volume by a factor of H, however, all learners still transmit their weight deltas for the entire model all at once at every H-th step. On a thin network pipe, that full-model transfer creates a large periodic stall every H steps. This glitch is alleviated by Streaming DiLoCo, which is described in the next section.</p>
 <p>In multi-slice training, communication within a single slice is handled by high-speed Inter-Chip Interconnects (ICI). When scaling to multiple slices, synchronization across slices must traverse the Data Center Network (DCN) or, if the slices are geographically distributed, wide-area networks (WAN).</p>
@@ -182,20 +182,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
+        <a href="tech-report-distributed-training-train-bartt5-for-summarization-u-196070.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #196070. Tech Report: Distributed Training: Train BART/T5 for Summarization using 🤗 Transformers and Amazon SageMaker
+        </a>
+        
+        <a href="latest-update-from-pytorch-ddp-to-accelerate-to-trainer-mastery-o-195954.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #195954. Latest Update: From PyTorch DDP to Accelerate to Trainer, mastery of distributed training with ease
+        </a>
+        
         <a href="announcing-long-context-training-on-tpus-with-maxtext-context-par-184372.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #184372. Announcing Long-Context Training on TPUs with MaxText Context Parallelism
         </a>
         
         <a href="training-mrna-language-models-across-25-species-for-165-184220.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #184220. Training mRNA Language Models Across 25 Species for $165
-        </a>
-        
-        <a href="breaking-distributed-training-train-bartt5-for-summarization-usin-173047.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #173047. Breaking: Distributed Training: Train BART/T5 for Summarization using 🤗 Transformers and Amazon SageMaker
-        </a>
-        
-        <a href="from-pytorch-ddp-to-accelerate-to-trainer-mastery-of-distributed--172930.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #172930. From PyTorch DDP to Accelerate to Trainer, mastery of distributed training with ease
         </a>
         
     </div>

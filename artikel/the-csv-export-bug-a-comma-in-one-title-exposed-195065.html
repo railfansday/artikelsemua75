@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The CSV Export Bug a Comma in One Title Exposed</title>
+    <meta name="description" content="A naive CSV export split one product title into two columns the moment the title had a comma. A real CSV parser read 4 columns for that row instead of the ">
+    <meta name="keywords" content="comma, title, field, same, export, product, real, every">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua75/artikel/the-csv-export-bug-a-comma-in-one-title-exposed-195065.html">
+    
+    <meta property="og:title" content="The CSV Export Bug a Comma in One Title Exposed">
+    <meta property="og:description" content="A naive CSV export split one product title into two columns the moment the title had a comma. A real CSV parser read 4 columns for that row instead of the ">
+    <meta property="og:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fgdyjnyvxxvd32pf7g445.png">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua75/artikel/the-csv-export-bug-a-comma-in-one-title-exposed-195065.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="The CSV Export Bug a Comma in One Title Exposed">
+    <meta name="twitter:description" content="A naive CSV export split one product title into two columns the moment the title had a comma. A real CSV parser read 4 columns for that row instead of the ">
+    <meta name="twitter:image" content="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fgdyjnyvxxvd32pf7g445.png">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "The CSV Export Bug a Comma in One Title Exposed", "image": ["https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fgdyjnyvxxvd32pf7g445.png"], "datePublished": "2026-11-25T01:30:32", "dateModified": "2026-11-25T01:37:45.621753", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua75/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua75/artikel/the-csv-export-bug-a-comma-in-one-title-exposed-195065.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding The CSV Export Bug a Comma in One Title Exposed?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Dev."}}, {"@type": "Question", "name": "Which category does 'The CSV Export Bug a Comma in One Title Exposed' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>The CSV Export Bug a Comma in One Title Exposed</h1>
+        <div class="meta-line">🌐 Source: <strong>Dev</strong> &bull; 📅 25 Nov 2026 &bull; ⏱️ 7 min read (1484 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>A naive CSV export split one product title into two columns the moment the title had a comma.</li><li style='margin-bottom:6px;'>A real CSV parser read 4 columns for that row instead of the 3 every other row had.</li><li style='margin-bottom:6px;'>Python's own csv.writer fixed it with zero extra code, just swapping a join for a library call.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-195065"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-195065"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-195065"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="The CSV Export Bug a Comma in One Title Exposed" loading="lazy" src="https://media2.dev.to/dynamic/image/width=1200,height=627,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.us-east-2.amazonaws.com%2Fuploads%2Farticles%2Fgdyjnyvxxvd32pf7g445.png" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-195065">A naive CSV export split one product title into two columns the moment the title had a comma.</p>
+<p>A real CSV parser read 4 columns for that row instead of the 3 every other row had.</p>
+<p>Python's own csv.writer fixed it with zero extra code, just swapping a join for a library call.</p>
+<p>The bug only highlights up once, when someone names a product with a comma or a quote in it.</p>
+<p>Recent findings suggest that I found this one by accident, testing an export script with a product title that happened to have a comma in it. The naive version, the one built with a plain string join because it's three lines shorter, silently shifted every column after the title one slot to the right. The proper version, built with Python's csv module instead of a join, didn't.</p>
+<p>Most CSV exports start the same lazy way. You've got a list of rows, each one a dictionary or an object, and instead of reaching for a library you just join the fields with commas, because it's one line and it works on your test data.</p>
+<p>That function ran clean on the first row. It ran clean on hundreds of rows, if your test data never happened to include a comma. The second product in my list breaks it, because "Studio Tee, Black Edition" has a comma sitting right inside the field the join function has no idea is supposed to stay together.</p>
+<p>I fed the naive output back through a real CSV parser to see exactly what a downstream tool, a spreadsheet import, an analytics pipeline, anything that actually reads CSV instead of eyeballing it, would see:. <span style="font-size:13px;">(Related: <a href="latest-update-hugging-face-reads-feb-2021-long-range-transformers-196075.html" style="color:#2563eb; font-weight:600;">Latest Update: Hugging Face Reads, Feb. 2021 - Long-ran...</a>)</span></p>
+<p>In a recent development, the first row parsed as 3 columns, exactly as intended. The second row parsed as 4 columns. "Studio Tee" landed in the title column, "Black Edition" landed in a column that doesn't exist in the header, and the price that was supposed to be in column 3 was still there, just reported under the wrong header once a tool tried to line it up against sku,title,price.</p>
+<p>Here's the part that makes this bug worse than a normal one: it doesn't fail loudly, and it doesn't fail on every row. It fails on exactly the rows where a title happens to contain the one character the export forgot to escape. Everything else looks completely fine, including in a quick manual check, because you're not going to open a 500-row export and eyeball every line for stray commas.</p>
+<p>I tested a second case that's even sneakier: a title with a literal quote character in it, The "Night Shift" Hoodie. A naive join doesn't touch quote characters at all, so it writes the field as-is, with bare double quotes sitting inside an unquoted CSV field. Some parsers tolerate that. Others choke entirely, or silently drop the quote marks, which turns "Night Shift" into Night Shift with no indication anything changed.</p>
+<p>In a recent development, this is the same class of bug as a SQL injection that only triggers on an apostrophe in someone's last name, or a template that breaks on an email address with a plus sign in it. The code path works for every piece of test data you thought to write, and then a real piece of user-generated text shows up with a character your test data never had, and the bug ships quietly until someone downstream notices a price in the wrong column.</p>
+<p>Industry observers note that there's a worse version of the same bug. I tested a title with a literal newline in it, something a copy-paste from another document can easily introduce without anyone noticing. The naive join doesn't just misplace a column this time, it splits one product into two entire rows:. <span style="font-size:13px;">(Related: <a href="industry-news-retrieval-augmented-generation-with-huggingface-tra-196077.html" style="color:#2563eb; font-weight:600;">Industry News: Retrieval Augmented Generation with Hugg...</a>)</span></p>
+<p>Reading that naive output back, I got 4 rows out of 2 products plus a header, which should have been 3 rows total. Row 3 was ['SKU-450', 'Weekend Tee'], cut off mid-title with no price at all. Row 4 was ['Second Line Variant', '20.00'], a two-column row that looks like a completely separate, broken product with no SKU. A comma shifts columns. A newline manufactures a phantom row out of thin air, one that any downstream count-the-rows check would silently accept as real data.</p>
+<p id="sec-mid-195065">For a store export specifically, this shows up most often in Shopify's own product CSV exports, where a title with a comma is genuinely common ("Tee, Black" is a completely normal product name), so any custom export script layered on top of Shopify's own data needs to assume commas and quotes will appear in real titles, not treat them as an edge case.</p>
+<p>The fix isn't a regex. It isn't manually checking every field for a comma before deciding whether to wrap it in quotes, either.</p>
+<p>Sources indicate that that path has its own edge cases, like a field that already contains a quote character, which needs to be escaped as two quote characters, not one. The fix is to stop writing CSV by hand and let a library that already solved this do it:.</p>
+<p>Running the same read-back test against this output, every row parsed as exactly 3 columns. The comma in "Studio Tee, Black Edition" came back whole, because csv.writer automatically wrapped that field in quotes: "Studio Tee, Black Edition". The quote character in "Night Shift" came back correctly too, doubled up as ""Night Shift"" inside the wrapping quotes, which is the actual CSV spec's answer to "how do you put a quote inside a quoted field.".</p>
+<p>Industry observers note that the newline case fixed itself too, the same way. "Weekend Tee" and "Second Line Variant" came back as one field, Weekend Tee\nSecond Line Variant, inside a single properly quoted row. No phantom fourth row, no SKU-less second entry. The writer wrapped the whole field in quotes the moment it saw the embedded newline, which is exactly what the format expects and exactly what I'd never have written by hand without looking it up first.</p>
+<p>In a recent development, I didn't write any of that quoting logic myself. That's the point. csv.writer decided, field by field, whether a value needed quoting, and it got every row right including the two that broke the naive version. The same module has a DictWriter that skips the manual writerow calls entirely if your data is already a list of dictionaries, which is the shape most exports start in anyway.</p>
+<p>JavaScript doesn't ship a CSV writer in the standard library the way Python does, but the fix is the same shape: reach for a small, well-tested library like csv-stringify or papaparse instead of a template string with commas in it. The specific tool matters less than refusing to hand-roll the quoting rules yourself.</p>
+<p>I went back through every export script I'd written by hand, the quick ones meant to dump a report or a product list into a spreadsheet, and found three that used a plain join instead of a real CSV writer. None of them had broken yet, because none of them had been fed a title with a comma in it during the time I'd been using them.</p>
+<p>That's not the same as them being correct. It's a bug that hasn't found its trigger yet.</p>
+<p>All three got rewritten with csv.DictWriter the same afternoon. It took less time than writing this post did.</p>
+<p>In a recent development, I'm also treating "does this handle a comma and a quote in the data" as a standing test case any time I write something that touches CSV, the same reflex as checking what happens when a form field is empty or a number is negative. The same instinct applies to catching bugs before a file ever reaches a real audience, where the actual failure only demonstrates up once you test the input you didn't expect instead of the one you planned for.</p>
+<p>The deeper habit this reinforced: any time I'm building a text format by joining strings with a delimiter, whether that's CSV, a pipe-separated log line, or a custom config format, I ask whether the delimiter character can ever appear inside one of the values. If the answer is yes, and it almost always is once real data indicates up, hand-rolling the format is building the exact bug this post is about, just with a different delimiter character.</p>
+<p>Industry observers note that A plain string join works right up until one value contains the character you're joining on, and CSV's delimiter is a comma, which reveals up in real product titles constantly. The fix cost zero extra lines of logic, just swapping ",".join(...) for a library call that already knows the quoting rules. Test every export with one deliberately annoying value, a comma, a quote, a newline inside a field, before you trust it with real data.</p>
+<p id="sec-end-195065">What's the one character your own export script has never actually been tested against?</p>
+<p style="margin-top: 25px;">
+<a href="https://dev.to/raxxostudios/the-csv-export-bug-a-comma-in-one-title-exposed-2fgj" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="nbas-eight-biggest-disappointments-through-one-month-injury-bug-s-187838.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #187838. NBA's eight biggest disappointments through one month: Injury bug, same old East and an underwhelming champ
+        </a>
+        
+        <a href="nba-one-month-superlatives-mvp-top-rookie-best-surprise-and-fresh-187803.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #187803. NBA One-Month Superlatives: MVP, top rookie, best surprise and fresh title predictions
+        </a>
+        
+        <a href="interactively-explore-your-huggingface-dataset-with-one-line-of-c-195793.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #195793. Interactively explore your Huggingface dataset with one line of code
+        </a>
+        
+        <a href="stop-treating-agents-as-one-off-projects-and-start-running-them-a-195756.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #195756. Stop treating agents as one-off projects and start running them as a continuous discipline
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

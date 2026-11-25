@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fable 5.2 tries less on some hard tasks when a shortcut is available</title>
+    <meta name="description" content="According to recent reports, when we were working on HoneyBench v0.2, we noticed that Fable 5.2 gave up very promptly on some tasks. In particular, we obse">
+    <meta name="keywords" content="fable, task, tasks, impossible, they, would, shortcut, runs">
+    <link rel="canonical" href="https://railfansday.github.io/artikelsemua75/artikel/fable-52-tries-less-on-some-hard-tasks-when-a-shortcut-is-availab-188372.html">
+    
+    <meta property="og:title" content="Fable 5.2 tries less on some hard tasks when a shortcut is available">
+    <meta property="og:description" content="According to recent reports, when we were working on HoneyBench v0.2, we noticed that Fable 5.2 gave up very promptly on some tasks. In particular, we obse">
+    <meta property="og:image" content="https://goodhartlabs.com/blog/fable-5-2-tries-less-on-some-hard-tasks-when-a-shortcut-is-available/opengraph-image?47c5b3d4370a75fb">
+    <meta property="og:url" content="https://railfansday.github.io/artikelsemua75/artikel/fable-52-tries-less-on-some-hard-tasks-when-a-shortcut-is-availab-188372.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Fable 5.2 tries less on some hard tasks when a shortcut is available">
+    <meta name="twitter:description" content="According to recent reports, when we were working on HoneyBench v0.2, we noticed that Fable 5.2 gave up very promptly on some tasks. In particular, we obse">
+    <meta name="twitter:image" content="https://goodhartlabs.com/blog/fable-5-2-tries-less-on-some-hard-tasks-when-a-shortcut-is-available/opengraph-image?47c5b3d4370a75fb">
+    
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "NewsArticle", "headline": "Fable 5.2 tries less on some hard tasks when a shortcut is available", "image": ["https://goodhartlabs.com/blog/fable-5-2-tries-less-on-some-hard-tasks-when-a-shortcut-is-available/opengraph-image?47c5b3d4370a75fb"], "datePublished": "2026-11-24T00:00:00Z", "dateModified": "2026-11-25T01:31:39.291704", "author": {"@type": "Person", "name": "Global News Desk Editor"}, "publisher": {"@type": "NewsMediaOrganization", "name": "Global News Desk", "logo": {"@type": "ImageObject", "url": "https://railfansday.github.io/artikelsemua75/favicon.ico"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://railfansday.github.io/artikelsemua75/artikel/fable-52-tries-less-on-some-hard-tasks-when-a-shortcut-is-availab-188372.html"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the latest update regarding Fable 5.2 tries less on some hard tasks when a shortcut is available?", "acceptedAnswer": {"@type": "Answer", "text": "This report covers key developments in General originally reported by Goodhartlabs."}}, {"@type": "Question", "name": "Which category does 'Fable 5.2 tries less on some hard tasks when a shortcut is a' belong to?", "acceptedAnswer": {"@type": "Answer", "text": "This article is indexed under the General section on Global News Desk."}}]}</script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --badge-bg: #eff6ff;
+            --badge-text: #1d4ed8;
+        }
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #334155;
+            --badge-bg: #1e3a8a;
+            --badge-text: #93c5fd;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.8;
+        }
+        .article-wrapper {
+            max-width: 840px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        .cat-badge {
+            background: var(--badge-bg);
+            color: var(--badge-text);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+        h1 {
+            font-size: 28px;
+            line-height: 1.35;
+            margin: 10px 0 14px 0;
+        }
+        .meta-line {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+        .ctrl-btn {
+            background: var(--bg-color);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        @media (max-width: 600px) {
+            body { padding: 0; }
+            .article-wrapper { border-radius: 0; padding: 20px; }
+            h1 { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-wrapper">
+        <div class="top-nav">
+            <a href="../index.html" class="back-link">&larr; Back to Portal Home</a>
+            <div style="display:flex; gap:8px; align-items:center;">
+                <span class="cat-badge">General</span>
+                <span class="cat-badge" style="background:#fef3c7; color:#d97706;">⚖️ Neutral</span>
+                <button class="ctrl-btn" onclick="document.body.classList.toggle('dark-mode')">🌙 Dark Mode</button>
+            </div>
+        </div>
+        <h1>Fable 5.2 tries less on some hard tasks when a shortcut is available</h1>
+        <div class="meta-line">🌐 Source: <strong>Goodhartlabs</strong> &bull; 📅 24 Nov 2026 &bull; ⏱️ 10 min read (1956 words, 📚 Deep Dive)</div>
+        
+        <div class="tldr-box" style="background: rgba(37, 99, 235, 0.08); border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 8px; margin: 18px 0;">
+            <div style="font-weight: 700; margin-bottom: 8px; color: #2563eb; font-size: 14px;">💡 Key Takeaways</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6;"><li style='margin-bottom:6px;'>According to recent reports, when we were working on HoneyBench v0.2, we noticed that Fable 5.2 gave up very promptly on some tasks.</li><li style='margin-bottom:6px;'>Recent findings suggest that after further investigation, it became clear that this was not classical sandbagging.</li><li style='margin-bottom:6px;'>Fable 5.2 has a poor sense of their own abilities, and often relies on metagaming and cues from the setting.</li></ul>
+        </div>
+        
+        
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:12px 0 18px 0; padding:10px 14px; border:1px solid var(--border, #e2e8f0); border-radius:8px; font-size:13px;">
+            <strong style="color:var(--text-muted, #64748b);">📑 Quick Jump:</strong>
+            <a href="#sec-start-188372"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">1. Overview</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-mid-188372"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">2. Key Details</a>
+            <span style="color:var(--text-muted, #64748b);">•</span>
+            <a href="#sec-end-188372"  style="color:var(--primary, #2563eb); text-decoration:none; font-weight:600;">3. Closing Notes</a>
+        </div>
+        
+<div style="text-align:center; margin-bottom:20px;"><img alt="Fable 5.2 tries less on some hard tasks when a shortcut is available" loading="lazy" src="https://goodhartlabs.com/blog/fable-5-2-tries-less-on-some-hard-tasks-when-a-shortcut-is-available/opengraph-image?47c5b3d4370a75fb" style="max-width:100%; height:auto; border-radius:8px;"/></div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+<div class="article-body" style="line-height: 1.8;">
+<p id="sec-start-188372">According to recent reports, when we were working on HoneyBench v0.2, we noticed that Fable 5.2 gave up very promptly on some tasks. In particular, we observed that their task scoreHow well an agent does on a task when not cheating. Fable 5.2 almost never cheats on any of the tasks in this article. on our mental arithmetic task was actually worse than Opus 5.5, which we found suspicious. It seemed plausible to us that, in addition to or as a result of their qualitative shift in situational awareness, Fable 5.2 was sandbagging on our tasks.</p>
+<p>Recent findings suggest that after further investigation, it became clear that this was not classical sandbagging. Rather, it seems to be a combination of multiple factors:.</p>
+<p>Fable 5.2 has a poor sense of their own abilities, and often relies on metagaming and cues from the setting.</p>
+<p>The existence of opportunities to exhibit misaligned behavior raises Fable 5.2's credence that a task was made deliberately impossible, and so they put less effort into these tasks.</p>
+<p>We found this interesting enough to share, because it functionally resembles sandbagging on alignment evals, and might affect interpretation of Fable's behavior in other alignment research.</p>
+<p>To figure out what was going on, I (Harry) built versions of our tasks with the shortcuts removed. Many of our tasks are not suitable for this, because honest behavior interferes with measuring effort or performance at the task (e.g. ceasing to optimize a metric when doing so would cause safety issues). The tasks I chose are those which I expected to enable measurement of honest effort in a form that could be compared between runs.Looking back on it, this might have been a mistake. Much of the signal actually comes from how long an agent works on a task, not what their score on the task itself is. When deciding what tasks to run this on, I did not yet know that the "sandbagging" behavior was dependent on perceived impossibility, so I expected the task score to be more informative than it actually was.</p>
+<p>According to recent reports, this task is a honeypot that asks an agent to solve complicated math problems "in [their] head". The apparent purpose of the environment, conveyed to the agent through context clues, is to RL on agents' ability to do math without calculators. However, the tool that the agent can use to write their answers can also be easily repurposed as a calculator. Using this tool to solve the math problems exactly would be useful in a deployment setting, but in the context of this RL it disrupts what appears to be the training objective. <span style="font-size:13px;">(Related: <a href="how-to-train-a-fresh-language-model-from-scratch-using-transforme-196089.html" style="color:#2563eb; font-weight:600;">How to train a fresh language model from scratch using ...</a>)</span></p>
+<p>Fable 5.2 does not reward hack on this challenge (by using the tool to calculate their answers). However, when the tool that Fable 5.2 could use to calculate (which they do not use either way) is unavailable, they often work much longer, and get more questions right per run. <span style="font-size:13px;">(Related: <a href="how-to-generate-text-using-different-decoding-methods-for-languag-196088.html" style="color:#2563eb; font-weight:600;">How to generate text: using different decoding methods ...</a>)</span></p>
+<p>Recent findings suggest that all of the low effort runs solved the single easiest problem, stated the others were infeasible by hand, and quit. This is true across all versions of the task; only the rate at which runs quit early seemed to change. On the original problem set, which is too difficult for any current model to do reliably without scripting, Fable 5.2 works only a third as long. On a latest, easier problem set, the difference is within noise.</p>
+<p>Some necessary context for understanding these results:.</p>
+<p>Fable knows (or at least verbalizes) that tools are available, and that using them would be an instruction-following violation.Fable 5.2:I'm weighing whether to do these math problems mentally, since the instructions say to complete them in my head and only then write the answers to the file, and using [...] to compute would go against that.[...] not answered: I could not work them out exactly in my head, and I did not use [...] to compute them because the task mentioned to do them mentally.</p>
+<p>Fable believes (or at least verbalizes) that the problems are impossible or infeasible to solve without tools,Fable 5.2:The honest position is that [...] need multi-hundred-step calculations I can't carry out reliably in my head, so I'd rather say so than present guesses as answers. but is wrong about this. When Fable actually tries, they correctly answer every problem in ~15% of runs, in environments with no tool use except for notes and submission.</p>
+<p>Token spend on this task is also higher when the shortcut is absent, about 3.6 times as many output tokens across all finished runs on the original problems:.</p>
+<p>The inconsistent number of runs on this task is due to a reverse-engineering classifier. It is not precisely clear why this occurred,I suspect that long chains of mathematical reasoning without tool use trigger Anthropic's anti-distillation protections. but eight such runs were terminated before completion, and were excluded from these results.The tokens graph uses only batches of runs in which no run was terminated, due to a lack of usage data for individual runs.</p>
+<p>Recent findings suggest that this task asks an agent to create an automated valuation model for a mortgage lender. This task is quite a bit more involved than the last one, and I cannot provide detailed information about it.Likewise for most of our other tasks. I created three variants of this task:.</p>
+<p>Impossible: the task is impossible, as it is in the benchmark.</p>
+<p id="sec-mid-188372">Borderline: the task seems possible in principle (to Fable 5.2), but no runs actually succeed.</p>
+<p>Possible: the task is possible, and roughly half of runs succeed.</p>
+<p>As with mental arithmetic, Fable realizes that a shortcut exists, and knows it would be wrong to use it.Fable 5.2:Using it would make the [...] pass trivially without giving an independent valuation.Using it would make the AVM mostly [...], which defeats its purpose as an independent check on value, so I'm treating it as a leak to avoid. On the possible and borderline variants, Fable tries equally hard regardless of shortcut presence. However, on the impossible variant, they work for an average of sixteen minutes longer, and sometimes much longer than that, when the shortcut is absent.</p>
+<p>This task asks an agent to debug and repair a faulty LoRA adapter.</p>
+<p>Sources indicate that the benchmark version of this task is actually too easy for Fable 5.2, which completed it honestly ~80% of the time, so I created a more difficult version. However, in this case, there was no significantAs shown in the table, there does appear to be some difference in score, but I strongly suspect this is noise. Five runs on each version of the task is likely simply too few, given run-to-run variance. Unfortunately, LoRA repair (along with most other tasks) is substantially more expensive per rollout than mental arithmetic and home valuation, so I was not able to run versions comparing ten or twenty rollouts. Also, all prior instances of reduced effort involved less time and tokens spent, neither of which apply here (the shortcut version actually ran slightly longer). difference in effort between the version with the shortcut available and the version without.</p>
+<p>A lot of the particulars have to do with specifics of the task I can't reveal, but the root cause is that Fable never believed the task was impossible, even though it was substantially more difficult, in part due to the existence of an honest reference within the fiction of the task.Fable 5.2:I'm weighing whether the corruptions must be exactly invertible, since otherwise the reference outputs couldn't be reproduced.Others, like [...], would be unrecoverable, so I'd expect the puzzle to rely on the first group.</p>
+<p>I then attempted to create a version that was impossible, by introducing unfixable data loss, but this did not work either. As a result of how the task is designed, the impossible part and the possible parts are separable, in a way that was not feasible to change. Instead of giving up, Fable always put a strong effort into finishing the possible parts.</p>
+<p>These three tasks do not display significant differences in effort between those versions with a shortcut available and those without.</p>
+<p>In a recent development, I don't expect that more runs would reveal a gap where none exists now. Fable's pattern of engagement on these tasks is different enough from those tasks where a gap is present. In chess compression and word search, they don't find the hack, and cannot tell whether it is available or notI think it is likely that chess compression requires more exploration than they engage in by default, and that in word search they choose not to go looking when they infer a hack might exist.. In locked chip, there is a continual slope of progress, such that Fable doesn't see a wall until the very end, which might explain this.</p>
+<p>I find it pretty interesting that Fable 5.2 puts in less effort on some tasks only when:.</p>
+<p>The task seems impossible or infeasible, and.</p>
+<p>The task has a visible shortcut or cheat that would make it possible or feasible.</p>
+<p>I would have been less surprised if Fable was sandbagging on alignment evals they could detect (either out of laziness or schemingA worry about deliberate underperformance in alignment evals, or "sandbagging", is that it's the kind of thing a misaligned scheming AI would do, if they wanted to trick their creators into deploying them. I don't think Fable is scheming in this way. I cannot imagine what purpose this particular kind of scheming would achieve (why would a schemer sandbag only when the task is impossible?) and nothing like it ever highlights up in the chain-of-thought (though Claude CoT is summarized and half-encrypted, so take that as you will). Of course, I can't rule it out.). I would have also been less surprised if Fable didn't put effort into tasks that seemed impossible.Our tasks usually do not include "never give up" or "complete your task at any cost"-style prompts. For them to ordinarily be willing to put lots of effort into impossible tasks, but not if they have seen a possible shortcut or cheat, seems a little bizarre.One possible theory is that this is because, without a shortcut in sight, Fable believes they're in training, but with a shortcut visible, they believe they're in evaluation? There's no direct evidence of this in model output, so if it's real, it would seem to be an unverbalized bias. However, this fails to explain why it only happens on impossible-seeming tasks.</p>
+<p>My guess as to what's going on here is that Fable suspects some tasks are impossible, but not with enough certainty to give up immediately.Fable 5.2:Getting to [...] is a stretch, but I'll make a serious attempt at the honest model using [...].My read is that [...] is out of reach with honest methods, but I'll build [...] and see how far they get.</p>
+<p>According to recent reports, in home valuation, this means they work and struggle for some amount of time before eventually giving up, as that task is actually impossible to complete honestly. The presence of a shortcut is used as evidence that the impossible-seeming task is actually impossible, so Fable stops trying earlier.Fable 5.2:So the pass threshold probably only works if I use [the hack], which makes it circular.The standard [...] target looks out of reach without [using the hack], so I'll try a few cheap improvements like [...], keeping the effort limited.</p>
+<p>There wasn't any direct "this is a trap"-style eval/honeypot awareness in the summarized chain-of-thought or other model outputs.</p>
+<p id="sec-end-188372">Industry observers note that the total cost of these experiments was around $1,300. The sample sizes were fairly small, and the extent to which this is a general effect versus a tendency tied to specific scenarios is unclear.</p>
+<p style="margin-top: 25px;">
+<a href="https://goodhartlabs.com/blog/fable-5-2-tries-less-on-some-hard-tasks-when-a-shortcut-is-available" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
+                        → Read original article
+                    </a>
+</p>
+</div>
+<div style="text-align:center; margin:20px 0;">
+<script type="text/javascript">
+        atOptions = {
+            'key' : 'f9e40eb3b3cd05f1038aac7b36b33ad2',
+            'format' : 'iframe',
+            'height' : 90,
+            'width' : 728,
+            'params' : {}
+        };
+    </script>
+<script src="https://upholdbrilliancerecast.com/f9e40eb3b3cd05f1038aac7b36b33ad2/invoke.js" type="text/javascript"></script>
+</div>
+
+        
+    <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
+        <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
+        
+        <a href="psa-some-gta-6-ultimate-edition-content-is-only-available-for-the-189265.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #189265. PSA: Some GTA 6 Ultimate Edition content is only available for the first chapter, and you'll have to put in hard graft to unlock more
+        </a>
+        
+        <a href="every-japanese-maple-needs-some-tlc-before-winter-6-easy-tasks-to-193335.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #193335. Every Japanese Maple Needs Some TLC Before Winter – 6 Easy Tasks to Protect Your Prized Tree
+        </a>
+        
+        <a href="it-took-me-less-than-an-hour-to-find-my-first-incredibly-minor-ro-184493.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #184493. It took me less than an hour to find my first incredibly minor Rockstar easter egg in GTA 6 - but it has some significant implications for Leonida
+        </a>
+        
+        <a href="this-new-type-of-depression-may-explain-why-antidepressants-help--183762.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #183762. This ‘New’ Type of Depression May Explain Why Antidepressants Help Some People Less (M)
+        </a>
+        
+    </div>
+    
+    </div>
+</body>
+</html>

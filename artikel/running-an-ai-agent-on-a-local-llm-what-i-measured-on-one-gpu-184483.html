@@ -152,11 +152,11 @@
 <p id="sec-start-184483">Stay up to date with AI tools, model releases, and developer workflows that matter.</p>
 <p>Recent findings suggest that weekly. Free. One click to leave.</p>
 <p>In a recent development, 7 Day Free Trial. Cancel Anytime.</p>
-<p>Recent findings suggest that running an AI agent on your own GPU sounds simple: point it at Ollama and stop paying per token. I set up OpenClaw, an open-source AI assistant, with a 9B model in Ollama on one RTX 3090 and connected it to Discord. Then I read the Ollama log for every request. <span style="font-size:13px;">(Related: <a href="what-i-do-every-time-i-get-an-irs-notice-184553.html" style="color:#2563eb; font-weight:600;">What I do every time I get an IRS notice...</a>)</span></p>
-<p>Sources indicate that the agent worked. The numbers were not what I expected, though. A one-line question turned into a prompt of more than 18,000 tokens, the first reply took over a minute, and the small model sometimes guessed instead of using its tools.</p>
+<p>Recent findings suggest that running an AI agent on your own GPU sounds simple: point it at Ollama and stop paying per token. I set up OpenClaw, an open-source AI assistant, with a 9B model in Ollama on one RTX 3090 and connected it to Discord. Then I read the Ollama log for every request. <span style="font-size:13px;">(Related: <a href="how-to-train-a-fresh-language-model-from-scratch-using-transforme-196089.html" style="color:#2563eb; font-weight:600;">How to train a fresh language model from scratch using ...</a>)</span></p>
+<p>Sources indicate that the agent worked. The numbers were not what I expected, though. A one-line question turned into a prompt of more than 18,000 tokens, the first reply took over a minute, and the small model sometimes guessed instead of using its tools. <span style="font-size:13px;">(Related: <a href="how-to-generate-text-using-different-decoding-methods-for-languag-196088.html" style="color:#2563eb; font-weight:600;">How to generate text: using different decoding methods ...</a>)</span></p>
 <p>This article covers what I measured and what each number means if you plan to run an agent on local hardware.</p>
 <p>OpenClaw ran in Docker and reached Ollama on the host at http://host.docker.internal:11434. Discord was the chat interface, and OpenClaw's web panel showed the sessions and context use.</p>
-<p>This article is about the results, not the installation. The full step-by-step setup is in a separate guide to running OpenClaw in Docker with Ollama and Discord. That guide covers the Compose file, the Discord bot and how to keep the ports off your network. <span style="font-size:13px;">(Related: <a href="estate-planning-for-early-retirement-the-fire-guide-184545.html" style="color:#2563eb; font-weight:600;">Estate Planning for Early Retirement: The FIRE Guide...</a>)</span></p>
+<p>This article is about the results, not the installation. The full step-by-step setup is in a separate guide to running OpenClaw in Docker with Ollama and Discord. That guide covers the Compose file, the Discord bot and how to keep the ports off your network.</p>
 <p>All timings below come from the Ollama log on the test machine. Ollama loaded the model with a 32,768-token context.</p>
 <p>My first message in Discord was short: "Which model are you running on, and what is 17 * 23?" The bot answered correctly: it ran on ollama/qwen3.5:9b, and 17 × 23 is 391.</p>
 <p>Industry observers note that the Ollama log highlighted what that question cost. The model processed 18,415 prompt tokens and generated 33 tokens.</p>
@@ -214,20 +214,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="introducing-anylanguagemodel-one-api-for-local-and-remote-llms-on-184306.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #184306. Introducing AnyLanguageModel: One API for Local and Remote LLMs on Apple Platforms
+        <a href="stop-treating-agents-as-one-off-projects-and-start-running-them-a-195756.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #195756. Stop treating agents as one-off projects and start running them as a continuous discipline
         </a>
         
-        <a href="breaking-anylanguagemodel-10-one-year-of-local-models-on-apple-pl-183885.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #183885. Breaking: AnyLanguageModel 1.0: One Year of Local Models on Apple Platforms
+        <a href="self-hosted-langsmith-alternatives-4-tools-tested-on-one-typescri-195524.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #195524. Self-Hosted LangSmith Alternatives: 4 Tools Tested on One TypeScript Agent
         </a>
         
-        <a href="this-coachs-fartlek-workout-is-one-of-the-best-for-learning-a-cru-182845.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #182845. This Coach’s Fartlek Workout Is One of the Best for Learning a Crucial Running Skill
+        <a href="industry-news-serving-a-local-llm-to-several-users-ollama-lm-stud-195275.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #195275. Industry News: Serving a Local LLM to Several Users: Ollama, LM Studio, llama.cpp and vLLM Benchmarked
         </a>
         
-        <a href="the-rise-of-the-multi-market-agent-why-local-expertise-is-going-g-179318.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #179318. The rise of the multi-market agent: Why local expertise is going global
+        <a href="from-files-to-cited-answers-in-one-api-call-managed-ingestion-and-195180.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #195180. From Files to Cited Answers in One API Call: Managed Ingestion and SearchDocuments in Agent Retrieval
         </a>
         
     </div>

@@ -150,7 +150,7 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-183994">Sources indicate that my major advocacy is that lua is a very good general purpose language. this is not an opinion shared by all. lua’s major design goal was extending and embedding into existing programs. I think the simplicity and flexibility in design persued towards the end of that goal extends to make lua a very good language in general. that stated, it does its job quite well as an embedding language, and one of its more interesting use cases (and actually, one of its oldest use cases) is as a data or configuration format.</p>
-<p>According to recent reports, lua’s syntax provides many niceties. for instance, lua has an infinite family of multiline strings: the most basic one starts with [[ and ends with ]]. however, any amount of equal signs can be put between the two square brackets: print([======[hello, world]======]). the only way to close a [===[ is with an accompanying ]===], not with a ]] or a ]==], or a ]====]. <span style="font-size:13px;">(Related: <a href="hawaiian-interisland-awards-hop-between-islands-184536.html" style="color:#2563eb; font-weight:600;">Hawaiian Interisland Awards — Hop Between Islands...</a>)</span></p>
+<p>According to recent reports, lua’s syntax provides many niceties. for instance, lua has an infinite family of multiline strings: the most basic one starts with [[ and ends with ]]. however, any amount of equal signs can be put between the two square brackets: print([======[hello, world]======]). the only way to close a [===[ is with an accompanying ]===], not with a ]] or a ]==], or a ]====].</p>
 <p>here is a function that for any string, creates the correct multiline string to represent it:.</p>
 <p>Industry observers note that local function stringize(str)
     local equal_signs = ""
@@ -162,8 +162,8 @@
     return ("[%s[%s]%s]"):format(equal_signs, str, equal_signs)
 end
 
-of course, you can just use string.format with %q, but multiline strings usually provide nicer looking and more compact results. these strings are very good for representing lua code as strings in other lua code. <span style="font-size:13px;">(Related: <a href="industry-news-average-retirement-savings-by-age-are-you-on-track-184559.html" style="color:#2563eb; font-weight:600;">Industry News: Average Retirement Savings by Age: Are Y...</a>)</span></p>
-<p>Industry observers note that anyway, download this file. if you want to consume massive amounts of memory and possibly crash your computer, run it in cpython. if you want to see “hello, world” printed 5 million times, run it in lua. lua’s parser is designed to handle massive files with stride, which is fairly unique and quite necessary if lua is to be used for this purpose.</p>
+of course, you can just use string.format with %q, but multiline strings usually provide nicer looking and more compact results. these strings are very good for representing lua code as strings in other lua code. <span style="font-size:13px;">(Related: <a href="industry-news-retrieval-augmented-generation-with-huggingface-tra-196077.html" style="color:#2563eb; font-weight:600;">Industry News: Retrieval Augmented Generation with Hugg...</a>)</span></p>
+<p>Industry observers note that anyway, download this file. if you want to consume massive amounts of memory and possibly crash your computer, run it in cpython. if you want to see “hello, world” printed 5 million times, run it in lua. lua’s parser is designed to handle massive files with stride, which is fairly unique and quite necessary if lua is to be used for this purpose. <span style="font-size:13px;">(Related: <a href="industry-news-showcase-your-projects-in-spaces-using-gradio-196058.html" style="color:#2563eb; font-weight:600;">Industry News: Showcase Your Projects in Spaces using G...</a>)</span></p>
 <p>design and implementation choices like these come together to suit lua for this purpose. I’ve seen 3 main styles of using lua code to represent data or configuration. I think lua manages to accomodate each of them well, and each have their appropriate use.</p>
 <p>In a recent development, chunks are much like function bodies. they have return values. so, one thing that one can do is just return a substantial table from a lua program.</p>
 <p>return {
@@ -233,20 +233,20 @@ programming in lua provides a real world example of this.</p>
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="tech-report-show-dont-certify-how-to-prepare-for-your-first-data--184509.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #184509. Tech Report: Show, Don't Certify: How to Prepare for Your First Data Analyst Job
+        <a href="introducing-the-data-measurements-tool-an-interactive-tool-for-lo-196049.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #196049. Introducing the Data Measurements Tool: an Interactive Tool for Looking at Datasets
         </a>
         
-        <a href="latest-update-logging-ai-prompts-and-responses-in-java-without-le-184434.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #184434. Latest Update: Logging AI Prompts and Responses in Java Without Leaking Sensitive Data
+        <a href="accelerate-large-model-training-using-pytorch-fully-sharded-data--196018.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #196018. Accelerate Large Model Training using PyTorch Fully Sharded Data Parallel
         </a>
         
-        <a href="industry-news-what-is-bio-tagging-and-how-to-use-it-for-document--184232.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #184232. Industry News: What Is BIO Tagging and How to Use It for Document AI Training Data
+        <a href="efficient-table-pre-training-without-real-data-an-introduction-to-196006.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #196006. Efficient Table Pre-training without Real Data: An Introduction to TAPEX
         </a>
         
-        <a href="amazon-s3-tables-now-support-all-apache-iceberg-v3-data-types-184172.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #184172. Amazon S3 Tables now support all Apache Iceberg V3 data types
+        <a href="how-to-train-your-model-dynamically-using-adversarial-data-195989.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #195989. How to train your model dynamically using adversarial data
         </a>
         
     </div>

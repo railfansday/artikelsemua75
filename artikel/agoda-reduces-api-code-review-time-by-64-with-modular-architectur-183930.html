@@ -167,12 +167,12 @@ Agoda Reduces API Code Review Time by 64% with Modular Architecture.</p>
 									
 									2
 									min read.</p>
-<p>According to recent reports, agoda has introduced a modular monolith framework in its post-booking API to reduce code coupling and enforce domain boundaries without rewriting the existing service. The approach combines component-based code organization, automated architecture checks, and incremental migration. The team reported 64% shorter median code review time and 34% shorter time to initial substantive feedback for framework-backed changes compared with legacy code. <span style="font-size:13px;">(Related: <a href="how-to-budget-for-a-wedding-without-going-broke-184560.html" style="color:#2563eb; font-weight:600;">How to Budget for a Wedding Without Going Broke...</a>)</span></p>
-<p>Recent findings suggest that the change addresses growing maintenance challenges in BAPI, which coordinates cancellations, booking amendments, refunds, and customer communications. Agoda extracted the API from its aging core monolith in 2019 through a largely line-by-line migration. As development increased, merge requests more than quadrupled between 2022 and 2025, while some files exceeded 4,000 lines. <span style="font-size:13px;">(Related: <a href="how-to-start-a-side-business-while-working-full-time-184555.html" style="color:#2563eb; font-weight:600;">How to Start a Side Business While Working Full-Time...</a>)</span></p>
+<p>According to recent reports, agoda has introduced a modular monolith framework in its post-booking API to reduce code coupling and enforce domain boundaries without rewriting the existing service. The approach combines component-based code organization, automated architecture checks, and incremental migration. The team reported 64% shorter median code review time and 34% shorter time to initial substantive feedback for framework-backed changes compared with legacy code. <span style="font-size:13px;">(Related: <a href="transformer-based-encoder-decoder-models-196085.html" style="color:#2563eb; font-weight:600;">Transformer-based Encoder-Decoder Models...</a>)</span></p>
+<p>Recent findings suggest that the change addresses growing maintenance challenges in BAPI, which coordinates cancellations, booking amendments, refunds, and customer communications. Agoda extracted the API from its aging core monolith in 2019 through a largely line-by-line migration. As development increased, merge requests more than quadrupled between 2022 and 2025, while some files exceeded 4,000 lines.</p>
 <p>According to recent reports, the team characterized the migration as a tactical design trade-off, drawing on John K. Ousterhout's A Philosophy of Software Design,.</p>
 <p>In a recent development, we had deliberately traded a strategic design approach for a tactical one to prioritize speed to market. This tactical mindset was exactly what the business needed at the time.</p>
 <p>Rather than undertake a complete rewrite, the team introduced architectural boundaries incrementally.</p>
-<p>The framework, called Platform, organizes code around business domains such as cancellations, rebooking, and payments rather than technical layers. Each component encapsulates its business logic and data access behind defined interfaces, with application, service, repository, and model layers contained within the component. This package-by-component approach aims to localize changes and reduce dependencies between business domains.</p>
+<p>The framework, called Platform, organizes code around business domains such as cancellations, rebooking, and payments rather than technical layers. Each component encapsulates its business logic and data access behind defined interfaces, with application, service, repository, and model layers contained within the component. This package-by-component approach aims to localize changes and reduce dependencies between business domains. <span style="font-size:13px;">(Related: <a href="how-to-train-a-fresh-language-model-from-scratch-using-transforme-196089.html" style="color:#2563eb; font-weight:600;">How to train a fresh language model from scratch using ...</a>)</span></p>
 <p id="sec-mid-183930">Platform framework boundaries inside a domain module (Source: Agoda Blog Post).</p>
 <p>Agoda uses the Data Mapper pattern to keep repository-specific models, including database entities and API payloads, out of business logic. Typed builders centralize object creation and transformations, making it easier for developers to find where domain objects and service inputs are constructed.</p>
 <p>Recent findings suggest that the team also uses ArchUnit to encode architectural constraints as automated tests in continuous integration. For example, repository-specific models can only be accessed by their respective repositories. Violations fail the build rather than relying on code reviewers to identify unauthorized dependencies manually.</p>
@@ -205,20 +205,20 @@ Agoda Reduces API Code Review Time by 64% with Modular Architecture.</p>
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
+        <a href="sigma-fp2-review-modular-cameras-capabilities-expand-to-fill-more-194639.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #194639. Sigma FP2 review: modular camera’s capabilities expand to fill more niches
+        </a>
+        
+        <a href="anthropics-claude-ship-lets-ai-write-review-and-approve-its-own-c-190106.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #190106. Anthropic’s Claude Ship Lets AI Write, Review and Approve Its Own Code
+        </a>
+        
+        <a href="metacritics-user-review-problem-worsens-as-gta-6s-launch-prompts--188961.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #188961. Metacritic's user review problem worsens, as GTA 6's launch prompts review-bombing for completely unrelated games like Soul Calibur and The Ocarina of Time
+        </a>
+        
         <a href="anthropic-introduces-claude-ship-to-review-fix-and-approve-code-184054.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #184054. Anthropic Introduces Claude Ship to Review, Fix, and Approve Code
-        </a>
-        
-        <a href="ai-code-review-false-positives-the-hidden-cost-183772.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #183772. AI Code Review False Positives: The Hidden Cost
-        </a>
-        
-        <a href="sigma-fp2-review-modular-cameras-capabilities-expand-to-fill-more-183217.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #183217. Sigma FP2 review: modular camera’s capabilities expand to fill more niches
-        </a>
-        
-        <a href="metacritics-user-review-problem-worsens-as-gta-6s-launch-prompts--177426.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #177426. Metacritic's user review problem worsens, as GTA 6's launch prompts review-bombing for completely unrelated games like Soul Calibur and The Ocarina of Time
         </a>
         
     </div>

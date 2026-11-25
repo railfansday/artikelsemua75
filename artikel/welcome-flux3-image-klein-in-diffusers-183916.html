@@ -150,11 +150,11 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-183916">Black Forest Labs FLUX.3 Image Klein is here, and it runs in Diffusers from day one. One model does text-to-image and multi-reference image-to-image, and it adds something new, the layout control. You write bounding boxes into the prompt to say where each part of the image should go, or which parts of a reference image to move.</p>
-<p>Both open checkpoints are in the FLUX.3 Image Klein collection:.</p>
-<p>You can head on to the Hugging Face space and generate some images right now!</p>
+<p>Both open checkpoints are in the FLUX.3 Image Klein collection:. <span style="font-size:13px;">(Related: <a href="leveraging-pre-trained-language-model-checkpoints-for-encoder-dec-196082.html" style="color:#2563eb; font-weight:600;">Leveraging Pre-trained Language Model Checkpoints for E...</a>)</span></p>
+<p>You can head on to the Hugging Face space and generate some images right now! <span style="font-size:13px;">(Related: <a href="how-to-generate-text-using-different-decoding-methods-for-languag-196088.html" style="color:#2563eb; font-weight:600;">How to generate text: using different decoding methods ...</a>)</span></p>
 <p>Install the latest diffusers and transformers (for the Qwen3-VL text encoder):.</p>
 <p>Load the distilled checkpoint and generate an image:.</p>
-<p>FLUX.3 responds best to a full scene description with the subject, the setting, the light, the composition, and the style. The official prompting guide from Black Forest Labs has more tips. The distilled checkpoint generates a 1024 × 1024 image in 16 steps by default. Pass height, width, or num_inference_steps to change them. <span style="font-size:13px;">(Related: <a href="estate-planning-for-early-retirement-the-fire-guide-184545.html" style="color:#2563eb; font-weight:600;">Estate Planning for Early Retirement: The FIRE Guide...</a>)</span></p>
+<p>FLUX.3 responds best to a full scene description with the subject, the setting, the light, the composition, and the style. The official prompting guide from Black Forest Labs has more tips. The distilled checkpoint generates a 1024 × 1024 image in 16 steps by default. Pass height, width, or num_inference_steps to change them.</p>
 <p>In a recent development, pass a reference image (or more) with the image argument. Write the prompt as a caption of the image you want, with the change included.</p>
 <p>With several references, refer to them in the prompt as , , ... in the order they are passed to image:.</p>
 <p>Add a JSON list of regions after the caption. Each region has an id, a bbox, and a desc, and the caption mentions it as .</p>
@@ -164,7 +164,7 @@
 <p>Everything above uses the distilled checkpoint. The base checkpoint runs 50 steps with classifier-free guidance, and it's the one to fine-tune (see LoRA finetuning).</p>
 <p>Recent findings suggest that black Forest Labs also ships the transformer as a single file, in bf16 and in two quantized formats: fp8r (rowwise FP8) and nvfp4. Load any of them with from_single_file, then load the other components by name so the bf16 transformer isn't downloaded too.</p>
 <p>For the unquantized single file, use https://huggingface.co/{model_id}/blob/main/model.safetensors and drop quantization_config.</p>
-<p>According to recent reports, FLUX.3 works for both text-to-image and image-to-image, which makes it a great base for custom LoRAs. diffusers ships DreamBooth LoRA training scripts for both tasks (you can also train with Ostris' AI Toolkit). <span style="font-size:13px;">(Related: <a href="tech-report-rockstar-accused-of-tracing-furry-artwork-for-gta-6s--184529.html" style="color:#2563eb; font-weight:600;">Tech Report: Rockstar accused of tracing furry artwork ...</a>)</span></p>
+<p>According to recent reports, FLUX.3 works for both text-to-image and image-to-image, which makes it a great base for custom LoRAs. diffusers ships DreamBooth LoRA training scripts for both tasks (you can also train with Ostris' AI Toolkit).</p>
 <p>Here is a text-to-image example that learns a tarot-card style from the multimodalart/1920-raider-waite-tarot-public-domain dataset, triggered with trtcrd:.</p>
 <p>To reduce memory usage, add a few optimization flags:.</p>
 <p>--gradient_checkpointing recomputes activations in the backward pass (lower VRAM, slightly slower), --cache_latents pre-encodes the images and frees the VAE, and --use_8bit_adam keeps the optimizer states in 8-bit.</p>
@@ -226,20 +226,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
+        <a href="welcome-amused-efficient-text-to-image-generation-195776.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #195776. Welcome aMUSEd: Efficient Text-to-Image Generation
+        </a>
+        
+        <a href="fast-lora-inference-for-flux-with-diffusers-and-peft-195217.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #195217. Fast LoRA inference for Flux with Diffusers and PEFT
+        </a>
+        
         <a href="diffusers-welcomes-flux-2-184297.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #184297. Diffusers welcomes FLUX-2
         </a>
         
-        <a href="latest-update-welcome-amused-efficient-text-to-image-generation-172740.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #172740. Latest Update: Welcome aMUSEd: Efficient Text-to-Image Generation
-        </a>
-        
-        <a href="fast-lora-inference-for-flux-with-diffusers-and-peft-172212.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #172212. Fast LoRA inference for Flux with Diffusers and PEFT
-        </a>
-        
-        <a href="breaking-how-ai-image-to-image-and-image-to-video-tools-work-and--184401.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #184401. Breaking: How AI Image-to-Image and Image-to-Video Tools Work, and How to Build a Reliable Workflow
+        <a href="welcome-spacy-to-the-hugging-face-hub-196063.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #196063. Welcome spaCy to the Hugging Face Hub
         </a>
         
     </div>

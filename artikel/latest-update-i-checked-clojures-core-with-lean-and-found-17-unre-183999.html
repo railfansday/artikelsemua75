@@ -150,15 +150,15 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-183999">In a recent development, I read Koukyosyumei's article "èåãªRustè£½OSSãLean 4ã§å½¢å¼æ¤è¨¼ãã¦ã¿ããããã¡ããã¡ããã°ãè¦ã¤ãã£ãè©±" (in Japanese; the title means "I formally verified well-known Rust OSS with Lean 4 and found a lot of bugs"). The author ported well-known Rust projects into a form they could prove in Lean 4, and where a proof failed, they found a bug in the original code.</p>
-<p>Many people have used Clojure's persistent data structures since around 1.0, so I expected no bugs to remain. Still, I wanted to see whether Lean would find something there too.</p>
-<p>hirosassa/lean-verify describes a procedure for modeling a small function in Lean 4 and checking it for all inputs, so I applied it to the part of Clojure's core written in Java.</p>
-<p>It has been revealed that I modeled integer and bit arithmetic in Lean and searched for counterexamples. I checked the collections with differential testing against the java.util collections, and for Java interop I compared the same call with and without a type hint. <span style="font-size:13px;">(Related: <a href="how-to-budget-for-a-wedding-without-going-broke-184560.html" style="color:#2563eb; font-weight:600;">How to Budget for a Wedding Without Going Broke...</a>)</span></p>
+<p>Many people have used Clojure's persistent data structures since around 1.0, so I expected no bugs to remain. Still, I wanted to see whether Lean would find something there too. <span style="font-size:13px;">(Related: <a href="simple-considerations-for-simple-people-building-fancy-neural-net-196076.html" style="color:#2563eb; font-weight:600;">Simple considerations for simple people building fancy ...</a>)</span></p>
+<p>hirosassa/lean-verify describes a procedure for modeling a small function in Lean 4 and checking it for all inputs, so I applied it to the part of Clojure's core written in Java. <span style="font-size:13px;">(Related: <a href="tech-report-the-reformer-pushing-the-limits-of-language-modeling-196087.html" style="color:#2563eb; font-weight:600;">Tech Report: The Reformer - Pushing the limits of langu...</a>)</span></p>
+<p>It has been revealed that I modeled integer and bit arithmetic in Lean and searched for counterexamples. I checked the collections with differential testing against the java.util collections, and for Java interop I compared the same call with and without a type hint.</p>
 <p>Recent findings suggest that I found 17 bugs that I could not find in Clojure's JIRA or on ask.clojure.org. They include reduce on vector-of, the hash collision node of the HAMT, and calls to functional interfaces without a type hint.</p>
 <p>The HAMT itself indicated no mismatch in 3 million operations of differential testing, and the vector tree showed none around its boundaries. The bugs sat in separate code outside the trees, and in places where two mechanisms meet, such as = and hashing.</p>
 <p>It has been revealed that I used Clojure 1.12.7, released on 2026-11-18, and JDK 21. The links to the source point to the clojure-1.12.7 tag.</p>
 <p>Recent findings suggest that the lean-verify procedure picks one function and models it as a Lean definition. You write a property that compares it with a naive specification computed at a wider width, and bv_decide searches for a counterexample.</p>
 <p>Sources indicate that if you model Java's long and int as BitVec 64 and BitVec 32, the wraparound of addition and multiplication maps onto BitVec operations. So do the rounding of / toward zero and the sign of %.</p>
-<p>When Lean found a counterexample, I turned the value into a Clojure input and reproduced it in the original code. I then modeled the fixed code in Lean and proved the same property. Lean can only take small functions that reduce to integer and bit arithmetic, so I checked the large persistent data structures with differential testing. <span style="font-size:13px;">(Related: <a href="breaking-future-value-calculator-how-to-project-your-investments-184538.html" style="color:#2563eb; font-weight:600;">Breaking: Future Value Calculator: How to Project Your ...</a>)</span></p>
+<p>When Lean found a counterexample, I turned the value into a Clojure input and reproduced it in the original code. I then modeled the fixed code in Lean and proved the same property. Lean can only take small functions that reduce to integer and bit arithmetic, so I checked the large persistent data structures with differential testing.</p>
 <p>Each test applies the same random sequence of operations to PersistentHashMap and to java.util.HashMap and compares the results. For the HAMT, the keys mix partial collisions at each 5-bit level with fully identical hashes, and I ran 1,500 operations for each of 2,000 seeds.</p>
 <p>For vectors, I compared against ArrayList around 32, 1056, 32800, and 1048608, where the tree gains a level. The operations were conj, pop, assoc, and their transient versions.</p>
 <p>According to recent reports, I checked whether anyone had reported each bug before. I searched Clojure's JIRA through its REST API and ask.clojure.org through web search and the site's own search, and found no matching report.</p>
@@ -214,20 +214,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="electric-intel-core-ultra-7-270k-plus-deal-knocks-it-down-to-just-184424.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #184424. Electric Intel Core Ultra 7 270K Plus deal knocks it down to just $232
+        <a href="putting-ethical-principles-at-the-core-of-the-research-lifecycle-196009.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #196009. Putting ethical principles at the core of the research lifecycle
         </a>
         
-        <a href="how-to-test-wcag-22-in-ci-what-axe-core-misses-184349.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #184349. How to Test WCAG 2.2 in CI: What axe-core Misses
+        <a href="breaking-using-stable-diffusion-with-core-ml-on-apple-silicon-195938.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #195938. Breaking: Using Stable Diffusion with Core ML on Apple Silicon
         </a>
         
-        <a href="catch-go-bugs-that-fuzzing-misses-with-gemini-and-a-constraint-so-184302.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #184302. Catch Go bugs that fuzzing misses with Gemini and a constraint solver
+        <a href="faster-stable-diffusion-with-core-ml-on-iphone-ipad-and-mac-195855.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #195855. Faster Stable Diffusion with Core ML on iPhone, iPad, and Mac
         </a>
         
-        <a href="latest-update-china-attackers-deployed-ai-agents-that-autonomousl-184083.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #184083. Latest Update: China attackers deployed AI agents that autonomously found and exploited a 0-day to take over a university server
+        <a href="stable-diffusion-xl-on-mac-with-advanced-core-ml-quantization-195835.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #195835. Stable Diffusion XL on Mac with Advanced Core ML Quantization
         </a>
         
     </div>

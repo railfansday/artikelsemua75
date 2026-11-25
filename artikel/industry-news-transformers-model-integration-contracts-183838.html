@@ -157,12 +157,12 @@ model types, and its test suite is big: 88,000+ CPU tests on main, plus
 (SDPA) for T5. As a side effect, UMT5's decoder could attend to future tokens. During training, it could peek at the answer it was supposed to predict. Nothing crashed, and the bug stayed in main for almost two months.</p>
 <p>When we later replayed those commits, a small UMT5 model running on CPU flagged
 it on every one of them. This post is about that model and the tests built
-around it. <span style="font-size:13px;">(Related: <a href="what-i-do-every-time-i-get-an-irs-notice-184553.html" style="color:#2563eb; font-weight:600;">What I do every time I get an IRS notice...</a>)</span></p>
+around it. <span style="font-size:13px;">(Related: <a href="how-to-train-a-fresh-language-model-from-scratch-using-transforme-196089.html" style="color:#2563eb; font-weight:600;">How to train a fresh language model from scratch using ...</a>)</span></p>
 <p>In a recent development, transformers supports over 750
 model types, and its test suite is big: 88,000+ CPU tests on main, plus
 200,000+ GPU tests in a daily run. Model tests are only part of it: we also
 test pipelines, training, distributed execution, quantization and attention
-kernels.</p>
+kernels. <span style="font-size:13px;">(Related: <a href="how-to-generate-text-using-different-decoding-methods-for-languag-196088.html" style="color:#2563eb; font-weight:600;">How to generate text: using different decoding methods ...</a>)</span></p>
 <p>Recent findings suggest that the integration tests load real checkpoints and exercise the model's API on
 real hardware. Running all of that on every PR would mean keeping a lot of GPUs
 busy all day long, which isn't practical. By the time a scheduled run finds a
@@ -176,7 +176,7 @@ CPU study,
 the experimental UMT5 fixture used 66 MB of weights; the source checkpoint
 is 1,227 MB.</p>
 <p>This also covers very large models: some don't fit on our standard GPU
-runners, but their fixtures run on CPU. <span style="font-size:13px;">(Related: <a href="restaurant-owners-left-in-tears-after-discovering-their-family-bu-184522.html" style="color:#2563eb; font-weight:600;">Restaurant owners left in tears after discovering their...</a>)</span></p>
+runners, but their fixtures run on CPU.</p>
 <p>Recent findings suggest that model integrators already build tiny test models (Transformers' tiny-random-*
 checkpoints). We wanted a common recipe, and
 checks that go beyond loading the model and running a forward pass. The UMT5
@@ -292,20 +292,20 @@ and contribute a usage path or review a generated contract.</p>
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="industry-news-the-transformers-library-standardizing-model-defini-172378.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #172378. Industry News: The Transformers Library: standardizing model definitions
+        <a href="how-to-train-a-fresh-language-model-from-scratch-using-transforme-196089.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #196089. How to train a fresh language model from scratch using Transformers and Tokenizers
         </a>
         
-        <a href="industry-news-transformers-backend-integration-in-sglang-172294.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #172294. Industry News: Transformers backend integration in SGLang
+        <a href="industry-news-retrieval-augmented-generation-with-huggingface-tra-196077.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #196077. Industry News: Retrieval Augmented Generation with Huggingface Transformers and Ray
         </a>
         
-        <a href="industry-news-honor-just-supercharged-its-smartwatch-lineup-with--184463.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #184463. Industry News: Honor just supercharged its smartwatch lineup with a new Pro model
+        <a href="industry-news-habana-labs-and-hugging-face-partner-to-accelerate--196025.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #196025. Industry News: Habana Labs and Hugging Face Partner to Accelerate Transformer Model Training
         </a>
         
-        <a href="transformers-v5-simple-model-definitions-powering-the-ai-ecosyste-184295.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #184295. Transformers v5: Simple model definitions powering the AI ecosystem
+        <a href="industry-news-generating-human-level-text-with-contrastive-search-195948.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #195948. Industry News: Generating Human-level Text with Contrastive Search in Transformers 🤗
         </a>
         
     </div>

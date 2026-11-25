@@ -150,9 +150,9 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-183905">Recent findings suggest that our latest release, Apertus 1.5, extends the 8B and 70B Apertus 1.0 models with image/audio understanding, an optional thinking mode, a four times longer context window, improved instruction-following, and better tool use. The updated 8B and 70B model weights were released to Hugging Face on July 24, 2026 under an Apache 2.0 license. Further details are now available from the project Technical Report, and summarized here.</p>
-<p>It has been revealed that apertus 1.5 is a continued pretraining of the first generation model: adding 4 trillion tokens of text and multimodal training data to the 8B model and 2 trillion tokens to the 70B model, for a total of 19T and 17T, respectively. As with every Apertus release, the models are fully open: open weights, open data, open values, and full training details. <span style="font-size:13px;">(Related: <a href="what-i-do-every-time-i-get-an-irs-notice-184553.html" style="color:#2563eb; font-weight:600;">What I do every time I get an IRS notice...</a>)</span></p>
-<p>The full Apertus 1.5 training pipeline.</p>
-<p>We introduce multimodality in v1.5 models in an early-fusion manner, where images and audio enter Apertus as discrete tokens in the same sequence with text tokens, instead of using a separate vision encoder. Images are tokenized with the Emu3.5 tokenizer (a 512×512 image becomes 1,024 tokens) and audio with WavTokenizer (40 tokens per second). We only extend the vocabulary, so the architecture stays unchanged and training runs at text-only speed. The models understand images and audio but generate only text. <span style="font-size:13px;">(Related: <a href="estate-planning-for-early-retirement-the-fire-guide-184545.html" style="color:#2563eb; font-weight:600;">Estate Planning for Early Retirement: The FIRE Guide...</a>)</span></p>
+<p>It has been revealed that apertus 1.5 is a continued pretraining of the first generation model: adding 4 trillion tokens of text and multimodal training data to the 8B model and 2 trillion tokens to the 70B model, for a total of 19T and 17T, respectively. As with every Apertus release, the models are fully open: open weights, open data, open values, and full training details. <span style="font-size:13px;">(Related: <a href="how-to-train-a-fresh-language-model-from-scratch-using-transforme-196089.html" style="color:#2563eb; font-weight:600;">How to train a fresh language model from scratch using ...</a>)</span></p>
+<p>The full Apertus 1.5 training pipeline. <span style="font-size:13px;">(Related: <a href="my-journey-to-a-serverless-transformers-pipeline-on-google-cloud-196073.html" style="color:#2563eb; font-weight:600;">My Journey to a serverless transformers pipeline on Goo...</a>)</span></p>
+<p>We introduce multimodality in v1.5 models in an early-fusion manner, where images and audio enter Apertus as discrete tokens in the same sequence with text tokens, instead of using a separate vision encoder. Images are tokenized with the Emu3.5 tokenizer (a 512×512 image becomes 1,024 tokens) and audio with WavTokenizer (40 tokens per second). We only extend the vocabulary, so the architecture stays unchanged and training runs at text-only speed. The models understand images and audio but generate only text.</p>
 <p>Starting from Apertus 1.0, we continue pretraining in four stages:.</p>
 <p>Overall, more than half of the training tokens are text-only, which preserves the language abilities of Apertus 1.0. The text data is refreshed with sources such as FineWeb2-HQ+, FinePDFs, and Nemotron-CC. All latest data, multimodal included, meets the same bar as before: publicly available, permissively licensed, and with robots.txt opt-outs respected retroactively. Every source is listed in apertus-data-transparency.</p>
 <p>Post-training runs in five stages: SFT → long-context SFT → RL → DPO → charter alignment (SDPO).</p>
@@ -196,20 +196,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="nothing-confirms-aggressive-smartphone-release-schedule-for-2027--184369.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #184369. Nothing confirms ‘aggressive’ smartphone release schedule for 2027 with US focus
+        <a href="codegemma-an-official-google-release-for-code-llms-195726.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #195726. CodeGemma - an official Google release for code LLMs
         </a>
         
-        <a href="release-roto-v0140-184110.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #184110. Release: Roto v0.14.0
+        <a href="frontier-ai-employees-alarmed-that-unseen-open-ai-and-anthropic-m-195250.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #195250. Frontier AI employees alarmed that unseen Open AI and Anthropic models are too powerful to release, report claims
         </a>
         
-        <a href="cachyos-november-2026-release-183996.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #183996. CachyOS November 2026 release
+        <a href="tech-report-we-are-not-shinyhunters-notes-criminal-hacking-crew-t-195139.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #195139. Tech Report: 'We are not ShinyHunters,' notes criminal hacking crew that looks and acts just like ShinyHunters
         </a>
         
-        <a href="getty-images-demands-release-of-veteran-photographer-detained-in--183167.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #183167. Getty Images Demands Release of Veteran Photographer Detained in Iran
+        <a href="article-engineering-around-non-determinism-evals-grounding-and-re-195101.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #195101. Article: Engineering Around Non-Determinism: Evals, Grounding, and Release Gates for AI-Drafted Suspicious Reports
         </a>
         
     </div>
