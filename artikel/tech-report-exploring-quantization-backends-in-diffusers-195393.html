@@ -150,8 +150,8 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-195393">It has been revealed that large diffusion models like Flux (a flow-based text-to-image generation model) can create stunning images, but their size can be a hurdle, demanding significant memory and compute resources. Quantization offers a powerful solution, shrinking these models to make them more accessible without drastically compromising performance. But the big question always is: can you actually tell the difference in the final image?</p>
-<p>Before we dive into the technical details of how various quantization backends in Hugging Face Diffusers work, why not test your own perception? <span style="font-size:13px;">(Related: <a href="latest-update-faster-tensorflow-models-in-hugging-face-transforme-196079.html" style="color:#2563eb; font-weight:600;">Latest Update: Faster TensorFlow models in Hugging Face...</a>)</span></p>
-<p>Sources indicate that we created a setup where you can provide a prompt, and we generate results using both the original, high-precision model (e.g., Flux-dev in BF16) and several quantized versions (BnB 4-bit, BnB 8-bit). The generated images are then presented to you and your challenge is to identify which ones came from the quantized models. <span style="font-size:13px;">(Related: <a href="how-to-train-a-fresh-language-model-from-scratch-using-transforme-196089.html" style="color:#2563eb; font-weight:600;">How to train a fresh language model from scratch using ...</a>)</span></p>
+<p>Before we dive into the technical details of how various quantization backends in Hugging Face Diffusers work, why not test your own perception? <span style="font-size:13px;">(Related: <a href="diffusers-welcomes-stable-diffusion-3-207642.html" style="color:#2563eb; font-weight:600;">Diffusers welcomes Stable Diffusion 3...</a>)</span></p>
+<p>Sources indicate that we created a setup where you can provide a prompt, and we generate results using both the original, high-precision model (e.g., Flux-dev in BF16) and several quantized versions (BnB 4-bit, BnB 8-bit). The generated images are then presented to you and your challenge is to identify which ones came from the quantized models. <span style="font-size:13px;">(Related: <a href="unlock-the-power-of-images-with-ai-sheets-207632.html" style="color:#2563eb; font-weight:600;">Unlock the power of images with AI Sheets...</a>)</span></p>
 <p>Often, especially with 8-bit quantization, the differences are subtle and may not be noticeable without close inspection. More aggressive quantization like 4-bit or lower might be more noticeable, but the results can still be good, especially considering the massive memory savings. NF4 often gives the best trade-off though.</p>
 <p>Building on our previous post, "Memory-efficient Diffusion Transformers with Quanto and Diffusers", this post explores the diverse quantization backends integrated directly into Hugging Face Diffusers. We'll examine how bitsandbytes, GGUF, torchao, Quanto and native FP8 support make large and powerful models more accessible, demonstrating their use with Flux.</p>
 <p>Before diving into the quantization backends, let's introduce the FluxPipeline (using the black-forest-labs/FLUX.1-dev checkpoint) and its components, which we'll be quantizing. Loading the full FLUX.1-dev model in BF16 precision requires approximately 31.447 GB of memory. The main components are:.</p>
@@ -204,20 +204,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
+        <a href="tech-report-exploring-the-indium-phosphide-supply-chain-the-mater-207306.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #207306. Tech Report: Exploring the Indium phosphide supply chain — the material constraint tightening the optical interconnect bottleneck
+        </a>
+        
         <a href="tech-report-whats-new-in-diffusers-195967.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #195967. Tech Report: What's new in Diffusers? 🎨
         </a>
         
-        <a href="tech-report-the-reformer-pushing-the-limits-of-language-modeling-196087.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #196087. Tech Report: The Reformer - Pushing the limits of language modeling
+        <a href="tech-report-ai-for-game-development-creating-a-farming-game-in-5--207646.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #207646. Tech Report: AI for Game Development: Creating a Farming Game in 5 Days. Part 1
         </a>
         
-        <a href="tech-report-distributed-training-train-bartt5-for-summarization-u-196070.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #196070. Tech Report: Distributed Training: Train BART/T5 for Summarization using 🤗 Transformers and Amazon SageMaker
-        </a>
-        
-        <a href="tech-report-fine-tune-a-semantic-segmentation-model-with-a-custom-196030.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #196030. Tech Report: Fine-Tune a Semantic Segmentation Model with a Custom Dataset
+        <a href="tech-report-introducing-the-open-arabic-llm-leaderboard-207643.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #207643. Tech Report: Introducing the Open Arabic LLM Leaderboard
         </a>
         
     </div>

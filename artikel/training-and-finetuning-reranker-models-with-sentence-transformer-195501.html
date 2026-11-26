@@ -150,8 +150,8 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-195501">Sentence Transformers is a Python library for using and training embedding and reranker models for a wide range of applications, such as retrieval augmented generation, semantic search, semantic textual similarity, paraphrase mining, and more. In this blogpost, I'll show you how to use it to finetune a reranker model (also known as a cross-encoder) that beats all existing options on exactly your data. This method can also train extremely strong new reranker models from scratch.</p>
-<p>Recent findings suggest that finetuning reranker models involves several components: datasets, loss functions, training arguments, evaluators, and the trainer class itself. I'll have a look at each of these components, accompanied by practical examples of how they can be used for finetuning strong reranker models. <span style="font-size:13px;">(Related: <a href="latest-update-block-sparse-matrices-for-smaller-and-faster-langua-196086.html" style="color:#2563eb; font-weight:600;">Latest Update: Block Sparse Matrices for Smaller and Fa...</a>)</span></p>
-<p>Industry observers note that lastly, in the Evaluation section, I'll show you that my small finetuned tomaarsen/reranker-ModernBERT-base-gooaq-bce reranker model that I trained alongside this blogpost easily outperforms the 13 most commonly used public reranker models on my evaluation dataset. It even beats models that are 4x bigger. <span style="font-size:13px;">(Related: <a href="how-to-train-a-fresh-language-model-from-scratch-using-transforme-196089.html" style="color:#2563eb; font-weight:600;">How to train a fresh language model from scratch using ...</a>)</span></p>
+<p>Recent findings suggest that finetuning reranker models involves several components: datasets, loss functions, training arguments, evaluators, and the trainer class itself. I'll have a look at each of these components, accompanied by practical examples of how they can be used for finetuning strong reranker models. <span style="font-size:13px;">(Related: <a href="supercharge-your-ocr-pipelines-with-open-models-207631.html" style="color:#2563eb; font-weight:600;">Supercharge your OCR Pipelines with Open Models...</a>)</span></p>
+<p>Industry observers note that lastly, in the Evaluation section, I'll show you that my small finetuned tomaarsen/reranker-ModernBERT-base-gooaq-bce reranker model that I trained alongside this blogpost easily outperforms the 13 most commonly used public reranker models on my evaluation dataset. It even beats models that are 4x bigger. <span style="font-size:13px;">(Related: <a href="introducing-rteb-a-fresh-standard-for-retrieval-evaluation-207640.html" style="color:#2563eb; font-weight:600;">Introducing RTEB: A Fresh Standard for Retrieval Evalua...</a>)</span></p>
 <p>Repeating the recipe with a bigger base model results in tomaarsen/reranker-ModernBERT-large-gooaq-bce, a reranker model that blows all existing general-purpose reranker models out of the water on my data.</p>
 <p>If you're interested in finetuning embedding models instead, then consider reading through my prior Training and Finetuning Embedding Models with Sentence Transformers blogpost as well.</p>
 <p>Reranker models, often implemented using Cross Encoder architectures, are designed to evaluate the relevance between pairs of texts (e.g., a query and a document, or two sentences). Unlike Sentence Transformers (a.k.a. bi-encoders, embedding models), which independently embed each text into vectors and compute similarity via a distance metric, Cross Encoder process the paired texts together through a shared neural network, resulting in one output score. By letting the two texts attend to each other, Cross Encoder models can outperform embedding models.</p>
@@ -240,20 +240,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="training-and-finetuning-multimodal-embedding-reranker-models-with-184204.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #184204. Training and Finetuning Multimodal Embedding & Reranker Models with Sentence Transformers
+        <a href="tech-report-training-and-finetuning-multimodal-embedding-reranker-207438.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #207438. Tech Report: Training and Finetuning Multimodal Embedding & Reranker Models with Sentence Transformers
+        </a>
+        
+        <a href="training-and-finetuning-multi-vector-embedding-models-with-senten-207141.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #207141. Training and Finetuning Multi-Vector Embedding Models with Sentence Transformers
         </a>
         
         <a href="breaking-training-and-finetuning-sparse-embedding-models-with-sen-195283.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #195283. Breaking: Training and Finetuning Sparse Embedding Models with Sentence Transformers
         </a>
         
-        <a href="training-and-finetuning-multi-vector-embedding-models-with-senten-184010.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #184010. Training and Finetuning Multi-Vector Embedding Models with Sentence Transformers
-        </a>
-        
-        <a href="multimodal-embedding-reranker-models-with-sentence-transformers-195041.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #195041. Multimodal Embedding & Reranker Models with Sentence Transformers
+        <a href="multimodal-embedding-reranker-models-with-sentence-transformers-207450.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #207450. Multimodal Embedding & Reranker Models with Sentence Transformers
         </a>
         
     </div>

@@ -151,14 +151,14 @@
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-195365">According to recent reports, today we're sharing research that bridges two powerful paradigms in AI agent design: the expressiveness of code-based actions and the reliability of structured generation. Our findings show that forcing CodeAgents to generate both thoughts and code in a structured JSON format can significantly outperform traditional approaches across multiple benchmarks.</p>
 <p>It has been revealed that figure 1: Accuracy comparison of three approaches: Structured CodeAgent (blue), CodeAgent (orange), and ToolCallingAgent (gray) on SmolBench (GAIA, MATH, SimpleQA, and Frames). Error bars represent 95% Confidence Intervals.</p>
-<p>It has been revealed that AI agents need to take actions in the world - whether that's calling APIs, processing data, or reasoning through complex problems. How agents express these actions has evolved through several paradigms:.</p>
-<p>Traditional JSON Agent: Agents generate structured JSON to call tools. <span style="font-size:13px;">(Related: <a href="how-to-generate-text-using-different-decoding-methods-for-languag-196088.html" style="color:#2563eb; font-weight:600;">How to generate text: using different decoding methods ...</a>)</span></p>
+<p>It has been revealed that AI agents need to take actions in the world - whether that's calling APIs, processing data, or reasoning through complex problems. How agents express these actions has evolved through several paradigms:. <span style="font-size:13px;">(Related: <a href="tiny-agents-an-mcp-powered-agent-in-50-lines-of-code-207641.html" style="color:#2563eb; font-weight:600;">Tiny Agents: an MCP-powered agent in 50 lines of code...</a>)</span></p>
+<p>Traditional JSON Agent: Agents generate structured JSON to call tools. <span style="font-size:13px;">(Related: <a href="building-the-open-agent-ecosystem-together-introducing-openenv-207628.html" style="color:#2563eb; font-weight:600;">Building the Open Agent Ecosystem Together: Introducing...</a>)</span></p>
 <p>In a recent development, these agents operate by selecting from a list of predefined tools and generating JSON-formatted calls. This method for calling tools has been popularized by OpenAI's function calling API, and has since then been the most widely used method to call tools.</p>
 <p>It is reliable, but limited by:.</p>
 <p>Code Agents: Agents make use of their innate coding ability and write executable Python code directly.</p>
 <p>This shift, first presented as CodeAct in the paper “Executable Code Actions Elicit Better LLM Agents” gave AI agents the flexibility to write arbitrary executable Python code in addition to tool-calling.</p>
 <p>The key insight here is that tools are called directly from within the code, making variables and state management much more reliable. Agents can call tools within loops, functions, and conditional statements - essentially generating a dynamic graph of tool execution in each action!</p>
-<p>However, parsing code from markdown can be error-prone which leads us to a proposition: why not use structured generation to generate code actions? <span style="font-size:13px;">(Related: <a href="industry-news-retrieval-augmented-generation-with-huggingface-tra-196077.html" style="color:#2563eb; font-weight:600;">Industry News: Retrieval Augmented Generation with Hugg...</a>)</span></p>
+<p>However, parsing code from markdown can be error-prone which leads us to a proposition: why not use structured generation to generate code actions?</p>
 <p>With Structured outputs, you can force the LLM to generate explicit thoughts and code as a JSON blob:.</p>
 <p>The key difference is that the generation is enforced: basically, now instead of just being prompted to output thoughts, then code, the usage of structured outputs forces it to respect the structure.</p>
 <p>This approach adds the reliability of structured generation to the flexibility of code execution, thus getting the best of both worlds.</p>
@@ -210,20 +210,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="breaking-introducing-the-private-hub-a-newly-introduced-way-to-bu-195982.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #195982. Breaking: Introducing the Private Hub: A Newly introduced Way to Build With Machine Learning
+        <a href="nbc-is-airing-last-years-thanksgiving-day-parade-but-social-media-200352.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #200352. NBC Is Airing Last Year’s Thanksgiving Day Parade, But Social Media Users Have A Way Better Idea
         </a>
         
-        <a href="smaller-is-better-q8-chat-an-efficient-generative-ai-experience-o-195875.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #195875. Smaller is better: Q8-Chat, an efficient generative AI experience on Xeon
+        <a href="im-having-a-much-better-time-in-gta-6-now-ive-disabled-its-pesky--207456.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #207456. I'm having a much better time in GTA 6 now I've disabled its pesky Criminal Profile pings
         </a>
         
-        <a href="data-is-better-together-enabling-communities-to-collectively-buil-195744.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #195744. Data is better together: Enabling communities to collectively build better datasets together using Argilla and Hugging Face Spaces
+        <a href="tsmcs-226-billion-texas-plan-wouldnt-make-2nm-or-better-chips-unt-207432.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #207432. TSMC’s $22.6 billion Texas plan wouldn’t make 2nm-or-better chips until 2031
         </a>
         
-        <a href="tech-report-data-is-better-together-a-look-back-and-forward-195685.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #195685. Tech Report: Data Is Better Together: A Look Back and Forward
+        <a href="mcdonalds-has-found-a-fresh-way-to-sell-burgers-to-people-who-don-207429.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #207429. McDonald’s has found a fresh way to sell burgers to people who don’t want to stop playing video games
         </a>
         
     </div>

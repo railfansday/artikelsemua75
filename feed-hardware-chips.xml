@@ -4,97 +4,97 @@
     <title>Portal Berita - Hardware & Chips</title>
     <link>https://railfansday.github.io/artikelsemua75/</link>
     <description>Curated news feed for Hardware & Chips.</description>
-    <lastBuildDate>Wed, 25 Nov 2026 02:07:41 -0000</lastBuildDate>
+    <lastBuildDate>Thu, 26 Nov 2026 17:27:56 -0000</lastBuildDate>
     
             <item>
-                <title>Breaking: Scaling-up BERT Inference on CPU (Part 1)</title>
-                <link>https://railfansday.github.io/artikelsemua75/artikel/breaking-scaling-up-bert-inference-on-cpu-part-1-196068.html</link>
-                <guid>https://railfansday.github.io/artikelsemua75/artikel/breaking-scaling-up-bert-inference-on-cpu-part-1-196068.html</guid>
+                <title>Accelerating PyTorch Transformers with Intel Sapphire Rapids - part 1</title>
+                <link>https://railfansday.github.io/artikelsemua75/artikel/accelerating-pytorch-transformers-with-intel-sapphire-rapids-part-207647.html</link>
+                <guid>https://railfansday.github.io/artikelsemua75/artikel/accelerating-pytorch-transformers-with-intel-sapphire-rapids-part-207647.html</guid>
                 <description>Content not available. → Read original article...</description>
             </item>
             <item>
-                <title>Scaling up BERT-like model Inference on modern CPU  - Part 2</title>
-                <link>https://railfansday.github.io/artikelsemua75/artikel/scaling-up-bert-like-model-inference-on-modern-cpu-part-2-196051.html</link>
-                <guid>https://railfansday.github.io/artikelsemua75/artikel/scaling-up-bert-like-model-inference-on-modern-cpu-part-2-196051.html</guid>
+                <title>Breaking: Get your VLM running in 3 simple steps on Intel CPUs</title>
+                <link>https://railfansday.github.io/artikelsemua75/artikel/breaking-get-your-vlm-running-in-3-simple-steps-on-intel-cpus-207635.html</link>
+                <guid>https://railfansday.github.io/artikelsemua75/artikel/breaking-get-your-vlm-running-in-3-simple-steps-on-intel-cpus-207635.html</guid>
                 <description>Content not available. → Read original article...</description>
             </item>
             <item>
-                <title>Accelerating PyTorch distributed fine-tuning with Intel technologies</title>
-                <link>https://railfansday.github.io/artikelsemua75/artikel/accelerating-pytorch-distributed-fine-tuning-with-intel-technolog-196050.html</link>
-                <guid>https://railfansday.github.io/artikelsemua75/artikel/accelerating-pytorch-distributed-fine-tuning-with-intel-technolog-196050.html</guid>
+                <title>Join the AMD Open Robotics Hackathon</title>
+                <link>https://railfansday.github.io/artikelsemua75/artikel/join-the-amd-open-robotics-hackathon-207618.html</link>
+                <guid>https://railfansday.github.io/artikelsemua75/artikel/join-the-amd-open-robotics-hackathon-207618.html</guid>
                 <description>Content not available. → Read original article...</description>
             </item>
             <item>
-                <title>Intel and Hugging Face Partner to Democratize Machine Learning Hardware Acceleration</title>
-                <link>https://railfansday.github.io/artikelsemua75/artikel/intel-and-hugging-face-partner-to-democratize-machine-learning-ha-196000.html</link>
-                <guid>https://railfansday.github.io/artikelsemua75/artikel/intel-and-hugging-face-partner-to-democratize-machine-learning-ha-196000.html</guid>
+                <title>The Open Evaluation Standard: Benchmarking NVIDIA Nemotron 3 Nano with NeMo Evaluator</title>
+                <link>https://railfansday.github.io/artikelsemua75/artikel/the-open-evaluation-standard-benchmarking-nvidia-nemotron-3-nano--207593.html</link>
+                <guid>https://railfansday.github.io/artikelsemua75/artikel/the-open-evaluation-standard-benchmarking-nvidia-nemotron-3-nano--207593.html</guid>
                 <description>Content not available. → Read original article...</description>
             </item>
             <item>
-                <title>Accelerate your models with 🤗 Optimum Intel and OpenVINO</title>
-                <link>https://railfansday.github.io/artikelsemua75/artikel/accelerate-your-models-with-optimum-intel-and-openvino-195952.html</link>
-                <guid>https://railfansday.github.io/artikelsemua75/artikel/accelerate-your-models-with-optimum-intel-and-openvino-195952.html</guid>
+                <title>NVIDIA brings agents to life with DGX Spark and Reachy Mini</title>
+                <link>https://railfansday.github.io/artikelsemua75/artikel/nvidia-brings-agents-to-life-with-dgx-spark-and-reachy-mini-207589.html</link>
+                <guid>https://railfansday.github.io/artikelsemua75/artikel/nvidia-brings-agents-to-life-with-dgx-spark-and-reachy-mini-207589.html</guid>
                 <description>Content not available. → Read original article...</description>
             </item>
             <item>
-                <title>Faster Training and Inference: Habana Gaudi®2 vs Nvidia A100 80GB</title>
-                <link>https://railfansday.github.io/artikelsemua75/artikel/faster-training-and-inference-habana-gaudi2-vs-nvidia-a100-80gb-195934.html</link>
-                <guid>https://railfansday.github.io/artikelsemua75/artikel/faster-training-and-inference-habana-gaudi2-vs-nvidia-a100-80gb-195934.html</guid>
-                <description>Content not available. → Read original article...</description>
+                <title>7 fresh Intel Nova Lake-S Core Ultra 4000-series CPUs detailed in new leak</title>
+                <link>https://railfansday.github.io/artikelsemua75/artikel/7-fresh-intel-nova-lake-s-core-ultra-4000-series-cpus-detailed-in-207538.html</link>
+                <guid>https://railfansday.github.io/artikelsemua75/artikel/7-fresh-intel-nova-lake-s-core-ultra-4000-series-cpus-detailed-in-207538.html</guid>
+                <description>According to recent reports, A newly leaked document purportedly details no less than seven fresh Nova Lake-S desktop processors based on C1 stepping qualification samples, including 28-core models, three months before Intel is expected to officially take the wraps off them. The ...</description>
             </item>
             <item>
-                <title>Accelerating PyTorch Transformers with Intel Sapphire Rapids - part 2</title>
-                <link>https://railfansday.github.io/artikelsemua75/artikel/accelerating-pytorch-transformers-with-intel-sapphire-rapids-part-195918.html</link>
-                <guid>https://railfansday.github.io/artikelsemua75/artikel/accelerating-pytorch-transformers-with-intel-sapphire-rapids-part-195918.html</guid>
-                <description>Content not available. → Read original article...</description>
+                <title>Lawsuit alleges Trump strong-armed Intel</title>
+                <link>https://railfansday.github.io/artikelsemua75/artikel/lawsuit-alleges-trump-strong-armed-intel-207529.html</link>
+                <guid>https://railfansday.github.io/artikelsemua75/artikel/lawsuit-alleges-trump-strong-armed-intel-207529.html</guid>
+                <description>In a recent development, an Intel shareholder lawsuit against the company has revealed the extent to which President Donald Trump is allegedly willing to bend companies to his will. Richard Paisner sued the chipmaker earlier this year, saying that the White House’s 10% stake in e...</description>
             </item>
             <item>
-                <title>Fine-tuning 20B LLMs with RLHF on a 24GB consumer GPU</title>
-                <link>https://railfansday.github.io/artikelsemua75/artikel/fine-tuning-20b-llms-with-rlhf-on-a-24gb-consumer-gpu-195901.html</link>
-                <guid>https://railfansday.github.io/artikelsemua75/artikel/fine-tuning-20b-llms-with-rlhf-on-a-24gb-consumer-gpu-195901.html</guid>
-                <description>Content not available. → Read original article...</description>
+                <title>PETA demands Nvidia boss Jensen Huang replace iconic leather jacket with vegan one made from olives</title>
+                <link>https://railfansday.github.io/artikelsemua75/artikel/peta-demands-nvidia-boss-jensen-huang-replace-iconic-leather-jack-207526.html</link>
+                <guid>https://railfansday.github.io/artikelsemua75/artikel/peta-demands-nvidia-boss-jensen-huang-replace-iconic-leather-jack-207526.html</guid>
+                <description>Animal rights organization PETA is urging Nvidia CEO Jensen Huang to ditch his iconic black leather jacket, even sending the billionaire an $875 vegan alternative made from olive waste. Much like Steve Jobs with his black turtlenecks and Mark Zuckerberg with his gray T-shirts, Hu...</description>
             </item>
             <item>
-                <title>Accelerating Stable Diffusion Inference on Intel CPUs</title>
-                <link>https://railfansday.github.io/artikelsemua75/artikel/accelerating-stable-diffusion-inference-on-intel-cpus-195896.html</link>
-                <guid>https://railfansday.github.io/artikelsemua75/artikel/accelerating-stable-diffusion-inference-on-intel-cpus-195896.html</guid>
-                <description>Content not available. → Read original article...</description>
+                <title>Tech Report: Save $200 with surprising deals on upcoming Nvidia RTX Spark-powered Asus ProArt P14 laptops</title>
+                <link>https://railfansday.github.io/artikelsemua75/artikel/tech-report-save-200-with-surprising-deals-on-upcoming-nvidia-rtx-207522.html</link>
+                <guid>https://railfansday.github.io/artikelsemua75/artikel/tech-report-save-200-with-surprising-deals-on-upcoming-nvidia-rtx-207522.html</guid>
+                <description>Nvidia's RTX Spark chip burst onto the laptop market just a month ago, and at least one model carrying Nvidia's first dedicated mobile SoC is already discounted for Black Friday. Both the 24GB and 32GB configurations of the Asus ProArt P14 are $200 off at Best Buy, which is a sur...</description>
             </item>
             <item>
-                <title>Optimizing Stable Diffusion for Intel CPUs with NNCF and 🤗 Optimum</title>
-                <link>https://railfansday.github.io/artikelsemua75/artikel/optimizing-stable-diffusion-for-intel-cpus-with-nncf-and-optimum-195868.html</link>
-                <guid>https://railfansday.github.io/artikelsemua75/artikel/optimizing-stable-diffusion-for-intel-cpus-with-nncf-and-optimum-195868.html</guid>
-                <description>Content not available. → Read original article...</description>
+                <title>Latest Update: Best Black Friday gaming chair deals 2026</title>
+                <link>https://railfansday.github.io/artikelsemua75/artikel/latest-update-best-black-friday-gaming-chair-deals-2026-207518.html</link>
+                <guid>https://railfansday.github.io/artikelsemua75/artikel/latest-update-best-black-friday-gaming-chair-deals-2026-207518.html</guid>
+                <description>In a recent development, if you're sat down for those long gaming sessions, you're going to need a gaming chair that'll carry you through it. That's where these Black Friday gaming chair deals come in, as we've put together some of the best deals on offer right now across all the...</description>
             </item>
             <item>
-                <title>Hugging Face and AMD partner on accelerating state-of-the-art models for CPU and GPU platforms</title>
-                <link>https://railfansday.github.io/artikelsemua75/artikel/hugging-face-and-amd-partner-on-accelerating-state-of-the-art-mod-195858.html</link>
-                <guid>https://railfansday.github.io/artikelsemua75/artikel/hugging-face-and-amd-partner-on-accelerating-state-of-the-art-mod-195858.html</guid>
-                <description>Content not available. → Read original article...</description>
+                <title>The best prebuilt gaming PCs we've seen on sale so far</title>
+                <link>https://railfansday.github.io/artikelsemua75/artikel/the-best-prebuilt-gaming-pcs-weve-seen-on-sale-so-far-207512.html</link>
+                <guid>https://railfansday.github.io/artikelsemua75/artikel/the-best-prebuilt-gaming-pcs-weve-seen-on-sale-so-far-207512.html</guid>
+                <description>According to recent reports, while we prefer to build our own PCs around here, that has gotten extremely expensive this year. With Black Friday deals going on, buying a prebuilt machine could give you bang for your buck, wrapping costly RAM, storage, and GPUs into one bundle. Ins...</description>
             </item>
             <item>
-                <title>Fine-tuning Stable Diffusion models on Intel CPUs</title>
-                <link>https://railfansday.github.io/artikelsemua75/artikel/fine-tuning-stable-diffusion-models-on-intel-cpus-195843.html</link>
-                <guid>https://railfansday.github.io/artikelsemua75/artikel/fine-tuning-stable-diffusion-models-on-intel-cpus-195843.html</guid>
-                <description>Content not available. → Read original article...</description>
+                <title>Here are the best OLED gaming monitor deals you can snag for Black Friday 2026</title>
+                <link>https://railfansday.github.io/artikelsemua75/artikel/here-are-the-best-oled-gaming-monitor-deals-you-can-snag-for-blac-207492.html</link>
+                <guid>https://railfansday.github.io/artikelsemua75/artikel/here-are-the-best-oled-gaming-monitor-deals-you-can-snag-for-blac-207492.html</guid>
+                <description>OLED panels are swiftly becoming a must-have item for desktop PCs. Most of us were introduced to the panel technology in smartphones, and it’s become increasingly popular on laptops. For desktop gamers seeking an immediate visual upgrade, OLED is the way to go, and fortunately, P...</description>
             </item>
             <item>
-                <title>AMD + 🤗: Large Language Models Out-of-the-Box Acceleration with AMD GPU</title>
-                <link>https://railfansday.github.io/artikelsemua75/artikel/amd-large-language-models-out-of-the-box-acceleration-with-amd-gp-195783.html</link>
-                <guid>https://railfansday.github.io/artikelsemua75/artikel/amd-large-language-models-out-of-the-box-acceleration-with-amd-gp-195783.html</guid>
-                <description>Content not available. → Read original article...</description>
+                <title>The VR Forever Gaming Awards return in December with tons of demos and discounts</title>
+                <link>https://railfansday.github.io/artikelsemua75/artikel/the-vr-forever-gaming-awards-return-in-december-with-tons-of-demo-207454.html</link>
+                <guid>https://railfansday.github.io/artikelsemua75/artikel/the-vr-forever-gaming-awards-return-in-december-with-tons-of-demo-207454.html</guid>
+                <description>The industry’s biggest players are joining together to celebrate all the amazing VR games you probably don’t know about (but should). In a recent development, this year has been difficult for the gaming industry at large, and that’s particularly true for the wonderful niche of VR...</description>
             </item>
             <item>
-                <title>Accelerate StarCoder with 🤗 Optimum Intel on Xeon: Q8/Q4 and Speculative Decoding</title>
-                <link>https://railfansday.github.io/artikelsemua75/artikel/accelerate-starcoder-with-optimum-intel-on-xeon-q8q4-and-speculat-195764.html</link>
-                <guid>https://railfansday.github.io/artikelsemua75/artikel/accelerate-starcoder-with-optimum-intel-on-xeon-q8q4-and-speculat-195764.html</guid>
-                <description>Content not available. → Read original article...</description>
+                <title>Industry News: Score a huge $1,700 discount on an RTX 5080 gaming PC from HP, now $2,699.99</title>
+                <link>https://railfansday.github.io/artikelsemua75/artikel/industry-news-score-a-huge-1700-discount-on-an-rtx-5080-gaming-pc-207445.html</link>
+                <guid>https://railfansday.github.io/artikelsemua75/artikel/industry-news-score-a-huge-1700-discount-on-an-rtx-5080-gaming-pc-207445.html</guid>
+                <description>There's an unmissable deal on an RTX 5080 gaming PC over at HP right now. The firm has slashed $1,700 off one of its gaming-focused HyperX Omen 35L rigs, a machine fitted with an Nvidia GeForce RTX 5080 for just $2,699.99 right now. Sources indicate that that's an incredible pric...</description>
             </item>
             <item>
-                <title>CPU Optimized Embeddings with 🤗 Optimum Intel and fastRAG</title>
-                <link>https://railfansday.github.io/artikelsemua75/artikel/cpu-optimized-embeddings-with-optimum-intel-and-fastrag-195741.html</link>
-                <guid>https://railfansday.github.io/artikelsemua75/artikel/cpu-optimized-embeddings-with-optimum-intel-and-fastrag-195741.html</guid>
-                <description>Content not available. → Read original article...</description>
+                <title>Save $1300 on this RTX 5090-equipped 16-inch Lenovo Legion Pro 7i gaming laptop</title>
+                <link>https://railfansday.github.io/artikelsemua75/artikel/save-1300-on-this-rtx-5090-equipped-16-inch-lenovo-legion-pro-7i--207439.html</link>
+                <guid>https://railfansday.github.io/artikelsemua75/artikel/save-1300-on-this-rtx-5090-equipped-16-inch-lenovo-legion-pro-7i--207439.html</guid>
+                <description>If you're looking to gear up with a powerful new gaming laptop this Black Friday, Lenovo's 16-inch Legion Pro 7i is now $1300 off at B&amp;H. This is the first RTX 5090 laptop we've seen drop to a sub-$4000 price point during the holiday season, and it's packed to the gills with flag...</description>
             </item>
 </channel>
 </rss>

@@ -150,8 +150,8 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-195441">According to recent reports, as large language models (LLMs) and vision-language models (VLMs) continue to grow in size and complexity, deploying them efficiently becomes increasingly challenging. Quantization offers a solution by reducing model size and inference latency. Intel's AutoRound emerges as a cutting-edge quantization tool that balances accuracy, efficiency, and compatibility.</p>
-<p>AutoRound is a weight-only post-training quantization (PTQ) method developed by Intel. It uses signed gradient descent to jointly optimize weight rounding and clipping ranges, enabling accurate low-bit quantization (e.g., INT2 - INT8) with minimal accuracy loss in most scenarios. For example, at INT2, it outperforms popular baselines by up to 2.1x higher in relative accuracy. The image below provides an overview of the core algorithm in AutoRound. For more details, please refer to our paper. <span style="font-size:13px;">(Related: <a href="tech-report-distributed-training-train-bartt5-for-summarization-u-196070.html" style="color:#2563eb; font-weight:600;">Tech Report: Distributed Training: Train BART/T5 for Su...</a>)</span></p>
-<p>Industry observers note that despite its strong performance, AutoRound is fast and lightweight — quantizing a 72B model takes just 37 minutes on an A100 GPU under light mode. It also supports mixed-bit tuning, lm-head quantization, GPTQ/AWQ/GGUF format exporting, and flexible tuning recipes. <span style="font-size:13px;">(Related: <a href="how-to-train-a-fresh-language-model-from-scratch-using-transforme-196089.html" style="color:#2563eb; font-weight:600;">How to train a fresh language model from scratch using ...</a>)</span></p>
+<p>AutoRound is a weight-only post-training quantization (PTQ) method developed by Intel. It uses signed gradient descent to jointly optimize weight rounding and clipping ranges, enabling accurate low-bit quantization (e.g., INT2 - INT8) with minimal accuracy loss in most scenarios. For example, at INT2, it outperforms popular baselines by up to 2.1x higher in relative accuracy. The image below provides an overview of the core algorithm in AutoRound. For more details, please refer to our paper. <span style="font-size:13px;">(Related: <a href="accelerating-pytorch-transformers-with-intel-sapphire-rapids-part-207647.html" style="color:#2563eb; font-weight:600;">Accelerating PyTorch Transformers with Intel Sapphire R...</a>)</span></p>
+<p>Industry observers note that despite its strong performance, AutoRound is fast and lightweight — quantizing a 72B model takes just 37 minutes on an A100 GPU under light mode. It also supports mixed-bit tuning, lm-head quantization, GPTQ/AWQ/GGUF format exporting, and flexible tuning recipes. <span style="font-size:13px;">(Related: <a href="industry-news-huggingfacehub-v10-five-years-of-building-the-found-207626.html" style="color:#2563eb; font-weight:600;">Industry News: huggingface_hub v1.0: Five Years of Buil...</a>)</span></p>
 <p>AutoRound delivers highly promising results, particularly in low-bit quantization scenarios. Evaluations across a variety of tasks show that it outperforms popular methods by a wide margin at 2-bit precision (source). At 4 bits, AutoRound continues to hold a competitive edge in most cases, as demonstrated on the Low-Bit Open LLM Leaderboard.</p>
 <p>It has been revealed that LLMs: AutoRound supports nearly all popular LLM architectures, including well-known models like Qwen, LLaMA, and DeepSeek. Ready-to-use quantized models are available on Hugging Face through collections such as OPEA, Kaitchup, and fbaldassarri.</p>
 <p>In a recent development, VLMs: AutoRound supports over 10 vision-language models (VLMs), including Mistral-Small-3.1, Gemma3, and more. You can find the full list in the README, and ready-to-use quantized models are available in the OPEA Hugging Face collection. For models not yet supported, you can still apply our RTN method with --iters 0. No tuning is required, but some accuracy loss is expected.</p>
@@ -191,6 +191,10 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
+        <a href="breaking-introducing-anylanguagemodel-one-api-for-local-and-remot-207615.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #207615. Breaking: Introducing AnyLanguageModel: One API for Local and Remote LLMs on Apple Platforms
+        </a>
+        
         <a href="making-llms-even-more-accessible-with-bitsandbytes-4-bit-quantiza-195869.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #195869. Making LLMs even more accessible with bitsandbytes, 4-bit quantization and QLoRA
         </a>
@@ -201,10 +205,6 @@
         
         <a href="stable-diffusion-xl-on-mac-with-advanced-core-ml-quantization-195835.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #195835. Stable Diffusion XL on Mac with Advanced Core ML Quantization
-        </a>
-        
-        <a href="tech-report-introducing-the-livecodebench-leaderboard-holistic-an-195720.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #195720. Tech Report: Introducing the LiveCodeBench Leaderboard - Holistic and Contamination-Free Evaluation of Code LLMs
         </a>
         
     </div>

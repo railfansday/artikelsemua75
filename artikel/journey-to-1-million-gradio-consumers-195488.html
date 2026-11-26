@@ -150,8 +150,8 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-195488">5 years ago, we introduced Gradio as a simple Python library to let researchers at Stanford easily demo computer vision models with a web interface.</p>
-<p>According to recent reports, today, Gradio is used by &gt;1 million developers each month to build and share AI web apps. This includes some of the most popular open-source projects of all time, like Automatic1111, Oobabooga’s Text Generation WebUI, Dall-E Mini, and LLaMA-Factory. <span style="font-size:13px;">(Related: <a href="how-to-generate-text-using-different-decoding-methods-for-languag-196088.html" style="color:#2563eb; font-weight:600;">How to generate text: using different decoding methods ...</a>)</span></p>
-<p>How did we get here? How did Gradio keep growing in the very crowded field of open-source Python libraries? I get this question a lot from folks who are building their own open-source libraries. This post distills some of the lessons that I have learned over the past few years:. <span style="font-size:13px;">(Related: <a href="simple-considerations-for-simple-people-building-fancy-neural-net-196076.html" style="color:#2563eb; font-weight:600;">Simple considerations for simple people building fancy ...</a>)</span></p>
+<p>According to recent reports, today, Gradio is used by &gt;1 million developers each month to build and share AI web apps. This includes some of the most popular open-source projects of all time, like Automatic1111, Oobabooga’s Text Generation WebUI, Dall-E Mini, and LLaMA-Factory. <span style="font-size:13px;">(Related: <a href="breaking-3d-asset-generation-ai-for-game-development-3-207645.html" style="color:#2563eb; font-weight:600;">Breaking: 3D Asset Generation: AI for Game Development ...</a>)</span></p>
+<p>How did we get here? How did Gradio keep growing in the very crowded field of open-source Python libraries? I get this question a lot from folks who are building their own open-source libraries. This post distills some of the lessons that I have learned over the past few years:. <span style="font-size:13px;">(Related: <a href="building-the-open-agent-ecosystem-together-introducing-openenv-207628.html" style="color:#2563eb; font-weight:600;">Building the Open Agent Ecosystem Together: Introducing...</a>)</span></p>
 <p>1. Invest in good primitives, not high-level abstractions.</p>
 <p>When we first rolled out Gradio, we offered only one high-level class (gr.Interface), which created a complete web app from a single Python function. We quickly realized that developers wanted to create other kinds of apps (e.g. multi-step workflows, chatbots, streaming applications), but as we started listing out the apps users wanted to build, we realized what we needed to do: go lower.</p>
 <p>Instead of building many high-level classes to support different use cases, we built a low-level API called Gradio Blocks that let customers assemble applications from modular components, events, and layouts. Despite generally being more work to use, gr.Blocks today represents 80% of the usage of Gradio—including the highly popular apps mentioned above.</p>
@@ -195,20 +195,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="my-journey-to-a-serverless-transformers-pipeline-on-google-cloud-196073.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #196073. My Journey to a serverless transformers pipeline on Google Cloud
+        <a href="one-shot-any-web-app-with-gradios-grhtml-207536.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #207536. One-Shot Any Web App with Gradio's gr.HTML
         </a>
         
-        <a href="using-mixing-hugging-face-models-with-gradio-20-196067.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #196067. Using & Mixing Hugging Face Models with Gradio 2.0
+        <a href="ulysses-sequence-parallelism-training-with-million-token-contexts-207511.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #207511. Ulysses Sequence Parallelism: Training with Million-Token Contexts
         </a>
         
-        <a href="industry-news-showcase-your-projects-in-spaces-using-gradio-196058.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #196058. Industry News: Showcase Your Projects in Spaces using Gradio
+        <a href="any-custom-frontend-with-gradios-backend-207469.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #207469. Any Custom Frontend with Gradio's Backend
         </a>
         
-        <a href="gradio-is-joining-hugging-face-196044.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #196044. Gradio is joining Hugging Face!
+        <a href="breaking-deepseek-v4-a-million-token-context-that-agents-can-actu-207413.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #207413. Breaking: DeepSeek-V4: a million-token context that agents can actually use
         </a>
         
     </div>

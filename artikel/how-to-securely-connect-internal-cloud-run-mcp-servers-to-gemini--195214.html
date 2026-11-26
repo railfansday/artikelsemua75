@@ -141,9 +141,9 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p>Enterprise teams adopting Gemini Enterprise are increasingly building custom Model Context Protocol (MCP) servers to connect AI agents with internal APIs, databases, and business workflows. Google Cloud Run is a natural fit for hosting these lightweight StreamableHTTP MCP servers: it scales automatically, manages TLS certificates out of the box, and integrates natively with Cloud IAM.</p>
-<p>However, moving a custom MCP server from an initial prototype to an enterprise production environment immediately introduces three real-world security and networking challenges:.</p>
-<p>Here is how you can solve all three challenges using Egress Agent Gateway, Private Service Connect (PSC), and FQDN-scoped Private Cloud DNS, complete with a runnable reference implementation and setup scripts on GitHub. <span style="font-size:13px;">(Related: <a href="how-to-train-a-fresh-language-model-from-scratch-using-transforme-196089.html" style="color:#2563eb; font-weight:600;">How to train a fresh language model from scratch using ...</a>)</span></p>
-<p>Connecting Gemini Enterprise (which runs in a Google-managed tenant project) to an internal serverless Cloud Run MCP server requires bridging two network hops and one scoped DNS lookup:. <span style="font-size:13px;">(Related: <a href="my-journey-to-a-serverless-transformers-pipeline-on-google-cloud-196073.html" style="color:#2563eb; font-weight:600;">My Journey to a serverless transformers pipeline on Goo...</a>)</span></p>
+<p>However, moving a custom MCP server from an initial prototype to an enterprise production environment immediately introduces three real-world security and networking challenges:. <span style="font-size:13px;">(Related: <a href="hugging-face-and-virustotal-collaborate-to-strengthen-ai-security-207629.html" style="color:#2563eb; font-weight:600;">Hugging Face and VirusTotal collaborate to strengthen A...</a>)</span></p>
+<p>Here is how you can solve all three challenges using Egress Agent Gateway, Private Service Connect (PSC), and FQDN-scoped Private Cloud DNS, complete with a runnable reference implementation and setup scripts on GitHub. <span style="font-size:13px;">(Related: <a href="tiny-agents-an-mcp-powered-agent-in-50-lines-of-code-207641.html" style="color:#2563eb; font-weight:600;">Tiny Agents: an MCP-powered agent in 50 lines of code...</a>)</span></p>
+<p>Connecting Gemini Enterprise (which runs in a Google-managed tenant project) to an internal serverless Cloud Run MCP server requires bridging two network hops and one scoped DNS lookup:.</p>
 <p style="margin-top: 25px;">
 <a href="https://developers.googleblog.com/how-to-securely-connect-internal-cloud-run-mcp-servers-to-gemini-enterprise/" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
                         → Read original article
@@ -167,8 +167,12 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="anthropic-lets-mcp-servers-ship-skills-and-run-background-jobs-in-188562.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #188562. Anthropic lets MCP servers ship skills and run background jobs in Claude
+        <a href="run-ai-workloads-on-any-cloud-store-on-hugging-face-zero-egress-s-207260.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #207260. Run AI workloads on any cloud, store on Hugging Face: zero-egress storage with SkyPilot
+        </a>
+        
+        <a href="a-hrefhttpswwwfiercehealthcarecomhealth-techweekly-rundown-waysta-202400.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #202400. <a href="https://www.fiercehealthcare.com/health-tech/weekly-rundown-waystar-integrates-google-clouds-gemini-healthcare-oracle-debuts-ai" hreflang="en">Weekly Rundown: Waystar integrates into Google Cloud’s Gemini for healthcare; Oracle debuts AI agents for clinical trials</a>
         </a>
         
         <a href="latest-update-top-4-mcp-servers-for-marketers-features-use-cases--195584.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
@@ -177,10 +181,6 @@
         
         <a href="breaking-upskill-your-llms-with-gradio-mcp-servers-195256.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #195256. Breaking: Upskill your LLMs With Gradio MCP Servers
-        </a>
-        
-        <a href="how-to-handle-user-connector-and-agent-auth-in-gemini-enterprise--195237.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #195237. How to handle user, connector, and agent auth in Gemini Enterprise with a custom UI
         </a>
         
     </div>

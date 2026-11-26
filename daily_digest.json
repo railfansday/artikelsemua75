@@ -1,85 +1,85 @@
 {
-  "generatedAt": "2026-11-25T02:07:51.391811",
-  "totalArticles": 12529,
+  "generatedAt": "2026-11-26T17:28:06.251796",
+  "totalArticles": 12562,
   "categoryBreakdown": {
-    "General": 10138,
-    "AI & Tech": 1015,
-    "Hardware & Chips": 247,
-    "Business & Policy": 563,
-    "Gadgets": 330,
-    "EV & Auto": 236
+    "General": 10286,
+    "Hardware & Chips": 208,
+    "AI & Tech": 987,
+    "Gadgets": 343,
+    "Business & Policy": 531,
+    "EV & Auto": 207
   },
   "topSources": {
     "Hugging Face": 915,
-    "Co": 828,
-    "Sciencedaily": 210,
+    "Co": 857,
+    "Sciencedaily": 213,
     "Eschoolnews": 200,
-    "Cbssports": 169,
+    "Cbssports": 170,
     "Electrek": 149,
-    "Yahoo": 148,
-    "Dw": 143,
-    "Dailymail": 136,
-    "Realworkfromanywhere": 126
+    "Yahoo": 146,
+    "Dw": 144,
+    "Dailymail": 139,
+    "Realworkfromanywhere": 123
   },
   "latestHeadlines": [
     {
-      "id": 196089,
-      "title": "How to train a fresh language model from scratch using Transformers and Tokenizers",
-      "url": "https://railfansday.github.io/artikelsemua75/artikel/how-to-train-a-fresh-language-model-from-scratch-using-transforme-196089.html",
+      "id": 207651,
+      "title": "Fine-Tune XLSR-Wav2Vec2 for low-resource ASR with 🤗 Transformers",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/fine-tune-xlsr-wav2vec2-for-low-resource-asr-with-transformers-207651.html",
       "category": "General"
     },
     {
-      "id": 196088,
-      "title": "How to generate text: using different decoding methods for language generation with Transformers",
-      "url": "https://railfansday.github.io/artikelsemua75/artikel/how-to-generate-text-using-different-decoding-methods-for-languag-196088.html",
+      "id": 207650,
+      "title": "Director of Machine Learning Insights",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/director-of-machine-learning-insights-207650.html",
       "category": "General"
     },
     {
-      "id": 196087,
-      "title": "Tech Report: The Reformer - Pushing the limits of language modeling",
-      "url": "https://railfansday.github.io/artikelsemua75/artikel/tech-report-the-reformer-pushing-the-limits-of-language-modeling-196087.html",
+      "id": 207649,
+      "title": "Director of Machine Learning Insights [Part 2: SaaS Edition]",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/director-of-machine-learning-insights-part-2-saas-edition-207649.html",
       "category": "General"
     },
     {
-      "id": 196086,
-      "title": "Latest Update: Block Sparse Matrices for Smaller and Faster Language Models",
-      "url": "https://railfansday.github.io/artikelsemua75/artikel/latest-update-block-sparse-matrices-for-smaller-and-faster-langua-196086.html",
+      "id": 207648,
+      "title": "An Introduction to Q-Learning Part 1",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/an-introduction-to-q-learning-part-1-207648.html",
       "category": "General"
     },
     {
-      "id": 196085,
-      "title": "Transformer-based Encoder-Decoder Models",
-      "url": "https://railfansday.github.io/artikelsemua75/artikel/transformer-based-encoder-decoder-models-196085.html",
-      "category": "General"
+      "id": 207647,
+      "title": "Accelerating PyTorch Transformers with Intel Sapphire Rapids - part 1",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/accelerating-pytorch-transformers-with-intel-sapphire-rapids-part-207647.html",
+      "category": "Hardware & Chips"
     },
     {
-      "id": 196084,
-      "title": "Hyperparameter Search with Transformers and Ray Tune",
-      "url": "https://railfansday.github.io/artikelsemua75/artikel/hyperparameter-search-with-transformers-and-ray-tune-196084.html",
-      "category": "General"
+      "id": 207646,
+      "title": "Tech Report: AI for Game Development: Creating a Farming Game in 5 Days. Part 1",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/tech-report-ai-for-game-development-creating-a-farming-game-in-5--207646.html",
+      "category": "AI & Tech"
     },
     {
-      "id": 196083,
-      "title": "Porting fairseq wmt19 translation system to transformers",
-      "url": "https://railfansday.github.io/artikelsemua75/artikel/porting-fairseq-wmt19-translation-system-to-transformers-196083.html",
-      "category": "General"
+      "id": 207645,
+      "title": "Breaking: 3D Asset Generation: AI for Game Development #3",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/breaking-3d-asset-generation-ai-for-game-development-3-207645.html",
+      "category": "AI & Tech"
     },
     {
-      "id": 196082,
-      "title": "Leveraging Pre-trained Language Model Checkpoints for Encoder-Decoder Models",
-      "url": "https://railfansday.github.io/artikelsemua75/artikel/leveraging-pre-trained-language-model-checkpoints-for-encoder-dec-196082.html",
-      "category": "General"
+      "id": 207644,
+      "title": "Welcome Gemma - Google’s new open LLM",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/welcome-gemma-googles-new-open-llm-207644.html",
+      "category": "AI & Tech"
     },
     {
-      "id": 196081,
-      "title": "Latest Update: How we sped up transformer inference 100x for 🤗 API customers",
-      "url": "https://railfansday.github.io/artikelsemua75/artikel/latest-update-how-we-sped-up-transformer-inference-100x-for-api-c-196081.html",
-      "category": "General"
+      "id": 207643,
+      "title": "Tech Report: Introducing the Open Arabic LLM Leaderboard",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/tech-report-introducing-the-open-arabic-llm-leaderboard-207643.html",
+      "category": "AI & Tech"
     },
     {
-      "id": 196080,
-      "title": "Fit More and Train Faster With ZeRO via DeepSpeed and FairScale",
-      "url": "https://railfansday.github.io/artikelsemua75/artikel/fit-more-and-train-faster-with-zero-via-deepspeed-and-fairscale-196080.html",
+      "id": 207642,
+      "title": "Diffusers welcomes Stable Diffusion 3",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/diffusers-welcomes-stable-diffusion-3-207642.html",
       "category": "General"
     }
   ]

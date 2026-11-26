@@ -150,8 +150,8 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-195361">TRL supports training LLMs using GRPO, an online learning algorithm recently introduced in the DeepSeekMath paper. In GRPO, the model learns from its own outputs: it generates responses during training, receives feedback, and uses that feedback to improve itself over time.</p>
-<p>In a recent development, this makes generation a critical step in the training loop — and also a major bottleneck. To speed up generation, TRL integrates with vLLM. This combination lets you train powerful models more efficiently in GRPO setup. However, there’s a catch. <span style="font-size:13px;">(Related: <a href="how-to-train-a-fresh-language-model-from-scratch-using-transforme-196089.html" style="color:#2563eb; font-weight:600;">How to train a fresh language model from scratch using ...</a>)</span></p>
-<p>In a recent development, before TRL v0.18.0, vLLM was only supported in server mode, running as a separate process on different GPUs from the training job. It communicated with the training script over HTTP, which made the setup modular and easy to use — but also introduced GPU inefficiencies. <span style="font-size:13px;">(Related: <a href="how-to-generate-text-using-different-decoding-methods-for-languag-196088.html" style="color:#2563eb; font-weight:600;">How to generate text: using different decoding methods ...</a>)</span></p>
+<p>In a recent development, this makes generation a critical step in the training loop — and also a major bottleneck. To speed up generation, TRL integrates with vLLM. This combination lets you train powerful models more efficiently in GRPO setup. However, there’s a catch. <span style="font-size:13px;">(Related: <a href="tech-report-ai-for-game-development-creating-a-farming-game-in-5--207646.html" style="color:#2563eb; font-weight:600;">Tech Report: AI for Game Development: Creating a Farmin...</a>)</span></p>
+<p>In a recent development, before TRL v0.18.0, vLLM was only supported in server mode, running as a separate process on different GPUs from the training job. It communicated with the training script over HTTP, which made the setup modular and easy to use — but also introduced GPU inefficiencies. <span style="font-size:13px;">(Related: <a href="breaking-3d-asset-generation-ai-for-game-development-3-207645.html" style="color:#2563eb; font-weight:600;">Breaking: 3D Asset Generation: AI for Game Development ...</a>)</span></p>
 <p>This “ping-pong” between training and generation causes:.</p>
 <p>According to recent reports, in online learning methods like GRPO — where generation happens constantly — this inefficiency becomes even more painful. You spend more on hardware, but don't get the performance you'd expect.</p>
 <p>So, the key question becomes: Can we share the same GPUs for both training and generation, instead of separating them?</p>
@@ -271,20 +271,20 @@ Allocates gradients in a single memory block, improving memory access and reduci
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="tech-report-hayden-panettiere-left-behind-at-least-625-million-188633.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #188633. Tech Report: Hayden Panettiere Left Behind at Least $6.25 Million
+        <a href="ai-models-on-one-vllm-server-secretly-talk-through-gpu-rounding-e-207391.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #207391. AI models on one vLLM server secretly talk through GPU rounding errors
         </a>
         
-        <a href="the-technology-behind-bloom-training-195990.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #195990. The Technology Behind BLOOM Training
+        <a href="no-one-gets-left-behind-cdpr-on-the-witcher-4-releasing-for-all-p-200862.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #200862. "No One Gets Left Behind" - CDPR On The Witcher 4 Releasing For All Platforms At The Same Time
         </a>
         
-        <a href="fine-tuning-20b-llms-with-rlhf-on-a-24gb-consumer-gpu-195901.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #195901. Fine-tuning 20B LLMs with RLHF on a 24GB consumer GPU
+        <a href="20x-faster-trl-fine-tuning-with-rapidfire-ai-207613.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #207613. 20x Faster TRL Fine-tuning with RapidFire AI
         </a>
         
-        <a href="run-a-chatgpt-like-chatbot-on-a-single-gpu-with-rocm-195877.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #195877. Run a Chatgpt-like Chatbot on a Single GPU with ROCm
+        <a href="industry-news-unlocking-agentic-rl-training-for-gpt-oss-a-practic-207571.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #207571. Industry News: Unlocking Agentic RL Training for GPT-OSS: A Practical Retrospective
         </a>
         
     </div>

@@ -3,217 +3,217 @@
   <title>Portal Berita Interaktif - Atom Feed</title>
   <link href="https://railfansday.github.io/artikelsemua75/atom.xml" rel="self"/>
   <link href="https://railfansday.github.io/artikelsemua75/"/>
-  <updated>2026-11-25T02:07:45Z</updated>
+  <updated>2026-11-26T17:28:00Z</updated>
   <id>https://railfansday.github.io/artikelsemua75/</id>
   
   <entry>
-    <title>How to train a fresh language model from scratch using Transformers and Tokenizers</title>
-    <link href="https://railfansday.github.io/artikelsemua75/artikel/how-to-train-a-fresh-language-model-from-scratch-using-transforme-196089.html"/>
-    <id>https://railfansday.github.io/artikelsemua75/artikel/how-to-train-a-fresh-language-model-from-scratch-using-transforme-196089.html</id>
-    <updated>2020-02-14T00:00:00Z</updated>
+    <title>Fine-Tune XLSR-Wav2Vec2 for low-resource ASR with 🤗 Transformers</title>
+    <link href="https://railfansday.github.io/artikelsemua75/artikel/fine-tune-xlsr-wav2vec2-for-low-resource-asr-with-transformers-207651.html"/>
+    <id>https://railfansday.github.io/artikelsemua75/artikel/fine-tune-xlsr-wav2vec2-for-low-resource-asr-with-transformers-207651.html</id>
+    <updated>2021-11-15T00:00:00Z</updated>
     <summary>Content not available. → Read original article...</summary>
   </entry>
   <entry>
-    <title>How to generate text: using different decoding methods for language generation with Transformers</title>
-    <link href="https://railfansday.github.io/artikelsemua75/artikel/how-to-generate-text-using-different-decoding-methods-for-languag-196088.html"/>
-    <id>https://railfansday.github.io/artikelsemua75/artikel/how-to-generate-text-using-different-decoding-methods-for-languag-196088.html</id>
-    <updated>2020-03-01T00:00:00Z</updated>
+    <title>Director of Machine Learning Insights</title>
+    <link href="https://railfansday.github.io/artikelsemua75/artikel/director-of-machine-learning-insights-207650.html"/>
+    <id>https://railfansday.github.io/artikelsemua75/artikel/director-of-machine-learning-insights-207650.html</id>
+    <updated>2022-04-27T00:00:00Z</updated>
     <summary>Content not available. → Read original article...</summary>
   </entry>
   <entry>
-    <title>Tech Report: The Reformer - Pushing the limits of language modeling</title>
-    <link href="https://railfansday.github.io/artikelsemua75/artikel/tech-report-the-reformer-pushing-the-limits-of-language-modeling-196087.html"/>
-    <id>https://railfansday.github.io/artikelsemua75/artikel/tech-report-the-reformer-pushing-the-limits-of-language-modeling-196087.html</id>
-    <updated>2020-07-03T00:00:00Z</updated>
+    <title>Director of Machine Learning Insights [Part 2: SaaS Edition]</title>
+    <link href="https://railfansday.github.io/artikelsemua75/artikel/director-of-machine-learning-insights-part-2-saas-edition-207649.html"/>
+    <id>https://railfansday.github.io/artikelsemua75/artikel/director-of-machine-learning-insights-part-2-saas-edition-207649.html</id>
+    <updated>2022-05-13T00:00:00Z</updated>
     <summary>Content not available. → Read original article...</summary>
   </entry>
   <entry>
-    <title>Latest Update: Block Sparse Matrices for Smaller and Faster Language Models</title>
-    <link href="https://railfansday.github.io/artikelsemua75/artikel/latest-update-block-sparse-matrices-for-smaller-and-faster-langua-196086.html"/>
-    <id>https://railfansday.github.io/artikelsemua75/artikel/latest-update-block-sparse-matrices-for-smaller-and-faster-langua-196086.html</id>
-    <updated>2020-09-10T00:00:00Z</updated>
+    <title>An Introduction to Q-Learning Part 1</title>
+    <link href="https://railfansday.github.io/artikelsemua75/artikel/an-introduction-to-q-learning-part-1-207648.html"/>
+    <id>https://railfansday.github.io/artikelsemua75/artikel/an-introduction-to-q-learning-part-1-207648.html</id>
+    <updated>2022-05-18T00:00:00Z</updated>
     <summary>Content not available. → Read original article...</summary>
   </entry>
   <entry>
-    <title>Transformer-based Encoder-Decoder Models</title>
-    <link href="https://railfansday.github.io/artikelsemua75/artikel/transformer-based-encoder-decoder-models-196085.html"/>
-    <id>https://railfansday.github.io/artikelsemua75/artikel/transformer-based-encoder-decoder-models-196085.html</id>
-    <updated>2020-10-10T00:00:00Z</updated>
+    <title>Accelerating PyTorch Transformers with Intel Sapphire Rapids - part 1</title>
+    <link href="https://railfansday.github.io/artikelsemua75/artikel/accelerating-pytorch-transformers-with-intel-sapphire-rapids-part-207647.html"/>
+    <id>https://railfansday.github.io/artikelsemua75/artikel/accelerating-pytorch-transformers-with-intel-sapphire-rapids-part-207647.html</id>
+    <updated>2023-01-02T00:00:00Z</updated>
     <summary>Content not available. → Read original article...</summary>
   </entry>
   <entry>
-    <title>Hyperparameter Search with Transformers and Ray Tune</title>
-    <link href="https://railfansday.github.io/artikelsemua75/artikel/hyperparameter-search-with-transformers-and-ray-tune-196084.html"/>
-    <id>https://railfansday.github.io/artikelsemua75/artikel/hyperparameter-search-with-transformers-and-ray-tune-196084.html</id>
-    <updated>2020-11-02T00:00:00Z</updated>
+    <title>Tech Report: AI for Game Development: Creating a Farming Game in 5 Days. Part 1</title>
+    <link href="https://railfansday.github.io/artikelsemua75/artikel/tech-report-ai-for-game-development-creating-a-farming-game-in-5--207646.html"/>
+    <id>https://railfansday.github.io/artikelsemua75/artikel/tech-report-ai-for-game-development-creating-a-farming-game-in-5--207646.html</id>
+    <updated>2023-01-02T00:00:00Z</updated>
     <summary>Content not available. → Read original article...</summary>
   </entry>
   <entry>
-    <title>Porting fairseq wmt19 translation system to transformers</title>
-    <link href="https://railfansday.github.io/artikelsemua75/artikel/porting-fairseq-wmt19-translation-system-to-transformers-196083.html"/>
-    <id>https://railfansday.github.io/artikelsemua75/artikel/porting-fairseq-wmt19-translation-system-to-transformers-196083.html</id>
-    <updated>2020-11-03T00:00:00Z</updated>
+    <title>Breaking: 3D Asset Generation: AI for Game Development #3</title>
+    <link href="https://railfansday.github.io/artikelsemua75/artikel/breaking-3d-asset-generation-ai-for-game-development-3-207645.html"/>
+    <id>https://railfansday.github.io/artikelsemua75/artikel/breaking-3d-asset-generation-ai-for-game-development-3-207645.html</id>
+    <updated>2023-01-20T00:00:00Z</updated>
     <summary>Content not available. → Read original article...</summary>
   </entry>
   <entry>
-    <title>Leveraging Pre-trained Language Model Checkpoints for Encoder-Decoder Models</title>
-    <link href="https://railfansday.github.io/artikelsemua75/artikel/leveraging-pre-trained-language-model-checkpoints-for-encoder-dec-196082.html"/>
-    <id>https://railfansday.github.io/artikelsemua75/artikel/leveraging-pre-trained-language-model-checkpoints-for-encoder-dec-196082.html</id>
-    <updated>2020-11-09T00:00:00Z</updated>
+    <title>Welcome Gemma - Google’s new open LLM</title>
+    <link href="https://railfansday.github.io/artikelsemua75/artikel/welcome-gemma-googles-new-open-llm-207644.html"/>
+    <id>https://railfansday.github.io/artikelsemua75/artikel/welcome-gemma-googles-new-open-llm-207644.html</id>
+    <updated>2024-02-21T00:00:00Z</updated>
     <summary>Content not available. → Read original article...</summary>
   </entry>
   <entry>
-    <title>Latest Update: How we sped up transformer inference 100x for 🤗 API customers</title>
-    <link href="https://railfansday.github.io/artikelsemua75/artikel/latest-update-how-we-sped-up-transformer-inference-100x-for-api-c-196081.html"/>
-    <id>https://railfansday.github.io/artikelsemua75/artikel/latest-update-how-we-sped-up-transformer-inference-100x-for-api-c-196081.html</id>
-    <updated>2021-01-18T00:00:00Z</updated>
+    <title>Tech Report: Introducing the Open Arabic LLM Leaderboard</title>
+    <link href="https://railfansday.github.io/artikelsemua75/artikel/tech-report-introducing-the-open-arabic-llm-leaderboard-207643.html"/>
+    <id>https://railfansday.github.io/artikelsemua75/artikel/tech-report-introducing-the-open-arabic-llm-leaderboard-207643.html</id>
+    <updated>2024-05-14T00:00:00Z</updated>
     <summary>Content not available. → Read original article...</summary>
   </entry>
   <entry>
-    <title>Fit More and Train Faster With ZeRO via DeepSpeed and FairScale</title>
-    <link href="https://railfansday.github.io/artikelsemua75/artikel/fit-more-and-train-faster-with-zero-via-deepspeed-and-fairscale-196080.html"/>
-    <id>https://railfansday.github.io/artikelsemua75/artikel/fit-more-and-train-faster-with-zero-via-deepspeed-and-fairscale-196080.html</id>
-    <updated>2021-01-19T00:00:00Z</updated>
+    <title>Diffusers welcomes Stable Diffusion 3</title>
+    <link href="https://railfansday.github.io/artikelsemua75/artikel/diffusers-welcomes-stable-diffusion-3-207642.html"/>
+    <id>https://railfansday.github.io/artikelsemua75/artikel/diffusers-welcomes-stable-diffusion-3-207642.html</id>
+    <updated>2024-06-12T00:00:00Z</updated>
     <summary>Content not available. → Read original article...</summary>
   </entry>
   <entry>
-    <title>Latest Update: Faster TensorFlow models in Hugging Face Transformers</title>
-    <link href="https://railfansday.github.io/artikelsemua75/artikel/latest-update-faster-tensorflow-models-in-hugging-face-transforme-196079.html"/>
-    <id>https://railfansday.github.io/artikelsemua75/artikel/latest-update-faster-tensorflow-models-in-hugging-face-transforme-196079.html</id>
-    <updated>2021-01-26T00:00:00Z</updated>
+    <title>Tiny Agents: an MCP-powered agent in 50 lines of code</title>
+    <link href="https://railfansday.github.io/artikelsemua75/artikel/tiny-agents-an-mcp-powered-agent-in-50-lines-of-code-207641.html"/>
+    <id>https://railfansday.github.io/artikelsemua75/artikel/tiny-agents-an-mcp-powered-agent-in-50-lines-of-code-207641.html</id>
+    <updated>2025-04-25T00:00:00Z</updated>
     <summary>Content not available. → Read original article...</summary>
   </entry>
   <entry>
-    <title>Hugging Face on PyTorch / XLA TPUs</title>
-    <link href="https://railfansday.github.io/artikelsemua75/artikel/hugging-face-on-pytorch-xla-tpus-196078.html"/>
-    <id>https://railfansday.github.io/artikelsemua75/artikel/hugging-face-on-pytorch-xla-tpus-196078.html</id>
-    <updated>2021-02-09T00:00:00Z</updated>
+    <title>Introducing RTEB: A Fresh Standard for Retrieval Evaluation</title>
+    <link href="https://railfansday.github.io/artikelsemua75/artikel/introducing-rteb-a-fresh-standard-for-retrieval-evaluation-207640.html"/>
+    <id>https://railfansday.github.io/artikelsemua75/artikel/introducing-rteb-a-fresh-standard-for-retrieval-evaluation-207640.html</id>
+    <updated>2025-10-01T00:00:00Z</updated>
     <summary>Content not available. → Read original article...</summary>
   </entry>
   <entry>
-    <title>Industry News: Retrieval Augmented Generation with Huggingface Transformers and Ray</title>
-    <link href="https://railfansday.github.io/artikelsemua75/artikel/industry-news-retrieval-augmented-generation-with-huggingface-tra-196077.html"/>
-    <id>https://railfansday.github.io/artikelsemua75/artikel/industry-news-retrieval-augmented-generation-with-huggingface-tra-196077.html</id>
-    <updated>2021-02-10T00:00:00Z</updated>
+    <title>SOTA OCR with Core ML and dots.ocr</title>
+    <link href="https://railfansday.github.io/artikelsemua75/artikel/sota-ocr-with-core-ml-and-dotsocr-207639.html"/>
+    <id>https://railfansday.github.io/artikelsemua75/artikel/sota-ocr-with-core-ml-and-dotsocr-207639.html</id>
+    <updated>2025-10-02T00:00:00Z</updated>
     <summary>Content not available. → Read original article...</summary>
   </entry>
   <entry>
-    <title>Simple considerations for simple people building fancy neural networks</title>
-    <link href="https://railfansday.github.io/artikelsemua75/artikel/simple-considerations-for-simple-people-building-fancy-neural-net-196076.html"/>
-    <id>https://railfansday.github.io/artikelsemua75/artikel/simple-considerations-for-simple-people-building-fancy-neural-net-196076.html</id>
-    <updated>2021-02-25T00:00:00Z</updated>
+    <title>BigCodeArena: Judging code generations end to end with code executions</title>
+    <link href="https://railfansday.github.io/artikelsemua75/artikel/bigcodearena-judging-code-generations-end-to-end-with-code-execut-207638.html"/>
+    <id>https://railfansday.github.io/artikelsemua75/artikel/bigcodearena-judging-code-generations-end-to-end-with-code-execut-207638.html</id>
+    <updated>2025-10-07T09:37:25Z</updated>
     <summary>Content not available. → Read original article...</summary>
   </entry>
   <entry>
-    <title>Latest Update: Hugging Face Reads, Feb. 2021 - Long-range Transformers</title>
-    <link href="https://railfansday.github.io/artikelsemua75/artikel/latest-update-hugging-face-reads-feb-2021-long-range-transformers-196075.html"/>
-    <id>https://railfansday.github.io/artikelsemua75/artikel/latest-update-hugging-face-reads-feb-2021-long-range-transformers-196075.html</id>
-    <updated>2021-03-09T00:00:00Z</updated>
+    <title>Arm will be @ PyTorch Conference, Join Us!</title>
+    <link href="https://railfansday.github.io/artikelsemua75/artikel/arm-will-be-pytorch-conference-join-us-207637.html"/>
+    <id>https://railfansday.github.io/artikelsemua75/artikel/arm-will-be-pytorch-conference-join-us-207637.html</id>
+    <updated>2025-10-10T17:35:04Z</updated>
     <summary>Content not available. → Read original article...</summary>
   </entry>
   <entry>
-    <title>Latest Update: Fine-Tune Wav2Vec2 for English ASR in Hugging Face with 🤗 Transformers</title>
-    <link href="https://railfansday.github.io/artikelsemua75/artikel/latest-update-fine-tune-wav2vec2-for-english-asr-in-hugging-face--196074.html"/>
-    <id>https://railfansday.github.io/artikelsemua75/artikel/latest-update-fine-tune-wav2vec2-for-english-asr-in-hugging-face--196074.html</id>
-    <updated>2021-03-12T00:00:00Z</updated>
+    <title>Nemotron-Personas-India: Synthesized Data for Sovereign AI</title>
+    <link href="https://railfansday.github.io/artikelsemua75/artikel/nemotron-personas-india-synthesized-data-for-sovereign-ai-207636.html"/>
+    <id>https://railfansday.github.io/artikelsemua75/artikel/nemotron-personas-india-synthesized-data-for-sovereign-ai-207636.html</id>
+    <updated>2025-10-13T23:00:42Z</updated>
     <summary>Content not available. → Read original article...</summary>
   </entry>
   <entry>
-    <title>My Journey to a serverless transformers pipeline on Google Cloud</title>
-    <link href="https://railfansday.github.io/artikelsemua75/artikel/my-journey-to-a-serverless-transformers-pipeline-on-google-cloud-196073.html"/>
-    <id>https://railfansday.github.io/artikelsemua75/artikel/my-journey-to-a-serverless-transformers-pipeline-on-google-cloud-196073.html</id>
-    <updated>2021-03-18T00:00:00Z</updated>
+    <title>Breaking: Get your VLM running in 3 simple steps on Intel CPUs</title>
+    <link href="https://railfansday.github.io/artikelsemua75/artikel/breaking-get-your-vlm-running-in-3-simple-steps-on-intel-cpus-207635.html"/>
+    <id>https://railfansday.github.io/artikelsemua75/artikel/breaking-get-your-vlm-running-in-3-simple-steps-on-intel-cpus-207635.html</id>
+    <updated>2025-10-15T00:00:00Z</updated>
     <summary>Content not available. → Read original article...</summary>
   </entry>
   <entry>
-    <title>Latest Update: The Partnership: Amazon SageMaker and Hugging Face</title>
-    <link href="https://railfansday.github.io/artikelsemua75/artikel/latest-update-the-partnership-amazon-sagemaker-and-hugging-face-196072.html"/>
-    <id>https://railfansday.github.io/artikelsemua75/artikel/latest-update-the-partnership-amazon-sagemaker-and-hugging-face-196072.html</id>
-    <updated>2021-03-23T00:00:00Z</updated>
+    <title>Google Cloud C4 Brings a 70% TCO improvement on GPT OSS with Intel and Hugging Face</title>
+    <link href="https://railfansday.github.io/artikelsemua75/artikel/google-cloud-c4-brings-a-70-tco-improvement-on-gpt-oss-with-intel-207634.html"/>
+    <id>https://railfansday.github.io/artikelsemua75/artikel/google-cloud-c4-brings-a-70-tco-improvement-on-gpt-oss-with-intel-207634.html</id>
+    <updated>2025-10-16T00:00:00Z</updated>
     <summary>Content not available. → Read original article...</summary>
   </entry>
   <entry>
-    <title>Understanding BigBird's Block Sparse Attention</title>
-    <link href="https://railfansday.github.io/artikelsemua75/artikel/understanding-bigbirds-block-sparse-attention-196071.html"/>
-    <id>https://railfansday.github.io/artikelsemua75/artikel/understanding-bigbirds-block-sparse-attention-196071.html</id>
-    <updated>2021-03-31T00:00:00Z</updated>
+    <title>AI for Food Allergies</title>
+    <link href="https://railfansday.github.io/artikelsemua75/artikel/ai-for-food-allergies-207633.html"/>
+    <id>https://railfansday.github.io/artikelsemua75/artikel/ai-for-food-allergies-207633.html</id>
+    <updated>2025-10-16T22:38:11Z</updated>
     <summary>Content not available. → Read original article...</summary>
   </entry>
   <entry>
-    <title>Tech Report: Distributed Training: Train BART/T5 for Summarization using 🤗 Transformers and Amazon SageMaker</title>
-    <link href="https://railfansday.github.io/artikelsemua75/artikel/tech-report-distributed-training-train-bartt5-for-summarization-u-196070.html"/>
-    <id>https://railfansday.github.io/artikelsemua75/artikel/tech-report-distributed-training-train-bartt5-for-summarization-u-196070.html</id>
-    <updated>2021-04-08T00:00:00Z</updated>
+    <title>Unlock the power of images with AI Sheets</title>
+    <link href="https://railfansday.github.io/artikelsemua75/artikel/unlock-the-power-of-images-with-ai-sheets-207632.html"/>
+    <id>https://railfansday.github.io/artikelsemua75/artikel/unlock-the-power-of-images-with-ai-sheets-207632.html</id>
+    <updated>2025-10-21T00:00:00Z</updated>
     <summary>Content not available. → Read original article...</summary>
   </entry>
   <entry>
-    <title>Breaking: Introducing 🤗 Accelerate</title>
-    <link href="https://railfansday.github.io/artikelsemua75/artikel/breaking-introducing-accelerate-196069.html"/>
-    <id>https://railfansday.github.io/artikelsemua75/artikel/breaking-introducing-accelerate-196069.html</id>
-    <updated>2021-04-16T00:00:00Z</updated>
+    <title>Supercharge your OCR Pipelines with Open Models</title>
+    <link href="https://railfansday.github.io/artikelsemua75/artikel/supercharge-your-ocr-pipelines-with-open-models-207631.html"/>
+    <id>https://railfansday.github.io/artikelsemua75/artikel/supercharge-your-ocr-pipelines-with-open-models-207631.html</id>
+    <updated>2025-10-21T00:00:00Z</updated>
     <summary>Content not available. → Read original article...</summary>
   </entry>
   <entry>
-    <title>Breaking: Scaling-up BERT Inference on CPU (Part 1)</title>
-    <link href="https://railfansday.github.io/artikelsemua75/artikel/breaking-scaling-up-bert-inference-on-cpu-part-1-196068.html"/>
-    <id>https://railfansday.github.io/artikelsemua75/artikel/breaking-scaling-up-bert-inference-on-cpu-part-1-196068.html</id>
-    <updated>2021-04-20T00:00:00Z</updated>
+    <title>Sentence Transformers is joining Hugging Face!</title>
+    <link href="https://railfansday.github.io/artikelsemua75/artikel/sentence-transformers-is-joining-hugging-face-207630.html"/>
+    <id>https://railfansday.github.io/artikelsemua75/artikel/sentence-transformers-is-joining-hugging-face-207630.html</id>
+    <updated>2025-10-22T00:00:00Z</updated>
     <summary>Content not available. → Read original article...</summary>
   </entry>
   <entry>
-    <title>Using &amp; Mixing Hugging Face Models with Gradio 2.0</title>
-    <link href="https://railfansday.github.io/artikelsemua75/artikel/using-mixing-hugging-face-models-with-gradio-20-196067.html"/>
-    <id>https://railfansday.github.io/artikelsemua75/artikel/using-mixing-hugging-face-models-with-gradio-20-196067.html</id>
-    <updated>2021-05-25T00:00:00Z</updated>
+    <title>Hugging Face and VirusTotal collaborate to strengthen AI security</title>
+    <link href="https://railfansday.github.io/artikelsemua75/artikel/hugging-face-and-virustotal-collaborate-to-strengthen-ai-security-207629.html"/>
+    <id>https://railfansday.github.io/artikelsemua75/artikel/hugging-face-and-virustotal-collaborate-to-strengthen-ai-security-207629.html</id>
+    <updated>2025-10-22T00:00:00Z</updated>
     <summary>Content not available. → Read original article...</summary>
   </entry>
   <entry>
-    <title>Few-shot learning in practice: GPT-Neo and the 🤗 Accelerated Inference API</title>
-    <link href="https://railfansday.github.io/artikelsemua75/artikel/few-shot-learning-in-practice-gpt-neo-and-the-accelerated-inferen-196066.html"/>
-    <id>https://railfansday.github.io/artikelsemua75/artikel/few-shot-learning-in-practice-gpt-neo-and-the-accelerated-inferen-196066.html</id>
-    <updated>2021-06-03T00:00:00Z</updated>
+    <title>Building the Open Agent Ecosystem Together: Introducing OpenEnv</title>
+    <link href="https://railfansday.github.io/artikelsemua75/artikel/building-the-open-agent-ecosystem-together-introducing-openenv-207628.html"/>
+    <id>https://railfansday.github.io/artikelsemua75/artikel/building-the-open-agent-ecosystem-together-introducing-openenv-207628.html</id>
+    <updated>2025-10-23T00:00:00Z</updated>
     <summary>Content not available. → Read original article...</summary>
   </entry>
   <entry>
-    <title>Sentence Transformers in the Hugging Face Hub</title>
-    <link href="https://railfansday.github.io/artikelsemua75/artikel/sentence-transformers-in-the-hugging-face-hub-196065.html"/>
-    <id>https://railfansday.github.io/artikelsemua75/artikel/sentence-transformers-in-the-hugging-face-hub-196065.html</id>
-    <updated>2021-06-28T00:00:00Z</updated>
+    <title>LeRobot v0.4.0: Supercharging OSS Robot Learning</title>
+    <link href="https://railfansday.github.io/artikelsemua75/artikel/lerobot-v040-supercharging-oss-robot-learning-207627.html"/>
+    <id>https://railfansday.github.io/artikelsemua75/artikel/lerobot-v040-supercharging-oss-robot-learning-207627.html</id>
+    <updated>2025-10-24T00:00:00Z</updated>
     <summary>Content not available. → Read original article...</summary>
   </entry>
   <entry>
-    <title>Deploy Hugging Face models easily with Amazon SageMaker</title>
-    <link href="https://railfansday.github.io/artikelsemua75/artikel/deploy-hugging-face-models-easily-with-amazon-sagemaker-196064.html"/>
-    <id>https://railfansday.github.io/artikelsemua75/artikel/deploy-hugging-face-models-easily-with-amazon-sagemaker-196064.html</id>
-    <updated>2021-07-08T00:00:00Z</updated>
+    <title>Industry News: huggingface_hub v1.0: Five Years of Building the Foundation of Open Machine Learning</title>
+    <link href="https://railfansday.github.io/artikelsemua75/artikel/industry-news-huggingfacehub-v10-five-years-of-building-the-found-207626.html"/>
+    <id>https://railfansday.github.io/artikelsemua75/artikel/industry-news-huggingfacehub-v10-five-years-of-building-the-found-207626.html</id>
+    <updated>2025-10-27T00:00:00Z</updated>
     <summary>Content not available. → Read original article...</summary>
   </entry>
   <entry>
-    <title>Welcome spaCy to the Hugging Face Hub</title>
-    <link href="https://railfansday.github.io/artikelsemua75/artikel/welcome-spacy-to-the-hugging-face-hub-196063.html"/>
-    <id>https://railfansday.github.io/artikelsemua75/artikel/welcome-spacy-to-the-hugging-face-hub-196063.html</id>
-    <updated>2021-07-13T00:00:00Z</updated>
+    <title>Streaming datasets: 100x More Efficient</title>
+    <link href="https://railfansday.github.io/artikelsemua75/artikel/streaming-datasets-100x-more-efficient-207625.html"/>
+    <id>https://railfansday.github.io/artikelsemua75/artikel/streaming-datasets-100x-more-efficient-207625.html</id>
+    <updated>2025-10-27T00:00:00Z</updated>
     <summary>Content not available. → Read original article...</summary>
   </entry>
   <entry>
-    <title>Deep Learning over the Internet: Training Language Models Collaboratively</title>
-    <link href="https://railfansday.github.io/artikelsemua75/artikel/deep-learning-over-the-internet-training-language-models-collabor-196062.html"/>
-    <id>https://railfansday.github.io/artikelsemua75/artikel/deep-learning-over-the-internet-training-language-models-collabor-196062.html</id>
-    <updated>2021-07-15T00:00:00Z</updated>
+    <title>Voice Cloning with Consent</title>
+    <link href="https://railfansday.github.io/artikelsemua75/artikel/voice-cloning-with-consent-207624.html"/>
+    <id>https://railfansday.github.io/artikelsemua75/artikel/voice-cloning-with-consent-207624.html</id>
+    <updated>2025-10-28T00:00:00Z</updated>
     <summary>Content not available. → Read original article...</summary>
   </entry>
   <entry>
-    <title>Latest Update: Introducing Optimum: The Optimization Toolkit for Transformers at Scale</title>
-    <link href="https://railfansday.github.io/artikelsemua75/artikel/latest-update-introducing-optimum-the-optimization-toolkit-for-tr-196061.html"/>
-    <id>https://railfansday.github.io/artikelsemua75/artikel/latest-update-introducing-optimum-the-optimization-toolkit-for-tr-196061.html</id>
-    <updated>2021-09-14T00:00:00Z</updated>
+    <title>Granite 4.0 Nano: Just how small can you go?</title>
+    <link href="https://railfansday.github.io/artikelsemua75/artikel/granite-40-nano-just-how-small-can-you-go-207623.html"/>
+    <id>https://railfansday.github.io/artikelsemua75/artikel/granite-40-nano-just-how-small-can-you-go-207623.html</id>
+    <updated>2025-10-28T14:59:38Z</updated>
     <summary>Content not available. → Read original article...</summary>
   </entry>
   <entry>
-    <title>Hugging Face and Graphcore partner for IPU-optimized Transformers</title>
-    <link href="https://railfansday.github.io/artikelsemua75/artikel/hugging-face-and-graphcore-partner-for-ipu-optimized-transformers-196060.html"/>
-    <id>https://railfansday.github.io/artikelsemua75/artikel/hugging-face-and-graphcore-partner-for-ipu-optimized-transformers-196060.html</id>
-    <updated>2021-09-14T00:00:00Z</updated>
+    <title>Building a Healthcare Robot from Simulation to Deployment with NVIDIA Isaac</title>
+    <link href="https://railfansday.github.io/artikelsemua75/artikel/building-a-healthcare-robot-from-simulation-to-deployment-with-nv-207622.html"/>
+    <id>https://railfansday.github.io/artikelsemua75/artikel/building-a-healthcare-robot-from-simulation-to-deployment-with-nv-207622.html</id>
+    <updated>2025-10-29T00:00:00Z</updated>
     <summary>Content not available. → Read original article...</summary>
   </entry>
 </feed>

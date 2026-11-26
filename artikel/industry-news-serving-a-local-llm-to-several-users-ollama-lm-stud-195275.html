@@ -152,9 +152,9 @@
 <p id="sec-start-195275">Stay up to date with AI tools, model releases, and developer workflows that matter.</p>
 <p>Weekly. Free. One click to leave.</p>
 <p>According to recent reports, 7 Day Free Trial. Cancel Anytime.</p>
-<p>Recent findings suggest that when one person chats with a local model, it barely matters which server you run. On one RTX 3090 with the same model file, Ollama, LM Studio and llama.cpp wrote text within about 10 percent of each other, because all three run llama.cpp underneath. That changes when your app sends several requests at once. With four requests, the best setup produced more than three times as much text as the worst, and the cause was a default setting, not the engine. With 32 requests, vLLM produced 2.5 times as much text as the best llama.cpp setup I tested. <span style="font-size:13px;">(Related: <a href="how-to-train-a-fresh-language-model-from-scratch-using-transforme-196089.html" style="color:#2563eb; font-weight:600;">How to train a fresh language model from scratch using ...</a>)</span></p>
+<p>Recent findings suggest that when one person chats with a local model, it barely matters which server you run. On one RTX 3090 with the same model file, Ollama, LM Studio and llama.cpp wrote text within about 10 percent of each other, because all three run llama.cpp underneath. That changes when your app sends several requests at once. With four requests, the best setup produced more than three times as much text as the worst, and the cause was a default setting, not the engine. With 32 requests, vLLM produced 2.5 times as much text as the best llama.cpp setup I tested. <span style="font-size:13px;">(Related: <a href="breaking-introducing-anylanguagemodel-one-api-for-local-and-remot-207615.html" style="color:#2563eb; font-weight:600;">Breaking: Introducing AnyLanguageModel: One API for Loc...</a>)</span></p>
 <p>This article puts those numbers side by side and shows which setting to change for your app.</p>
-<p>I ran every test on one machine. The full write-ups, with every command and the raw results, are on homebrewserver.club. <span style="font-size:13px;">(Related: <a href="breaking-the-age-of-machine-learning-as-code-has-arrived-196055.html" style="color:#2563eb; font-weight:600;">Breaking: The Age of Machine Learning As Code Has Arriv...</a>)</span></p>
+<p>I ran every test on one machine. The full write-ups, with every command and the raw results, are on homebrewserver.club. <span style="font-size:13px;">(Related: <a href="director-of-machine-learning-insights-207650.html" style="color:#2563eb; font-weight:600;">Director of Machine Learning Insights...</a>)</span></p>
 <p>Every server got the same requests:.</p>
 <p>According to recent reports, ollama, LM Studio and llama.cpp loaded the exact same GGUF files, checked by SHA-256. vLLM cannot run GGUF files well, so it loaded a 4-bit AWQ file of the same model (9.1 GB). Answer quality was not compared.</p>
 <p>The tests ran between 8 and 16 November 2026, and speeds on this machine varied by a few percent from one day to the next. Treat a gap under about 5% as a tie. All of this is one consumer GPU and one model family, so read the numbers as a guide to how the servers behave, not as a ranking for your hardware.</p>
@@ -218,20 +218,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="industry-news-new-in-llamacpp-model-management-184288.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #184288. Industry News: New in llama.cpp: Model Management
+        <a href="ggml-and-llamacpp-join-hf-to-ensure-the-long-term-progress-of-loc-207528.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #207528. GGML and llama.cpp join HF to ensure the long-term progress of Local AI
         </a>
         
-        <a href="ggml-and-llamacpp-join-hf-to-ensure-the-long-term-progress-of-loc-184241.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #184241. GGML and llama.cpp join HF to ensure the long-term progress of Local AI
+        <a href="industry-news-we-got-claude-to-fine-tune-an-open-source-llm-207603.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #207603. Industry News: We Got Claude to Fine-Tune an Open Source LLM
         </a>
         
-        <a href="llamacpp-v100-a-stronger-foundation-for-the-local-ai-ecosystem-183798.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #183798. llama.cpp v1.0.0 : A stronger foundation for the local AI ecosystem
+        <a href="new-in-llamacpp-model-management-207597.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #207597. New in llama.cpp: Model Management
         </a>
         
-        <a href="industry-news-open-source-text-generation-llm-ecosystem-at-huggin-195842.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #195842. Industry News: Open-Source Text Generation & LLM Ecosystem at Hugging Face
+        <a href="industry-news-how-much-latency-does-a-self-hosted-llm-gateway-add-207483.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #207483. Industry News: How Much Latency Does a Self-Hosted LLM Gateway Add? Langfuse vs LiteLLM vs AcruxCore
         </a>
         
     </div>
