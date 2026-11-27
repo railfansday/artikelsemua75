@@ -150,8 +150,8 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-218448">Large diffusion models like Flux (a flow-based text-to-image generation model) can create stunning images, but their size can be a hurdle, demanding significant memory and compute resources. Quantization offers a powerful solution, shrinking these models to make them more accessible without drastically compromising performance. But the substantial question always is: can you actually tell the difference in the final image?</p>
-<p>Before we dive into the technical details of how various quantization backends in Hugging Face Diffusers work, why not test your own perception? <span style="font-size:13px;">(Related: <a href="faster-tensorflow-models-in-hugging-face-transformers-219083.html" style="color:#2563eb; font-weight:600;">Faster TensorFlow models in Hugging Face Transformers...</a>)</span></p>
-<p>Recent findings suggest that we created a setup where you can provide a prompt, and we generate results using both the original, high-precision model (e.g., Flux-dev in BF16) and several quantized versions (BnB 4-bit, BnB 8-bit). The generated images are then presented to you and your challenge is to identify which ones came from the quantized models. <span style="font-size:13px;">(Related: <a href="how-to-train-a-latest-language-model-from-scratch-using-transform-219093.html" style="color:#2563eb; font-weight:600;">How to train a latest language model from scratch using...</a>)</span></p>
+<p>Before we dive into the technical details of how various quantization backends in Hugging Face Diffusers work, why not test your own perception? <span style="font-size:13px;">(Related: <a href="latest-update-f1-star-max-verstappen-played-40-hours-of-gta-6-bef-230617.html" style="color:#2563eb; font-weight:600;">Latest Update: F1 star Max Verstappen played 40 hours o...</a>)</span></p>
+<p>Recent findings suggest that we created a setup where you can provide a prompt, and we generate results using both the original, high-precision model (e.g., Flux-dev in BF16) and several quantized versions (BnB 4-bit, BnB 8-bit). The generated images are then presented to you and your challenge is to identify which ones came from the quantized models. <span style="font-size:13px;">(Related: <a href="ea-fc-27-adds-ai-generated-commentary-from-iconic-commentator-230622.html" style="color:#2563eb; font-weight:600;">EA FC 27 adds AI-generated commentary from iconic comme...</a>)</span></p>
 <p>Industry observers note that often, especially with 8-bit quantization, the differences are subtle and may not be noticeable without close inspection. More aggressive quantization like 4-bit or lower might be more noticeable, but the results can still be good, especially considering the massive memory savings. NF4 often gives the best trade-off though.</p>
 <p>Building on our previous post, "Memory-efficient Diffusion Transformers with Quanto and Diffusers", this post explores the diverse quantization backends integrated directly into Hugging Face Diffusers. We'll examine how bitsandbytes, GGUF, torchao, Quanto and native FP8 support make large and powerful models more accessible, demonstrating their use with Flux.</p>
 <p>In a recent development, before diving into the quantization backends, let's introduce the FluxPipeline (using the black-forest-labs/FLUX.1-dev checkpoint) and its components, which we'll be quantizing. Loading the full FLUX.1-dev model in BF16 precision requires approximately 31.447 GB of memory. The main components are:.</p>
@@ -204,20 +204,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="stable-diffusion-with-diffusers-218975.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #218975. Stable Diffusion with 🧨 Diffusers
+        <a href="diffusers-welcomes-stable-diffusion-3-230587.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #230587. Diffusers welcomes Stable Diffusion 3
         </a>
         
-        <a href="industry-news-whats-new-in-diffusers-218970.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #218970. Industry News: What's new in Diffusers? 🎨
+        <a href="diffusers-welcomes-flux-2-230501.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #230501. Diffusers welcomes FLUX-2
         </a>
         
-        <a href="training-stable-diffusion-with-dreambooth-using-diffusers-218953.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #218953. Training Stable Diffusion with Dreambooth using Diffusers
+        <a href="introducing-modular-diffusers-composable-building-blocks-for-diff-230400.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #230400. Introducing Modular Diffusers - Composable Building Blocks for Diffusion Pipelines
         </a>
         
-        <a href="swift-diffusers-fast-stable-diffusion-for-mac-218911.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #218911. Swift 🧨Diffusers - Fast Stable Diffusion for Mac
+        <a href="industry-news-exploring-the-indium-phosphide-supply-chain-the-mat-230391.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #230391. Industry News: Exploring the Indium phosphide supply chain — the material constraint tightening the optical interconnect bottleneck
         </a>
         
     </div>

@@ -152,10 +152,10 @@
 <p id="sec-start-218189">It has been revealed that if you've wired up Gate.io's futures candlestick endpoint, you've probably hit this: you build a request with a start time, an end time, and a page size, and the server replies HTTP 400. You strip out to, retry, and it works. You add it back, it breaks. The error message doesn't mention to at all — it usually complains about something generic like an invalid parameter or an empty result set, which sends you chasing the wrong thing for an hour.</p>
 <p>Here's the endpoint in question (USDT-margined perpetual futures):.</p>
 <p>Query parameters that matter for history:.</p>
-<p>The rule the docs bury: from, to, and limit are mutually constrained. from+limit works. from+to works. to+limit works. All three together returns 400. And there's a second constraint that bites later: any single call returns at most the most recent 10,000 data points, regardless of how wide your range is. <span style="font-size:13px;">(Related: <a href="hugging-face-reads-feb-2021-long-range-transformers-219079.html" style="color:#2563eb; font-weight:600;">Hugging Face Reads, Feb. 2021 - Long-range Transformers...</a>)</span></p>
+<p>The rule the docs bury: from, to, and limit are mutually constrained. from+limit works. from+to works. to+limit works. All three together returns 400. And there's a second constraint that bites later: any single call returns at most the most recent 10,000 data points, regardless of how wide your range is.</p>
 <p>It has been revealed that let's pin down the failure so it's not folklore. The code below is the minimal reproduction — no retry logic, no abstractions.</p>
-<p>The message varies and is never "you sent too many parameters." That's the trap: the API validates combinations, not individual fields, and the error text doesn't say which combination it rejected.</p>
-<p>According to recent reports, one more detail worth knowing: from and to are in seconds, but the timestamps inside the returned candle objects are also in seconds. Mixing in milliseconds (easy to do if you're used to other exchanges) silently produces empty arrays or absurd ranges rather than an error. <span style="font-size:13px;">(Related: <a href="using-mixing-hugging-face-models-with-gradio-20-219071.html" style="color:#2563eb; font-weight:600;">Using &amp; Mixing Hugging Face Models with Gradio 2.0...</a>)</span></p>
+<p>The message varies and is never "you sent too many parameters." That's the trap: the API validates combinations, not individual fields, and the error text doesn't say which combination it rejected. <span style="font-size:13px;">(Related: <a href="103-year-old-grandmother-competing-in-tekken-8-tournament-but-doe-230601.html" style="color:#2563eb; font-weight:600;">103-year-old grandmother competing in Tekken 8 tourname...</a>)</span></p>
+<p>According to recent reports, one more detail worth knowing: from and to are in seconds, but the timestamps inside the returned candle objects are also in seconds. Mixing in milliseconds (easy to do if you're used to other exchanges) silently produces empty arrays or absurd ranges rather than an error. <span style="font-size:13px;">(Related: <a href="steam-is-pitting-10-years-of-game-of-the-year-winners-against-eac-230620.html" style="color:#2563eb; font-weight:600;">Steam is pitting 10 years of Game of the Year winners a...</a>)</span></p>
 <p>In a recent development, the fix is to pick one paging axis and stick to it. from+limit is the most robust because it's forward-only: you always ask for "the next N candles starting at timestamp T," and you advance T using the data you got back.</p>
 <p>The rule: next page's from = last candle's timestamp + interval seconds. Not +1 second in general — +1 only works for the 1s interval. For 1m it's +60, for 1h it's +3600. If you use the interval length, you never re-request the boundary candle and you never skip one.</p>
 <p>A few things this loop gets right that naive versions don't:.</p>
@@ -194,20 +194,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="how-we-sped-up-transformer-inference-100x-for-api-customers-219085.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #219085. How we sped up transformer inference 100x for 🤗 API customers
+        <a href="introducing-anylanguagemodel-one-api-for-local-and-remote-llms-on-230521.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #230521. Introducing AnyLanguageModel: One API for Local and Remote LLMs on Apple Platforms
         </a>
         
-        <a href="latest-update-few-shot-learning-in-practice-gpt-neo-and-the-accel-219070.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #219070. Latest Update: Few-shot learning in practice: GPT-Neo and the 🤗 Accelerated Inference API
+        <a href="how-to-add-idempotency-keys-to-a-nodejs-api-with-postgresql-230294.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #230294. How to Add Idempotency Keys to a Node.js API with PostgreSQL
         </a>
         
-        <a href="how-to-install-and-use-the-hugging-face-unity-api-218886.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #218886. How to Install and Use the Hugging Face Unity API
+        <a href="experimenting-with-the-proposed-cross-origin-storage-api-in-trans-230243.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #230243. Experimenting with the proposed Cross-Origin Storage API in Transformers.js
         </a>
         
-        <a href="deploying-the-ai-comic-factory-using-the-inference-api-218804.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #218804. Deploying the AI Comic Factory using the Inference API
+        <a href="how-to-shut-down-a-nodejs-api-without-dropping-requests-230206.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #230206. How to Shut Down a Node.js API Without Dropping Requests
         </a>
         
     </div>

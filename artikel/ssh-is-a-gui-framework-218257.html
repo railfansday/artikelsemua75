@@ -150,13 +150,13 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-218257">"One thing about which fish know exactly nothing is water." — Marshall McLuhan.</p>
-<p>Industry observers note that SSH is a tool so ubiquitous that we've forgotten what it actually is: a multiplexed, encrypted byte stream accessible on a cross-platform rendering engine that ships on every laptop, server, and phone on earth. A number of terminal protocols have slowly added graphics, clipboard sharing (including images), notifications, mouse support, and more on top of SSH. <span style="font-size:13px;">(Related: <a href="fine-tuning-clip-with-remote-sensing-satellite-images-and-caption-219060.html" style="color:#2563eb; font-weight:600;">Fine tuning CLIP with Remote Sensing (Satellite) images...</a>)</span></p>
+<p>Industry observers note that SSH is a tool so ubiquitous that we've forgotten what it actually is: a multiplexed, encrypted byte stream accessible on a cross-platform rendering engine that ships on every laptop, server, and phone on earth. A number of terminal protocols have slowly added graphics, clipboard sharing (including images), notifications, mouse support, and more on top of SSH. <span style="font-size:13px;">(Related: <a href="industry-news-uber-eats-driver-saves-elderly-woman-after-hearing--230607.html" style="color:#2563eb; font-weight:600;">Industry News: Uber Eats driver saves elderly woman aft...</a>)</span></p>
 <p>According to recent reports, to see just how far you can push it, I've made a microVM with a desktop environment designed from the ground up to render natively over SSH. You can try it right now (no sign-up):.</p>
 <p>All terminal protocols work on data that can be passed through SSH, so typically, any terminal protocol will extend to SSH.</p>
 <p>Perhaps the most ubiquitous newly introduced terminal protocol is the Kitty Graphics Protocol, which superseded the older Sixel and iTerm2 graphics protocols. It allows for compression, client-side graphical state (via VRAM), and even animations entirely on the terminal.</p>
-<p>It has been revealed that graphics alone don't make a complete GUI, though. SSH has protocols that cover all other angles:.</p>
+<p>It has been revealed that graphics alone don't make a complete GUI, though. SSH has protocols that cover all other angles:. <span style="font-size:13px;">(Related: <a href="steam-is-pitting-10-years-of-game-of-the-year-winners-against-eac-230620.html" style="color:#2563eb; font-weight:600;">Steam is pitting 10 years of Game of the Year winners a...</a>)</span></p>
 <p>Sources indicate that notifications: OSC 99 "Rich Notifications" allow image, text, and body. OSC 777 (our first fallback) allows only text and body, and OSC 9 (our last fallback) allows only a title.</p>
-<p>We end up using a similar fallback for many things. <span style="font-size:13px;">(Related: <a href="how-to-train-a-latest-language-model-from-scratch-using-transform-219093.html" style="color:#2563eb; font-weight:600;">How to train a latest language model from scratch using...</a>)</span></p>
+<p>We end up using a similar fallback for many things.</p>
 <p>Industry observers note that A few tricks make compositing over SSH fast. Firstly, where possible, especially when streaming terminals, we simply stream them as text rather than unnecessarily streaming it via graphics. The compositor's UI framework itself cleverly overlays traditional text over carefully aligned graphics, saving bandwidth. In the case of zydra.sh, this allows us to efficiently stream the entire cloud computer's desktop UI over SSH.</p>
 <p id="sec-mid-218257">Sources indicate that next, we optimize graphics by sending a sort of "grid" of pixels. Each cell has its own updates, where the previous frame is compared to the current frame to catch and send updates, avoiding having to constantly stream the full screen. Kitty also offers both RGB and RGBA, and so by removing transparency where it's not needed, we save another 25% in bandwidth. We also track ping and other factors to determine how well the client handles the stream: lowering the resolution in select cells, especially when scrolling, to relieve pressure. We also use Kitty's client-side state to hold graphics ahead-of-time before they're displayed on screen, as well as holding repeated UI components.</p>
 <p>Sources indicate that not all terminals support all the latest terminal protocols, so the compositor must also fallback to older graphics protocols Sixel and iTerm2, and when necessary, fall back to pure textual streaming, using ASCII to replicate some UI. In the case of notifications and other protocols, multiple protocols similarly exist, which we also gracefully fallback to when needed.</p>
@@ -190,20 +190,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="cyberseceval-2-a-comprehensive-evaluation-framework-for-cybersecu-218691.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #218691. CyberSecEval 2 - A Comprehensive Evaluation Framework for Cybersecurity Risks and Capabilities of Large Language Models
+        <a href="a-fresh-framework-for-evaluating-voice-agents-eva-230376.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #230376. A Fresh Framework for Evaluating Voice Agents (EVA)
         </a>
         
-        <a href="holo1-newly-introduced-family-of-gui-automation-vlms-powering-gui-218425.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #218425. Holo1: Newly introduced family of GUI automation VLMs powering GUI agent Surfer-H
+        <a href="scarfbench-benchmarking-ai-agents-for-enterprise-java-framework-m-230227.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #230227. ScarfBench: Benchmarking AI Agents for Enterprise Java Framework Migration
         </a>
         
-        <a href="latest-update-screensuite-the-most-comprehensive-evaluation-suite-218418.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #218418. Latest Update: ScreenSuite - The most comprehensive evaluation suite for GUI Agents!
+        <a href="should-i-quit-my-job-a-decision-framework-229564.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #229564. Should I Quit My Job? A Decision Framework
         </a>
         
-        <a href="breaking-sygra-the-one-stop-framework-for-building-data-for-llms--218206.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #218206. Breaking: SyGra: The One-Stop Framework for Building Data for LLMs and SLMs
+        <a href="latest-update-from-innovation-to-impact-three-ways-school-distric-227426.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #227426. Latest Update: From innovation to impact: Three ways school districts can build a sustainable AI framework
         </a>
         
     </div>

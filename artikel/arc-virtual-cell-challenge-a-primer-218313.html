@@ -150,11 +150,11 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-218313">It has been revealed that arc Institute recently unveiled the Virtual Cell Challenge. Participants are required to train a model capable of predicting the effect of silencing a gene in a (partially) unseen cell type, a task they term context generalization. For ML engineers with little to no biology background, the jargon and required context can seem quite daunting. To encourage participation, we recapitulate the challenge in a form better suited to engineers from other disciplines.</p>
-<p>Goal Train a model to predict the effect on a cell of silencing a gene using CRISPR. <span style="font-size:13px;">(Related: <a href="how-to-train-a-latest-language-model-from-scratch-using-transform-219093.html" style="color:#2563eb; font-weight:600;">How to train a latest language model from scratch using...</a>)</span></p>
+<p>Goal Train a model to predict the effect on a cell of silencing a gene using CRISPR.</p>
 <p>Doing things in the world of atoms is expensive, laborious and error prone. What if we could test thousands of drug candidates without ever touching a petri dish? This is the goal of the virtual cell challenge — a model (most likely a neural network) that can simulate exactly what happens
 to a cell when we change some parameter. Given that tightening your feedback loop is often the best way to speed up progress,
-a model capable of doing this accurately would have significant impact. <span style="font-size:13px;">(Related: <a href="breaking-leveraging-pre-trained-language-model-checkpoints-for-en-219086.html" style="color:#2563eb; font-weight:600;">Breaking: Leveraging Pre-trained Language Model Checkpo...</a>)</span></p>
-<p>To train this neural network, we will need data. For the challenge, Arc has curated a dataset of ~300k single-cell RNA sequencing profiles. It may be worthwhile to revisit the Central Dogma before continuing. This essay will build off of this to provide the ~minimum biology knowledge you'll need for the challenge.</p>
+a model capable of doing this accurately would have significant impact.</p>
+<p>To train this neural network, we will need data. For the challenge, Arc has curated a dataset of ~300k single-cell RNA sequencing profiles. It may be worthwhile to revisit the Central Dogma before continuing. This essay will build off of this to provide the ~minimum biology knowledge you'll need for the challenge. <span style="font-size:13px;">(Related: <a href="latest-update-f1-star-max-verstappen-played-40-hours-of-gta-6-bef-230617.html" style="color:#2563eb; font-weight:600;">Latest Update: F1 star Max Verstappen played 40 hours o...</a>)</span></p>
 <p>The training set consists of a sparse matrix and some associated metadata. More specifically, we have 220k cells, and
 for each cell we have a transcriptome. This transcriptome is a sparse row vector, where each
 entry is the raw count of RNA molecules (transcripts) that the corresponding gene (our column) encodes for. Of the 220k cells,
@@ -164,7 +164,7 @@ perturbed cell.</p>
 <p>We can see that the cell with TMSB4X silenced has a greatly reduced number of transcripts compared with the control
 cells.</p>
 <p>It has been revealed that the astute among you may be wondering why you don't just measure the count of the RNA molecules before and after
-silencing the gene — why do we need the control cells at all? Unfortunately, reading the transcriptome destroys the cell, which is a problem reminiscent of the observer effect.</p>
+silencing the gene — why do we need the control cells at all? Unfortunately, reading the transcriptome destroys the cell, which is a problem reminiscent of the observer effect. <span style="font-size:13px;">(Related: <a href="among-us-player-his-mom-reveal-how-they-helped-save-kidnapped-gir-230613.html" style="color:#2563eb; font-weight:600;">Among Us player &amp; his mom reveal how they helped save k...</a>)</span></p>
 <p>Recent findings suggest that this inability to measure the cell state before and after introduces many issues, as we are forced to use a population of basal
 (a.k.a control, unperturbed) cells as a reference point. The control cells and perturbed cells are not entirely
 homogeneous even prior to the perturbation. This means that we have to now separate out our true signal, the perturbation, from
@@ -280,20 +280,20 @@ very soon, so starting with their pretrained models will be as simple as:.</p>
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="tech-report-continual-arc-218169.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #218169. Tech Report: Continual-ARC
+        <a href="latest-update-aws-adds-virtual-iphones-to-its-cloud-230064.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #230064. Latest Update: AWS adds virtual iPhones to its cloud
         </a>
         
-        <a href="arcteryxs-hollow-core-fleece-jacket-is-30-off-at-rei-right-now-217240.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #217240. Arc'teryx's Hollow-Core Fleece Jacket Is 30% Off at REI Right Now
+        <a href="how-to-proof-bread-in-the-oven-common-challenge-simple-solution-229715.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #229715. How to proof bread in the oven: Common challenge, simple solution.
         </a>
         
-        <a href="what-every-family-should-compare-before-switching-cell-phone-comp-217168.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #217168. What Every Family Should Compare Before Switching Cell Phone Companies
+        <a href="what-every-family-should-compare-before-switching-cell-phone-comp-228710.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #228710. What Every Family Should Compare Before Switching Cell Phone Companies
         </a>
         
-        <a href="how-to-cut-your-cell-phone-bill-by-1100-a-year-without-sacrificin-217167.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #217167. How to Cut Your Cell Phone Bill by $1,100 a Year (Without Sacrificing Coverage)
+        <a href="how-to-cut-your-cell-phone-bill-by-1100-a-year-without-sacrificin-228707.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #228707. How to Cut Your Cell Phone Bill by $1,100 a Year (Without Sacrificing Coverage)
         </a>
         
     </div>

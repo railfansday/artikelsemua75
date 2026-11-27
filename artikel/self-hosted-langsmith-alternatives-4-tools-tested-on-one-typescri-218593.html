@@ -151,11 +151,11 @@
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-218593">Stay up to date with AI tools, model releases, and developer workflows that matter.</p>
 <p>Weekly. Free. One click to leave.</p>
-<p>7 Day Free Trial. Cancel Anytime.</p>
-<p>Industry observers note that langSmith is closed-source and restricts self-hosting to enterprise licenses, teams that run their own LLMOps stack and want to keep traces on their own servers need an alternative. To find the best fit, we set a baseline by tracing a small TypeScript agent (equipped with two tools) in LangSmith Cloud. Then, we ran the exact same agent through Langfuse, Arize Phoenix, Opik, and AcruxCore using each platform's recommended TypeScript setup. All tests were run on November 5, 2026, and we pulled every trace back through each tool's API to verify the data. <span style="font-size:13px;">(Related: <a href="how-to-train-a-latest-language-model-from-scratch-using-transform-219093.html" style="color:#2563eb; font-weight:600;">How to train a latest language model from scratch using...</a>)</span></p>
+<p>7 Day Free Trial. Cancel Anytime. <span style="font-size:13px;">(Related: <a href="christmas-market-forced-to-cancel-after-backlash-over-ai-winter-w-230626.html" style="color:#2563eb; font-weight:600;">Christmas market forced to cancel after backlash over A...</a>)</span></p>
+<p>Industry observers note that langSmith is closed-source and restricts self-hosting to enterprise licenses, teams that run their own LLMOps stack and want to keep traces on their own servers need an alternative. To find the best fit, we set a baseline by tracing a small TypeScript agent (equipped with two tools) in LangSmith Cloud. Then, we ran the exact same agent through Langfuse, Arize Phoenix, Opik, and AcruxCore using each platform's recommended TypeScript setup. All tests were run on November 5, 2026, and we pulled every trace back through each tool's API to verify the data. <span style="font-size:13px;">(Related: <a href="tech-report-throw-a-friend-for-monsters-codes-november-2026-230625.html" style="color:#2563eb; font-weight:600;">Tech Report: Throw a Friend for Monsters codes (Novembe...</a>)</span></p>
 <p>All four alternatives successfully recreated LangSmith’s trace tree for the test prompt: a single agent span containing three LLM calls and two tool calls. The real differences between them come down to how much boilerplate code you have to write, how spans are typed, whether costs are tracked, and the overall server footprint.</p>
 <p>Why Teams Look for a LangSmith Alternative.</p>
-<p>In a recent development, langSmith remains the best choice if you already use LangChain and allow cloud hosting—it required just 25 lines of code in our test. The alternatives below are for teams that don't fit that profile. <span style="font-size:13px;">(Related: <a href="my-journey-to-a-serverless-transformers-pipeline-on-google-cloud-219077.html" style="color:#2563eb; font-weight:600;">My Journey to a serverless transformers pipeline on Goo...</a>)</span></p>
+<p>In a recent development, langSmith remains the best choice if you already use LangChain and allow cloud hosting—it required just 25 lines of code in our test. The alternatives below are for teams that don't fit that profile.</p>
 <p>To test these platforms, we built a simple customer support agent equipped with two tools:.</p>
 <p>Both tools use static fixture data to ensure every test run is identical. The agent runs a standard loop: it prompts the model, executes any requested tools, and stops once the model provides a final answer.</p>
 <p>We tested the agent with three specific prompts to see how the tracing handled different levels of complexity:.</p>
@@ -230,16 +230,16 @@
             📰 #218540. Tech Report: From User Feedback to a Better Prompt: 4 Tools Tested in TypeScript
         </a>
         
-        <a href="prompt-management-in-typescript-langsmith-vs-git-vs-3-open-source-218562.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #218562. Prompt Management in TypeScript: LangSmith vs Git vs 3 Open-Source Registries
+        <a href="how-much-latency-does-a-self-hosted-llm-gateway-add-langfuse-vs-l-230610.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #230610. How Much Latency Does a Self-Hosted LLM Gateway Add? Langfuse vs LiteLLM vs AcruxCore
         </a>
         
-        <a href="tech-report-best-ai-humanizer-tools-tested-and-compared-7-options-218547.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #218547. Tech Report: Best AI Humanizer Tools Tested and Compared: 7 Options for Web Content
+        <a href="industry-news-running-an-ai-agent-on-a-local-llm-what-i-measured--230594.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #230594. Industry News: Running an AI Agent on a Local LLM: What I Measured on One GPU
         </a>
         
-        <a href="latest-update-what-breaks-when-a-self-hosted-llm-gateway-hits-100-218466.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #218466. Latest Update: What Breaks When a Self-Hosted LLM Gateway Hits 1,000 Concurrent Streams
+        <a href="what-an-ai-marketing-agent-actually-does-and-how-to-build-a-guard-230277.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #230277. What an AI Marketing Agent Actually Does, and How to Build a Guarded One
         </a>
         
     </div>

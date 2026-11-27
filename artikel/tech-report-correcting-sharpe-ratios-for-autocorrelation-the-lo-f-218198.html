@@ -150,17 +150,17 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-218198">The Sharpe ratio's standard error formula assumes i.i.d. returns. That assumption is almost always false for real strategies: smoothed marks, overlapping holding periods, illiquid positions, and momentum effects all leave a lag-1 autocorrelation in the return series. When returns are autocorrelated, the effective sample size is smaller than the nominal one, and significance tests fire far too often. With rho = 0.2, a nominal 5% test rejects the null at 18–25% in simulation. That is not a small calibration error; it is the difference between "maybe real" and "coin flip.".</p>
-<p>The fix is cheap: correct the Sharpe ratio by the Lo factor before you run any significance test.</p>
+<p>The fix is cheap: correct the Sharpe ratio by the Lo factor before you run any significance test. <span style="font-size:13px;">(Related: <a href="latest-update-f1-star-max-verstappen-played-40-hours-of-gta-6-bef-230617.html" style="color:#2563eb; font-weight:600;">Latest Update: F1 star Max Verstappen played 40 hours o...</a>)</span></p>
 <p>Sources indicate that lo (2002) derives the asymptotic variance of the Sharpe estimator under serial dependence. For an AR(1)-style dependence with lag-1 autocorrelation rho, the corrected Sharpe is:.</p>
-<p>The rule I use: apply the correction whenever |rho| &gt; 0.1. Below that threshold the adjustment is within noise of the estimate itself, and applying it adds churn without information. Above it, ignoring the correction is a methodological error, not a modeling choice. <span style="font-size:13px;">(Related: <a href="the-reformer-pushing-the-limits-of-language-modeling-219091.html" style="color:#2563eb; font-weight:600;">The Reformer - Pushing the limits of language modeling...</a>)</span></p>
+<p>The rule I use: apply the correction whenever |rho| &gt; 0.1. Below that threshold the adjustment is within noise of the estimate itself, and applying it adds churn without information. Above it, ignoring the correction is a methodological error, not a modeling choice.</p>
 <p>The (1 - rho)/(1 + rho) factor is the AR(1) special case. For q-th order dependence, the full Lo variance uses a weighted sum of autocorrelations:.</p>
 <p>For most daily-frequency strategies, lag-1 dominates and the closed form above is enough. Use the general form when you have overlapping windows (e.g., 5-day returns sampled daily), where lag-k dependence out to k = 4 is structural, not noise.</p>
-<p>Do not eyeball this from a chart. Compute it, and compute it on the return series you actually test, not on cumulative PnL. Cumulative PnL is a random walk under the null and will show high autocorrelation regardless of the strategy.</p>
+<p>Do not eyeball this from a chart. Compute it, and compute it on the return series you actually test, not on cumulative PnL. Cumulative PnL is a random walk under the null and will show high autocorrelation regardless of the strategy. <span style="font-size:13px;">(Related: <a href="103-year-old-grandmother-competing-in-tekken-8-tournament-but-doe-230601.html" style="color:#2563eb; font-weight:600;">103-year-old grandmother competing in Tekken 8 tourname...</a>)</span></p>
 <p>Two practical checks before you trust the number:.</p>
 <p>Keep the correction in one place so every downstream test uses the same number.</p>
 <p>Then wire it into your evaluation path:.</p>
 <p>The SharpeReport object carries both numbers and a flag. Log the flag. If a strategy's headline Sharpe only survives because the correction was never applied, you want that visible in the report, not buried in a notebook.</p>
-<p>Industry observers note that the point estimate correction is what people remember, but the test is where the false positives come from. The corrected Sharpe has standard error approximately:. <span style="font-size:13px;">(Related: <a href="simple-considerations-for-simple-people-building-fancy-neural-net-219080.html" style="color:#2563eb; font-weight:600;">Simple considerations for simple people building fancy ...</a>)</span></p>
+<p>Industry observers note that the point estimate correction is what people remember, but the test is where the false positives come from. The corrected Sharpe has standard error approximately:.</p>
 <p>Sources indicate that note the direction: positive autocorrelation inflates the standard error by the same factor that deflates the point estimate. Both effects push you toward "not significant," which is the honest conclusion. A quick t-statistic:.</p>
 <p id="sec-mid-218198">Run this on raw and corrected Sharpe with the same rho and the same n. If the raw version clears 3.0 and the corrected one does not, the strategy does not clear 3.0.</p>
 <p>Negative autocorrelation is the less-discussed case, and it is worth walking through because the correction moves the number up, which invites overconfidence.</p>
@@ -199,20 +199,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="latest-update-few-shot-learning-in-practice-gpt-neo-and-the-accel-219070.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #219070. Latest Update: Few-shot learning in practice: GPT-Neo and the 🤗 Accelerated Inference API
+        <a href="tech-report-throw-a-friend-for-monsters-codes-november-2026-230625.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #230625. Tech Report: Throw a Friend for Monsters codes (November 2026)
         </a>
         
-        <a href="tech-report-deploy-hugging-face-models-easily-with-amazon-sagemak-219068.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #219068. Tech Report: Deploy Hugging Face models easily with Amazon SageMaker
+        <a href="tech-report-one-piece-chapter-1200-release-date-major-spoilers-230624.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #230624. Tech Report: One Piece Chapter 1200: Release date & major spoilers
         </a>
         
-        <a href="tech-report-introducing-the-data-measurements-tool-an-interactive-219053.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #219053. Tech Report: Introducing the Data Measurements Tool: an Interactive Tool for Looking at Datasets
+        <a href="tech-report-over-60k-raised-for-famous-station-cat-after-he-sudde-230612.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #230612. Tech Report: Over $60k raised for famous station cat after he suddenly falls ill
         </a>
         
-        <a href="tech-report-predicting-and-detecting-failures-how-azure-strengthe-219048.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #219048. Tech Report: Predicting and detecting failures: How Azure strengthens reliability for mission-critical workloads
+        <a href="tech-report-mechs-vs-kaijus-ragdoll-codes-november-2026-230609.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #230609. Tech Report: Mechs vs Kaiju’s Ragdoll codes (November 2026)
         </a>
         
     </div>

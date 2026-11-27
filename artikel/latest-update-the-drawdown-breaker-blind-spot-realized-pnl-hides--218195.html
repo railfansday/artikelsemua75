@@ -150,11 +150,11 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-218195">Sources indicate that most drawdown guards are built on a simple, reasonable-sounding premise: track losses, and when losses pile up, stop trading. The implementation almost always looks at the same number — realized PnL. A trade closes, the result is booked, the counter increments. Three losses in a row? Cool off. Daily loss limit hit? Flatten and stop.</p>
-<p>The problem is that this guard is blind to the exact moment it matters most: while positions are open and bleeding. An unrealized loss of 4% sitting in three open positions is invisible to a realized-PnL guard. The counter still reads zero. Every safety number is green. Then the positions close — and the drawdown "suddenly" appears, fully formed, in one tick of the counter. <span style="font-size:13px;">(Related: <a href="hugging-face-reads-feb-2021-long-range-transformers-219079.html" style="color:#2563eb; font-weight:600;">Hugging Face Reads, Feb. 2021 - Long-range Transformers...</a>)</span></p>
-<p>This post dissects the blind spot, walks through a scenario where every guard reads fine while the account is drowning, and presents a dual-viewport design: realized drawdown and pool-wide mark-to-market unrealized PnL tracked separately, with the unrealized view gating new entries.</p>
+<p>The problem is that this guard is blind to the exact moment it matters most: while positions are open and bleeding. An unrealized loss of 4% sitting in three open positions is invisible to a realized-PnL guard. The counter still reads zero. Every safety number is green. Then the positions close — and the drawdown "suddenly" appears, fully formed, in one tick of the counter. <span style="font-size:13px;">(Related: <a href="tech-report-over-60k-raised-for-famous-station-cat-after-he-sudde-230612.html" style="color:#2563eb; font-weight:600;">Tech Report: Over $60k raised for famous station cat af...</a>)</span></p>
+<p>This post dissects the blind spot, walks through a scenario where every guard reads fine while the account is drowning, and presents a dual-viewport design: realized drawdown and pool-wide mark-to-market unrealized PnL tracked separately, with the unrealized view gating new entries. <span style="font-size:13px;">(Related: <a href="christmas-market-forced-to-cancel-after-backlash-over-ai-winter-w-230626.html" style="color:#2563eb; font-weight:600;">Christmas market forced to cancel after backlash over A...</a>)</span></p>
 <p>Consider a typical consecutive-loss breaker:.</p>
 <p>Sources indicate that this code is correct for what it measures. The problem is what it doesn't measure. on_trade_closed only fires when a trade closes. Between the open and the close, consecutive_losses and realized_pnl_today are frozen. If you have five positions open and all five are down 1.5% each, the breaker sees zero losses, zero realized drawdown, and happily approves a sixth entry.</p>
-<p>The guard is not wrong. It is answering a different question than the one you think you're asking. "How much have I lost?" and "How much am I currently down?" are different quantities, and the gap between them is where accounts die. <span style="font-size:13px;">(Related: <a href="how-to-generate-text-using-different-decoding-methods-for-languag-219092.html" style="color:#2563eb; font-weight:600;">How to generate text: using different decoding methods ...</a>)</span></p>
+<p>The guard is not wrong. It is answering a different question than the one you think you're asking. "How much have I lost?" and "How much am I currently down?" are different quantities, and the gap between them is where accounts die.</p>
 <p>It's not laziness. Realized PnL is easy: it's a single scalar that updates on a discrete event. Unrealized PnL is a moving target that requires a mark price per position, updates continuously, and has to handle stale quotes, funding, and partial fills. The realized-only guard is the 80% solution that ships in an afternoon. It's just missing the 20% that contains the worst days.</p>
 <p>Industry observers note that here's the concrete version. Suppose the account is 100,000 units of quote currency, the consecutive-loss breaker is set to 3, and the daily loss limit is 2%. Position sizing is 20,000 notional per entry, so a 1.5% adverse move on a position is a 300-unit unrealized loss (0.3% of equity).</p>
 <p>09:30 — Two positions open. Both drift against you. Unrealized: −600. Realized today: 0. consecutive_losses: 0. Breaker: open for business.</p>
@@ -198,20 +198,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
+        <a href="the-screen-time-debates-blind-spot-227449.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #227449. The screen-time debate’s blind spot
+        </a>
+        
+        <a href="paid-search-has-an-ai-blind-spot-iab-blueprint-notes-a-claim-is-n-227346.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #227346. Paid Search Has An AI Blind Spot – IAB Blueprint Notes A Claim Is Not Credit via @sejournal, @gregjarboe
+        </a>
+        
         <a href="the-haywood-securities-case-exposes-a-blind-spot-in-compliance-te-218176.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #218176. The Haywood Securities Case Exposes a Blind Spot in Compliance Technology
         </a>
         
-        <a href="tech-report-the-screen-time-debates-blind-spot-215877.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #215877. Tech Report: The screen-time debate’s blind spot
-        </a>
-        
-        <a href="tech-report-this-light-powered-ai-can-spot-deepfakes-with-nearly--218411.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #218411. Tech Report: This light-powered AI can spot deepfakes with nearly 98% accuracy
-        </a>
-        
-        <a href="ai-powered-bionic-eye-breakthrough-could-help-the-blind-see-again-218368.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #218368. AI-powered bionic eye breakthrough could help the blind see again
+        <a href="rackspace-pulls-plug-on-spot-cloud-service-after-security-breach-230081.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #230081. Rackspace pulls plug on Spot cloud service after security breach
         </a>
         
     </div>

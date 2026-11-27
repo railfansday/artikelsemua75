@@ -150,10 +150,10 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-218300">Reduce Parquet file upload and download times on Hugging Face Hub by leveraging the newly introduced Xet storage layer and Apache Arrow’s Parquet Content-Defined Chunking (CDC) feature enabling more efficient and scalable data workflows.</p>
-<p>TL;DR: Parquet Content-Defined Chunking (CDC) is now available in PyArrow and Pandas, enabling efficient deduplication of Parquet files on content-addressable storage systems like Hugging Face's Xet storage layer. CDC dramatically reduces data transfer and storage costs by uploading or downloading only the changed data chunks. Enable CDC by passing the use_content_defined_chunking argument:. <span style="font-size:13px;">(Related: <a href="faster-tensorflow-models-in-hugging-face-transformers-219083.html" style="color:#2563eb; font-weight:600;">Faster TensorFlow models in Hugging Face Transformers...</a>)</span></p>
-<p>Apache Parquet is a columnar storage format that is widely used in the data engineering community. <span style="font-size:13px;">(Related: <a href="course-launch-community-event-219056.html" style="color:#2563eb; font-weight:600;">Course Launch Community Event...</a>)</span></p>
+<p>TL;DR: Parquet Content-Defined Chunking (CDC) is now available in PyArrow and Pandas, enabling efficient deduplication of Parquet files on content-addressable storage systems like Hugging Face's Xet storage layer. CDC dramatically reduces data transfer and storage costs by uploading or downloading only the changed data chunks. Enable CDC by passing the use_content_defined_chunking argument:. <span style="font-size:13px;">(Related: <a href="find-orphan-pages-and-buried-content-build-an-internal-link-graph-230604.html" style="color:#2563eb; font-weight:600;">Find Orphan Pages and Buried Content: Build an Internal...</a>)</span></p>
+<p>Apache Parquet is a columnar storage format that is widely used in the data engineering community.</p>
 <p>As of today, Hugging Face hosts nearly 21 PB of datasets, with Parquet files alone accounting for over 4 PB of that storage. Optimizing Parquet storage is therefore a high priority. Hugging Face has introduced a fresh storage layer called Xet that leverages content-defined chunking to efficiently deduplicate chunks of data reducing storage costs and improving download/upload speeds.</p>
-<p>Recent findings suggest that while Xet is format agnostic, Parquet's layout and column-chunk (data page) based compression can produce entirely different byte-level representations for data with minor changes, leading to suboptimal deduplication performance. To address this, the Parquet files should be written in a way that minimizes the byte-level differences between similar data, which is where content-defined chunking (CDC) comes into play.</p>
+<p>Recent findings suggest that while Xet is format agnostic, Parquet's layout and column-chunk (data page) based compression can produce entirely different byte-level representations for data with minor changes, leading to suboptimal deduplication performance. To address this, the Parquet files should be written in a way that minimizes the byte-level differences between similar data, which is where content-defined chunking (CDC) comes into play. <span style="font-size:13px;">(Related: <a href="runaway-horse-visits-mcdonalds-before-leading-police-on-neighborh-230593.html" style="color:#2563eb; font-weight:600;">Runaway horse visits McDonald’s before leading police o...</a>)</span></p>
 <p>Let's explore the performance benefits of the new Parquet CDC feature used alongside Hugging Face's Xet storage layer.</p>
 <p>For demonstration purposes, we will use a manageable sized subset of OpenOrca dataset.</p>
 <p>Since pyarrow&gt;=21.0.0 we can use Hugging Face URIs in the pyarrow functions to directly read and write parquet (and other file formats) files to the Hub using the hf:// URI scheme.</p>
@@ -229,20 +229,20 @@ CSV functions, incremental Parquet writer or reading only the parquet metadata:.
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="latest-update-content-strategy-behavior-backed-ads-and-industry-n-215986.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #215986. Latest Update: Content Strategy, Behavior-Backed Ads, and Industry News
+        <a href="tech-report-content-strategy-behavior-backed-ads-and-industry-new-227582.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #227582. Tech Report: Content Strategy, Behavior-Backed Ads, and Industry News
         </a>
         
-        <a href="instagram-content-workflow-drawing-fans-to-your-brand-and-industr-215961.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #215961. Instagram Content Workflow, Drawing Fans to Your Brand, and Industry News
+        <a href="instagram-content-workflow-drawing-fans-to-your-brand-and-industr-227563.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #227563. Instagram Content Workflow, Drawing Fans to Your Brand, and Industry News
         </a>
         
-        <a href="industry-news-train-a-sentence-embedding-model-with-1b-training-p-219058.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #219058. Industry News: Train a Sentence Embedding Model with 1B Training Pairs
+        <a href="industry-news-pinterest-senior-product-manager-deceptive-content-227284.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #227284. Industry News: Pinterest: Senior Product Manager, Deceptive Content
         </a>
         
-        <a href="industry-news-gradio-is-joining-hugging-face-219047.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #219047. Industry News: Gradio is joining Hugging Face!
+        <a href="industry-news-fascism-mixed-into-cringey-online-content-is-easy-t-225922.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #225922. Industry News: Fascism mixed into cringey online content is easy to mock – but no less dangerous
         </a>
         
     </div>

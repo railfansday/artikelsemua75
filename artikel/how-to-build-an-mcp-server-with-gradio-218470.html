@@ -150,8 +150,8 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-218470">Recent findings suggest that updated! (September 2025) This post has been updated with the latest Gradio MCP features including Resources, Prompts, enhanced authentication, and many more.</p>
-<p>Gradio is a Python library used by more than 1 million developers each month to build interfaces for machine learning models. Beyond just creating UIs, Gradio also exposes API capabilities and — now! — Gradio apps can be debuted Model Context Protocol (MCP) servers for LLMs. This means that your Gradio app, whether it's an image generator or a tax calculator or something else entirely, can be called as a tool by an LLM. <span style="font-size:13px;">(Related: <a href="how-to-train-a-latest-language-model-from-scratch-using-transform-219093.html" style="color:#2563eb; font-weight:600;">How to train a latest language model from scratch using...</a>)</span></p>
-<p>This guide will show you how to use Gradio to build an MCP server in just a few lines of Python. <span style="font-size:13px;">(Related: <a href="using-mixing-hugging-face-models-with-gradio-20-219071.html" style="color:#2563eb; font-weight:600;">Using &amp; Mixing Hugging Face Models with Gradio 2.0...</a>)</span></p>
+<p>Gradio is a Python library used by more than 1 million developers each month to build interfaces for machine learning models. Beyond just creating UIs, Gradio also exposes API capabilities and — now! — Gradio apps can be debuted Model Context Protocol (MCP) servers for LLMs. This means that your Gradio app, whether it's an image generator or a tax calculator or something else entirely, can be called as a tool by an LLM. <span style="font-size:13px;">(Related: <a href="find-orphan-pages-and-buried-content-build-an-internal-link-graph-230604.html" style="color:#2563eb; font-weight:600;">Find Orphan Pages and Buried Content: Build an Internal...</a>)</span></p>
+<p>This guide will show you how to use Gradio to build an MCP server in just a few lines of Python.</p>
 <p>If not already installed, please install Gradio with the MCP extra:.</p>
 <p>This will install the necessary dependencies, including the mcp package. You'll also need an LLM application that supports tool calling using the MCP protocol, such as Claude Desktop, Cursor, or Cline (these are known as "MCP Clients").</p>
 <p>It has been revealed that an MCP server is a standardized way to expose tools so that they can be used by LLMs. An MCP server can provide LLMs with all kinds of additional capabilities, such as the ability to generate or edit images, synthesize audio, or perform specific calculations such as prime factorize numbers.</p>
@@ -161,7 +161,7 @@
 <p>The MCP server will be accessible at:.</p>
 <p>Gradio automatically converts the letter_counter function into an MCP tool that can be used by LLMs. The docstring of the function is used to generate the description of the tool and its parameters.</p>
 <p>All you need to do is add this URL endpoint to your MCP Client (e.g., Cursor, Cline, or Tiny Agents), which typically means pasting this config in the settings:.</p>
-<p>Some MCP Clients, notably Claude Desktop, do not yet support SSE-based MCP Servers. In those cases, you can use a tool such as mcp-remote. First install Node.js. Then, add the following to your own MCP Client config:.</p>
+<p>Some MCP Clients, notably Claude Desktop, do not yet support SSE-based MCP Servers. In those cases, you can use a tool such as mcp-remote. First install Node.js. Then, add the following to your own MCP Client config:. <span style="font-size:13px;">(Related: <a href="show-dont-certify-how-to-prepare-for-your-first-data-analyst-job-230614.html" style="color:#2563eb; font-weight:600;">Show, Don't Certify: How to Prepare for Your First Data...</a>)</span></p>
 <p>(By the way, you can find the exact config to copy-paste by going to the "View API" link in the footer of your Gradio app, and then clicking on "MCP").</p>
 <p>In a recent development, gradio has recently added several powerful features to MCP servers. For a detailed overview of five major improvements including seamless local file support, real-time progress notifications, OpenAPI to MCP transformation, enhanced authentication, and customizable tool descriptions, check out our dedicated blog post: Five Major Improvements to Gradio MCP Servers.</p>
 <p>Recent findings suggest that beyond tools, MCP supports resources (for exposing data) and prompts (for defining reusable templates). Gradio provides decorators to easily create MCP servers with all three capabilities. You can read more in our dedicated guide, here:.</p>
@@ -219,16 +219,16 @@
             📰 #218364. Power BI MCP server: how to brief an AI agent to build accurate measures
         </a>
         
+        <a href="we-swapped-our-mcp-servers-base-image-and-went-from-36-reported-v-229797.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #229797. We Swapped Our MCP Server's Base Image and Went From 36 Reported Vulnerabilities to Zero
+        </a>
+        
         <a href="tech-report-upskill-your-llms-with-gradio-mcp-servers-218357.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #218357. Tech Report: Upskill your LLMs With Gradio MCP Servers
         </a>
         
         <a href="building-the-hugging-face-mcp-server-218349.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #218349. Building the Hugging Face MCP Server
-        </a>
-        
-        <a href="five-substantial-improvements-to-gradio-mcp-servers-218324.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #218324. Five Substantial Improvements to Gradio MCP Servers
         </a>
         
     </div>

@@ -142,8 +142,8 @@
 <div class="article-body" style="line-height: 1.8;">
 <p>Enterprise teams adopting Gemini Enterprise are increasingly building custom Model Context Protocol (MCP) servers to connect AI agents with internal APIs, databases, and business workflows. Google Cloud Run is a natural fit for hosting these lightweight StreamableHTTP MCP servers: it scales automatically, manages TLS certificates out of the box, and integrates natively with Cloud IAM.</p>
 <p>However, moving a custom MCP server from an initial prototype to an enterprise production environment immediately introduces three real-world security and networking challenges:.</p>
-<p>Here is how you can solve all three challenges using Egress Agent Gateway, Private Service Connect (PSC), and FQDN-scoped Private Cloud DNS, complete with a runnable reference implementation and setup scripts on GitHub. <span style="font-size:13px;">(Related: <a href="how-to-train-a-latest-language-model-from-scratch-using-transform-219093.html" style="color:#2563eb; font-weight:600;">How to train a latest language model from scratch using...</a>)</span></p>
-<p>Connecting Gemini Enterprise (which runs in a Google-managed tenant project) to an internal serverless Cloud Run MCP server requires bridging two network hops and one scoped DNS lookup:. <span style="font-size:13px;">(Related: <a href="my-journey-to-a-serverless-transformers-pipeline-on-google-cloud-219077.html" style="color:#2563eb; font-weight:600;">My Journey to a serverless transformers pipeline on Goo...</a>)</span></p>
+<p>Here is how you can solve all three challenges using Egress Agent Gateway, Private Service Connect (PSC), and FQDN-scoped Private Cloud DNS, complete with a runnable reference implementation and setup scripts on GitHub. <span style="font-size:13px;">(Related: <a href="how-much-latency-does-a-self-hosted-llm-gateway-add-langfuse-vs-l-230610.html" style="color:#2563eb; font-weight:600;">How Much Latency Does a Self-Hosted LLM Gateway Add? La...</a>)</span></p>
+<p>Connecting Gemini Enterprise (which runs in a Google-managed tenant project) to an internal serverless Cloud Run MCP server requires bridging two network hops and one scoped DNS lookup:. <span style="font-size:13px;">(Related: <a href="find-orphan-pages-and-buried-content-build-an-internal-link-graph-230604.html" style="color:#2563eb; font-weight:600;">Find Orphan Pages and Buried Content: Build an Internal...</a>)</span></p>
 <p style="margin-top: 25px;">
 <a href="https://developers.googleblog.com/how-to-securely-connect-internal-cloud-run-mcp-servers-to-gemini-enterprise/" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
                         → Read original article
@@ -167,20 +167,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
+        <a href="latest-update-run-ai-workloads-on-any-cloud-store-on-hugging-face-230214.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #230214. Latest Update: Run AI workloads on any cloud, store on Hugging Face: zero-egress storage with SkyPilot
+        </a>
+        
+        <a href="a-hrefhttpswwwfiercehealthcarecomhealth-techweekly-rundown-waysta-225462.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #225462. <a href="https://www.fiercehealthcare.com/health-tech/weekly-rundown-waystar-integrates-google-clouds-gemini-healthcare-oracle-debuts-ai" hreflang="en">Weekly Rundown: Waystar integrates into Google Cloud’s Gemini for healthcare; Oracle debuts AI agents for clinical trials</a>
+        </a>
+        
+        <a href="google-will-make-ai-agents-use-its-mcp-servers-the-gmail-one-cant-223136.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #223136. Google Will Make AI Agents Use Its MCP Servers. The Gmail One Can't Send Email
+        </a>
+        
         <a href="top-4-mcp-servers-for-marketers-features-use-cases-and-limitation-218697.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #218697. Top 4 MCP Servers for Marketers: Features, Use Cases, and Limitations
-        </a>
-        
-        <a href="tech-report-upskill-your-llms-with-gradio-mcp-servers-218357.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #218357. Tech Report: Upskill your LLMs With Gradio MCP Servers
-        </a>
-        
-        <a href="breaking-how-to-handle-user-connector-and-agent-auth-in-gemini-en-218350.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #218350. Breaking: How to handle user, connector, and agent auth in Gemini Enterprise with a custom UI
-        </a>
-        
-        <a href="five-substantial-improvements-to-gradio-mcp-servers-218324.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #218324. Five Substantial Improvements to Gradio MCP Servers
         </a>
         
     </div>

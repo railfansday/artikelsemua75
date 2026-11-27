@@ -150,11 +150,11 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-218309">Stay up to date with AI tools, model releases, and developer workflows that matter.</p>
-<p>In a recent development, weekly. Free. One click to leave.</p>
-<p>7 Day Free Trial. Cancel Anytime.</p>
-<p>It has been revealed that when one person chats with a local model, it barely matters which server you run. On one RTX 3090 with the same model file, Ollama, LM Studio and llama.cpp wrote text within about 10 percent of each other, because all three run llama.cpp underneath. That changes when your app sends several requests at once. With four requests, the best setup produced more than three times as much text as the worst, and the cause was a default setting, not the engine. With 32 requests, vLLM produced 2.5 times as much text as the best llama.cpp setup I tested. <span style="font-size:13px;">(Related: <a href="how-to-train-a-latest-language-model-from-scratch-using-transform-219093.html" style="color:#2563eb; font-weight:600;">How to train a latest language model from scratch using...</a>)</span></p>
+<p>In a recent development, weekly. Free. One click to leave. <span style="font-size:13px;">(Related: <a href="ai-for-game-development-creating-a-farming-game-in-5-days-part-1-230595.html" style="color:#2563eb; font-weight:600;">AI for Game Development: Creating a Farming Game in 5 D...</a>)</span></p>
+<p>7 Day Free Trial. Cancel Anytime. <span style="font-size:13px;">(Related: <a href="christmas-market-forced-to-cancel-after-backlash-over-ai-winter-w-230626.html" style="color:#2563eb; font-weight:600;">Christmas market forced to cancel after backlash over A...</a>)</span></p>
+<p>It has been revealed that when one person chats with a local model, it barely matters which server you run. On one RTX 3090 with the same model file, Ollama, LM Studio and llama.cpp wrote text within about 10 percent of each other, because all three run llama.cpp underneath. That changes when your app sends several requests at once. With four requests, the best setup produced more than three times as much text as the worst, and the cause was a default setting, not the engine. With 32 requests, vLLM produced 2.5 times as much text as the best llama.cpp setup I tested.</p>
 <p>This article puts those numbers side by side and shows which setting to change for your app.</p>
-<p>I ran every test on one machine. The full write-ups, with every command and the raw results, are on homebrewserver.club. <span style="font-size:13px;">(Related: <a href="breaking-the-age-of-machine-learning-as-code-has-arrived-219059.html" style="color:#2563eb; font-weight:600;">Breaking: The Age of Machine Learning As Code Has Arriv...</a>)</span></p>
+<p>I ran every test on one machine. The full write-ups, with every command and the raw results, are on homebrewserver.club.</p>
 <p>Every server got the same requests:.</p>
 <p>Ollama, LM Studio and llama.cpp loaded the exact same GGUF files, checked by SHA-256. vLLM cannot run GGUF files well, so it loaded a 4-bit AWQ file of the same model (9.1 GB). Answer quality was not compared.</p>
 <p>The tests ran between 8 and 16 November 2026, and speeds on this machine varied by a few percent from one day to the next. Treat a gap under about 5% as a tie. All of this is one consumer GPU and one model family, so read the numbers as a guide to how the servers behave, not as a ranking for your hardware.</p>
@@ -218,20 +218,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="ggml-and-llamacpp-join-hf-to-ensure-the-long-term-progress-of-loc-207528.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #207528. GGML and llama.cpp join HF to ensure the long-term progress of Local AI
+        <a href="industry-news-running-an-ai-agent-on-a-local-llm-what-i-measured--230594.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #230594. Industry News: Running an AI Agent on a Local LLM: What I Measured on One GPU
         </a>
         
-        <a href="industry-news-stackllama-a-hands-on-guide-to-train-llama-with-rlh-218896.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #218896. Industry News: StackLLaMA: A hands-on guide to train LLaMA with RLHF
+        <a href="ggml-and-llamacpp-join-hf-to-ensure-the-long-term-progress-of-loc-230409.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #230409. GGML and llama.cpp join HF to ensure the long-term progress of Local AI
         </a>
         
-        <a href="industry-news-make-llm-fine-tuning-2x-faster-with-unsloth-and-trl-218778.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #218778. Industry News: Make LLM Fine-tuning 2x faster with Unsloth and 🤗 TRL
+        <a href="new-in-llamacpp-model-management-230484.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #230484. New in llama.cpp: Model Management
         </a>
         
-        <a href="welcome-llama-3-metas-new-open-llm-218715.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #218715. Welcome Llama 3 - Meta's new open LLM
+        <a href="industry-news-introducing-sygra-studio-230429.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #230429. Industry News: Introducing SyGra Studio
         </a>
         
     </div>

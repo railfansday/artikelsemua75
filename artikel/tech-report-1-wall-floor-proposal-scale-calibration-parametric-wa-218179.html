@@ -150,11 +150,11 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-218179">When someone snaps a photo of a hand-drawn floor plan or traces an existing PDF listing sheet, the geometry starts out in arbitrary pixel coordinates. Turning that rough sketch into true-scale architectural inches (1/4" = 1'-0") and then letting the user type exact laser-measure dimensions—without warping walls into trapezoids, stretching a 30-inch range into a 41-inch monster, or folding an adjacent bathroom inside-out—is one of the trickiest UX and geometry problems in browser-based CAD.</p>
-<p>In PlanCaliber, all three operations—1-wall scale calibration, centerline/clear-interior parametric wall resizing, and collinear wall-chain dragging—run deterministically in pure TypeScript with zero external geometry kernels (src/lib/cad/healer.ts). <span style="font-size:13px;">(Related: <a href="introducing-optimum-the-optimization-toolkit-for-transformers-at--219065.html" style="color:#2563eb; font-weight:600;">Introducing Optimum: The Optimization Toolkit for Trans...</a>)</span></p>
-<p>Here is the exact math and edge-case protection behind each one.</p>
-<p>After tracing a sketch or PDF, a homeowner or appraiser rarely knows the exact pixel-to-inch scale—they know one real tape-measure reading (for example, "this exterior garage wall is 22'-0"").</p>
+<p>In PlanCaliber, all three operations—1-wall scale calibration, centerline/clear-interior parametric wall resizing, and collinear wall-chain dragging—run deterministically in pure TypeScript with zero external geometry kernels (src/lib/cad/healer.ts).</p>
+<p>Here is the exact math and edge-case protection behind each one. <span style="font-size:13px;">(Related: <a href="industry-news-uber-eats-driver-saves-elderly-woman-after-hearing--230607.html" style="color:#2563eb; font-weight:600;">Industry News: Uber Eats driver saves elderly woman aft...</a>)</span></p>
+<p>After tracing a sketch or PDF, a homeowner or appraiser rarely knows the exact pixel-to-inch scale—they know one real tape-measure reading (for example, "this exterior garage wall is 22'-0""). <span style="font-size:13px;">(Related: <a href="amazon-responds-after-delivery-drone-smashes-into-garage-like-a-s-230615.html" style="color:#2563eb; font-weight:600;">Amazon responds after delivery drone smashes into garag...</a>)</span></p>
 <p>Naively multiplying every number in the document by factor = targetLengthIn / curLen breaks physical reality:.</p>
-<p>Instead, rescalePlanToWall anchors scaling at the plan's bounding-box origin (ox, oy), scales coordinates uniformly, preserves wall thicknesses and fixed appliance sizes, and snaps architectural openings to 2" rough increments and modular cabinets to 3" stock increments:. <span style="font-size:13px;">(Related: <a href="scaling-up-bert-inference-on-cpu-part-1-219072.html" style="color:#2563eb; font-weight:600;">Scaling-up BERT Inference on CPU (Part 1)...</a>)</span></p>
+<p>Instead, rescalePlanToWall anchors scaling at the plan's bounding-box origin (ox, oy), scales coordinates uniformly, preserves wall thicknesses and fixed appliance sizes, and snaps architectural openings to 2" rough increments and modular cabinets to 3" stock increments:.</p>
 <p>Why anchor around (ox, oy) rather than (0, 0)? Because scaling around the world origin flings the floor plan off-screen if the user panned away from (0, 0) before calibrating. Anchoring to the plan's minimum corner keeps the drawing planted right in the viewport.</p>
 <p>Recent findings suggest that when a contractor reads a blueprint, walls are typically dimensioned centerline-to-centerline or exterior face-to-face. When a homeowner measures a room with a laser tape measure, they measure clear interior drywall-to-drywall.</p>
 <p>If a user types 12'-0" (144") in clear mode on a bedroom wall framed between a 6" exterior wall and a 4.5" interior partition, the true CAD centerline span is not 144"—it is:.</p>
@@ -191,20 +191,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="tech-report-from-user-feedback-to-a-better-prompt-4-tools-tested--218540.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #218540. Tech Report: From User Feedback to a Better Prompt: 4 Tools Tested in TypeScript
+        <a href="tech-report-another-bill-to-release-epstein-files-headed-to-house-226486.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #226486. Tech Report: Another bill to release Epstein files headed to House floor
         </a>
         
-        <a href="tech-report-the-terminus-of-the-cdt-is-now-behind-a-border-wall-h-216713.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #216713. Tech Report: The Terminus of the CDT is Now Behind a Border Wall. Here’s What Hikers Can Expect
+        <a href="tech-report-germanys-economic-model-is-broken-and-no-one-has-a-pr-225751.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #225751. Tech Report: Germany's Economic Model Is Broken, and No One Has a Proposal B
         </a>
         
-        <a href="tech-report-footy-headlines-puma-to-deliver-pure-and-traditional--210180.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #210180. Tech Report: Footy Headlines: Puma to deliver ‘pure and traditional’ final home shirt for Milan in 2027-28
+        <a href="tech-report-engwe-eagle-e-dirt-bike-upcoming-799-low-m20-30-e-bik-224725.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #224725. Tech Report: ENGWE Eagle e-dirt bike upcoming $799 low + M20 3.0 e-bike $647 off, Anker eufy Wall Light Cam S4 new lows from $150, more
         </a>
         
-        <a href="tech-report-manchester-uniteds-34-goal-defensive-record-demonstra-210150.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #210150. Tech Report: Manchester United’s 34-goal defensive record demonstrates scale of Pochettino’s task
+        <a href="does-bill-ackman-know-something-wall-street-doesnt-the-billionair-223000.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #223000. Does Bill Ackman Know Something Wall Street Doesn't? The Billionaire Investor Keeps Buying a Tech Stock That's Now Down 44% Over the Past Year.
         </a>
         
     </div>

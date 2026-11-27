@@ -1,85 +1,85 @@
 {
-  "generatedAt": "2026-11-27T02:55:21.673865",
-  "totalArticles": 12442,
+  "generatedAt": "2026-11-27T17:03:00.558827",
+  "totalArticles": 12533,
   "categoryBreakdown": {
-    "General": 10232,
-    "AI & Tech": 964,
-    "Hardware & Chips": 195,
-    "Business & Policy": 501,
-    "Gadgets": 346,
-    "EV & Auto": 204
+    "AI & Tech": 965,
+    "General": 10296,
+    "Hardware & Chips": 197,
+    "EV & Auto": 200,
+    "Gadgets": 352,
+    "Business & Policy": 523
   },
   "topSources": {
     "Hugging Face": 917,
-    "Co": 863,
-    "Sciencedaily": 212,
+    "Co": 895,
+    "Sciencedaily": 215,
     "Eschoolnews": 200,
-    "Cbssports": 169,
-    "Electrek": 149,
-    "Yahoo": 145,
+    "Cbssports": 172,
+    "Electrek": 148,
+    "Yahoo": 148,
     "Dw": 144,
     "Dailymail": 135,
-    "Realworkfromanywhere": 121
+    "Realworkfromanywhere": 125
   },
   "latestHeadlines": [
     {
-      "id": 219093,
-      "title": "How to train a latest language model from scratch using Transformers and Tokenizers",
-      "url": "https://railfansday.github.io/artikelsemua75/artikel/how-to-train-a-latest-language-model-from-scratch-using-transform-219093.html",
+      "id": 230626,
+      "title": "Christmas market forced to cancel after backlash over AI winter wonderland",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/christmas-market-forced-to-cancel-after-backlash-over-ai-winter-w-230626.html",
+      "category": "AI & Tech"
+    },
+    {
+      "id": 230625,
+      "title": "Tech Report: Throw a Friend for Monsters codes (November 2026)",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/tech-report-throw-a-friend-for-monsters-codes-november-2026-230625.html",
       "category": "General"
     },
     {
-      "id": 219092,
-      "title": "How to generate text: using different decoding methods for language generation with Transformers",
-      "url": "https://railfansday.github.io/artikelsemua75/artikel/how-to-generate-text-using-different-decoding-methods-for-languag-219092.html",
+      "id": 230624,
+      "title": "Tech Report: One Piece Chapter 1200: Release date & major spoilers",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/tech-report-one-piece-chapter-1200-release-date-major-spoilers-230624.html",
       "category": "General"
     },
     {
-      "id": 219091,
-      "title": "The Reformer - Pushing the limits of language modeling",
-      "url": "https://railfansday.github.io/artikelsemua75/artikel/the-reformer-pushing-the-limits-of-language-modeling-219091.html",
+      "id": 230623,
+      "title": "Man calls police on his ex for taking back her Xbox account to play GTA 6",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/man-calls-police-on-his-ex-for-taking-back-her-xbox-account-to-pl-230623.html",
       "category": "General"
     },
     {
-      "id": 219090,
-      "title": "Block Sparse Matrices for Smaller and Faster Language Models",
-      "url": "https://railfansday.github.io/artikelsemua75/artikel/block-sparse-matrices-for-smaller-and-faster-language-models-219090.html",
+      "id": 230622,
+      "title": "EA FC 27 adds AI-generated commentary from iconic commentator",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/ea-fc-27-adds-ai-generated-commentary-from-iconic-commentator-230622.html",
+      "category": "AI & Tech"
+    },
+    {
+      "id": 230621,
+      "title": "Umamusume fans call out “shameless” knockoff packed with ads",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/umamusume-fans-call-out-shameless-knockoff-packed-with-ads-230621.html",
       "category": "General"
     },
     {
-      "id": 219089,
-      "title": "Transformer-based Encoder-Decoder Models",
-      "url": "https://railfansday.github.io/artikelsemua75/artikel/transformer-based-encoder-decoder-models-219089.html",
+      "id": 230620,
+      "title": "Steam is pitting 10 years of Game of the Year winners against each other",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/steam-is-pitting-10-years-of-game-of-the-year-winners-against-eac-230620.html",
       "category": "General"
     },
     {
-      "id": 219088,
-      "title": "Hyperparameter Search with Transformers and Ray Tune",
-      "url": "https://railfansday.github.io/artikelsemua75/artikel/hyperparameter-search-with-transformers-and-ray-tune-219088.html",
+      "id": 230619,
+      "title": "Scientists find “field” of washing machines in ocean during shipwreck hunt",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/scientists-find-field-of-washing-machines-in-ocean-during-shipwre-230619.html",
       "category": "General"
     },
     {
-      "id": 219087,
-      "title": "Porting fairseq wmt19 translation system to transformers",
-      "url": "https://railfansday.github.io/artikelsemua75/artikel/porting-fairseq-wmt19-translation-system-to-transformers-219087.html",
+      "id": 230618,
+      "title": "CD Projekt Red says The Witcher 4 will be as big a leap as GTA 6 was from GTA 5",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/cd-projekt-red-says-the-witcher-4-will-be-as-big-a-leap-as-gta-6--230618.html",
       "category": "General"
     },
     {
-      "id": 219086,
-      "title": "Breaking: Leveraging Pre-trained Language Model Checkpoints for Encoder-Decoder Models",
-      "url": "https://railfansday.github.io/artikelsemua75/artikel/breaking-leveraging-pre-trained-language-model-checkpoints-for-en-219086.html",
-      "category": "General"
-    },
-    {
-      "id": 219085,
-      "title": "How we sped up transformer inference 100x for 🤗 API customers",
-      "url": "https://railfansday.github.io/artikelsemua75/artikel/how-we-sped-up-transformer-inference-100x-for-api-customers-219085.html",
-      "category": "General"
-    },
-    {
-      "id": 219084,
-      "title": "Breaking: Fit More and Train Faster With ZeRO via DeepSpeed and FairScale",
-      "url": "https://railfansday.github.io/artikelsemua75/artikel/breaking-fit-more-and-train-faster-with-zero-via-deepspeed-and-fa-219084.html",
+      "id": 230617,
+      "title": "Latest Update: F1 star Max Verstappen played 40 hours of GTA 6 before winning Las Vegas grand prix",
+      "url": "https://railfansday.github.io/artikelsemua75/artikel/latest-update-f1-star-max-verstappen-played-40-hours-of-gta-6-bef-230617.html",
       "category": "General"
     }
   ]
