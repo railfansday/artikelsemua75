@@ -150,19 +150,19 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-207206">In a recent development, this article is adapted from a lesson in Writing Resilient CSS, the newest module in Kevin’s course, CSS Demystified. The module covers configuration options with custom properties, math functions, relative colors, :has(), style queries, and more, all put to work in practical, reusable patterns. The course is 32% off until December 2, 2026.</p>
-<p>Modifiers have been with us for a long time, often with modifier classes, but also with attribute selectors. Some common examples are things like different versions of alerts and buttons.</p>
+<p>Modifiers have been with us for a long time, often with modifier classes, but also with attribute selectors. Some common examples are things like different versions of alerts and buttons. <span style="font-size:13px;">(Related: <a href="how-to-generate-text-using-different-decoding-methods-for-languag-219092.html" style="color:#2563eb; font-weight:600;">How to generate text: using different decoding methods ...</a>)</span></p>
 <p>For a lot of use cases, either of those approaches work great, but when it comes to layout, a lot of the time we want the context of where the element is being used to control things.</p>
 <p>A card is a nice example of this, where we might have several versions.</p>
-<p>The glitch here is, if I’m using .card--compact, I probably want to do that for all the cards within a section. That can be annoying to apply to each card, but that’s rendered moot since most people are doing some sort of looping in a template like this these days.</p>
+<p>The glitch here is, if I’m using .card--compact, I probably want to do that for all the cards within a section. That can be annoying to apply to each card, but that’s rendered moot since most people are doing some sort of looping in a template like this these days. <span style="font-size:13px;">(Related: <a href="how-to-train-a-latest-language-model-from-scratch-using-transform-219093.html" style="color:#2563eb; font-weight:600;">How to train a latest language model from scratch using...</a>)</span></p>
 <p>And this works great, as long as we always want the cards to be compact.</p>
-<p>Industry observers note that however, you might put this together and send it off to the design team for approval, only for them not to like that when the compact cards are lower down the page, the smaller padding isn’t needed to create visual separation between the two sections. Instead of helping with the hierarchy, it’s simply creating a strange visual inconsistency. <span style="font-size:13px;">(Related: <a href="tech-report-ai-for-game-development-creating-a-farming-game-in-5--207646.html" style="color:#2563eb; font-weight:600;">Tech Report: AI for Game Development: Creating a Farmin...</a>)</span></p>
+<p>Industry observers note that however, you might put this together and send it off to the design team for approval, only for them not to like that when the compact cards are lower down the page, the smaller padding isn’t needed to create visual separation between the two sections. Instead of helping with the hierarchy, it’s simply creating a strange visual inconsistency.</p>
 <p>We could use something like a resize observer to try and deal with this, but we have a better tool at our disposal: Container Style Queries, which are now Baseline Newly Available.</p>
 <p>While they all start with container, for the rest of this article I interchangeable use container query or size query for a container size query, and style query for what we’re talking about here.</p>
 <p>Before we get into the good stuff, a quick look at the basics of style queries.</p>
 <p>Sources indicate that you’re probably familiar with size queries, which work similar to @media but look at the size of a container, rather than the viewport. Container style queries use the same @container at-rule as container size queries, but instead of looking at a size, they look at the value of a custom property.</p>
 <p>This reads as, “if the nearest container has --theme: high-contrast, style the .card like this.”.</p>
 <p>A couple of important notes about them:.</p>
-<p>Industry observers note that just like with size queries, style queries look at an ancestor, not the element itself. That means this won’t work:. <span style="font-size:13px;">(Related: <a href="industry-news-huggingfacehub-v10-five-years-of-building-the-found-207626.html" style="color:#2563eb; font-weight:600;">Industry News: huggingface_hub v1.0: Five Years of Buil...</a>)</span></p>
+<p>Industry observers note that just like with size queries, style queries look at an ancestor, not the element itself. That means this won’t work:.</p>
 <p>Sources indicate that the custom property needs to be set on something above the card. Sometimes this can be annoying, and it always tends to catch people out, but because of how I use them, I don’t find this to be much of a limitation.</p>
 <p>It has been revealed that if() is also on the way, and allows for style queries as well, but if() is able to see the value of custom properties on the element it’s being used. The significant difference is it can only be used for a single property, while style queries can be used for rules with multiple properties.</p>
 <p>It has been revealed that let’s take a look at a card again, first with a modifier like we might do now. To change it up, we’ll use an attribute modifier instead of a class.</p>
@@ -209,20 +209,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="critical-php-flaws-allow-code-execution-but-dont-panic-php2shell--206915.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #206915. Critical PHP Flaws Allow Code Execution, but Don't Panic 'PHP2Shell'-Style
+        <a href="ui-style-guides-218247.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #218247. UI style guides
         </a>
         
-        <a href="make-your-next-breakfast-sandwich-korean-style-for-a-major-fiber--206725.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #206725. Make Your Next Breakfast Sandwich Korean-Style For A Major Fiber & Flavor Boost
+        <a href="stop-treating-css-container-queries-like-traditional-media-querie-217772.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #217772. Stop Treating CSS Container Queries Like Traditional Media Queries
         </a>
         
-        <a href="make-a-reuben-upside-down-style-for-more-caramelized-flavor-206710.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #206710. Make A Reuben Upside Down-Style For More Caramelized Flavor
+        <a href="piolets-dor-insider-how-the-jury-works-style-debates-and-future-i-217073.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #217073. Piolets d'Or Insider: How the Jury Works, Style Debates, and Future Intends
         </a>
         
-        <a href="latest-update-give-leftover-mashed-potatoes-a-caramelized-crispy--206684.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #206684. Latest Update: Give Leftover Mashed Potatoes A Caramelized, Crispy Side With A British-Style Classic
+        <a href="the-steamiest-literotica-style-online-erotica-we-can-find-216568.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #216568. The Steamiest Literotica-Style Online Erotica We Can Find
         </a>
         
     </div>

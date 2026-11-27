@@ -150,9 +150,9 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-206858">Today we are releasing DaisyRose-27B, RadixArk’s first model, built on Qwen3.8-27B and trained with reinforcement learning using Miles. We trained it on long-horizon agent tasks with sessions up to 1M tokens, with just 1,200 curated tasks in 18 days on 144 H200 GPUs. DaisyRose-27B improves Terminal-Bench 4.1 pass@1 from 5.6% to 12.0%. Beyond Terminal-Bench 4.1, it also delivers gains on a variety of other reasoning, instruction following, and coding benchmarks.</p>
-<p>The checkpoints are available under Apache 2.0:.</p>
-<p>The model retains Qwen3.8-27B’s architecture, tokenizer, chat template, image understanding, and 256K-token context window. The longer training sessions use harness summarization to span multiple trajectories. See the model card for model properties and inference settings. <span style="font-size:13px;">(Related: <a href="ovhcloud-on-hugging-face-inference-providers-207612.html" style="color:#2563eb; font-weight:600;">OVHcloud on Hugging Face Inference Providers 🔥...</a>)</span></p>
-<p>In a recent development, we recommend serving DaisyRose-27B with SGLang and DSpark speculative decoding. The SGLang cookbook provides launch configurations for different GPUs and checkpoint formats. <span style="font-size:13px;">(Related: <a href="tech-report-ai-for-game-development-creating-a-farming-game-in-5--207646.html" style="color:#2563eb; font-weight:600;">Tech Report: AI for Game Development: Creating a Farmin...</a>)</span></p>
+<p>The checkpoints are available under Apache 2.0:. <span style="font-size:13px;">(Related: <a href="breaking-leveraging-pre-trained-language-model-checkpoints-for-en-219086.html" style="color:#2563eb; font-weight:600;">Breaking: Leveraging Pre-trained Language Model Checkpo...</a>)</span></p>
+<p>The model retains Qwen3.8-27B’s architecture, tokenizer, chat template, image understanding, and 256K-token context window. The longer training sessions use harness summarization to span multiple trajectories. See the model card for model properties and inference settings. <span style="font-size:13px;">(Related: <a href="how-to-train-a-latest-language-model-from-scratch-using-transform-219093.html" style="color:#2563eb; font-weight:600;">How to train a latest language model from scratch using...</a>)</span></p>
+<p>In a recent development, we recommend serving DaisyRose-27B with SGLang and DSpark speculative decoding. The SGLang cookbook provides launch configurations for different GPUs and checkpoint formats.</p>
 <p>After starting the server with the served model name DaisyRose-27B on port 30000, you can send a request using the OpenAI Python client:.</p>
 <p>Sources indicate that the model thinks before answering by default. Its reasoning is returned in reasoning_content, and its final answer in content. These settings follow the model card’s quickstart.</p>
 <p>According to recent reports, daisyRose-27B scores higher than the original Qwen3.8-27B model on every benchmark above. The largest gain is on Terminal Bench 4.1, where pass@1 rises from 5.6% to 12.0%.</p>
@@ -197,20 +197,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="trl-v10-post-training-library-built-to-move-with-the-field-207481.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #207481. TRL v1.0: Post-Training Library Built to Move with the Field
+        <a href="breaking-improving-hugging-face-training-efficiency-through-packi-218638.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #218638. Breaking: Improving Hugging Face Training Efficiency Through Packing with Flash Attention 2
         </a>
         
-        <a href="tech-report-training-and-finetuning-multimodal-embedding-reranker-207438.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #207438. Tech Report: Training and Finetuning Multimodal Embedding & Reranker Models with Sentence Transformers
+        <a href="tech-report-a-deepdive-into-aya-expanse-advancing-the-frontier-of-218602.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #218602. Tech Report: A Deepdive into Aya Expanse: Advancing the Frontier of Multilinguality
         </a>
         
-        <a href="tech-report-building-blocks-for-foundation-model-training-and-inf-207390.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #207390. Tech Report: Building Blocks for Foundation Model Training and Inference on AWS
+        <a href="breaking-post-training-isaac-gr00t-n15-for-lerobot-so-101-arm-218412.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #218412. Breaking: Post-Training Isaac GR00T N1.5 for LeRobot SO-101 Arm
         </a>
         
-        <a href="turning-database-grading-into-rl-rewards-post-training-agents-wit-207005.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #207005. Turning Database Grading into RL Rewards: Post-Training Agents with ThinkingBox
+        <a href="tech-report-jupyter-agents-training-llms-to-reason-with-notebooks-218234.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #218234. Tech Report: Jupyter Agents: training LLMs to reason with notebooks
         </a>
         
     </div>

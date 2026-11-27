@@ -150,12 +150,12 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-206822">Recent findings suggest that suppose you backtest 100,000 strategies that have zero edge. On average about 5,000 of them pass a one-sided p &lt; 0.05 test by luck alone. At p &lt; 0.01 about 1,000 still pass, and at p &lt; 0.001 about 100. A Bonferroni cut for the whole scan, 0.05/100,000 = 5e-7, brings the expected number of lucky passes down to 0.05. (100,000 is my own example scale.).</p>
-<p>Industry observers note that A post on X describes an open strategy library, "every single one fully backtested on years of real market data." I haven't checked that claim. A long list of backtested winners tells you nothing about edge until you know N. <span style="font-size:13px;">(Related: <a href="industry-news-huggingfacehub-v10-five-years-of-building-the-found-207626.html" style="color:#2563eb; font-weight:600;">Industry News: huggingface_hub v1.0: Five Years of Buil...</a>)</span></p>
-<p>In a recent development, each row is one strategy with zero-mean daily returns. A one-sided t-test checks whether the mean is above zero. <span style="font-size:13px;">(Related: <a href="tech-report-ai-for-game-development-creating-a-farming-game-in-5--207646.html" style="color:#2563eb; font-weight:600;">Tech Report: AI for Game Development: Creating a Farmin...</a>)</span></p>
+<p>Industry observers note that A post on X describes an open strategy library, "every single one fully backtested on years of real market data." I haven't checked that claim. A long list of backtested winners tells you nothing about edge until you know N. <span style="font-size:13px;">(Related: <a href="industry-news-train-a-sentence-embedding-model-with-1b-training-p-219058.html" style="color:#2563eb; font-weight:600;">Industry News: Train a Sentence Embedding Model with 1B...</a>)</span></p>
+<p>In a recent development, each row is one strategy with zero-mean daily returns. A one-sided t-test checks whether the mean is above zero.</p>
 <p>It has been revealed that the expected column is N × alpha, so the number of lucky winners grows linearly with N. Under independence, the count at 0.05 has a standard deviation of about 69.</p>
 <p id="sec-mid-206822">N covers every rule, parameter set, market and timeframe you tried, including the ones you dropped. If N × threshold comes out in the thousands, a leaderboard with thousands of winners is exactly what noise alone would give you.</p>
 <p>In a recent development, A holdout period that played no part in selection removes most of the lucky winners, but with thousands of survivors it still lets hundreds through at an uncorrected threshold. Re-test the 5,000 zero-edge survivors at an uncorrected p &lt; 0.05 and about 250 pass again. Divide by the survivor count instead, 0.05/5,000 = 1e-5, and the expected number of false survivors drops to about 0.05.</p>
-<p>These are expected values for simulated noise (zero edge, normally distributed returns, no trading costs), and I didn't run the code, so the passed counts will differ from the expected column and change with the seed. Real strategies are often highly correlated, which puts the effective number of independent tests below N: the expected count is still N × alpha, but a single scan's count swings more, and 0.05/N ends up stricter than it needs to be.</p>
+<p>These are expected values for simulated noise (zero edge, normally distributed returns, no trading costs), and I didn't run the code, so the passed counts will differ from the expected column and change with the seed. Real strategies are often highly correlated, which puts the effective number of independent tests below N: the expected count is still N × alpha, but a single scan's count swings more, and 0.05/N ends up stricter than it needs to be. <span style="font-size:13px;">(Related: <a href="distributed-training-train-bartt5-for-summarization-using-transfo-219074.html" style="color:#2563eb; font-weight:600;">Distributed Training: Train BART/T5 for Summarization u...</a>)</span></p>
 <p>For your own scan: count N, multiply it by your threshold before you look at the leaderboard, and re-test every survivor on an unused holdout at 0.05 divided by the number of survivors you carry into it.</p>
 <p id="sec-end-206822">This article was drafted with AI assistance.</p>
 <p style="margin-top: 25px;">
@@ -181,20 +181,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="ai-agents-are-testing-the-limits-of-zero-trust-security-200148.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #200148. AI Agents Are Testing the Limits of Zero-Trust Security
+        <a href="ai-agents-are-testing-the-limits-of-zero-trust-security-211642.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #211642. AI Agents Are Testing the Limits of Zero-Trust Security
         </a>
         
-        <a href="youtube-appears-to-be-quietly-testing-a-upcoming-mute-button-in-i-207375.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #207375. YouTube appears to be quietly testing a upcoming mute button in its video UI
+        <a href="breaking-fit-more-and-train-faster-with-zero-via-deepspeed-and-fa-219084.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #219084. Breaking: Fit More and Train Faster With ZeRO via DeepSpeed and FairScale
         </a>
         
-        <a href="on-device-speech-recognition-and-text-to-speech-in-google-ai-edge-207358.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #207358. On-Device Speech Recognition and Text-to-Speech in Google AI Edge Gallery
+        <a href="getting-started-with-sentiment-analysis-using-python-219039.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #219039. Getting Started with Sentiment Analysis using Python
         </a>
         
-        <a href="latest-update-how-to-test-android-apps-on-windows-a-practical-gui-207301.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #207301. Latest Update: How to Test Android Apps on Windows: A Practical Guide to Emulators and APK Testing
+        <a href="tech-report-zero-shot-image-segmentation-with-clipseg-218932.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #218932. Tech Report: Zero-shot image segmentation with CLIPSeg
         </a>
         
     </div>

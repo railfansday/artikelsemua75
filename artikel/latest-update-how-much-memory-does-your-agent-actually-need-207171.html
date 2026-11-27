@@ -150,9 +150,9 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-207171">In our previous post, we compared ALTK-Evolve with ACE and demonstrated that how you deliver an agent's self-distilled guidelines — a few retrieved per task vs. the whole set injected — drives both accuracy and cost. This post steps back to the question that comes before it: how much should you give it?</p>
-<p>Recent findings suggest that equipping an agent with agentic memory sounds simple: distill lessons from its past work, put them back in context, and more experience should mean better performance. It doesn't always work that way. When we scaled the evaluation to eight models — from a 30B dense model to frontier proprietary systems — one finding stood out:. <span style="font-size:13px;">(Related: <a href="tiny-agents-an-mcp-powered-agent-in-50-lines-of-code-207641.html" style="color:#2563eb; font-weight:600;">Tiny Agents: an MCP-powered agent in 50 lines of code...</a>)</span></p>
-<p>It has been revealed that agentic memory is not a feature you switch on. It's a dose you calibrate to the model.</p>
-<p>ALTK-Evolve lets an agent learn from its own past trajectories: distilling reusable guidelines and injecting them back at inference time, with no weight updates and no human annotation. <span style="font-size:13px;">(Related: <a href="building-the-open-agent-ecosystem-together-introducing-openenv-207628.html" style="color:#2563eb; font-weight:600;">Building the Open Agent Ecosystem Together: Introducing...</a>)</span></p>
+<p>Recent findings suggest that equipping an agent with agentic memory sounds simple: distill lessons from its past work, put them back in context, and more experience should mean better performance. It doesn't always work that way. When we scaled the evaluation to eight models — from a 30B dense model to frontier proprietary systems — one finding stood out:. <span style="font-size:13px;">(Related: <a href="how-to-train-a-latest-language-model-from-scratch-using-transform-219093.html" style="color:#2563eb; font-weight:600;">How to train a latest language model from scratch using...</a>)</span></p>
+<p>It has been revealed that agentic memory is not a feature you switch on. It's a dose you calibrate to the model. <span style="font-size:13px;">(Related: <a href="breaking-leveraging-pre-trained-language-model-checkpoints-for-en-219086.html" style="color:#2563eb; font-weight:600;">Breaking: Leveraging Pre-trained Language Model Checkpo...</a>)</span></p>
+<p>ALTK-Evolve lets an agent learn from its own past trajectories: distilling reusable guidelines and injecting them back at inference time, with no weight updates and no human annotation.</p>
 <p>The right dose differs by model tier: strong models with headroom want the full guideline set, weaker models do best with a compact core plus per-task retrieval, and saturated models show no measurable gain.</p>
 <p>Curated retrieval can be both the most accurate and the cheapest option: gpt-oss-120b gained +16.1pp task completion at only +5% tokens — and prompt caching keeps even the full guideline set affordable in production.</p>
 <p>Industry observers note that not every model benefits from the same amount of memory. Across eight models spanning the capability spectrum, we saw three recurring patterns:.</p>
@@ -221,16 +221,16 @@
             📰 #207243. What an AI Marketing Agent Actually Does, and How to Build a Guarded One
         </a>
         
-        <a href="industry-news-how-much-latency-does-a-self-hosted-llm-gateway-add-207483.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #207483. Industry News: How Much Latency Does a Self-Hosted LLM Gateway Add? Langfuse vs LiteLLM vs AcruxCore
+        <a href="does-ai-really-need-a-data-center-lowdown-labs-bets-on-efficient--218255.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #218255. Does AI Really Need a Data Center? Lowdown Labs Bets on Efficient AI for Ordinary CPUs
         </a>
         
-        <a href="breaking-your-agent-handoff-needs-a-memory-boundary-not-a-bigger--206828.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #206828. Breaking: Your Agent Handoff Needs a Memory Boundary, Not a Bigger Transcript
+        <a href="what-is-emdr-therapy-and-does-it-actually-work-218148.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #218148. What is EMDR therapy, and does it actually work?
         </a>
         
-        <a href="industry-news-what-is-emdr-therapy-and-does-it-actually-work-206593.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #206593. Industry News: What is EMDR therapy, and does it actually work?
+        <a href="does-creatine-increase-dht-what-you-need-to-know-217613.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #217613. Does Creatine Increase DHT? What You Need to Know
         </a>
         
     </div>

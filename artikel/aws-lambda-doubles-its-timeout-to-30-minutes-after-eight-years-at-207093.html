@@ -167,9 +167,9 @@ AWS Lambda Doubles Its Timeout to 30 Minutes After Eight Years at 15.</p>
 									
 									3
 									min read.</p>
-<p>It has been revealed that AWS recently doubled the maximum timeout of on-demand Lambda Event Functions from 15 to 30 minutes. The new limit applies to synchronous, asynchronous, and event source mapping invocations in all commercial regions, at standard pricing and without an opt-in. The 15-minute ceiling had stood since 2018, after 60 seconds at launch in 2014 and five minutes from 2015. <span style="font-size:13px;">(Related: <a href="introducing-rteb-a-fresh-standard-for-retrieval-evaluation-207640.html" style="color:#2563eb; font-weight:600;">Introducing RTEB: A Fresh Standard for Retrieval Evalua...</a>)</span></p>
+<p>It has been revealed that AWS recently doubled the maximum timeout of on-demand Lambda Event Functions from 15 to 30 minutes. The new limit applies to synchronous, asynchronous, and event source mapping invocations in all commercial regions, at standard pricing and without an opt-in. The 15-minute ceiling had stood since 2018, after 60 seconds at launch in 2014 and five minutes from 2015. <span style="font-size:13px;">(Related: <a href="course-launch-community-event-219056.html" style="color:#2563eb; font-weight:600;">Course Launch Community Event...</a>)</span></p>
 <p>Raising the limit is a configuration change per function, and Lambda rejects any value above 1,800 seconds with a validation error:.</p>
-<p>The change covers one of the three shapes Lambda took this year. Web Functions keep 15 minutes, and Lambda MicroVMs allow eight hours, while on Lambda Managed Instances synchronous invocations now get 30 minutes and asynchronous ones keep the 90 minutes introduced in September. AWS names agentic AI requests that chain model and tool calls, media transcoding, Monte Carlo simulations, and report generation as the workloads that outgrew 15 minutes. <span style="font-size:13px;">(Related: <a href="breaking-3d-asset-generation-ai-for-game-development-3-207645.html" style="color:#2563eb; font-weight:600;">Breaking: 3D Asset Generation: AI for Game Development ...</a>)</span></p>
+<p>The change covers one of the three shapes Lambda took this year. Web Functions keep 15 minutes, and Lambda MicroVMs allow eight hours, while on Lambda Managed Instances synchronous invocations now get 30 minutes and asynchronous ones keep the 90 minutes introduced in September. AWS names agentic AI requests that chain model and tool calls, media transcoding, Monte Carlo simulations, and report generation as the workloads that outgrew 15 minutes. <span style="font-size:13px;">(Related: <a href="how-to-train-a-latest-language-model-from-scratch-using-transform-219093.html" style="color:#2563eb; font-weight:600;">How to train a latest language model from scratch using...</a>)</span></p>
 <p>According to Tarun Rai Madan, Dan Slusariuc, and Snehil Ameta, the authors of the announcement, the first thing to check before raising the timeout is capacity:.</p>
 <p>Industry observers note that concurrency equals requests per second multiplied by average duration in seconds. At the same request rate, a function that runs for 30 minutes instead of 15 needs twice the concurrency. For example, 1 request per second at 30 minutes each needs 1,800 concurrent executions.</p>
 <p>According to recent reports, the rest of the post is about what sits around the function. An SQS queue's visibility timeout has to be at least six times the function timeout, which means three hours. Kinesis and DynamoDB Streams read one batch per shard at a time, so a slow function slows the shard. Amazon MQ, DocumentDB and Kafka mappings created before November 19 stay at 14 minutes. A NAT gateway still drops idle connections after 350 seconds, and the Init phase keeps its 10-second limit.</p>
@@ -211,16 +211,16 @@ AWS Lambda Doubles Its Timeout to 30 Minutes After Eight Years at 15.</p>
             📰 #207129. AWS Weekly Roundup: Local Zone in Bogotá, 30-minute Lambda timeout, and more (November 24, 2026)
         </a>
         
+        <a href="will-hajime-moriyasu-get-a-high-profile-job-in-europe-after-his-e-208382.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #208382. Will Hajime Moriyasu get a high-profile job in Europe after his eight years in charge of Japan?
+        </a>
+        
         <a href="announcing-aws-lambda-web-functions-207194.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #207194. Announcing AWS Lambda Web Functions
         </a>
         
         <a href="aws-weekly-roundup-aws-lambda-web-functions-amazon-s3-on-the-verc-207181.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #207181. AWS Weekly Roundup: AWS Lambda Web Functions, Amazon S3 on the Vercel Marketplace, and more (October 19, 2026)
-        </a>
-        
-        <a href="aws-lambda-now-supports-gpu-instances-for-event-functions-on-lamb-207134.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #207134. AWS Lambda now supports GPU instances for Event Functions on Lambda Managed Instances
         </a>
         
     </div>

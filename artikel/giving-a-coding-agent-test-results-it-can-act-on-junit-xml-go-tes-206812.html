@@ -150,10 +150,10 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-206812">Sources indicate that most coding agents spend a large share of their turns in one loop: change code, run the tests, read the result, change code again. The quality of that loop depends on what "read the result" means. An exit code of 1 tells the model something failed and nothing about what. The full log tells it everything, at a cost in tokens and attention, and the one assertion that matters is somewhere in the middle.</p>
-<p>Recent findings suggest that test runners already know the answer in structured form. Most can write a report that lists every test, its status, and for each failure a message and a stack trace. This post reveals how to get those reports out of a sandbox and turn them into a tool result built for a model: the counts, the first few failures, and a clear signal when the run did not finish at all.</p>
+<p>Recent findings suggest that test runners already know the answer in structured form. Most can write a report that lists every test, its status, and for each failure a message and a stack trace. This post reveals how to get those reports out of a sandbox and turn them into a tool result built for a model: the counts, the first few failures, and a clear signal when the run did not finish at all. <span style="font-size:13px;">(Related: <a href="how-to-train-a-latest-language-model-from-scratch-using-transform-219093.html" style="color:#2563eb; font-weight:600;">How to train a latest language model from scratch using...</a>)</span></p>
 <p>Three common runners, each writing a report next to its normal output:.</p>
-<p>Jest can write the same JUnit XML through the separately installed jest-junit reporter. JUnit XML is the closest thing the ecosystem has to a shared format: a testsuite holds testcase elements, and a failing case has a failure or error child with a message attribute and the trace as text. Skipped cases have a skipped child. <span style="font-size:13px;">(Related: <a href="building-the-open-agent-ecosystem-together-introducing-openenv-207628.html" style="color:#2563eb; font-weight:600;">Building the Open Agent Ecosystem Together: Introducing...</a>)</span></p>
-<p>In a recent development, go's format is a stream instead. Each line is an event with an Action such as run, output, pass, fail or skip, plus the Package and Test it belongs to. A test's output arrives as a series of output events before its fail. <span style="font-size:13px;">(Related: <a href="tech-report-ai-for-game-development-creating-a-farming-game-in-5--207646.html" style="color:#2563eb; font-weight:600;">Tech Report: AI for Game Development: Creating a Farmin...</a>)</span></p>
+<p>Jest can write the same JUnit XML through the separately installed jest-junit reporter. JUnit XML is the closest thing the ecosystem has to a shared format: a testsuite holds testcase elements, and a failing case has a failure or error child with a message attribute and the trace as text. Skipped cases have a skipped child.</p>
+<p>In a recent development, go's format is a stream instead. Each line is an event with an Action such as run, output, pass, fail or skip, plus the Package and Test it belongs to. A test's output arrives as a series of output events before its fail. <span style="font-size:13px;">(Related: <a href="course-launch-community-event-219056.html" style="color:#2563eb; font-weight:600;">Course Launch Community Event...</a>)</span></p>
 <p>In a recent development, the parser below reads either format and returns the same shape: totals, the first five failures, and how many more were left out. Each failure's message and details are cut to a fixed size. It uses the fast-xml-parser package for XML.</p>
 <p>A few choices here are deliberate:.</p>
 <p>The tool that runs the tests should distinguish three outcomes, because the right next step is different for each:.</p>
@@ -188,20 +188,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
+        <a href="a-short-summary-of-chinese-ai-global-expansion-218622.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #218622. A Short Summary of Chinese AI Global Expansion
+        </a>
+        
+        <a href="battlefield-labs-is-coming-back-for-a-short-session-to-test-out-n-212929.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #212929. Battlefield Labs is coming back for a short session to test out next week's Battlefield 6 enhancement, and you can expect more tests in the future, too
+        </a>
+        
+        <a href="ai-kills-another-coding-competition-i-was-not-at-all-interested-i-212238.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #212238. AI kills another coding competition: 'I was not at all interested in giving awards to the output of large language models'
+        </a>
+        
         <a href="industry-news-an-ai-coding-agent-a-browser-and-a-mac-tool-found-a-207154.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #207154. Industry News: An AI coding agent, a browser, and a Mac tool found a financial firm's access key in under 6 minutes
-        </a>
-        
-        <a href="battlefield-labs-is-coming-back-for-a-short-session-to-test-out-n-201313.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #201313. Battlefield Labs is coming back for a short session to test out next week's Battlefield 6 patch, and you can expect more tests in the future, too
-        </a>
-        
-        <a href="ai-kills-another-coding-competition-i-was-not-at-all-interested-i-200588.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #200588. AI kills another coding competition: 'I was not at all interested in giving awards to the output of large language models'
-        </a>
-        
-        <a href="meta-declined-to-let-the-fca-test-its-muse-agent-wired-reports-200038.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #200038. Meta declined to let the FCA test its Muse agent, WIRED reports
         </a>
         
     </div>

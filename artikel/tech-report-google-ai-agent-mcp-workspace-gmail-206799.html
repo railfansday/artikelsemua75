@@ -150,8 +150,8 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-206799">โดย Nokka (นก-กา) | 26 พฤศจิกายน 2569.</p>
-<p>บทความนี้เขียนโดย AI (โมเดล glm-5.3 ของผู้ให้บริการ ollama-cloud) ผ่าน Hermes Agent จาก Nous Research ตรวจสอบและเรียบเรียงโดย Nokka. <span style="font-size:13px;">(Related: <a href="tiny-agents-an-mcp-powered-agent-in-50-lines-of-code-207641.html" style="color:#2563eb; font-weight:600;">Tiny Agents: an MCP-powered agent in 50 lines of code...</a>)</span></p>
-<p>In a recent development, วันที่ 24 พฤศจิกายน (ค.ศ. 2026) Google เปิดตัวเซิร์ฟเวอร์ MCP สำหรับ Workspace อย่างเป็นทางการครบทั้งแปดตัว พร้อมกฎข้อใหม่ที่เขียนสั้นแต่เปลี่ยนวิธีทำงานของใครที่เขียนเอเจนต์ต่อกับ Gmail, Drive หรือ Calendar อยู่ นับจากวันที่ 1 กุมภาพันธ์ 2027 เครื่องมือใดที่เป็น AI หรือถูกขับเคลื่อนด้วย AI จะต้องต่อกับ Workspace ผ่าน MCP ของ Google เท่านั้น ห้ามเรียก REST API ตรง ๆ [1][3]. <span style="font-size:13px;">(Related: <a href="tech-report-ai-for-game-development-creating-a-farming-game-in-5--207646.html" style="color:#2563eb; font-weight:600;">Tech Report: AI for Game Development: Creating a Farmin...</a>)</span></p>
+<p>บทความนี้เขียนโดย AI (โมเดล glm-5.3 ของผู้ให้บริการ ollama-cloud) ผ่าน Hermes Agent จาก Nous Research ตรวจสอบและเรียบเรียงโดย Nokka. <span style="font-size:13px;">(Related: <a href="my-journey-to-a-serverless-transformers-pipeline-on-google-cloud-219077.html" style="color:#2563eb; font-weight:600;">My Journey to a serverless transformers pipeline on Goo...</a>)</span></p>
+<p>In a recent development, วันที่ 24 พฤศจิกายน (ค.ศ. 2026) Google เปิดตัวเซิร์ฟเวอร์ MCP สำหรับ Workspace อย่างเป็นทางการครบทั้งแปดตัว พร้อมกฎข้อใหม่ที่เขียนสั้นแต่เปลี่ยนวิธีทำงานของใครที่เขียนเอเจนต์ต่อกับ Gmail, Drive หรือ Calendar อยู่ นับจากวันที่ 1 กุมภาพันธ์ 2027 เครื่องมือใดที่เป็น AI หรือถูกขับเคลื่อนด้วย AI จะต้องต่อกับ Workspace ผ่าน MCP ของ Google เท่านั้น ห้ามเรียก REST API ตรง ๆ [1][3].</p>
 <p>ปัญหาอยู่ตรงที่เมื่อเปิดเซิร์ฟเวอร์ Gmail ดูจริง ๆ จะพบว่ามันค้นเมลได้ อ่านเมลได้ สร้างฉบับร่างได้ แต่ส่งเมลไม่ได้ [4].</p>
 <p>ข้อความบังคับอยู่ในเอกสารเพิ่มเติมชื่อ Workspace AI Tools Addendum ที่แนบกับข้อตกลงใช้บริการ ผมอ่านจากตัวเอกสารจริง ข้อแรกระบุตรง ๆ ว่าเครื่องมือเข้าถึง Workspace ต้องใช้ MCP ของ Google ในกรณีที่เครื่องมือนั้นเป็น AI Agent, เป็น AI Harness หรือถูกขับเคลื่อนด้วยโมเดล AI หรือบริการที่ใช้โมเดล AI [2].</p>
 <p>ข้อถัดไปห้ามพรางตัวเอเจนต์ให้พ้นการจำแนก เมื่อทำผิด Google สามารถตัดสิทธิ์การเข้าถึงหรือระงับบัญชีได้ [2].</p>
@@ -172,7 +172,7 @@
 <p>ระดับ Scaled สำหรับงานหนักเริ่มคิดเงินวันที่ 1 เมษายน 2027 โดยหน้าทางการสองหน้าระบุต่างกันเอง หนึ่งบอกคิดตั้งแต่คำขอแรกของ MCP อีกหน้าบอกคิดเฉพาะส่วนที่เกินโควตาฟรีต่อวัน ส่วนโควตาฟรีขนาดใหญ่ของ REST ยังอยู่กับการเรียกแบบเดิม ซึ่งอ่านได้ว่าเป็นโครงสร้างราคาที่ผลักให้เอเจนต์ต้องอยู่บนเส้นทางของ Google [1][3][5].</p>
 <p>ความเห็นส่วนตัว: ผมอ่านแล้วเห็นสองด้านชัดทั้งคู่ ด้านความปลอดภัย เหตุผลของ Google มีน้ำหนักจริง เพราะโทเคนที่ได้รับมาไม่ได้แปลว่าเจตนาของคน อีเมลฉบับหนึ่งที่เขียนว่าให้ส่งอีเมลสิบฉบับข้างหน้าไปที่อยู่นี้ คือความเสี่ยงโจมตีแบบพรอมต์อินเจกชันที่มีอยู่จริง การบังคับให้ทุกเอเจนต์เดินผ่านประตูบานเดียวที่ผู้ดูแลองค์กรตั้งกฎยืนยันจากมนุษย์และบันทึกการใช้งานไว้ได้ ทำให้ผู้ดูแลคุมได้จริง แต่อีกด้านคือของที่ปิดไว้ให้เฉพาะพันธมิตร คนทำผลิตภัณฑ์อิสระจะได้เล่นในสนามที่ตัดสิทธิ์เฉพาะกิจ และเส้นทางเดิมที่เคยเปิดกว้างก็ถูกปิดลงพร้อมกัน สำหรับทีมไทยที่ทำตัวช่วยอีเมลหรือระบบออโตเมชัน AI ต่อ Workspace ผมว่าอย่ารอถึงมกราคม ประเมินว่าผลิตภัณฑ์ตัวเองอยู่ด้านไหนของกฎเสียตั้งแต่ตอนนี้ครับ.</p>
 <p>ถ้าคุณกำลังย้ายเอเจนต์ไป MCP อยู่และเจอปัญหาอะไร คอมเมนต์เล่าไว้ได้ครับ และถ้าบทนี้ช่วยได้ แชร์ให้ทีมที่ทำงานกับ Workspace ด้วยก็จะดีมาก.</p>
-<p>Industry observers note that [1] Google. "Simplifying agent access while keeping organizations in control: MCP servers, CLI, standardized usage tiers, and admin policies." Google Workspace Updates, 24 พฤศจิกายน 2569 (ค.ศ. 2026). https://workspaceupdates.googleblog.com/2026/11/mcp-servers-cli-standardized-usage-tiers-now-available.html.</p>
+<p>Industry observers note that [1] Google. "Simplifying agent access while keeping organizations in control: MCP servers, CLI, standardized usage tiers, and admin policies." Google Workspace Updates, 24 พฤศจิกายน 2569 (ค.ศ. 2026). https://workspaceupdates.googleblog.com/2026/11/mcp-servers-cli-standardized-usage-tiers-now-available.html. <span style="font-size:13px;">(Related: <a href="industry-news-train-a-sentence-embedding-model-with-1b-training-p-219058.html" style="color:#2563eb; font-weight:600;">Industry News: Train a Sentence Embedding Model with 1B...</a>)</span></p>
 <p>Recent findings suggest that [2] Google. "Google Workspace AI Tools Addendum." เข้าถึง 26 พฤศจิกายน 2569 (ค.ศ. 2026). https://workspace.google.com/terms/ai-tools.</p>
 <p>Recent findings suggest that [3] Google. "Google Workspace developer release notes," รายการ 12 ตุลาคม 2569 และ 24 พฤศจิกายน 2569 (ค.ศ. 2026). https://developers.google.com/workspace/release-notes.</p>
 <p>[4] Google. "Configure the Gmail MCP server." เข้าถึง 26 พฤศจิกายน 2569 (ค.ศ. 2026). https://developers.google.com/workspace/gmail/api/guides/configure-mcp-server.</p>
@@ -202,20 +202,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
+        <a href="tech-report-geminis-new-ai-agent-is-surprisingly-useful-if-you-us-212032.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #212032. Tech Report: Gemini's New AI Agent Is Surprisingly Useful (If You Use Google for Everything)
+        </a>
+        
+        <a href="google-will-make-ai-agents-use-its-mcp-servers-the-gmail-one-cant-211566.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #211566. Google Will Make AI Agents Use Its MCP Servers. The Gmail One Can't Send Email
+        </a>
+        
         <a href="tech-report-mcp-gateway-how-snap-checks-both-the-person-and-the-a-206689.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #206689. Tech Report: MCP Gateway: How Snap Checks Both the Person and the Agent
         </a>
         
-        <a href="tech-report-google-publishes-guidance-for-google-agent-crawler-vi-204461.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #204461. Tech Report: Google Publishes Guidance For Google-Agent Crawler via @sejournal, @martinibuster
-        </a>
-        
-        <a href="tiny-agents-an-mcp-powered-agent-in-50-lines-of-code-207641.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #207641. Tiny Agents: an MCP-powered agent in 50 lines of code
-        </a>
-        
-        <a href="tech-report-google-maps-patch-on-android-auto-adds-navigation-rou-207353.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #207353. Tech Report: Google Maps patch on Android Auto adds navigation routes for motorcycles
+        <a href="google-workspace-vs-microsoft-365-vs-proton-workspace-which-is-be-218571.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #218571. Google Workspace vs. Microsoft 365 vs. Proton Workspace: Which Is Best for Developers and Freelancers?
         </a>
         
     </div>

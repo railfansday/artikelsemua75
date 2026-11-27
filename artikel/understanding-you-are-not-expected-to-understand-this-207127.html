@@ -158,10 +158,10 @@ a virtual machine under VMS in supervisor/user modes (where VMS usually ran
 shells) - the code is AFAIK lost to history, though a DECUS paper survives. Later I ported V7 too.</p>
 <p>Recent findings suggest that during the process I often came to that infamous line "You are not expected to understand this."
 in the context switch code and, I indeed didn't understand it .... then one day I came to that code through
-a different path and it was obvious .... let me explain what's going on, here's a deep dive.</p>
+a different path and it was obvious .... let me explain what's going on, here's a deep dive. <span style="font-size:13px;">(Related: <a href="how-to-generate-text-using-different-decoding-methods-for-languag-219092.html" style="color:#2563eb; font-weight:600;">How to generate text: using different decoding methods ...</a>)</span></p>
 <p>V6 Unix keeps per-process state in 2 places, a small entry in the process table, and the 'udot' a structure
 mapped by the MMU at a well known kernel virtual address referenced as "u." which also contains the kernel stack. This is always
-mapped to the same address in all running processes, setting up this mapping is a core part of each process switch. <span style="font-size:13px;">(Related: <a href="breaking-get-your-vlm-running-in-3-simple-steps-on-intel-cpus-207635.html" style="color:#2563eb; font-weight:600;">Breaking: Get your VLM running in 3 simple steps on Int...</a>)</span></p>
+mapped to the same address in all running processes, setting up this mapping is a core part of each process switch.</p>
 <p>V6 uses a somewhat baroque way to save the state of a running process and restoring it, in V7 they switched to use save()/restore() which works like the more familiar setjmp()/longjmp(). It's deeply beholding to
 details in the V6 PDP-11 calling conventions - savu() saves enough state to return to it saves the
 stack pointer (r6) and frame pointer (r5), it doesn't touch r2-r4.</p>
@@ -169,11 +169,11 @@ stack pointer (r6) and frame pointer (r5), it doesn't touch r2-r4.</p>
 called them walking on thin ice as the stack has changed out from under them, so has the frame pointer
 (and as a result any local variables that are stored on the stack) after you call them life gets a little scary, care must be taken, we're on thin ice especially once interrupts are turned on .... retu() differs from aretu() in that retu() also maps the udot into the last page of
 memory - retu is always passed the physical address of the udot, it's slightly magic in that the first 2 words of the
-udot is also u.u_rsav the place that retu() really returns from - here they are slightly unwound:. <span style="font-size:13px;">(Related: <a href="breaking-introducing-anylanguagemodel-one-api-for-local-and-remot-207615.html" style="color:#2563eb; font-weight:600;">Breaking: Introducing AnyLanguageModel: One API for Loc...</a>)</span></p>
+udot is also u.u_rsav the place that retu() really returns from - here they are slightly unwound:.</p>
 <p>There's another bit of magic here: r2-r4 are untouched, more about that later.</p>
 <p>Recent findings suggest that so here's the infamous context switch code (I've left out the bit that chooses a newly introduced process to run) - note swtch() as declared doesn't return a value, but at the end of the routine it explicitly returns "1". That's
 not that unusual, C at the time didn't have a void, and had a rudimentary type system, if you didn't declare something it defaulted to "int". Also prior to V7 C wrote things like "a += 1" as "a =+ 1" (which is ambiguous) so you find things like: "rp-&gt;p_flag =&amp; ~SSWAP;" in the code, this was normal at the time. It was common at
-the time to tell the compiler which variables you wanted to put in registers rather than on the stack for performance reasons, compilers weren't very smart. Modern compilers complain if you feed them code with the register keyword.</p>
+the time to tell the compiler which variables you wanted to put in registers rather than on the stack for performance reasons, compilers weren't very smart. Modern compilers complain if you feed them code with the register keyword. <span style="font-size:13px;">(Related: <a href="porting-fairseq-wmt19-translation-system-to-transformers-219087.html" style="color:#2563eb; font-weight:600;">Porting fairseq wmt19 translation system to transformer...</a>)</span></p>
 <p>Recent findings suggest that so what's going on here, let's ignore the if statement after "You are not expected to understand this."
 for the moment, here's how a context switch works:
 
@@ -298,20 +298,20 @@ the whole time as retu(rp-&gt;p_addr); (essentially retu(u.u_rsav); matching the
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="what-are-flour-enzymes-understanding-a-common-flour-ingredient-206762.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #206762. What are flour enzymes?: Understanding a common flour ingredient.
+        <a href="understanding-bigbirds-block-sparse-attention-219075.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #219075. Understanding BigBird's Block Sparse Attention
         </a>
         
-        <a href="latest-update-heavy-cream-vs-whipping-cream-whats-the-difference--206750.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #206750. Latest Update: Heavy cream vs. whipping cream: What's the difference?: Understanding the right cream for your baking.
+        <a href="latest-update-benczechmark-can-your-llm-understand-czech-218624.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #218624. Latest Update: 🇨🇿 BenCzechMark - Can your LLM Understand Czech?
         </a>
         
-        <a href="spike-in-adhd-autism-diagnoses-driven-by-broader-recognition-unde-206585.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #206585. Spike in ADHD, Autism Diagnoses Driven by Broader Recognition, Understanding
+        <a href="visualize-and-understand-gpu-memory-in-pytorch-218567.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #218567. Visualize and understand GPU memory in PyTorch
         </a>
         
-        <a href="breaking-hickey-stages-understanding-and-managing-love-bites-effe-206139.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #206139. Breaking: Hickey Stages: Understanding and Managing Love Bites Effectively
+        <a href="smolvlm2-bringing-video-understanding-to-every-device-218530.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #218530. SmolVLM2: Bringing Video Understanding to Every Device
         </a>
         
     </div>

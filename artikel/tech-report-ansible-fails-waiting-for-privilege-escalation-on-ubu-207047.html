@@ -150,7 +150,7 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-207047">I've slowly been moving my servers from Ubuntu 22 and 24 to 26 this year, and noticed my Ansible automation starts failing if I have password protection for sudo use:.</p>
-<p>Apparently Ubuntu's been rewriting system utilities in Rust, and the sudo-rs version that ships on Ubuntu 26.04 has some incompatiblities with the sudo I've used on servers for 20+ years. <span style="font-size:13px;">(Related: <a href="industry-news-huggingfacehub-v10-five-years-of-building-the-found-207626.html" style="color:#2563eb; font-weight:600;">Industry News: huggingface_hub v1.0: Five Years of Buil...</a>)</span></p>
+<p>Apparently Ubuntu's been rewriting system utilities in Rust, and the sudo-rs version that ships on Ubuntu 26.04 has some incompatiblities with the sudo I've used on servers for 20+ years. <span style="font-size:13px;">(Related: <a href="porting-fairseq-wmt19-translation-system-to-transformers-219087.html" style="color:#2563eb; font-weight:600;">Porting fairseq wmt19 translation system to transformer...</a>)</span></p>
 <p>It prints an extra string before the password prompt, which sudo doesn't do, and that can confuse automation tools like Ansible that wait for a specific prompt.</p>
 <p>Sources indicate that there's a thread in the Ansible project covering the problem: validate sudo become plugin against sudo-rs
 . The fix landed in Ansible Core 2.22.0, and is being backported into updates in 2.16, 2.18, 2.19, 2.20, and maybe also 2.21 (it's quite disruptive!). It looks like it also broke pyinfra, and their fix is in the latest release of 3.11.</p>
@@ -158,7 +158,7 @@
 <p id="sec-mid-207047">Another alternative is to use the traditional version of sudo that still ships with Ubuntu 26. For that, the easiest way is to set the become_exe inside your hosts file:.</p>
 <p>Or you could even revert sudo systemwide on your Ubuntu host:.</p>
 <p>Recent findings suggest that I'm not sure why Ubuntu sees the need to rewrite common Linux utils in Rust. I don't mind Rust, but these are foundational tools every Linux system relies on. This isn't a window manager, where experimentation is more acceptable1.</p>
-<p>If other distros plan on moving to sudo-rs that's one thing, but if it's just Ubuntu, maybe I should hop back to Debian for everything, and not just my cloud servers. <span style="font-size:13px;">(Related: <a href="google-cloud-c4-brings-a-70-tco-improvement-on-gpt-oss-with-intel-207634.html" style="color:#2563eb; font-weight:600;">Google Cloud C4 Brings a 70% TCO improvement on GPT OSS...</a>)</span></p>
+<p>If other distros plan on moving to sudo-rs that's one thing, but if it's just Ubuntu, maybe I should hop back to Debian for everything, and not just my cloud servers. <span style="font-size:13px;">(Related: <a href="my-journey-to-a-serverless-transformers-pipeline-on-google-cloud-219077.html" style="color:#2563eb; font-weight:600;">My Journey to a serverless transformers pipeline on Goo...</a>)</span></p>
 <p id="sec-end-207047">Yes, I know this makes me sound like "old man yells at [rust]," but major changes to structural components of Linux should take longer, IMO. At least on the Red Hat side, we have Fedora, which is more bleeding edge, then at least a few years' gap before it hits 'production' systems. With Ubuntu, there is no cutting edge upstream where things like this can be fixed or worked around before hitting prod! (And no, I don't consider non-LTS Ubuntu releases the same thing.) ↩︎.</p>
 <p style="margin-top: 25px;">
 <a href="https://www.jeffgeerling.com/blog/2026/ansible-fails-become-ubuntu2604/" rel="nofollow noopener" style="color: #0d6efd; text-decoration: none; font-weight: bold;" target="_blank">
@@ -183,20 +183,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="tech-report-where-winds-meet-decembers-calendar-is-full-of-fresh--201298.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #201298. Tech Report: Where Winds Meet December's calendar is full of fresh content, including a new region and the mobile launch you've been waiting for
+        <a href="tech-report-deploy-hugging-face-models-easily-with-amazon-sagemak-219068.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #219068. Tech Report: Deploy Hugging Face models easily with Amazon SageMaker
         </a>
         
-        <a href="tech-report-your-booth-is-waiting-dennys-welcomes-jensen-huang-ba-199577.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #199577. Tech Report: ‘Your booth is waiting’: Denny’s welcomes Jensen Huang back as Nvidia CEO
+        <a href="tech-report-introducing-the-data-measurements-tool-an-interactive-219053.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #219053. Tech Report: Introducing the Data Measurements Tool: an Interactive Tool for Looking at Datasets
         </a>
         
-        <a href="tech-report-ai-for-game-development-creating-a-farming-game-in-5--207646.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #207646. Tech Report: AI for Game Development: Creating a Farming Game in 5 Days. Part 1
+        <a href="tech-report-predicting-and-detecting-failures-how-azure-strengthe-219048.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #219048. Tech Report: Predicting and detecting failures: How Azure strengthens reliability for mission-critical workloads
         </a>
         
-        <a href="tech-report-introducing-the-open-arabic-llm-leaderboard-207643.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #207643. Tech Report: Introducing the Open Arabic LLM Leaderboard
+        <a href="tech-report-co2-emissions-and-the-hub-leading-the-charge-219026.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #219026. Tech Report: CO2 Emissions and the 🤗 Hub: Leading the Charge
         </a>
         
     </div>

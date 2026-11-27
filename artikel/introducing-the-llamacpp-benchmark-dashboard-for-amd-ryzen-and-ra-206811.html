@@ -150,8 +150,8 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-206811">Industry observers note that the llama.cpp × AMD Benchmark dashboard is available on Hugging Face. It lets you track prompt processing and text generation performance across llama.cpp builds, models, and quantizations, so you can explore how local inference performs on AMD Ryzen and Radeon hardware.</p>
-<p>Recent findings suggest that local inference performance changes as models, kernels, and builds evolve. We want those changes to be easy to inspect for any AMD developer: pick a hardware, a model and a build, compare quantizations, and follow performance over time. The benchmark workflow and underlying results are public, so you can also inspect how we benchmark inference performance. <span style="font-size:13px;">(Related: <a href="supercharge-your-ocr-pipelines-with-open-models-207631.html" style="color:#2563eb; font-weight:600;">Supercharge your OCR Pipelines with Open Models...</a>)</span></p>
-<p>You can choose Hardware, Model, and llama.cpp build in the Configuration sidebar. The current hardware choices are Radeon 8060S (gfx1151) and Radeon AI Pro R9700S (gfx1201). <span style="font-size:13px;">(Related: <a href="tech-report-easily-build-and-share-rocm-kernels-with-hugging-face-207617.html" style="color:#2563eb; font-weight:600;">Tech Report: Easily Build and Share ROCm Kernels with H...</a>)</span></p>
+<p>Recent findings suggest that local inference performance changes as models, kernels, and builds evolve. We want those changes to be easy to inspect for any AMD developer: pick a hardware, a model and a build, compare quantizations, and follow performance over time. The benchmark workflow and underlying results are public, so you can also inspect how we benchmark inference performance. <span style="font-size:13px;">(Related: <a href="how-to-train-a-latest-language-model-from-scratch-using-transform-219093.html" style="color:#2563eb; font-weight:600;">How to train a latest language model from scratch using...</a>)</span></p>
+<p>You can choose Hardware, Model, and llama.cpp build in the Configuration sidebar. The current hardware choices are Radeon 8060S (gfx1151) and Radeon AI Pro R9700S (gfx1201). <span style="font-size:13px;">(Related: <a href="breaking-leveraging-pre-trained-language-model-checkpoints-for-en-219086.html" style="color:#2563eb; font-weight:600;">Breaking: Leveraging Pre-trained Language Model Checkpo...</a>)</span></p>
 <p>The dashboard shows two separate tests, both measured in tokens per second:.</p>
 <p>According to recent reports, both tests start at context depth zero (n_depth=0). PP512 measures processing 512 input tokens without generation; TG128 measures generating 128 tokens without a pre-existing context. The plotted value is the mean throughput (avg_ts). These are useful reference workloads, while the Context scaling tab lets you explore token generation throughput as the context grows.</p>
 <p id="sec-mid-206811">It has been revealed that we benchmark the prebuilt binaries distributed through llama-install.sh, the build and installation project behind llama.app. The public gfx1151 and gfx1201 workflows are scheduled weekly and run the standard benchmarks using the llama-bench tool  with Flash Attention on and off, with 10 repetitions per configuration.</p>
@@ -183,20 +183,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="new-in-llamacpp-model-management-207597.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #207597. New in llama.cpp: Model Management
+        <a href="amd-specific-fork-of-llamacpp-211508.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #211508. AMD-specific fork of llama.cpp
         </a>
         
-        <a href="ggml-and-llamacpp-join-hf-to-ensure-the-long-term-progress-of-loc-207528.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #207528. GGML and llama.cpp join HF to ensure the long-term progress of Local AI
+        <a href="tech-report-llama-2-on-amazon-sagemaker-a-benchmark-218808.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #218808. Tech Report: Llama 2 on Amazon SageMaker a Benchmark
         </a>
         
-        <a href="amd-ryzen-7-9800x3d-plummets-to-an-all-time-low-of-369-at-amazon-207400.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #207400. AMD Ryzen 7 9800X3D plummets to an all-time low of $369 at Amazon
+        <a href="introducing-the-amd-5th-gen-epyc-cpu-218614.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #218614. Introducing the AMD 5th Gen EPYC™ CPU
         </a>
         
-        <a href="transformers-now-runs-llamacpp-quants-207094.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #207094. Transformers now runs llama.cpp quants
+        <a href="industry-news-serving-a-local-llm-to-several-users-ollama-lm-stud-218309.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #218309. Industry News: Serving a Local LLM to Several Users: Ollama, LM Studio, llama.cpp and vLLM Benchmarked
         </a>
         
     </div>

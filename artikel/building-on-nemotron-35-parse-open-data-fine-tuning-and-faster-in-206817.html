@@ -150,9 +150,9 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-206817">We recently released NVIDIA Nemotron 3.5 Parse, a compact document model that turns page images into structured data for retrieval-augmented generation (RAG) and agents.</p>
-<p>Industry observers note that now we’re building on that release with synthetic training datasets, a fine-tuning recipe, and a DFlash2 speculator for faster inference. We’re also sharing how we trained Parse 3.5: first teaching document understanding through supervised fine-tuning, then using reinforcement learning to improve accuracy, consistency, and reliable completion. <span style="font-size:13px;">(Related: <a href="director-of-machine-learning-insights-207650.html" style="color:#2563eb; font-weight:600;">Director of Machine Learning Insights...</a>)</span></p>
-<p>In a recent development, parse extracts content from pages of documents into reading order, assigns content classes such as headings, paragraphs, tables, and charts, and returns bounding boxes that locate the content. Tables and charts become structured records that can power downstream document processing applications. <span style="font-size:13px;">(Related: <a href="tech-report-ai-for-game-development-creating-a-farming-game-in-5--207646.html" style="color:#2563eb; font-weight:600;">Tech Report: AI for Game Development: Creating a Farmin...</a>)</span></p>
-<p>Industry observers note that figure 1. Actual model output from a synthetic operations brief, showing the connection between the page and its structured representation.</p>
+<p>Industry observers note that now we’re building on that release with synthetic training datasets, a fine-tuning recipe, and a DFlash2 speculator for faster inference. We’re also sharing how we trained Parse 3.5: first teaching document understanding through supervised fine-tuning, then using reinforcement learning to improve accuracy, consistency, and reliable completion. <span style="font-size:13px;">(Related: <a href="how-to-train-a-latest-language-model-from-scratch-using-transform-219093.html" style="color:#2563eb; font-weight:600;">How to train a latest language model from scratch using...</a>)</span></p>
+<p>In a recent development, parse extracts content from pages of documents into reading order, assigns content classes such as headings, paragraphs, tables, and charts, and returns bounding boxes that locate the content. Tables and charts become structured records that can power downstream document processing applications.</p>
+<p>Industry observers note that figure 1. Actual model output from a synthetic operations brief, showing the connection between the page and its structured representation. <span style="font-size:13px;">(Related: <a href="breaking-leveraging-pre-trained-language-model-checkpoints-for-en-219086.html" style="color:#2563eb; font-weight:600;">Breaking: Leveraging Pre-trained Language Model Checkpo...</a>)</span></p>
 <p>Sources indicate that this latest version of Parse significantly extends its ability to read charts and tables, especially in more difficult and ambiguous cases. For example, bar charts or other plots that do not have any marked numeric values. The model is able to infer values by looking at the axes and height of the bar to derive these. Tables can be especially tricky because the structure is so meaningful, a shifted row or column can totally change the interpretation and meaning. These advancements have been largely powered by synthetic data generation, rendering variations of charts and tables with known ground truth and then training our model to reverse this process.</p>
 <p>We are open-sourcing three datasets used in the Parse 3.5 training:.</p>
 <p>Synthetic Charts V1 — 9.98M examples: rendered charts and structured annotations for learning categories, series, and numerical values.</p>
@@ -207,20 +207,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
+        <a href="industry-news-make-llm-fine-tuning-2x-faster-with-unsloth-and-trl-218778.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #218778. Industry News: Make LLM Fine-tuning 2x faster with Unsloth and 🤗 TRL
+        </a>
+        
         <a href="20x-faster-trl-fine-tuning-with-rapidfire-ai-207613.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #207613. 20x Faster TRL Fine-tuning with RapidFire AI
         </a>
         
-        <a href="latest-update-make-llm-fine-tuning-2x-faster-with-unsloth-and-trl-195775.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #195775. Latest Update: Make LLM Fine-tuning 2x faster with Unsloth and 🤗 TRL
+        <a href="fine-tuning-clip-with-remote-sensing-satellite-images-and-caption-219060.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #219060. Fine tuning CLIP with Remote Sensing (Satellite) images and captions
         </a>
         
-        <a href="nemotron-personas-india-synthesized-data-for-sovereign-ai-207636.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #207636. Nemotron-Personas-India: Synthesized Data for Sovereign AI
-        </a>
-        
-        <a href="building-the-open-agent-ecosystem-together-introducing-openenv-207628.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #207628. Building the Open Agent Ecosystem Together: Introducing OpenEnv
+        <a href="accelerating-pytorch-distributed-fine-tuning-with-intel-technolog-219054.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #219054. Accelerating PyTorch distributed fine-tuning with Intel technologies
         </a>
         
     </div>

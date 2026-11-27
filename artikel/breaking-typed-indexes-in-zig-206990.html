@@ -150,8 +150,8 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-206990">The named integer or Newtype Index pattern prevents mixing up indexes on different arrays.</p>
-<p>The above examples were not particularly illuminating to me. Andrew’s example don’t show much of how to enforce the safety at call site: any caller could call @backingInt (it used to be @intFromEnum) to recover a numerical index and pass it to the wrong array, or access array elements with a plain integer. And matklad’s one focus on building a tree data structure in a neat way, but that’s a totally different challenge that the introductory problem of mixing array indexes, so it was not a super convincing illustration for me. <span style="font-size:13px;">(Related: <a href="building-the-open-agent-ecosystem-together-introducing-openenv-207628.html" style="color:#2563eb; font-weight:600;">Building the Open Agent Ecosystem Together: Introducing...</a>)</span></p>
-<p>In practice, to make good use of the pattern, a getter helper is required as the conventional way of accessing elements of the array. It can be a method on the array type—or the index type.</p>
+<p>The above examples were not particularly illuminating to me. Andrew’s example don’t show much of how to enforce the safety at call site: any caller could call @backingInt (it used to be @intFromEnum) to recover a numerical index and pass it to the wrong array, or access array elements with a plain integer. And matklad’s one focus on building a tree data structure in a neat way, but that’s a totally different challenge that the introductory problem of mixing array indexes, so it was not a super convincing illustration for me. <span style="font-size:13px;">(Related: <a href="how-to-generate-text-using-different-decoding-methods-for-languag-219092.html" style="color:#2563eb; font-weight:600;">How to generate text: using different decoding methods ...</a>)</span></p>
+<p>In practice, to make good use of the pattern, a getter helper is required as the conventional way of accessing elements of the array. It can be a method on the array type—or the index type. <span style="font-size:13px;">(Related: <a href="latest-update-few-shot-learning-in-practice-gpt-neo-and-the-accel-219070.html" style="color:#2563eb; font-weight:600;">Latest Update: Few-shot learning in practice: GPT-Neo a...</a>)</span></p>
 <p>In a struct of array data structure, it is particularly valuable to have one typed index per slice rather than relying on careful naming.</p>
 <p>Consider this spreadsheet example where it’s easy to mix up indexes:.</p>
 <p>We can prevent such bug by enforcing compile time checking of field access with typed indexes.</p>
@@ -161,7 +161,7 @@
 <p>This checks at compile time that each Field enum variant name is indeed a field inside Sheet. As we’ll see later, we will have to access Sheet’s fields by name, so it’s good to check the names of Field variants match the names of Sheet fields.</p>
 <p>This defines the kind of type indexes we’ll construct: one for row data slices and one for columns data slices. Each indexed field of Sheet has one correct typed index kind. We match them with an exhaustive switch over Field.</p>
 <p id="sec-mid-206990">We now have all we need to construct the two typed indexes of kinds .row and .col. A generic function returning a type at comptime is how to do it.</p>
-<p>Industry observers note that the typed index type for row is Sheet.Index(.row), and for colum it is Sheet.Index(.col). Note the title case of the Index function, matching Zig’s convention for types. <span style="font-size:13px;">(Related: <a href="industry-news-huggingfacehub-v10-five-years-of-building-the-found-207626.html" style="color:#2563eb; font-weight:600;">Industry News: huggingface_hub v1.0: Five Years of Buil...</a>)</span></p>
+<p>Industry observers note that the typed index type for row is Sheet.Index(.row), and for colum it is Sheet.Index(.col). Note the title case of the Index function, matching Zig’s convention for types.</p>
 <p>Remains to give a way of making use of these types.</p>
 <p>Recent findings suggest that this part may look complex if you are not familiar with comptime-enabled generics in Zig, so let’s be precise. This defines a method on Sheet that requires f to be a Field instance known at compile time. This allow to infer at compile time both the type of i and the return type.</p>
 <p>Index(kindOf(f)) is just a chain of function calls on a known value. So it is comptime known. And most importantly, the type of i is bound to the one of f at compile time. Given the body of Sheet.kindOf, it’s easy to see that s.at(.row_width, i) will compile only if i has type Index(.row)!</p>
@@ -194,20 +194,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="how-to-build-a-typed-ai-pipeline-with-jev-and-clairic-195616.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #195616. How to Build a Typed AI Pipeline With Jev and Clairic.
+        <a href="how-to-build-a-typed-ai-pipeline-with-jev-and-clairic-218751.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #218751. How to Build a Typed AI Pipeline With Jev and Clairic.
         </a>
         
-        <a href="fine-tune-xlsr-wav2vec2-for-low-resource-asr-with-transformers-207651.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #207651. Fine-Tune XLSR-Wav2Vec2 for low-resource ASR with 🤗 Transformers
+        <a href="how-to-train-a-latest-language-model-from-scratch-using-transform-219093.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #219093. How to train a latest language model from scratch using Transformers and Tokenizers
         </a>
         
-        <a href="director-of-machine-learning-insights-207650.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #207650. Director of Machine Learning Insights
+        <a href="how-to-generate-text-using-different-decoding-methods-for-languag-219092.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #219092. How to generate text: using different decoding methods for language generation with Transformers
         </a>
         
-        <a href="director-of-machine-learning-insights-part-2-saas-edition-207649.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #207649. Director of Machine Learning Insights [Part 2: SaaS Edition]
+        <a href="the-reformer-pushing-the-limits-of-language-modeling-219091.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #219091. The Reformer - Pushing the limits of language modeling
         </a>
         
     </div>

@@ -150,14 +150,14 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-206804">If you have ever tried running a heavy JavaScript obfuscator on a real production app, you already know the two usual outcomes:.</p>
-<p>Sources indicate that and on top of that, traditional variable renaming (a, _0x1f2a) barely slows down modern reverse-engineering workflows anymore. Frontier LLMs paired with AST analyzers, decompilers (Ghidra, WABT, ILSpy), and SMT solvers like Z3 reconstruct clean-room source code from minified bundles in minutes.</p>
-<p>Recent findings suggest that over the past few months at Soltrix Studios, we built Syferit, an open-core, 100% offline build-time code defense engine. We just shipped Syferit v2.1.1, and rather than just writing marketing claims about it, we put it through two real tests: a massive production Next.js app and a public 60 FPS JS + WebAssembly crackme. <span style="font-size:13px;">(Related: <a href="tech-report-easily-build-and-share-rocm-kernels-with-hugging-face-207617.html" style="color:#2563eb; font-weight:600;">Tech Report: Easily Build and Share ROCm Kernels with H...</a>)</span></p>
+<p>Sources indicate that and on top of that, traditional variable renaming (a, _0x1f2a) barely slows down modern reverse-engineering workflows anymore. Frontier LLMs paired with AST analyzers, decompilers (Ghidra, WABT, ILSpy), and SMT solvers like Z3 reconstruct clean-room source code from minified bundles in minutes. <span style="font-size:13px;">(Related: <a href="scaling-up-bert-like-model-inference-on-modern-cpu-part-2-219055.html" style="color:#2563eb; font-weight:600;">Scaling up BERT-like model Inference on modern CPU  - P...</a>)</span></p>
+<p>Recent findings suggest that over the past few months at Soltrix Studios, we built Syferit, an open-core, 100% offline build-time code defense engine. We just shipped Syferit v2.1.1, and rather than just writing marketing claims about it, we put it through two real tests: a massive production Next.js app and a public 60 FPS JS + WebAssembly crackme.</p>
 <p>Here is what changed in v2.1, what actually broke along the way, and where you can try breaking it yourself.</p>
 <p>When we ran early v2.0 builds on a real production Next.js codebase (209 chunks including heavy dependencies like three.js and @ffmpeg/ffmpeg), we hit a wall:.</p>
 <p>That benchmark forced three real engineering fixes in Syferit v2.1.1:.</p>
 <p>The result on that exact same 209-chunk Next.js app:.</p>
 <p id="sec-mid-206804">According to recent reports, syferit runs strictly at build time (zero runtime dependencies, zero network calls, zero telemetry). Out of the box, its default v2-quantum-rns preset hardens production builds across four layers:.</p>
-<p>Recent findings suggest that client-side code still has to run inside V8 on the user's machine. Nothing on earth makes browser JavaScript "100% unbreakable." A determined reverse engineer with Chrome DevTools, Frida, or enough time can still set breakpoints on DOM mutations or inspect fetch() payloads at the network boundary. <span style="font-size:13px;">(Related: <a href="director-of-machine-learning-insights-207650.html" style="color:#2563eb; font-weight:600;">Director of Machine Learning Insights...</a>)</span></p>
+<p>Recent findings suggest that client-side code still has to run inside V8 on the user's machine. Nothing on earth makes browser JavaScript "100% unbreakable." A determined reverse engineer with Chrome DevTools, Frida, or enough time can still set breakpoints on DOM mutations or inspect fetch() payloads at the network boundary. <span style="font-size:13px;">(Related: <a href="breaking-the-age-of-machine-learning-as-code-has-arrived-219059.html" style="color:#2563eb; font-weight:600;">Breaking: The Age of Machine Learning As Code Has Arriv...</a>)</span></p>
 <p>The real goal of Syferit is raising the cost of static analysis, automated AI cloning agents, and casual decompilation from "5 minutes with an LLM" to "serious manual reverse engineering," while keeping build times fast and runtime overhead near zero.</p>
 <p>Instead of asking anyone to take our word on runtime overhead, we built a live 60 FPS browser game and crackme called SYFER-DRIFT: The Enclave Heist:.</p>
 <p>Every single frame at 60 FPS, the game runs a cross-runtime JavaScript + WebAssembly verification pass protected by stock Syferit v2.1.1. There is also a "Run 1,000x Enclave Burst" button right in the telemetry bar so you can measure live latency in your own browser while driving. On Chrome, 1,000 consecutive JS Micro-VM + WASM MBA calls finish in roughly 8 to 45 milliseconds (~0.008 to 0.046 ms per call) with zero dropped frames.</p>
@@ -187,20 +187,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="industry-news-as-test-takers-turn-to-ai-exam-security-plays-catch-206954.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #206954. Industry News: As Test Takers Turn to AI, Exam Security Plays Catch-Up
+        <a href="industry-news-production-notes-test-217508.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #217508. Industry News: production notes test
         </a>
         
-        <a href="i-built-browsedown-to-read-local-markdown-outside-vs-code-206815.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #206815. I built Browsedown to read local Markdown outside VS Code
+        <a href="industry-news-grt-noom-med-epm-test-template-217496.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #217496. Industry News: GRT noom med epm test template
         </a>
         
-        <a href="industry-news-test-de-la-xp-pen-artist-pro-14-2-gen-une-excellent-206375.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #206375. Industry News: Test de la XP-Pen Artist Pro 14 (2è gen) : une excellente tablette graphique pour artiste sérieux
+        <a href="industry-news-test-sponsor-217495.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #217495. Industry News: Test sponsor
         </a>
         
-        <a href="industry-news-test-de-la-xencelabs-pd24-meilleure-tablette-cran-d-206305.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #206305. Industry News: Test de la Xencelabs PD24 : meilleure tablette à écran de 2024 ?
+        <a href="industry-news-use-this-exclusive-black-friday-saatva-code-for-bet-214715.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #214715. Industry News: Use This Exclusive Black Friday Saatva Code For Better Sleep This Holiday Season
         </a>
         
     </div>

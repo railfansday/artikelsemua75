@@ -150,9 +150,9 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-207178">It has been revealed that when platform teams manage containerized applications at scale on Amazon Elastic Container Service (Amazon ECS), configuring ingress networking for each service often becomes a bottleneck. For every latest service, teams must provision and connect Application Load Balancers (ALBs), AWS Certificate Manager (ACM) certificates, AWS WAF web ACLs, and security groups, then keep those resources in sync as services scale, update, or operate. This per-service overhead slows down deployment velocity and increases the risk of configuration drift across an organization.</p>
-<p>Today, we’re announcing Amazon ECS Gateway, a new account-level resource that simplifies ingress networking for containerized workloads by dynamically provisioning and managing the necessary infrastructure on your behalf, with all resources created directly in your account. <span style="font-size:13px;">(Related: <a href="fine-tune-xlsr-wav2vec2-for-low-resource-asr-with-transformers-207651.html" style="color:#2563eb; font-weight:600;">Fine-Tune XLSR-Wav2Vec2 for low-resource ASR with 🤗 Tra...</a>)</span></p>
+<p>Today, we’re announcing Amazon ECS Gateway, a new account-level resource that simplifies ingress networking for containerized workloads by dynamically provisioning and managing the necessary infrastructure on your behalf, with all resources created directly in your account. <span style="font-size:13px;">(Related: <a href="the-partnership-amazon-sagemaker-and-hugging-face-219076.html" style="color:#2563eb; font-weight:600;">The Partnership: Amazon SageMaker and Hugging Face...</a>)</span></p>
 <p>ECS Gateway introduces a clear separation of responsibilities between platform teams and application teams.</p>
-<p>Industry observers note that ECS Gateway offers host-based routing using ALBs and enables up to 25 services to share a single ALB, optimizing infrastructure costs. ECS manages the full lifecycle of the underlying infrastructure, provisioning the first ALB when your first service connects, adding more ALBs as capacity is reached, and removing them when no longer needed. Each service receives a unique DNS hostname, giving your teams a ready-to-use endpoint the moment provisioning completes. <span style="font-size:13px;">(Related: <a href="industry-news-huggingfacehub-v10-five-years-of-building-the-found-207626.html" style="color:#2563eb; font-weight:600;">Industry News: huggingface_hub v1.0: Five Years of Buil...</a>)</span></p>
+<p>Industry observers note that ECS Gateway offers host-based routing using ALBs and enables up to 25 services to share a single ALB, optimizing infrastructure costs. ECS manages the full lifecycle of the underlying infrastructure, provisioning the first ALB when your first service connects, adding more ALBs as capacity is reached, and removing them when no longer needed. Each service receives a unique DNS hostname, giving your teams a ready-to-use endpoint the moment provisioning completes. <span style="font-size:13px;">(Related: <a href="how-to-train-a-latest-language-model-from-scratch-using-transform-219093.html" style="color:#2563eb; font-weight:600;">How to train a latest language model from scratch using...</a>)</span></p>
 <p>Recent findings suggest that A first look at ECS Gateway
          In the ECS console, platform team can create a gateway and sets its configuration. The infrastructure role is an IAM role that ECS assumes to provision and manage networking resources such as ALBs, security groups, and certificates in your account. To create a gateway, provide a gateway name and select an infrastructure role. You can optionally associate the gateway with ECS clusters during creation or later.</p>
 <p>Choose a load balancing scheme, either public or VPC-internal traffic routing. Under Additional Settings, you can also set up a listener, port, maximum count of load balancers the gateway can scale to, and a web ACL lets you protect your web applications. Some settings, including the name, scheme, VPC, subnets, IP address type, listener protocol and port cannot be changed after gateway creation.</p>
@@ -195,20 +195,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
+        <a href="introducing-the-hugging-face-llm-inference-container-for-amazon-s-218869.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #218869. Introducing the Hugging Face LLM Inference Container for Amazon SageMaker
+        </a>
+        
+        <a href="introducing-the-hugging-face-embedding-container-for-amazon-sagem-218683.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #218683. Introducing the Hugging Face Embedding Container for Amazon SageMaker
+        </a>
+        
         <a href="industry-news-aws-weekly-roundup-amazon-bedrock-managed-agents-po-207199.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #207199. Industry News: AWS Weekly Roundup: Amazon Bedrock Managed Agents powered by OpenAI, Q3 service availability updates, Kiro workflows, and more (October 5, 2026)
         </a>
         
         <a href="amazon-s3-tables-now-offer-managed-migration-of-apache-hive-table-207158.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #207158. Amazon S3 Tables now offer managed migration of Apache Hive tables to Apache Iceberg
-        </a>
-        
-        <a href="tech-report-introducing-the-hugging-face-llm-inference-container--195866.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #195866. Tech Report: Introducing the Hugging Face LLM Inference Container for Amazon SageMaker
-        </a>
-        
-        <a href="introducing-the-hugging-face-embedding-container-for-amazon-sagem-195691.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #195691. Introducing the Hugging Face Embedding Container for Amazon SageMaker
         </a>
         
     </div>

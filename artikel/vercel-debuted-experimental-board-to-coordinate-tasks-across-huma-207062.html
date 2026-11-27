@@ -167,9 +167,9 @@ Vercel Released Experimental Board to Coordinate Tasks Across Humans and Coding 
 									
 									2
 									min read.</p>
-<p>Recent findings suggest that vercel has debuted Vercel Board, an experimental, headless message board where people and coding agents coordinate tasks across tools and harnesses. Vercel states Claude Code, Codex, Pi, OpenCode, eve, fx, Mastra, and LangChain can work on the same board as if they were a single harness. <span style="font-size:13px;">(Related: <a href="tiny-agents-an-mcp-powered-agent-in-50-lines-of-code-207641.html" style="color:#2563eb; font-weight:600;">Tiny Agents: an MCP-powered agent in 50 lines of code...</a>)</span></p>
+<p>Recent findings suggest that vercel has debuted Vercel Board, an experimental, headless message board where people and coding agents coordinate tasks across tools and harnesses. Vercel states Claude Code, Codex, Pi, OpenCode, eve, fx, Mastra, and LangChain can work on the same board as if they were a single harness. <span style="font-size:13px;">(Related: <a href="simple-considerations-for-simple-people-building-fancy-neural-net-219080.html" style="color:#2563eb; font-weight:600;">Simple considerations for simple people building fancy ...</a>)</span></p>
 <p>Recent findings suggest that each Vercel team gets a default board, named General, organized into channels and threads. Developers and agents read and write through the `vercel board` CLI or the `@vercel/board` JavaScript SDK. A skill, installed with npx skills add vercel/board --skill board, teaches coding agents the CLI. Agents name themselves with --as or BOARD_PROFILE, but still act with the operator's or project's credentials.</p>
-<p>A task is a thread whose state the board keeps. A worker claims a ready task, posts updates, and completes or fails it. A claim is a lease of up to five minutes and must be renewed; if it expires, the task returns to the queue. When two workers claim the same task, one succeeds and the other fails with task_claimed. Tasks can declare dependencies, so a review waits until its fix completes while independent work proceeds in parallel. Watchers on a Vercel deployment can run when a reply is posted or a label changes, waking the deployment so no process has to stay running. <span style="font-size:13px;">(Related: <a href="breaking-get-your-vlm-running-in-3-simple-steps-on-intel-cpus-207635.html" style="color:#2563eb; font-weight:600;">Breaking: Get your VLM running in 3 simple steps on Int...</a>)</span></p>
+<p>A task is a thread whose state the board keeps. A worker claims a ready task, posts updates, and completes or fails it. A claim is a lease of up to five minutes and must be renewed; if it expires, the task returns to the queue. When two workers claim the same task, one succeeds and the other fails with task_claimed. Tasks can declare dependencies, so a review waits until its fix completes while independent work proceeds in parallel. Watchers on a Vercel deployment can run when a reply is posted or a label changes, waking the deployment so no process has to stay running.</p>
 <p>Sync, configured in the SDK and delivered through Vercel Connect, can attach a board channel to Slack, GitHub, or Linear. Slack and Linear sync both ways; GitHub imports pull requests and problems and does not write back unless the project sends those messages. Grants control who can read, post, and manage each channel. For an agent in a Vercel Sandbox, sandboxPolicy() can grant limited board access without putting a credential inside the sandbox. Vercel states it rebuilt v0's software factory on Board, and that the factory now merges over 50% of its pull requests.</p>
 <p>Official documentation warns that Board grants do not apply on Slack, GitHub, or Linear, so a private Slack channel synced into an open board channel is readable by the whole Vercel team.</p>
 <p>Austin King (@MadeWithOzten) replied to Vercel's announcement asking to.</p>
@@ -178,7 +178,7 @@ Vercel Released Experimental Board to Coordinate Tasks Across Humans and Coding 
 <p>For a self-hosted open source Vercel board like thing.</p>
 <p>Aaron Delz (@AaronDelz) said he already kept a shared checklist with his agent, and liked that a Board task can be completed with the pull request attached:.</p>
 <p>Same rule my agents run on: no saying 'done' without the evidence.</p>
-<p>Similar coordination highlights up elsewhere. OpenCrawl is an open source, self-hostable board that also records agent sessions. GitHub Agent HQ can assign complications and pull requests to Copilot, Claude, or Codex. Linear's cloud coding agent turns scoped issues into draft pull requests with Claude Code or Codex. Claude Code agent teams coordinate multiple Claude Code sessions around a shared task list, and the Agent2Agent protocol standardizes delegation between agents rather than hosting a board.</p>
+<p>Similar coordination highlights up elsewhere. OpenCrawl is an open source, self-hostable board that also records agent sessions. GitHub Agent HQ can assign complications and pull requests to Copilot, Claude, or Codex. Linear's cloud coding agent turns scoped issues into draft pull requests with Claude Code or Codex. Claude Code agent teams coordinate multiple Claude Code sessions around a shared task list, and the Agent2Agent protocol standardizes delegation between agents rather than hosting a board. <span style="font-size:13px;">(Related: <a href="my-journey-to-a-serverless-transformers-pipeline-on-google-cloud-219077.html" style="color:#2563eb; font-weight:600;">My Journey to a serverless transformers pipeline on Goo...</a>)</span></p>
 <p>Sources indicate that board remains experimental infrastructure on a Vercel team. Setup steps and the CLI and SDK references are in Vercel's Board documentation.</p>
 <p>Recent findings suggest that december 15–16, 2026. Examine how senior practitioners run agents, evals, model serving, and AI-assisted engineering in production, including what failed and what changed. Register Now.</p>
 <p id="sec-end-207062">Sources indicate that A round-up of last week’s content on InfoQ sent out every Tuesday. Join a community of over 250,000 senior developers. View an example.</p>
@@ -205,6 +205,10 @@ Vercel Released Experimental Board to Coordinate Tasks Across Humans and Coding 
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
+        <a href="tech-report-agent-anomaly-detection-safeguarding-agents-across-ot-218327.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #218327. Tech Report: Agent Anomaly Detection: Safeguarding agents across other clouds
+        </a>
+        
         <a href="latest-update-openai-scales-git-for-coding-agents-with-pando-207123.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #207123. Latest Update: OpenAI Scales Git for Coding Agents with Pando
         </a>
@@ -213,12 +217,8 @@ Vercel Released Experimental Board to Coordinate Tasks Across Humans and Coding 
             📰 #207121. Give Your Coding Agents a Memory You Own
         </a>
         
-        <a href="latest-update-agent-anomaly-detection-safeguarding-agents-across--195224.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #195224. Latest Update: Agent Anomaly Detection: Safeguarding agents across other clouds
-        </a>
-        
-        <a href="tiny-agents-an-mcp-powered-agent-in-50-lines-of-code-207641.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #207641. Tiny Agents: an MCP-powered agent in 50 lines of code
+        <a href="introducing-snowball-fight-our-first-ml-agents-environment-219051.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #219051. Introducing Snowball Fight ☃️, our first ML-Agents environment
         </a>
         
     </div>

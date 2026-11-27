@@ -151,12 +151,12 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-207207">Today, we’re announcing metadata pre-filtering for Amazon S3 Vectors, which delivers higher recall on filtered queries by evaluating your metadata filter before the similarity search. You can filter on attributes such as tenant, category, status, or time, and pre-filtering adds prefix matching with $startsWith for paths, URLs, and hierarchical keys. Each vector carries up to 2 KB of filterable metadata, and a single query supports up to 100 filter constraints. There is no additional cost, no re-ingestion, and no change to your queries.</p>
-<p>Industry observers note that most applications never search a whole index. They search the part of it that belongs to a particular user, account, or category, and they express that scope as a metadata filter. Semantic search, retrieval-augmented generation (RAG), and agentic applications all need the same thing from a filtered query: a similarity search that covers the vectors matching the filter, and returns the closest of them. With pre-filtering, a filtered query returns more of the relevant matches your index contains, giving you higher recall on filtered searches. <span style="font-size:13px;">(Related: <a href="breaking-3d-asset-generation-ai-for-game-development-3-207645.html" style="color:#2563eb; font-weight:600;">Breaking: 3D Asset Generation: AI for Game Development ...</a>)</span></p>
+<p>Industry observers note that most applications never search a whole index. They search the part of it that belongs to a particular user, account, or category, and they express that scope as a metadata filter. Semantic search, retrieval-augmented generation (RAG), and agentic applications all need the same thing from a filtered query: a similarity search that covers the vectors matching the filter, and returns the closest of them. With pre-filtering, a filtered query returns more of the relevant matches your index contains, giving you higher recall on filtered searches. <span style="font-size:13px;">(Related: <a href="how-to-generate-text-using-different-decoding-methods-for-languag-219092.html" style="color:#2563eb; font-weight:600;">How to generate text: using different decoding methods ...</a>)</span></p>
 <p>Common use cases
          Pre-filtering applies wherever results have to be both relevant and correctly scoped:.</p>
 <p>How pre-filtering works
          Each vector in an S3 Vectors index can carry application-defined metadata, and a query can filter on those fields.</p>
-<p>Every vector index has an index mode. On an index whose index mode is ENHANCED, S3 Vectors resolves your filter first, then searches only the vectors that match. On an index whose index mode is CLASSIC, S3 Vectors performs the vector search and filter evaluation in tandem, validating each candidate vector against your filter as it searches. Existing indexes use CLASSIC until you update them. <span style="font-size:13px;">(Related: <a href="introducing-rteb-a-fresh-standard-for-retrieval-evaluation-207640.html" style="color:#2563eb; font-weight:600;">Introducing RTEB: A Fresh Standard for Retrieval Evalua...</a>)</span></p>
+<p>Every vector index has an index mode. On an index whose index mode is ENHANCED, S3 Vectors resolves your filter first, then searches only the vectors that match. On an index whose index mode is CLASSIC, S3 Vectors performs the vector search and filter evaluation in tandem, validating each candidate vector against your filter as it searches. Existing indexes use CLASSIC until you update them. <span style="font-size:13px;">(Related: <a href="hyperparameter-search-with-transformers-and-ray-tune-219088.html" style="color:#2563eb; font-weight:600;">Hyperparameter Search with Transformers and Ray Tune...</a>)</span></p>
 <p>Consider a support knowledge base of 8 million tickets, where an agent searches one customer’s history for a recurring error. If that customer accounts for 400 of those tickets, resolving customer_id first means the similarity search runs across all 400 of them, so the agent sees that customer’s prior occurrences. Before the index was updated, the same query drew its candidates from the full 8 million, and the result set contained fewer of that customer’s matching tickets.</p>
 <p>On highly selective filters, pre-filtering returns up to 5x more of the matching vectors than the same query returned before on CLASSIC indexes.</p>
 <p>Getting started
@@ -203,20 +203,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="breaking-amazons-pre-black-friday-garmin-smartwatch-sales-is-goin-205339.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #205339. Breaking: Amazon’s Pre-Black Friday Garmin Smartwatch Sales Is Going On Right Now
+        <a href="amazons-pre-black-friday-garmin-smartwatch-sales-is-going-on-righ-216864.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #216864. Amazon’s Pre-Black Friday Garmin Smartwatch Sales Is Going On Right Now
         </a>
         
-        <a href="industry-news-the-galaxy-watch-8-is-a-steal-at-just-200-right-now-207575.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #207575. Industry News: The Galaxy Watch 8 is a steal at just $200 right now on Amazon
+        <a href="amazon-has-some-incredible-deals-on-levis-right-now-215289.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #215289. Amazon Has Some Incredible Deals on Levi’s Right Now
         </a>
         
-        <a href="amazon-s3-tables-now-support-all-apache-iceberg-v3-data-types-207203.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #207203. Amazon S3 Tables now support all Apache Iceberg V3 data types
+        <a href="all-the-amazon-black-friday-deals-to-shop-right-now-215062.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #215062. All the Amazon Black Friday Deals to Shop Right Now
         </a>
         
-        <a href="amazon-s3-is-now-available-on-the-vercel-marketplace-and-v0-by-ve-207187.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #207187. Amazon S3 is now available on the Vercel Marketplace and v0 by Vercel
+        <a href="the-best-black-friday-fitness-deals-on-amazon-right-now-213170.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #213170. The Best Black Friday Fitness Deals on Amazon Right Now
         </a>
         
     </div>

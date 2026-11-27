@@ -150,13 +150,13 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-207081">It's not our fault if you've implemented it wrong.</p>
-<p>Microsoft's November security updates can break authentication in some third-party applications and devices following changes to NTLM message signing. <span style="font-size:13px;">(Related: <a href="hugging-face-and-virustotal-collaborate-to-strengthen-ai-security-207629.html" style="color:#2563eb; font-weight:600;">Hugging Face and VirusTotal collaborate to strengthen A...</a>)</span></p>
+<p>Microsoft's November security updates can break authentication in some third-party applications and devices following changes to NTLM message signing.</p>
 <p>Affected systems include authentication proxy servers, single sign-on (SSO) products, and application packaging tools, the manufacturer's support notice indicates.</p>
 <p>The failures stem from products that claim to supply required information during NTLM authentication but return incomplete or empty data, Microsoft remarked: "An affected device might set the NTLMSSP_NEGOTIATE_TARGET_INFO flag in its CHALLENGE_MESSAGE but provide an empty or incomplete TargetInfo field.".</p>
-<p>Sources indicate that administrators can use the notice's network trace and event log examples to identify affected products. For confirmed cases, the temporary workaround is to set the ClientAllowUnsignedNtlm Registry value to 1 on affected clients. This stops the client offering signing, backing out the newly introduced default rather than fixing the incompatible product. The recommended long-term options are a vendor revision or Kerberos authentication, where supported.</p>
-<p>The value sits under HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa\MSV1_0 and defaults to 0, enabling clients to offer signing on non-anonymous connections.</p>
+<p>Sources indicate that administrators can use the notice's network trace and event log examples to identify affected products. For confirmed cases, the temporary workaround is to set the ClientAllowUnsignedNtlm Registry value to 1 on affected clients. This stops the client offering signing, backing out the newly introduced default rather than fixing the incompatible product. The recommended long-term options are a vendor revision or Kerberos authentication, where supported. <span style="font-size:13px;">(Related: <a href="course-launch-community-event-219056.html" style="color:#2563eb; font-weight:600;">Course Launch Community Event...</a>)</span></p>
+<p>The value sits under HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa\MSV1_0 and defaults to 0, enabling clients to offer signing on non-anonymous connections. <span style="font-size:13px;">(Related: <a href="porting-fairseq-wmt19-translation-system-to-transformers-219087.html" style="color:#2563eb; font-weight:600;">Porting fairseq wmt19 translation system to transformer...</a>)</span></p>
 <p id="sec-mid-207081">The NTLM changes arrived in the November 10 patch as phase 1 in a 2-phase process. In phase 1, "Windows client devices begin offering NTLM signing on all connections by default. Servers accept both signed and unsigned clients. Auditing events identify clients not using signing.".</p>
-<p>Industry observers note that phase 2, scheduled for May 2027, will make Windows servers require NTLM signing by default. "Clients that do not offer signing will be rejected by secure servers," Microsoft stated. <span style="font-size:13px;">(Related: <a href="industry-news-huggingfacehub-v10-five-years-of-building-the-found-207626.html" style="color:#2563eb; font-weight:600;">Industry News: huggingface_hub v1.0: Five Years of Buil...</a>)</span></p>
+<p>Industry observers note that phase 2, scheduled for May 2027, will make Windows servers require NTLM signing by default. "Clients that do not offer signing will be rejected by secure servers," Microsoft stated.</p>
 <p>Ominously, Microsoft warned that it "might remove the registry keys at a future date," so the company is not kidding about the temporary workaround thing.</p>
 <p>The additional protections were added to address CVE-2026-118737, a vulnerability in which "improper verification of cryptographic signature in Windows Remote Procedure Call Runtime allows an unauthorized attacker to execute code over a network.".</p>
 <p>NTLM is on Microsoft's hit list, having joined the Deprecated Features list in 2024. It dates back to the era of Windows NT, and Microsoft has made clear that it wants customers to move to Kerberos, which became the default in 2000. Even so, NTLM lingers on.</p>
@@ -184,20 +184,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
+        <a href="microsoft-expands-ai-security-platform-to-address-agentic-ai-secu-215416.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #215416. Microsoft Expands AI Security Platform to Address Agentic AI Security Risks
+        </a>
+        
+        <a href="how-the-surge-in-ai-discovered-bugs-is-straining-microsoft-securi-213763.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #213763. How the surge in AI-discovered bugs is straining Microsoft security and threatening tech stability
+        </a>
+        
+        <a href="agencies-extend-comment-period-for-proposed-third-party-risk-mana-211154.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #211154. Agencies extend comment period for proposed third-party risk management guidance
+        </a>
+        
         <a href="cursor-traces-malicious-claude-code-extensions-to-third-party-bre-206933.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
             📰 #206933. Cursor Traces Malicious Claude Code Extensions to Third-Party Breach
-        </a>
-        
-        <a href="optimizely-malware-attacks-highlight-third-party-vendor-risks-206929.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #206929. Optimizely Malware Attacks Highlight Third-Party Vendor Risks
-        </a>
-        
-        <a href="microsoft-debuts-offensive-defensive-security-tools-for-the-ai-er-206909.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #206909. Microsoft Debuts Offensive, Defensive Security Tools for the AI Era
-        </a>
-        
-        <a href="tech-report-microsoft-patches-more-than-1400-security-flaws-206905.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #206905. Tech Report: Microsoft Patches More Than 1,400 Security Flaws
         </a>
         
     </div>

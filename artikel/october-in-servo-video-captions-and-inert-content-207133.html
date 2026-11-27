@@ -151,14 +151,14 @@
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-207133">Plus WebAudio nodes, image inputs, and more!</p>
 <p>Servo 0.8.0 contains all of the changes we landed in October, spanning 588 commits (a newly introduced record)!</p>
-<p>Servo now renders subtitles and captions over  elements (@TimvdLippe, #48809)!</p>
+<p>Servo now renders subtitles and captions over  elements (@TimvdLippe, #48809)! <span style="font-size:13px;">(Related: <a href="fine-tuning-clip-with-remote-sensing-satellite-images-and-caption-219060.html" style="color:#2563eb; font-weight:600;">Fine tuning CLIP with Remote Sensing (Satellite) images...</a>)</span></p>
 <p>We’ve shipped latest web platform features:.</p>
 <p>Flutter web content no longer hangs now that we fixed a serious performance problem with typed arrays (@jdm, #48640). Example.</p>
 <p>It has been revealed that we’re interested to hear how well your favourite websites run in Servo! Report successes in this Zulip thread or this Github discussion, and failures in our GitHub concerns.</p>
 <p>Recent findings suggest that with respect to accessibility in Servo, we report many more ARIA roles for DOM elements (@alice, @mrobinson, #48839). These can be inspected with the Get Computed Role WebDriver command (@lolaodelola, #47339). Accessibility integration can be turned on with the accessibility_enabled preference.</p>
-<p>Sources indicate that webGL2 support received lots of attention this month, with fixes to getParameter(), drawBuffers(), readBuffers(), vertexAttribIPointer(), DEPTH_STENCIL_ATTACHMENT, getUniformLocation(), vertexAttrib4x(), pixelStorei(), texStorage2D(), texStorage3D(), texImage3D(), getInternalformatParameter(), blitFramebuffer(), and texSubImage2D() (@mxmgorin, #48651, #48620, #48678, #48689, #48751, #48681, #48911, #48972, #48590, #49201, #49289, #48560, #48571). The feature remains gated behind the dom_webgl2_enabled preference.</p>
+<p>Sources indicate that webGL2 support received lots of attention this month, with fixes to getParameter(), drawBuffers(), readBuffers(), vertexAttribIPointer(), DEPTH_STENCIL_ATTACHMENT, getUniformLocation(), vertexAttrib4x(), pixelStorei(), texStorage2D(), texStorage3D(), texImage3D(), getInternalformatParameter(), blitFramebuffer(), and texSubImage2D() (@mxmgorin, #48651, #48620, #48678, #48689, #48751, #48681, #48911, #48972, #48590, #49201, #49289, #48560, #48571). The feature remains gated behind the dom_webgl2_enabled preference. <span style="font-size:13px;">(Related: <a href="understanding-bigbirds-block-sparse-attention-219075.html" style="color:#2563eb; font-weight:600;">Understanding BigBird's Block Sparse Attention...</a>)</span></p>
 <p>Reading and writing mapped WebGPU buffers got a significant speed increase (@sagudev, @jdm, #48372). WebGPU can be enabled with the dom_webgpu_enabled preference.</p>
-<p>Industry observers note that JS script compilation can now occur off the main thread when the dom_script_asynch preference is enabled (@Gae24, #45687). Right now this only applies to non-module scripts. <span style="font-size:13px;">(Related: <a href="industry-news-huggingfacehub-v10-five-years-of-building-the-found-207626.html" style="color:#2563eb; font-weight:600;">Industry News: huggingface_hub v1.0: Five Years of Buil...</a>)</span></p>
+<p>Industry observers note that JS script compilation can now occur off the main thread when the dom_script_asynch preference is enabled (@Gae24, #45687). Right now this only applies to non-module scripts.</p>
 <p>Initial support for the backdrop-filter property has merged (@shubhamg13, #48829). This can be enabled with the layout_css_backdrop_filter_enabled preference.</p>
 <p>ServiceWorkers now fire the statechange event when changing states during initialization (@gterzian, #48749). ServiceWorkerContainer can listen for message and messageerror events (@gterzian, #48680). Service Workers remain gated behind the dom_serviceworker_enabled preference.</p>
 <p>According to recent reports, the Geolocation API has been implemented (@webbeef, #48406). No platform-specific backends to provide the device geolocation data have merged yet, so it remains disabled behind the dom_geolocation_enabled preference.</p>
@@ -170,7 +170,7 @@
 <p>Recent findings suggest that our support for adoptedStylesheets improved along with a new implementation of the ObservableArray specification concept (@jerensl, @arihant2math, #48506). This is currently hidden behind the dom_adoptedstylesheet_enabled preference.</p>
 <p>The Android Compose migration is complete, and embedders now only need to interact with the Servo library component (@veyndan, #48592, #48601, #48595, #48574, #48609, #48778, #48780, #49266). Embedders no longer need to trigger the soft keyboard display; this is controlled by a parameter to the Servo component (@veyndan, #48757).</p>
 <p>There’s a new API method to report the network status of the embedder: NetworkManager::set_online_state (@xbwwj, #47568). This data is exposed via the onLine property of the Navigator interface in web content.</p>
-<p>Industry observers note that embedders can now disable all support for developer tools, which can reduce the size of the final binary (@janeoa, #47255). This is controlled by the devtools feature and enabled by default; it is also part of the new default_tooling feature. <span style="font-size:13px;">(Related: <a href="industry-news-apriel-h1-the-surprising-key-to-distilling-efficien-207616.html" style="color:#2563eb; font-weight:600;">Industry News: Apriel-H1: The Surprising Key to Distill...</a>)</span></p>
+<p>Industry observers note that embedders can now disable all support for developer tools, which can reduce the size of the final binary (@janeoa, #47255). This is controlled by the devtools feature and enabled by default; it is also part of the new default_tooling feature.</p>
 <p>Users of the C API can set preferences that accept f64 and f64 array parameters (@fran6co, #49325), as well as the HiDPI scale factor for each WebView (@fran6co, #49327). WebViews can also be resized via the C API (@fran6co, #49326).</p>
 <p id="sec-mid-207133">In a recent development, the layout_grid_enabled preference has been removed, since CSS Grid now defaults to enabled (@Loirooriol, #48718). Several preferences were renamed (@nicoburns, #48915):.</p>
 <p>Double and triple clicking on selected text will extend the selection to the current word and line, respectively (@mrobinson, @SimonSapin, #48767).</p>
@@ -218,20 +218,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="industry-news-pokemon-fans-disappointed-after-cryptic-countdown-r-207608.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #207608. Industry News: Pokemon fans disappointed after cryptic countdown reveals music video instead of Gen 10 news
+        <a href="fine-tuning-clip-with-remote-sensing-satellite-images-and-caption-219060.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #219060. Fine tuning CLIP with Remote Sensing (Satellite) images and captions
         </a>
         
-        <a href="innocent-pizzeria-flooded-with-death-threats-after-viral-video-se-207604.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #207604. Innocent pizzeria flooded with death threats after viral video sends online mob to wrong restaurant
+        <a href="a-dive-into-text-to-video-models-218884.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #218884. A Dive into Text-to-Video Models
         </a>
         
-        <a href="latest-update-introducing-waypoint-1-real-time-interactive-video--207582.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #207582. Latest Update: Introducing Waypoint-1: Real-time interactive video diffusion from Overworld
+        <a href="announcing-our-upcoming-content-guidelines-and-policy-218860.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #218860. Announcing our upcoming Content Guidelines and Policy
         </a>
         
-        <a href="google-search-adds-a-clever-easter-egg-for-robert-pattinsons-jame-207580.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #207580. Google Search adds a clever Easter egg for Robert Pattinson’s James Bond casting [Video]
+        <a href="scaling-robotics-datasets-with-video-encoding-218636.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #218636. Scaling robotics datasets with video encoding
         </a>
         
     </div>

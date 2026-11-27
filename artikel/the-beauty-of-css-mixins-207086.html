@@ -153,13 +153,13 @@
 <p>In its simplest form, a mixin is a named piece of CSS code that you define once and can reuse elsewhere in a style sheet. In that sense, it's very similar to a custom property (also known as a CSS variable) or a CSS function.</p>
 <p>The massive difference is what mixins can hold:.</p>
 <p>So, instead of just returning the value red, a mixin can return background: red; color: white; border-radius: 2px; all at once.</p>
-<p>My team at Microsoft is implementing mixins in the Chromium open source project. They've covered a lot of ground, and we're getting ready to ship this in Chromium-based browsers. Native CSS mixins are getting very close!</p>
+<p>My team at Microsoft is implementing mixins in the Chromium open source project. They've covered a lot of ground, and we're getting ready to ship this in Chromium-based browsers. Native CSS mixins are getting very close! <span style="font-size:13px;">(Related: <a href="transformer-based-encoder-decoder-models-219089.html" style="color:#2563eb; font-weight:600;">Transformer-based Encoder-Decoder Models...</a>)</span></p>
 <p>I can't wait for other browsers to catch up, so that we can all use mixins in earnest.</p>
 <p>CSS mixins are experimental. To try the code snippets and demo in this article, use a recent Chromium browser, open about://flags, and enable the Experimental Web Platform features flag.</p>
 <p>Sources indicate that you define a mixin with the @mixin rule, and you use it with @apply. Mixin names start with two dashes, like custom properties.</p>
 <p>Let's define the --visually-hidden mixin:.</p>
 <p>And now, let's use it somewhere else in our code:.</p>
-<p>That's all you need to do. The browser will apply the mixin's declarations to the element as if they were written directly in the element's style block, so it's exactly as if you had written:.</p>
+<p>That's all you need to do. The browser will apply the mixin's declarations to the element as if they were written directly in the element's style block, so it's exactly as if you had written:. <span style="font-size:13px;">(Related: <a href="block-sparse-matrices-for-smaller-and-faster-language-models-219090.html" style="color:#2563eb; font-weight:600;">Block Sparse Matrices for Smaller and Faster Language M...</a>)</span></p>
 <p>Except now, you have a nice little reusable mixin that you can apply wherever you need it.</p>
 <p>That's not all, a mixin can take parameters, with optional types and default values too. Consider this --button mixin:.</p>
 <p>It applies some colors and spacing to a button-like element, checking that the supplied colors have the right type and falling back to default values if needed. It even handles hover states automatically.</p>
@@ -184,9 +184,9 @@
 <p>It has been revealed that imagine a white-label website. You own the site and control its markup and default CSS. But you also want your customers to be able to theme the site to match their brand.</p>
 <p>In your style sheet, you'd apply mixins like this:.</p>
 <p>And your customer could define the mixins something like this:.</p>
-<p>You might remember the CSS Zen Garden. It had one HTML page, and anyone could submit a latest design by writing a new style sheet for it. It showed the power of clean, semantic HTML, with styles, layouts and animations in a separate file. The designs were wildly different from one another and extremely creative. <span style="font-size:13px;">(Related: <a href="unlock-the-power-of-images-with-ai-sheets-207632.html" style="color:#2563eb; font-weight:600;">Unlock the power of images with AI Sheets...</a>)</span></p>
+<p>You might remember the CSS Zen Garden. It had one HTML page, and anyone could submit a latest design by writing a new style sheet for it. It showed the power of clean, semantic HTML, with styles, layouts and animations in a separate file. The designs were wildly different from one another and extremely creative.</p>
 <p>According to recent reports, but there's a problem when you do this for customers. You expose your entire markup and it becomes a public API. Customers start writing very specific selectors that depend on how your HTML is organized, and you can't change that HTML any more without breaking their customizations. I've done this at a previous job, and I know how painful this can be.</p>
-<p>In a recent development, the other option is to expose CSS variables. You keep control of your entire HTML and CSS, and only expose a set of customization variables that are used throughout your code. For example, you define a set of color palette variables, a set of spacing variables, typography variables, etc. <span style="font-size:13px;">(Related: <a href="tech-report-ai-for-game-development-creating-a-farming-game-in-5--207646.html" style="color:#2563eb; font-weight:600;">Tech Report: AI for Game Development: Creating a Farmin...</a>)</span></p>
+<p>In a recent development, the other option is to expose CSS variables. You keep control of your entire HTML and CSS, and only expose a set of customization variables that are used throughout your code. For example, you define a set of color palette variables, a set of spacing variables, typography variables, etc.</p>
 <p>Sources indicate that customers override values only, which is very safe, but can also be limiting. What if they later ask you to have access to the page layout? You now need to expose more variables and make sure they continue working correctly.</p>
 <p>In a recent development, mixins sit somewhere in between. You remain in control of your HTML and can change it whenever you want. You expose logically named mixins that correspond to the various areas and surfaces of your page.</p>
 <p>As long as you keep applying the same mixins in the right places, customizations continue to work.</p>
@@ -230,20 +230,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="taming-typography-building-a-modern-css-reset-207236.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #207236. Taming Typography: Building a Modern CSS Reset
+        <a href="how-to-use-css-attribute-selectors-to-build-more-flexible-user-in-218667.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #218667. How to Use CSS Attribute Selectors to Build More Flexible User Interfaces
         </a>
         
-        <a href="rss-club-css-tricks-redesign-preview-207232.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #207232. RSS Club: CSS-Tricks Redesign Preview
+        <a href="how-to-build-an-accessible-customer-reviews-section-with-html-and-218586.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #218586. How to Build an Accessible Customer Reviews Section with HTML and CSS
         </a>
         
-        <a href="css-tricks-version-20-207229.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #207229. CSS-Tricks, Version 20
+        <a href="breaking-unprecedented-design-museum-exhibition-surveys-the-beaut-217977.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #217977. Breaking: Unprecedented Design Museum exhibition surveys "the beauty and the depth of Black design"
         </a>
         
-        <a href="css-optimization-is-using-declarations-just-once-udjo-still-effec-207227.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #207227. CSS Optimization: Is Using Declarations Just Once (UDJO) Still Effective Today?
+        <a href="stop-treating-css-container-queries-like-traditional-media-querie-217772.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #217772. Stop Treating CSS Container Queries Like Traditional Media Queries
         </a>
         
     </div>

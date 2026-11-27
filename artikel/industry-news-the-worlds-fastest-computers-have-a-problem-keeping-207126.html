@@ -150,14 +150,14 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-207126">I node what you did last summer: you went down when an HPC project was relying on you.</p>
-<p>Frontier, Oak Ridge National Laboratory's exascale supercomputer, has thousands of processors working together on scientific problems. It also has a surprisingly ordinary way of ruining a researcher's day: one node going down. <span style="font-size:13px;">(Related: <a href="building-the-open-agent-ecosystem-together-introducing-openenv-207628.html" style="color:#2563eb; font-weight:600;">Building the Open Agent Ecosystem Together: Introducing...</a>)</span></p>
-<p>Sources indicate that an uncorrectable memory error can do it, or a maintenance mishap. Scott Atchley, chief technology officer at the Oak Ridge Leadership Computing Facility, describes technicians accidentally rebooting the wrong node or risking a neighboring node's power supply while working in tightly packed racks. <span style="font-size:13px;">(Related: <a href="unlock-the-power-of-images-with-ai-sheets-207632.html" style="color:#2563eb; font-weight:600;">Unlock the power of images with AI Sheets...</a>)</span></p>
+<p>Frontier, Oak Ridge National Laboratory's exascale supercomputer, has thousands of processors working together on scientific problems. It also has a surprisingly ordinary way of ruining a researcher's day: one node going down.</p>
+<p>Sources indicate that an uncorrectable memory error can do it, or a maintenance mishap. Scott Atchley, chief technology officer at the Oak Ridge Leadership Computing Facility, describes technicians accidentally rebooting the wrong node or risking a neighboring node's power supply while working in tightly packed racks.</p>
 <p>The hardware fault can affect just one node, but a simulation running across thousands of processors can grind to a halt. Then comes a series of questions. How recently did the application save its progress? How much computation needs repeating? And how long before the scheduler lets the job run again?</p>
 <p>For operators, the challenge isn't just keeping the supercomputer running. It's keeping the science moving.</p>
 <p>In a recent development, on Frontier, a memory error can have an outsized audience. Atchley indicates uncorrectable double-bit errors in high-bandwidth memory occurred about 1.5 times a day during the supercomputer's early bring-up.</p>
 <p>According to recent reports, its predecessor, Summit, saw roughly one every two weeks. This sounds like a backward step, until you count the memory. Frontier has more than 16 times as much, giving bad bits considerably more places to hide.</p>
-<p>In a recent development, memory isn't the only problem. Problematic GPU firmware can crash a node, and so can a technician rebooting the wrong one. Interconnect faults add another way for a large job to come unstuck.</p>
-<p>In a tightly coupled simulation using the Message Passing Interface (MPI) simulation, thousands of processes, or ranks, exchange data and participate in collective operations. If one rank disappears, the others cannot carry on as though nothing happened.</p>
+<p>In a recent development, memory isn't the only problem. Problematic GPU firmware can crash a node, and so can a technician rebooting the wrong one. Interconnect faults add another way for a large job to come unstuck. <span style="font-size:13px;">(Related: <a href="large-language-models-a-new-moores-law-219057.html" style="color:#2563eb; font-weight:600;">Large Language Models: A New Moore's Law?...</a>)</span></p>
+<p>In a tightly coupled simulation using the Message Passing Interface (MPI) simulation, thousands of processes, or ranks, exchange data and participate in collective operations. If one rank disappears, the others cannot carry on as though nothing happened. <span style="font-size:13px;">(Related: <a href="how-to-train-a-latest-language-model-from-scratch-using-transform-219093.html" style="color:#2563eb; font-weight:600;">How to train a latest language model from scratch using...</a>)</span></p>
 <p>Clockwork.io CEO Suresh Vasudevan describes a similar dependency in synchronized GPU training.</p>
 <p>One failed GPU can bring a 1,024-GPU job to a pause. An underperforming GPU can be almost as troublesome: if one participant runs at 80 percent speed, others might have to spend time waiting for it.</p>
 <p>The bigger the machine, the more ways there are for one small problem to become everybody's problem.</p>
@@ -212,20 +212,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="industry-news-why-employees-are-habit-hugging-at-work-207384.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #207384. Industry News: Why employees are ‘habit hugging’ at work
+        <a href="industry-news-worlds-fastest-animal-could-nearly-double-its-livab-213093.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #213093. Industry News: World's fastest animal could nearly double its livable territory by 2080 in the UK due to climate change
         </a>
         
-        <a href="industry-news-duckdb-20-vs-polars-20-in-five-real-world-tests-and-206942.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #206942. Industry News: DuckDB 2.0 vs Polars 2.0 in Five Real-World Tests  and One 14x Gap
+        <a href="industry-news-worlds-fastest-soft-robot-sprints-15-feet-per-secon-212902.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #212902. Industry News: World’s fastest soft robot sprints 15 feet per second
         </a>
         
-        <a href="industry-news-what-is-emdr-therapy-and-does-it-actually-work-206593.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #206593. Industry News: What is EMDR therapy, and does it actually work?
+        <a href="industry-news-running-if-with-diffusers-on-a-free-tier-google-col-218888.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #218888. Industry News: Running IF with 🧨 diffusers on a Free Tier Google Colab
         </a>
         
-        <a href="industry-news-the-10-best-sports-bras-for-running-tested-for-high-205890.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #205890. Industry News: The 10 Best Sports Bras for Running, Tested for High-Impact Support
+        <a href="worlds-first-superconducting-quantum-heat-engine-could-help-unloc-218442.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #218442. World’s first superconducting quantum heat engine could help unlock massive quantum computers
         </a>
         
     </div>

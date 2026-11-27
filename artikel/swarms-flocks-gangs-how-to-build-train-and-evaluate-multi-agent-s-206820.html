@@ -150,8 +150,8 @@
 </div>
 <div class="article-body" style="line-height: 1.8;">
 <p id="sec-start-206820">Part 1: Understanding swarms and training to communicate.</p>
-<p>In a recent development, this is an aspirational blog series for aspirational readers. We (us, the community, you) want to build our own agent swarms because they're exciting, challenging, and increasingly capable. Furthermore, it would be extremely cool if we could train our own agents to work in a swarm. And exponentially cool if those swarms used small and affordable models. <span style="font-size:13px;">(Related: <a href="tech-report-ai-for-game-development-creating-a-farming-game-in-5--207646.html" style="color:#2563eb; font-weight:600;">Tech Report: AI for Game Development: Creating a Farmin...</a>)</span></p>
-<p>That's what we'll do in this series! Each blog post will include some context on building swarms, alongside reproducible examples that you can run on Hugging Face Jobs. This post's example takes about five hours on two H200s, which costs roughly $50. <span style="font-size:13px;">(Related: <a href="google-cloud-c4-brings-a-70-tco-improvement-on-gpt-oss-with-intel-207634.html" style="color:#2563eb; font-weight:600;">Google Cloud C4 Brings a 70% TCO improvement on GPT OSS...</a>)</span></p>
+<p>In a recent development, this is an aspirational blog series for aspirational readers. We (us, the community, you) want to build our own agent swarms because they're exciting, challenging, and increasingly capable. Furthermore, it would be extremely cool if we could train our own agents to work in a swarm. And exponentially cool if those swarms used small and affordable models. <span style="font-size:13px;">(Related: <a href="how-to-train-a-latest-language-model-from-scratch-using-transform-219093.html" style="color:#2563eb; font-weight:600;">How to train a latest language model from scratch using...</a>)</span></p>
+<p>That's what we'll do in this series! Each blog post will include some context on building swarms, alongside reproducible examples that you can run on Hugging Face Jobs. This post's example takes about five hours on two H200s, which costs roughly $50. <span style="font-size:13px;">(Related: <a href="faster-tensorflow-models-in-hugging-face-transformers-219083.html" style="color:#2563eb; font-weight:600;">Faster TensorFlow models in Hugging Face Transformers...</a>)</span></p>
 <p>Recent findings suggest that multi-Agent Systems are hard to get working. Adding agents changes the agent's context, the budget, and in turn the complexity of the whole system. Mixing agents' context together through communication is not an inherent performance boost compared to a single agent. The model needs to learn to communicate through training. How do we define what models should learn? And which model weights do we update when we're dealing with many agents?</p>
 <p>In this series, we'll work through those problems with an educational overview and practical examples. Each post will introduce a question, build a small system, and examine what happens and how you can reproduce it. This first example starts with four agents, a shared language model, and a simple verifiable task. It's ideal to implement yourself, to tinker with, and to learn from.</p>
 <p>First, we'll start off with some context on swarms.</p>
@@ -224,20 +224,20 @@
     <div style="margin-top: 28px; padding-top: 18px; border-top: 1px dashed var(--border, #e2e8f0);">
         <h3 style="font-size: 16px; margin: 0 0 12px 0; color: var(--text-main, #1e293b);">🔗 Related Articles</h3>
         
-        <a href="what-an-ai-marketing-agent-actually-does-and-how-to-build-a-guard-207243.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #207243. What an AI Marketing Agent Actually Does, and How to Build a Guarded One
+        <a href="jack-of-all-trades-master-of-some-a-multi-purpose-transformer-age-218713.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #218713. Jack of All Trades, Master of Some, a Multi-Purpose Transformer Agent
         </a>
         
-        <a href="industry-news-how-to-build-an-accessible-multi-step-form-a-practi-207219.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #207219. Industry News: How to Build an Accessible Multi Step Form: A Practical Guide With a Vanilla JavaScript Example
+        <a href="why-your-ai-agent-cant-read-the-web-and-how-to-build-a-fetch-laye-218674.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #218674. Why Your AI Agent Can't Read the Web (and How to Build a Fetch Layer That Can)
         </a>
         
-        <a href="build-once-run-on-any-agent-a-practical-guide-to-agent-skills-207111.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #207111. Build once, run on any agent: A practical guide to agent skills
+        <a href="dabstep-data-agent-benchmark-for-multi-step-reasoning-218544.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #218544. DABStep: Data Agent Benchmark for Multi-step Reasoning
         </a>
         
-        <a href="how-to-initiative-retries-for-multi-agent-workflows-before-you-wr-206953.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
-            📰 #206953. How to Initiative Retries for Multi-Agent Workflows Before You Write Code
+        <a href="industry-news-trace-evaluate-your-agent-with-arize-phoenix-218524.html" style="display:block; width:100%; box-sizing:border-box; text-align:left; text-decoration:none; background:transparent; border:1px solid var(--border, #e2e8f0); padding:10px 14px; border-radius:8px; margin-bottom:8px; color:var(--text-main, #1e293b); font-size:14px; font-weight:600; transition:0.2s;">
+            📰 #218524. Industry News: Trace & Evaluate your Agent with Arize Phoenix
         </a>
         
     </div>
